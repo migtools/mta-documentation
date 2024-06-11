@@ -1,0 +1,78 @@
+:toc:
+:toclevels: 4
+:numbered:
+:mta:
+include::topics/templates/document-attributes.adoc[]
+
+:imagesdir: topics/images
+:context: getting-started-guide
+:getting-started-guide:
+
+:_content-type: ASSEMBLY
+= Introduction to the {ProductName}
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+// == Introduction
+
+// About the {IntroToMTABookName}
+include::topics/mta-about-the-intro-to-mta-guide.adoc[leveloffset=+1]
+
+// About the Toolkit
+// Info included in the module above ^ include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+1]
+
+// Windup Features
+include::topics/new-mta-features.adoc[leveloffset=+2]
+
+// Windup Rules
+include::topics/about-rules.adoc[leveloffset=+2]
+
+//== Supported configurations
+
+// Supported Migration Paths
+include::topics/migration-paths.adoc[leveloffset=+1]
+
+// Prerequisites
+== Prerequisites for the {ProductName} installation
+
+include::topics/snippet_jdk-hardware-mac-prerequisites.adoc[]
+
+// At a later date, we may wish to add the following section, once it is revised: For tips on how to optimize performance, see link:{ProductDocUserGuideURL}#optimize_performance[Optimizing {ProductShortName} performance] in {ProductShortName} _{UserCLIBookName}_.
+
+// About the Tools
+include::topics/about-tools.adoc[leveloffset=+1]
+
+//About the Operator
+include::topics/about-the-mta-operator.adoc[leveloffset=+2]
+
+// About the {WebNameTitle}
+include::topics/about-the-web-console.adoc[leveloffset=+2]
+
+// About the {CLIName}
+include::topics/about-cli.adoc[leveloffset=+2]
+
+// About the Addons
+include::topics/getting-started-about-ide-addons.adoc[leveloffset=+2]
+
+// About the {MavenNameTitle}
+// include::topics/about-maven.adoc[leveloffset=+2]
+
+[appendix]
+== Getting involved in the {ProductName} development
+
+// Get Involved
+include::topics/get-involved.adoc[leveloffset=+2]
+
+=== Reporting issues
+
+{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
+
+// Important Links
+include::topics/important-links.adoc[leveloffset=+2]
+
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics/templates/revision-info.adoc[]

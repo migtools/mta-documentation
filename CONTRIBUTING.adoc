@@ -1,0 +1,227 @@
+= Contributors Guide
+
+Improvements to Windup documentation are welcome.
+
+In order to contribute, you will need a GitHub account and to have `git` installed on your machine. You can also log a {JiraWindupURL}[Jira issue] to track the changes.
+
+Use the following steps to submit a change to the Windup documentation repository.
+
+. Fork the link:https://github.com/windup/windup-documentation[windup-documentation] GitHub repository.
++
+Click the *Fork* button in the top right corner of the page.
+. Clone the forked repository locally.
++
+[source,terminal,subs="attributes+"]
+----
+$ git clone git@github.com:YOUR_USERNAME/windup-documentation.git
+----
+. Add the upstream repository.
++
+[source,terminal,subs="attributes+"]
+----
+git remote add -f upstream git@github.com:windup/windup-documentation.git
+----
+. Get the latest changes.
++
+[source,terminal,subs="attributes+"]
+----
+$ git fetch upstream
+----
+. Check out a topic branch.
++
+[source,terminal,subs="attributes+"]
+----
+$ git checkout -b BRANCH_NAME upstream/master
+----
+. Make the desired edits.
++
+The documentation is written in link:http://asciidoc.org/[AsciiDoc]. Review the xref:asciidoc_guidelines[AsciiDoc Guidelines and Tips] section of this guide before making changes.
+. Build the guides to verify your changes.
+.. Navigate to the appropriate guide's directory and issue the following command.  Note that you must have link:http://asciidoctor.org/[Asciidoctor] installed.
++
+[source,terminal,subs="attributes+"]
+----
+$ cd docs/cli-guide/
+$ asciidoctor -t -dbook -a toc -o html/cli-guide.html master.adoc
+----
+.. View the generated HTML file in a browser.
+. Add each new or updated file to git.
++
+[source,terminal,subs="attributes+"]
+----
+$ git add FILE_NAME.adoc
+----
+. Commit the changes locally.
++
+[source,terminal,subs="attributes+"]
+----
+$ git commit -m "My commit message."
+----
+. Push the changes to your forked repository.
++
+[source,terminal,subs="attributes+"]
+----
+$ git push origin HEAD
+----
+. Open a pull request to merge your changes to the master branch.
+.. Navigate to your forked repository in a browser:  https://github.com/YOUR_USERNAME/windup-documentation.
+.. Open a new pull request. Be sure to review the diff before submitting.
+.. A member of the Windup documentation team will merge or provide feedback on your request.
+
+== Building the Guides
+
+Navigate to the appropriate guide's directory and issue the following command.  Note that you must have link:http://asciidoctor.org/[Asciidoctor] installed.
+
+[source,terminal,subs="attributes+"]
+----
+$ cd docs/cli-guide/
+$ asciidoctor -t -dbook -a toc -o html/cli-guide.html master.adoc
+----
+
+View the generated HTML file in a browser.
+
+== Publishing the Guides
+
+The Windup guides are published downstream on the link:https://access.redhat.com/documentation/en/migration_toolkit_for_applications/[Red Hat Customer Portal].
+
+[[asciidoc_guidelines]]
+== AsciiDoc Guidelines and Tips
+
+=== AsciiDoc Editors
+
+The following editors make editing and reviewing AsciiDoc files easy.
+
+* link:https://atom.io/[Atom] with the `asciidoc-preview` and `language-asciidoc` packages.
+* link:http://asciidocfx.com/[AsciidocFX]
+* Any basic editor, such as gedit, with the Chrome link:https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia?hl=en[Asciidoctor.js] plugin
+
+=== AsciiDoc Syntax Basics
+
+For a comprehensive reference of AsciiDoc syntax, see the link:http://asciidoc.org/userguide.html[AsciiDoc User Guide].
+
+* Headings
++
+[source,terminal,subs="attributes+"]
+----
+= Heading Level 1
+== Heading Level 2
+=== Heading Level 3
+----
+* Bold text
++
+[source,terminal,subs="attributes+"]
+----
+ *Bold text*
+----
+* Italic text
++
+[source,terminal,subs="attributes+"]
+----
+_Italic text_
+----
+* Monospace text
++
+[source,terminal,subs="attributes+"]
+----
+`Monospace text`
+----
+* Bullets
++
+[source,terminal,subs="attributes+"]
+----
+* Item one
+* Item two
+----
+* Numbered list
++
+[source,terminal,subs="attributes+"]
+----
+. Step one
+. Step two
+----
+
+* Code block
++
+--------
+----
+System.out.println("Hello");
+----
+--------
+
+=== Creating a New AsciiDoc File
+
+* Name the file using only letters, numbers, and dashes, and with an extension of `.adoc`. For example, `my-topic.adoc`.
+* Add an anchor at the top of the file, using underscores. For example, `\[[my_anchor]]`.
+* Start each topic with a level one heading. For example, `= My Heading`.
+* Add this new topic to the `master.adoc` file using the `include::` syntax.
+** Pass in a `leveloffset=+N` to adjust the heading levels in the included file to be the correct level.
+
+.Example master.adoc File
+
+[source,terminal,subs="attributes+"]
+----
+= My Guide Title
+
+\include::topics/my-topic.adoc[leveloffset=+1]
+----
+
+.Example my-topic.adoc File
+[source,terminal,subs="attributes+"]
+----
+[[my_anchor]]
+= My Heading
+
+Text here.
+
+== My Subsection
+
+Text here.
+----
+
+
+=== Linking to Other Files
+
+Use `xref` to link to a section within the same guide. You must define an explicit anchor in order to link.
+
+.Link to a Section in the Same Guide
+[source,terminal,subs="attributes+"]
+----
+For more information, see xref:section_anchor[This Section].
+...
+
+[[section_anchor]]
+== This Section
+...
+----
+
+Use `link` to reference an external URL.
+
+.Link to an External Link
+[source,terminal,subs="attributes+"]
+----
+Navigate to the link:https://github.com/windup/windup-documentation[Windup GitHub repository].
+----
+
+=== Using AsciiDoc Attributes
+
+The Windup documentation defines several AsciiDoc attributes in the `docs/templates/document-attributes.adoc` file. This allows you to define the value one place and then used it repeatedly throughout the guides. An example usage of this is defining the Windup version.
+
+==== Defining an Attribute
+
+Define an attribute in the `document-attributes.adoc` file using the following syntax.
+
+[source,terminal,subs="attributes+"]
+----
+:ProductVersion: 5.0.0.Final
+----
+
+==== Using an Attribute
+
+An attribute can then be referenced in an AsciiDoc file using the following syntax.
+
+[source,terminal,subs="attributes+"]
+----
+The Windup version is {ProductVersion}.
+----
+
+This will be resolved as "The Windup version is 5.0.0.Final".

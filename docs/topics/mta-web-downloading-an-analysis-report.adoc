@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-downloading-an-analysis-report_{context}"]
+= Downloading an analysis report
+
+For your convenience, you can download analysis reports. Note that by default this option is disabled.
+
+.Procedure
+
+. In *Administration* view, click *General*.
+. Toggle the *Allow reports to be downloaded after running an analysis.*  switch.
+. Go to the *Migration* view and click *Application inventory*.
+. Open the page of the application for which you ran an analysis.
+. Click *Reports*.
+. Click either the *HTML* or *YAML* link:
+* By clicking the *HTML* link, you download the compressed `analysis-report-app-<application_name>.tar` file. Extracting this file creates a folder with the same name as the application.
+* By clicking the *YAML* link, you download the uncompressed `analysis-report-app-<application_name>.yaml` file.

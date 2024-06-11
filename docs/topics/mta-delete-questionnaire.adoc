@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+
+:_content-type: PROCEDURE
+[id="mta-delete-questionnaire_{context}"]
+= Deleting an assessment questionnaire
+
+When you delete an assessment questionnaire, its answers for all applications that use it in all archetypes are also deleted.
+
+IMPORTANT: You cannot delete the *Legacy Pathfinder* default questionnaire.
+
+
+.Procedure
+
+. In the *Administration* view, select *Assessment questionnaires*.
+. Select the questionnaire you want to delete.
+. Click the Options menu ({kebab}).
+. Select *Delete*.
+. Confirm deleting by clicking on the *Name* of the questionnaire.
+

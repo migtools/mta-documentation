@@ -1,0 +1,80 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+
+[id="installing-cli-tool_{context}"]
+= Installing the {CLINameTitle}
+
+You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems.
+
+
+.Prerequisites
+
+* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from registry.redhat.io, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
+* Podman must be installed
+
++
+[NOTE]
+.Podman
+====
+Podman is a daemonless, open source, Linux-native tool designed to make it easy to find, run, build, share, and deploy applications using Open Containers Initiative (OCI) Containers and Container Images.
+Podman provides a command-line interface (CLI) familiar to anyone who has used the Docker Container Engine.
+For more information on installing and using Podman, see link:https://podman.io/docs/installation[Podman installation instructions].
+====
+
+[id="installing-downloadable-cli-zip_{context}"]
+== Installing the {CLINameTitle} `.zip` file
+
+.Procedure
+
+To install using the downloadable `.zip` file:
+
+. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the OS-specific CLI file or the `src` file:
++
+* {ProductShortNameLower}-{ProductVersion}-cli-linux.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-macos.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-windows.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-src.zip
+
+. Extract the `.zip` file to a directory of your choice. The `.zip` file extracts a single binary, called *mta-cli*.
++
+When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
+
+
+[id="installing-using-podman_{context}"]
+== Installing the {CLINameTitle} using Podman
+
+.Prerequisites
+
+* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from registry.redhat.io, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
+
+
+.Procedure
+
+To install using `podman pull`:
+
+. To use Podman to authenticate to registry.redhat.io:
++
+[source,terminal]
+----
+podman login registry.redhat.io
+Username: <username>
+Password: <***********>
+----
+. Issue:
++
+[source,terminal]
+----
+podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{ProductVersion}):/usr/local/bin/mta-cli ./
+----
++
+This command will copy the binary `PATH` for system-wide use.
++
+[WARNING]
+====
+Although installation using Podman is possible, downloading and installing the `.zip` file is the preferred installation.
+====
+
+

@@ -1,0 +1,25 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+
+:_content-type: PROCEDURE
+[id="mta-import-questionnaire_{context}"]
+= Importing an assessment questionnaire
+
+In the {ProductName} ({ProductShortName}) 7.0, you can upload an assessment questionnaire from your system. 
+
+WARNING: The name of the imported questionnaire must be unique.
+If the name, which is defined in the YAML syntax (`name:<name of questionnaire>`), is duplicated, the import will fail with the following error message: `UNIQUE constraint failed: Questionnaire.Name`.
+
+
+.Procedure
+
+. In the *Administration* view, select *Assessment questionnaires*.
+. Click *Import questionnaire*.
+. Click *Upload*.
+. Navigate to the location of your questionnaire.
+. Click *Open*.
+. Import the desired questionnaire by clicking *Import*.
+
+

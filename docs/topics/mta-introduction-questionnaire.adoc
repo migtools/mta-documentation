@@ -1,0 +1,12 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+
+:_content-type: REFERENCE
+[id="mta-introduction-questionnaire_{context}"]
+= MTA assessment questionnaires
+
+The {ProductName} ({ProductShortName}) uses an assessment questionnaire, either xref:mta-default-questionnaire_user-interface-guide[default] or xref:mta-custom-questionnaire_user-interface-guide[custom], to assess the risks involved in containerizing an application. 
+
+The assessment report provides information about applications and risks associated with migration. The report also generates an adoption plan informed by the prioritization, business criticality, and dependencies of the applications submitted for assessment.
