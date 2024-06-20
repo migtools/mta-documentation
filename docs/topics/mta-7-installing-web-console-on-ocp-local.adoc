@@ -1,0 +1,285 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-7-installing-web-console-on-ocp-local_{context}"]
+= Installing and configuring the {ProductName} Operator in a {rh-ocp-local} environment
+
+{rh-ocp-local} provides a quick and easy way to set up a local OpenShift cluster on your desktop or laptop. This local cluster allows you to test your applications and configuration parameters before sending them to production.
+
+[id="mta-7-ocp-os-sys-reqs_{context}"]
+== Operating system requirements
+
+{rh-ocp-local} requires the following minimum version of a supported operating system:
+
+[id="mta-7-ocp-local-windows-reqs_{context}"]
+=== {rh-ocp-local} requirements on Microsoft Windows
+
+On Microsoft Windows, {rh-ocp-local} requires the Windows 10 Fall Creators Update (version 1709) or later. {rh-ocp-local} does not run on earlier versions of Microsoft Windows. Microsoft Windows 10 Home Edition is not supported.
+
+[id="mta-7-ocp-local-macos-reqs_{context}"]
+=== {rh-ocp-local} requirements on macOS
+
+On macOS, {rh-ocp-local} requires macOS 11 Big Sur or later. {rh-ocp-local} does not run on earlier versions of macOS.
+
+[id="mta-7-ocp-local-local-reqs_{context}"]
+=== {rh-ocp-local} requirements on Linux
+
+On Linux, {rh-ocp-local} is supported only on the latest two Red Hat Enterprise Linux 8 and 9 minor releases and on the latest two stable Fedora releases.
+
+When using Red Hat Enterprise Linux, the machine running {rh-ocp-local} must be registered with the Red Hat Customer Portal.
+
+Ubuntu 18.04 LTS or later and Debian 10 or later are not supported and might require manual setup of the host machine.
+
+==== Required software packages for Linux
+
+{rh-ocp-local} requires the `libvirt` and `NetworkManager` packages to run on Linux:
+
+* On *Fedora* and *Red Hat Enterprise Linux* run:
+
++
+[source,terminal]
+----
+sudo dnf install NetworkManager
+----
+
+* On *Debian/Ubuntu* run:
++
+[source,terminal]
+----
+sudo apt install qemu-kvm libvirt-daemon libvirt-daemon-system network-manager
+----
+
+[id="mta-7-installing-ocp-local_{context}"]
+== Installing the {ProductName} Operator in a {rh-ocp-local} environment
+
+To install {rh-ocp-local}:
+
+. Download the latest release of link:https://console.redhat.com/openshift/create/local[{rh-ocp-local}] for your platform.
+
+.. Download *OpenShift Local*.
+
+.. Download *pull secret*.
+
+. Assuming you saved the archive in the `~/Downloads directory`, follow these steps:
+
++
+[source,terminal]
+----
+cd ~/Downloads
+----
+
++
+[source,terminal]
+----
+tar xvf crc-linux-amd64.tar.xz
+----
+
+. Copy the `crc` executable to it:
+
++
+[source,terminal]
+----
+cp ~/Downloads/crc-linux-<version-number>-amd64/crc ~/bin/crc
+----
+. Add the `~/bin/crc` directory to your `$PATH` variable:
+
++
+[source,terminal]
+----
+export PATH=$PATH:$HOME/bin/crc
+----
++
+[source,terminal]
+----
+echo 'export PATH=$PATH:$HOME/bin/crc' >> ~/.bashrc
+----
+
+. To disable telemetry, run the following command:
+
++
+[source,terminal]
+----
+crc config set consent-telemetry no
+----
+
+[NOTE]
+====
+For macOS, download the relevant *crc-macos-installer.pkg*.
+
+. Navigate to *Downloads* using *Finder*.
+. Double-click on `crc-macos-installer.pkg`.
+====
+
+[id="mta-7-set-up-ocp-local_{context}"]
+== Setting up {rh-ocp-local}
+
+The `crc setup` command performs operations to set up the environment of your host machine for the {rh-ocp-local} instance.
+
+The `crc setup` command creates the `~/.crc directory`.
+
+. Set up your host machine for {rh-ocp-local}:
+
++
+[source,terminal]
+----
+crc setup
+----
+
+[id="mta-7-starting-ocp-local_{context}"]
+== Starting the {rh-ocp-local} instance
+
+{rh-ocp-local} presets represent a managed container runtime, and the lower bounds of system resources required by the instance to run it.
+
+[NOTE]
+====
+* On Linux or macOS, ensure that your user account has permission to use the `sudo` command.
+* On Microsoft Windows, ensure that your user account can elevate to Administrator privileges.
+====
+
+The `crc start` command starts the {rh-ocp-local} instance and configured container runtime. It offers the following flags:
+
+[width="100%",cols="17%,15%,34%,34%",options="header",]
+|===
+
+|Flags
+|Type
+|Description
+|Default value
+
+| -b, --bundle
+| string
+| Bundle path/URI - absolute or local path, HTTP, HTTPS or docker URI, for example, `'https://foo.com/crc_libvirt_4.15.14_amd64.crcbundle', 'docker://quay.io/myorg/crc_libvirt_4.15.14_amd64.crcbundle:2.37.1'`
+| default `'/home/<user>/.crc/cache/ crc_libvirt_4.15.14_amd64.crcbundle'`
+
+|-c, –cpus
+|int
+|Number of CPU cores to assign to the instance
+| 4
+
+|–disable-update-check
+|
+|Do not check for update
+|
+
+|-d, –disk-size
+|uint
+|Total size in GiB of the disk used by the instance
+|31
+
+|-h, –help
+|
+|Help for start
+|
+
+|-m, –memory
+|int
+|MiB of memory to assign to the instance
+|10752
+
+|-n, –nameserver
+| string |IPv4 address of name server to use for the instance
+|
+
+|-o, –output
+|string
+|Output format in JSON
+|
+
+|-p, –pull-secret-file
+| string
+|File path of image pull secret (download from https://console.redhat.com/openshift/create/local) |
+|===
+
+It also offers the following global flags:
+
+[width="100%",cols="17%,15%,34%,34%",options="header",]
+|===
+
+|Flags
+|Type
+|Description
+|Default value
+|–log-level
+|string
+|log level for example:
+
+* `+debug+`
+
+* `+info+`
+
+* `+warn+`
+
+* `+error+`
+|`+info+`
+
+|===
+
+The default configuration creates a virtual machine (VM) with 4 virtual CPUs, a disk size of  31 GiB, and 10 GiB of RAM. However, this default configuration is not sufficent to stably run {ProductShortName}.
+
+To increase the number of virtual CPUs to 6, the disk-size to 200 GiB, and the memory to 20 GiB, run `crc config` as follows:
++
+[source,terminal]
+----
+crc config set cpus 6
+----
+
++
+[source,terminal]
+----
+crc config set disk-size 200 
+----
+
++
+[source,terminal]
+----
+$ crc config set memory 20480
+----
+
+To check the configuration, run:
++
+[source,terminal]
+----
+crc config view
+----
+
+.Example Output
++
+[source,terminal]
+----
+- consent-telemetry    : yes
+- cpus                 : 6
+- disk-size            : 200
+- memory               : 16384
+----
+
+[NOTE]
+====
+Changes to the inputted configuration property are only applied when the CRC instance is started.
+
+If you already have a running CRC instance, for this configuration change to take effect, stop the CRC instance with `crc stop` and restart it with `crc start`.
+====
+
+[id="mta-7-status-ocp-local_{context}"]
+== Checking the status of {rh-ocp-local} instance
+
+To check the status of your {rh-ocp-local} instance, run:
+
++
+[source,terminal]
+----
+crc status
+----
+
+.Example Output
++
+[source,terminal]
+----
+CRC VM:          Running
+OpenShift:       Starting (v4.15.14)
+RAM Usage:       9.25GB of 20.97GB
+Disk Usage:      31.88GB of 212.8GB (Inside the CRC VM)
+Cache Usage:     26.83GB
+Cache Directory: /home/<user>/.crc/cache
+----
