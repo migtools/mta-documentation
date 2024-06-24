@@ -35,28 +35,7 @@ ifdef::mta[]
 :CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 endif::[]
 
-ifdef::mtr[]
-:ProductName: Migration Toolkit for Runtimes
-:DocInfoProductName: Migration Toolkit for Runtimes
-:DocInfoProductNumber: 1.2
-:ProductShortName: MTR
-:ProductFullName: Migration Toolkit for Runtimes (MTR)
-:LC_PSN: mtr
-:mta-cli: windup-cli
-:DocInfoProductNameURL: migration_toolkit_for_runtimes
-:WebName: web console
-:WebNameTitle: Web Console
-:WebNameURL: web_console_guide
-:WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 1.2.5
-:PluginName: MTR plugin
-:ProductDistributionVersion: 1.2.5.GA-redhat-00001
-:ProductDistribution: mtr-1.2.5.GA-offline
-:DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
-:IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
-:JiraWindupURL: https://issues.redhat.com/projects/WINDUP
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mtr/
-endif::[]
+
 
 // *******************
 // * Component names *
