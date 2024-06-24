@@ -3,7 +3,7 @@
 
 Migration Toolkit for Applications (MTA) is a set of tools that can be used to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift.
 
-This repository contains the files for Windup documentation.
+This repository contains the files for MTA documentation.
 
 ## Contributing to MTA documentation
 
