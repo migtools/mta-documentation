@@ -1,0 +1,33 @@
+// Module included in the following assemblies:
+//
+//docs/release_notes-7.1.0/master.adoc
+
+
+:_newdoc-version: 2.18.2
+:_template-generated: 2024-07-01
+
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-7-1-0_{context}"]
+= New features
+
+This section provides the new features and improvements of the {ProductFullName} 7.1.0.
+
+.A support for analyzing applications managed with Gradle has been added to {ProductShortName} 
+
+Previously, you could use the {ProductFullName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven. 
+
+.Assessment and review statuses are now displayed during the archetype assessment and review
+
+With this update, the status of the archetype assessment and review processes is displayed in the {ProductFullName} user interface (UI):
+
+* The assessment statuses are the following:
+** Completed: All required assessments completed.
+** InProgress: The assessment process is in progress.
+** NotStarted: The assessment process has not been started.
+* The review statuses are the following:
+** Completed: A review exists.
+** NotStarted: The review process has not been started.
+
+
+
