@@ -1,0 +1,84 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-cli-run-multiple-apps_{context}"]
+= Running the {CLINameTitle} against multiple applications
+
+You can run {ProductShortName} against multiple applications and generate a combined report. This can save you time and give you a better idea of how to prepare a set of applications for migration.
+
+This feature is currently a Developer Preview feature.
+
+[IMPORTANT]
+====
+Support for providing a single report when analyzing multiple applications on the CLI is Developer Preview software only. Developer Preview software is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview software for production or business-critical workloads. Developer Preview software provides early access to upcoming product software in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this software to test functionality and provide feedback during the development process. This software might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview software without an associated SLA.
+
+For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
+====
+
+.Procedure
+
+. Open a terminal and navigate to the `<{ProductShortName}_HOME>/` directory.
+
+. Execute the `{mta-cli}` script, or `{mta-cli}.exe` for Windows, and specify the appropriate arguments:
++
+[source,terminal]
+----
+$ ./{mta-cli} analyze --bulk --input=<path/to/source/A> --output=<path/to/output/ABC> --source <source_A> --target <target_A>
+$ ./{mta-cli} analyze --bulk --input=<path/to/source/B> --output=<path/to/output/ABC>  --source <source_B> --target <target_B>
+$ ./{mta-cli} analyze --bulk --input=<path/to/source/C> --output=<path/to/output/ABC> --source <source_C> --target <target_C>
+----
+
+* `--input`: The application to be evaluated.
+* `--output`: The output directory for the generated reports.
+* `--source`: The source technology for the application migration. For example, `weblogic`.
+* `--target`: The target technology for the application migration. For example, `eap8`.
++
+{ProductShortName} generates a single report, listing all issues that need to be resolved before the applications cane be migrated.
+
+. Access the report.
+
+// Discuss making one or more modules here
+
+[id="command-examples_2_{context}"]
+== {ProductShortName} command examples
+
+[discrete]
+=== Running {ProductShortName} on an application archive
+
+The following command analyzes the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:
+
+[source,terminal,subs="attributes+"]
+----
+$ <{ProductShortName}_HOME>/{mta-cli} analyze \
+    --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ --source eap5 --target eap7 \
+----
+[]
+
+[discrete]
+=== Running {ProductShortName} on source code
+
+The following command analyzes the link:https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
+
+[source,terminal,subs="attributes+"]
+----
+
+$ <{ProductShortName}_HOME>/{mta-cli} analyze --mode source-only --input /path/to/seam-booking-5.2/ \
+    --output /path/to/report-output/ --target eap6 --packages org.jboss.seam
+----
+[]
+[discrete]
+=== Running cloud-readiness rules
+
+The following command analyzes the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:
+
+[source,terminal,subs="attributes+"]
+----
+$ <{ProductShortName}_HOME>/{mta-cli} analyze --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ \
+    --target eap7
+----
+[]
+

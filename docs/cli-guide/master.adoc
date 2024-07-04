@@ -37,8 +37,14 @@ include::topics/installing-cli-tool.adoc[leveloffset=+2]
 // CLI known issues
 include::topics/cli-tool-known-issues.adoc[leveloffset=+3]
 
+[id="running-cli"]
+=== Running the CLI
+
+You can run the CLI against one or more applications. The procedure for running the CLI against one application varies slightly from the procedure for running CLI against more than one application.
+
 // Run the CLI
-include::topics/mta-cli-run.adoc[leveloffset=+2]
+include::topics/mta-cli-run-single-app.adoc[leveloffset=+2]
+include::topics/mta-cli-run-multiple-apps.adoc[leveloffset=+2]
 
 // Analyze application source code
 include::topics/mta-cli-analyze.adoc[leveloffset=+3]
