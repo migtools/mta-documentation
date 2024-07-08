@@ -17,7 +17,6 @@ NOTE: If an application is associated with several archetypes, this application 
 
 . Open the {ProductShortName} web console.
 . Select the *Migration* view and click Archetype.
-. Click Archetype.
 . Click the *Options* menu ({kebab}) and select *Assess* from the drop-down menu.
 . From the list of available questionnaires, click *Take* to select the desired questionnaire.
 . In the *Assessment* menu, answer the required questions.
