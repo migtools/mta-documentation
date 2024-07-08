@@ -1,6 +1,6 @@
 :mta:
 include::topics/templates/document-attributes.adoc[]
-:_content-type: ASSEMBLY
+:_mod-docs-content-type: ASSEMBLY
 [id="cli-guide"]
 = CLI Guide
 
@@ -40,11 +40,23 @@ include::topics/cli-tool-known-issues.adoc[leveloffset=+3]
 [id="running-cli"]
 === Running the CLI
 
-You can run the CLI against one or more applications. The procedure for running the CLI against one application varies slightly from the procedure for running CLI against more than one application.
+You can run the {CLINameTitle} against one or more applications.
+
+Before {ProductShortName} 7.1.0, if you wanted to run the {CLINameTitle} against multiple applications, you ran a series of `--analyze` commands, each against an application, and each generating a separate report. This option, which is still fully supported, is described in xref:mta-cli-run-single-app_cli-guide[Running the {ProductShortName} {CLINameTitle} against an application].
+
+In {ProductShortName} 7.1.0 and later, you can the run the {CLINameTitle} against multiple applications using the `--bulk` option, to generate a single report. This option, which is presented as a Developer Preview, is described in xref:mta-cli-run-multiple-apps_cli-guide[Running the {ProductShortName} {CLINameTitle} against multiple applications and generating a single report (Developer Preview)].
+
+[IMPORTANT]
+====
+Support for providing a single report when analyzing multiple applications on the CLI is Developer Preview software only. Developer Preview software is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview software for production or business-critical workloads. Developer Preview software provides early access to upcoming product software in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this software to test functionality and provide feedback during the development process. This software might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview software without an associated SLA.
+
+For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
+====
+
 
 // Run the CLI
-include::topics/mta-cli-run-single-app.adoc[leveloffset=+2]
-include::topics/mta-cli-run-multiple-apps.adoc[leveloffset=+2]
+include::topics/mta-cli-run-single-app.adoc[leveloffset=+3]
+include::topics/mta-cli-run-multiple-apps.adoc[leveloffset=+3]
 
 // Analyze application source code
 include::topics/mta-cli-analyze.adoc[leveloffset=+3]
