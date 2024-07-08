@@ -24,7 +24,7 @@ NOTE: If an application is associated with several archetypes, this application 
 . Enter the following information:
 
 ** *Proposed Action*: Proposed action required to complete the migration or modernization of the archetype. 
-** *Effort estimate*: The level of effort required to perform the modernization or magration of the selected archetype.
+** *Effort estimate*: The level of effort required to perform the modernization or migration of the selected archetype.
 ** *Business criticality*: The level of criticality of the application to the business. 
 ** *Work Priority*: The archetype’s priority.
 
