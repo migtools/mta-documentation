@@ -19,6 +19,6 @@ NOTE: If an application is associated with several archetypes, this application 
 . Select the *Migration* view.
 . Click Archetype.
 . Click the *Options* menu ({kebab}) and select *Assess* from the drop-down menu.
-. From the list of available questionnaires, click *Take* to select the desired questionnaire questionnaire.
+. From the list of available questionnaires, click *Take* to select the desired questionnaire.
 . In the *Assessment* menu, answer the required questions.
 . Click *Save*.
