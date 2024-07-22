@@ -1,0 +1,10 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+
+[id="installing-cli-tool-disconnected_{context}"]
+= Installing the {CLINameTitle} in a disconnected environment
+
+You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems in a disconnected environment.
