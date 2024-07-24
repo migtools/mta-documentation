@@ -17,6 +17,14 @@ This section provides the new features and improvements of the {ProductFullName}
 
 Previously, you could use the {ProductFullName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven. 
 
+
+
+.Support for analyzing .NET applications has been added to MTA
+
+In {ProductFullName} 7.1.0, you can use MTA to analyze Windows-only .NET framework applications to aid migration from version 4.12 or later to multi-platform .NET 8.0 running on OpenShift Container platform.
+
+
+
 .Assessment and review statuses are now displayed during the archetype assessment and review
 
 With this update, the status of the archetype assessment and review processes is displayed in the {ProductFullName} user interface (UI):
@@ -31,3 +39,47 @@ With this update, the status of the archetype assessment and review processes is
 
 
 
+.Assessment and review statuses are now displayed in the MTA UI
+
+Previously, the status of assessment and review was only displayed for applications. With this update, the status of the archetype assessment and review processes is displayed in the {ProductFullName} user interface (UI):
+
+* The assessment statuses are the following:
+** Completed: All required assessments completed.
+** InProgress: The assessment process is in progress.
+** NotStarted: The assessment process has not been started.
+* The review statuses are the following:
+** Completed: A review exists.
+** NotStarted: The review process has not been started.
+
+
+
+.New feature Insights has been added
+
+Issues that do not impact the migration but contain useful information about the technologies used in the application and their usage in the code are categorized as Insights. Issues do not have an effort and category assigned, but might have a message and tag. You can view Insights in the Static report under the Insights tab and in the analysis output under the Insights section. 
+
+
+
+.A new  Task Manager tab is now available in the MTA user interface
+
+Previously, tasks that were being executed and the queue of pending tasks were not displayed in the {ProductFullName} user interface (UI). With this update , a new Task Manager tab is available to view the following information about the tasks that are in the queue for execution:
+
+* *ID*: The ID of the task.
+* *Application*: The application name associated with the task.
+* *Status*: The status of the task, for example, *Scheduled*, *Pending*, *In progress*, *Succeeded*, or *Failed*.
+* *Kind*: The type of the task, for example, *analyzer* or *discovery*.
+* *Priority*: Priority of the task. The value is from zero to any positive integer. The higher the value in this column, the higher the priority of the task.
+* *Preemption*: It allows the scheduler to cancel a running task and free the resources for higher priority tasks. The values are *true* or *false*.
+* *Created By*: The name of the user who created the task.
+
+
+
+.Support for providing a single report when analyzing multiple applications on the CLI
+
+{mta-cli} was designed to analyze a single application and produce a report about that application. With this update, you can use the `--bulk` option with the `analyze` command to analyze multiple applications and generate a single report for all of them.
+
+[IMPORTANT]
+====
+Providing a single report when analyzing multiple applications on the CLI is Developer Preview feature only. Developer Preview feature is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview feature for production or business-critical workloads. Developer Preview feature provides early access to upcoming product feature in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this feature to test functionality and provide feedback during the development process. This feature might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview feature without an associated SLA.
+
+For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
+====
