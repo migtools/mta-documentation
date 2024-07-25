@@ -43,6 +43,9 @@ include::topics/mta-cli-run.adoc[leveloffset=+2]
 // Analyze application source code
 include::topics/mta-cli-analyze.adoc[leveloffset=+3]
 
+// Select language providers for the multi-application analysis
+include::topics/proc_selecting-language-providers-for-analysis.adoc[leveloffset=+3]
+
 // Transform XML rules to YAML
 include::topics/mta-cli-transform.adoc[leveloffset=+3]
 
