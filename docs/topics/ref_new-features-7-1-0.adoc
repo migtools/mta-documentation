@@ -13,29 +13,42 @@
 
 This section provides the new features and improvements of the {ProductFullName} 7.1.0.
 
-.A support for analyzing applications managed with Gradle has been added to {ProductShortName} 
+.Support for analyzing applications managed with Gradle has been added to {ProductShortName} 
 
 Previously, you could use the {ProductFullName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven. 
+
+[IMPORTANT]
+====
+Support for analyzing applications managed with Gradle is Developer Preview feature only. Developer Preview feature is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview feature for production or business-critical workloads. Developer Preview feature provides early access to upcoming product feature in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this feature to test functionality and provide feedback during the development process. This feature might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview feature without an associated SLA.
+
+For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
+====
 
 
 
 .Support for analyzing .NET applications has been added to MTA
 
-In {ProductFullName} 7.1.0, you can use MTA to analyze Windows-only .NET framework applications to aid migration from version 4.12 or later to multi-platform .NET 8.0 running on OpenShift Container platform.
+In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze Windows-only .NET framework applications to aid migration from version 4.12 or later to multi-platform .NET 8.0 running on OpenShift Container platform.
+
+[IMPORTANT]
+====
+Support for analyzing .NET applications is Developer Preview feature only. Developer Preview feature is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview feature for production or business-critical workloads. Developer Preview feature provides early access to upcoming product feature in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this feature to test functionality and provide feedback during the development process. This feature might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview feature without an associated SLA.
+
+For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
+====
 
 
 
-.Assessment and review statuses are now displayed during the archetype assessment and review
+.Support for languages other than Java
 
-With this update, the status of the archetype assessment and review processes is displayed in the {ProductFullName} user interface (UI):
+In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze applications written in languages other than Java. To run analysis on applications written in languages other than Java, add a custom rule set and do not specify a target language.
 
-* The assessment statuses are the following:
-** Completed: All required assessments completed.
-** InProgress: The assessment process is in progress.
-** NotStarted: The assessment process has not been started.
-* The review statuses are the following:
-** Completed: A review exists.
-** NotStarted: The review process has not been started.
+[IMPORTANT]
+====
+Support for languages other than Java is Developer Preview feature only. Developer Preview feature is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview feature for production or business-critical workloads. Developer Preview feature provides early access to upcoming product feature in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this feature to test functionality and provide feedback during the development process. This feature might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview feature without an associated SLA.
+
+For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
+====
 
 
 
