@@ -246,6 +246,7 @@ The analyzer currently supports the following `provider` conditions:
 * `builtin`
 * `java`
 * `go`
+* `.NET`
 
 ===== `builtin` provider
 
