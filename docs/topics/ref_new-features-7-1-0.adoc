@@ -86,6 +86,12 @@ Previously, tasks that were being executed and the queue of pending tasks were n
 
 
 
+.Multiple applications can now be selected to filter the applications list in Application Inventory
+
+Previously, you could select only one application to filter the results on the Application Inventory page. With this update, you can select multiple applications as a single filter to display the list of applications corresponding to this filter.
+
+
+
 .Support for providing a single report when analyzing multiple applications on the CLI
 
 {mta-cli} was designed to analyze a single application and produce a report about that application. With this update, you can use the `--bulk` option with the `analyze` command to analyze multiple applications and generate a single report for all of them.
