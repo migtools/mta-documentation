@@ -94,7 +94,7 @@ Previously, you could select only one application to filter the results on the A
 
 .Support for providing a single report when analyzing multiple applications on the CLI
 
-{mta-cli} was designed to analyze a single application and produce a report about that application. With this update, you can use the `--bulk` option with the `analyze` command to analyze multiple applications and generate a single report for all of them.
+{mta-cli} was designed to analyze a single application and produce a report about that application. With this update, you can use the `--bulk` option of  the `analyze` command to analyze multiple applications, one `analyze` command per application,  but with a common output file for all of the reports. As described in the {UserCLIBookName}, this results in {mta-cli} generating a single analysis report for all the applications, instead of generating a separate report for each application.  
 
 [IMPORTANT]
 ====
