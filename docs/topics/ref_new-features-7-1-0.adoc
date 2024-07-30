@@ -54,7 +54,7 @@ For more information about the support scope of Red{nbsp}Hat Developer Preview s
 
 .Assessment and review statuses are now displayed in the MTA UI
 
-Previously, the status of assessment and review was only displayed for applications. With this update, the status of the archetype assessment and review processes is displayed in the {ProductFullName} user interface (UI):
+In earlier releases of {ProductShortName}, the status of the assessment and the review was only displayed for applications. With this update, the status of the archetype assessment and review processes is displayed in the {ProductFullName} user interface (UI):
 
 * The assessment statuses are the following:
 ** Completed: All required assessments completed.
