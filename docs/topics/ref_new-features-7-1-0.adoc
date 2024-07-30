@@ -72,7 +72,7 @@ Issues that do not impact the migration but contain useful information about the
 
 
 
-.A new  Task Manager tab is now available in the MTA user interface
+.A new Task Manager tab is now available in the {ProductShortName} user interface
 
 Previously, tasks that were being executed and the queue of pending tasks were not displayed in the {ProductFullName} user interface (UI). With this update , a new Task Manager tab is available to view the following information about the tasks that are in the queue for execution:
 
