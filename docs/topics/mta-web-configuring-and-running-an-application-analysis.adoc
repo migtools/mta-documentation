@@ -93,7 +93,11 @@ Analysis takes minutes to hours to run depending on the size of the application 
 {ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.
 ====
 
-. Optional: To track the status of your active analysis tasks, click the *Task Manager* tab or the popover message on the application name. The *Task Manager* displays the following information:
+. Optional: To track the status of your active analysis tasks, open the *Task Manager* tab by clicking the notifications button.
++
+Alternatively, hover over the application name.
++
+The *Task Manager* displays the following information:
 
 ** *ID*: The ID of the task.
 ** *Application*: The application name associated with the task.
