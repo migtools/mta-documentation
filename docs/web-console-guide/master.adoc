@@ -13,7 +13,7 @@ include::topics/templates/document-attributes.adoc[]
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[leveloffset=+1]
 
-[id="mta-6-ui-guide-introduction"]
+[id="mta-ui-guide-introduction"]
 == Introduction
 
 // About the {WebConsoleBookName}
@@ -25,7 +25,7 @@ include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 // About the {WebName}
 include::topics/about-the-user-interface.adoc[leveloffset=+2]]
 
-[id=mta-6-ui-interface-views]
+[id=mta-ui-interface-views]
 == User interface views
 
 The {ProductName} ({ProductShortName}) {WebName} has two views:
@@ -33,9 +33,9 @@ The {ProductName} ({ProductShortName}) {WebName} has two views:
 * Administration view
 * Migration view
 
-In *Administration* view, you configure the instance environment, working with credentials, repositories, HTTP and HTTPS proxy definitions, custom migration targets, and issue management.
+In *Administration* view, administrators can configure the instance environment, work with credentials and repositories, define HTTP and HTTPS proxies, specify custom migration targets, manage issues, and add custom assessment questionnaires.
 
-In *Migration* view, you perform application assessments and analyses, review reports, and add applications for assessment and analysis.
+In *Migration* view, all authorized users can review reports, add applications for assessment and analysis. perform application assessments and analyses, create migration waves, view issues that could potentially impact migration, view the status of analysis and discovery tasks through Task Manager. The permissions of the different user roles -- administrators, architects, and migrators -- vary in this view.
 
 // == Administration view
 // include::topics/mta-web-administration-view.adoc[leveloffset=+1]
