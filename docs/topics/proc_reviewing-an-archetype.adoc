@@ -1,0 +1,31 @@
+:_newdoc-version: 2.18.2
+:_template-generated: 2024-06-26
+:_mod-docs-content-type: PROCEDURE
+
+[id="reviewing-an-archetype_{context}"]
+= Reviewing an archetype
+
+An archetype is considered reviewed when it has been reviewed once even if multiple questionnaires have been marked as required. 
+
+NOTE: If an application is associated with several archetypes, this application is considered reviewed when all associated archetypes have been reviewed. 	
+
+.Prerequisites
+
+* You are logged in to an {ProductShortName} server. 	
+
+.Procedure
+
+. Open the {ProductShortName} web console.
+. Select the *Migration* view and click *Archetype*.
+. Click the *Options* menu ({kebab}) and select *Review* from the drop-down menu..
+. From the list of available questionnaires, click *Take* to select the desired assessment questionnaire.
+. In the *Assessment* menu, answer the required questions.
+. Select *Save and Review*. You will automatically be redirected to the *Review* tab.
+. Enter the following information:
+
+** *Proposed Action*: Proposed action required to complete the migration or modernization of the archetype. 
+** *Effort estimate*: The level of effort required to perform the modernization or migration of the selected archetype.
+** *Business criticality*: The level of criticality of the application to the business. 
+** *Work Priority*: The archetype’s priority.
+
+. Click *Submit review*. 

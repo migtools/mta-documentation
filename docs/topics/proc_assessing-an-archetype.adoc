@@ -1,0 +1,23 @@
+:_newdoc-version: 2.18.2
+:_template-generated: 2024-06-26
+:_mod-docs-content-type: PROCEDURE
+
+[id="assessing-an-archetype_{context}"]
+= Assessing an archetype
+
+An archetype is considered assessed when all required questionnaires have been answered.
+
+NOTE: If an application is associated with several archetypes, this application is considered assessed when all associated archetypes have been assessed. 
+
+.Prerequisites
+
+* You are logged in to an {ProductShortName} server. 	
+
+.Procedure
+
+. Open the {ProductShortName} web console.
+. Select the *Migration* view and click Archetype.
+. Click the *Options* menu ({kebab}) and select *Assess* from the drop-down menu.
+. From the list of available questionnaires, click *Take* to select the desired questionnaire.
+. In the *Assessment* menu, answer the required questions.
+. Click *Save*.
