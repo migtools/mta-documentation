@@ -93,21 +93,7 @@ Analysis takes minutes to hours to run depending on the size of the application 
 {ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.
 ====
 
-. Optional: To track the status of your active analysis tasks, open the *Task Manager* tab by clicking the notifications button.
+. Optional: To track the status of your active analysis task, open the *Task Manager* drawer by clicking the notifications button.
 +
-Alternatively, hover over the application name.
-+
-The *Task Manager* displays the following information:
-
-** *ID*: The ID of the task.
-** *Application*: The application name associated with the task.
-** *Status*: The status of the task, for example, *Scheduled*, *Pending*, *In progress*, *Succeeded*, or *Failed*.
-** *Kind*: The type of the task, for example, *analyzer* or *discovery*.
-** *Priority*: Priority of the task.
-** *Preemption*: This column shows if the task must be executed prior to any other task. The values are *true* or *false*.
-** *Created By*: The name of the user who created the task.
-
-. When analysis is complete, click the *Report* link to see the results of the analysis.
-. Optional: Display the details of the analysis:
-.. Click the Options menu ({kebab}).
-.. Select *Analysis details*. You can choose either the YAML or JSON format.
+Alternatively, hover over the application name to display the pop-over window.
+. When analysis is complete, open the *Task Manager* page to display the analysis details.
