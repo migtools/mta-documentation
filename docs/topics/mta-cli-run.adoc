@@ -39,7 +39,7 @@ The following command analyzes the link:https://github.com/windup/windup/blob/ma
 ----
 $ <{ProductShortName}_HOME>/{mta-cli} analyze \
     --input /path/to/jee-example-app-1.0.0.ear \
-    --output /path/to/report-output/ --source eap5 --target eap7 \
+    --output /path/to/report-output/ --source eap5 --target eap7
 ----
 []
 
