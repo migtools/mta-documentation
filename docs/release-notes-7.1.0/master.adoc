@@ -1,5 +1,5 @@
 :mta:
-include::../topics/templates/document-attributes.adoc[]
+include::topics/templates/document-attributes.adoc[]
 :toc:
 :toclevels: 3
 :numbered:
@@ -11,7 +11,7 @@ include::../topics/templates/document-attributes.adoc[]
 = Release Notes
 
 //Inclusive language statement
-include::../topics/making-open-source-more-inclusive.adoc[]
+include::topics/making-open-source-more-inclusive.adoc[]
 
 [id="release-notes-introduction"]
 == Introduction
@@ -20,7 +20,7 @@ include::../topics/making-open-source-more-inclusive.adoc[]
 [id="mta-7-1-0"]
 == {ProductShortName} 7.1.0
 
-include::../topics/ref_new-features-7-1-0.adoc[leveloffset=+2]
+include::topics/ref_new-features-7-1-0.adoc[leveloffset=+2]
 
 
 

@@ -17,12 +17,9 @@ This section provides the new features and improvements of the {ProductFullName}
 
 Previously, you could use the {ProductFullName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven. 
 
-[IMPORTANT]
-====
-Support for analyzing applications managed with Gradle is Developer Preview feature only. Developer Preview feature is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview feature for production or business-critical workloads. Developer Preview feature provides early access to upcoming product feature in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this feature to test functionality and provide feedback during the development process. This feature might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview feature without an associated SLA.
+:FeatureName: Support for analyzing applications managed with Gradle
 
-For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
-====
+include::../snippets/developer-preview-admonition.adoc[]
 
 
 
@@ -30,12 +27,9 @@ For more information about the support scope of Red{nbsp}Hat Developer Preview s
 
 In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze Windows-only .NET framework applications to aid migration from version 4.5 or later to multi-platform .NET 8.0 running on OpenShift Container platform.
 
-[IMPORTANT]
-====
-Support for analyzing .NET applications is a Developer Preview feature only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated SLA.
+:FeatureName: Support for analyzing .NET applications
 
-For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
-====
+include::../snippets/developer-preview-admonition.adoc[]
 
 
 
@@ -43,16 +37,13 @@ For more information about the support scope of Red{nbsp}Hat Developer Preview s
 
 In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze applications written in languages other than Java. To run analysis on applications written in languages other than Java, add a custom rule set and do not specify a target language.
 
-[IMPORTANT]
-====
-Support for languages other than Java is Developer Preview feature only. Developer Preview feature is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview feature for production or business-critical workloads. Developer Preview feature provides early access to upcoming product feature in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this feature to test functionality and provide feedback during the development process. This feature might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview feature without an associated SLA.
+:FeatureName: Support for languages other than Java
 
-For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
-====
+include::../snippets/developer-preview-admonition.adoc[]
 
 
 
-.Assessment and review statuses are now displayed in the MTA UI
+.Assessment and review statuses are now displayed in the {ProductShortName} UI
 
 In earlier releases of {ProductShortName}, the status of the assessment and the review was only displayed for applications. With this update, the status of the archetype assessment and review processes is displayed in the {ProductFullName} user interface (UI):
 
@@ -70,11 +61,28 @@ In earlier releases of {ProductShortName}, the status of the assessment and the 
 
 Issues that do not impact the migration but contain useful information about the technologies used in the application and their usage in the code are categorized as Insights. Insights do not have an effort and category assigned, but might have a message and tag. You can view Insights in the Static report under the Insights tab and in the analysis output under the Insights section. 
 
+:FeatureName: Insights
+
+include::../snippets/technology-preview-admonition.adoc[]
+
+
+
+.New {ProductShortName} CLI options are available to select language providers when analyzing multi-language applications
+
+Previously, you could not select specific language providers to run separately for the analysis of a multi-language application. With this update, you can use the new `--provider` {ProductShortName} CLI option to explicitly set which language provider to run.
+
+The following CLI options are also available with this update:
+
+* `--list-providers` to list language providers supported for the analysis.
+* `--provider-override` to override an existing supported language provider or to run your own unsupported provider.
+
+NOTE: You can now also configure supported language provider options in a provider’s configuration file.
+
 
 
 .A new Task Manager tab is now available in the {ProductShortName} user interface
 
-In earlier releases of {ProductShortName}, tasks that were being performed and the queue of pending tasks were not displayed in the {ProductFullName} user interface (UI). With this update , a new Task Manager tab is available to view the following information about the tasks that are queued:
+In earlier releases of {ProductShortName}, tasks that were being performed and the queue of pending tasks were not displayed in the {ProductFullName} user interface (UI). With this update, a new Task Manager tab is available to view the following information about the tasks that are queued:
 
 * *ID*: The ID of the task.
 * *Application*: The application name associated with the task.
@@ -96,9 +104,6 @@ Previously, you could select only one application to filter the results on the A
 
 {mta-cli} was designed to analyze a single application and produce a report about that application. With this update, you can use the `--bulk` option of  the `analyze` command to analyze multiple applications, one `analyze` command per application,  but with a common output file for all of the reports. As described in the {UserCLIBookName}, this results in {mta-cli} generating a single analysis report for all the applications, instead of generating a separate report for each application.  
 
-[IMPORTANT]
-====
-Providing a single report when analyzing multiple applications on the CLI is Developer Preview feature only. Developer Preview feature is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview feature for production or business-critical workloads. Developer Preview feature provides early access to upcoming product feature in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this feature to test functionality and provide feedback during the development process. This feature might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview feature without an associated SLA.
+:FeatureName: Support for providing a single report when analyzing multiple applications on the CLI
 
-For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
-====
+include::../snippets/developer-preview-admonition.adoc[]
