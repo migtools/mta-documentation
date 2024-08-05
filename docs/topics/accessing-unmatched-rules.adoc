@@ -1,0 +1,14 @@
+// Module included in the following assemblies:
+//
+// * docs/
+
+:_content-type: PROCEDURE
+[id="accessing-unmatched-rules_{context}"]
+= Accessing unmatched rules
+
+
+. To access unmatched rules, you must run the analysis with enhanced logging enabled.
+
+. Navigate to analysis details, and select the `analysis-output.yaml` file.
+
+. For each ruleset there is an *unmatched* section that will list the rule ids that did not find matched rules.
