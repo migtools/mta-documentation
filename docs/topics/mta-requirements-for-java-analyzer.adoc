@@ -1,0 +1,26 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-requirements-for-java-analyzer_{context}"]
+= Adding minimum requirements for Java analyzer and discovery
+
+There is a minimum required for the Java analyzer, and as a result, the  discovery task.
+
+The minimum requirement is 1.5 GiB. However, this minimum requirement is not unadvisable. The suggested requirement is a minimum of 2 GiB.
+
+This minimum requirement can be set in `provider_java_container_limits_memory` and `provider_java_container_requests_memory` options in the Tackle custom resource.
+
+[source,yaml]
+----
+kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: tackle
+  namespace: openshift-mta
+spec:
+  feature_auth_required: 'true'
+  provider_java_container_limits_memory: 2Gi
+  provider_java_container_requests_memory: 2Gi
+----
