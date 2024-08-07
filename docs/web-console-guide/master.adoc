@@ -46,7 +46,7 @@ include::topics/mta-7-installing-web-console-on-openshift.adoc[leveloffset=+1]
 [id="configuring-the-instance-environment"]
 == Configuring the instance environment
 
-You can configure the followiby using Task Managerng in *Administration* view:
+You can configure the following in *Administration* view:
 
 * General
 * Credentials
