@@ -51,18 +51,17 @@ You can configure the following in *Administration* view:
 * General
 * Credentials
 * Repositories
-* HTTP and HTTPS proxy settings
+* Proxy (HTTP and HTTPS proxy settings)
 * Custom migration targets
 * Issue management
+* Assessment questionnaires
 
 [id="general-configuration"]
 === General
 
-You can enable or disable the following options:
+You can enable or disable the following option:
 
-* Reviewing applications without running an assessment first
-* Downloading HTML reports
-* Downloading CSV reports
+* Allow reports to be downloaded after running an analysis
 
 [id="configuring-credentials"]
 === Configuring credentials
@@ -70,8 +69,10 @@ You can enable or disable the following options:
 You can configure the following types of credentials in *Administration* view:
 
 * Source control
-* Maven
+* Maven settings file
 * Proxy
+* Basic auth (Jira)
+* Bearer token (Jira)
 
 include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
 include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
@@ -100,6 +101,8 @@ include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
 // === Configuring HTTP and HTTPS proxy settings
 include::topics/mta-web-proxy-config.adoc[leveloffset=2]
 
+include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
+
 // === Seeding instances
 include::topics/mta-web-seeding-instances.adoc[leveloffset=2]
 
@@ -126,12 +129,12 @@ A Jira connection that was used for xref:../../../docs/topics/mta-web-creating-j
 
 You can use the {ProductFullName} {WebName} to perform the following tasks:
 
-* Add applications.
-* Assign application credentials.
-* Import a list of applications.
-* Download a CSV template for importing application lists.
-* Create application migration waves.
-* Create Jira issues for migration waves.
+* Add applications
+* Assign application credentials
+* Import a list of applications
+* Download a CSV template for importing application lists
+* Create application migration waves
+* Create Jira issues for migration waves
 
 {ProductShortName} {WebName} applications have the following attributes:
 
@@ -212,7 +215,7 @@ include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[lev
 include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+3]
 include::topics/mta-web-downloading-an-analysis-report.adoc[leveloffset=+3]
 
-include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
+// include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
 
 
 // **********************************
