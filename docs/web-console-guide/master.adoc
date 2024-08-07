@@ -46,7 +46,7 @@ include::topics/mta-7-installing-web-console-on-openshift.adoc[leveloffset=+1]
 [id="configuring-the-instance-environment"]
 == Configuring the instance environment
 
-You can configure the following in *Administration* view:
+You can configure the followiby using Task Managerng in *Administration* view:
 
 * General
 * Credentials
@@ -77,7 +77,7 @@ include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
 include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
 include::topics/mta-web-config-proxy-credentials.adoc[leveloffset=+3]
 
-[id="configuring-repositories"]
+[id="configuring-repositoriesby using Task Manager"]
 === Configuring repositories
 
 You can configure the following types of repositories in *Administration* view:
@@ -141,7 +141,7 @@ You can use the {ProductFullName} {WebName} to perform the following tasks:
 * Tags (optional, chosen from a list)
 * Owner (optional, chosen from a list)
 * Contributors (optional, chosen from a list)
-* Source code (a path entered by the user)
+* Source code (a path enteredby using Task Manager by the user)
 * Binary (a path entered by the user)
 
 //include::topics/mta-web-application-attributes.adoc[leveloffset=+2]
@@ -212,7 +212,9 @@ include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[lev
 //include::topics/proc_displaying-the-analysis-details.adoc[leveloffset=+3]
 include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+3]
 include::topics/mta-web-downloading-an-analysis-report.adoc[leveloffset=+3]
-include::topics/mta-web-reviewing-a-task-log.adoc[leveloffset=+2]
+include::topics/mta-web-controlling-tasks-with-task-manager.adoc[leveloffset=+2]
+include::topics/mta-web-reviewing-a-task-log.adoc[leveloffset=+3]
+include::topics/mta-web-controlling-task-order-with-task-manager.adoc[leveloffset=+3]
 include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
 
 

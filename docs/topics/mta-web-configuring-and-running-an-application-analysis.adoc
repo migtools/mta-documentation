@@ -96,4 +96,10 @@ Analysis takes minutes to hours to run depending on the size of the application 
 . Optional: To track the status of your active analysis task, open the *Task Manager* drawer by clicking the notifications button.
 +
 Alternatively, hover over the application name to display the pop-over window.
-. When analysis is complete, open the *Task Manager* page to display the analysis details.
+. When analysis is complete, to see its results, open the application drawer by clicking on the application name.
++
+Alternatively, open the *Task Manager* page and perform either of the following steps:
+
+* Click on the status of the analysis task in the *Status* column.
+* Click the *Options* menu ({kebab}) for the analysis task and select *Task details*.
+
