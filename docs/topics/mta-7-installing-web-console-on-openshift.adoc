@@ -9,10 +9,14 @@
 
 You can install the {ProductName} ({ProductShortName}) {WebName} on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions.
 
+<<<<<<< HEAD
 [IMPORTANT]
 ====
 To be able to create {ProductShortName} instances, you must first install the {ProductShortName} Operator.
 ====
+=======
+IMPORTANT: To be able to create {ProductShortName} instances, you must first install the {ProductShortName} Operator.
+>>>>>>> a5b27e9 (MTA-3416: Adding requirements for Java analyzer and discovery task)
 
 The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance.
 
@@ -161,7 +165,10 @@ The most commonly used CR settings are listed in this table:
 
 +
 .Example YAML file
+<<<<<<< HEAD
 
+=======
+>>>>>>> a5b27e9 (MTA-3416: Adding requirements for Java analyzer and discovery task)
 [source,YAML]
 ----
 kind: Tackle
