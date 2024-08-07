@@ -43,6 +43,8 @@ In *Migration* view, you perform application assessments and analyses, review re
 // Installation
 include::topics/mta-7-installing-web-console-on-openshift.adoc[leveloffset=+1]
 
+include::topics/mta-requirements-for-java-analyzer.adoc[leveloffset=+2]
+
 [id="configuring-the-instance-environment"]
 == Configuring the instance environment
 
