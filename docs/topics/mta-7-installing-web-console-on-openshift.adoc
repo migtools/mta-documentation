@@ -161,7 +161,7 @@ The most commonly used CR settings are listed in this table:
 |====
 +
 .Example YAML file
-[sample,YAML]
+[source,YAML]
 ----
 kind: Tackle
 apiVersion: tackle.konveyor.io/v1alpha1

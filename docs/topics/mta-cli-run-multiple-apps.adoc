@@ -1,0 +1,48 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="mta-cli-run-multiple-apps_{context}"]
+= Running the {ProductShortName} {CLINameTitle} against multiple applications and generating a single report (Developer Preview)
+
+You can now run the {ProductFullName} {CLINameTitle} against multiple applications and generate a combined report. This can save you time and give you a better idea of how to prepare a set of applications for migration.
+
+This feature is currently a Developer Preview feature.
+
+include::snippets/developer-preview-admonition.adoc[]
+
+.Procedure
+
+. Open a terminal and navigate to the `<{ProductShortName}_HOME>/` directory.
+
+. Run the `{mta-cli}` script, or `{mta-cli}.exe` for Windows, and specify the appropriate arguments, entering one input per `analyze` command, but entering the same output directory for all inputs. For example, to analyze applications A, B, and C:
+
+.. Enter the following command for input A:
++
+[source,terminal]
+----
+$ ./{mta-cli} analyze --bulk --input=<path_to_input_A> --output=<path_to_output_ABC> --source <source_A> --target <target_A>
+----
+* `--input`: The application to be evaluated.
+* `--output`: The output directory for the generated reports.
+* `--source`: The source technology for the application migration. For example, `weblogic`.
+* `--target`: The target technology for the application migration. For example, `eap8`.
+
+.. Enter the following command for input B:
++
+[source,terminal]
+----
+$ ./{mta-cli} analyze --bulk --input=<path_to_input_B> --output=<path_to_output_ABC>  --source <source_B> --target <target_B>
+----
+.. Enter the following command for input C:
++
+[source,terminal]
+----
+$ ./{mta-cli} analyze --bulk --input=<path_to_input_C> --output=<path_to_output_ABC>  --source <source_C> --target <target_C>
+----
++
+{ProductShortName} generates a single report, listing all issues that need to be resolved before the applications can be migrated.
+
+. Access the report.
+

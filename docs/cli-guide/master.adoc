@@ -1,6 +1,6 @@
 :mta:
 include::topics/templates/document-attributes.adoc[]
-:_content-type: ASSEMBLY
+:_mod-docs-content-type: ASSEMBLY
 [id="cli-guide"]
 = CLI Guide
 
@@ -37,8 +37,24 @@ include::topics/installing-cli-tool.adoc[leveloffset=+2]
 // CLI known issues
 include::topics/cli-tool-known-issues.adoc[leveloffset=+3]
 
+[id="running-cli"]
+=== Running the CLI
+
+You can run the {ProductFullName} {CLINameTitle} against one or more applications.
+
+Before {ProductShortName} 7.1.0, if you wanted to run the {CLINameTitle} against multiple applications, you ran a series of `--analyze` commands, each against an application, and each generating a separate report. This option, which is still fully supported, is described in xref:mta-cli-run-single-app_cli-guide[Running the {ProductShortName} {CLINameTitle} against an application].
+
+In {ProductShortName} 7.1.0 and later, you can run the {CLINameTitle} against multiple applications by using the `--bulk` option, to generate a single report. This option, which is presented as a Developer Preview, is described in xref:mta-cli-run-multiple-apps_cli-guide[Running the {ProductShortName} {CLINameTitle} against multiple applications and generating a single report (Developer Preview)].
+
+[IMPORTANT]
+====
+include::snippets/developer-preview.adoc[]
+====
+
 // Run the CLI
-include::topics/mta-cli-run.adoc[leveloffset=+2]
+include::topics/mta-cli-run-single-app.adoc[leveloffset=+3]
+
+include::topics/mta-cli-run-multiple-apps.adoc[leveloffset=+3]
 
 // Analyze application source code
 include::topics/mta-cli-analyze.adoc[leveloffset=+3]

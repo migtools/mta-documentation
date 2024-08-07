@@ -124,3 +124,7 @@ endif::[]
 :kebab: image:kebab.png[title="Options menu"]
 :reports: image:reports.png[title="*Reports* icon"]
 :edit: image:icon-edit.png[title="*Edit* icon"]
+
+//Developer Preview and Technology Preview snippets
+//Add additional software names as needed -- for example DevPreview-software_name_2
+:FeatureName: Support for providing a single report when analyzing multiple applications on the CLI

@@ -2,11 +2,11 @@
 //
 // * docs/cli-guide/master.adoc
 
-:_content-type: CONCEPT
+:_mod-docs-content-type: CONCEPT
 [id="mta-cli-transform_{context}"]
 = Performing transformation using the command line
 
-Transform has two sub commands - `openrewrite` and `rules`.
+Transform has two subcommands - `openrewrite` and `rules`.
 
 [source,terminal,subs="attributes+"]
 ----
@@ -25,14 +25,14 @@ Flags:
 
 Global Flags:
       --log-level uint32   log level (default 4)
-      --no-cleanup         do not cleanup temporary resources
+      --no-cleanup         do not clean up temporary resources
 
 Use "{mta-cli} transform [command] --help" for more information about a command.
 ----
 
 == `OpenRewrite`
 
-The `openrewrite` sub command allows running `OpenRewrite` recipes on source code.
+The `openrewrite` subcommand allows running `OpenRewrite` recipes on source code.
 [source,terminal,subs="attributes+"]
 ----
 Transform application source code using OpenRewrite recipes
@@ -50,7 +50,7 @@ Flags:
 
 Global Flags:
       --log-level uint32   log level (default 4)
-      --no-cleanup         do not cleanup temporary resources
+      --no-cleanup         do not clean up temporary resources
 ----
 
 .To run `transform openrewrite` on application source code, run the following command:
@@ -65,7 +65,7 @@ You can only use a single target to run the `transform overwrite` command.
 
 == `Rules`
 
-The `rules` sub command allows converting {LC_PSN} XML rules to analyzer-lsp YAML rules using `windup-shim`.
+The `rules` subcommand allows converting {LC_PSN} XML rules to analyzer-lsp YAML rules using `windup-shim`.
 [source,terminal,subs="attributes+"]
 ----
 Convert XML rules to YAML
@@ -102,4 +102,4 @@ Global Flags:
 ----
 {mta-cli} transform openrewrite --input=<path-to/jakartaee-duke> --target=jakarta-imports
 ----
-Inspect the `jakartaee-duke` application source code diff to see the transformation
+Inspect the `jakartaee-duke` application source code diff to see the transformation.
