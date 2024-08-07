@@ -6,7 +6,7 @@
 [id="installing-mta-disconnected-environment_{context}"]
 = Installing {ProductShortName} on a disconnected environment
 
-On a connected device, first download and save the {ProductShortName} binary. Then download and save the Podman images, the {ProductShortName} Podman image and the provider image that you need.
+On a connected device, first download and save the {ProductShortName} binary. Then download and save the Podman images, the {ProductShortName} CLI image and the provider image that you need.
 
 * Download the required {ProductShortName} CLI binary from the link:https://developers.redhat.com/products/mta/download[{ProductName} Red Hat Developer page]:
 ** CLI for Linux x86_64 
