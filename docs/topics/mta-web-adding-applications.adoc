@@ -52,4 +52,12 @@ NOTE: If you enter any value in any of the Binary section fields, all fields aut
 
 . Click *Create*. The new application appears in the list of defined applications.
 
+.Automated Tasks
+
+After adding a new application to the *Application Inventory*, you can set your cursor to hover over the application name to see the automated tasks spawned by adding the application. The language discovery task identifies the programming languages in the application. The technology discovery task identifies specific technologies in the application. The tasks automatically add appropriate tags to the application, reducing the effort involved in manually assigning tags to the application. After these tasks are complete, the number of tags added to the application will appear under the *Tags* column. To view the tags:
+
+. Click on the application's row entry. A side pane opens. 
+. Click the *Tags* tab. The tags attached to the application are displayed.
+
+You can add additional tags manually as needed. When MTA analyzes the application, it can add additional tags to the application automatically.
 // [Verification]

@@ -17,6 +17,8 @@
 
 {ProductName} ({ProductShortName}) accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.
 
+In {ProductShortName} 7.1 and later, when you add an application to the *Application Inventory*, {ProductShortName} automatically creates and executes language and technology discovery tasks. Language discovery identifies the programming languages used in the application. Technology discovery identifies technologies, such as Enterprise Java Beans (EJB), Spring, etc. Then, each task assigns appropriate tags to the application, reducing the time and effort you spend manually tagging the application.
+
 {ProductShortName} uses an extensive default questionnaire as the basis for assessing your applications, or you can create your own custom questionnaire, enabling you to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of an assessment as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work first, and which are not suitable for containerization.
 
 {ProductShortName} analyzes applications by applying one or more rulesets to each application considered to determine which specific lines of that application must be modified before it can be modernized.
