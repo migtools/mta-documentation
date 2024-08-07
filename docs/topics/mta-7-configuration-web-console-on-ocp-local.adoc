@@ -2,53 +2,28 @@
 [id="mta-7-configuration-web-console-on-ocp-local_{context}"]
 = Configuration of the {ProductName} Operator in a {rh-ocp-local} environment
 
-The following table shows the different configurations of {rh-ocp-local} tested and the results obtained:
+The following table shows the recommened configurations of {rh-ocp-local} tested:
 
 [width="100%",cols="25%,25%,25%,25%",options="header",]
 |===
 |Memory (GiB)
 |CPU
 |Disk sze (GiB)
-|Comments
-
-
-|20
-|4 (default)
-|200
-|{ProductShortName} does not run analysis due to insufficient CPU.
-
-|17
-|5
-|50
-|The hub pod does not start due to disk size.
-
-|17
-|5
-|200
-|The analysis is completed in approximately 3 minutes.
-
-|20
-|5
-|100
-|The hub pod does not start due to disk size.
 
 |20
 |5
 |110
-|The analysis is completed in approximately 5 minutes.
 
 |20
 |5
 |150
-|The analysis is completed in under 3 minutes.
 
 |20
 |5
 |200
-|The analysis is completed in approximately 2 minutes.
+
 
 |20
 |5
-|35, with the {ProductShortName} Operator configurations `+cache_data_volume_size+` and `+hub_bucket_volume_size+` set to 5GiB.
-|The analysis is completed in approximately 2 minutes,
+|35, with the {ProductShortName} Operator configurations `cache_data_volume_size` and `hub_bucket_volume_size` set to 5GiB.
 |===
