@@ -141,7 +141,7 @@ You can use the {ProductFullName} {WebName} to perform the following tasks:
 * Tags (optional, chosen from a list)
 * Owner (optional, chosen from a list)
 * Contributors (optional, chosen from a list)
-* Source code (a path enteredby using Task Manager by the user)
+* Source code (a path entered by the user)
 * Binary (a path entered by the user)
 
 //include::topics/mta-web-application-attributes.adoc[leveloffset=+2]
