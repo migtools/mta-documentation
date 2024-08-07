@@ -77,7 +77,7 @@ include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
 include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
 include::topics/mta-web-config-proxy-credentials.adoc[leveloffset=+3]
 
-[id="configuring-repositoriesby using Task Manager"]
+[id="configuring-repositories"]
 === Configuring repositories
 
 You can configure the following types of repositories in *Administration* view:
