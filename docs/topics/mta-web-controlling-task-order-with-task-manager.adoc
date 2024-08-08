@@ -20,7 +20,7 @@ You can only set *Preemption* for the following tasks:
 . In the {ProductShortName} user interface (UI), select the *Migration* view. 
 . Open the *Task Manager* page.
 . Click the *Options* menu ({kebab}) for the selected task.
-. Depending on you your scenario, complete one of the following steps:
+. Depending on your scenario, complete one of the following steps:
 
 ** To enable *Preemption* for the task, select *Enable preemption*. 
 ** To disable *Preemption* for the task with enabled *Preemption*, select *Disable preemption*.
