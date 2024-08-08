@@ -10,9 +10,6 @@ When analyzing a multi-language application with {ProductFullName} {CLINameTitle
 
 .Prerequisites
 
-** jq
-** oc
-** Podman
 * You are running the latest version of {ProductShortName} {CLINameTitle}.
 
 
