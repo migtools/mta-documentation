@@ -10,9 +10,6 @@ When analyzing a multi-language application with {ProductFullName} {CLINameTitle
 
 .Prerequisites
 
-* You have the following software installed on your system:
-** Python
-** Skopeo
 ** jq
 ** oc
 ** Podman
