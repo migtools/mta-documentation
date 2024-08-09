@@ -29,4 +29,4 @@ $ mta-cli analyze --list-providers
 $ mta-cli analyze --input <_path_to_the_source_repository_> --output <_path_to_the_output_directory_> --provider <_language_provider_> --rules <_path_to_custom_rules_>
 ----
 +
-Note that if you do not set the `--provider` option, the analysis fails because it detects unsupported providers.
+Note that if you do not set the `--provider` option, the analysis might fail because it detects unsupported providers. The analysis will complete without `--provider` only if all discovered providers are supported.
