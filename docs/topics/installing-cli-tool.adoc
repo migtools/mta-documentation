@@ -7,29 +7,16 @@
 [id="installing-cli-tool_{context}"]
 = Installing the {CLINameTitle}
 
-You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems.
-
+You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems using the downloadable `.zip` file.
 
 .Prerequisites
 
-* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from registry.redhat.io, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
-* Podman must be installed
-
-+
-[NOTE]
-.Podman
-====
-Podman is a daemonless, open source, Linux-native tool designed to make it easy to find, run, build, share, and deploy applications using Open Containers Initiative (OCI) Containers and Container Images.
-Podman provides a command-line interface (CLI) familiar to anyone who has used the Docker Container Engine.
-For more information on installing and using Podman, see link:https://podman.io/docs/installation[Podman installation instructions].
-====
+* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from `registry.redhat.io`, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
 
 [id="installing-downloadable-cli-zip_{context}"]
 == Installing the {CLINameTitle} `.zip` file
 
 .Procedure
-
-To install using the downloadable `.zip` file:
 
 . Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the OS-specific CLI file or the `src` file:
 +
@@ -46,35 +33,164 @@ When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with th
 [id="installing-using-podman_{context}"]
 == Installing the {CLINameTitle} using Podman
 
+You can install the {CLINameTitle} using `podman pull`.
+
 .Prerequisites
 
-* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from registry.redhat.io, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
+* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from `registry.redhat.io`, which requires authentication. See link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication] for additional details.
 
+* Podman must be installed.
+
+[NOTE]
+.Podman
+====
+Podman is a daemonless, open source, Linux-native tool designed to make it easy to find, run, build, share, and deploy applications using Open Containers Initiative (OCI) Containers and Container Images.
+Podman provides a command-line interface (CLI) familiar to anyone who has used the Docker Container Engine.
+For more information on installing and using Podman, see link:https://podman.io/docs/installation[Podman installation instructions].
+====
 
 .Procedure
 
-To install using `podman pull`:
-
-. To use Podman to authenticate to registry.redhat.io:
+. Use Podman to authenticate to `registry.redhat.io` by running the following command:
 +
 [source,terminal]
 ----
-podman login registry.redhat.io
+$ podman login registry.redhat.io
+----
++
+Enter the user name and password:
++
+[source,terminal]
+----
 Username: <username>
 Password: <***********>
 ----
-. Issue:
+
+. Copy the binary `PATH` to enable system-wide use by running the following command:
 +
 [source,terminal]
 ----
-podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{ProductVersion}):/usr/local/bin/mta-cli ./
+$ podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{ProductVersion}):/usr/local/bin/mta-cli ./
 ----
-+
-This command will copy the binary `PATH` for system-wide use.
 +
 [WARNING]
 ====
 Although installation using Podman is possible, downloading and installing the `.zip` file is the preferred installation.
 ====
 
+[id="installing-using-docker_{context}"]
+== Installing the {CLINameTitle} for use with Docker on Windows (Developer Preview)
 
+You can install the {CLINameTitle} for use with Docker on Windows. This is the required approach when migrating applications built with .NET framework 4.5 or later on Windows to cross-platform .NET 8.0.
+
+.Prerequisites
+
+* A host with Windows 11+ 64-bit version 21H2 or higher.
+
+* You have download the Docker Desktop for Windows installer. See link:https://docs.docker.com/desktop/install/windows-install/[Install Docker Desktop on Windows] for additional details.
+
+.Procedure
+
+. Open a PowerShell with Administrator privileges.
+
+. Ensure Hyper-V is installed and enabled:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>> Enable-WindowsOptionalFeature -Online `
+   -FeatureName Microsoft-Hyper-V-All
+----
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>> Enable-WindowsOptionalFeature -Online `
+   -FeatureName Containers
+----
++
+[NOTE]
+====
+You may need to reboot Windows.
+====
+
+. Install Docker Desktop on Windows. 
+
+.. Double-click `Docker_Desktop_Installer.exe` to run the installer. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
+
+.. Deselect the *Use WSL 2 instead of Hyper-V* option on the Configuration page to ensure that Docker will run Windows containers as the backend instead of Linux containers.
+
+. In PowerShell, create a folder for {ProductShortName}:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>> mkdir C:\Users\<your_user_name>\MTA
+----
++
+Replace `<your_user_name>` with the username for your home directory.
+
+. Extract the `{ProductShortNameLower}-{ProductVersion}-cli-windows.zip` file to the `MTA` folder:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>> cd C:\Users\<your_user_name>\Downloads
+----
++
+Replace `<your_user_name>` with the username for your home directory.
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>> Expand-Archive `
+   -Path "{ProductShortNameLower}-{ProductVersion}-cli-windows.zip" `
+   -DestinationPath "C:\Users\<your_user_name>\MTA"
+----
++
+Replace `<your_user_name>` with the username for your home directory.
+
+. Ensure Docker is running Windows containers:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>> docker version
+----
++
+[source,powershell]
+----
+Client:
+ Version:           27.0.3
+ API version:       1.46
+ Go version:        go1.21.11
+ Git commit:        7d4bcd8
+ Built:             Sat Jun 29 00:03:32 2024
+ OS/Arch:           windows/amd64 <1>
+ Context:           desktop-windows
+Server: Docker Desktop 4.32.0 (157355)
+ Engine:
+  Version:          27.0.3
+  API version:      1.46 (minimum version 1.24)
+  Go version:       go1.21.11
+  Git commit:       662f78c
+  Built:            Sat Jun 29 00:02:13 2024
+  OS/Arch:          windows/amd64 <1>
+  Experimental:     false
+----
+<1> Ensure the `OS/Arch` setting is `windows/amd64`.
+
+. Set the `PODMAN_BIN` environment variable to use Docker:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>> $env:PODMAN_BIN="C:\Windows\system32\docker.exe"
+----
+
+. Set the `DOTNET_PROVIDER_IMG` environment variable to use the upstream `dotnet-external-provider`:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>> $env:DOTNET_PROVIDER_IMG="quay.io/konveyor/dotnet-external-provider:v0.5.0"
+----
+
+. Set the `RUNNER_IMG` environment variable to use the upstream image:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>> $env:RUNNER_IMG="quay.io/konveyor/kantra:v0.5.0"
+----
