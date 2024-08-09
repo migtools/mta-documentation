@@ -11,7 +11,7 @@ You can display the activity log of the analysis. The activity log contains such
 .Procedure
 
 . In the *Migration* view, click *Application inventory*.
-. Click on the application raw to open the application drawer. 
+. Click on the application row to open the application drawer. 
 . Click the *Reports* tab.
 . Click *View analysis details* for the activity log of the analysis.
 . Optional: For issues and dependencies found during the analysis, click the *Details* tab in the application drawer and click *Issues* or *Dependencies*.
