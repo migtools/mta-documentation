@@ -82,12 +82,11 @@ Analysis engines use standard rules for a comprehensive set of migration targets
 . Click *Run*. 
 +
 The analysis status is `Scheduled` as {ProductShortName} downloads the image for the container to execute. When the image is downloaded, the status changes to `In-progress.`
-+
+
 [NOTE]
 ====
 Analysis takes minutes to hours to run depending on the size of the application and the capacity and resources of the cluster.
 ====
-+
 [TIP]
 ====
 {ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.
@@ -98,3 +97,7 @@ Analysis takes minutes to hours to run depending on the size of the application 
 Alternatively, hover over the application name to display the pop-over window.
 . When analysis is complete, to see its results, open the application drawer by clicking on the application name.
 
+[NOTE]
+====
+After creating an application instance on the Application Inventory page, the language discovery task starts, automatically pre-selecting the target filter option. However, you can choose a different language that you prefer.
+====

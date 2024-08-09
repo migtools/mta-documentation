@@ -230,6 +230,9 @@ when:
 
 ==== Provider conditions
 
+The Application Analyzer detects the programming languages, frameworks, and tools used to build an application, and it generates default rulesets for each supported provider using the Language Server Protocol (LSP) accordingly.
+Each supported provider has a ruleset defined by default and is run independently in a separate container.
+
 {ProductShortName} supports multi-language source code analysis. Searching for a specific language in the source code is enabled using the `provider` condition. This condition defines a search query for a specific language provider. The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
 
 The `provider` condition has the form `<provider_name>.<capability>`:
@@ -246,7 +249,29 @@ The analyzer currently supports the following `provider` conditions:
 * `builtin`
 * `java`
 * `go`
-* `.NET`
+* `dotnet`
++
+:FeatureName: dotnet provider
+include::snippets/technology-preview-admonition.adoc[]
+
+[[table-Supported-providers-and-rule-conditions]]
+[options="header"][cols="99,99,99,99"][%autowidth]
+|===
+
+|Provider rule conditions |Provider name
+
+| Providers that are fully supported and included in the product
+| Java
+
+| Providers that have rules already defined in the product
+| .NET
+
+|Providers that require custom rulesets for analysis
+a| 
+* Go 
+* Python
+* Node.js
+|===
 
 ===== `builtin` provider
 
@@ -407,6 +432,24 @@ when:
 <2> Upper bound on the version of the dependency.
 <3> Lower bound on the version of the dependency.
 
+===== `dotnet` provider
+
+The `dotnet` is an external provider used to analyze .NET and C# source code. Currently, the provider supports the `referenced` capability.
+
+.`referenced`
+
+The `referenced` capability enables the provider to find references in the source code.
+
+[source,terminal]
+----
+when:
+  dotnet.referenced:
+    pattern: "<pattern>" <1>
+    namespace: "<namespace>" <2>
+----
+<1> `pattern`: A regex pattern to match the desired reference. For example, HttpNotFound.
+<2> `namespace`: Specifies the namespace to search within. For example, System.Web.Mvc.
+
 ==== Custom variables
 
 Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule's action (see xref:yaml-rule-actions_{context}[Message actions]). They can be added to a rule in the `customVariables` field:
@@ -520,3 +563,10 @@ labels: <2>
 ----
 <1> The name must be unique within the provided rulesets.
 <2> Ruleset labels are inherited by all rules that belong to the ruleset.
+
+To execute any application analysis, run the following command. Replace <application_to_analyze> with your application, <output_dir> with the directory of your choice, and <custom_rule_dir> with the custom rulesets file.
+----
+$ mta-cli analyze --input=<application_to_analyze> --output=<output_dir> --rules=<custom_rule_dir> --enable-default-rulesets=false
+----
+
+On initiation, the mta-cli tool determines the type of application and the corresponding provider needed for analysis. It then starts the provider in a container that has the required dependencies and tools. Finally, the provider uses the analyzer to execute a series of rulesets to analyze the source code.
