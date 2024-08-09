@@ -92,6 +92,11 @@ Analysis takes minutes to hours to run depending on the size of the application 
 ====
 {ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.
 ====
++
+[NOTE]
+====
+After creating an application instance on the Application Inventory page, the language discovery task starts, automatically pre-selecting the target filter option. However, you can choose a different language that you prefer.
+====
 . When analysis is complete, click the *Report* link to see the results of the analysis.
 . Optional: Display the details of the analysis:
 .. Click the Options menu ({kebab}).
