@@ -22,6 +22,7 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 include::topics/ref_new-features-7-1-0.adoc[leveloffset=+2]
 
-
+include::topics/ref_upgrade-notes-7-1-0.adoc[leveloffset=+2]
+ 
 
 :!release-notes:

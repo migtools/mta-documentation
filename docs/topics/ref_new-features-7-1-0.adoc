@@ -23,7 +23,7 @@ include::../snippets/developer-preview-admonition.adoc[]
 
 
 
-.Support for analyzing .NET applications has been added to MTA
+.Support for analyzing .NET applications has been added to {ProductShortName}
 
 In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze Windows-only .NET framework applications to aid migration from version 4.5 or later to multi-platform .NET 8.0 running on OpenShift Container platform.
 
@@ -59,7 +59,7 @@ In earlier releases of {ProductShortName}, the status of the assessment and the 
 
 .New Insights feature has been added
 
-Issues that do not impact the migration but contain useful information about the technologies used in the application and their usage in the code are categorized as Insights. Insights do not have an effort and category assigned, but might have a message and tag. You can view Insights in the Static report under the Insights tab and in the analysis output under the Insights section. 
+Tagging rules that earlier generated tags and showed the presence of technology also generate insights now and show the location of code. While Insights do not impact the migration, they contain useful information about the technologies used in the application and their usage in the code. Insights do not have an effort and category assigned but might have a message and tag. You can view Insights in the Static report under the Insights tab.
 
 :FeatureName: Insights
 
@@ -74,15 +74,15 @@ Previously, you could not select specific language providers to run separately f
 The following CLI options are also available with this update:
 
 * `--list-providers` to list language providers supported for the analysis.
-* `--provider-override` to override an existing supported language provider or to run your own unsupported provider.
+* `--override-provider-settings` to override an existing supported language provider or to run your own unsupported provider.
 
 NOTE: You can now also configure supported language provider options in a provider’s configuration file.
 
 
 
-.A new Task Manager tab is now available in the {ProductShortName} user interface
+.A new Task Manager page is now available in the {ProductShortName} UI
 
-In earlier releases of {ProductShortName}, tasks that were being performed and the queue of pending tasks were not displayed in the {ProductFullName} user interface (UI). With this update, a new Task Manager tab is available to view the following information about the tasks that are queued:
+In earlier releases of {ProductShortName}, tasks that were being performed and the queue of pending tasks were not displayed in the {ProductFullName} user interface (UI). With this update, a new Task Manager page is available to view the following information about the tasks that are queued:
 
 * *ID*: The ID of the task.
 * *Application*: The application name associated with the task.
@@ -102,7 +102,7 @@ Previously, you could select only one application to filter the results on the A
 
 .Support for providing a single report when analyzing multiple applications on the CLI
 
-{mta-cli} was designed to analyze a single application and produce a report about that application. With this update, you can use the `--bulk` option of  the `analyze` command to analyze multiple applications, one `analyze` command per application,  but with a common output file for all of the reports. As described in the {UserCLIBookName}, this results in {mta-cli} generating a single analysis report for all the applications, instead of generating a separate report for each application.  
+{mta-cli} was designed to analyze a single application and produce a report about that application. With this update, you can use the `--bulk` option of the `analyze` command to analyze multiple applications, one `analyze` command per application, but with a common output file for all of the reports. As described in the {UserCLIBookName}, this results in {mta-cli} generating a single analysis report for all the applications, instead of generating a separate report for each application.  
 
 :FeatureName: Support for providing a single report when analyzing multiple applications on the CLI
 
