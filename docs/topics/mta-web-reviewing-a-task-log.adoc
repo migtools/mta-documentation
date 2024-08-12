@@ -10,8 +10,7 @@ To find details and logs of a particular {ProductFullName} task, you can use the
 .Procedure
 
 . In the *Migration* view, click *Task Manager*.
-. Open the *Task Manager* page.
-. Click the *Options* menu ({kebab}).
+. Click the *Options* menu ({kebab}) for the selected task.
 . Click *Task details*.
 +
 Alternatively, click on the task status in the *Status* column.
