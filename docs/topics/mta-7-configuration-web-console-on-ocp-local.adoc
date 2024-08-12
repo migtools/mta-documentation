@@ -14,13 +14,6 @@ The following table shows the recommended configurations of {rh-ocp-local} teste
 |5
 |110
 
-|20
-|5
-|150
-
-|20
-|5
-|200
 
 
 |20
