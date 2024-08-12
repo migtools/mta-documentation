@@ -14,8 +14,6 @@ The following table shows the recommended configurations of {rh-ocp-local} teste
 |5
 |110
 
-
-
 |20
 |5
 |35, with the {ProductShortName} Operator configurations `cache_data_volume_size` and `hub_bucket_volume_size` set to 5GiB.
