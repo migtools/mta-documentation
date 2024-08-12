@@ -21,3 +21,5 @@
 * *Support for Red Hat OpenShift on AWS (ROSA)* is introduced in {ProductShortName} 7.0.0.
 
 * *Support added for Azure Red Hat OpenShift (ARO)* is introduced in {ProductShortName} 7.0.0.
+
+* *Multi language support* is introduced in 7.1.0. In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze applications written in languages other than Java. (*Developer Preview*)
