@@ -17,11 +17,7 @@ You can only set *Preemption* for the following tasks:
 
 .Procedure
 
-. In the {ProductShortName} user interface (UI), select the *Migration* view. 
-. Open the *Task Manager* page.
-+
-image::task-manager-page.png[Task Manager]
-
+. In the *Migration* view, click *Task Manager*.
 . Click the *Options* menu ({kebab}) for the selected task.
 . Depending on your scenario, complete one of the following steps:
 
