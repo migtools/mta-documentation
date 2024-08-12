@@ -11,4 +11,7 @@
 * Language discovery
 * Technology discovery
 
-You can display task-related information by using either the *Task Manager* drawer for active tasks, or the *Task Manager* page in the *Migration* view for all tasks.
+You can display task-related information either of the following ways:
+
+* To display active tasks, open the *Task Manager* drawer by clicking the notifications button.
+* To display all tasks, open the *Task Manager* page in the *Migration* view.
