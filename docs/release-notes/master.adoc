@@ -15,56 +15,14 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 [id="release-notes-introduction"]
 == Introduction
-{ProductName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.
+{ProductFullName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on {ocp-first}. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to {ocp-short} through the user interface.
 
-[id="mta-7-0-3"]
-== {ProductShortName} 7-0-3
+[id="mta-7-1-0"]
+== {ProductShortName} 7.1.0
 
-include::topics/mta-rn-known-issues-7-0-3.adoc[leveloffset=+2]
+include::topics/ref_new-features-7-1-0.adoc[leveloffset=+2]
 
-include::topics/cli-tool-known-issues-703.adoc[leveloffset=+3]
-
-include::topics/mta-rn-resolved-issues-7-0-3.adoc[leveloffset=+2]
-
-
-[id="mta-7-0-2"]
-== {ProductShortName} 7-0-2
-
-include::topics/mta-rn-new-features-7-0-2.adoc[leveloffset=+2]
-
-include::topics/mta-rn-known-issues-7-0-2.adoc[leveloffset=+2]
-
-include::topics/cli-tool-known-issues-702.adoc[leveloffset=+3]
-
-include::topics/mta-rn-resolved-issues-7-0-2.adoc[leveloffset=+2]
-
-include::topics/mta-rn-upgrade-notes-7-0-2.adoc[leveloffset=+2]
-
-
-[id="mta-7-0-1"]
-== {ProductShortName} 7-0-1
-
-include::topics/mta-rn-known-issues-7-0-1.adoc[leveloffset=+2]
-
-include::topics/cli-tool-known-issues-701.adoc[leveloffset=+3]
-
-include::topics/mta-rn-resolved-issues-7-0-1.adoc[leveloffset=+2]
-
-include::topics/mta-rn-upgrade-notes-7-0-1.adoc[leveloffset=+2]
-
-
-
-[id="mta-7-0-0"]
-== {ProductShortName} 7-0-0
-
-include::topics/mta-rn-new-features-7-0-0.adoc[leveloffset=+2]
-
-include::topics/mta-rn-known-issues-7-0-0.adoc[leveloffset=+2]
-
-include::topics/mta-rn-resolved-issues-7-0-0.adoc[leveloffset=+2]
-
-include::topics/mta-rn-upgrade-notes-7-0-0.adoc[leveloffset=+2]
-
-include::topics/mta-rn-technical-changes-7-0-0.adoc[leveloffset=+2]
+include::topics/ref_upgrade-notes-7-1-0.adoc[leveloffset=+2]
+ 
 
 :!release-notes:

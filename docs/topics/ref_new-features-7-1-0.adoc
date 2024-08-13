@@ -25,7 +25,7 @@ include::../snippets/developer-preview-admonition.adoc[]
 
 .Support for analyzing .NET applications has been added to {ProductShortName}
 
-In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze Windows-only .NET framework applications to aid migration from version 4.5 or later to multi-platform .NET 8.0 running on OpenShift Container platform.
+In {ProductFullName} 7.1.0, you can use MTA to analyze Windows-only .NET framework applications to aid migration from version 4.5 or later to multi-platform .NET 8.0 running on OpenShift Container platform. This feature is only available in the command-line interface (CLI).
 
 :FeatureName: Support for analyzing .NET applications
 
@@ -35,7 +35,7 @@ include::../snippets/developer-preview-admonition.adoc[]
 
 .Support for languages other than Java
 
-In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze applications written in languages other than Java. To run analysis on applications written in languages other than Java, add a custom rule set and do not specify a target language.
+In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze .NET applications written in languages other than Java. To run analysis on .NET applications written in languages other than Java, add a custom rule set and do not specify a target language.
 
 :FeatureName: Support for languages other than Java
 
