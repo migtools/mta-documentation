@@ -107,3 +107,10 @@ Previously, you could select only one application to filter the results on the A
 :FeatureName: Support for providing a single report when analyzing multiple applications on the CLI
 
 include::../snippets/developer-preview-admonition.adoc[]
+
+
+.New detailed reports generated during application analysis 
+
+A new feature has been introduced that provides a more detailed analysis of your application. Two additional log reports, `issues.yaml` and `deps.yaml`, are now available for viewing and downloading. These reports contain details about unmatched rules.
+
+To enable the system to generate these reports, select the *Enable enhanced analysis details* checkbox in the *Advanced options* window during application analysis.
