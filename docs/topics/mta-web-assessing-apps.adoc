@@ -49,7 +49,7 @@ In this situation, the following solutions are suggested:
 
 . Ensure that the maven settings can get all the dependencies.
 
-. Ensure the application is fully compilable.
+. Ensure the application can be fully compiled.
 
 ====
 
