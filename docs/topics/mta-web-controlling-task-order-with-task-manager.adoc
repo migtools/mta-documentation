@@ -9,10 +9,7 @@ You can use *Task Manager* to preempt a {ProductFullName} task you have schedule
 
 [NOTE]
 ====
-You can only set *Preemption* for the following tasks:
-
-* Automated tasks (language discovery or technology discovery)
-* Task you scheduled yourself (application analysis).
+You can only set *Preemption* for automated tasks (language discovery or technology discovery).
 ====
 
 .Procedure
