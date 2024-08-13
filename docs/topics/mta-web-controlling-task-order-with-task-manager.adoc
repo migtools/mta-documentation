@@ -9,7 +9,7 @@ You can use *Task Manager* to preempt a {ProductFullName} task you have schedule
 
 [NOTE]
 ====
-You can only set *Preemption* for automated tasks (language discovery or technology discovery).
+You can enable *Preemption* on any scheduled task (not in the status of *Running*, *Succeeded*, or *Failed*). However, only lower-priority tasks are candidates to be preempted. When a higher-priority task is blocked by lower-priority tasks and has *Preemption* enabled, the low-priority tasks might be rescheduled so that the blocked higher-priority task might run. Therefore, it is only useful to enable *Preemption* on higher-priority tasks, for example, application analysis.
 ====
 
 .Procedure
