@@ -21,9 +21,9 @@ IMPORTANT: You can assess only one application at a time.
 .Procedure
 
 . In the {ProductShortName} user interface, select the *Migration* view.
-. Click *Application inventory* in the left menu bar. A list of the available applications appears in the main pane. 
+. Click *Application inventory* in the left menu bar. A list of the available applications appears in the main pane.
 . Select the application you want to assess.
-. Click the *Options* menu ({kebab}) at the right end of the row and select *Assess* from the drop-down menu. 
+. Click the *Options* menu ({kebab}) at the right end of the row and select *Assess* from the drop-down menu.
 . From the list of available questionnaires, click *Take* for the desired questionnaire.
 . Select *Stakeholders* and *Stakeholder groups* from the lists to track who contributed to the assessment for future reference.
 +
@@ -32,6 +32,26 @@ NOTE: You can also add *Stakeholder Groups* or *Stakeholders* in the *Controls* 
 . Click *Next*.
 . Answer each *Application assessment* question and click *Next*.
 . Click *Save* to review the assessment and proceed with the steps in xref:mta-web-reviewing-apps_user-interface-guide[Reviewing an application].
+
+[NOTE]
+====
+
+If you are seeing false positives in an application that is not fully resolvable, then this is not entirely unexpected.
+
+
+The reason, is that {ProductShortName} cannot discover the class is that is being called. Therefore, {ProductShortName} cannot determine whether it is a valid match or not.
+
+
+When this happens, {ProductShortName} defaults to exposing more information than less.
+
+
+In this situation, the following solutions are suggested:
+
+. Ensure that the maven settings can get all the dependencies.
+
+. Ensure the application is fully compilable.
+
+====
 
 [role="_additional-resources"]
 .Additional resources
