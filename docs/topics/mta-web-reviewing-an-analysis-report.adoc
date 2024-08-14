@@ -4,16 +4,16 @@
 
 :_content-type: PROCEDURE
 [id="mta-web-reviewing-an-analysis-report_{context}"]
-= Reviewing an analysis report
+= Reviewing analysis details
 
-An {ProductShortName} analysis report contains a number of sections, including a listing of the technologies used by the application, the dependencies of the application, and the lines of code that must be changed to successfully migrate or modernize the application.
-
-For more information about the contents of an {ProductShortName} analysis report, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports].
+You can display the activity log of the analysis. The activity log contains such analysis details as, for example, analysis steps.
 
 .Procedure
 
 . In the *Migration* view, click *Application inventory*.
-. Expand the application with a completed analysis.
-. Click *Reports*.
-. Click the dependencies or source links.
-. Click the tabs to review the report.
+. Click on the application row to open the application drawer. 
+. Click the *Reports* tab.
+. Click *View analysis details* for the activity log of the analysis.
+. Optional: For issues and dependencies found during the analysis, click the *Details* tab in the application drawer and click *Issues* or *Dependencies*.
++
+Alternatively, open the *Issues* or *Dependencies* page in the *Migration* view.

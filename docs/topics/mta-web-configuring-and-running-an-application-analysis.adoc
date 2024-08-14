@@ -92,7 +92,9 @@ Analysis takes minutes to hours to run depending on the size of the application 
 ====
 {ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.
 ====
-. When analysis is complete, click the *Report* link to see the results of the analysis.
-. Optional: Display the details of the analysis:
-.. Click the Options menu ({kebab}).
-.. Select *Analysis details*. You can choose either the YAML or JSON format.
+
+. Optional: To track the status of your active analysis task, open the *Task Manager* drawer by clicking the notifications button.
++
+Alternatively, hover over the application name to display the pop-over window.
+. When analysis is complete, to see its results, open the application drawer by clicking on the application name.
+

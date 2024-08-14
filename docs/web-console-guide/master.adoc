@@ -213,9 +213,13 @@ include::topics/proc_deleting-an-archetype.adoc[leveloffset=+3]
 
 include::topics/proc_analyzing-an-application.adoc[leveloffset=+2]
 include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+3]
+
 //include::topics/proc_displaying-the-analysis-details.adoc[leveloffset=+3]
 include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+3]
 include::topics/mta-web-downloading-an-analysis-report.adoc[leveloffset=+3]
+include::topics/mta-web-controlling-tasks-with-task-manager.adoc[leveloffset=+2]
+include::topics/mta-web-reviewing-a-task-log.adoc[leveloffset=+3]
+include::topics/mta-web-controlling-task-order-with-task-manager.adoc[leveloffset=+3]
 
 // include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
 
