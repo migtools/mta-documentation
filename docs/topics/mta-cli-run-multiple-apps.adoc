@@ -10,6 +10,7 @@ You can now run the {ProductFullName} {CLINameTitle} against multiple applicatio
 
 This feature is currently a Developer Preview feature.
 
+:FeatureName: Running the {ProductShortName} {CLINameTitle} against multiple applications and generating a single report
 include::templates/developer-preview-admonition.adoc[]
 
 .Procedure
