@@ -33,7 +33,7 @@ The {ProductName} ({ProductShortName}) {WebName} has two views:
 * Administration view
 * Migration view
 
-In *Administration* view, administrators can configure the instance environment, work with credentials and repositories, define HTTP and HTTPS proxies, specify custom migration targets, manage issues, and add custom assessment questionnaires.
+In *Administration* view, administrators can configure the instance environment, work with credentials and repositories, define HTTP and HTTPS proxies, create custom migration targets, manage issues, and add custom assessment questionnaires.
 
 In *Migration* view, all authorized users can review reports, add applications for assessment and analysis. perform application assessments and analyses, create migration waves, view issues that could potentially impact migration, view the status of analysis and discovery tasks through Task Manager. The permissions of the different user roles -- administrators, architects, and migrators -- vary in this view.
 
