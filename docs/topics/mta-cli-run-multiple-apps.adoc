@@ -10,7 +10,7 @@ You can now run the {ProductFullName} {CLINameTitle} against multiple applicatio
 
 This feature is currently a Developer Preview feature.
 
-include::snippets/developer-preview-admonition.adoc[]
+include::templates/developer-preview-admonition.adoc[]
 
 .Procedure
 
