@@ -39,7 +39,7 @@ The following command analyzes the link:https://github.com/windup/windup/blob/ma
 ----
 $ <{ProductShortName}_HOME>/{mta-cli} analyze \
     --input /path/to/jee-example-app-1.0.0.ear \
-    --output /path/to/report-output/ --source eap5 --target eap7 \
+    --output /path/to/report-output/ --source eap5 --target eap7
 ----
 []
 
@@ -68,3 +68,58 @@ $ <{ProductShortName}_HOME>/{mta-cli} analyze --input /path/to/jee-example-app-1
 ----
 []
 
+[id="docker-command-examples_{context}"]
+== Docker {ProductShortName} command examples (Developer Preview)
+
+When migrating a Windows .NET 4.5 or later application to cross-platform .NET 8, use Docker Desktop on Windows to analyze the application.
+
+.Procedure
+
+. Run the Docker Desktop for Windows as an administrator.
+
+. Open a PowerShell instance as an administrator.
+
+. Navigate to the {ProductShortName} directory:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name> cd C:\Users\<your_user_name>\MTA
+----
++
+Replace `<your_user_name>` with the username for your home directory.
+
+. Create a directory for analysis output:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>\MTA> mkdir mta-output
+----
+
+. Copy your application to the {ProductShortName} directory. The following command clones the link:https://github.com/sixeyed/nerd-dinner[Nerd Dinner] application as an example application:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>\MTA> git clone https://github.com/sixeyed/nerd-dinner.git
+----
+
+. Analyze the application. The following command analyzes the link:https://github.com/sixeyed/nerd-dinner[Nerd Dinner] application for migrating from Windows .NET 4.5 or later to cross-platform .NET 8:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>\MTA> .\mta-cli.exe analyze `
+    --input C:\Users\<your_user_name>\MTA\nerd-dinner\mvc4\ `
+    --output C:\Users\<your_user_name>\MTA\mta-output\ `
+    --overwrite --log-level 10 --label-selector konveyor.io/source=dotnetframework
+----
++
+Replace `<your_user_name>` with the username for your home directory.
+
+. Review the analysis results:
++
+[source,powershell]
+----
+PS C:\Users\<your_user_name>\MTA> start-process "msedge" `
+    -ArgumentList "file:///C:/Users/<your_user_name>/MTA/mta-output/static-report/index.html"
+----
++
+Replace `<your_user_name>` with the username for your home directory.

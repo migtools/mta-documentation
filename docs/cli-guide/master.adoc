@@ -1,6 +1,6 @@
 :mta:
 include::topics/templates/document-attributes.adoc[]
-:_content-type: ASSEMBLY
+:_mod-docs-content-type: ASSEMBLY
 [id="cli-guide"]
 = CLI Guide
 
@@ -19,6 +19,12 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // About the {UserCLIBookName}
 include::topics/about-cli-guide.adoc[leveloffset=+2]
 
+:FeatureName: .NET migration
+include::topics/developer-preview-feature.adoc[]
+
+:FeatureName: Analyzing applications written in a language other than Java
+include::topics/developer-preview-feature.adoc[]
+
 // About {ProductName}
 include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
@@ -34,11 +40,30 @@ include::topics/about-cli.adoc[leveloffset=+2]
 // Install the CLI
 include::topics/installing-cli-tool.adoc[leveloffset=+2]
 
+// Install in disconnected environment
+include::topics/installing-mta-disconnected-environment.adoc[leveloffset=+2]
+
 // CLI known issues
 include::topics/cli-tool-known-issues.adoc[leveloffset=+3]
 
+[id="running-cli"]
+=== Running the CLI
+
+You can run the {ProductFullName} {CLINameTitle} against one or more applications.
+
+Before {ProductShortName} 7.1.0, if you wanted to run the {CLINameTitle} against multiple applications, you ran a series of `--analyze` commands, each against an application, and each generating a separate report. This option, which is still fully supported, is described in xref:mta-cli-run-single-app_cli-guide[Running the {ProductShortName} {CLINameTitle} against an application].
+
+In {ProductShortName} 7.1.0 and later, you can run the {CLINameTitle} against multiple applications by using the `--bulk` option, to generate a single report. This option, which is presented as a Developer Preview, is described in xref:mta-cli-run-multiple-apps_cli-guide[Running the {ProductShortName} {CLINameTitle} against multiple applications and generating a single report (Developer Preview)].
+
+[IMPORTANT]
+====
+include::snippets/developer-preview.adoc[]
+====
+
 // Run the CLI
-include::topics/mta-cli-run.adoc[leveloffset=+2]
+include::topics/mta-cli-run-single-app.adoc[leveloffset=+3]
+
+include::topics/mta-cli-run-multiple-apps.adoc[leveloffset=+3]
 
 // Analyze application source code
 include::topics/mta-cli-analyze.adoc[leveloffset=+3]
@@ -54,6 +79,15 @@ include::topics/available-openrewrite-recipes.adoc[leveloffset=+4]
 
 // Access the Report
 include::topics/access-report.adoc[leveloffset=+2]
+
+// Multi-language application analysis
+include::topics/mta-cli-analyze-multi-lang-apps.adoc[leveloffset=+2]
+
+// Multi-language application analysis for the supported provider
+include::topics/mta-cli-analyze-selected-provider.adoc[leveloffset=+3]
+
+// Multi-language application analysis for the unsupported provider
+include::topics/mta-cli-analyze-unsupported-provider.adoc[leveloffset=+3]
 
 // Review the Reports
 include::topics/mta-review-reports.adoc[leveloffset=+1]
@@ -102,3 +136,6 @@ include::topics/important-links.adoc[leveloffset=+3]
 // * Appendix: Revision Information *
 // **********************************
 include::topics/templates/revision-info.adoc[]
+
+
+

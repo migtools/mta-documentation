@@ -13,7 +13,7 @@
 ifdef::mta[]
 :ProductName: Migration Toolkit for Applications
 :DocInfoProductName: Migration Toolkit for Applications
-:DocInfoProductNumber: 7.0
+:DocInfoProductNumber: 7.1
 :ProductShortName: MTA
 :ProductShortNameLower: mta
 :ProductFullName: Migration Toolkit for Applications (MTA)
@@ -24,11 +24,11 @@ ifdef::mta[]
 :WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 7.0.3
+:ProductVersion: 7.1.0
 :PluginName: MTA plugin
-// :MavenProductVersion: 7.0.0.GA-redhat-00001
-:ProductDistributionVersion: 7.0.3.GA-redhat
-:ProductDistribution: mta-7.0.3.GA-cli-offline.zip
+:MavenProductVersion: 7.1.0.GA-redhat-00001
+:ProductDistributionVersion: 7.1.0.GA-redhat
+:ProductDistribution: mta-7.1.0.GA-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/MTA/issues
@@ -124,3 +124,7 @@ endif::[]
 :kebab: image:kebab.png[title="Options menu"]
 :reports: image:reports.png[title="*Reports* icon"]
 :edit: image:icon-edit.png[title="*Edit* icon"]
+
+//Developer Preview and Technology Preview snippets
+//Add additional software names as needed -- for example DevPreview-software_name_2
+:FeatureName: Support for providing a single report when analyzing multiple applications on the CLI

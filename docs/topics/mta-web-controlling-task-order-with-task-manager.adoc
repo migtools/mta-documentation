@@ -1,0 +1,22 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-08-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="mta-web-controlling-task-order-with-task-manager_{context}"]
+= Controlling the order of task execution
+
+You can use *Task Manager* to preempt a {ProductFullName} task you have scheduled for execution. 
+
+[NOTE]
+====
+You can enable *Preemption* on any scheduled task (not in the status of *Running*, *Succeeded*, or *Failed*). However, only lower-priority tasks are candidates to be preempted. When a higher-priority task is blocked by lower-priority tasks and has *Preemption* enabled, the low-priority tasks might be rescheduled so that the blocked higher-priority task might run. Therefore, it is only useful to enable *Preemption* on higher-priority tasks, for example, application analysis.
+====
+
+.Procedure
+
+. In the *Migration* view, click *Task Manager*.
+. Click the *Options* menu ({kebab}) for the selected task.
+. Depending on your scenario, complete one of the following steps:
+
+** To enable *Preemption* for the task, select *Enable preemption*. 
+** To disable *Preemption* for the task with enabled *Preemption*, select *Disable preemption*.

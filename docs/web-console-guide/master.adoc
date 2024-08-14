@@ -51,18 +51,17 @@ You can configure the following in *Administration* view:
 * General
 * Credentials
 * Repositories
-* HTTP and HTTPS proxy settings
+* Proxy (HTTP and HTTPS proxy settings)
 * Custom migration targets
 * Issue management
+* Assessment questionnaires
 
 [id="general-configuration"]
 === General
 
-You can enable or disable the following options:
+You can enable or disable the following option:
 
-* Reviewing applications without running an assessment first
-* Downloading HTML reports
-* Downloading CSV reports
+* Allow reports to be downloaded after running an analysis
 
 [id="configuring-credentials"]
 === Configuring credentials
@@ -70,8 +69,10 @@ You can enable or disable the following options:
 You can configure the following types of credentials in *Administration* view:
 
 * Source control
-* Maven
+* Maven settings file
 * Proxy
+* Basic auth (Jira)
+* Bearer token (Jira)
 
 include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
 include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
@@ -100,6 +101,8 @@ include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
 // === Configuring HTTP and HTTPS proxy settings
 include::topics/mta-web-proxy-config.adoc[leveloffset=2]
 
+include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
+
 // === Seeding instances
 include::topics/mta-web-seeding-instances.adoc[leveloffset=2]
 
@@ -126,12 +129,12 @@ A Jira connection that was used for xref:../../../docs/topics/mta-web-creating-j
 
 You can use the {ProductFullName} {WebName} to perform the following tasks:
 
-* Add applications.
-* Assign application credentials.
-* Import a list of applications.
-* Download a CSV template for importing application lists.
-* Create application migration waves.
-* Create Jira issues for migration waves.
+* Add applications
+* Assign application credentials
+* Import a list of applications
+* Download a CSV template for importing application lists
+* Create application migration waves
+* Create Jira issues for migration waves
 
 {ProductShortName} {WebName} applications have the following attributes:
 
@@ -160,6 +163,8 @@ include::topics/mta-web-creating-jira-issues-for-migration-wave.adoc[leveloffset
 [id="assessing-and-analyzing-applications"]
 == Assessing and analyzing applications with MTA
 You can use the {ProductName} ({ProductShortName}) {WebName} to assess and analyze applications:
+
+* When adding to or editing the *Application Inventory*, {ProductShortName} automatically spawns programming language and technology discovery tasks. The tasks apply appropriate tags to the application, reducing the time you spend tagging the application manually.
 
 * When assessing applications, {ProductShortName} estimates the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. You can use the results of an assessment for discussions between stakeholders to determine whether applications are suitable for containerization.
 
@@ -202,18 +207,24 @@ include::topics/proc_displaying-the-tags-of-an-application.adoc[leveloffset=+3]
 include::topics/mta-web-archetypes.adoc[leveloffset=+2]
 include::topics/proc_defining-an-archetype.adoc[leveloffset=+3]
 //include::topics/con_archetype-inheritance.adoc[leveloffset=+3]
-include::topics/con_archetype-assessment.adoc[leveloffset=+3]
+//include::topics/con_archetype-assessment.adoc[leveloffset=+3]
+include::topics/proc_assessing-an-archetype.adoc[leveloffset=+3]
+include::topics/proc_reviewing-an-archetype.adoc[leveloffset=+3]
 include::topics/proc_deleting-an-archetype.adoc[leveloffset=+3]
 // include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+3]
 
 include::topics/proc_analyzing-an-application.adoc[leveloffset=+2]
 include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+3]
+
 //include::topics/proc_displaying-the-analysis-details.adoc[leveloffset=+3]
 include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+3]
 include::topics/accessing-unmatched-rules.adoc[leveloffset=+3]
 include::topics/mta-web-downloading-an-analysis-report.adoc[leveloffset=+3]
+include::topics/mta-web-controlling-tasks-with-task-manager.adoc[leveloffset=+2]
+include::topics/mta-web-reviewing-a-task-log.adoc[leveloffset=+3]
+include::topics/mta-web-controlling-task-order-with-task-manager.adoc[leveloffset=+3]
 
-include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
+// include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
 
 
 // **********************************
