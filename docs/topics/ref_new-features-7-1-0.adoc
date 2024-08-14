@@ -15,7 +15,7 @@ This section provides the new features and improvements of the {ProductFullName}
 
 .Support for analyzing applications managed with Gradle has been added to {ProductShortName} 
 
-In earlier releases of {ProductFullName}, you could use the {ProductShortName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven. 
+In earlier releases of {ProductFullName}, you could use {ProductShortName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven. 
 
 :FeatureName: Support for analyzing applications managed with Gradle
 
@@ -69,7 +69,7 @@ include::../snippets/technology-preview-admonition.adoc[]
 
 .New {ProductShortName} CLI options are available to select language providers when analyzing multi-language applications
 
-In earlier releases of {ProductFullName},  you could not select specific language providers to run separately for the analysis of a multi-language application. With this update, you can use the new `--provider` {ProductShortName} CLI option to explicitly set which language provider to run.
+In earlier releases of {ProductFullName},  you could not select specific language providers to run separately for the analysis of a multi-language application. With this update, you can use the new `--provider` {ProductShortName} command-line interface (CLI) option to explicitly set which language provider to run.
 
 The following CLI options are also available with this update:
 
