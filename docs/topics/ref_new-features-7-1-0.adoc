@@ -15,7 +15,7 @@ This section provides the new features and improvements of the {ProductFullName}
 
 .Support for analyzing applications managed with Gradle has been added to {ProductShortName} 
 
-Previously, you could use the {ProductFullName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven. 
+In earlier releases of {ProductFullName}, you could use the {ProductShortName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven. 
 
 :FeatureName: Support for analyzing applications managed with Gradle
 
@@ -45,7 +45,7 @@ include::../snippets/developer-preview-admonition.adoc[]
 
 .Assessment and review statuses are now displayed in the {ProductShortName} UI
 
-In earlier releases of {ProductShortName}, the status of the assessment and the review was only displayed for applications. With this update, the status of the archetype assessment and review processes is displayed in the {ProductFullName} user interface (UI):
+In earlier releases of {ProductFullName}, the status of the assessment and the review was only displayed for applications. With this update, the status of the archetype assessment and review processes is displayed in the {ProductShortName} user interface (UI):
 
 * The assessment statuses are the following:
 ** Completed: All required assessments completed.
@@ -69,7 +69,7 @@ include::../snippets/technology-preview-admonition.adoc[]
 
 .New {ProductShortName} CLI options are available to select language providers when analyzing multi-language applications
 
-Previously, you could not select specific language providers to run separately for the analysis of a multi-language application. With this update, you can use the new `--provider` {ProductShortName} CLI option to explicitly set which language provider to run.
+In earlier releases of {ProductFullName},  you could not select specific language providers to run separately for the analysis of a multi-language application. With this update, you can use the new `--provider` {ProductShortName} CLI option to explicitly set which language provider to run.
 
 The following CLI options are also available with this update:
 
@@ -82,7 +82,7 @@ NOTE: You can now also configure supported language provider options in a provid
 
 .A new Task Manager page is now available in the {ProductShortName} UI
 
-In earlier releases of {ProductShortName}, tasks that were being performed and the queue of pending tasks were not displayed in the {ProductFullName} user interface (UI). With this update, a new Task Manager page is available to view the following information about the tasks that are queued:
+In earlier releases of {ProductFullName}, tasks that were being performed and the queue of pending tasks were not displayed in the {ProductShortName} user interface (UI). With this update, a new Task Manager page is available to view the following information about the tasks that are queued:
 
 * *ID*: The ID of the task.
 * *Application*: The application name associated with the task.
@@ -96,7 +96,7 @@ In earlier releases of {ProductShortName}, tasks that were being performed and t
 
 .Multiple applications can now be selected to filter the applications list in Application Inventory
 
-Previously, you could select only one application to filter the results on the Application Inventory page. With this update, you can select multiple applications as a single filter to display the list of applications corresponding to this filter.
+In earlier releases of {ProductFullName}, you could select only one application to filter the results on the Application Inventory page. With this update, you can select multiple applications as a single filter to display the list of applications corresponding to this filter.
 
 
 
