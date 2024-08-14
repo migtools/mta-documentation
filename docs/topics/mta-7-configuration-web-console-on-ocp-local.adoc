@@ -1,0 +1,20 @@
+:_content-type: CONCEPT
+[id="mta-7-configuration-web-console-on-ocp-local_{context}"]
+= Configuration of the {ProductName} Operator in a {rh-ocp-local} environment
+
+The following table shows the recommended minimum configurations of {rh-ocp-local} tested:
+
+[width="100%",cols="25%,25%,25%",options="header",]
+|===
+|Memory (GiB)
+|CPU
+|Disk sze (GiB)
+
+|20
+|5
+|110
+
+|20
+|5
+|35, with the {ProductShortName} Operator configurations `cache_data_volume_size` and `hub_bucket_volume_size` set to 5GiB.
+|===

@@ -162,8 +162,10 @@ The most commonly used CR settings are listed in this table:
 |`4GiB`
 |Minimum amount of memory the pod needs to run
 |====
+
 +
 .Example YAML file
+
 [source,YAML]
 ----
 kind: Tackle
@@ -213,43 +215,6 @@ mirror:
   helm: {}
 ----
 
-== Memory requirements for running {ProductShortName} on Red Hat OpenShift Local
-
-When installed on https://developers.redhat.com/products/openshift-local/overview[Red Hat OpenShift Local], {ProductShortName} requires a minimum amount of memory to complete its analysis. Adding memory makes the analysis process run faster. The table below describes the {ProductShortName} performance with varying amounts of memory.
-
-.OpenShift Local {ProductShortName} memory requirements
-[cols="25%,75%", options="header"]
-|====
-|Memory (GiB)
-|Description
-
-
-|`10`
-|{ProductShortName} cannot run the analysis due to insufficient memory
-
-|`11`
-|{ProductShortName} cannot run the analysis due to insufficient memory
-
-|`12`
-|*{ProductShortName} works and the analysis is completed in approximately 3 minutes*
-
-|`15`
-|{ProductShortName} works and the analysis is completed in less than 2 minutes
-
-|`20`
-|{ProductShortName} works quickly, and the analysis is completed in less than 1 minute
-|====
-
-The test results indicate that the minimum amount of memory for running {ProductShortName} on OpenShift Local is *12 GiB*.
-
-[NOTE]
-====
-** The tests were performed by running the {ProductShortName} binary analysis through the {WebName}.
-** All the analyses used the `tackle-testapp` binary.
-** All the tests were conducted on an OpenShift Local cluster without the monitoring tools installed.
-** Installing the cluster monitoring tools requires an additional 5 GiB of memory.
-====
-
 [id="eviction-threshold_{context}"]
 === Eviction threshold
 
@@ -267,8 +232,9 @@ To prevent out-of-memory events and protect nodes, use the `--eviction-hard` set
 
 The amount of memory available for running pods on this node is 28.9 GiB. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
-
+[id="mta-7-red-hat-single-sign-on_{context}"]
 == Red Hat Single Sign-On
+
 {ProductShortName} delegates authentication and authorization to a
 https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
 Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
@@ -290,13 +256,16 @@ Hat Single Sign-On features and concepts].
 The following table contains the roles and permissions (scopes) that {ProductShortName} seeds the managed RHSSO instance with:
 
 [width="100%",cols="34%,33%,33%",]
-|===
+|====
 |*tackle-admin* |*Resource Name* |*Verbs*
 | |addons |delete +
 get +
 post +
 put +
 | |adoptionplans |post +
+get +
+post +
+put +
 | |applications |delete +
 get +
 post +
@@ -392,6 +361,10 @@ put +
 get +
 post +
 put +
+|====
+
+[width="100%",cols="34%,33%,33%",]
+|===
 |*tackle-architect* | *Resource Name* |*Verbs*
 | |addons |delete +
 get +
@@ -480,6 +453,10 @@ put +
 get +
 post +
 put +
+|===
+
+[width="100%",cols="34%,33%,33%",]
+|===
 |*tackle-migrator* | *Resource Name* |*Verbs*
 | |addons |get +
 | |adoptionplans |post +
