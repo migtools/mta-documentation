@@ -59,7 +59,7 @@ In earlier releases of {ProductShortName}, the status of the assessment and the 
 
 .New Insights feature has been added
 
-Tagging rules that earlier generated tags and showed the presence of technology also generate insights now and show the location of code. While Insights do not impact the migration, they contain useful information about the technologies used in the application and their usage in the code. Insights do not have an effort and category assigned but might have a message and tag. You can view Insights in the Static report under the Insights tab.
+Tagging rules that earlier generated tags and showed the presence of technology also generate Insights now and show the location of code. While Insights do not impact the migration, they contain useful information about the technologies used in the application and their usage in the code. Insights do not have an effort and category assigned but might have a message and tag. You can view Insights in the Static report under the Insights tab.
 
 :FeatureName: Insights
 
