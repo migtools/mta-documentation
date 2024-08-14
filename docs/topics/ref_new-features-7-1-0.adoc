@@ -25,7 +25,7 @@ include::../snippets/developer-preview-admonition.adoc[]
 
 .Support for analyzing .NET applications has been added to {ProductShortName}
 
-In {ProductFullName} 7.1.0, you can use MTA to analyze Windows-only .NET framework applications to aid migration from version 4.5 or later to multi-platform .NET 8.0 running on OpenShift Container platform. This feature is only available in the command-line interface (CLI).
+In {ProductFullName} 7.1.0, you can use MTA to analyze Windows-only .NET framework applications to aid migration from version 4.5 or later to multi-platform .NET 8.0 running on OpenShift Container Platform. This feature is only available in the command-line interface (CLI).
 
 :FeatureName: Support for analyzing .NET applications
 
