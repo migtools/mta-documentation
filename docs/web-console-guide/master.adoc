@@ -164,6 +164,8 @@ include::topics/mta-web-creating-jira-issues-for-migration-wave.adoc[leveloffset
 == Assessing and analyzing applications with MTA
 You can use the {ProductName} ({ProductShortName}) {WebName} to assess and analyze applications:
 
+* When adding to or editing the *Application Inventory*, {ProductShortName} automatically spawns programming language and technology discovery tasks. The tasks apply appropriate tags to the application, reducing the time you spend tagging the application manually.
+
 * When assessing applications, {ProductShortName} estimates the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. You can use the results of an assessment for discussions between stakeholders to determine whether applications are suitable for containerization.
 
 * When analyzing applications, {ProductShortName} uses rules to determine which specific lines in an application must be modified before the application can be migrated or modernized.
