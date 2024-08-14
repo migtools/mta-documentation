@@ -1,0 +1,13 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-08-14
+
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-1-0_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.1.0.
+
+.Enabling Preemption does not work
+
+In {ProductFullName} 7.1.0, the *Preemption* option cannot be enabled for tasks in the Task Manager page. Currently, there is no workaround available. 
