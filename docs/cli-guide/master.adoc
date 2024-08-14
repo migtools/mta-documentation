@@ -55,10 +55,8 @@ Before {ProductShortName} 7.1.0, if you wanted to run the {CLINameTitle} against
 
 In {ProductShortName} 7.1.0 and later, you can run the {CLINameTitle} against multiple applications by using the `--bulk` option, to generate a single report. This option, which is presented as a Developer Preview, is described in xref:mta-cli-run-multiple-apps_cli-guide[Running the {ProductShortName} {CLINameTitle} against multiple applications and generating a single report (Developer Preview)].
 
-[IMPORTANT]
-====
-include::snippets/developer-preview.adoc[]
-====
+:FeatureName: Running the {CLINameTitle} against one or more applications
+include::topics/developer-preview-feature.adoc[]
 
 // Run the CLI
 include::topics/mta-cli-run-single-app.adoc[leveloffset=+3]
