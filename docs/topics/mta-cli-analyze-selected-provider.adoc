@@ -1,0 +1,32 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-07-25
+:_mod-docs-content-type: PROCEDURE
+
+[id="selecting-language-providers-for-analysis_{context}"]
+= Analyzing a multi-language application for the selected supported language provider
+
+When analyzing a multi-language application with {ProductFullName} {CLINameTitle}, you can explicitly set a supported language provider according to your application language to run the analysis for.
+
+
+.Prerequisites
+
+* You are running the latest version of {ProductShortName} {CLINameTitle}.
+
+
+.Procedure
+
+. List language providers supported for the analysis:
++
+[source,terminal,subs="attributes+"]
+----
+$ mta-cli analyze --list-providers
+----
+
+. Run the application analysis for the selected language provider:
++
+[source,terminal,subs="attributes+"]
+----
+$ mta-cli analyze --input <_path_to_the_source_repository_> --output <_path_to_the_output_directory_> --provider <_language_provider_> --rules <_path_to_custom_rules_>
+----
++
+Note that if you do not set the `--provider` option, the analysis might fail because it detects unsupported providers. The analysis will complete without `--provider` only if all discovered providers are supported.

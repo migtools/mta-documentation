@@ -80,6 +80,15 @@ include::topics/available-openrewrite-recipes.adoc[leveloffset=+4]
 // Access the Report
 include::topics/access-report.adoc[leveloffset=+2]
 
+// Multi-language application analysis
+include::topics/mta-cli-analyze-multi-lang-apps.adoc[leveloffset=+2]
+
+// Multi-language application analysis for the supported provider
+include::topics/mta-cli-analyze-selected-provider.adoc[leveloffset=+3]
+
+// Multi-language application analysis for the unsupported provider
+include::topics/mta-cli-analyze-unsupported-provider.adoc[leveloffset=+3]
+
 // Review the Reports
 include::topics/mta-review-reports.adoc[leveloffset=+1]
 
