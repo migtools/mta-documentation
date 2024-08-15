@@ -252,7 +252,7 @@ The analyzer currently supports the following `provider` conditions:
 * `dotnet`
 +
 :FeatureName: dotnet provider
-include::snippets/technology-preview-admonition.adoc[]
+include::technology-preview.adoc[]
 
 [[table-Supported-providers-and-rule-conditions]]
 [options="header"][cols="99,99,99,99"][%autowidth]
@@ -267,8 +267,8 @@ include::snippets/technology-preview-admonition.adoc[]
 | .NET
 
 |Providers that require custom rulesets for analysis
-a| 
-* Go 
+a|
+* Go
 * Python
 * Node.js
 |===
