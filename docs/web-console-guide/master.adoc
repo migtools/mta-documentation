@@ -47,6 +47,9 @@ include::topics/mta-7-installing-web-console-on-ocp-local.adoc[leveloffset=+2]
 
 include::topics/mta-7-configuration-web-console-on-ocp-local.adoc[leveloffset=+3]
 
+include::topics/mta-requirements-for-java-analyzer.adoc[leveloffset=+2]
+
+
 [id="configuring-the-instance-environment"]
 == Configuring the instance environment
 
