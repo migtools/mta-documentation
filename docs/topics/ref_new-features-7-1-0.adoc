@@ -19,7 +19,7 @@ In earlier releases of {ProductFullName}, you could use {ProductShortName} to an
 
 :FeatureName: Support for analyzing applications managed with Gradle
 
-include::../snippets/developer-preview-admonition.adoc[]
+include::developer-preview-feature.adoc[]
 
 
 
@@ -29,7 +29,7 @@ In {ProductFullName} 7.1.0, you can use MTA to analyze Windows-only .NET framewo
 
 :FeatureName: Support for analyzing .NET applications
 
-include::../snippets/developer-preview-admonition.adoc[]
+include::developer-preview-feature.adoc[]
 
 
 
@@ -39,7 +39,7 @@ In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze .NET appli
 
 :FeatureName: Support for languages other than Java
 
-include::../snippets/developer-preview-admonition.adoc[]
+include::developer-preview-feature.adoc[]
 
 
 
@@ -63,7 +63,7 @@ Tagging rules that earlier generated tags and showed the presence of technology 
 
 :FeatureName: Insights
 
-include::../snippets/technology-preview-admonition.adoc[]
+include::technology-preview.adoc[]
 
 
 
@@ -106,7 +106,7 @@ In earlier releases of {ProductFullName}, you could select only one application 
 
 :FeatureName: Support for providing a single report when analyzing multiple applications on the CLI
 
-include::../snippets/developer-preview-admonition.adoc[]
+include::developer-preview-feature.adoc[]
 
 
 .New detailed reports generated during application analysis 
