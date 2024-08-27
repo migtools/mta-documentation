@@ -26,7 +26,7 @@ ifdef::mta[]
 :WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 7.1.0
 :PluginName: MTA plugin
-:MavenProductVersion: 7.1.0.GA-redhat-00001
+// :MavenProductVersion: 7.0.0.GA-redhat-00001
 :ProductDistributionVersion: 7.1.0.GA-redhat
 :ProductDistribution: mta-7.1.0.GA-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
