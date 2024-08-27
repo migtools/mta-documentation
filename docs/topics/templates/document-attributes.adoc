@@ -82,6 +82,7 @@ endif::[]
 :ocp-full: Red Hat OpenShift Container Platform
 :ocp-short: OpenShift Container Platform
 :ocp-first: {ocp-full} (RHOCP)
+:rh-ocp-local: Red Hat OpenShift Local
 
 // ********************
 // * Product versions *
@@ -105,7 +106,7 @@ endif::[]
 :ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
 :ProductDocIntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
 :OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
-:LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
+:LinkAPI: https://github.com/windup/windup/blob/master/
 
 //Links to MTA and MTR Jira project pages:
 :JiraMTRURL: https://issues.redhat.com/projects/WINDUP
@@ -124,3 +125,7 @@ endif::[]
 :kebab: image:kebab.png[title="Options menu"]
 :reports: image:reports.png[title="*Reports* icon"]
 :edit: image:icon-edit.png[title="*Edit* icon"]
+
+//Developer Preview and Technology Preview snippets
+//Add additional software names as needed -- for example DevPreview-software_name_2
+:FeatureName: Support for providing a single report when analyzing multiple applications on the CLI

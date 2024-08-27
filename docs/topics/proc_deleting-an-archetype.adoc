@@ -6,4 +6,4 @@
 = Deleting an archetype
 
 [role="_abstract"]
-Deleting an archetype deletes any associated assessment. All associated applications move to the *Unassessed* state.
+Deleting an archetype deletes any associated assessment and review. All associated applications move to the *Unassessed* and *Unreviewed* state.

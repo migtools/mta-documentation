@@ -11,7 +11,7 @@
 You can use the following YAML template to build your custom questionnaire. You can download this template by clicking *Download YAML template* on the *Assessment questionnaires* page.
 
 .The YAML template for the custom questionnaire
-[%collapsible%closed]
+[%collapsible]
 ====
 [source,yaml]
 ----

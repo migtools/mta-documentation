@@ -22,3 +22,7 @@ You can edit an existing application in the *Application Inventory* and re-run a
 . Review the application settings. For a list of application settings, see xref:mta-web-adding-applications_user-interface-guide[Adding an application].
 . If you changed any application settings, click *Save*.
 
+[NOTE]
+====
+After editing an application, {ProductShortName} re-spawns the language discovery and technology discovery tasks.
+====

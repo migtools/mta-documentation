@@ -7,7 +7,7 @@
 [id="mta-archetypes_{context}"]
 = Working with archetypes
 
-An *archetype* is a group of applications with common characteristics. You can use archetypes to assess multiple applications at once. By using archetypes, the {ProductName} ({ProductShortName}) can apply questionnaires populated with questions that apply to common application characteristics.
+An *archetype* is a group of applications with common characteristics. You can use archetypes to assess multiple applications at once.
 
 Application archetypes are defined by criteria tags and the application taxonomy. Each archetype defines how the _assessment module_ assesses the application according to the characteristics defined in that archetype. If the tags of an application match the criteria tags of an archetype, the application is associated with the archetype.
 

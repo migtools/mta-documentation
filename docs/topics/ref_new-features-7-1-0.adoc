@@ -1,0 +1,116 @@
+// Module included in the following assemblies:
+//
+//docs/release_notes-7.1.0/master.adoc
+
+
+:_newdoc-version: 2.18.2
+:_template-generated: 2024-07-01
+
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-7-1-0_{context}"]
+= New features
+
+This section provides the new features and improvements of the {ProductFullName} 7.1.0.
+
+.Support for analyzing applications managed with Gradle has been added to {ProductShortName}
+
+In earlier releases of {ProductFullName}, you could use {ProductShortName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven.
+
+:FeatureName: Support for analyzing applications managed with Gradle
+
+include::developer-preview-feature.adoc[]
+
+
+
+.Support for analyzing .NET applications has been added to {ProductShortName}
+
+In {ProductFullName} 7.1.0, you can use MTA to analyze Windows-only .NET framework applications to aid migration from version 4.5 or later to multi-platform .NET 8.0 running on OpenShift Container Platform. This feature is only available in the command-line interface (CLI).
+
+:FeatureName: Support for analyzing .NET applications
+
+include::developer-preview-feature.adoc[]
+
+
+
+.Support for languages other than Java
+
+In {ProductFullName} 7.1.0, you can use {ProductShortName} to analyze .NET applications written in languages other than Java. To run analysis on .NET applications written in languages other than Java, add a custom rule set and do not specify a target language.
+
+:FeatureName: Support for languages other than Java
+
+include::developer-preview-feature.adoc[]
+
+
+
+.Assessment and review statuses are now displayed in the {ProductShortName} UI
+
+In earlier releases of {ProductFullName}, the status of the assessment and the review was only displayed for applications. With this update, the status of the archetype assessment and review processes is displayed in the {ProductShortName} user interface (UI):
+
+* The assessment statuses are the following:
+** Completed: All required assessments completed.
+** InProgress: The assessment process is in progress.
+** NotStarted: The assessment process has not been started.
+* The review statuses are the following:
+** Completed: A review exists.
+** NotStarted: The review process has not been started.
+
+
+
+.New Insights feature has been added
+
+Tagging rules that earlier generated tags and showed the presence of technology also generate Insights now and show the location of code. While Insights do not impact the migration, they contain useful information about the technologies used in the application and their usage in the code. Insights do not have an effort and category assigned but might have a message and tag. You can view Insights in the Static report under the Insights tab.
+
+:FeatureName: Insights
+
+include::technology-preview.adoc[]
+
+
+
+.New {ProductShortName} CLI options are available to select language providers when analyzing multi-language applications
+
+In earlier releases of {ProductFullName},  you could not select specific language providers to run separately for the analysis of a multi-language application. With this update, you can use the new `--provider` {ProductShortName} command-line interface (CLI) option to explicitly set which language provider to run.
+
+The following CLI options are also available with this update:
+
+* `--list-providers` to list language providers supported for the analysis.
+* `--override-provider-settings` to override an existing supported language provider or to run your own unsupported provider.
+
+NOTE: You can now also configure supported language provider options in a provider’s configuration file.
+
+
+
+.A new Task Manager page is now available in the {ProductShortName} UI
+
+In earlier releases of {ProductFullName}, tasks that were being performed and the queue of pending tasks were not displayed in the {ProductShortName} user interface (UI). With this update, a new Task Manager page is available to view the following information about the tasks that are queued:
+
+* *ID*: The ID of the task.
+* *Application*: The application name associated with the task.
+* *Status*: The status of the task, for example, *Scheduled*, *Pending*, *In progress*, *Succeeded*, or *Failed*.
+* *Kind*: The type of the task, for example, *analyzer* or *discovery*.
+* *Priority*: Priority of the task. The value is from zero to any positive integer. The higher the value in this column, the higher the priority of the task.
+* *Preemption*: It allows the scheduler to cancel a running task and free the resources for higher priority tasks. The values are *true* or *false*.
+* *Created By*: The name of the user who created the task.
+
+
+
+.Multiple applications can now be selected to filter the applications list in Application Inventory
+
+In earlier releases of {ProductFullName}, you could select only one application to filter the results on the Application Inventory page. With this update, you can select multiple applications as a single filter to display the list of applications corresponding to this filter.
+
+
+
+.Support for providing a single report when analyzing multiple applications on the CLI
+
+{mta-cli} was designed to analyze a single application and produce a report about that application. With this update, you can use the `--bulk` option of the `analyze` command to analyze multiple applications, one `analyze` command per application, but with a common output file for all of the reports. As described in the {UserCLIBookName}, this results in {mta-cli} generating a single analysis report for all the applications, instead of generating a separate report for each application.
+
+:FeatureName: Support for providing a single report when analyzing multiple applications on the CLI
+
+include::developer-preview-feature.adoc[]
+
+
+.New detailed reports generated during application analysis
+
+A new feature has been introduced that provides a more detailed analysis of your application. Two additional log reports, `issues.yaml` and `deps.yaml`, are now available for viewing and downloading. These reports contain details about unmatched rules.
+
+To enable the system to generate these reports, select the *Enable enhanced analysis details* checkbox in the *Advanced options* window during application analysis.
