@@ -18,7 +18,10 @@ You must have the Java Development Kit (JDK) installed on your system prior to i
 
 . From the link:https://www.oracle.com/java/technologies/downloads/#java11[Oracle JDK download page], download the JDK `tar.gz` file suitable for your system.
 + 
-Note that you need to accept the Oracle license agreement to proceed.
+[NOTE]
+====
+You need to accept the Oracle license agreement to proceed.
+====
 +
 Alternatively, you can download JDK by using the command-line interface:
 +
