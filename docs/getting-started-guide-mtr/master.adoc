@@ -16,6 +16,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
 
+include::topics/snippet-mtr-end-of-life.adoc[]
+
 // About the {IntroToMTABookName}
 include::topics/about-the-intro-to-mta-guide.adoc[leveloffset=+2]
 

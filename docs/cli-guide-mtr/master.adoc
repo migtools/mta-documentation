@@ -16,6 +16,7 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
 
+include::topics/snippet-mtr-end-of-life.adoc[]
 // About the {UserCLIBookName}
 include::topics/about-cli-guide.adoc[leveloffset=+2]
 

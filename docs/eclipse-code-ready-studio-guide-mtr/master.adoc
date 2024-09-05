@@ -21,6 +21,7 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="introduction_{context}"]
 == Introduction
 
+include::topics/snippet-mtr-end-of-life.adoc[]
 include::topics/about-ide-addons.adoc[leveloffset=+2]
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 

@@ -17,6 +17,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="introduction_{context}"]
 == Introduction
 
+include::topics/snippet-mtr-end-of-life.adoc[]
+
 // About the Rules Development Guide
 include::topics/rules-guide-intro.adoc[leveloffset=+2]
 

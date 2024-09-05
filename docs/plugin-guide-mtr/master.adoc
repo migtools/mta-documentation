@@ -15,6 +15,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
 
+include::topics/snippet-mtr-end-of-life.adoc[]
+
 // About the IDE Plugin Guide
 include::topics/plugin-intro.adoc[leveloffset=+2]
 
