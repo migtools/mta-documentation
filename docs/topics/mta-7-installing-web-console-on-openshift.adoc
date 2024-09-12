@@ -237,7 +237,12 @@ The {ProductShortName} uses link:https://access.redhat.com/documentation/en-us/r
 
 The {ProductShortName} operator manages the RHSSO instance and configures a dedicated link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] with necessary roles and permissions.
 
-{ProductShortName}-managed RHSSO instance allows you to perform advanced RHSSO configurations, such as link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating identity providers]. To access the link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[RHSSO Admin Console], enter the URL https://<_route_>/auth/admin in your browser by replacing <route> with the {ProductShortName} address.
+{ProductShortName}-managed RHSSO instance allows you to perform advanced RHSSO configurations, such as link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating identity providers]. To access the link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[RHSSO Admin Console], enter the URL https://<_route_>/auth/admin in your browser by replacing <route> with the {ProductShortName} web console address.
+
+Example:
+
+* MTA web console: https://mta-openshiftmta.example.com/
+* RHSSO Admin console: https://mta-openshiftmta.example.com/auth/admin
 
 The admin credentials for RHSSO are stored in a secret file named `credential-mta-rhsso` in the namespace where {ProductShortName} is installed.
 
