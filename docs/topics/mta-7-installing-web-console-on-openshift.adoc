@@ -246,7 +246,7 @@ To retrieve your admin credentials, run the following command:
 oc get secret credential-mta-rhsso -o yaml
 ----
 
-To create a dedicated route for the RHSSO instance, set the `rhsso_external_access` parameter to `true` in the Tackle custom resource (CR) for {ProductShortName}.
+To create a dedicated route for the RHSSO instance, set the `rhsso_external_access` parameter to `True` in the Tackle CR for {ProductShortName}.
 
 .Additional resources
 link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red Hat Single Sign-On features and concepts]
