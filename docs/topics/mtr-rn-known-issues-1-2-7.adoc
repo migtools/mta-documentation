@@ -1,0 +1,21 @@
+// Module included in the following assemblies:
+//
+// * docs/release-notes-mtr/master.adoc
+
+:_content-type: REFERENCE
+[id="mtr-rn-known-issues-1-2-7_{context}"]
+
+= Known issues
+
+The following known issues are in the {ProductShortName} 1.2.7 release:
+
+////
+.Unable to migrate an application to {ProductShortName} due to a `SEVERE [org.jboss.windup.web.services.messaging.PackageDiscoveryMDB]` error
+
+When uploading files for analysis, the server log would return a `SEVERE [org.jboss.windup.web.services.messaging.PackageDiscoveryMDB]` error. This error is caused by a `null: java.lang.NullPointerException`. link:https://issues.redhat.com/browse/WINDUP-4189[(WINDUP-4189)]
+////
+
+// filter == project in (WINDUP, WINDUPRULE) AND type = Bug AND createdDate >= 2021-01-01 AND createdDate <= 2024-09-12 AND (resolutiondate > 2024-09-12 OR resolutiondate is EMPTY) AND Priority in (Blocker, Critical, Major) ORDER BY created DESC, priority DESC, key DESC
+For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12441308[MTR 1.2.7 known issues] in Jira.
+
+
