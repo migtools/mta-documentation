@@ -28,7 +28,7 @@ The table below lists the available providers and their capabilities. Select a p
 
 .2+.^|`java`
 |`referenced`
-|Finds references of a pattern with an optional code location for detailed searches
+|Finds references of a pattern, including annotations, with an optional code location for detailed searches
 
 |`dependency`
 |Checks whether the application has a given dependency
@@ -71,14 +71,17 @@ The table below lists all available providers, their capabilities, and their fie
 |===
 |Provider |Capability |Field |Required? |Description
 
-.6+.^|`java`
-.2+.^|`referenced`
+.7+.^|`java`
+.3+.^|`referenced`
 |`pattern`
 |Yes
 |RegEx pattern
 |`location`
 |No
 |Source code location; see below for a list of all supported search locations
+|`annotated`
+|No
+|Annotations and their elements (name and value)
 
 .4+.^|`dependency`
 |`name`

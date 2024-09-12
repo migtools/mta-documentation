@@ -361,7 +361,7 @@ This provider has the following capabilities:
 
 .`referenced`
 
-The `referenced` capability enables the provider to find references in the source code. This capability takes two input parameters, `pattern` and `location`.
+The `referenced` capability enables the provider to find references in the source code. This capability takes three input parameters, `pattern`, `location`, and 'annotated'.
 
 [source,terminal]
 ----
@@ -369,9 +369,20 @@ when:
   java.referenced:
     pattern: "<pattern>" <1>
     location: "<location>" <2>
+    annotated: "<annotated>" <3>
 ----
 <1> A regular expression pattern to match, for example, `org.kubernetes.*`.
 <2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
+<3> Checks for specific annotations and their elements, such as name and value in the Java code using a query. For example, the following query matches the Bean(url = “http://www.example.com”) annotation in the method.
++
+[source,terminal]
+----
+ annotated:
+      pattern: org.framework.Bean
+      elements:
+      - name: url
+        value: "http://www.example.com"
+----
 
 The supported locations are the following:
 
@@ -385,6 +396,8 @@ The supported locations are the following:
 * `RETURN_TYPE`
 * `IMPORT`
 * `VARIABLE_DECLARATION`
+* `FIELD`
+* `METHOD`
 
 .`dependency`
 
