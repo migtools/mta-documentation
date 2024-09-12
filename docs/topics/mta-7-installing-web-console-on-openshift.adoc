@@ -233,24 +233,17 @@ The amount of memory available for running pods on this node is 28.9 GiB. This a
 [id="mta-7-red-hat-single-sign-on_{context}"]
 == Red Hat Single Sign-On
 
-The {ProductShortName} uses link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
-Hat Single Sign-On] (RHSSO) instance for user authentication and authorization.
+{ProductShortName} delegates authentication and authorization to a
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
+Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] that contains all the roles and permissions that {ProductShortName} requires.
 
-The {ProductShortName} operator manages the RHSSO instance and configures a dedicated link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] with necessary roles and permissions.
+If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating identity providers], users can log into the RHSSO https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[Admin Console] through the `/auth/admin` subpath in the `{LC_PSN}-ui` route. The admin credentials to access the {ProductShortName} managed RHSSO instance can be retrieved from the `credential-mta-rhsso` secret available in the namespace in which the {WebName} was installed.
 
-{ProductShortName}-managed RHSSO instance allows you to perform advanced RHSSO configurations, such as link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating identity providers]. To access the link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[RHSSO Admin Console], enter the URL https://<_route_>/auth/admin in your browser by replacing <route> with the {ProductShortName} address.
+A dedicated route for the {ProductShortName} managed RHSSO instance can be created by setting the `rhsso_external_access` parameter to `True` in the *Tackle CR* that manages the {ProductShortName} instance.
 
-The admin credentials for RHSSO are stored in a secret file named `credential-mta-rhsso` in the namespace where {ProductShortName} is installed.
-
-To retrieve your admin credentials, run the following command:
-----
-oc get secret credential-mta-rhsso -o yaml
-----
-
-To create a dedicated route for the RHSSO instance, set the `rhsso_external_access` parameter to `True` in the Tackle CR for {ProductShortName}.
-
-.Additional resources
-link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red Hat Single Sign-On features and concepts]
+For more information, see
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red Hat Single Sign-On features and concepts].
 
 [id="mta-roles-personas-users-permissions_{context}"]
 === Roles, Personas, Users, and Permissions
