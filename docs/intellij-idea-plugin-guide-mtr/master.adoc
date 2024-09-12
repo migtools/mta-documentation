@@ -19,6 +19,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="introduction"]
 == Introduction
 
+include::topics/snippet-mtr-end-of-life.adoc[]
+
 // About the IntelliJ IDEA plugin
 include::topics/about-ide-addons.adoc[leveloffset=+2]
 
