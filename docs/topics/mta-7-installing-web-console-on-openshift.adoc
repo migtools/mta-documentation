@@ -233,7 +233,8 @@ The amount of memory available for running pods on this node is 28.9 GiB. This a
 [id="mta-7-red-hat-single-sign-on_{context}"]
 == Red Hat Single Sign-On
 
-The {ProductShortName} uses link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red Hat Single Sign-On (RHSSO)] instance for user authentication and authorization.
+The {ProductShortName} uses link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
+Hat Single Sign-On] (RHSSO) instance for user authentication and authorization.
 
 The {ProductShortName} operator manages the RHSSO instance and configures a dedicated link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] with necessary roles and permissions.
 
