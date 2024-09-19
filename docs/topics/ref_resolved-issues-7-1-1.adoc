@@ -1,0 +1,62 @@
+// Module included in the following assemblies:
+//
+//docs/release_notes-7.1.1/master.adoc
+
+
+:_newdoc-version: 2.18.2
+:_template-generated: 2024-07-01
+
+:_mod-docs-content-type: REFERENCE
+
+[id="resolved-issues-7-1-1_{context}"]
+= Resolved issues
+
+This section provides highlighted issues that have been resolved in {ProductFullName} 7.1.1.
+
+.An application analysis no longer fails when run with the `--bulk` option
+
+Previously, if you ran an application analysis with the `--bulk` option, it failed with the following error:
+----
+ERRO[0143] container run error                       
+ERRO[0143] failed to generate static report
+----
+
+With this update, the issue has been fixed, and the bulk analysis completes without errors and generates a proper analysis report. 
+
+:FeatureName: <<TO-ADD>>
+
+//link:https:https://issues.redhat.com/browse/MTA-3663[MTA-3663]
+
+.Enabling Preemption now works as expected if authentication is enabled
+
+Previously, *Preemption* could not be enabled for tasks in the *Task Manager* page and the Task Manager drawer if {ProductFullName} authentication was enabled. With this update, the issue has been fixed, and you can now enable *Preemption* if {ProductFullName} authentication is enabled.
+
+:FeatureName: <<TO-ADD>>
+
+//link:https:https://issues.redhat.com/browse/MTA-3195[MTA-3195]
+
+.The drop-down application menu no longer contains duplicate options
+
+Previously, when selecting a target for application analysis, the drop-down menu contained duplicate application target options. With this update, the issue has been fixed, and no duplicates are listed when selecting the application analysis target.
+
+:FeatureName: <<TO-ADD>>
+
+//link:https:https://issues.redhat.com/browse/MTA-2795[MTA-2795]
+
+
+.The Reports page now displays separate charts for unassessed applications and applications with the Unknown risk
+
+Previously, the {ProductFullName} user interface (UI) did not distinguish between unassessed applications and applications that have been assessed to have the `Unknown` risk. Consequently, the *Reports* page displayed a single chart for such applications. With this update, the issue has been fixed, and the *Reports* page now displays separate charts for unassessed applications and applications with the *Unknown* risk.
+
+:FeatureName: <<TO-ADD>>
+
+//link:https:https://issues.redhat.com/browse/MTA-2678[MTA-2678]
+
+
+.Analyzing public applications no longer fails
+
+Previously, when you ran an analysis for public applications, which do not require credentials, by using custom rules, the analysis would fail if no targets and maven or source credentials were provided. With this update, the issue has been fixed, and the analysis no longer fails for public applications.
+
+:FeatureName: <<TO-ADD>>
+
+//link:https:https://issues.redhat.com/browse/MTA-3163[MTA-3163]
