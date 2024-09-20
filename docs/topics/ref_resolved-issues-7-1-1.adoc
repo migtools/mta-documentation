@@ -29,7 +29,7 @@ With this update, the issue has been resolved, and the bulk analysis completes w
 
 .Enabling Preemption now works as expected if authentication is enabled
 
-Previously, *Preemption* could not be enabled for tasks in the *Task Manager* page and the Task Manager drawer if {ProductFullName} authentication was enabled. With this update, the issue has been fixed, and you can now enable *Preemption* if {ProductFullName} authentication is enabled.
+Previously, *Preemption* could not be enabled for tasks in the *Task Manager* page and the Task Manager drawer if {ProductFullName} authentication was enabled. With this update, the issue has been resolved, and you can now enable *Preemption* if {ProductFullName} authentication is enabled.
 
 :FeatureName: <<TO-ADD>>
 
