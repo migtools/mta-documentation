@@ -361,7 +361,7 @@ This provider has the following capabilities:
 
 .`referenced`
 
-The `referenced` capability enables the provider to find references in the source code. This capability takes three input parameters, `pattern`, `location`, and 'annotated'.
+The `referenced` capability enables the provider to find references in the source code. This capability takes three input parameters: `pattern`, `location`, and 'annotated'.
 
 [source,terminal]
 ----
