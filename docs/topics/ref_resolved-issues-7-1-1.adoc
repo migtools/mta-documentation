@@ -55,7 +55,7 @@ Previously, the {ProductFullName} user interface (UI) did not distinguish betwee
 
 .Analyzing public applications no longer fails
 
-Previously, when you ran an analysis for public applications, which do not require credentials, by using custom rules, the analysis would fail if no targets and maven or source credentials were provided. With this update, the issue has been fixed, and the analysis no longer fails for public applications.
+Previously, when you ran an analysis for public applications, which do not require credentials, by using custom rules, the analysis would fail if no targets and maven or source credentials were provided. With this update, the issue has been resolved, and the analysis no longer fails for public applications.
 
 :FeatureName: <<TO-ADD>>
 
