@@ -13,7 +13,7 @@
 
 This section provides highlighted issues that have been resolved in {ProductFullName} 7.1.1.
 
-.An application analysis no longer fails when run with the `--bulk` option
+.Application analysis no longer fails when run with the `--bulk` option
 
 Previously, if you ran an application analysis with the `--bulk` option, it failed with the following error:
 ----
