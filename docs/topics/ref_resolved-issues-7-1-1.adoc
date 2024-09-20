@@ -37,7 +37,7 @@ Previously, *Preemption* could not be enabled for tasks in the *Task Manager* pa
 
 .The drop-down application menu no longer contains duplicate options
 
-Previously, when selecting a target for application analysis, the drop-down menu contained duplicate application target options. With this update, the issue has been fixed, and no duplicates are listed when selecting the application analysis target.
+Previously, when selecting a target for application analysis, the drop-down menu contained duplicate application target options. With this update, the issue has been resolved, and no duplicates are listed when selecting the application analysis target.
 
 :FeatureName: <<TO-ADD>>
 
