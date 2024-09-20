@@ -21,7 +21,7 @@ ERRO[0143] container run error
 ERRO[0143] failed to generate static report
 ----
 
-With this update, the issue has been fixed, and the bulk analysis completes without errors and generates a proper analysis report. 
+With this update, the issue has been resolved, and the bulk analysis completes without errors and generates a proper analysis report. 
 
 :FeatureName: <<TO-ADD>>
 
