@@ -46,7 +46,7 @@ Previously, when selecting a target for application analysis, the drop-down menu
 
 .The Reports page now displays separate charts for unassessed applications and applications with the Unknown risk
 
-Previously, the {ProductFullName} user interface (UI) did not distinguish between unassessed applications and applications that have been assessed to have the `Unknown` risk. Consequently, the *Reports* page displayed a single chart for such applications. With this update, the issue has been fixed, and the *Reports* page now displays separate charts for unassessed applications and applications with the *Unknown* risk.
+Previously, the {ProductFullName} user interface (UI) did not distinguish between unassessed applications and applications that have been assessed to have the `Unknown` risk. Consequently, the *Reports* page displayed a single chart for such applications. With this update, the issue has been resolved, and the *Reports* page now displays separate charts for unassessed applications and applications with the *Unknown* risk.
 
 :FeatureName: <<TO-ADD>>
 
