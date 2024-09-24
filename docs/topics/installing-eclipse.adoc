@@ -5,7 +5,7 @@
 [id="installing-eclipse_{context}"]
 = Installing Eclipse
 
-Eclipse is an integrated development environment (IDE) that you can use to install the {ProductFullName} play-in used for migrating and modernizing applications. 			
+Eclipse is an integrated development environment (IDE) that you can use to install the {ProductFullName} plug-in used for migrating and modernizing applications. 			
 
 .Prerequisites
 
