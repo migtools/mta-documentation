@@ -25,7 +25,7 @@ With this update, the issue has been resolved, and the bulk analysis completes w
 
 .Enabling Preemption now works as expected if authentication is enabled
 
-Previously, *Preemption* could not be enabled for tasks in the *Task Manager* page and the Task Manager drawer if {ProductFullName} authentication was enabled. With this update, the issue has been resolved, and you can now enable *Preemption* if {ProductFullName} authentication is enabled.(link:https:https://issues.redhat.com/browse/MTA-3195[MTA-3195])
+Previously, *Preemption* could not be enabled for tasks in the *Task Manager* page and the Task Manager drawer if {ProductFullName} authentication was enabled. With this update, the issue has been resolved, and you can now enable *Preemption* if {ProductShortName} authentication is enabled.(link:https:https://issues.redhat.com/browse/MTA-3195[MTA-3195])
 
 .The drop-down application menu no longer contains duplicate options
 
@@ -37,9 +37,9 @@ Previously, the {ProductFullName} user interface (UI) did not distinguish betwee
 
 .Analyzing public applications no longer fails
 
-Previously, when you ran an analysis for public applications, which do not require credentials, by using custom rules, the analysis would fail if no targets and maven or source credentials were provided. With this update, the issue has been resolved, and the analysis no longer fails for public applications. (link:https:https://issues.redhat.com/browse/MTA-3163[MTA-3163])
+Previously, when you ran an analysis for public applications, which did not require credentials, by using custom rules, the analysis would fail if no targets and maven or source credentials were provided. With this update, the issue has been resolved, and the analysis no longer fails for public applications. (link:https:https://issues.redhat.com/browse/MTA-3163[MTA-3163])
 
-.Successful application analysis despite dependency analysis failures
+.Application analysis no longer fails when dependency analysis failures occur
 
 Previously, the application analysis failed due to a dependency analysis issue, even when the source code analysis was successful, resulting in no static report being generated. This issue has been resolved now in the {ProductShortName} CLI. (link:https:https://issues.redhat.com/browse/MTA-3700[MTA-3700])
 
