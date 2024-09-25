@@ -27,6 +27,13 @@ include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
 You can install the {PluginName} in a connected or a restricted network environment.
 
+include::topics/installing-java-development-kit.adoc[leveloffset=+2]
+
+include::topics/installing-eclipse.adoc[leveloffset=+2]
+
+include::topics/adding-jboss-tools-dependencies-for-the-mta-plug-in.adoc[leveloffset=+2]
+
+
 include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
 :!eclipse-code-ready-studio-guide:
 :context: disconnected
