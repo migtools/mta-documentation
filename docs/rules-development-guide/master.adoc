@@ -84,7 +84,8 @@ include::topics/validation-report-errors.adoc[leveloffset=+3]
 // Rule Story Points
 include::topics/about-story-points.adoc[leveloffset=+2]
 
-For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
+// removing section subject to a later re-write
+// For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
 
 === Additional resources
 
