@@ -92,8 +92,9 @@ For more information on categorizing tasks, see xref:rule-categories_{context}[U
 // Review the Existing MTA XML Rules
 // include::topics/review-existing-rules.adoc[leveloffset=+3]
 
+// removing section subject to a later re-write
 // Fork and Clone the Ruleset GitHub Project
-include::topics/fork-ruleset-repo.adoc[leveloffset=+4]
+// include::topics/fork-ruleset-repo.adoc[leveloffset=+3]
 
 // Important Links
 include::topics/rules-important-links.adoc[leveloffset=+3]
