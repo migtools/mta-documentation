@@ -51,29 +51,37 @@ include::topics/running-analysis-using-custom-yaml-rule.adoc[leveloffset=+3]
 // Create Your First YAML Rule
 include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
 
+// removing section subject to a later re-write
 // Testing XML Rules
-include::topics/testing-rules.adoc[leveloffset=+1]
+// include::topics/testing-rules.adoc[leveloffset=+1]
 
+// removing section subject to a later re-write
 // Manually Test the XML Rule
-include::topics/manually-test-rules.adoc[leveloffset=+2]
+// include::topics/manually-test-rules.adoc[leveloffset=+2]
 
+// removing section subject to a later re-write
 // Test the Rules Using JUnit
-include::topics/rules-testing-junit.adoc[leveloffset=+2]
+// include::topics/rules-testing-junit.adoc[leveloffset=+2]
 
+// removing section subject to a later re-write
 // About the validation report
-include::topics/validation-report.adoc[leveloffset=+2]
+// include::topics/validation-report.adoc[leveloffset=+2]
 
+// removing section subject to a later re-write
 // creating a Validation Report
-include::topics/validation-report-understanding.adoc[leveloffset=+3]
+// include::topics/validation-report-understanding.adoc[leveloffset=+3]
 
+// removing section subject to a later re-write
 // Reported Errors when Running the Validation Report
-include::topics/validation-report-errors.adoc[leveloffset=+3]
+// include::topics/validation-report-errors.adoc[leveloffset=+3]
 
+// removing section subject to a later re-write
 // Overriding Rules
-include::topics/overriding-rules.adoc[leveloffset=+1]
+// include::topics/overriding-rules.adoc[leveloffset=+1]
 
+// removing section subject to a later re-write
 // Using Custom Rule Categories
-include::topics/rule-categories.adoc[leveloffset=+1]
+// include::topics/rule-categories.adoc[leveloffset=+1]
 
 [appendix]
 == Reference material
@@ -81,15 +89,18 @@ include::topics/rule-categories.adoc[leveloffset=+1]
 // Rule Story Points
 include::topics/about-story-points.adoc[leveloffset=+2]
 
-For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
+// removing section subject to a later re-write
+// For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
 
 === Additional resources
 
+// removing section subject to a later re-write
 // Review the Existing MTA XML Rules
-include::topics/review-existing-rules.adoc[leveloffset=+3]
+// include::topics/review-existing-rules.adoc[leveloffset=+3]
 
+// removing section subject to a later re-write
 // Fork and Clone the Ruleset GitHub Project
-include::topics/fork-ruleset-repo.adoc[leveloffset=+4]
+// include::topics/fork-ruleset-repo.adoc[leveloffset=+3]
 
 // Important Links
 include::topics/rules-important-links.adoc[leveloffset=+3]
