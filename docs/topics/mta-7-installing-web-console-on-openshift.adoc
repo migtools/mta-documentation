@@ -183,6 +183,7 @@ spec:
 ** *Password*: Passw0rd!
 . When prompted, create a new password.
 
+////
 [id="installing-mta-operator-in-disconnected-environment_{context}"]
 == Installing the {ProductName} Operator in a disconnected Red Hat OpenShift environment
 
@@ -210,7 +211,7 @@ mirror:
       - name: stable
   helm: {}
 ----
-
+////
 
 [id="eviction-threshold_{context}"]
 === Eviction threshold
