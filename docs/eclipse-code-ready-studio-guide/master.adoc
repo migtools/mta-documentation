@@ -62,5 +62,3 @@ include::topics/eclipse-viewing-rules.adoc[leveloffset=+2]
 include::topics/eclipse-creating-custom-ruleset.adoc[leveloffset=+2]
 include::topics/eclipse-importing-custom-ruleset.adoc[leveloffset=+2]
 include::topics/eclipse-submitting-ruleset.adoc[leveloffset=+2]
-
-:!eclipse-code-ready-studio-guide:
