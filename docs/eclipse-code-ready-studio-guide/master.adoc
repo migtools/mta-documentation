@@ -35,13 +35,7 @@ include::topics/adding-jboss-tools-dependencies-for-the-mta-plug-in.adoc[levelof
 
 
 include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
-:!eclipse-code-ready-studio-guide:
-:context: disconnected
-:disconnected:
-include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
-:!disconnected:
-:context: eclipse-code-ready-studio-guide
-:eclipse-code-ready-studio-guide:
+
 include::topics/eclipse-accessing-tools.adoc[leveloffset=+2]
 
 [id="analyzing-projects-with-plugin_{context}"]
@@ -68,5 +62,3 @@ include::topics/eclipse-viewing-rules.adoc[leveloffset=+2]
 include::topics/eclipse-creating-custom-ruleset.adoc[leveloffset=+2]
 include::topics/eclipse-importing-custom-ruleset.adoc[leveloffset=+2]
 include::topics/eclipse-submitting-ruleset.adoc[leveloffset=+2]
-
-:!eclipse-code-ready-studio-guide:
