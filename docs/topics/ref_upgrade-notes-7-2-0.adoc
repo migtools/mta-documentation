@@ -1,0 +1,20 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-08-12
+
+:_mod-docs-content-type: REFERENCE
+
+[id="upgrade-notes-7-1-0_{context}"]
+= Upgrade notes
+
+This section provides upgrade notes for the {ProductFullName} 7.2.0.
+
+
+.PostgreSQL is migrated to version 15
+
+In the {ProductFullName} 7.1.0, the `postgresql` container image has been migrated to a new `postgresql-15` version to be compatible with support. Note that this migration occurs during the upgrade to 7.1.0 and might take some time. The upgrade is considered to be completed when the status of the Tackle CR is Successful. To check the status of the Tackle, enter:
+
+[literal,subs="+quotes,attributes"]
+----
+$ *oc wait --for=condition=Successful --namespace=openshift-mta tackles.tackle.konveyor.io/tackle*
+tackle.tackle.konveyor.io/tackle condition met
+----
