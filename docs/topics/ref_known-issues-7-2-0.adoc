@@ -1,0 +1,13 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-08-14
+
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-2-0_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.2.0.
+
+.Enabling Preemption does not work if authentication is enabled
+
+In {ProductFullName} 7.1.0, *Preemption* cannot be enabled for tasks in the Task Manager page and the Task Manager drawer if {ProductShortName} authentication is enabled. To work around this issue, disable authentication. (link:https://issues.redhat.com/browse/MTA-3195[MTA-3195])

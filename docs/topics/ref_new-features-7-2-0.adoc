@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+//docs/release_notes-7.1.0/master.adoc
+
+
+:_newdoc-version: 2.18.2
+:_template-generated: 2024-07-01
+
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-7-2-0_{context}"]
+= New features
+
+This section provides the new features and improvements of the {ProductFullName} 7.2.0.
+
+.Support for analyzing applications managed with Gradle has been added to {ProductShortName}
+
+In earlier releases of {ProductFullName}, you could use {ProductShortName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven.
+
+:FeatureName: Support for analyzing applications managed with Gradle
+
+include::developer-preview-feature.adoc[]
