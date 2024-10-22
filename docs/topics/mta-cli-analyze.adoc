@@ -34,8 +34,6 @@ Flags:
       --enable-default-rulesets           Run default rulesets with analysis
                                           (default: `true`).
   -h, --help                              Help for analyze.
-      --http-proxy (string)               HTTP proxy string URL.
-      --https-proxy (string)              HTTPS proxy string URL.
       --incident-selector (string)        An expression to select incidents
                                           based on custom variables.
                                           Example:
@@ -58,8 +56,6 @@ Flags:
   -m, --mode (string)                     Analysis mode, must be one of
                                           `full` or `source-only`
                                           (default: `full`).
-      --no-proxy (string)                 Proxy-excluded URLs
-                                          (relevant only with proxy).
   -o, --output (string)                   Path to the directory for analysis
                                           output.
       --overwrite                         Overwrite output directory.
