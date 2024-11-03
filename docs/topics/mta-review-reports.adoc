@@ -299,3 +299,4 @@ This report provides the list of rules that ran when running the {ProductShortNa
 
 .Rule providers execution overview
 image::3-13-rule-providers-execution-overview.png[Rule Provider Execution Overview]
+////
