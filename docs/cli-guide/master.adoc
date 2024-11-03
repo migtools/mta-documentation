@@ -102,6 +102,8 @@ include::topics/mta-optimize-performance.adoc[leveloffset=+1]
 // Configure {ProductShortName} to Exclude Files and Packages
 // include::topics/mta-exclude-files-and-packages.adoc[leveloffset=+2]
 
+[appendix]
+== Reference material
 
 // {ProductShortName} Command-line Arguments
 include::topics/mta-cli-args.adoc[leveloffset=+2]
