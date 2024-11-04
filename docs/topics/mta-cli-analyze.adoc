@@ -19,66 +19,76 @@ All flags:
 
 [source,terminal,subs="attributes+"]
 ----
-Analyze application source code
+Analyze application source code 
 
 Usage:
   {mta-cli} analyze [flags]
 
 Flags:
 
-      --analyze-known-libraries           Analyze known open-source libraries.
-      --context-lines (int)               Number of lines of source code to
-                                          include in the output for each
-                                          incident (default: `100`).
-  -d, --dependency-folders (stringArray)  Directory for dependencies.
-      --enable-default-rulesets           Run default rulesets with analysis
-                                          (default: `true`).
-  -h, --help                              Help for analyze.
-      --incident-selector (string)        An expression to select incidents
-                                          based on custom variables.
-                                          Example:
-                                          !package=io.demo.config-utils
-  -i, --input (string)                    Path to application source code or
-                                          a binary.
-      --jaeger-endpoint (string)          Jaeger endpoint to collect traces.
-      --json-output                       Create analysis and dependency
-                                          output as JSON.
-      --list-sources                      List rules for available
-                                          migration sources.
-      --list-targets                      List rules for available
-                                          migration targets.
-  -l, --label-selector (string)           Run rules based on specified label
-                                          selector expression.
-      --maven-settings (string)           Path to the custom maven
-                                          settings file to use.
-      --overwrite                         Overwrite output directory.
-      --skip-static-report                Do not generate the static report.
-  -m, --mode (string)                     Analysis mode, must be one of
-                                          `full` or `source-only`
-                                          (default: `full`).
-  -o, --output (string)                   Path to the directory for analysis
-                                          output.
-      --overwrite                         Overwrite output directory.
-      --rules (stringArray)               Filename or directory containing
-                                          rule files.
-      --skip-static-report                Do not generate the static report.
-  -s, --source (string)                   Source technology to consider
-                                          for analysis.
-                                          To specify multiple sources,
-                                          repeat the parameter:
-                                          `--source <source_1>
-                                          --source <source_2>` etc.
-  -t, --target (string)                   Target technology to consider
-                                          for analysis.
-                                          To specify multiple targets,
-                                          repeat the parameter:
-                                          `--target <target_1>
-                                          --target <target_2>` etc.
+      --analyze-known-libraries              Analyze known open-source libraries.
+      --context-lines (int)                  Number of lines of source code to
+                                             include in the output for each
+                                             incident (default: `100`).
+      --bulk                                 Analyze multiple applications in bulk.
+                                             The analysis produces a 
+                                             combined static report.
+  -d, --dependency-folders (stringArray)     Directory for dependencies.
+      --enable-default-rulesets              Run default rulesets with analysis
+                                             (default: `true`).
+  -h, --help                                 Help for analyze.
+      --incident-selector (string)           An expression to select incidents
+                                             based on custom variables.
+                                             Example:
+                                             !package=io.demo.config-utils
+  -i, --input (string)                       Path to application source code or
+                                             a binary.
+      --jaeger-endpoint (string)             Jaeger endpoint to collect traces.
+      --json-output                          Create analysis and dependency
+                                             output as JSON.
+      --list-sources                         List rules for available
+                                             migration sources.
+      --list-targets                         List rules for available
+                                             migration targets.
+  -l, --label-selector (string)              Run rules based on specified label
+                                             selector expression.
+      --list-providers                       List language providers 
+                                             supported for the analysis.
+      --maven-settings (string)              Path to the custom maven
+                                             settings file to use.
+  -m, --mode (string)                        Analysis mode, must be one of
+                                             `full` or `source-only`
+                                             (default: `full`).
+  -o, --output (string)                      Path to the directory for analysis
+                                             output.
+      --override-provider-settings (string)  Override the language provider
+                                             settings. 
+                                             As a result, the analysis pod
+                                             runs on a host network, and 
+                                             no providers are started.
+      --overwrite                            Overwrite output directory.
+      --provider (stringArray)               Specify a language provider
+                                             or providers to run during the analysis.
+      --rules (stringArray)                  Filename or directory containing
+                                             rule files.
+      --skip-static-report                   Do not generate the static report.
+  -s, --source (string)                      Source technology to consider
+                                             for analysis.
+                                             To specify multiple sources,
+                                             repeat the parameter:
+                                             `--source <source_1>
+                                             --source <source_2>` etc.
+  -t, --target (string)                      Target technology to consider
+                                             for analysis.
+                                             To specify multiple targets,
+                                             repeat the parameter:
+                                             `--target <target_1>
+                                             --target <target_2>` etc.
 
 
 Global Flags:
-      --log-level uint32                  Log level (default: 4).
-      --no-cleanup                        Do not cleanup temporary resources.
+      --log-level uint32                     Log level (default: 4).
+      --no-cleanup                           Do not cleanup temporary resources.
 ----
 
 [NOTE]
