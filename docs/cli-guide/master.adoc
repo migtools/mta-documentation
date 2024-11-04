@@ -108,7 +108,7 @@ include::topics/mta-optimize-performance.adoc[leveloffset=+1]
 // {ProductShortName} Command-line Arguments
 include::topics/mta-cli-args.adoc[leveloffset=+2]
 
-/ Added in 4.3.0: list of supported Tech Tags
+// Added in 4.3.0: list of supported Tech Tags
 include::topics/tech-tags.adoc[leveloffset=+2]
 
 // Rule Story Points
