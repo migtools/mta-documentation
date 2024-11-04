@@ -108,4 +108,31 @@ include::topics/mta-optimize-performance.adoc[leveloffset=+1]
 // {ProductShortName} Command-line Arguments
 include::topics/mta-cli-args.adoc[leveloffset=+2]
 
+/ Added in 4.3.0: list of supported Tech Tags
+include::topics/tech-tags.adoc[leveloffset=+2]
+
+// Rule Story Points
+include::topics/about-story-points.adoc[leveloffset=+2]
+
+For more information on categorizing tasks, see link:{ProductDocRulesGuideURL}/rule_categories_rules-development-guide#rule_categories_rules-development-guide[Using custom rule categories].
+
+=== Additional Resources
+
+// Get Involved
+include::topics/get-involved.adoc[leveloffset=+3]
+
+// Important Links
+include::topics/important-links.adoc[leveloffset=+3]
+
+// Report Issues with {ProductShortName}
+
+==== Reporting issues
+
+{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics/templates/revision-info.adoc[]
+
 :!cli-guide:
