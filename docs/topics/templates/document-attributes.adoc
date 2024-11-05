@@ -33,6 +33,12 @@ ifdef::mta[]
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/MTA/issues
 :CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
+// OpenShift
+:ocp-first: {ocp-full} ({OCP-short})
+:ocp-full: OpenShift Container Platform
+:ocp-short: OpenShift
+:ocp: OCP
+:ocp-version: 4.18
 endif::[]
 
 ifdef::mtr[]
