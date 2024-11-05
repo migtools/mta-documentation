@@ -38,7 +38,7 @@ ifdef::mta[]
 :ocp-full: OpenShift Container Platform
 :ocp-short: OpenShift
 :ocp: OCP
-:ocp-version: 4.18
+:ocp-version: 4.17
 endif::[]
 
 ifdef::mtr[]
