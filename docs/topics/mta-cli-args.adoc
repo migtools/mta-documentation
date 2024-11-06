@@ -118,7 +118,7 @@ a|Flag for the source technology to consider for analysis. Use multiple times fo
 
 a|`-t`, `--target`
 |String Array
-a|Flag for the target technology to consider for analysis. Use multiple times for additional targets: `--target --target …`. For more details, see xref:cli-target-argument_cli-guide[Setting the target technology].
+a|Flag for the target technology to consider for analysis. Use multiple times for additional targets, for example, `--target --target …`. For more details, see xref:cli-target-argument_cli-guide[Setting the target technology].
 |====
 
 
