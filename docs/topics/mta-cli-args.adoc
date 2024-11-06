@@ -94,7 +94,7 @@ a|`--skip-static-report`
 
 a|`-m`, `--mode`
 |String
-a|Flag for analysis mode, this must be one of `full`, for `source` and `dependencies`, or `source-only` (default `full`)
+a|Flag for analysis mode, this must be one of `full`, for `source` and `dependencies`, or `source-only` (default `full`).
 
 a|`-o`, `--output`
 |String
