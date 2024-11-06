@@ -114,7 +114,7 @@ a|Flag to specify the filename or directory containing rule files. Use multiple 
 
 a|`-s`, `--source`
 |String Array
-a|Flag for the source technology to consider for analysis. Use multiple times for additional sources: `--source --source …`. For more details, see xref:cli-source-argument_cli-guide[Setting the source technology].
+a|Flag for the source technology to consider for analysis. Use multiple times for additional sources, for example, `--source --source …`. For more details, see xref:cli-source-argument_cli-guide[Setting the source technology].
 
 a|`-t`, `--target`
 |String Array
