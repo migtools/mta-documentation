@@ -193,7 +193,7 @@ A space-delimited list of one or more source technologies, servers, platforms, o
 --source <SOURCE_1> <SOURCE_2>
 ----
 
-The `--source` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, `--source eap:5`.
+The `--source` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs {ProductShortName} to only run the rulesets matching the specified versions, for example, `--source eap:5`.
 
 [WARNING]
 ====
