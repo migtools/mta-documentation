@@ -156,7 +156,7 @@ File::
 | --sourceMode
 | Neither Argument
 
-| Argument is ignored; the file is evaluated as a single application.
+| Argument is ignored. The file is evaluated as a single application.
 | The file is evaluated as a compressed project.
 | The file is evaluated as a single application.
 |====
