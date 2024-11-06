@@ -185,7 +185,7 @@ However, if you specify the `--overwrite` argument, {ProductShortName} will proc
 [id="cli-source-argument_{context}"]
 == Setting the source technology
 
-A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
+A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. You can use this argument, in conjunction with the `--target` argument, to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
 
 .Usage
 [source,options="nowrap",subs="attributes+"]
