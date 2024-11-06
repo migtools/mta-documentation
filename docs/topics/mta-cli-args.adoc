@@ -214,4 +214,4 @@ A space-delimited list of one or more target technologies, servers, platforms, o
 ----
 
 
-The `--target` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, `--target eap:7`.
+The `--target` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs {ProductShortName} to only run the rulesets matching the specified versions, for example, `--target eap:7`.
