@@ -110,7 +110,7 @@ a|`--provider`
 
 a|`--rules`
 |String Array
-a|Flag to specify the filename or directory containing rule files. Use multiple times for additional rules: `--rules --rules …`
+a|Flag to specify the filename or directory containing rule files. Use multiple times for additional rules, for example, `--rules --rules …`.
 
 a|`-s`, `--source`
 |String Array
