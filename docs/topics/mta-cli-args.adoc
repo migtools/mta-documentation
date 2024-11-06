@@ -102,7 +102,7 @@ a|`-o`, `--output`
 
 a|`--override-provider-settings`
 |String
-|Flag to override the provider settings, the analysis pod runs on the host network, and no providers are started up.
+|Flag to override the provider settings. The analysis pod runs on the host network, and no providers are started.
 
 a|`--provider`
 |String Array
