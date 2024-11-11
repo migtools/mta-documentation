@@ -21,7 +21,6 @@ To run the {ProductShortName} command without prompting, for example when execut
 .{ProductShortName} CLI arguments
 [%collapsible]
 ====
-[cols="40%,60%a",options="header",]
 [width="100%",cols="30%,30%,65%",options="header",]
 |====
 |Command |Type|Description
