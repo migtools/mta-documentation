@@ -19,6 +19,8 @@ To run the {ProductShortName} command without prompting, for example when execut
 ====
 
 .{ProductShortName} CLI arguments
+[%collapsible]
+====
 [cols="40%,60%a",options="header",]
 [width="100%",cols="30%,30%,65%",options="header",]
 |====
@@ -120,7 +122,7 @@ a|`-t`, `--target`
 |String Array
 a|Flag for the target technology to consider for analysis. Use multiple times for additional targets, for example, `--target --target …`. For more details, see xref:cli-target-argument_cli-guide[Setting the target technology].
 |====
-
+====
 
 [id="cli-input-argument_{context}"]
 == Specifying the input
