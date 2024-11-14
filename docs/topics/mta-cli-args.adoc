@@ -137,29 +137,12 @@ Depending on whether the input file type provided to the `--input` argument is a
 
 Directory::
 +
-[cols="1,1,1",options="header"]
-|====
-| --explodedApp
-| --sourceMode
-| Neither Argument
-
-| The directory is evaluated as a single application.
-| The directory is evaluated as a single application.
-| Each subdirectory is evaluated as an application.
-|====
+* `--sourceMode`: The directory is evaluated as a single application.
 
 File::
 +
-[cols="1,1,1",options="header"]
-|====
-| --explodedApp
-| --sourceMode
-| Neither Argument
+* `--sourceMode`: The file is evaluated as a compressed project.
 
-| Argument is ignored. The file is evaluated as a single application.
-| The file is evaluated as a compressed project.
-| The file is evaluated as a single application.
-|====
 
 [id="cli-output-argument_{context}"]
 == Specifying the output directory
