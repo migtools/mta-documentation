@@ -36,7 +36,7 @@ a|Flag for running multiple analyze commands in bulk, which result in a combined
 |Integer
 |Flag to define the number of lines of source code to include in the output for each incident (default: `100`).
 
-a|`-d`, `–dependency-folders`
+a|`-d`, `--dependency-folders`
 |String Array
 |Flag for the directory for dependencies.
 
