@@ -85,14 +85,6 @@ a|`--maven-settings`
 |string
 |Flag path to a custom Maven settings file to use
 
-a|`--overwrite`
-|
-|Flag to overwrite the output directory. If you do not specify this argument and the `--output` directory exists, you are prompted to choose whether to overwrite the contents.
-
-a|`--skip-static-report`
-|
-|Flag to not generate static report.
-
 a|`-m`, `--mode`
 |String
 a|Flag for analysis mode, this must be one of `full`, for `source` and `dependencies`, or `source-only` (default `full`).
@@ -105,6 +97,10 @@ a|`--override-provider-settings`
 |String
 |Flag to override the provider settings. The analysis pod runs on the host network, and no providers are started.
 
+a|`--overwrite`
+|
+|Flag to overwrite the output directory. If you do not specify this argument and the `--output` directory exists, you are prompted to choose whether to overwrite the contents.
+
 a|`--provider`
 |String Array
 |Flag to specify which provider or providers to run.
@@ -112,6 +108,10 @@ a|`--provider`
 a|`--rules`
 |String Array
 a|Flag to specify the filename or directory containing rule files. Use multiple times for additional rules, for example, `--rules --rules …`.
+
+a|`--skip-static-report`
+|
+|Flag to not generate static report.
 
 a|`-s`, `--source`
 |String Array
