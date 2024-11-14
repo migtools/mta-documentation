@@ -44,7 +44,7 @@ a|`--enable-default-rulesets`
 |Boolean
 a|Flag to run default rulesets with analysis (default: `true`).
 
-a|`-h`, `–help`
+a|`-h`, `--help`
 |
 |Flag to output help for analyze
 
@@ -52,7 +52,7 @@ a|`--incident-selector`
 |String
 a|Flag to select incidents based on custom variables, for example, `!package=io.konveyor.demo.config-utils`
 
-a|`-i`, `–input`
+a|`-i`, `--input`
 |String
 a|Flag for the path to application source code or a binary. For more details, see xref:cli-input-argument_cli-guide[Specifying the input].
 
