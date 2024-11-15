@@ -24,27 +24,27 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 |Description
 
 |`hub database`
-|5 GB
+|`5 Gi`
 |RWO
 |Hub database
 
 |`hub bucket`
-|100 GB
+|`100 Gi`
 |RWX
 |Hub file storage; required if the `rwx_supported` configuration option is set to `true`
 
 |`keycloak postgresql`
-|1 GB
+|`1 Gi`
 |RWO
 |Keycloak back end database
 
 |`pathfinder postgresql`
-|1 GB
+|`1 Gi`
 |RWO
 |Pathfinder back end database
 
 |`cache`
-|100 GB
+|`100 Gi`
 |RWX
 |Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
 |====
@@ -212,7 +212,7 @@ When installed on https://developers.redhat.com/products/openshift-local/overvie
 .OpenShift Local {ProductShortName} memory requirements
 [cols="25%,75%", options="header"]
 |====
-|Memory (GiB)
+|Memory (Gi)
 |Description
 
 

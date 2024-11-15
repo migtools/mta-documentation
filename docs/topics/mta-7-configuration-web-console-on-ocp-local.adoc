@@ -6,9 +6,9 @@ The following table shows the recommended minimum configurations of {rh-ocp-loca
 
 [width="100%",cols="25%,25%,25%",options="header",]
 |===
-|Memory (GiB)
+|Memory (GB)
 |CPU
-|Disk sze (GiB)
+|Disk sze (GB)
 
 |20
 |5
@@ -16,5 +16,5 @@ The following table shows the recommended minimum configurations of {rh-ocp-loca
 
 |20
 |5
-|35, with the {ProductShortName} Operator configurations `cache_data_volume_size` and `hub_bucket_volume_size` set to 5GB.
+|35, with the {ProductShortName} Operator configurations `cache_data_volume_size` and `hub_bucket_volume_size` set to `5Gi`.
 |===
