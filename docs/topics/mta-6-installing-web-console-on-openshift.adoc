@@ -83,7 +83,7 @@ The most commonly used CR settings are listed in this table:
 |Description
 
 |`cache_data_volume_size`
-|`100 GB`
+|`100 Gi`
 |Size requested for the cache volume; ignored when `rwx_supported=false`
 
 |`cache_storage_class`
@@ -99,11 +99,11 @@ The most commonly used CR settings are listed in this table:
 |Flag to indicate whether namespace isolation using network policies is enabled
 
 |`hub_database_volume_size`
-|`5 GB`
+|`5 Gi`
 |Size requested for the Hub database volume
 
 |`hub_bucket_volume_size`
-|`100 GB`
+|`100 Gi`
 |Size requested for the Hub bucket volume
 
 |`hub_bucket_storage_class`
@@ -111,15 +111,15 @@ The most commonly used CR settings are listed in this table:
 |Storage class used for the bucket volume
 
 |`keycloak_database_data_volume_size`
-|`1 GB`
+|`1 Gi`
 |Size requested for the Keycloak database volume
 
 |`pathfinder_database_data_volume_size`
-|`1 GB`
+|`1 Gi`
 |Size requested for the Pathfinder database volume
 
 |`maven_data_volume_size`
-|`100 GB`
+|`100 Gi`
 |Size requested for the Maven m2 cache volume; deprecated in {ProductShortName} 6.0.1
 
 |`rwx_storage_class`
@@ -216,19 +216,19 @@ When installed on https://developers.redhat.com/products/openshift-local/overvie
 |Description
 
 
-|`10`
+|`10Gi`
 |{ProductShortName} cannot run the analysis due to insufficient memory
 
-|`11`
+|`11Gi`
 |{ProductShortName} cannot run the analysis due to insufficient memory
 
-|`12`
+|`12Gi`
 |*{ProductShortName} works and the analysis is completed in approximately 3 minutes*
 
-|`15`
+|`15Gi`
 |{ProductShortName} works and the analysis is completed in less than 2 minutes
 
-|`20`
+|`20Gi`
 |{ProductShortName} works quickly and the analysis is completed in less than 1 minute
 |====
 
