@@ -175,7 +175,7 @@ The `crc start` command starts the {rh-ocp-local} instance and configured contai
 
 |-m, –memory
 |int
-|MiB of memory to assign to the instance
+|`Mi` of memory to assign to the instance
 |10752
 
 |-n, –nameserver
