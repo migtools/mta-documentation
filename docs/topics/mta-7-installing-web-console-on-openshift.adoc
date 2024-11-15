@@ -30,22 +30,22 @@ To successfully deploy, the {ProductShortName} Operator requires 2 RWO persisten
 |Description
 
 |`hub database`
-|10 GB
+|`10Gi`
 |RWO
 |Hub database
 
 |`hub bucket`
-|100 GB
+|`100Gi`
 |RWX
 |Hub file storage; required if the `rwx_supported` configuration option is set to `true`
 
 |`keycloak postgresql`
-|1 GB
+|`1Gi`
 |RWO
 |Keycloak back end database
 
 |`cache`
-|100 GB
+|`100Gi`
 |RWX
 |Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
 |====
@@ -87,7 +87,7 @@ The most commonly used CR settings are listed in this table:
 |Description
 
 |`cache_data_volume_size`
-|`100 GB`
+|`100Gi`
 |Size requested for the cache volume; ignored when `rwx_supported=false`
 
 |`cache_storage_class`
@@ -103,11 +103,11 @@ The most commonly used CR settings are listed in this table:
 |Flag to indicate whether namespace isolation using network policies is enabled
 
 |`hub_database_volume_size`
-|`10 GB`
+|`10Gi`
 |Size requested for the Hub database volume
 
 |`hub_bucket_volume_size`
-|`100 GB`
+|`100Gi`
 |Size requested for the Hub bucket volume
 
 |`hub_bucket_storage_class`
@@ -115,15 +115,15 @@ The most commonly used CR settings are listed in this table:
 |Storage class used for the bucket volume
 
 |`keycloak_database_data_volume_size`
-|`1 GB`
+|`1Gi`
 |Size requested for the Keycloak database volume
 
 |`pathfinder_database_data_volume_size`
-|`1 GB`
+|`1Gi`
 |Size requested for the Pathfinder database volume
 
 |`maven_data_volume_size`
-|`100 GB`
+|`100Gi`
 |Size requested for the Maven m2 cache volume; deprecated in {ProductShortName} 6.0.1
 
 |`rwx_storage_class`
@@ -147,7 +147,7 @@ The most commonly used CR settings are listed in this table:
 |Maximum number of CPUs the pod is allowed to use
 
 |`analyzer_container_limits_memory`
-|`4GB`
+|`4Gi`
 |Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
 
 |`analyzer_container_requests_cpu`
@@ -155,7 +155,7 @@ The most commonly used CR settings are listed in this table:
 |Minimum number of CPUs the pod needs to run
 
 |`analyzer_container_requests_memory`
-|`4GB`
+|`4Gi`
 |Minimum amount of memory the pod needs to run
 |====
 
@@ -222,11 +222,11 @@ To prevent out-of-memory events and protect nodes, use the `--eviction-hard` set
 
 .Example of node memory allocation settings
 
-- Node capacity: `32 GB`
+- Node capacity: `32Gi`
 
-- `--system-reserved` setting: `3 GB`
+- `--system-reserved` setting: `3Gi`
 
-- `--eviction-hard` setting: `100 MiB`
+- `--eviction-hard` setting: `100Mi`
 
 The amount of memory available for running pods on this node is 28.9 GB. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
