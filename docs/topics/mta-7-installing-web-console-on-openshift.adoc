@@ -30,22 +30,22 @@ To successfully deploy, the {ProductShortName} Operator requires 2 RWO persisten
 |Description
 
 |`hub database`
-|10 GiB
+|10 GB
 |RWO
 |Hub database
 
 |`hub bucket`
-|100 GiB
+|100 GB
 |RWX
 |Hub file storage; required if the `rwx_supported` configuration option is set to `true`
 
 |`keycloak postgresql`
-|1 GiB
+|1 GB
 |RWO
 |Keycloak back end database
 
 |`cache`
-|100 GiB
+|100 GB
 |RWX
 |Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
 |====
@@ -57,7 +57,7 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Red 
 
 .Prerequisites
 
-* 4 vCPUs, 8 GiB RAM, and 40 GiB persistent storage.
+* 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
 * Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.13-4.15.
 * You must be logged in as a user with `cluster-admin` permissions.
 
@@ -87,7 +87,7 @@ The most commonly used CR settings are listed in this table:
 |Description
 
 |`cache_data_volume_size`
-|`100 GiB`
+|`100 GB`
 |Size requested for the cache volume; ignored when `rwx_supported=false`
 
 |`cache_storage_class`
@@ -103,11 +103,11 @@ The most commonly used CR settings are listed in this table:
 |Flag to indicate whether namespace isolation using network policies is enabled
 
 |`hub_database_volume_size`
-|`10 GiB`
+|`10 GB`
 |Size requested for the Hub database volume
 
 |`hub_bucket_volume_size`
-|`100 GiB`
+|`100 GB`
 |Size requested for the Hub bucket volume
 
 |`hub_bucket_storage_class`
@@ -115,15 +115,15 @@ The most commonly used CR settings are listed in this table:
 |Storage class used for the bucket volume
 
 |`keycloak_database_data_volume_size`
-|`1 GiB`
+|`1 GB`
 |Size requested for the Keycloak database volume
 
 |`pathfinder_database_data_volume_size`
-|`1 GiB`
+|`1 GB`
 |Size requested for the Pathfinder database volume
 
 |`maven_data_volume_size`
-|`100 GiB`
+|`100 GB`
 |Size requested for the Maven m2 cache volume; deprecated in {ProductShortName} 6.0.1
 
 |`rwx_storage_class`
@@ -147,7 +147,7 @@ The most commonly used CR settings are listed in this table:
 |Maximum number of CPUs the pod is allowed to use
 
 |`analyzer_container_limits_memory`
-|`4GiB`
+|`4GB`
 |Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
 
 |`analyzer_container_requests_cpu`
@@ -155,7 +155,7 @@ The most commonly used CR settings are listed in this table:
 |Minimum number of CPUs the pod needs to run
 
 |`analyzer_container_requests_memory`
-|`4GiB`
+|`4GB`
 |Minimum amount of memory the pod needs to run
 |====
 
@@ -222,13 +222,13 @@ To prevent out-of-memory events and protect nodes, use the `--eviction-hard` set
 
 .Example of node memory allocation settings
 
-- Node capacity: `32 GiB`
+- Node capacity: `32 GB`
 
-- `--system-reserved` setting: `3 GiB`
+- `--system-reserved` setting: `3 GB`
 
 - `--eviction-hard` setting: `100 MiB`
 
-The amount of memory available for running pods on this node is 28.9 GiB. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
+The amount of memory available for running pods on this node is 28.9 GB. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
 
 [id="mta-7-red-hat-single-sign-on_{context}"]
