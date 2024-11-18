@@ -48,6 +48,14 @@ a|`-h`, `--help`
 |
 |Flag to output help for analyze
 
+a|`--http-proxy`
+| String
+| Flag for Hyper Text Transfer Protocol (HTTP) proxy string URL
+
+a|`--https-proxy`
+| String
+| Flag for Hypertext Transfer Protocol Secure (HTTPS) proxy string URL
+
 a|`--incident-selector`
 |String
 a|Flag to select incidents based on custom variables, for example, `!package=io.konveyor.demo.config-utils`
