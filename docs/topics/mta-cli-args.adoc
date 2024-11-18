@@ -72,6 +72,14 @@ a|`--json-output`
 |
 a|Flag to create analysis and dependency output as JSON.
 
+a|`-l`, `--label-selector`
+|String
+|Flag to run rules based on a specified label selector expression.
+
+a|`--list-providers`
+|
+|Flag to list available supported providers.
+
 a|`--list-sources`
 |
 a|Flag to list rules for available migration sources.
@@ -80,14 +88,6 @@ a|`--list-targets`
 |
 |Flag to list rules for available migration targets.
 
-a|`--list-providers`
-|
-|Flag to list available supported providers.
-
-a|`-l`, `--label-selector`
-|String
-|Flag to run rules based on a specified label selector expression.
-
 a|`--maven-settings`
 |string
 |Flag path to a custom Maven settings file to use
@@ -95,6 +95,10 @@ a|`--maven-settings`
 a|`-m`, `--mode`
 |String
 a|Flag for analysis mode, this must be one of `full`, for `source` and `dependencies`, or `source-only` (default `full`).
+
+a|`--no-proxy`
+|String
+|Flag to excluded URLs from passing through any proxy (relevant only with proxy)
 
 a|`-o`, `--output`
 |String
@@ -115,6 +119,10 @@ a|`--provider`
 a|`--rules`
 |String Array
 a|Flag to specify the filename or directory containing rule files. Use multiple times for additional rules, for example, `--rules --rules …`.
+
+a|`--run-local`
+|
+|Local flag to run analysis directly on local system without containers (for Java and Maven)
 
 a|`--skip-static-report`
 |
