@@ -11,16 +11,8 @@ You can perform an application analysis for Java applications by using the {Prod
 
 * You have OpenJDK version 17 or later installed on your system.
 * You have Maven installed on your system.
-* You have Gradle installed on your system.
-* The `RUN_LOCAL` environmental variable is set to `true`:
-+
-----
-RUN_LOCAL=true 
-----
-+
-Note that if you do not set this variable to `true`, the analysis will run inside a container. 
-+
-IMPORTANT: The analysis for languages other than Java is not affected by the  RUN_LOCAL variable.
+* You have the `python3` package installed on your system.
+* You have the `JAVA_HOME` environmental variable set.
 
 .Procedure
 
@@ -44,7 +36,7 @@ $ mv $HOME/kantra.<os>.<arch> $HOME/.kantra
 +
 [source,terminal,subs="attributes+"]
 ----
-$ mta-cli analyze-bin --overwrite --input <path_to_input>  --output <path_to_output> --target <target_source>
+$ mta-cli analyze --overwrite --input <path_to_input>  --output <path_to_output> --target <target_source>
 ----
 +
 The command arguments represent the following:
