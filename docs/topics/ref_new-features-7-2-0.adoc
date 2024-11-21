@@ -13,10 +13,10 @@
 
 This section provides the new features and improvements of the {ProductFullName} 7.2.0.
 
-.Support for analyzing applications managed with Gradle has been added to {ProductShortName}
+.Containerless CLI
 
-In earlier releases of {ProductFullName}, you could use {ProductShortName} to analyze Java applications managed only with Maven. With this update, {ProductShortName} can also extract dependencies from Gradle projects. As a result, you can now analyze applications that use Gradle instead of Maven.
+You can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime.
 
-:FeatureName: Support for analyzing applications managed with Gradle
+// :FeatureName: Support for analyzing applications managed with Gradle
 
-include::developer-preview-feature.adoc[]
+//include::developer-preview-feature.adoc[]
