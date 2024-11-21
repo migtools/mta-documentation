@@ -17,6 +17,7 @@ This section provides the new features and improvements of the {ProductFullName}
 
 You can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime.
 
+// add link once docs published
 // :FeatureName: Support for analyzing applications managed with Gradle
 
 //include::developer-preview-feature.adoc[]
