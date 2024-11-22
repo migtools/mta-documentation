@@ -35,7 +35,7 @@ Before creating an application, set up business services, check tags and tag cat
 * *Source repository*: A URL of the repository where the software code is saved.
 ** For Subversion: this must be either the URL to the root of the repository or a fully qualified URL which (optionally) includes the branch and nested directory. When fully qualified, the *Branch* and *Root path* must be blank.
 * *Branch*: An application code branch in the repository (optional).
-** For Git: this may be any ref; `commit-hash`, `branch` or `tag`.
+** For Git: this may be any reference; `commit-hash`, `branch` or `tag`.
 ** For Subversion: this may be a fully qualified path to a branch or tag, for example, `branches/stable` or `tags/stable`. This must be blank when the Source repository URL includes the branch.
 * *Root path*: A root path inside the repository for the target application (optional).
 ** For Subversion: this must be blank when the Source Repository URL includes the root path.
