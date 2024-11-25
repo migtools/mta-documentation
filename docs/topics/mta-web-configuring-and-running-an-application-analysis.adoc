@@ -8,7 +8,7 @@
 
 You can analyze more than one application at a time against more than one transformation target in the same analysis.
 
-include::snippets/analyzer-rbac-snippet.adoc[]
+include::analyzer-rbac-snippet.adoc[]
 
 .Procedure
 
