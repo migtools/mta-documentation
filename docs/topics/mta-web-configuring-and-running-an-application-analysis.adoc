@@ -8,6 +8,8 @@
 
 You can analyze more than one application at a time against more than one transformation target in the same analysis.
 
+include::snippets/analyzer-rbac-snippet.adoc[]
+
 .Procedure
 
 . In the *Migration* view, click *Application inventory*.
@@ -79,7 +81,7 @@ Analysis engines use standard rules for a comprehensive set of migration targets
 
 . Click *Next*.
 . In *Review*, verify the analysis parameters.
-. Click *Run*. 
+. Click *Run*.
 +
 The analysis status is `Scheduled` as {ProductShortName} downloads the image for the container to execute. When the image is downloaded, the status changes to `In-progress.`
 
