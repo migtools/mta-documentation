@@ -18,6 +18,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // About the IDE Plugin Guide
 include::topics/plugin-intro.adoc[leveloffset=+2]
 
+include::topics/analyzer-rbac-snippet.adoc[]
+
 // About {ProductName}
 include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 

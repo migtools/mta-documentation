@@ -19,6 +19,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // About the {UserCLIBookName}
 include::topics/about-cli-guide.adoc[leveloffset=+2]
 
+include::topics/analyzer-rbac-snippet.adoc[]
+
 :FeatureName: .NET migration
 include::topics/developer-preview-feature.adoc[]
 

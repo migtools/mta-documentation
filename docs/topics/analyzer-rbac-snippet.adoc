@@ -4,6 +4,4 @@
 .No multi-user access restrictions on resources
 ====
 There are no multi-user access restrictions on resources.
-
-An analyzer task created by a user, can be canceled by any other user.
 ====
