@@ -1,5 +1,5 @@
 // snippet
 
-.Dependency rule of custom rules in analysis is not fired
+.Dependency rule of a custom rules file in analysis is not fired
 
-The dependency rule, part of the custom rules, is not fired, and no related migration issue is found. link:https://issues.redhat.com/browse/MTA-4014[(MTA-4014)]
+A custom dependency rule is not fired, and no related migration issue is found. link:https://issues.redhat.com/browse/MTA-3863[(MTA-3863)]
