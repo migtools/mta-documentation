@@ -49,6 +49,7 @@ $ <{ProductShortName}_HOME>/{mta-cli} analyze \
 
 The following command analyzes the source code of an example application called `customer-management` for migrating to JBoss EAP 8.
 
+// please could i ask for QE input on the following codeblock
 [source,terminal,subs="attributes+"]
 ----
 
