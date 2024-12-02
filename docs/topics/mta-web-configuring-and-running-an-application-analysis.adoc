@@ -49,7 +49,9 @@ You can analyze more than one application at a time against more than one transf
 
 * Application and internal dependencies only.
 * Application and all dependencies, including known Open Source libraries.
+// please could i ask for QE input on the following line
 * Select the list of packages to be analyzed manually. If you choose this option, type the file name and click *Add*.
+// please could i ask for QE input on the following line
 * Exclude packages. If you choose this option, type the name of the package and click *Add*.
 
 . Click *Next*.
