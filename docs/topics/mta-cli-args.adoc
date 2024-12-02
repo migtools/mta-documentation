@@ -122,7 +122,7 @@ a|Flag to specify the filename or directory containing rule files. Use multiple 
 
 a|`--run-local`
 |
-|Local flag to run analysis directly on local system without containers (for Java and Maven)
+|Local flag to run analysis directly on local system without containers, for Java and Maven (default `full`). This flag can be disabled with `--run-local=false`.
 
 a|`--skip-static-report`
 |
