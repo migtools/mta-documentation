@@ -14,6 +14,7 @@
 |rewrite.configLocation
 |activeRecipes
 
+// // please could i ask for QE input on the following table row
 |Java EE to Jakarta EE
 |Replace import of `javax` packages with equivalent `jakarta` packages
 
