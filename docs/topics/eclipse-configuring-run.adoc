@@ -20,7 +20,7 @@ You can create multiple run configurations. Each run configuration must have a u
 . On the *Input* tab, complete the following fields:
 .. Select a migration path.
 .. Beside the *Projects* field, click *Add* and select one or more projects.
-// please could i ask for QE input on the following bullet point and warning
+// should the following line be deleted?
 .. Beside the *Packages* field, click *Add* and select one or more the packages.
 +
 [NOTE]
