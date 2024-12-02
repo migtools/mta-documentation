@@ -5,7 +5,16 @@
 [id="running-the-containerless-mta-cli_{context}"]
 = Running the containerless CLI
 
-You can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime. 
+Starting from {ProductShortName} 7.2.0, you can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime. 
+
+[IMPORTANT]
+====
+In {ProductShortName} 7.2.0 and later, containerless CLI is a default mode. To enable container runtime usage, you must set the `--run-local` variable to `false`:
+
+----
+--run-local=false
+----
+====
 
 .Prerequisites
 
@@ -13,6 +22,9 @@ You can perform an application analysis for Java applications by using the {Prod
 * You have Maven installed on your system.
 * You have the `python3` package installed on your system.
 * You have the `JAVA_HOME` environmental variable set.
+* You have the `JVM_MAX_MEM` system variable set.
++
+NOTE: If you do not set `JVM_MAX_MEM`, the analysis might hang.
 
 .Procedure
 
