@@ -31,7 +31,7 @@ When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with th
 
 
 [id="installing-using-podman_{context}"]
-== Installing the {CLINameTitle} using Podman
+== Installing the {CLINameTitle} by using Podman
 
 You can install the {CLINameTitle} using `podman pull`.
 

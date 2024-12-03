@@ -6,7 +6,8 @@
 [id="mta-cli-analyze_{context}"]
 = Performing analysis using the command line
 
-`Analyze` supports running source code and binary analysis using `analyzer-lsp`.
+`Analyze` supports running source code and binary analysis by using the `analyzer-lsp` tool. `analyzer-lsp` evaluates the rules for the providers and determines rule matches. 	
+
 
 .To run analysis on application source code, run the following command:
 
