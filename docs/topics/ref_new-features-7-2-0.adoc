@@ -2,10 +2,7 @@
 //
 //docs/release_notes-7.1.0/master.adoc
 
-
-:_newdoc-version: 2.18.2
-:_template-generated: 2024-07-01
-
+:_template-generated: 2024-12-04
 :_mod-docs-content-type: REFERENCE
 
 [id="new-features-7-2-0_{context}"]
