@@ -14,8 +14,6 @@ This section provides highlighted issues that have been resolved in {ProductFull
 
 In previous versions of {ProductShortName}, the `azure-appservice` target was not available in the CLI distribution of {ProductFullName}. This issue has been resolved in the {ProductShortName} CLI. link:https:https://issues.redhat.com/browse/MTA-4036[(MTA-4036)]
 
-
-
 .Application analysis no longer fails when dependency analysis failures occur
 
 Previously, the application analysis failed due to a dependency analysis issue, even when the source code analysis was successful, resulting in no static report being generated. This issue has been resolved now in the {ProductShortName} CLI. (link:https:https://issues.redhat.com/browse/MTA-3700[MTA-3700])
