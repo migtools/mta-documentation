@@ -2,7 +2,7 @@
 //
 //docs/release_notes-7.2.0/master.adoc
 
-
+:_template-generated: 2024-12-04
 :_mod-docs-content-type: REFERENCE
 
 [id="resolved-issues-7-2-0_{context}"]
