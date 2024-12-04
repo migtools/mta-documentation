@@ -136,7 +136,6 @@ To exclude incidents for all such open source dependencies, you can use `--dep-l
 
 `konveyor-analyzer ... --dep-label-selector !konveyor.io/dep-source=open-source`
 
-// please could i ask for QE input on the following lines
 The Java provider in the analyzer can also add an exclude label to a list of packages. To exclude all such packages, you can use `--dep-label-selector` and the `!` operator as follows:
 
 `konveyor-analyzer ... --dep-label-selector !konveyor.io/exclude`
