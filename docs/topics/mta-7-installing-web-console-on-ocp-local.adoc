@@ -165,7 +165,7 @@ The `crc start` command starts the {rh-ocp-local} instance and configured contai
 
 |-d, –disk-size
 |uint
-|Total size in GiB of the disk used by the instance
+|Total size in GB of the disk used by the instance
 |31
 
 |-h, –help
@@ -175,7 +175,7 @@ The `crc start` command starts the {rh-ocp-local} instance and configured contai
 
 |-m, –memory
 |int
-|MiB of memory to assign to the instance
+|`Mi` of memory to assign to the instance
 |10752
 
 |-n, –nameserver
@@ -216,9 +216,9 @@ It also offers the following global flags:
 
 |===
 
-The default configuration creates a virtual machine (VM) with 4 virtual CPUs, a disk size of  31 GiB, and 10 GiB of RAM. However, this default configuration is not sufficent to stably run {ProductShortName}.
+The default configuration creates a virtual machine (VM) with 4 virtual CPUs, a disk size of  31 GB, and 10 GB of RAM. However, this default configuration is not sufficent to stably run {ProductShortName}.
 
-To increase the number of virtual CPUs to 6, the disk-size to 200 GiB, and the memory to 20 GiB, run `crc config` as follows:
+To increase the number of virtual CPUs to 6, the disk-size to 200 GB, and the memory to 20 GB, run `crc config` as follows:
 +
 [source,terminal]
 ----
@@ -228,7 +228,7 @@ crc config set cpus 6
 +
 [source,terminal]
 ----
-crc config set disk-size 200 
+crc config set disk-size 200
 ----
 
 +
