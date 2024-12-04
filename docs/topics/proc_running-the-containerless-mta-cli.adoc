@@ -8,8 +8,8 @@
 Starting from {ProductShortName} 7.2.0, you can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime. 
 
 [IMPORTANT]
-====
-In {ProductShortName} 7.2.0 and later, containerless CLI is a default mode. To enable container runtime usage, you must set the `--run-local` variable to `false`:
+==== 
+In {ProductShortName} 7.2.0 and later, containerless CLI is a default mode. To enable container runtime usage, you must set the `--run-local` flag to `false`:
 
 ----
 --run-local=false
@@ -42,7 +42,12 @@ $ mv <mta_cli_zip>/<os>-kantra /usr/bin
 $ mv $HOME/kantra.<os>.<arch> $HOME/.kantra
 ----
 
-. Open a terminal and navigate to the directory where you installed the {ProductShortName} CLI.
+. Optional: Display all `mta-cli analyze` command options:
++
+[source,terminal,subs="attributes+"]
+----
+mta-cli analyze --help
+----
 
 . Run the application analysis:
 +
@@ -56,7 +61,7 @@ The command arguments represent the following:
 ** `--overwrite`: Overwrites the output folder if it exists.	
 ** `--input`: The application to be analyzed. 
 ** `--output`: The output directory for the generated reports. 
-** `--target`: The target technology for the application migration, for example, `eap8`. 		
+** `--target`: The target technology for the application migration, for example, `eap8`.
 
 
 [role="_additional-resources"]
