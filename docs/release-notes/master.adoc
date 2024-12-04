@@ -22,6 +22,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 include::topics/ref_known-issues-7-1-1.adoc[leveloffset=+2]
 
+include::topics/svn-checkout-fails-issue-snippet.adoc[]
+
 include::topics/ref_resolved-issues-7-1-1.adoc[leveloffset=+2]
 
 [id="mta-7-1-0"]
