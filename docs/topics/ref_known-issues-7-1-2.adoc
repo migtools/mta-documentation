@@ -15,3 +15,8 @@ In {ProductShortName} CLI 7.1.0, the bulk analysis on Windows systems cannot be 
 .Binary analysis fails with incorrect Maven credentials
 
 The binary analysis fails with a generic error when incorrect Maven credentials are used. The failure occurs because the analyzer is unable to report detailed error messages. (link:https://issues.redhat.com/browse/MTA-3714[MTA-3714])
+
+.SVN Checkout fails when filenames have special characters
+
+
+link:https://issues.redhat.com/browse/MTA-4309[(MTA-4309)]
