@@ -17,6 +17,13 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 {ProductFullName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on {ocp-first}. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to {ocp-short} through the user interface (UI) and command-line interface (CLI).
 
+[id="mta-7-1-2"]
+== {ProductShortName} 7.1.2
+
+include::topics/ref_known-issues-7-1-2.adoc[leveloffset=+2]
+
+include::topics/ref_resolved-issues-7-1-2.adoc[leveloffset=+2]
+
 [id="mta-7-1-1"]
 == {ProductShortName} 7.1.1
 
