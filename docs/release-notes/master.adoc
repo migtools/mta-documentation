@@ -28,6 +28,8 @@ include::topics/ref_new-features-7-2-0.adoc[leveloffset=+2]
 
 include::topics/ref_resolved-issues-7-2-0.adoc[leveloffset=+2]
 
+include::topics/ref_resolved-issues-7-2-0.adoc[leveloffset=+2]
+
 include::topics/ref_known-issues-7-2-0.adoc[leveloffset=+2]
 
 
