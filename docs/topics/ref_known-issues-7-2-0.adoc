@@ -16,4 +16,4 @@ The analysis of the daytrader app does not show dependencies. This failure to di
 
 .CLI bulk analysis does not function on Windows
 
-{ProductShortName} CLI bulk analysis, using the `--bulk` option, does not function on Microsoft Windows. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4307[(MTA-4307)] 
+{ProductShortName} CLI bulk analysis, performed by using the `--bulk` option, does not function on Microsoft Windows. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4307[(MTA-4307)] 
