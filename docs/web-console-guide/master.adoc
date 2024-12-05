@@ -19,8 +19,6 @@ include::topics/making-open-source-more-inclusive.adoc[leveloffset=+1]
 // About the {WebConsoleBookName}
 include::topics/mta-about-console-guide.adoc[leveloffset=+2]
 
-include::topics/analyzer-rbac-snippet.adoc[]
-
 // About {ProductName}
 include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
