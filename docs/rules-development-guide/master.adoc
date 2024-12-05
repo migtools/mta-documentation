@@ -20,8 +20,6 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // About the Rules Development Guide
 include::topics/rules-guide-intro.adoc[leveloffset=+2]
 
-include::topics/analyzer-rbac-snippet.adoc[]
-
 // Use of <{ProductShortName}_HOME> in this Guide
 include::topics/mta-about-home-var.adoc[leveloffset=+3]
 
