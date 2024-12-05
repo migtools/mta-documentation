@@ -8,8 +8,6 @@
 
 You can analyze more than one application at a time against more than one transformation target in the same analysis.
 
-include::analyzer-rbac-snippet.adoc[]
-
 .Procedure
 
 . In the *Migration* view, click *Application inventory*.
