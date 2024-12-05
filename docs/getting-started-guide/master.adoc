@@ -19,8 +19,6 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // About the {IntroToMTABookName}
 include::topics/mta-about-the-intro-to-mta-guide.adoc[leveloffset=+1]
 
-include::topics/analyzer-rbac-snippet.adoc[]
-
 // About the Toolkit
 // Info included in the module above ^ include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+1]
 
