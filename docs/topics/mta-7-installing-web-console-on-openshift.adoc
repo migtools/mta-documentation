@@ -175,7 +175,7 @@ The most commonly used CR settings are listed in this table:
 |Minimum amount of memory the UI pod resource needs to run
 
 |`provider_java_container_limits_cpu`
-|`500m`
+|`1`
 |Maximum number of CPUs the Java provider resource is allowed to use
 
 |`provider_java_container_limits_memory`
