@@ -12,14 +12,14 @@ This section provides highlighted issues that have been resolved in {ProductFull
 
 .{ProductShortName} azure-appservice target is missing
 
-In previous versions of {ProductShortName}, the `azure-appservice` target was not available in the CLI distribution of {ProductFullName}. This issue has been resolved in the {ProductShortName} CLI. link:https:https://issues.redhat.com/browse/MTA-4036[(MTA-4036)]
+In previous versions of {ProductShortName}, the `azure-appservice` target was not available in the CLI distribution of {ProductFullName}. This issue has been resolved in the {ProductShortName} CLI. link:https://issues.redhat.com/browse/MTA-4036[(MTA-4036)]
 
-.Application analysis no longer fails when dependency analysis failures occur
+.Tags are not accessible in SVN repositories
 
-Previously, the application analysis failed due to a dependency analysis issue, even when the source code analysis was successful, resulting in no static report being generated. This issue has been resolved now in the {ProductShortName} CLI. (link:https:https://issues.redhat.com/browse/MTA-3700[MTA-3700])
+In previous versions of {ProductShortName}, when retrieving source code from Subversion (SVN) repositories, addons were automatically adding `/trunk` or `/branches/<target_branch>` to the repository URL, making it impossible to check out anything under tags. This issue has been resolved in the {ProductShortName} 7.2.0. link:https://issues.redhat.com/browse/MTA-4236[(MTA-4236)]
 
-.Improved container naming
+.{ProductShortName} CLI: Binary analysis does not work on CLI as `pom.xml` is corrupted during extraction
 
-Previously, container names contained random letters, making their identification difficult. The issue has been resolved in {ProductShortName} 7.1.1, where container names now have readable prefixes for easier identification. (link:https:https://issues.redhat.com/browse/MTA-3133[MTA-3133])
+In previous versions of {ProductShortName}, the binary analysis did not function on the {ProductShortName} CLI, as the `pom.xml` was corrupted during extraction. This issue has been resolved now in the {ProductShortName} CLI. link:https://issues.redhat.com/browse/MTA-4019[(MTA-4019)]
 
 // https://issues.redhat.com/issues/?filter=12447517
