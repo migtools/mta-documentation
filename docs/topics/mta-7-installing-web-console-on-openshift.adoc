@@ -118,6 +118,10 @@ The most commonly used CR settings are listed in this table:
 |`1Gi`
 |Size requested for the Keycloak database volume
 
+|`keycloak_sso_req_passwd_update`
+|
+|
+
 |`pathfinder_database_data_volume_size`
 |`1Gi`
 |Size requested for the Pathfinder database volume
