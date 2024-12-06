@@ -22,4 +22,8 @@ In previous versions of {ProductShortName}, when retrieving source code from Sub
 
 In previous versions of {ProductShortName}, the binary analysis did not function on the {ProductShortName} CLI, as the `pom.xml` was corrupted during extraction. This issue has been resolved now in the {ProductShortName} CLI. link:https://issues.redhat.com/browse/MTA-4019[(MTA-4019)]
 
+.Application import fails when Business Services exist already
+
+In previous versions of {ProductShortName}, importing applications using a CSV after a previous import that created Business Services led to the newly created applications having the incorrect Business Services assigned. This issue has been resolved in the {ProductShortName} 7.2.0. link:https://issues.redhat.com/browse/MTA-4257[(MTA-4257)]
+
 For a complete list of all resolved issues, see the list of link:https://issues.redhat.com/issues/?filter=12447875[{ProductShortName} 7.2.0 resolved issues] in Jira.
