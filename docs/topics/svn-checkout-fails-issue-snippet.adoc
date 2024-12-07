@@ -1,0 +1,5 @@
+// snippet
+
+.SVN Checkout fails when filenames have special characters
+
+The Subversion client fails when attempting a checkout operation in a repository that contains files with special characters in their filenames. link:https://issues.redhat.com/browse/MTA-4309[(MTA-4309)]

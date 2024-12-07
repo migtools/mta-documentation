@@ -26,6 +26,9 @@ include::topics/analysis-dependency-rule-snippet.adoc[]
 
 include::topics/analyzer-rbac-known-issue-snippet.adoc[]
 
+include::topics/svn-checkout-fails-issue-snippet.adoc[]
+
+
 include::topics/ref_resolved-issues-7-1-1.adoc[leveloffset=+2]
 
 [id="mta-7-1-0"]
