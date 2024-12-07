@@ -22,7 +22,12 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 include::topics/ref_known-issues-7-1-1.adoc[leveloffset=+2]
 
+include::topics/analysis-dependency-rule-snippet.adoc[]
+
+include::topics/analyzer-rbac-known-issue-snippet.adoc[]
+
 include::topics/svn-checkout-fails-issue-snippet.adoc[]
+
 
 include::topics/ref_resolved-issues-7-1-1.adoc[leveloffset=+2]
 
@@ -34,5 +39,9 @@ include::topics/ref_new-features-7-1-0.adoc[leveloffset=+2]
 include::topics/ref_upgrade-notes-7-1-0.adoc[leveloffset=+2]
 
 include::topics/ref_known-issues-7-1-0.adoc[leveloffset=+2]
+
+include::topics/analysis-dependency-rule-snippet.adoc[]
+
+include::topics/analyzer-rbac-known-issue-snippet.adoc[]
 
 :!release-notes:
