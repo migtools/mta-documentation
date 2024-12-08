@@ -118,6 +118,10 @@ The most commonly used CR settings are listed in this table:
 |`1Gi`
 |Size requested for the Keycloak database volume
 
+|`keycloak_sso_req_passwd_update`
+|
+|
+
 |`pathfinder_database_data_volume_size`
 |`1Gi`
 |Size requested for the Pathfinder database volume
@@ -157,6 +161,38 @@ The most commonly used CR settings are listed in this table:
 |`analyzer_container_requests_memory`
 |`4Gi`
 |Minimum amount of memory the pod needs to run
+
+|`ui_container_limits_cpu`
+|`500m`
+|Maximum number of CPUs the UI pod resource is allowed to use
+
+|`ui_container_limits_memory`
+|`800Mi`
+|Maximum amount of memory the UI pod resource is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
+
+|`ui_container_requests_cpu`
+|`100m`
+|Minimum number of CPUs the UI pod resource needs to run
+
+|`ui_container_requests_memory`
+|`350Mi`
+|Minimum amount of memory the UI pod resource needs to run
+
+|`provider_java_container_limits_cpu`
+|`1`
+|Maximum number of CPUs the Java provider resource is allowed to use
+
+|`provider_java_container_limits_memory`
+|`2Gi`
+|Maximum amount of memory the Java provider resource is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
+
+|`provider_java_container_requests_cpu`
+|`1`
+|Minimum number of CPUs the Java provider resource needs to run
+
+|`provider_java_container_requests_memory`
+|`2Gi`
+|Minimum amount of memory the Java provider resource needs to run
 |====
 
 +
