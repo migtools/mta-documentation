@@ -9,6 +9,15 @@
 
 You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems using the downloadable `.zip` file.
 
+[IMPORTANT]
+====
+Starting from {ProductShortName} 7.2.0, you can run the application analysis for Java applications  in the containerless mode. 
+
+The containerless mode is set by default and is used automatically if all requirements are met. For more information, see xref:running-the-containerless-mta-cli_cli-guide[Running the containerless CLI].
+
+However, if you want to analyze applications in languages other than Java or, for example, use xref:mta-cli-transform_cli-guide[transformation commands], you still need to use containers.
+====
+
 .Prerequisites
 
 * Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from `registry.redhat.io`, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
