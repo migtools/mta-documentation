@@ -12,7 +12,7 @@ This section provides highlighted known issues in {ProductFullName} version 7.2.
 
 .Analysis of the daytrader application does not show dependencies
 
-The analysis of the daytrader app does not show dependencies. This failure to display dependencies is caused by the {ProductShortName} Operator using Maven 3.6, which sometimes fails to fetch dependencies. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4169[(MTA-4169)]
+The analysis of the daytrader application does not show dependencies. This failure to display dependencies is caused by the {ProductShortName} Operator using Maven 3.6, which sometimes fails to fetch dependencies. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4169[(MTA-4169)]
 
 .CLI bulk analysis does not function on Windows
 
