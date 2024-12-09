@@ -10,9 +10,9 @@
 
 This section provides highlighted issues that have been resolved in {ProductFullName} 7.2.0.
 
-.{ProductShortName} azure-appservice target is missing
-
-In previous versions of {ProductShortName}, the `azure-appservice` target was not available in the CLI distribution of {ProductFullName}. This issue has been resolved in the {ProductShortName} CLI. link:https://issues.redhat.com/browse/MTA-4036[(MTA-4036)]
+// .{ProductShortName} azure-appservice target is missing
+//
+// In previous versions of {ProductShortName}, the `azure-appservice` target was not available in the CLI distribution of {ProductFullName}. This issue has been resolved in the {ProductShortName} CLI. link:https://issues.redhat.com/browse/MTA-4036[(MTA-4036)]
 
 .Tags are not accessible in SVN repositories
 
