@@ -6,6 +6,13 @@
 [id="installing-mta-disconnected-environment_{context}"]
 = Installing {ProductShortName} on a disconnected environment
 
+Starting from {ProductShortName} 7.2.0, you can run the application analysis for Java applications  in the containerless mode. 
+
+IMPORTANT: The containerless mode is set by default and is used automatically if all requirements are met. For more information, see xref:running-the-containerless-mta-cli_cli-guide[Running the containerless CLI].
+
+However, if you want to analyze applications in languages other than Java or, for example, use xref:mta-cli-transform_cli-guide[transformation commands], you still need to use containers.
+
+
 On a connected device, first download and save the {ProductShortName} binary. Then download and save the Podman images, the {ProductShortName} CLI image and the provider image that you need.
 
 * Download the required {ProductShortName} CLI binary from the link:https://developers.redhat.com/products/mta/download[{ProductName} Red Hat Developer page]:
