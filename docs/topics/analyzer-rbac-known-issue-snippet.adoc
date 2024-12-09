@@ -3,3 +3,4 @@
 .No multi-user access restrictions on resources
 
 There are no multi-user access restrictions on resources. For example, an analyzer task created by a user can be canceled by any other user. link:https://issues.redhat.com/browse/MTA-3819[(MTA-3819)]
+
