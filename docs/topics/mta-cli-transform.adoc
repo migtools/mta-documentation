@@ -4,9 +4,14 @@
 
 :_mod-docs-content-type: CONCEPT
 [id="mta-cli-transform_{context}"]
-= Performing transformation using the command line
+= Performing transformation by using the command line 
 
-Transform has two subcommands - `openrewrite` and `rules`.
+You can use transformation to perform the following actions:
+
+* Transform Java applications source code by using the `transform openrewrite` command.
+* Convert XML rules to YAML rules by using the `transform rules` command.
+
+IMPORTANT: Performing transformation requires the container runtime to be configured. For more information, see xref:installing-using-podman_cli-guide[Installing the CLI by using Podman].
 
 [source,terminal,subs="attributes+"]
 ----
@@ -65,7 +70,10 @@ You can only use a single target to run the `transform overwrite` command.
 
 == `Rules`
 
-The `rules` subcommand allows converting {LC_PSN} XML rules to analyzer-lsp YAML rules using `windup-shim`.
+You can use the `rules` subcommand of the `transform` command to convert {LC_PSN} XML rules to `analyzer-lsp` YAML rules. To covert rules, the `rules` subcommand uses the `windup-shim` tool.
+
+NOTE: `analyzer-lsp` evaluates the rules for the providers and determines rule matches.
+
 [source,terminal,subs="attributes+"]
 ----
 Convert XML rules to YAML

@@ -5,7 +5,8 @@
 [id="mta-cli-analyze-multi-lang-apps_{context}"]
 = Analyzing multi-language applications with {CLIName}
 
-You can run the application analysis on applications written in multiple languages. You can perform the analysis either of the following ways:
+Starting from {ProductShortName} 7.1.0, you can run the application analysis on applications written in multiple languages. You can perform the analysis either of the following ways:
 
 * Select the supported language provider to run the analysis for.
 * Override the existing supported language provider with your own unsupported language provider and run the analysis for this unsupported provider.
+ 
