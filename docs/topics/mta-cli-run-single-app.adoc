@@ -52,8 +52,8 @@ The following command analyzes the source code of an example application called 
 [source,terminal,subs="attributes+"]
 ----
 
-$ <{ProductShortName}_HOME>/{mta-cli} analyze --mode source-only --input <path_to_customer-management> \
-    --output <path_to_report_output> --target eap8 --packages org.jboss.eap
+$ <{ProductShortName}_HOME>/{mta-cli} analyze --mode source-only --input <path_to_customer-management>
+--output <path_to_report_output> --target eap8
 ----
 []
 [discrete]
