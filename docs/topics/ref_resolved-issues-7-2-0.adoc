@@ -10,10 +10,6 @@
 
 This section provides highlighted issues that have been resolved in {ProductFullName} 7.2.0.
 
-// .{ProductShortName} azure-appservice target is missing
-//
-// In previous versions of {ProductShortName}, the `azure-appservice` target was not available in the CLI distribution of {ProductFullName}. This issue has been resolved in the {ProductShortName} CLI. link:https://issues.redhat.com/browse/MTA-4036[(MTA-4036)]
-
 .Tags are not accessible in SVN repositories
 
 In previous versions of {ProductShortName}, when retrieving source code from Subversion (SVN) repositories, addons were automatically adding `/trunk` or `/branches/<target_branch>` to the repository URL, making it impossible to check out anything under tags. This issue has been resolved in the {ProductShortName} 7.2.0. link:https://issues.redhat.com/browse/MTA-4236[(MTA-4236)]
