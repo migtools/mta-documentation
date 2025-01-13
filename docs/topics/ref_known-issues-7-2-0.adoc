@@ -12,7 +12,7 @@ This section provides highlighted known issues in {ProductFullName} version 7.2.
 
 .{ProductShortName} [CLI] analysis using the Containerless CLI fails on Windows
 
-.{ProductShortName} [CLI] analysis using the Containerless CLI fails on Microsoft Windows and returns a `provider does not have dependency capability` error. This failure is caused by the existence of the `.metadata` folder located inside of the folder where the analysis is run. Threfore, the workaround is to delete this folder. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4416[(MTA-4416)]
+{ProductShortName} [CLI] analysis using the Containerless CLI fails on Microsoft Windows and returns a `provider does not have dependency capability` error. This failure is caused by the existence of the `.metadata` folder located inside the folder where the analysis is run. Therefore, the workaround is to delete this folder. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4416[(MTA-4416)]
 
 .{ProductShortName} CLI analysis is extremely slow on Windows
 
