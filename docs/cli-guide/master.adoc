@@ -49,19 +49,24 @@ include::topics/cli-tool-known-issues.adoc[leveloffset=+3]
 [id="running-cli"]
 === Running the CLI
 
-You can run the {ProductFullName} {CLINameTitle} against one or more applications.
+Depending on your scenario, you can use the {ProductFullName} {CLINameTitle} to run the analysis in the following ways:
 
-Before {ProductShortName} 7.1.0, if you wanted to run the {CLINameTitle} against multiple applications, you ran a series of `--analyze` commands, each against an application, and each generating a separate report. This option, which is still fully supported, is described in xref:mta-cli-run-single-app_cli-guide[Running the {ProductShortName} {CLINameTitle} against an application].
+* Run the analysis against a single application.
+* Run the analysis against multiple applications:
+** In {ProductShortName} versions earlier than 7.1.0, you can enter a series of `--analyze` commands, each against an application and each generating a separate report. For more information, see xref:mta-cli-run-single-app_cli-guide[Running the {ProductShortName} {CLINameTitle} against an application].
+** In {ProductShortName} 7.1.0 and later, you can use the `--bulk` option to analyze multiple applications at once and generate a single report. Note that this feature is a Developer Preview feature only. For more information, see xref:mta-cli-run-multiple-apps_cli-guide[Running the {ProductShortName} {CLINameTitle} against multiple applications and generating a single report (Developer Preview)].
 
-In {ProductShortName} 7.1.0 and later, you can run the {CLINameTitle} against multiple applications by using the `--bulk` option, to generate a single report. This option, which is presented as a Developer Preview, is described in xref:mta-cli-run-multiple-apps_cli-guide[Running the {ProductShortName} {CLINameTitle} against multiple applications and generating a single report (Developer Preview)].
+//:FeatureName: Running the {CLINameTitle} against one or more applications
+//include::topics/developer-preview-feature.adoc[]
 
-:FeatureName: Running the {CLINameTitle} against one or more applications
-include::topics/developer-preview-feature.adoc[]
+IMPORTANT: Starting from {ProductShortName} 7.2.0, you can run the application analysis in the containerless mode. Note that this option is set by default and is used automatically if all requirements are met. For more information, see xref:running-the-containerless-mta-cli_cli-guide[Running the containerless CLI].
 
 // Run the CLI
 include::topics/mta-cli-run-single-app.adoc[leveloffset=+3]
 
 include::topics/mta-cli-run-multiple-apps.adoc[leveloffset=+3]
+
+include::topics/proc_running-the-containerless-mta-cli.adoc[leveloffset=+3]
 
 // Analyze application source code
 include::topics/mta-cli-analyze.adoc[leveloffset=+3]
