@@ -14,9 +14,9 @@ This section provides highlighted known issues in {ProductFullName} version 7.2.
 
 {ProductShortName} CLI analysis does not function as expected on Microsoft Windows, with analysis using container runtimes being extremely slow on Windows. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-3667[(MTA-3667)]
 
-.Analysis of the daytrader application does not show dependencies
+.Running analysis of the application in containerless mode fails to fetch some dependencies
 
-The analysis of the daytrader application does not show dependencies. This failure to display dependencies is caused by the {ProductShortName} Operator using Maven 3.6, which sometimes fails to fetch dependencies. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4169[(MTA-4169)]
+Running analysis of the application in containerless mode fails to fetch some dependencies, which is caused by the {ProductShortName} Operator using Maven 3.6 that can sometimes fails to fetch dependencies. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4169[(MTA-4169)]
 
 .{ProductShortName} CLI bulk analysis does not function on Windows
 
