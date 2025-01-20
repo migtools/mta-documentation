@@ -95,11 +95,11 @@ The most commonly used CR settings are listed in this table:
 |Storage class used for the cache volume; ignored when `rwx_supported=false`
 
 |`feature_auth_required`
-|`True`
+|`true`
 |Flag to indicate whether keycloak authorization is required (single user/"`noauth`")
 
 |`feature_isolate_namespace`
-|`True`
+|`true`
 |Flag to indicate whether namespace isolation using network policies is enabled
 
 |`hub_database_volume_size`
@@ -119,8 +119,8 @@ The most commonly used CR settings are listed in this table:
 |Size requested for the Keycloak database volume
 
 |`keycloak_sso_req_passwd_update`
-|
-|
+|`true`
+|If the flag is set to `true`, users are required to update their password after their first login.
 
 |`pathfinder_database_data_volume_size`
 |`1Gi`
@@ -135,7 +135,7 @@ The most commonly used CR settings are listed in this table:
 |Storage class requested for the Tackle RWX volumes; deprecated in {ProductShortName} 6.0.1
 
 |`rwx_supported`
-|`True`
+|`true`
 |Flag to indicate whether the cluster storage supports RWX mode
 
 |`rwo_storage_class`
