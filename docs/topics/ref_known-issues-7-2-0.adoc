@@ -16,7 +16,7 @@ This section provides highlighted known issues in {ProductFullName} version 7.2.
 
 .Running analysis of the application in containerless mode fails to fetch some dependencies
 
-Running analysis of the application in containerless mode fails to fetch some dependencies, which is caused by the {ProductShortName} Operator using Maven 3.6 that can sometimes fails to fetch dependencies. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4169[(MTA-4169)]
+Running analysis of the application in containerless mode fails to fetch some dependencies, which is caused by the {ProductShortName} Operator using Maven 3.6 is failing to fetch dependencies. The workaround is for the user to upgrade to Maven 3.9. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4169[(MTA-4169)]
 
 .{ProductShortName} CLI bulk analysis does not function on Windows
 
