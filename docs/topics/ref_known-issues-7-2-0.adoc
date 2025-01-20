@@ -26,10 +26,6 @@ Running analysis of the application in containerless mode fails to fetch some de
 
 {ProductShortName} CLI analysis fails with a generic error when incorrect Maven credentials are used. The failure occurs because the analyzer is unable to report detailed error messages. link:https://issues.redhat.com/browse/MTA-3714[(MTA-3714)]
 
-.{ProductShortName} CLI returns confusing error messages when Python is not installed on Windows
-
-{ProductShortName} CLI returns two confusing error messages of `failed to validate flags` and `exit status 9009` when Python is not installed on Microsoft Windows. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4319[(MTA-4319)]
-
 .{ProductShortName} Containerless CLI Java remains in memory after analysis is completed
 
 {ProductShortName} Containerless CLI Java randomly remains in memory after analysis is completed, which causes the next analysis to fail. This issue is planned to be resolved in {ProductShortName} 7.2.1. link:https://issues.redhat.com/browse/MTA-4321[(MTA-4321)]
