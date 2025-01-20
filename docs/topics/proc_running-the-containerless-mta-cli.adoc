@@ -45,7 +45,7 @@ $ mv <mta_cli_zip>/<os>-kantra /usr/bin
 $ mv $HOME/kantra.<os>.<arch> $HOME/.kantra
 ----
 +
-NOTE: The CLI can run with the requirements moved to the directory from which you run an analysis. During the analysis, the CLI looks for the requirements in this directory first, and if it does not find the requirements, it looks for them in the `$HOME/.kantra` directory.
+NOTE: The CLI can run with the requirements moved to the directory from which you run an analysis. During the analysis, the CLI checks for the requirements in this directory first, and if it does not find the requirements, it searches for them in the `$HOME/.kantra` directory.
 
 
 . Optional: Display all `mta-cli analyze` command options:
