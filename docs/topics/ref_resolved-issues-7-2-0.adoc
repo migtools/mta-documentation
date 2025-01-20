@@ -14,10 +14,6 @@ This section provides highlighted issues that have been resolved in {ProductFull
 
 In previous versions of {ProductShortName}, when retrieving source code from Subversion (SVN) repositories, addons were automatically adding `/trunk` or `/branches/<target_branch>` to the repository URL, making it impossible to check out anything under tags. This issue has been resolved in the {ProductShortName} 7.2.0. link:https://issues.redhat.com/browse/MTA-4236[(MTA-4236)]
 
-.{ProductShortName} CLI: Binary analysis does not work on CLI as `pom.xml` is corrupted during extraction
-
-In previous versions of {ProductShortName}, the binary analysis did not function on the {ProductShortName} CLI, as the `pom.xml` was corrupted during extraction. This issue has been resolved now in the {ProductShortName} CLI. link:https://issues.redhat.com/browse/MTA-4019[(MTA-4019)]
-
 .Application import fails when Business Services exist already
 
 In previous versions of {ProductShortName}, importing applications using a CSV after a previous import that created Business Services led to the newly created applications having the incorrect Business Services assigned. This issue has been resolved in the {ProductShortName} 7.2.0. link:https://issues.redhat.com/browse/MTA-4257[(MTA-4257)]
