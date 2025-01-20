@@ -12,7 +12,7 @@ This section provides the new features and improvements of the {ProductFullName}
 
 .Containerless CLI
 
-You can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime.
+You can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime. For more details, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.2/html/cli_guide/index#running-the-containerless-mta-cli_cli-guide[Running the containerless CLI].
 
 // add link once docs published
 
