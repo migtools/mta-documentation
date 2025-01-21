@@ -26,4 +26,12 @@ In previous versions of {ProductShortName}, the bulk analysis on Windows system
 
 In previous versions of {ProductShortName}, selecting `cloud` as a target resulted in an _unknown target_ error. This issue has been resolved in the {ProductShortName} 7.2.0. link:https://issues.redhat.com/browse/MTA-4035[(MTA-4035)]
 
+.Maven insecure setting not functioning as expected
+
+In previous versions of {ProductShortName}, the _global_ Maven setting to *Consume insecure repositories* was no longer passed to Maven. As a result, Maven failed when using Hyper Text Transfer Protocol (HTTP) repositories. This failure was a regression bug introduced when the Maven functionality was moved to the Java provider. This issue has been resolved in the {ProductShortName} 7.2.0. link:https://issues.redhat.com/browse/MTA-4418[(MTA-4418)]
+
+.SVN Checkout fails when filenames have special characters
+
+In previous versions of {ProductShortName}, the Subversion (SVN) client failed when attempting a checkout operation in a repository that contained files with special characters, accents, in their filenames. This issue has been resolved in the {ProductShortName} 7.2.0. link:https://issues.redhat.com/browse/MTA-4309[(MTA-4309)]
+
 For a complete list of all resolved issues, see the list of link:https://issues.redhat.com/issues/?filter=12447875[{ProductShortName} 7.2.0 resolved issues] in Jira.
