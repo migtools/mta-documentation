@@ -1,0 +1,9 @@
+:_template-generated: 2024-12-04
+:_mod-docs-content-type: REFERENCE
+
+[id="upgrade-notes-7-2-0_{context}"]
+= Upgrade notes
+
+This section provides upgrade notes for the {ProductFullName} 7.2.0.
+
+// Information waiting for Nandini
