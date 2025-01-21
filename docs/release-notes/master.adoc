@@ -36,7 +36,7 @@ include::topics/analysis-dependency-rule-snippet.adoc[]
 
 include::topics/analyzer-rbac-known-issue-snippet.adoc[]
 
-include::topics/svn-checkout-fails-issue-snippet.adoc[]
+// include::topics/svn-checkout-fails-issue-snippet.adoc[]
 
 
 For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12447880[{ProductShortName} 7.2.0 known issues] in Jira.
