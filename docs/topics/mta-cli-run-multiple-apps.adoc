@@ -23,7 +23,7 @@ include::developer-preview-feature.adoc[]
 +
 [source,terminal]
 ----
-$ ./{mta-cli} analyze --bulk --input=<path_to_input_A> --output=<path_to_output_ABC> --source <source_A> --target <target_A>
+$ ./mta-cli analyze --bulk --input=<path_to_input_A> --output=<path_to_output_ABC> --source <source_A> --target <target_A>
 ----
 * `--input`: The application to be evaluated.
 * `--output`: The output directory for the generated reports.
@@ -34,16 +34,15 @@ $ ./{mta-cli} analyze --bulk --input=<path_to_input_A> --output=<path_to_output_
 +
 [source,terminal]
 ----
-$ ./{mta-cli} analyze --bulk --input=<path_to_input_B> --output=<path_to_output_ABC>  --source <source_B> --target <target_B>
+$ ./mta-cli analyze --bulk --input=<path_to_input_B> --output=<path_to_output_ABC>  --source <source_B> --target <target_B>
 ----
 .. Enter the following command for input C:
 +
 [source,terminal]
 ----
-$ ./{mta-cli} analyze --bulk --input=<path_to_input_C> --output=<path_to_output_ABC>  --source <source_C> --target <target_C>
+$ ./mta-cli analyze --bulk --input=<path_to_input_C> --output=<path_to_output_ABC>  --source <source_C> --target <target_C>
 ----
 +
 {ProductShortName} generates a single report, listing all issues that need to be resolved before the applications can be migrated.
 
 . Access the report.
-
