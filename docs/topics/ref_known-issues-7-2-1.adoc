@@ -1,0 +1,11 @@
+:_template-generated: 2024-12-04
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-2-1_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.2.1.
+
+.Issue with {ProductShortName} Container CLI caused by SELinux and Podman
+
+There is an issue with Podman and SELinux when running the {ProductShortName} Container CLI. This issue arises due to labeling systems such as SELinux, which adds appropriate labels on volume content mounted within a container. The workaround is to change a label in the container context by adding either `:z` or `:Z` options to the volume mount, which informs Podman to relabel file objects on the shared volumes. For more details, see link:https://github.com/containers/podman/blob/main/troubleshooting.md#2-cant-use-volume-mount-get-permission-denied[Unable to use volume mount ast permission denied]. link:https://issues.redhat.com/browse/MTA-4624[(MTA-4624)]
