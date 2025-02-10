@@ -31,6 +31,12 @@ include::topics/ref_resolved-issues-7-2-0.adoc[leveloffset=+2]
 include::topics/ref_known-issues-7-2-0.adoc[leveloffset=+2]
 
 
+[id="mta-7-2-0"]
+== {ProductShortName} 7.2.1
+
+include::topics/ref_known-issues-7-2-1.adoc[leveloffset=+2]
+
+
 //snippets required for release notes and other locations
 include::topics/analysis-dependency-rule-snippet.adoc[]
 
