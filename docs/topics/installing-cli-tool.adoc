@@ -91,6 +91,8 @@ Although installation using Podman is possible, downloading and installing the `
 .Podman configuration
 ====
 Podman setup and configuration consists of numerous variables that are not within the scope of this documentation. For further details on Podman, see link:https://podman.io/docs#familiarizing-yourself-with-podman[Familiarizing yourself with Podman].
+
+For details on troubelshooting Podman, see link:https://github.com/containers/podman/blob/main/troubleshooting.md[A list of common issues and solutions for Podman].
 ====
 
 [id="installing-using-docker_{context}"]
