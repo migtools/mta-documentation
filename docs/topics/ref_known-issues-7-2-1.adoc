@@ -7,3 +7,8 @@
 = Known issues
 
 This section provides highlighted known issues in {ProductFullName} version 7.2.1.
+
+.Application analysis with Maven 3.6 might fail to resolve dependencies
+
+When you run application analysis for any target application, because the analysis uses Maven version 3.6, the dependencies list can be shown as empty after the analysis is complete. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-4169[(MTA-4169)]
+
