@@ -46,10 +46,8 @@ Flags:
       --jaeger-endpoint (string)          Jaeger endpoint to collect traces.
       --json-output                       Create analysis and dependency
                                           output as JSON.
-      --list-sources                      List rules for available
-                                          migration sources.
-      --list-targets                      List rules for available
-                                          migration targets.
+      --list-sources                      List available migration sources.
+      --list-targets                     List available migration targets.
   -l, --label-selector (string)           Run rules based on specified label
                                           selector expression.
       --maven-settings (string)           Path to the custom maven
@@ -66,6 +64,9 @@ Flags:
       --overwrite                         Overwrite output directory.
       --rules (stringArray)               Filename or directory containing
                                           rule files.
+      --run-local                         Run analysis directly on 
+                                          local system without containers 
+                                          (for Java and Maven). 
       --skip-static-report                Do not generate the static report.
   -s, --source (string)                   Source technology to consider
                                           for analysis.
