@@ -1,0 +1,68 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-annotation-inspection_{context}"]
+= Annotation inspection
+
+You can add a query to match against specific annotations and their elements, for example:
+
+[source,yaml]
+----
+when:
+  java.referenced:
+    location: METHOD
+    pattern: org.package.MyApplication.runApplication(java.lang.String)
+    annotated:
+      pattern: org.framework.Bean
+      elements:
+      - name: url
+        value: "http://www.example.com"
+----
+
+This would match against the `runApplication` method in the following Java code:
+
+[source,java]
+----
+package org.package
+
+import org.framework.Bean;
+
+class MyApplication {
+
+    @Bean(url = "http://www.example.com")
+    public String runApplication(String str) {
+        // ...
+    }
+}
+----
+
+The structure of the `annotated` YAML element is:
+
+[source,yaml]
+----
+annotated:
+  pattern: a Java regex to match the fully qualified name of the annotation (optional)
+  elements: an array of elements to match within the annotation (optional)
+  - name: the exact name of the element to match against
+    value: a Java regex to match the value of the element
+----
+
+It is also possible to match an annotation with specific elements, without having to specify the symbol it annotates. The following example would also match on the `@Bean` annotation in the same code as the previous example:
+
+[source,yaml]
+----
+when:
+  java.referenced:
+    location: ANNOTATION
+    pattern: org.framework.Bean
+    annotated:
+      elements:
+        - name: url
+          value: "http://www.example.com"
+----
+[NOTE]
+====
+The only element specified with a `pattern` is the annotation itself.
+====

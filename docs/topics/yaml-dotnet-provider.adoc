@@ -1,0 +1,23 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-dotnet-provider_{context}"]
+= Dotnet provider
+
+The `dotnet` provider is an external provider used to analyze .NET and C# source code. Currently, the provider supports the `referenced` capability.
+
+.`referenced`
+
+By using the `referenced` capability, the provider finds references in the source code.
+
+[source,yaml]
+----
+when:
+  dotnet.referenced:
+    pattern: "<pattern>" # <1>
+    namespace: "<namespace>" # <2>
+----
+<1> `pattern`: A regular expression (regex) pattern to match the desired reference. For example, `HttpNotFound`.
+<2> `namespace`: Specifies the namespace to search within. For example, `System.Web.Mvc`.

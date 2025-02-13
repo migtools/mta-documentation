@@ -1,0 +1,51 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-and-condition_{context}"]
+= AND condition
+
+The `and` condition performs a logical AND operation on the results of an array of conditions.
+
+The `and` condition matches when _all_ of its child conditions match, for example:
+
+[source,yaml]
+----
+when:
+  and:
+    - <condition1>
+    - <condition2>
+----
+
+.Example
+
+[source,yaml]
+----
+when:
+  and:
+    - java.dependency:
+        name: junit.junit
+        upperbound: 4.12.2
+        lowerbound: 4.4.0
+    - java.referenced:
+        location: IMPORT
+        pattern: junit.junit
+----
+
+[id="yaml-nested-and-condition_{context}"]
+== Nested conditions
+Conditions can also be nested within other conditions.
+
+. Example
+
+[source,yaml]
+----
+when:
+  and:
+  - and:
+    - go.referenced: "*CustomResourceDefinition*"
+    - java.referenced:
+        pattern: "*CustomResourceDefinition*"
+  - go.referenced: "*CustomResourceDefinition*"
+----

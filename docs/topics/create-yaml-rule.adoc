@@ -173,7 +173,7 @@ _Example_
 when:
   java.referenced:
     location: PACKAGE
-    pattern: org.jboss.*
+    pattern: org.jboss*
 ----
 
 . Create an `AND` or `OR` condition
