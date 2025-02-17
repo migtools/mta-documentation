@@ -67,6 +67,11 @@ Flags:
       --run-local                         Run analysis directly on 
                                           local system without containers 
                                           (for Java and Maven). 
+                                          Starting from {ProductShortName} 7.2.0, 
+                                          containerless CLI is the default 
+                                          mode (`--run-local=true`).
+                                          You can enable container runtime
+                                          usage by setting `--run-local` to `false`.
       --skip-static-report                Do not generate the static report.
   -s, --source (string)                   Source technology to consider
                                           for analysis.
