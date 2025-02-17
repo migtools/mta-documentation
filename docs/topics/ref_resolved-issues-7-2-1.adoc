@@ -8,7 +8,7 @@
 
 This section provides highlighted issues that have been resolved in {ProductFullName} 7.2.1.
 
-.Openwrite CMD now properly mounts the settings file
+.OpenRewrite CMD now properly mounts the settings file
 
 The {ProductFullName} CLI not only analyzes a code but also transforms it to adopt a particular technology. To transform the code, {ProductShortName} can use an external settings file, for example, to access the Maven repository. In such cases, this file must be mounted to a running container where the analysis engine will run. 
 
