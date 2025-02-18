@@ -12,7 +12,7 @@ This section provides highlighted issues that have been resolved in {ProductFull
 
 The {ProductFullName} CLI not only analyzes source code but also transforms it to adopt a particular technology. To transform the code, {ProductShortName} can use an external settings file, for example, to access the Maven repository. In such cases, this file must be mounted to a running container where the analysis engine will run. 
 
-Previously, this file could not be mounted. As a result, the transformation operation failed. With this update, the issue has been fixed, and the file is now properly mounted to the running container. link:https://issues.redhat.com/browse/MTA-4553[(MTA-4553)]
+Previously, this file could not be mounted. As a result, the transformation operation failed. With this update, the issue has been resolved, and the file is now properly mounted to the running container. link:https://issues.redhat.com/browse/MTA-4553[(MTA-4553)]
 
 
 
