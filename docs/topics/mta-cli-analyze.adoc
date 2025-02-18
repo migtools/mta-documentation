@@ -47,7 +47,7 @@ Flags:
       --json-output                       Create analysis and dependency
                                           output as JSON.
       --list-sources                      List available migration sources.
-      --list-targets                     List available migration targets.
+      --list-targets                      List available migration targets.
   -l, --label-selector (string)           Run rules based on specified label
                                           selector expression.
       --maven-settings (string)           Path to the custom maven
