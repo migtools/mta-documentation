@@ -16,3 +16,7 @@ Previously, this file could not be mounted. As a result, the transformation oper
 
 
 
+
+.The application analysis no longer fails on RHEL 8 
+
+Previously, when you ran the application analysis with the {ProductShortName} 7.2.0 version on RHEL 8 systems, the analysis failed with the `version `GLIBC_2.32' not found` error. With this update, the issue has been resolved, and the application analysis no longer fails for RHEL 8. link:https://issues.redhat.com/browse/MTA-4634[(MTA-4634)]
