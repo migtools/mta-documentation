@@ -11,6 +11,7 @@ You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems
 
 [IMPORTANT]
 ====
+
 Starting from {ProductShortName} 7.2.0, you can run the application analysis for Java applications in the containerless mode.
 
 The containerless mode is set by default and is used automatically if all requirements are met. For more information, see xref:running-the-containerless-mta-cli_cli-guide[Running the containerless CLI].
@@ -231,17 +232,16 @@ Server: Docker Desktop 4.32.0 (157355)
 ----
 PS C:\Users\<your_user_name>> $env:PODMAN_BIN="C:\Windows\system32\docker.exe"
 ----
-
 . Set the `DOTNET_PROVIDER_IMG` environment variable to use the upstream `dotnet-external-provider`:
 +
 [source,powershell]
 ----
-PS C:\Users\<your_user_name>> $env:DOTNET_PROVIDER_IMG="quay.io/konveyor/dotnet-external-provider:v0.5.0"
+PS C:\Users\<your_user_name>> $env:DOTNET_PROVIDER_IMG="registry.redhat.io/mta/mta-dotnet-external-provider-rhel9:7.1.0"
 ----
-
 . Set the `RUNNER_IMG` environment variable to use the upstream image:
 +
 [source,powershell]
 ----
-PS C:\Users\<your_user_name>> $env:RUNNER_IMG="quay.io/konveyor/kantra:v0.5.0"
+# double-check reference
+PS C:\Users\<your_user_name>> $env:RUNNER_IMG="registry.redhat.io/mta/mta-cli-rhel9:7.1.0"
 ----
