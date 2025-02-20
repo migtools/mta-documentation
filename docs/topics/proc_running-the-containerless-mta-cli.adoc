@@ -19,7 +19,7 @@ In {ProductShortName} 7.2.0 and later, containerless CLI is a default mode. To e
 .Prerequisites
 
 * You have OpenJDK version 17 or later installed on your system.
-* You have Maven installed on your system.
+* You have Maven version 3.9.9 or later installed on your system.
 * The CLI assumes that a path to the `mvn` binary is correctly registered in the system variable. Therefore, ensure that you added `mvn` to the following variable:
 ** `Path` for Windows.
 ** `PATH` for Linux and macOS.
