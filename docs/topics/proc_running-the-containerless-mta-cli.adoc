@@ -34,14 +34,14 @@ NOTE: If you do not set `JVM_MAX_MEM`, the analysis might hang.
 +
 [source,terminal,subs="attributes+"]
 ----
-$ mv <mta_cli_zip>/<os>-kantra /usr/bin
+$ mv <mta_cli_zip>/<os>-mta-cli /usr/bin
 ----
 
 . Move the requirements to the `.kantra` directory:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ mv $HOME/kantra.<os>.<arch> $HOME/.kantra
+$ mv $HOME/mta-cli.<os>.<arch> $HOME/.kantra
 ----
 +
 NOTE: The CLI can run with the requirements moved to the directory from which you run an analysis. During the analysis, the CLI checks for the requirements in this directory first, and if it does not find the requirements, it searches for them in the `$HOME/.kantra` directory.
