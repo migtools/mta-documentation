@@ -10,5 +10,5 @@ This section provides highlighted known issues in {ProductFullName} version 7.2.
 
 .Application analysis might fail to resolve dependencies
 
-When you run application analysis for any target application, the dependencies list might be shown as empty after the analysis is complete. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-4169[(MTA-4169)]
+When you run application analysis by using the {ProductShortName} user interface (UI) for any target application, the dependencies list might be shown as empty after the analysis is complete. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-4169[(MTA-4169)]
 
