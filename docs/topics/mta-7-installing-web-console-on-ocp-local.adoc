@@ -37,7 +37,6 @@ Ubuntu 18.04 LTS or later and Debian 10 or later are not supported and might req
 {rh-ocp-local} requires the `libvirt` and `NetworkManager` packages to run on Linux:
 
 * On *Fedora* and *Red Hat Enterprise Linux* run:
-
 +
 [source,terminal]
 ----
@@ -63,7 +62,6 @@ To install {rh-ocp-local}:
 .. Download *pull secret*.
 
 . Assuming you saved the archive in the `~/Downloads directory`, follow these steps:
-
 +
 [source,terminal]
 ----
@@ -77,14 +75,12 @@ tar xvf crc-linux-amd64.tar.xz
 ----
 
 . Copy the `crc` executable to it:
-
 +
 [source,terminal]
 ----
 cp ~/Downloads/crc-linux-<version-number>-amd64/crc ~/bin/crc
 ----
 . Add the `~/bin/crc` directory to your `$PATH` variable:
-
 +
 [source,terminal]
 ----
@@ -97,7 +93,6 @@ echo 'export PATH=$PATH:$HOME/bin/crc' >> ~/.bashrc
 ----
 
 . To disable telemetry, run the following command:
-
 +
 [source,terminal]
 ----
@@ -120,7 +115,6 @@ The `crc setup` command performs operations to set up the environment of your ho
 The `crc setup` command creates the `~/.crc directory`.
 
 . Set up your host machine for {rh-ocp-local}:
-
 +
 [source,terminal]
 ----
@@ -219,33 +213,32 @@ It also offers the following global flags:
 The default configuration creates a virtual machine (VM) with 4 virtual CPUs, a disk size of  31 GB, and 10 GB of RAM. However, this default configuration is not sufficent to stably run {ProductShortName}.
 
 To increase the number of virtual CPUs to 6, the disk-size to 200 GB, and the memory to 20 GB, run `crc config` as follows:
-+
+
 [source,terminal]
 ----
 crc config set cpus 6
 ----
 
-+
 [source,terminal]
 ----
 crc config set disk-size 200
 ----
 
-+
+
 [source,terminal]
 ----
 $ crc config set memory 20480
 ----
 
 To check the configuration, run:
-+
+
 [source,terminal]
 ----
 crc config view
 ----
 
 .Example Output
-+
+
 [source,terminal]
 ----
 - consent-telemetry    : yes
@@ -266,14 +259,13 @@ If you already have a running CRC instance, for this configuration change to tak
 
 To check the status of your {rh-ocp-local} instance, run:
 
-+
 [source,terminal]
 ----
 crc status
 ----
 
 .Example Output
-+
+
 [source,terminal]
 ----
 CRC VM:          Running
