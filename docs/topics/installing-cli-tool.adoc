@@ -189,7 +189,6 @@ Server: Docker Desktop 4.32.0 (157355)
 ----
 PS C:\Users\<your_user_name>> $env:PODMAN_BIN="C:\Windows\system32\docker.exe"
 ----
-// double-check references
 . Set the `DOTNET_PROVIDER_IMG` environment variable to use the upstream `dotnet-external-provider`:
 +
 [source,powershell]
