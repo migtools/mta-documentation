@@ -44,7 +44,7 @@ $ sudo mv <mta_cli_zip>/<os>-mta-cli /usr/bin
 $ mv <mta_cli_zip>/<os>-mta-cli <PATH>
 ----
 
-. Move the requirements to the `.kantra` directory:
+. Move the extracted requirements from the `mta-cli.<os>` zip to the `.kantra` directory inside your `$HOME` directory:
 +
 [source,terminal,subs="attributes+"]
 ----
