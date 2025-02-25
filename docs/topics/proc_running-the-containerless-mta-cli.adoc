@@ -31,10 +31,17 @@ NOTE: If you do not set `JVM_MAX_MEM`, the analysis might hang.
 .Procedure
 
 . Move the installed {ProductShortName} CLI `.zip` file to your `$PATH`:
+.. For example, using `sudo`:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ mv <mta_cli_zip>/<os>-mta-cli /usr/bin
+$ sudo mv <mta_cli_zip>/<os>-mta-cli /usr/bin
+----
+.. For example, to your `$PATH`:
++
+[source,terminal,subs="attributes+"]
+----
+$ mv <mta_cli_zip>/<os>-mta-cli <PATH>
 ----
 
 . Move the requirements to the `.kantra` directory:
