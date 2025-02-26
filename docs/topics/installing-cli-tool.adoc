@@ -11,7 +11,7 @@ You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems
 
 [IMPORTANT]
 ====
-Starting from {ProductShortName} 7.2.0, you can run the application analysis for Java applications  in the containerless mode. 
+Starting from {ProductShortName} 7.2.0, you can run the application analysis for Java applications  in the containerless mode.
 
 The containerless mode is set by default and is used automatically if all requirements are met. For more information, see xref:running-the-containerless-mta-cli_cli-guide[Running the containerless CLI].
 
@@ -87,6 +87,14 @@ $ podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{P
 Although installation using Podman is possible, downloading and installing the `.zip` file is the preferred installation.
 ====
 
+[NOTE]
+.Podman configuration
+====
+Podman setup and configuration consists of numerous variables that are not within the scope of this documentation. For further details on Podman, see link:https://podman.io/docs#familiarizing-yourself-with-podman[Familiarizing yourself with Podman].
+
+For details on troubelshooting Podman, see link:https://github.com/containers/podman/blob/main/troubleshooting.md[A list of common issues and solutions for Podman].
+====
+
 [id="installing-using-docker_{context}"]
 == Installing the {CLINameTitle} for use with Docker on Windows (Developer Preview)
 
@@ -121,7 +129,7 @@ PS C:\Users\<your_user_name>> Enable-WindowsOptionalFeature -Online `
 You may need to reboot Windows.
 ====
 
-. Install Docker Desktop on Windows. 
+. Install Docker Desktop on Windows.
 
 .. Double-click `Docker_Desktop_Installer.exe` to run the installer. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 
