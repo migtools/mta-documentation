@@ -34,7 +34,7 @@ However, if you want to analyze applications in languages other than Java or, fo
 * {ProductShortNameLower}-{ProductVersion}-cli-windows.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-src.zip
 
-. Extract the `.zip` file to a directory of your choice. The `.zip` file extracts a single binary, called *mta-cli*.
+. Extract the `.zip` file to the `.kantra` directory inside your `$HOME` directory. The `.zip` file extracts the *mta-cli* binary, along with other required directories and files.
 +
 When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
 
