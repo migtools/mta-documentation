@@ -53,12 +53,12 @@ To successfully deploy, the {ProductShortName} Operator requires 2 RWO persisten
 [id="installing-mta-operator-and-ui_{context}"]
 == Installing the {ProductName} Operator and the {WebName}
 
-You can install the {ProductName} ({ProductShortName}) and the {WebName} on Red Hat OpenShift versions 4.15-4.17.
+You can install the {ProductName} ({ProductShortName}) and the {WebName} on Red Hat OpenShift versions {ocp-supported}.
 
 .Prerequisites
 
 * 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
-* Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.15-4.17.
+* Any cloud services or self-hosted edition of Red Hat OpenShift on versions {ocp-supported}.
 * You must be logged in as a user with `cluster-admin` permissions.
 
 For more information, see link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles].
