@@ -43,12 +43,11 @@ $ sudo mv <mta_cli_zip>/<os>-mta-cli /usr/bin
 ----
 $ mv <mta_cli_zip>/<os>-mta-cli <PATH>
 ----
-
-. Move the extracted requirements from the `mta-cli.<os>` zip to the `.kantra` directory inside your `$HOME` directory. For example:
+. Unzip `mta-cli.<os>` zip to the `.kantra` directory inside your `$HOME` directory. For example:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ mv $HOME/mta-cli.<os>.<arch> $HOME/.kantra
+$HOME/mta-cli.<os>.<arch>.zip -d $HOME/.kantra
 ----
 +
 NOTE: The CLI can run with the requirements moved to the directory from which you run an analysis. During the analysis, the CLI checks for the requirements in this directory first, and if it does not find the requirements, it searches for them in the `$HOME/.kantra` directory.
