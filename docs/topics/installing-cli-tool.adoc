@@ -197,17 +197,16 @@ Server: Docker Desktop 4.32.0 (157355)
 ----
 PS C:\Users\<your_user_name>> $env:PODMAN_BIN="C:\Windows\system32\docker.exe"
 ----
-
 . Set the `DOTNET_PROVIDER_IMG` environment variable to use the upstream `dotnet-external-provider`:
 +
 [source,powershell]
 ----
-PS C:\Users\<your_user_name>> $env:DOTNET_PROVIDER_IMG="quay.io/konveyor/dotnet-external-provider:v0.5.0"
+PS C:\Users\<your_user_name>> $env:DOTNET_PROVIDER_IMG="registry.redhat.io/mta/mta-dotnet-external-provider-rhel9:7.1.0"
 ----
-
 . Set the `RUNNER_IMG` environment variable to use the upstream image:
 +
 [source,powershell]
 ----
-PS C:\Users\<your_user_name>> $env:RUNNER_IMG="quay.io/konveyor/kantra:v0.5.0"
+# double-check reference
+PS C:\Users\<your_user_name>> $env:RUNNER_IMG="registry.redhat.io/mta/mta-cli-rhel9:7.1.0"
 ----
