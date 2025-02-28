@@ -1,0 +1,10 @@
+:_template-generated: 2024-12-04
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-2-2_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.2.2.
+
+.MTA generates false positives in Java application analysis
+When you analyze Java applications, {ProductShortName} rules trigger a false positive by matching the `line 1` of a Java file. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-4918[(MTA-4918)]
