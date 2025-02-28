@@ -1,0 +1,35 @@
+// Module included in the following assemblies:
+//
+//docs/release_notes-7.2.0/master.adoc
+
+:_template-generated: 2024-12-04
+:_mod-docs-content-type: REFERENCE
+
+[id="resolved-issues-7-2-2_{context}"]
+= Resolved issues
+
+This section provides highlighted issues that have been resolved in {ProductFullName} 7.2.2.
+
+.MTA CLI completes analysis for compiled Java binary without dependencies
+Previously, when analyzing applications that did not include dependencies in the compiled Java binary, {ProductShortName} CLI failed the analysis because no dependency was found. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-3415[(MTA-3415)]
+
+.MTA CLI allows the use of `--target` flag for custom targets 
+Previously, to create a custom target, {ProductShortName} CLI did not allow the `--target` flag in analysis. The analysis did not complete even though custom rules were available for the custom target. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-4629[(MTA-4629)]
+
+.MTA CLI analyses generate consistent effort for applications with private repository source control
+Previously, in the {ProductShortName} CLI, analyses of an application with a private repository source control generated varying effort. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-2984[(MTA-2984)] 
+
+.Issue report suggests fix for issues after an analysis in the MTA CLI
+Previously, the HTML issue report did not describe the fix for issues after completing an analysis in the {ProductShortName} CLI. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-4782[(MTA-4782)]
+
+.Weblogic application analysis in MTA CLI generates more issues
+Previously, the Weblogic rule did not trigger issues for the `PromoService` class under the proprietary logger category, after analyzing a Java application in the {ProductShortName} CLI. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-3845[(MTA-3845)]
+
+.Metric target statuses for `RHSSO` operator are `up` for Tackle addon
+Previously, when you configured `tackle` with authentication for the {ProductShortName} operator, the statuses of `RHSSO` operator metric targets were `down` in the {ocp-short} console. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-4816[(MTA-4816)]
+
+.Go targets are displayed in the `Application Analysis` wizard
+Previously, in the `Application Analysis` tab of the {ProductShortName} user interface, when users navigate back to the `Set Target` page where `Go` was the selected target, the target defaulted to `Java`. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-3438[(MTA-3438)]
+
+For a complete list of all resolved issues, see the list of link:https://issues.redhat.com/issues/?filter=12459229[{ProductShortName} 7.2.2 resolved issues] in Jira.
+
