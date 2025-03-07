@@ -16,7 +16,7 @@ jobs:
         with:
           #filter_mode: diff_context
           #vale_flags: "--no-exit --minAlertLevel=error"
-          #reporter: github-pr-review
+          reporter: github-pr-check
           files: docs/*
           # Radhika says not to block PR merge if there are Vale errors
           # To change set fail_on_error: true
