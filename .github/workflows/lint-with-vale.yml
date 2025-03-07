@@ -9,21 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install Asciidoctor
-        run: sudo apt-get install -y asciidoctor
       - uses: errata-ai/vale-action@reviewdog
-
-        with:
-          filter_mode: added
-          vale_flags: "--glob=*.txt"
-          reporter: github-pr-check
-          files: ../docs/*
-          # Radhika says not to block PR merge if there are Vale errors
-          # To change set fail_on_error: true
-          fail_on_error: false
-        env:
-          # Required, set by GitHub actions automatically:
-          # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          REVIEWDOG_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
- 
