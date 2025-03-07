@@ -15,11 +15,12 @@ jobs:
         with:
           files: docs/
           reporter: github-pr-review
-        env:
-        # Required
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}        
       - name: Vale
         uses: makeworld-the-better-one/vale-action@v1.3.0
         with:
           # Optional
-          config: .vale.ini        
+          config: .vale.ini             
+        env:
+        # Required
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}        
+     
