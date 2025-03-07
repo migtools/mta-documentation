@@ -13,5 +13,5 @@ jobs:
         run: sudo apt-get install -y asciidoctor        
       - uses: errata-ai/vale-action@reviewdog
         with:
-          files: ../../docs/*
+          files: ../../docs
           reporter: github-pr-review
