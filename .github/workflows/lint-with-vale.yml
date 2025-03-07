@@ -14,10 +14,10 @@ jobs:
       - uses: errata-ai/vale-action@reviewdog
 
         with:
-          #filter_mode: diff_context
-          #vale_flags: "--no-exit --minAlertLevel=error"
+          filter_mode: added
+          vale_flags: "--glob=*.txt"
           reporter: github-pr-check
-          files: docs/*
+          files: ../docs/*
           # Radhika says not to block PR merge if there are Vale errors
           # To change set fail_on_error: true
           fail_on_error: false
