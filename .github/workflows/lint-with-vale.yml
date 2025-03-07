@@ -3,23 +3,18 @@ name: Linting with Vale on pull request
 
 on: [pull_request]
 
+  jobs:
   vale:
-    name: Linting with Vale
+    name: runner / vale
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      checks: read
-      contents: read
-      pull-requests: read
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Vale Linter
-        uses: errata-ai/vale-action@reviewdog
+      - uses: actions/checkout@v3
+      - name: Install Asciidoctor
+        run: sudo apt-get install -y asciidoctor        
+      - uses: errata-ai/vale-action@reviewdog
         with:
-          fail_on_error: false
-          vale_flags: "--no-exit --config=.vale.ini"
-          filter_mode: diff_context
           files: docs/
-        env:
+          reporter: github-pr-check
+       env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          
