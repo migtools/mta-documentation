@@ -16,6 +16,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
 
+
+This a tesst of Vale. we RedHat writers not write soo goood.
 // About the {UserCLIBookName}
 include::topics/about-cli-guide.adoc[leveloffset=+2]
 
