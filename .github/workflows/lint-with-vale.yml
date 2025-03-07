@@ -15,7 +15,7 @@ jobs:
         with:
           version: 2.17.0
           files: docs/*
-          vale_flags: "--no-exit --minAlertLevel=error"
+          # vale_flags: "--no-exit --minAlertLevel=error"
           reporter: github-pr-review
           fail_on_error: true       
         env:
