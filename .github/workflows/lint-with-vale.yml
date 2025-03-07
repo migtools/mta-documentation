@@ -20,7 +20,4 @@ jobs:
         with:
           # Optional
           config: .vale.ini             
-        env:
-        # Required
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}        
      
