@@ -1,5 +1,5 @@
 ---
-name: Linting with Vale on pull request
+name: Linting with Vale
 on: [pull_request]
 
 jobs:
@@ -13,5 +13,5 @@ jobs:
       - uses: errata-ai/vale-action@reviewdog
         with:
           files: docs/
-          reporter: github-pr-review
+          reporter: github-pr-check
           fail_on_error: true          
