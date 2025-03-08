@@ -1,4 +1,4 @@
-name: Linting with Vale on pull request
+name: PR Linting with Vale
 on: [pull_request]
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
       - uses: errata-ai/vale-action@reviewdog
         with:
           filter_mode: diff_context
-          vale_flags: "--no-exit --minAlertLevel=error --glob=*.adoc"
+          vale_flags: "--no-exit --minAlertLevel=suggestion --glob=*.adoc"
           reporter: github-pr-review
           fail_on_error: true
         env:
