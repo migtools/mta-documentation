@@ -3,7 +3,7 @@
 name: Docs-Linting
 
 on: 
-  push:
+  pull_request:
     paths:
       - 'docs/**'
       - '.github/workflows/vale.yml'      
