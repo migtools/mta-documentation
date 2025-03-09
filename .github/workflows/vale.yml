@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions.
+# This is a basic workflow to help you get started with Actions
 
 name: Docs-Linting
 
@@ -22,9 +22,5 @@ jobs:
       uses: errata-ai/vale-action@v1.4.2
       with:
         debug: true
-        styles: |
-          https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
-          https://github.com/errata-ai/Microsoft/releases/latest/download/Microsoft.zip
-
-      env:
+        env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
