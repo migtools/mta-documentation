@@ -19,6 +19,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // About the {UserCLIBookName}
 include::topics/about-cli-guide.adoc[leveloffset=+2]
 
+This a tesst of Vale. we RedHat writers not write soo goood.
+
 :FeatureName: .NET migration
 include::topics/developer-preview-feature.adoc[]
 
