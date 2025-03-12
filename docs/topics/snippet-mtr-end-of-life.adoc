@@ -2,7 +2,7 @@
 
 [IMPORTANT]
 ====
-All customers using this product should start their transition to link:https://developers.redhat.com/products/mta/overview[Migration Toolkit for Applications].
+{ProductName} product will be End of Life on September 30th, 2024. All customers using this product should start their transition to link:https://developers.redhat.com/products/mta/overview[Migration Toolkit for Applications].
 
 Migration Toolkit for Applications is fully backwards compatible with all features and rulesets available in {ProductName} and will be maintained in the long term.
 ====
