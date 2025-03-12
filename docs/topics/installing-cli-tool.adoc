@@ -51,7 +51,6 @@ You can install the {CLINameTitle} using `podman pull`.
 * Podman must be installed.
 
 [NOTE]
-.Podman
 ====
 Podman is a daemonless, open source, Linux-native tool designed to make it easy to find, run, build, share, and deploy applications using Open Containers Initiative (OCI) Containers and Container Images.
 Podman provides a command-line interface (CLI) familiar to anyone who has used the Docker Container Engine.
@@ -88,7 +87,6 @@ Although installation using Podman is possible, downloading and installing the `
 ====
 
 [NOTE]
-.Podman configuration
 ====
 Podman setup and configuration consists of numerous variables that are not within the scope of this documentation. For further details on Podman, see link:https://podman.io/docs#familiarizing-yourself-with-podman[Familiarizing yourself with Podman].
 
