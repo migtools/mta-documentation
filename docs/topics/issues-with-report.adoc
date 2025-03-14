@@ -6,6 +6,11 @@
 [id="issues-with-report_{context}"]
 = Issues with reports
 
+Analysis precision is lower when the project cannot be built for whatever reasons. This lowering of precision can be caused by a number of factors;
+
+* The lack of a proper build file, for example, a `pom.xml` or `build.gradle` file
+* Compilation errors of one form or another
+
 .Running {ProductShortName} on a project with an inaccessible parent pom.xml file may not result in a full analysis
 
 Running {ProductFullName} on a project with an inaccessible parent pom.xml file may not result in a full analysis. For example, this issue impacts the link:https://github.com/jboss-developer/jboss-eap-quickstarts/tree/EAP_7.4.0.GA[JBoss EAP Quickstarts], which demonstrate JBoss EAP, Jakarta EE 10, and other additional technologies. They provide small, specific, working examples that can be used as a reference for your project. However, these quickstarts specify a relative path to their parent POM file, which does not exist when the {ProductShortName} container is run.
