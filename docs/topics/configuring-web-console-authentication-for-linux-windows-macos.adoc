@@ -8,8 +8,7 @@
 
 You can configure the {WebName} to require authentication for access. To  enable authentication, you have to install Red Hat Single Sign-On (SSO).
 
-[discrete]
-[id="enabling-authentication_{context}"]
+[id="mta-enabling-authentication_{context}"]
 == Enabling authentication
 
 .Procedure
@@ -86,7 +85,6 @@ C:\<MTR_HOME>\run_windup.bat
 ----
 . Open the browser at `\http://localhost:8080/windup-ui`.
 
-[discrete]
 [id="disabling-authentication_{context}"]
 == Disabling authentication
 

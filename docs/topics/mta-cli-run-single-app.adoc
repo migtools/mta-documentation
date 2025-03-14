@@ -31,7 +31,7 @@ $ ./{mta-cli} analyze --input <path_to_input> \
 [id="command-examples_{context}"]
 == {ProductShortName} command examples
 
-[discrete]
+[id="running-mta-cli-single-app-archive_{context}"]
 === Running {ProductShortName} on an application archive
 
 The following command analyzes the example EAR archive named `jee-example-app-1.0.0.ear` for migrating from JBoss EAP 5 to JBoss EAP 7:
@@ -44,7 +44,7 @@ $ <{ProductShortName}_HOME>/{mta-cli} analyze \
 ----
 []
 
-[discrete]
+[id="running-mta-cli-single-source-code_{context}"]
 === Running {ProductShortName} on source code
 
 The following command analyzes the source code of an example application called `customer-management` for migrating to JBoss EAP 8.
@@ -56,7 +56,8 @@ $ <{ProductShortName}_HOME>/{mta-cli} analyze --mode source-only --input <path_t
 --output <path_to_report_output> --target eap8
 ----
 []
-[discrete]
+
+[id="running-mta-cli-single-cloud-readiness_{context}"]
 === Running cloud-readiness rules
 
 The following command analyzes the example EAR archive named `jee-example-app-1.0.0.ear` for migrating to JBoss EAP 7. It also evaluates the archive for cloud readiness:
