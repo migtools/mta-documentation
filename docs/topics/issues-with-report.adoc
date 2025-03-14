@@ -17,6 +17,6 @@ Running {ProductFullName} on a project with an inaccessible parent pom.xml file 
 
 Specifying an input path of link:https://github.com/jboss-developer/jboss-eap-quickstarts/tree/EAP_7.4.0.GA/kitchensink[`kitchensink`] mounts the `kitchensink` directory as a volume in the container, but that means that the JDT Language Server (jdtls) is unable to access the parent link:https://github.com/jboss-developer/jboss-eap-quickstarts/blob/EAP_7.4.0.GA/kitchensink/pom.xml[pom.xml] file.
 
-This causes the jdtls to encounter a `Non-resolvable parent POM for org.jboss.eap.quickstarts:kitchensink:7.4.0.GA error` project build error. This error creates a `.project` file, which is missing the `org.eclipse.jdt.core.javanature`, meaning that jdtls, and subsequently {ProductShortName}, is unable to access details about the Java files.
+This causes the jdtls to encounter a `Non-resolvable parent POM` project build error. This error creates a `.project` file, which is missing the `org.eclipse.jdt.core.javanature`, meaning that jdtls, and subsequently {ProductShortName}, is unable to access details about the Java files.
 
 If you remove the parent pom.xml file and make the `kitchensink` project completely standalone, there are no issues.
