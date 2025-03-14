@@ -33,7 +33,7 @@ If you do not set `JVM_MAX_MEM`, the analysis might hang.
 
 .Procedure for Linux
 
-After unpacking the whole zip file to `~/.kantra`, either add that path to the `$PATH` variable or move the `mta-cli` binary to `/usr/bin`.
+After unpacking the whole zip file to `~/.kantra`, add that path to the `$PATH` variable.
 
 [NOTE]
 ====
