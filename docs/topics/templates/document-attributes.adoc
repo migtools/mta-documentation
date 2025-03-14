@@ -10,7 +10,6 @@
 // *****************
 // * Product names *
 // *****************
-ifdef::mta[]
 :ProductName: Migration Toolkit for Applications
 :DocInfoProductName: Migration Toolkit for Applications
 :DocInfoProductNumber: 7.2
@@ -30,9 +29,7 @@ ifdef::mta[]
 :ProductDistributionVersion: 7.2.1.GA-redhat
 :ProductDistribution: mta-7.2.1.GA-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
-:IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/MTA/issues
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 // OpenShift
 :ocp-first: {ocp-full} ({OCP-short})
 :ocp-full: OpenShift Container Platform
@@ -40,30 +37,6 @@ ifdef::mta[]
 :ocp: OCP
 :ocp-version: 4.17
 :ocp-supported: 4.17, 4.16, 4.15
-endif::[]
-
-ifdef::mtr[]
-:ProductName: Migration Toolkit for Runtimes
-:DocInfoProductName: Migration Toolkit for Runtimes
-:DocInfoProductNumber: 1.2
-:ProductShortName: MTR
-:ProductFullName: Migration Toolkit for Runtimes (MTR)
-:LC_PSN: mtr
-:mta-cli: windup-cli
-:DocInfoProductNameURL: migration_toolkit_for_runtimes
-:WebName: web console
-:WebNameTitle: Web Console
-:WebNameURL: web_console_guide
-:WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 1.2.7
-:PluginName: MTR plugin
-:ProductDistributionVersion: 1.2.7.GA-redhat-00001
-:ProductDistribution: mtr-1.2.7.GA-offline
-:DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
-:IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
-:JiraWindupURL: https://issues.redhat.com/projects/WINDUP
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mtr/
-endif::[]
 
 // *******************
 // * Component names *
@@ -78,14 +51,13 @@ endif::[]
 // * Doc metadata *
 // ****************
 
-:OpenShiftProductNumber: 4.11
+:OpenShiftProductNumber: 4.17
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rule Development Guide
 :EclipseCrsGuideTitle: Eclipse Plugin Guide
 :MavenBookName: Maven Plugin Guide
 :IntelliJBookName: IntelliJ IDEA Plugin Guide
-
 :ocp-full: Red Hat OpenShift Container Platform
 :ocp-short: OpenShift Container Platform
 :ocp-first: {ocp-full} (RHOCP)
