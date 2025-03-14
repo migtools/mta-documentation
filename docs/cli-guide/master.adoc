@@ -66,10 +66,10 @@ include::topics/mta-cli-run-single-app.adoc[leveloffset=+3]
 
 include::topics/mta-cli-run-multiple-apps.adoc[leveloffset=+3]
 
+include::topics/proc_running-the-containerless-mta-cli.adoc[leveloffset=+3]
+
 // Analyze application source code
 include::topics/mta-cli-analyze.adoc[leveloffset=+3]
-
-include::topics/proc_running-the-containerless-mta-cli.adoc[leveloffset=+3]
 
 // Transform XML rules to YAML
 include::topics/mta-cli-transform.adoc[leveloffset=+3]
@@ -103,6 +103,9 @@ include::topics/mta-review-reports.adoc[leveloffset=+1]
 
 // Optimize {ProductShortName} Performance
 include::topics/mta-optimize-performance.adoc[leveloffset=+1]
+
+// Issues with reports
+include::topics/issues-with-report.adoc[leveloffset=+2]
 
 // Configure {ProductShortName} to Exclude Files and Packages
 // include::topics/mta-exclude-files-and-packages.adoc[leveloffset=+2]
