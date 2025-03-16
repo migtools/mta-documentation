@@ -35,8 +35,8 @@
 :ocp-full: OpenShift Container Platform
 :ocp-short: OpenShift
 :ocp: OCP
-:ocp-version: 4.17
-:ocp-supported: 4.17, 4.16, 4.15
+:ocp-version: 4.18
+:ocp-supported: 4.18, 4.17, 4.16, 4.15
 
 // *******************
 // * Component names *
