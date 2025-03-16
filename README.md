@@ -1,16 +1,13 @@
 
-# Windup Documentation
+# MTA documentation
 
-This repository contains the files for Windup documentation.
+Migration Toolkit for Applications (MTA) is a set of tools that can be used to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift.
 
-[Windup](https://github.com/windup/windup) is an automated application migration and assessment tool.
+This repository contains the files for MTA documentation.
 
-For developer-focused documentation, see the [Windup wiki](https://github.com/windup/windup/wiki).
+## Contributing to MTA documentation
 
-## Contributing to Windup documentation
-
-This project is [Apache 2.0 licensed](LICENSE) and accepts contributions via
-GitHub pull requests.
+This project is [Apache 2.0 licensed](LICENSE) and accepts contributions via GitHub pull requests.
 
 See the [Contributors Guide](CONTRIBUTING.adoc) for details.
 
@@ -18,17 +15,17 @@ See the [Contributors Guide](CONTRIBUTING.adoc) for details.
 
 To report a Windup documentation issue, submit a Jira issue on the [Windup project page]]{JiraWindupURL} with the *Component* field set to *Documentation*.
 
-## Repository Structure
+## Repository structure
 
-This repository uses the following directory structure:
+This repository has the following directory structure:
 
 ```
 .
-├── CONTRIBUTING.adoc (Guide for how to contribute to this repository)
+├── CONTRIBUTING.adoc (Instructions on how to contribute to this repository)
 ├── README.md (This file)
 ├── topics (Symbolic link to docs/topics/)
 └── docs/ (Contains all the asciidoc topics and top level content spec)
-    ├── GUIDE_NAME/
+    ├── guide_name/
     │   ├── master.adoc (Base AsciiDoc file for this guide)
     │   ├── master-docinfo.xml (Metadata about this guide)
     │   └── topics (Symbolic link to docs/topics/)
@@ -39,7 +36,7 @@ This repository uses the following directory structure:
             │   ├── document-attributes.adoc (Stores attributes used across guides)
             │   ├── revision-info.adoc (Revision timestamp to be added to all guides)
             └── *.adoc (AsciiDoc files used across guides)
-```
+``` 
 
 ## Code of conduct
 
