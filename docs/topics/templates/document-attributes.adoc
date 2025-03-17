@@ -51,7 +51,7 @@
 // * Doc metadata *
 // ****************
 
-:OpenShiftProductNumber: 4.17
+:OpenShiftProductNumber: 4.18
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rule Development Guide
