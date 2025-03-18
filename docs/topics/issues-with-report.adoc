@@ -6,7 +6,7 @@
 [id="issues-with-report_{context}"]
 = Issues with reports
 
-Analysis precision is lower when the project cannot be built for whatever reasons. This lowering of precision can be caused by a number of factors;
+Analysis precision is lower when the project cannot be built for whatever reasons. This lowering of precision can be caused by several factors;
 
 * The lack of a proper build file, such as, a `pom.xml` or `build.gradle` file. For example, running {ProductFullName} on a project with an inaccessible parent `pom.xml` file may not result in a full analysis.
 * Compilation errors of one form or another.
