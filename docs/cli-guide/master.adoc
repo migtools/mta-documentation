@@ -107,9 +107,6 @@ include::topics/issues-with-report.adoc[leveloffset=+2]
 // Optimize {ProductShortName} Performance
 include::topics/mta-optimize-performance.adoc[leveloffset=+1]
 
-// Issues with reports
-include::topics/issues-with-report.adoc[leveloffset=+1]
-
 // Configure {ProductShortName} to Exclude Files and Packages
 // include::topics/mta-exclude-files-and-packages.adoc[leveloffset=+2]
 
