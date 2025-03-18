@@ -8,15 +8,5 @@
 
 Analysis precision is lower when the project cannot be built for whatever reasons. This lowering of precision can be caused by a number of factors;
 
-* The lack of a proper build file, for example, a `pom.xml` or `build.gradle` file
-* Compilation errors of one form or another
-
-.Running {ProductShortName} on a project with an inaccessible parent pom.xml file may not result in a full analysis
-
-Running {ProductFullName} on a project with an inaccessible parent pom.xml file may not result in a full analysis. For example, this issue impacts the link:https://github.com/jboss-developer/jboss-eap-quickstarts/tree/EAP_7.4.0.GA[JBoss EAP Quickstarts], which demonstrate JBoss EAP, Jakarta EE 10, and other additional technologies. They provide small, specific, working examples that can be used as a reference for your project. However, these quickstarts specify a relative path to their parent POM file, which does not exist when the {ProductShortName} container is run.
-
-Specifying an input path of link:https://github.com/jboss-developer/jboss-eap-quickstarts/tree/EAP_7.4.0.GA/kitchensink[`kitchensink`] mounts the `kitchensink` directory as a volume in the container, but that means that the JDT Language Server (jdtls) is unable to access the parent link:https://github.com/jboss-developer/jboss-eap-quickstarts/blob/EAP_7.4.0.GA/kitchensink/pom.xml[pom.xml] file.
-
-This causes the jdtls to encounter a `Non-resolvable parent POM` project build error. This error creates a `.project` file, which is missing the `org.eclipse.jdt.core.javanature`, meaning that jdtls, and subsequently {ProductShortName}, is unable to access details about the Java files.
-
-If you remove the parent pom.xml file and make the `kitchensink` project completely standalone, there are no issues.
+* The lack of a proper build file, such as, a `pom.xml` or `build.gradle` file. For example, running {ProductFullName} on a project with an inaccessible parent `pom.xml` file may not result in a full analysis.
+* Compilation errors of one form or another.
