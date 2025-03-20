@@ -353,7 +353,7 @@ when:
 <1> When more than one tag is given, a logical AND is implied.
 
 [id="yaml-java-provider_{context}"]
-=== `java` provider
+== `java` provider
 
 The Language Server used by the Java provider is Eclipse’s JDT Language Server (JDTLS). Internally, the JDTLS uses the Eclipse Java Development Toolkit, which includes utilities for searching code in projects.
 
@@ -364,8 +364,8 @@ This provider has the following capabilities:
 
 In the `pattern` element of a `java.referenced` condition, you can search through application code by using these utilities. For more details, see link:https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2Fsearch%2FSearchPattern.html&anchor=createPattern[Class SearchPattern], which  contains all the information for building these patterns for `createPattern(String, int, int, int)`.
 
-
-.`referenced`
+[id="yaml-java-referenced_{context}"]
+=== `referenced`
 
 The `referenced` capability enables the provider to find references in the source code. This capability takes three input parameters: `pattern`, `location`, and `annotated`.
 
@@ -380,7 +380,15 @@ when:
 <1> A regular expression pattern to match, for example, `org.kubernetes*`.
 <2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
 <3> Checks for specific annotations and their elements, such as name and value in the Java code using a query. For example, the following query matches the Bean(url = “http://www.example.com”) annotation in the method.
-
++
+[source,terminal]
+----
+ annotated:
+      pattern: org.framework.Bean
+      elements:
+      - name: url
+        value: "http://www.example.com"
+----
 
 .Examples
 
@@ -434,8 +442,25 @@ java.referenced:
   pattern: java.util.List
 ----
 
+[id="yaml-java-dependency_{context}"]
+=== `dependency`
+
+The `dependency` capability  enables the provider to find dependencies for a given application. {ProductShortName} generates a list of the application's dependencies, and you can use this capability to query the list and check whether a certain dependency exists for the application within a given range of the dependency's versions.
+
+[source,terminal]
+----
+when:
+  java.dependency:
+    name: "<dependency_name>" <1>
+    upperbound: "<version_string>" <2>
+    lowerbound: "<version_string>" <3>
+----
+<1> Name of the dependency to search for.
+<2> Upper bound on the version of the dependency.
+<3> Lower bound on the version of the dependency.
+
 [id="yaml-java-locations_{context}"]
-==== `java` locations
+=== `java` locations
 
 The Java provider allows scoping down the search to certain source code locations. You can scope down Java searches from any one of the following search locations:
 
@@ -465,7 +490,6 @@ If you want to match using an asterisk `*` wildcard for a wider range of results
 ** Use: `org.apache.lucene.search*`
 
 ** Do not use: `org.apache.lucene.search.*`
-
 
 * *PACKAGE*: PACKAGE allows for searches on any usage of a package, be it in an import or used as part of a FQDN in the code:
 +
@@ -515,15 +539,15 @@ In the current release of {ProductShortName}, fully qualified static method matc
 * *INHERITANCE*: matches against a class inheriting from a given type.
 * *ANNOTATION*: matches against annotations.
 * *IMPLEMENTS_TYPE*: matches against any type implementing the given type.
-* *ENUM_CONSTANT*: matches against `enum` constants.
+* *ENUM_CONSTANT*: matches against enum constants.
 * *RETURN_TYPE*: matches against a type being returned by a method.
 * *VARIABLE_DECLARATION*: matches against a type being declared as a variable.
 * *FIELD* (declaration): matches against a type appearing in a field declaration. It can be coupled with an annotation match, this being an annotation happening on the field.
 * *METHOD*: matches against a given method declaration. It can be coupled with an annotation match.
 * *CLASS* (declaration): matches against a given method declaration. It can be coupled with an annotation match.
 
-
-===== `go` provider
+[id="yaml-go-provider_{context}"]
+== `go` provider
 
 The `go` provider analyzes Go source code. This provider's capabilities are `referenced` and `dependency`.
 
@@ -553,7 +577,8 @@ when:
 <2> Upper bound on the version of the dependency.
 <3> Lower bound on the version of the dependency.
 
-===== `dotnet` provider
+[id="yaml-dotnet-provider_{context}"]
+== `dotnet` provider
 
 The `dotnet` is an external provider used to analyze .NET and C# source code. Currently, the provider supports the `referenced` capability.
 
@@ -571,7 +596,8 @@ when:
 <1> `pattern`: A regex pattern to match the desired reference. For example, HttpNotFound.
 <2> `namespace`: Specifies the namespace to search within. For example, System.Web.Mvc.
 
-==== Custom variables
+[id="yaml-custom-variables_{context}"]
+== Custom variables
 
 Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule's action (see xref:yaml-rule-actions_{context}[Message actions]). They can be added to a rule in the `customVariables` field:
 
@@ -592,12 +618,13 @@ Provider conditions can have associated custom variables. You can use custom var
 <2> `name`: The name of the variable that can be used in templates.
 <3> `message`: A template for a message using a custom variable.
 
-
-=== Logical conditions
+[id="yaml-logical-conditions_{context}"]
+== Logical conditions
 
 The analyzer provides two basic logical conditions, `and` and `or`, which enable you to aggregate results of other conditions and create more complex queries.
 
-==== `and` condition
+[id="yaml-logical-and_{context}"]
+=== `and` condition
 
 The `and` condition performs a logical AND operation on the results of an array of conditions. An `and` condition matches when _all_ of its child conditions match.
 
@@ -640,7 +667,8 @@ when:
   - go.referenced: "*CustomResourceDefinition*"
 ----
 
-==== `or` condition
+[id="yaml-logical-or_{context}"]
+=== `or` condition
 
 The `or` condition performs a logical OR operation on the results of an array of conditions. An `or` condition matches when _any_ of its child conditions matches.
 
@@ -667,6 +695,7 @@ when:
       pattern: junit.junit
 ----
 
+[id="yaml-rulesets_{context}"]
 == Rulesets
 
 A set of rules forms a ruleset. {ProductShortName} does not require every rule file to belong to a ruleset, but you can use rulesets to group multiple rules that achieve a common goal and to pass the rules to the rules engine.
