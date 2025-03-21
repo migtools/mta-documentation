@@ -26,7 +26,7 @@ image::webconsole-architecture-empty-dir.png[web-template-empty-dir-executor.jso
 .`web-template-empty-dir-executor-shared-storage.json`
 image::webconsole-architecture-shared-storage.png[web-template-empty-dir-executor-shared-storage.json]
 
-[discrete]
+[id="openshift-template-env-variables_{context}"]
 == OpenShift template environment variables
 
 The OpenShift image environment variables are configured as a baseline for application analysis, and work well in a variety of environments. No additional configuration is required to perform an analysis.

@@ -12,7 +12,7 @@
 [id="mta-what-is-the-toolkit_{context}"]
 = About the {ProductName}
 
-[discrete]
+[id="what-is-mta_{context}"]
 == What is the {ProductName}?
 
 {ProductName} ({ProductShortName}) accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.
@@ -26,7 +26,7 @@ In {ProductShortName} 7.1 and later, when you add an application to the *Applica
 {ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes.
 
 
-[discrete]
+[id="how-mta-app-simplify-migration_{context}"]
 == How does the {ProductName} simplify migration?
 
 The {ProductName} looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.
