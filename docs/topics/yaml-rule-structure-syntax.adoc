@@ -539,7 +539,7 @@ In the current release of {ProductShortName}, fully qualified static method matc
 * *INHERITANCE*: matches against a class inheriting from a given type.
 * *ANNOTATION*: matches against annotations.
 * *IMPLEMENTS_TYPE*: matches against any type implementing the given type.
-* *ENUM_CONSTANT*: matches against enum constants.
+* *ENUM_CONSTANT*: matches against `enum` constants.
 * *RETURN_TYPE*: matches against a type being returned by a method.
 * *VARIABLE_DECLARATION*: matches against a type being declared as a variable.
 * *FIELD* (declaration): matches against a type appearing in a field declaration. It can be coupled with an annotation match, this being an annotation happening on the field.
