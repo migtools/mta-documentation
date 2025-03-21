@@ -593,7 +593,7 @@ when:
     pattern: "<pattern>" <1>
     namespace: "<namespace>" <2>
 ----
-<1> `pattern`: A regex pattern to match the desired reference. For example, HttpNotFound.
+<1> `pattern`: A regular expression pattern to match the desired reference. For example, `HttpNotFound`.
 <2> `namespace`: Specifies the namespace to search within. For example, System.Web.Mvc.
 
 [id="yaml-custom-variables_{context}"]
