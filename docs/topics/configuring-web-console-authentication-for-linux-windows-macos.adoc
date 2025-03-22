@@ -8,7 +8,7 @@
 
 You can configure the {WebName} to require authentication for access. To  enable authentication, you have to install Red Hat Single Sign-On (SSO).
 
-[id="enabling-authentication_{context}"]
+[id="mta-enabling-authentication_{context}"]
 == Enabling authentication
 
 .Procedure
