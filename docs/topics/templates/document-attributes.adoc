@@ -38,8 +38,8 @@ ifdef::mta[]
 :ocp-full: OpenShift Container Platform
 :ocp-short: OpenShift
 :ocp: OCP
-:ocp-version: 4.17
-:ocp-supported: 4.17, 4.16, 4.15
+:ocp-version: 4.18
+:ocp-supported: 4.18, 4.17, 4.16
 endif::[]
 
 ifdef::mtr[]
@@ -78,7 +78,7 @@ endif::[]
 // * Doc metadata *
 // ****************
 
-:OpenShiftProductNumber: 4.11
+:OpenShiftProductNumber: 4.18
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rule Development Guide
