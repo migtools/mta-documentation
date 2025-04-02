@@ -45,11 +45,8 @@ In addition to the tags in the standard `perform action` syntax, the following `
 
 * `<fail>`
 
-[id="not-syntax_{context}"]
-==== <not> syntax
-
 [id="not-syntax-summary_{context}"]
-===== Summary
+==== Summary
 
 The `<not>` element is the standard logical _not_ operator, and is commonly used to perform a `<fail>` if the condition is not met.
 
@@ -95,9 +92,6 @@ The `<not>` element has no unique attributes or child elements.
 
 [id="iterable-filter-syntax_{context}"]
 ==== <iterable-filter> syntax
-
-[id="iterable-filter-syntax-summary_{context}"]
-===== Summary
 
 The `<iterable-filter>` element counts the number of times a condition is verified. For additional information, see the link:{LinkAPI}rules-base/api/src/main/java/org/jboss/windup/rules/general/IterableFilter.java[IterableFilter] class.
 
