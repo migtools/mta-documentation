@@ -44,7 +44,9 @@ sudo dnf install java-17-openjdk java-17-openjdk-devel
 
 // Igor do we need to keep this bulletpoint
 
-* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from `registry.redhat.io`, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
+* To install the {ProductShortName} {CLIName}, you must have a valid username and password for Red Hat Container Registry Authentication, `registry.redhat.io`. 
++
+Red Hat distributes container images from `registry.redhat.io`, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
 
 [id="installing-downloadable-cli-zip_{context}"]
 == Installing the {CLINameTitle} `.zip` file
