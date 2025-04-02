@@ -40,8 +40,6 @@ include::topics/about-cli.adoc[leveloffset=+2]
 // Install the CLI
 include::topics/installing-cli-tool.adoc[leveloffset=+2]
 
-include::topics/cli-prerequisites.adoc[leveloffset=+3]
-
 // Install in disconnected environment
 include::topics/installing-mta-disconnected-environment.adoc[leveloffset=+2]
 

@@ -20,6 +20,30 @@ However, if you want to analyze applications in languages other than Java or, fo
 
 .Prerequisites
 
+The following are the prerequisites for the {ProductFullName} CLI installation:
+
+* Java Development Kit (JDK) is installed. {ProductShortName} supports the following JDKs:
+
+** OpenJDK 17 or later
+** Oracle JDK 17 or later
+** Eclipse Temurin™ JDK 17 or later
+
+* 8 GB RAM is required for the MTA CLI.
+
+// Let us flag to MTA-QE channel
+// * macOS installation: the value of `maxproc` must be `2048` or greater.
+
+* Linux installation requires the `java-<JDK-version>-devel` package and not only the `java--<JDK-version>` package.
++
+For example, to install OpenJDK 17 on {op-system-base-full}, you would run:
++
+[source,terminal]
+----
+sudo dnf install java-17-openjdk java-17-openjdk-devel
+----
+
+// Igor do we need to keep this bulletpoint
+
 * Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from `registry.redhat.io`, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
 
 [id="installing-downloadable-cli-zip_{context}"]
