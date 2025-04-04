@@ -33,7 +33,7 @@ The following are the prerequisites for the {ProductFullName} CLI installation:
 // Let us flag to MTA-QE channel
 // * macOS installation: the value of `maxproc` must be `2048` or greater.
 
-* Linux installation requires the `java-<JDK-version>-devel` package and not only the `java--<JDK-version>` package.
+* Linux installation requires a full Java JDK installed, including the `java-<JDK-version>-devel` package, as having only the Java Runtime (JRE) installed causes issues during analysis.
 +
 For example, to install OpenJDK 17 on {op-system-base-full}, you would run:
 +
