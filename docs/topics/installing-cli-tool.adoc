@@ -34,13 +34,6 @@ The following are the prerequisites for the {ProductFullName} CLI installation:
 // * macOS installation: the value of `maxproc` must be `2048` or greater.
 
 * Linux installation requires a full Java JDK installed, including the `java-<JDK-version>-devel` package, as having only the Java Runtime (JRE) installed causes issues during analysis.
-+
-For example, to install OpenJDK 17 on {op-system-base-full}, you would run:
-+
-[source,terminal]
-----
-sudo dnf install java-17-openjdk java-17-openjdk-devel
-----
 
 // Igor do we need to keep this bulletpoint
 
