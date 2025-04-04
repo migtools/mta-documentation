@@ -25,8 +25,8 @@ Previously, the HTML issue report in {ProductShortName} CLI did not describe the
 .Weblogic application analysis in MTA CLI generates more issues
 Previously, the Weblogic rule did not trigger issues for the `PromoService` class under the proprietary logger category, after analyzing a Java application in the {ProductShortName} CLI. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-3845[(MTA-3845)]
 
-.Metric target statuses for `RHSSO` operator are `up` for Tackle addon
-Previously, when you configured `tackle` with authentication for the {ProductShortName} operator, the statuses of `RHSSO` operator metric targets were `down` in the {ocp-short} console. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-4816[(MTA-4816)]
+.Metric targets status for `RHSSO` operator is `up` for Tackle addons
+Previously, when you configured `tackle` with authentication for the {ProductShortName} operator, the status of `RHSSO` operator metric targets were `down` in the {ocp-short} console. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-4816[(MTA-4816)]
 
 .Go targets are displayed in the `Application Analysis` wizard
 Previously, in the `Application Analysis` tab of the {ProductShortName} user interface, when users navigate back to the `Set Target` page where `Go` was the selected target, the target defaulted to `Java`. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-3438[(MTA-3438)]
