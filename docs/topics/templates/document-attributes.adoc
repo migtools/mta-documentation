@@ -24,11 +24,11 @@ ifdef::mta[]
 :WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 7.2.2
+:ProductVersion: 7.2.1
 :PluginName: MTA plugin
 // :MavenProductVersion: 7.0.0.GA-redhat-00001
-:ProductDistributionVersion: 7.2.2.GA-redhat
-:ProductDistribution: mta-7.2.2.GA-cli-offline.zip
+:ProductDistributionVersion: 7.2.1.GA-redhat
+:ProductDistribution: mta-7.2.1.GA-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/MTA/issues
@@ -38,8 +38,8 @@ ifdef::mta[]
 :ocp-full: OpenShift Container Platform
 :ocp-short: OpenShift
 :ocp: OCP
-:ocp-version: 4.18
-:ocp-supported: 4.18, 4.17, 4.16
+:ocp-version: 4.17
+:ocp-supported: 4.17, 4.16, 4.15
 endif::[]
 
 ifdef::mtr[]
@@ -78,7 +78,7 @@ endif::[]
 // * Doc metadata *
 // ****************
 
-:OpenShiftProductNumber: 4.18
+:OpenShiftProductNumber: 4.11
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rule Development Guide
