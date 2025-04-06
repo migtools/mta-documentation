@@ -30,8 +30,6 @@ The following are the prerequisites for the {ProductFullName} CLI installation:
 
 * 8 GB RAM is required for the {ProductShortName} {CLIName}.
 
-// Let us flag to MTA-QE channel
-// * macOS installation: the value of `maxproc` must be `2048` or greater.
 
 Linux installation requires a full Java JDK installed, as having only the Java Runtime (JRE) installed causes issues during analysis.
 
