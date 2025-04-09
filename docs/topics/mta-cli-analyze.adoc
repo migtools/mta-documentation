@@ -8,6 +8,10 @@
 
 `Analyze` supports running source code and binary analysis by using the `analyzer-lsp` tool. `analyzer-lsp` evaluates the rules for the providers and determines rule matches. 	
 
+[NOTE]
+====
+Extracting the list of dependencies from compiled Java binaries is not always possible during analysis, especially if the dependencies are not embedded within the binary.
+====
 
 .To run analysis on application source code, run the following command:
 
