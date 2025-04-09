@@ -11,7 +11,7 @@ You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems
 
 [IMPORTANT]
 ====
-Starting from {ProductShortName} 7.2.0, you can run the application analysis for Java applications  in the containerless mode.
+Starting from {ProductShortName} 7.2.0, you can run the application analysis for Java applications in the containerless mode.
 
 The containerless mode is set by default and is used automatically if all requirements are met. For more information, see xref:running-the-containerless-mta-cli_cli-guide[Running the containerless CLI].
 
@@ -22,14 +22,19 @@ However, if you want to analyze applications in languages other than Java or, fo
 
 The following are the prerequisites for the {ProductFullName} CLI installation:
 
+* 8 GB RAM is required for the {ProductShortName} {CLIName}.
+
+The following are the prerequisites if you want to to run {ProductShortName} {CLIName} as a xref:running-the-containerless-mta-cli_cli-guide[containerless CLI] mode:
+
 * Java Development Kit (JDK) is installed. {ProductShortName} supports the following JDKs:
 
 ** OpenJDK 17 or later
 ** Oracle JDK 17 or later
 ** Eclipse Temurin™ JDK 17 or later
 
-* 8 GB RAM is required for the {ProductShortName} {CLIName}.
+* You have link:https://maven.apache.org/guides/[Maven] configured. 
 
+* You have the `JAVA_HOME` environmental variable set.  
 
 Linux installation requires a full Java JDK installed, as having only the Java Runtime (JRE) installed causes issues during analysis.
 
