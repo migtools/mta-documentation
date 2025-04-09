@@ -6,12 +6,28 @@
 [id="mta-cli-run-single-app_{context}"]
 = Running the {ProductShortName} {CLINameTitle} against an application
 
-You can run the {ProductFullName} {CLINameTitle} against an application.
+You can run the {ProductFullName} {CLINameTitle} against an application. 
+
+:FeatureName: The `--list-languages` flag
+include::developer-preview-feature.adoc[]
 
 .Procedure
 
 . Open a terminal and navigate to the `<{ProductShortName}_HOME>/` directory.
 
+. List all the languages in the source application by using the following command: 
++
+[source,terminal,subs="attributes+"]
+----
+$ ./{mta-cli} analyze --input <path_to_application> --list-languages
+----
+The listed langauages that do not have a supported provider require a custom rule set and the `--override-provider-settings` flag for analysis. 
++
+[NOTE]
+====
+The `--list-languages` flag is supported only for source applications.
+====
++
 . Run the `{mta-cli}` script, or `{mta-cli}.exe` for Windows, and specify the appropriate arguments:
 
 +
