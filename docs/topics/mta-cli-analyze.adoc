@@ -10,7 +10,7 @@
 
 [NOTE]
 ====
-Extracting the list of dependencies from compiled Java binaries is not always possible, especially if the dependencies are not embedded within the binary.
+Extracting the list of dependencies from compiled Java binaries is not always possible during analysis, especially if the dependencies are not embedded within the binary.
 ====
 
 .To run analysis on application source code, run the following command:
