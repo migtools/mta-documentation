@@ -7,7 +7,7 @@
 This section provides highlighted known issues in {ProductFullName} version 7.2.2.
 
 .MTA generates false positive issues in Java application analysis
-When you analyze Java applications, {ProductShortName} rules trigger a false positive issue by matching the `line 1` of a Java file. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-4918[(MTA-4918)]
+When you analyze Java applications, {ProductShortName} rules can trigger a false positive issue by matching the `line 1` of a Java file. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-4918[(MTA-4918)]
 
 .Source code and dependency analyses of Java applications generate varying effort
 When you run multiple `source code + dependency` analyses of Java applications for the `OpenJDK 17` target, {ProductShortName} generates varying effort. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-4943[(MTA-4943)]
