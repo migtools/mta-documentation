@@ -1,0 +1,34 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-09
+
+ifdef::context[:parent-context-of-analyzing-multi-language-applications: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="analyzing-multi-language-applications"]
+endif::[]
+ifdef::context[]
+[id="analyzing-multi-language-applications_{context}"]
+endif::[]
+= Analyzing multi-language applications
+
+:context: analyzing-multi-language-applications
+
+Starting from {ProductFullName} 7.1.0, you can run the application analysis on applications written in multiple languages. 
+
+IMPORTANT: Analyzing multi-language applications is only possible in container mode. You can use containerless analysis only for applications written in Java.
+
+You can perform the multi-language application analysis either of the following ways: 
+
+* Select a supported language provider to run the analysis for. 			
+* Overwrite the existing supported language provider with your own unsupported language provider and then run the analysis for it. 	
+
+include::topics/mta-cli-analyze-selected-provider.adoc[leveloffset=+1]
+
+include::topics/mta-cli-analyze-unsupported-provider.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-analyzing-multi-language-applications[:context: {parent-context-of-analyzing-multi-language-applications}]
+ifndef::parent-context-of-analyzing-multi-language-applications[:!context:]
+
