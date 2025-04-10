@@ -1,0 +1,49 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-14
+
+ifdef::context[:parent-context-of-installing-mta-cli: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="installing-mta-cli"]
+endif::[]
+ifdef::context[]
+[id="installing-mta-cli_{context}"]
+endif::[]
+= Installing MTA CLI
+
+:context: installing-mta-cli
+
+You can install the {ProductFullName} command-line interface (CLI) on Linux, Windows, or macOS operating systems one of the following ways:
+
+* Use the downloadable `.zip` file.
+* Use the Podman tool.
+
+IMPORTANT: Downloading and installing the `.zip` file is the preferred way of installing the {ProductShortName} CLI.
+
+NOTE: You can also install the CLI for use with Docker on Windows. Note, however, that this is a Developer Preview feature only. 	
+
+// Move to the running the CLI section
+////
+[IMPORTANT]
+====
+Starting from {ProductShortName} 7.2.0, you can run the application analysis for Java applications  in the containerless mode.
+
+The containerless mode is set by default and is used automatically if all requirements are met. For more information, see xref:running-the-containerless-mta-cli_cli-guide[Running the containerless CLI].
+
+However, if you want to analyze applications in languages other than Java or, for example, use xref:mta-cli-transform_cli-guide[transformation commands], you still need to use containers.
+====
+////
+
+include::topics/mta-cli/proc_installing-cli-zip.adoc[leveloffset=+1]
+
+include::topics/mta-cli/proc_installing-cli-with-podman.adoc[leveloffset=+1]
+
+include::topics/proc_installing-cli-for-docker.adoc[leveloffset=+1]
+
+
+
+ifdef::parent-context-of-installing-mta-cli[:context: {parent-context-of-installing-mta-cli}]
+ifndef::parent-context-of-installing-mta-cli[:!context:]
+

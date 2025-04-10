@@ -1,0 +1,22 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+
+:_mod-docs-content-type: REFERENCE
+
+[id="available-openrewrite-recipes_{context}"]
+= Available OpenRewrite recipes
+
+The following are the `OpenRewrite` recipes that you can use for transforming application source code.
+
+.Available OpenRewrite recipes
+[options="header"]
+|====
+|Migration path|Purpose|The `rewrite.config` file location|Active recipes
+|Java EE to Jakarta EE|Replace import of `javax` packages with equivalent `jakarta` packages. 
+
+Replace `javax` artifacts, declared within `pom.xml` files, with the `jakarta` equivalents.|`_<MTA_HOME>_/rules/openrewrite/jakarta \ /javax/imports/rewrite.yml`|`org.jboss.windup.JavaxToJakarta`
+|Java EE to Jakarta EE |Rename bootstrapping files.|`_<MTA_HOME>_/rules/openrewrite/jakarta \ /javax/bootstrapping/rewrite.yml`|`org.jboss.windup.jakarta.javax. \ BootstrappingFiles`
+|Java EE to Jakarta EE |Transform the `persistence.xml` file configuration.|`_<MTA_HOME>_/rules/openrewrite/jakarta \ /javax/xml/rewrite.yml`|`org.jboss.windup.javax-jakarta. \ PersistenceXML`
+|Spring Boot to Quarkus |Replace `spring.jpa.hibernate.ddl-auto` property within files matching `application*.properties`. |`_<MTA_HOME>_/rules/openrewrite/quarkus \ /springboot/properties/rewrite.yml`|`org.jboss.windup.sb-quarkus.Properties`
+|====
+

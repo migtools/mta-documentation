@@ -1,0 +1,35 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+:_mod-docs-content-type: PROCEDURE
+
+[id="analyzing-single-app-wth-mta-cli_{context}"]
+= Analyzing a single application
+
+You can use the {ProductFullName} {CLINameTitle} to perform an application analysis for a single application. The `analyze` supports running source code and binary analysis by using the `analyzer-lsp` tool. `analyzer-lsp` evaluates the rules for the language providers and determines rule matches. 	
+ 
+.Procedure
+
+. Open a terminal and navigate to the directory where you installed the {ProductShortName} CLI.
+
+. Optional: List available target technologies:
++
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *./{mta-cli} analyze --list-targets*
+....
+
+. Run the `{mta-cli}` binary:
++
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *./{mta-cli} analyze --input _<path_to_source_code>_ --output _<path_to_output_directory>_ --source _<source_name>_ --target _<target_source_>*
+....
++
+Specify the following arguments:
+
+* `--input`: The application to be evaluated.
+* `--output`: The output directory for the generated reports.
+* `--source`: The source technology for the application migration, for example, `weblogic`.
+* `--target`: The target technology for the application migration, for example, `eap8`.
+
+

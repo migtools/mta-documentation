@@ -1,0 +1,48 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+:_mod-docs-content-type: PROCEDURE
+
+[id="analyzing-multiple-apps-with-mta-cli_{context}"]
+= Analyzing multiple applications
+
+You can use the {ProductFullName} {CLINameTitle} to perfrom ana application analysis for multiple applications at once and generate a combined report.
+
+:FeatureName: Running the {CLINameTitle} against one or more applications
+include::developer-preview-feature.adoc[]
+
+.Procedure
+
+. Open a terminal and navigate to the directory where you installed {ProductShortName}.
+
+. Run the `{mta-cli}` binary and specify the appropriate arguments.
++
+IMPORTANT: You must enter one input per `analyze` command, but make sure to enter the same output directory for all inputs. For example, to analyze applications `A`, `B`, and `C`, enter the following commands:
+
+.. For input `A`, enter:
++
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *./mta-cli analyze --bulk --input=_<path_to_input_A>_ --output=_<path_to_output_ABC>_ --source _<source_A>_ --target _<target_A>_*
+....
++
+Specify the following arguments:
+
+* `--input`: The application to be evaluated.
+* `--output`: The output directory for the generated reports.
+* `--source`: The source technology for the application migration, for example, `weblogic`.
+* `--target`: The target technology for the application migration, for example, `eap8`.
+
+.. For input `B`, enter:
++
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *./mta-cli analyze --bulk --input=_<path_to_input_B>_ --output=_<path_to_output_ABC>_  --source _<source_B>_ --target _<target_B>_*
+....
+.. For input `C`, enter:
++
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *./mta-cli analyze --bulk --input=_<path_to_input_C>_ --output=_<path_to_output_ABC>_  --source _<source_C>_ --target _<target_C>_*
+....
+
+. Access the analysis report. {ProductShortName} generates a single report, listing all issues that must be resolved before the applications can be migrated.
