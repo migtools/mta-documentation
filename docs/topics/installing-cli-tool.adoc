@@ -18,11 +18,13 @@ The containerless mode is set by default and is used automatically if all requir
 However, if you want to analyze applications in languages other than Java or, for example, use xref:mta-cli-transform_cli-guide[transformation commands], you still need to use containers.
 ====
 
-.Prerequisites
+.Prerequisites for containerized CLI
 
-The following are the prerequisites for the {ProductFullName} CLI installation:
+The following are the prerequisites for the {ProductFullName} CLI installation (container):
 
 * 8 GB RAM is required for the {ProductShortName} {CLIName}.
+
+.Prerequisites for containerless CLI
 
 The following are the prerequisites if you want to to run {ProductShortName} {CLIName} as a xref:running-the-containerless-mta-cli_cli-guide[containerless CLI] mode:
 
@@ -32,13 +34,29 @@ The following are the prerequisites if you want to to run {ProductShortName} {CL
 ** Oracle JDK 17 or later
 ** Eclipse Temurin™ JDK 17 or later
 
-* You have link:https://maven.apache.org/guides/[Maven] configured. 
+* You have link:https://maven.apache.org/guides/[Maven] configured.
+////
+** To run the {MavenName} on OpenJDK 17 or Oracle JDK17, you first need to set MAVEN_OPTS on the command line by running the following command:
++
+[source,terminal,subs="attributes+"]
+----
+export MAVEN_OPTS="--add-modules=java.se --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.stream=ALL-UNNAMED"
+----
+////
 
-* You have the `JAVA_HOME` environmental variable set.  
+* You have the `JAVA_HOME` environmental variable set.
 
-Linux installation requires a full Java JDK installed, as having only the Java Runtime (JRE) installed causes issues during analysis.
+* Linux installation requires:
 
-* To install the {ProductShortName} {CLIName}, you must have a valid username and password for Red Hat Container Registry Authentication, `registry.redhat.io`. 
+** A full Java JDK installed, including a complier provided by the `devel` package, as having only the Java Runtime (JRE) installed causes issues during analysis. For more information about installing Red Hat build of OpenJDK 17 on {op-system-base-full}, see link:https://docs.redhat.com/en/documentation/red_hat_build_of_openjdk/17/html-single/installing_and_using_red_hat_build_of_openjdk_17_on_rhel/index#installing-jre-on-rhel-using-archive_openjdk[Installing Red Hat build of OpenJDK on RHEL by using yum].
+
+* macOS installation requires:
+
+** A full Java JDK installed, including a complier provided by the `devel` package, as having only the Java Runtime (JRE) installed causes issues during analysis.
+
+** The value of `maxproc` must be `2048` or greater.
+
+* To install the {ProductShortName} {CLIName}, you must have a valid username and password for Red Hat Container Registry Authentication, `registry.redhat.io`.
 +
 Red Hat distributes container images from `registry.redhat.io`, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
 
