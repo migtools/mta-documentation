@@ -16,8 +16,8 @@ Previously, when analyzing applications that did not include dependencies in the
 .MTA CLI allows the use of `--target` flag for custom targets 
 Previously, to create a custom target, {ProductShortName} CLI did not allow the `--target` flag in analysis. The analysis did not complete even though custom rules were available for the custom target. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-4629[(MTA-4629)]
 
-.MTA CLI analyses generate consistent effort for applications with private repository source control
-Previously, in the {ProductShortName} CLI, multiple analyses of an application with a private repository source control generated varying effort. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-2984[(MTA-2984)] 
+.MTA CLI analysis generates consistent effort for applications with private repository source control
+Previously, in the {ProductShortName} CLI, multiple sequential analysis of an application with a private repository source control generated varying effort. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-2984[(MTA-2984)] 
 
 .Issue report suggests fix for issues after an analysis in the MTA CLI
 Previously, the HTML issue report did not describe the fix for issues after completing an analysis in the {ProductShortName} CLI. This issue has been resolved in {ProductShortName} 7.2.2. link:https://issues.redhat.com/browse/MTA-4782[(MTA-4782)]
