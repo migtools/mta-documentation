@@ -20,5 +20,5 @@ IMPORTANT: You must create a configuration file for your unsupported language pr
 +
 [source,terminal,subs="attributes+"]
 ----
-$ mta-cli analyze --provider-override <path_to_configuration_file> --output=<path_to_the_output_directory> --rules <path_to_custom_rules>
+$ mta-cli analyze --override-provider-settings <path_to_configuration_file> --output=<path_to_the_output_directory> --rules <path_to_custom_rules>
 ----
