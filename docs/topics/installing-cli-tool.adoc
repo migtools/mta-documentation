@@ -49,7 +49,7 @@ export MAVEN_OPTS="--add-modules=java.se --add-opens java.base/java.lang=ALL-UNN
 
 * Linux installation requires:
 
-** A full Java JDK installed, including a complier provided by the `devel` package, as having only the Java Runtime (JRE) installed causes issues during analysis. For more information about installing Red Hat build of OpenJDK 17 on {op-system-base-full}, see link:https://docs.redhat.com/en/documentation/red_hat_build_of_openjdk/17/html-single/installing_and_using_red_hat_build_of_openjdk_17_on_rhel/index#installing-jre-on-rhel-using-archive_openjdk[Installing Red Hat build of OpenJDK on RHEL by using yum].
+** A full Java JDK installed, including a compiler provided by the `devel` package, as having only the Java Runtime (JRE) installed causes issues during analysis. For more information about installing Red Hat build of OpenJDK 17 on {op-system-base-full}, see link:https://docs.redhat.com/en/documentation/red_hat_build_of_openjdk/17/html-single/installing_and_using_red_hat_build_of_openjdk_17_on_rhel/index#installing-jre-on-rhel-using-archive_openjdk[Installing Red Hat build of OpenJDK on RHEL by using yum].
 
 * macOS installation requires:
 
