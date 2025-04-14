@@ -40,6 +40,8 @@ ifdef::mta[]
 :ocp: OCP
 :ocp-version: 4.18
 :ocp-supported: 4.18, 4.17, 4.16
+:op-system-base-full: Red Hat Enterprise Linux (RHEL)
+:op-system-base: RHEL
 endif::[]
 
 ifdef::mtr[]
