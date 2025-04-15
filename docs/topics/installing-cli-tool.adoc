@@ -29,9 +29,12 @@ However, if you want to analyze applications in languages other than Java or, fo
 
 . Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the OS-specific CLI file or the `src` file:
 +
-* {ProductShortNameLower}-{ProductVersion}-cli-linux.zip
-* {ProductShortNameLower}-{ProductVersion}-cli-macos.zip
-* {ProductShortNameLower}-{ProductVersion}-cli-windows.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-linux-amd64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-linux-arm64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-darwin-amd64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-darwin-arm64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-windows-amd64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-windows-arm64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-src.zip
 
 . Extract the `.zip` file to the `.kantra` directory inside your `$HOME` directory. The `.zip` file extracts the *mta-cli* binary, along with other required directories and files.
