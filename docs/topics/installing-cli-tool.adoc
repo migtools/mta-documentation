@@ -70,7 +70,12 @@ When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with th
 [id="installing-using-podman_{context}"]
 == Installing the {CLINameTitle} by using Podman
 
-You can install the {CLINameTitle} using `podman pull`.
+You can install the containerized {CLINameTitle} using `podman pull`.
+
+[NOTE]
+====
+You cannot install the containerless {CLINameTitle} using Podman as this procedure does not include pulling and unpacking the dependencies that are included in the `.zip` file.
+====
 
 .Prerequisites
 
