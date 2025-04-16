@@ -50,6 +50,8 @@ Flags:
       --jaeger-endpoint (string)          Jaeger endpoint to collect traces.
       --json-output                       Create analysis and dependency
                                           output as JSON.
+      --list-languages                    List all langauges in the 
+                                          application.                
       --list-sources                      List available migration sources.
       --list-targets                      List available migration targets.
   -l, --label-selector (string)           Run rules based on specified label
@@ -103,6 +105,13 @@ The list of flags above does not include the `--bulk` flag because this flag is 
 .Usage example
 
 . Get an example application to run analysis on.
+. List all languages in the application.
++
+[source,terminal,subs="attributes+"]
+----
+{mta-cli} analyze --input <path_to_input> --list-languages
+----
++
 . List available target technologies.
 +
 [source,terminal,subs="attributes+"]
