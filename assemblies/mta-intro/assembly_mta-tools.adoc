@@ -1,0 +1,49 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-16
+
+ifdef::context[:parent-context-of-mta-tools: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="mta-tools"]
+endif::[]
+ifdef::context[]
+[id="mta-tools_{context}"]
+endif::[]
+= The {ProductName} tools
+
+:context: mta-tools
+
+You can use the following {ProductFullName} tools for assistance in the various stages of your migration and modernization efforts: 
+
+ifdef::mta[]
+* User interface
+endif::[]
+
+ifdef::mtr[]
+* Web console
+endif::[]
+
+* {ProductName} Operator
+* CLI
+* IDE add-ons for the following applications:
+** Eclipse
+** Visual Studio Code, Visual Studio Codespaces, and Eclipse Che
+** IntelliJ IDEA
+* {MavenName}
+
+Review the details of each tool to determine which tool is suitable for your project.
+
+
+include::topics/mta-intro/con_the-mta-operator.adoc[leveloffset=+1]
+
+include::topics/mta-intro/con_mta-user-interface.adoc[leveloffset=+1]
+
+include::topics/mta-intro/con_mta-cli.adoc[leveloffset=+1]
+
+include::topics/mta-intro/con_mta-ide-addons.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-mta-tools[:context: {parent-context-of-mta-tools}]
+ifndef::parent-context-of-mta-tools[:!context:]
+

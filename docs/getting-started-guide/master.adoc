@@ -14,46 +14,16 @@ include::topics/templates/document-attributes.adoc[]
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-// == Introduction
+include::assemblies/mta-intro/assembly_what-is-mta.adoc[leveloffset=+1]
 
-// About the {IntroToMTABookName}
-include::topics/mta-about-the-intro-to-mta-guide.adoc[leveloffset=+1]
 
-// About the Toolkit
-// Info included in the module above ^ include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+1]
+include::topics/mta-intro/con_mta-migration-paths.adoc[leveloffset=+1]
 
-// Windup Features
-include::topics/new-mta-features.adoc[leveloffset=+2]
-
-// Windup Rules
-include::topics/about-rules.adoc[leveloffset=+2]
-
-//== Supported configurations
-
-// Supported Migration Paths
-include::topics/migration-paths.adoc[leveloffset=+1]
-
-// Prerequisites
-== Prerequisites for the {ProductName} installation
-
-include::topics/snippet_jdk-hardware-mac-prerequisites.adoc[]
+include::topics/mta-intro/con_mta-installation-prerequisites.adoc[leveloffset=+1]
 
 // At a later date, we may wish to add the following section, once it is revised: For tips on how to optimize performance, see link:{ProductDocUserGuideURL}#optimize_performance[Optimizing {ProductShortName} performance] in {ProductShortName} _{UserCLIBookName}_.
 
-// About the Tools
-include::topics/about-tools.adoc[leveloffset=+1]
-
-//About the Operator
-include::topics/about-the-mta-operator.adoc[leveloffset=+2]
-
-// About the {WebNameTitle}
-include::topics/about-the-web-console.adoc[leveloffset=+2]
-
-// About the {CLIName}
-include::topics/about-cli.adoc[leveloffset=+2]
-
-// About the Addons
-include::topics/getting-started-about-ide-addons.adoc[leveloffset=+2]
+include::assemblies/mta-intro/assembly_mta-tools.adoc[leveloffset=+1]
 
 // About the {MavenNameTitle}
 // include::topics/about-maven.adoc[leveloffset=+2]

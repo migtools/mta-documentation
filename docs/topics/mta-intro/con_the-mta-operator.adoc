@@ -3,7 +3,7 @@
 // * docs/wgetting-started-guide/master.adoc
 
 :_content-type: CONCEPT
-[id="about-the-mta-operator_{context}"]
+[id="the-mta-operator_{context}"]
 = The {ProductShortName} Operator
 
 By using the {ProductName} Operator, you can install the {WebName} on OpenShift Container Platform versions {ocp-supported}.

@@ -3,7 +3,7 @@
 // * docs/web-console-guide/master.adoc
 
 :_content-type: CONCEPT
-[id="about-the-web-console_{context}"]
+[id="the-mta-web-console_{context}"]
 = The {ProductShortName} {WebName}
 
 

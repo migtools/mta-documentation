@@ -4,7 +4,7 @@
 // * docs/getting-started-guide/master.adoc
 
 :_content-type: CONCEPT
-[id="about-rules_{context}"]
+[id="mta-rules_{context}"]
 = The {ProductShortName} rules
 
 The {ProductFullName} contains rule-based migration tools (analyzers) that you can use to analyze the application user interfaces (APIs), technologies, and architectures used by the applications you plan to migrate. {ProductShortName} analyzer rules use the following rule pattern:
