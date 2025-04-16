@@ -18,7 +18,7 @@ The listed langauages can have a supported provider or require a custom rule set
 +
 [source,terminal,subs="attributes+"]
 ----
-$ ./{mta-cli} analyze --list-languages
+$ ./{mta-cli} analyze --input <path_to_input> --list-languages
 ----
 +
 . Run the `{mta-cli}` script, or `{mta-cli}.exe` for Windows, and specify the appropriate arguments:

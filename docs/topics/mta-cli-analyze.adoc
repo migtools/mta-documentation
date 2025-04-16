@@ -104,7 +104,7 @@ The list of flags above does not include the `--bulk` flag because this flag is 
 +
 [source,terminal,subs="attributes+"]
 ----
-{mta-cli} analyze --list-languages
+{mta-cli} analyze --input <path_to_input> --list-languages
 ----
 +
 . List available target technologies.
