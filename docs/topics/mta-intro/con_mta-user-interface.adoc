@@ -1,0 +1,12 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-16
+
+:_mod-docs-content-type: CONCEPT
+
+[id="mta-user-interface_{context}"]
+= The {ProductShortName} user interface
+
+By using the user interface (UI) for {ProductFullName}, you can perform the following tasks:
+
+* Assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift.
+* Analyze the changes that must be made in the code of an application to containerize the application.

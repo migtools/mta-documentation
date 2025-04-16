@@ -1,0 +1,21 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-16
+
+:_mod-docs-content-type: CONCEPT
+
+[id="mta-installation-prerequisites_{context}"]
+= Prerequisites for the {ProductName} installation
+
+The following are the prerequisites for the {ProductFullName} installation:
+
+* Java Development Kit (JDK) is installed. {ProductShortName} supports the following JDKs:
+
+** OpenJDK 11
+** OpenJDK 17
+** Oracle JDK 11
+** Oracle JDK 17
+** Eclipse Temurin™ JDK 11
+** Eclipse Temurin™ JDK 17
+
+* 8 GB RAM
+* macOS installation: the value of `maxproc` must be `2048` or greater.

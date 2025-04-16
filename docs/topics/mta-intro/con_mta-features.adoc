@@ -3,12 +3,12 @@
 // * docs/getting-started-guide/master.adoc
 
 :_content-type: CONCEPT
-[id="new-mta-features_{context}"]
+[id="mta-features_{context}"]
 = The {ProductShortName} features
 
 {ProductFullName} provides the following features to simplify upgrades with more migration paths:
 
-* *New application inventory and assessment modules* to assist organizations in managing, classifying, and tagging their applications while assessing application suitability for deployment in containers, including flagging potential risks for migration strategies.
+* *Application inventory and assessment modules* to assist organizations in managing, classifying, and tagging their applications while assessing application suitability for deployment in containers, including flagging potential risks for migration strategies.
 
 * *Full integration with source code and binary repositories* to automate the retrieval of applications for analysis along with proxy integration, including HTTP and HTTPS proxy configuration managed in the user interface.
 
