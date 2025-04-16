@@ -46,7 +46,8 @@ Flags:
       --jaeger-endpoint (string)          Jaeger endpoint to collect traces.
       --json-output                       Create analysis and dependency
                                           output as JSON.
-      --list-languages                    List all langauges in the application.                
+      --list-languages                    List all langauges in the 
+                                          application.                
       --list-sources                      List available migration sources.
       --list-targets                      List available migration targets.
   -l, --label-selector (string)           Run rules based on specified label
