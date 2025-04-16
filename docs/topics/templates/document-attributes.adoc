@@ -19,6 +19,8 @@ ifdef::mta[]
 :ProductFullName: Migration Toolkit for Applications (MTA)
 :LC_PSN: mta
 :mta-cli: mta-cli
+:rhbk-first: Red Hat Build of Keycloak (RHBK)
+:rhbk-short: RHBK
 :DocInfoProductNameURL: migration_toolkit_for_applications
 :WebName: user interface
 :WebNameTitle: User Interface
