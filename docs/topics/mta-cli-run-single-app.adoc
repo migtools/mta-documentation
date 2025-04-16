@@ -12,6 +12,15 @@ You can run the {ProductFullName} {CLINameTitle} against an application.
 
 . Open a terminal and navigate to the `<{ProductShortName}_HOME>/` directory.
 
+. Run the following command to list all the languages in an application. 
+The listed langauages can have a supported provider or require a custom rule set for analysis.
+
++
+[source,terminal,subs="attributes+"]
+----
+$ ./{mta-cli} analyze --list-languages
+----
++
 . Run the `{mta-cli}` script, or `{mta-cli}.exe` for Windows, and specify the appropriate arguments:
 
 +
