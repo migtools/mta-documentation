@@ -274,7 +274,7 @@ The {ProductShortName} uses link:https://docs.redhat.com/en/documentation/red_ha
 
 The {ProductShortName} operator manages the {rhbk-short} instance and configures a dedicated link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/configuring-realms[realm] with necessary roles and permissions.
 
-{ProductShortName}-managed {rhbk-short} instance allows you to perform advanced {rhbk-short} configurations, such as link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/identity_broker[integrating identity providers]. To access the link:hhttps://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/configuring-realms#using_the_admin_console[RHSSO Admin Console], enter the URL https://<_route_>/auth/admin in your browser by replacing <route> with the {ProductShortName} web console address.
+{ProductShortName}-managed {rhbk-short} instance allows you to perform advanced {rhbk-short} configurations, such as link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/identity_broker[integrating identity providers]. To access the link:hhttps://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/configuring-realms#using_the_admin_console[{rhbk-short} Admin Console], enter the URL https://<_route_>/auth/admin in your browser by replacing <route> with the {ProductShortName} web console address.
 
 Example:
 
@@ -293,8 +293,8 @@ oc get secret mta-keycloak-rhbk -n openshift-mta -o json| jq -r '.data.password 
 //include::analyzer-rbac-snippet.adoc[]
 
 .Additional resources
-* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#ldap[Configuring LDAP and Active Directory in RHSSO]
-* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts[Red Hat Single Sign-On features and concepts]
+* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#ldap[Configuring LDAP and Active Directory in {rhbk-short}]
+* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts[Red Hat Build of Keycloak features and concepts]
 
 [id="mta-roles-personas-users-permissions_{context}"]
 === Roles, Personas, Users, and Permissions
@@ -360,7 +360,7 @@ The ability of administrators, architects, and migrators to access the *Administ
 [id="mta-roles-permissions_{context}"]
 ==== Roles and permissions
 
-The following table contains the roles and permissions (scopes) that {ProductShortName} seeds the managed RHSSO instance with:
+The following table contains the roles and permissions (scopes) that {ProductShortName} seeds the managed {rhbk-short} instance with:
 
 [width="100%",cols="34%,33%,33%",]
 |====
