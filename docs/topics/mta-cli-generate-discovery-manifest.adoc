@@ -1,0 +1,68 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="mta-generate-discovery-manifest_{context}"]
+= Generating the discovery manifest 
+Use the `discover` command to generate the discovery manifest for the Cloud Foundry (CF) application. The discovery manifest preserves configurations such as application properties, resource allocations, environment variables, and service bindings found in the CF manifest. 
+
+.Prerequisites
+* You installed {ProductShortName} {CLIName} 7.3.0.
+* You have a CF application manifest as a yaml file. 
+
+.Procedure
+. Open the terminal application and navigate to the `<{ProductShortName}_HOME>/` directory.
+
+. To list supported platforms for the discovery process:
++
+[source,terminal]
+----
+$ ./{mta-cli} discover --list-platforms
+----
+
+. To generate the discovery manifest for a CF application as an output file:
++
+[source,terminal]
+----
+$ ./{mta-cli} discover cloud-foundry \
+--input <path_to_application-manifest> \
+--output <path_to_discovery-manifest>\
+----
+
+[source,terminal,subs="attributes+"]
+----
+Usage:
+$ {mta-cli} discover [flags]
+----
+
+[source,terminal,subs="attributes+"]
+----
+Usage:
+$ {mta-cli} discover cloud-foundry [flags]
+----
+
+.Commands and Flags for `discover` 
+[width="100%",cols="30%,30%,40%",options="header"]
+|===
+|Commands | Flags| Description
+
+.2+a|`discover`
+a|`-h`, `--help`
+a|Help for discover.
+
+
+a|`--list-platforms`
+a|List supported platforms for the discovery process.
+
+
+.3+a|`discover cloud-foundry`
+a|
+a|Discover Cloud Foundry applications.
+
+a|`--input`
+a|Specify the location of the < _app-manifest-name.yaml_ > to discover the application configurations.
+
+a|`--output`
+a|Specify the location to save the < _discovery-manifest-name.yaml_ >.
+|===
