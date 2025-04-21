@@ -270,7 +270,7 @@ The amount of memory available for running pods on this node is 28.9 GB. This am
 [id="mta-7-red-hat-build-of-keycloak_{context}"]
 == Red Hat Build of Keycloak
 
-The {ProductShortName} uses link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0[{rhbk-first}] instance for user authentication and authorization.
+The {ProductShortName} 7.3.0 uses link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0[{rhbk-first}] instance for user authentication and authorization. 
 
 The {ProductShortName} operator manages the {rhbk-short} instance and configures a dedicated link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/configuring-realms[realm] with necessary roles and permissions.
 
