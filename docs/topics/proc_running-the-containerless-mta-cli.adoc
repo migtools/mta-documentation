@@ -54,7 +54,7 @@ unzip $HOME/mta-cli.<os>.<arch>.zip -d $HOME/.kantra
 sudo mv ~/.kantra/mta-cli /usr/bin/
 ----
 
-. For example, to add to the `$PATH` variable, run:
+. For example, to add to the global `$PATH` variable, run:
 +
 [source,terminal,subs="attributes+"]
 ----
