@@ -46,15 +46,15 @@ Moving the `mta-cli` binary to `/usr/bin` requires root privileges, whereas addi
 ----
 unzip $HOME/mta-cli.<os>.<arch>.zip -d $HOME/.kantra
 ----
-
-. For example, to add the `mta-cli` binary to `/usr/bin` as a system-wide binary, using `sudo`, run:
+. Add as a system-wide binary or add to the global `$PATH` variable:
+.. For example, to add the `mta-cli` binary to `/usr/bin` as a system-wide binary, using `sudo`, run:
 +
 [source,terminal,subs="attributes+"]
 ----
 sudo mv ~/.kantra/mta-cli /usr/bin/
 ----
 
-. For example, to add to the global `$PATH` variable, run:
+.. For example, to add to the global `$PATH` variable, run:
 +
 [source,terminal,subs="attributes+"]
 ----
