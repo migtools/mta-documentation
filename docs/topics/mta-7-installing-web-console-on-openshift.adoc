@@ -274,7 +274,7 @@ The {ProductShortName} 7.3.0 uses link:https://docs.redhat.com/en/documentation/
 
 The {ProductShortName} operator manages the {rhbk-short} instance and configures a dedicated link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/configuring-realms[realm] with necessary roles and permissions.
 
-{ProductShortName}-managed {rhbk-short} instance allows you to perform advanced {rhbk-short} configurations, such as link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/identity_broker[integrating identity providers]. To access the link:hhttps://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/configuring-realms#using_the_admin_console[{rhbk-short} Admin Console], enter the URL https://<_route_>/auth/admin in your browser by replacing <route> with the {ProductShortName} web console address.
+{ProductShortName}-managed {rhbk-short} instance allows you to perform advanced {rhbk-short} configurations, such as link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/identity_broker[integrating identity providers]. To access the link:hhttps://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/configuring-realms#using_the_admin_console[{rhbk-short} Admin Console], enter the URL https://<_route_>/auth/admin in your browser by replacing < _route_ > with the {ProductShortName} web console address.
 
 Example:
 
@@ -284,8 +284,9 @@ Example:
 The admin credentials for {rhbk-short} are stored in a secret file named `mta-keycloak-rhbk` in the namespace where {ProductShortName} is installed.
 
 To retrieve your admin credentials, run the following command:
+[source,terminal]
 ----
-oc get secret mta-keycloak-rhbk -n openshift-mta -o json| jq -r '.data.password | @base64d'
+$ oc get secret mta-keycloak-rhbk -n openshift-mta -o json| jq -r '.data.password | @base64d'
 ----
 
 //To create a dedicated route for the {rhbk-short} instance, set the `rhsso_external_access` parameter to `true` in the Tackle custom resource (CR) for {ProductShortName}. #QE asked to remove this line.
