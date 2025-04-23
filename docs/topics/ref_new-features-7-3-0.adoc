@@ -8,9 +8,13 @@
 
 This section provides the new features and improvements of the {ProductFullName} 7.3.0. 
 
-MTA-4540
-
+.Generate deployment manifest in MTA CLI
+Starting with {ProductShortName} {ProductVersion}, you can run the `discover` and `generate` commands in the {CLIName}. The `discover` command generates the discover manifest that preserves the platform and runtime configurations defined in the Cloud Foundry (CF) application manifest. The `generate` command uses the discover manifest to generate the deployment manifest in a Kubernetes-native format so that, it is ready for {ocp-full} deployments.
 
 MTA-4549
 
-MTA-4610
+.MTA uses Red Hat Build of Keycloak for user authentication
+The {ProductShortName} {ProductVersion} uses {rhbk-first} instance for user authentication and authorization.The MTA operator manages the {rhbk-short} instance and configures a dedicated realm with necessary roles and permissions. For {rhbk-short}, the secret and the pod name has changed. The pod name for {rhbk-short} is changed to `rhbk-operator`.
+
+.List all languages in an application
+In {ProductShortName} {ProductVersion}, you can list all languages in an application using the `--list-languages` flag in the {CLIName}. The listed language that has no supported providers requires a custom rule set and the `--override-provider-settings` flag when you analyze the application. 
