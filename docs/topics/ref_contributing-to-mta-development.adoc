@@ -1,0 +1,37 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+// * docs/maven-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="contributing-to-mta-development_{context}"]
+[appendix,id="contributing-to-mta-development"]
+= Contributing to the {ProductShortName} project
+
+To help the {ProductName} cover most application constructs and server configurations, including yours, you can help with any of the following items:
+
+* Send an email to jboss-migration-feedback@redhat.com and let us know what {ProductShortName} migration rules must cover.
+* Provide example applications to test migration rules.
+* Identify application components and problem areas that might be difficult to migrate:
+** Write a short description of the problem migration areas.
+** Write a brief overview describing how to solve the problem in migration areas.
+* Try {ProductName} on your application. Make sure to report any issues you meet.{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
+* Contribute to the {ProductName} rules repository:
+** Write a {ProductName} rule to identify or automate a migration process.
+** Create a test for the new rule.
+
++
+For more information, see link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_].
+* Contribute to the project source code:
+** Create a core rule.
+** Improve {ProductShortName} performance or efficiency.
+
+
+[role="_additional-resources"]
+.Additional resources
+
+* link:https://developer.jboss.org/en/windup[{ProductShortName} forums]
+* link:https://issues.redhat.com/projects/MTA/issues/MTA-4961?filter=allopenissues[Jira issues tracker]
+
+
+Any level of involvement is greatly appreciated!

@@ -29,5 +29,5 @@ include::assemblies/mta-intro/assembly_mta-tools.adoc[leveloffset=+1]
 // include::topics/about-maven.adoc[leveloffset=+2]
 
 //Appendix:
-include::topics/contributing-to-mta-development.adoc[leveloffset=+1]
+include::topics/ref_contributing-to-mta-development.adoc[leveloffset=+1]
 
