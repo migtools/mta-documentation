@@ -3,7 +3,7 @@
 // * docs/getting-started-guide/master.adoc
 
 :_content-type: CONCEPT
-[id="migration-paths_{context}"]
+[id="mta-migration-paths_{context}"]
 = Supported {ProductName} migration paths
 
 The {ProductName} ({ProductShortName}) supports the following migrations:
