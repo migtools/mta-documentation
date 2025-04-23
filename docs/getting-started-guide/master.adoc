@@ -28,21 +28,6 @@ include::assemblies/mta-intro/assembly_mta-tools.adoc[leveloffset=+1]
 // About the {MavenNameTitle}
 // include::topics/about-maven.adoc[leveloffset=+2]
 
-[appendix]
-== Getting involved in the {ProductName} development
+//Appendix:
+include::topics/contributing-to-mta-development.adoc[leveloffset=+1]
 
-// Get Involved
-include::topics/get-involved.adoc[leveloffset=+2]
-
-=== Reporting issues
-
-{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
-
-// Important Links
-include::topics/important-links.adoc[leveloffset=+2]
-
-
-// **********************************
-// * Appendix: Revision Information *
-// **********************************
-include::topics/templates/revision-info.adoc[]

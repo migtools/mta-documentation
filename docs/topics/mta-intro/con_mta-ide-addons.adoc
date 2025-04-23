@@ -19,3 +19,11 @@ You can use these add-on to perform the following tasks:
 * Mark issues in the source code.
 * Fix the issues by using the provided guidance.
 * Use the automatic code replacement, if possible.
+
+
+[role="_additional-resources"]
+.Additional resources
+
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.2/html/eclipse_plugin_guide/index[Eclipse Plugin Guide]
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.2/html/visual_studio_code_extension_guide/index[Visual Studio Code Extension Guide]
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.2/html/intellij_idea_plugin_guide/index[IntelliJ IDEA Plugin Guide]

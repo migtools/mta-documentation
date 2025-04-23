@@ -33,7 +33,7 @@ endif::[]
 ** IntelliJ IDEA
 * {MavenName}
 
-Review the details of each tool to determine which tool is suitable for your project.
+Review the details of each tool to determine which tool is suitable for your project. 
 
 
 include::topics/mta-intro/con_the-mta-operator.adoc[leveloffset=+1]

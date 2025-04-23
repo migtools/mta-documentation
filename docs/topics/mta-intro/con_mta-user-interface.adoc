@@ -10,3 +10,5 @@ By using the user interface (UI) for {ProductFullName}, you can perform the foll
 
 * Assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift.
 * Analyze the changes that must be made in the code of an application to containerize the application.
+
+For more information about the {ProductShortName} user interface, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.2/html/user_interface_guide/index[User Interface Guide].
