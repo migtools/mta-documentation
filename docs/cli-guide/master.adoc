@@ -95,6 +95,9 @@ include::topics/mta-cli-analyze-unsupported-provider.adoc[leveloffset=+3]
 // Review the Reports
 include::topics/mta-review-reports.adoc[leveloffset=+1]
 
+// Issues with reports
+include::topics/issues-with-report.adoc[leveloffset=+2]
+
 // Export the Report in CSV Format
 // include::topics/csv-export.adoc[leveloffset=+1]
 
