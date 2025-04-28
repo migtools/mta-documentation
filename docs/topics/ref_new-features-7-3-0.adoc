@@ -22,6 +22,6 @@ Starting with {ProductShortName} {ProductVersion}, you can run the `discover` an
 
 {ProductShortName} {ProductVersion} now uses `{rhbk-first}` instance for user authentication and authorization. The {ProductShortName} Operator manages the `{rhbk-short}` instance and configures a dedicated realm with necessary roles and permissions. For `{rhbk-short}`, the secret and the pod name has changed. The pod name for {rhbk-short} is changed to `rhbk-operator`. (link:https://issues.redhat.com/browse/MTA-4540[MTA-4540])
 
-.List all languages in an application
+.Listing all languages in an application is now supported
 
 In {ProductShortName} {ProductVersion}, you can list all languages in an application by using the `--list-languages` flag in the {CLIName}. The listed language that has no supported providers requires a custom rule set and the --`override-provider-settings` flag when you analyze the application.
