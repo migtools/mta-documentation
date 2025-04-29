@@ -16,7 +16,7 @@ Starting with {ProductShortName} {ProductVersion}, you can run the `discover` an
 * The `discover` command generates the discover manifest that preserves the platform and runtime configurations defined in the Cloud Foundry (CF) application manifest.
 * The `generate` command uses the discover manifest to generate the deployment manifest in a Kubernetes-native format to prepare it for {ocp-full} deployments.
 
-(link:https://issues.redhat.com/browse/MTA-4610[MTA-4610]
+(link:https://issues.redhat.com/browse/MTA-4610[MTA-4610])
 
 .{ProductShortName} now uses Red Hat Build of Keycloak for user authentication
 

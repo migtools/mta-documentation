@@ -1,0 +1,20 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-29
+
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-3-0_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.3.0.
+
+
+.Application analysis fails to get a list of dependencies for Node.js
+
+When you run an application analysis for the Node.js language provider, the analysis completes with the following error is displayed in the analysis log:
+
+----
+level=error msg="failed to get list of dependencies for provider" error="dependency provider path not set" provider=nodejs'
+----
+
+Currently, there is no workaround available for this issue. (link:https://issues.redhat.com/browse/MTA-5070[MTA-5070])
