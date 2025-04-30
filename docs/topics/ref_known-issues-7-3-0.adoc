@@ -17,4 +17,4 @@ When you run an application analysis for the Node.js language provider, the anal
 level=error msg="failed to get list of dependencies for provider" error="dependency provider path not set" provider=nodejs'
 ----
 
-Currently, there is no workaround available for this issue. (link:https://issues.redhat.com/browse/MTA-5070[MTA-5070])
+To work around this issue, set the `Analysis Mode` setting to `source-only`. (link:https://issues.redhat.com/browse/MTA-5070[MTA-5070])
