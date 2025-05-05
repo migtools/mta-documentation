@@ -9,9 +9,9 @@
 This section provides highlighted known issues in {ProductFullName} version 7.3.0.
 
 
-.Application analysis fails to get a list of dependencies for Node.js
+.Application analysis fails to get a list of dependencies for Node.js in the {ProductShortName} UI
 
-When you run an application analysis for the Node.js language provider, the analysis completes with the following error is displayed in the analysis log:
+When you run an application analysis for the Node.js language provider by using the {ProductShortName} user-interface (UI), the analysis completes with the following error is displayed in the analysis log:
 
 ----
 level=error msg="failed to get list of dependencies for provider" error="dependency provider path not set" provider=nodejs'
