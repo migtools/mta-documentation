@@ -1,0 +1,10 @@
+:_template-generated: 2024-12-04
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-3-0_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.3.0.
+
+.Non-Java applications are analyzed in containerless mode in the {ProductShortName} CLI
+When you analyze non-Java applications, {ProductShortName} initiates the analysis in containerless mode. To work around this issue, set `--run-local=false` before the analysis. link:https://issues.redhat.com/browse/MTA-5068[(MTA-5068)]
