@@ -7,4 +7,4 @@
 This section provides highlighted known issues in {ProductFullName} version 7.3.0.
 
 .Non-Java applications are analyzed in containerless mode in the {ProductShortName} CLI
-When you analyze non-Java applications, {ProductShortName} initiates the analysis in containerless mode. To work around this issue, set `--run-local=false` before the analysis. link:https://issues.redhat.com/browse/MTA-5068[(MTA-5068)]
+When you analyze non-Java applications, {ProductShortName} initiates the analysis in containerless mode. Workaround: set `--run-local=false` before the analysis. link:https://issues.redhat.com/browse/MTA-5068[(MTA-5068)]
