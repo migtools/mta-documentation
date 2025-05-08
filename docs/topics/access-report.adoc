@@ -12,12 +12,12 @@ The output directory contains the following files and subdirectories:
 
 ----
 <OUTPUT_REPORT_DIRECTORY>/
-├── index.html          // Landing page for the report
-├── <EXPORT_FILE>.csv   // Optional export of data in CSV format
-├── archives/           // Archives extracted from the application
-├── mavenized/          // Optional Maven project structure
-├── reports/            // Generated HTML reports
-├── stats/              // Performance statistics
+├── analysis.log
+├── dependencies.yaml		// Dependencies analysis output
+├── output.yaml			// Analysis output
+├── shim.log			// `windup-shim` log (the technology that translates XML into YAML rules.
+├── static-report		// Folder that contains the static files of the report. The report is viewed by opening the `index.html` file that this folder contains.
+└── static-report.log
 ----
 
 .Procedure
