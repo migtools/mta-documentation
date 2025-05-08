@@ -15,6 +15,7 @@ NOTE: The incidents and estimated story points change as new rules are added to 
 
 The following table lists all of the reports and pages that can be accessed from this main {ProductShortName} landing page. Click the name of the application, *jee-example-app-1.0.0.ear*, to view the application report.
 
+// please can I ask for a QE validation
 [cols="30%,70%", options="header"]
 |====
 | Page
