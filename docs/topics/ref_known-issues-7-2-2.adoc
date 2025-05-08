@@ -11,3 +11,6 @@ When you analyze Java applications, {ProductShortName} rules can trigger a false
 
 .Source code and dependency analysis of Java applications generate varying effort
 When you run multiple `source code + dependency` repeated analysis of Java applications for the `OpenJDK 17` target, {ProductShortName} generates varying effort. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-4943[(MTA-4943)]
+
+.Application credential updates do not trigger discovery
+When you update the source or Maven credential for an application, a new discovery task is not triggered in the {ProductShortName} {WebName} 7.2.2. link:https://issues.redhat.com/browse/MTA-5121[(MTA-5121)]
