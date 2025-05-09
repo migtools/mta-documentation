@@ -25,11 +25,10 @@ $ ./{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/ou
 
 . Access the report.
 
-[discrete]
 [id="command-examples_{context}"]
 == {ProductShortName} Command examples
 
-[discrete]
+[id="running-mta-application-archive_{context}"]
 === Running {ProductShortName} on an application archive
 
 The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:
@@ -39,7 +38,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 $ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --source eap:5 --target eap:7 --packages com.acme org.apache
 ----
 
-[discrete]
+[id="running-mta-on-source-code_{context}"]
 === Running {ProductShortName} on source code
 
 The following command analyzes the `org.jboss.seam` packages of the link:https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
@@ -49,7 +48,7 @@ The following command analyzes the `org.jboss.seam` packages of the link:https:/
 $ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli --sourceMode --input /path/to/seam-booking-5.2/ --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
 ----
 
-[discrete]
+[id="running-mta-cloud-readiness-rules_{context}"]
 === Running cloud-readiness rules
 
 The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:
@@ -59,7 +58,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 $ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --target eap:7 --target cloud-readiness --packages com.acme org.apache
 ----
 
-[discrete]
+[id="overriding-mta-product-properties_{context}"]
 === Overriding {ProductShortName} properties
 
 To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ decompiler, use the following syntax:
@@ -69,7 +68,6 @@ To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` 
 $ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli -Dwindup.decompiler=procyon --input <INPUT_ARCHIVE_OR_DIRECTORY> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2>
 ----
 
-[discrete]
 [id="cli-bash-completion_{context}"]
 == About {ProductShortName} {CLINameTitle} Bash completion
 
@@ -80,7 +78,6 @@ The {ProductShortName} {CLIName} provides an option to enable Bash completion fo
 $ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli [TAB]
 ----
 
-[discrete]
 [id="bash-completion-temporary_{context}"]
 === Enabling Bash completion
 
@@ -91,7 +88,6 @@ To enable Bash completion for the current shell, execute the following command:
 $ source <{ProductShortName}_HOME>/bash-completion/{LC_PSN}-cli
 ----
 
-[discrete]
 [id="bash-completion-persistent_{context}"]
 === Enabling persistent Bash completion
 
@@ -111,7 +107,6 @@ source <{ProductShortName}_HOME>/bash-completion/{LC_PSN}-cli
 # cp <{ProductShortName}_HOME>/bash-completion/{LC_PSN}-cli /etc/bash_completion.d/
 ----
 
-[discrete]
 [id="accessing-help_{context}"]
 == Accessing {ProductShortName} help
 
