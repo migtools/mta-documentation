@@ -25,6 +25,8 @@ include::topics/ref_new-features-7-3-0.adoc[leveloffset=+2]
 
 include::topics/ref_technology-preview-features-7-3-0.adoc[leveloffset=+2]
 
+include::topics/ref_fixed-issues-7-3-0.adoc[leveloffset=+2]
+
 include::topics/ref_known-issues-7-3-0.adoc[leveloffset=+2]
 
 
