@@ -8,5 +8,6 @@
 
 This section provides the following bug fixes and resolves issues and other problems that have a significant impact on the {ProductFullName} 7.3.0.
 
-
+.MTA CLI now excludes the `target` folder when analyzing compiled Java Maven projects
+Previously, for compiled Java Maven projects, the {ProductShortName} CLI included incidents by analyzing the `target` folder. This generated different reports for Java Maven projects before and after running the `mvn-clean-package` command. This issue has been resolved in {ProductShortName} 7.3.0. link:https://issues.redhat.com/browse/MTA-5078[(MTA-5078)]
 
