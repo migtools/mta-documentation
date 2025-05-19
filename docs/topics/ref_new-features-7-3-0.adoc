@@ -9,7 +9,7 @@
 This section provides the new features and improvements of the {ProductFullName} 7.3.0. 
 
 
-.The deployment manifest generation is now available in {ProductShortName} CLI
+.Asset generation is now available in {ProductShortName} CLI
 
 Starting with {ProductShortName} {ProductVersion}, you can run the `discover` and `generate` commands in the {CLIName}: 
 
