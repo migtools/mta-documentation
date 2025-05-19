@@ -14,7 +14,7 @@ This section provides the new features and improvements of the {ProductFullName}
 Starting with {ProductShortName} {ProductVersion}, you can run the `discover` and `generate` commands in the {CLIName}: 
 
 * The `discover` command generates the discover manifest that preserves the platform and runtime configurations defined in the Cloud Foundry (CF) application manifest.
-* The `generate` command uses the discover manifest to generate the deployment manifest in a Kubernetes-native format to prepare it for {ocp-full} deployments.
+* The `generate` command uses the discover manifest to generate the deployment manifest in a Kubernetes-native format to prepare it for {ocp-full} deployments. You can also use the command to generate non-Kubernetes manifests such as a Dockerfile.
 
 (link:https://issues.redhat.com/browse/MTA-4610[MTA-4610])
 

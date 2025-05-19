@@ -7,7 +7,8 @@
 = Known issues
 
 This section provides highlighted known issues in {ProductFullName} version 7.3.0.
-
+.Non-Java applications are analyzed in containerless mode in the {ProductShortName} CLI
+When you analyze non-Java applications, {ProductShortName} initiates the analysis in containerless mode. Workaround: set the `--run-local=false` flag to analyze non-Java applications. link:https://issues.redhat.com/browse/MTA-5068[(MTA-5068)]
 
 .Application analysis fails to get a list of dependencies for Node.js in the {ProductShortName} UI
 
