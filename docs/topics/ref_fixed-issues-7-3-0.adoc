@@ -11,3 +11,5 @@ This section provides the following bug fixes and resolves issues and other prob
 .MTA CLI now excludes the `target` folder when analyzing compiled Java Maven projects
 Previously, for compiled Java Maven projects, the {ProductShortName} CLI included incidents by analyzing the `target` folder. This generated different reports for Java Maven projects before and after running the `mvn-clean-package` command. This issue has been resolved in {ProductShortName} 7.3.0. link:https://issues.redhat.com/browse/MTA-5078[(MTA-5078)]
 
+.Application credential update now triggers a new discovery task
+Previously, when you update the source or Maven credential for an application, a new discovery task was not triggered in the {ProductShortName} {WebName}. This issue has been resolved in {ProductShortName} 7.3.0. link:https://issues.redhat.com/browse/MTA-5121[(MTA-5121)]
