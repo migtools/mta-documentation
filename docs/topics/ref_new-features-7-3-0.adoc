@@ -13,8 +13,8 @@ This section provides the new features and improvements of the {ProductFullName}
 
 Starting with {ProductShortName} {ProductVersion}, you can run the `discover` and `generate` commands in the {CLIName}: 
 
-* The `discover` command generates the discover manifest that preserves the platform and runtime configurations defined in the Cloud Foundry (CF) application manifest.
-* The `generate` command uses the discover manifest to generate the deployment manifest in a Kubernetes-native format to prepare it for {ocp-full} deployments. You can also use the command to generate non-Kubernetes manifests such as a Dockerfile.
+* The `discover` command generates the discovery manifest that preserves the platform and runtime configurations defined in the Cloud Foundry (CF) application manifest.
+* The `generate` command uses the discovery manifest to generate the deployment manifest in a Kubernetes-native format to prepare it for {ocp-full} deployments. You can also use the command to generate non-Kubernetes manifests such as a Dockerfile.
 
 :FeatureName: Asset generation
 include::snippets/developer-preview-admonition.adoc[]
@@ -23,11 +23,11 @@ include::snippets/developer-preview-admonition.adoc[]
 
 .{ProductShortName} now uses Red Hat Build of Keycloak for user authentication
 
-{ProductShortName} {ProductVersion} now uses `{rhbk-first}` instance for user authentication and authorization. The {ProductShortName} Operator manages the `{rhbk-short}` instance and configures a dedicated realm with necessary roles and permissions. For `{rhbk-short}`, the secret and the pod name has changed. The pod name for {rhbk-short} is changed to `rhbk-operator`. (link:https://issues.redhat.com/browse/MTA-4540[MTA-4540])
+{ProductShortName} {ProductVersion} now uses the `{rhbk-first}` instance for user authentication and authorization. The {ProductShortName} Operator manages the `{rhbk-short}` instance and configures a dedicated realm with necessary roles and permissions. For `{rhbk-short}`, the secret and the pod name have changed. The pod name for {rhbk-short} is changed to `rhbk-operator`. (link:https://issues.redhat.com/browse/MTA-4540[MTA-4540])
 
 .Listing all languages in an application is now available
 
-In {ProductShortName} {ProductVersion}, you can list all languages in an application by using the `--list-languages` flag in the {CLIName}. The listed language that has no supported providers requires a custom rule set and the --`override-provider-settings` flag when you analyze the application.
+In {ProductShortName} {ProductVersion}, you can list all languages in an application by using the `--list-languages` flag in the {CLIName}. The listed language that has no supported providers requires a custom rule set and the `--override-provider-settings` flag when you analyze the application.
 
 :FeatureName: Listing all languages in an application
 include::snippets/developer-preview-admonition.adoc[]
