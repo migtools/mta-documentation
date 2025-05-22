@@ -10,7 +10,7 @@ This section provides highlighted known issues in {ProductFullName} version 7.3.
 
 
 .`.NET` Framework application analysis fails in the {ProductShortName} {CLIName} 
-When you analyze `.NET` Framework applications in Windows containers using the {ProductShortName} {CLIName}, the analysis fails for the following environment variables: 
+When you analyze `.NET` Framework applications in Windows containers by using the {ProductShortName} {CLIName}, the analysis fails for the following environment variables: 
 
 * `DOTNET_PROVIDER_IMG`: `quay.io/konveyor/dotnet-external-provider:release-0.7`
 * `RUNNER_IMG`: `quay.io/konveyor/kantra:latest`
@@ -29,7 +29,7 @@ Workaround: set the `--run-local=false` flag to analyze non-Java applications. l
 
 .Application analysis fails to get a list of dependencies for Node.js in the {ProductShortName} UI
 
-When you run an application analysis for the Node.js language provider by using the {ProductShortName} user-interface (UI), the analysis completes with the following error is displayed in the analysis log:
+When you run an application analysis for the Node.js language provider by using the {ProductShortName} user-interface (UI), the analysis completes with the following error displayed in the analysis log:
 
 ----
 level=error msg="failed to get list of dependencies for provider" error="dependency provider path not set" provider=nodejs'
