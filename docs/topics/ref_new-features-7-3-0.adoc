@@ -24,4 +24,4 @@ Starting with {ProductShortName} {ProductVersion}, you can run the `discover` an
 
 .Listing all languages in an application is now supported
 
-In {ProductShortName} {ProductVersion}, you can list all languages in an application by using the `--list-languages` flag in the {CLIName}. The listed language that has no supported providers requires a custom rule set and the --`override-provider-settings` flag when you analyze the application.
+In {ProductShortName} {ProductVersion}, you can list all languages in an application by using the `--list-languages` flag in the {CLIName}. The listed language that has no supported providers requires a custom rule set and the --`override-provider-settings` flag when you analyze the application. (link:https://issues.redhat.com/browse/MTA-4798[MTA-4798])
