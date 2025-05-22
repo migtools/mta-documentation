@@ -8,3 +8,14 @@ This section provides highlighted known issues in {ProductFullName} version 7.3.
 
 .Non-Java applications are analyzed in containerless mode in the {ProductShortName} CLI
 When you analyze non-Java applications, {ProductShortName} initiates the analysis in containerless mode. Workaround: set the `--run-local=false` flag to analyze non-Java applications. link:https://issues.redhat.com/browse/MTA-5068[MTA-5068]
+=======
+.`.NET` Framework application analysis fails in the {ProductShortName} {CLIName} 
+When you analyze `.NET` Framework applications in Windows containers using the {ProductShortName} {CLIName}, the analysis fails for the following environment variables: 
+
+* `DOTNET_PROVIDER_IMG`: `quay.io/konveyor/dotnet-external-provider:release-0.7`
+* `RUNNER_IMG`: `quay.io/konveyor/kantra:latest`
+* `PODMAN_BIN`: `C:\Program Files\Docker\Docker\resources\bin\docker.exe`
+
+Workaround: Use the following version of the Dotnet provider image:
+`set DOTNET_PROVIDER_IMG=quay.io/konveyor/dotnet-external-provider:v0.5.0` 
+link:https://issues.redhat.com/browse/MTA-5203[(MTA-5203)]
