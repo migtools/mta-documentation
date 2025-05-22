@@ -30,7 +30,7 @@ When you run an application analysis for the Node.js language provider by using 
 level=error msg="failed to get list of dependencies for provider" error="dependency provider path not set" provider=nodejs'
 ----
 
-To work around this issue, set the `Analysis Mode` setting to `source-only`. 
+Workaround: Set the `Analysis Mode` setting to `source-only`. 
 
 NOTE: The Node.js provider does not have a dependency capability. Therefore, a dependency list cannot be generated. The same applies for the Python provider.
  
