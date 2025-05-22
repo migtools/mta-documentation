@@ -142,10 +142,6 @@ The most commonly used CR settings are listed in this table:
 |NA
 |Storage class requested for the Tackle RW0 volumes
 
-|`rhsso_external_access`
-|`False`
-|Flag to indicate whether a dedicated route is created to access the {ProductShortName} managed RHSSO instance
-
 |`analyzer_container_limits_cpu`
 |`1`
 |Maximum number of CPUs the pod is allowed to use
