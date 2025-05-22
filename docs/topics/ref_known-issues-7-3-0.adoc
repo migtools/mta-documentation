@@ -8,6 +8,7 @@
 
 This section provides highlighted known issues in {ProductFullName} version 7.3.0.
 
+
 .`.NET` Framework application analysis fails in the {ProductShortName} {CLIName} 
 When you analyze `.NET` Framework applications in Windows containers using the {ProductShortName} {CLIName}, the analysis fails for the following environment variables: 
 
@@ -17,10 +18,14 @@ When you analyze `.NET` Framework applications in Windows containers using the {
 
 Workaround: Use the following version of the Dotnet provider image:
 `set DOTNET_PROVIDER_IMG=quay.io/konveyor/dotnet-external-provider:v0.5.0` 
+
 link:https://issues.redhat.com/browse/MTA-5203[(MTA-5203)]
 
 .Non-Java applications are analyzed in containerless mode in the {ProductShortName} CLI
-When you analyze non-Java applications, {ProductShortName} initiates the analysis in containerless mode. Workaround: set the `--run-local=false` flag to analyze non-Java applications. link:https://issues.redhat.com/browse/MTA-5068[(MTA-5068)]
+When you analyze non-Java applications, {ProductShortName} initiates the analysis in containerless mode. 
+
+Workaround: set the `--run-local=false` flag to analyze non-Java applications. link:https://issues.redhat.com/browse/MTA-5068[(MTA-5068)]
+
 
 .Application analysis fails to get a list of dependencies for Node.js in the {ProductShortName} UI
 

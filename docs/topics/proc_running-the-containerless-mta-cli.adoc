@@ -26,26 +26,46 @@ In {ProductShortName} 7.2.0 and later, containerless CLI is a default mode. To e
 * You have the `JAVA_HOME` environmental variable set.
 * You have the `JVM_MAX_MEM` system variable set.
 +
-NOTE: If you do not set `JVM_MAX_MEM`, the analysis might hang.
+[NOTE]
+====
+If you do not set `JVM_MAX_MEM`, the analysis might hang.
+====
 
-.Procedure
+.Procedure for Linux
 
-. Move the installed {ProductShortName} CLI `.zip` file to your `$PATH`:
+After unpacking the whole zip file to `~/.kantra`, add that path to the `$PATH` variable.
+
+[NOTE]
+====
+Moving the `mta-cli` binary to `/usr/bin` requires root privileges, whereas adding that path to `$PATH` variable does not require root privileges.
+====
+
+. To extract the dependency zip file to `~/.kantra`, run:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ mv <mta_cli_zip>/<os>-kantra /usr/bin
+unzip $HOME/mta-cli.<os>.<arch>.zip -d $HOME/.kantra
 ----
-
-. Move the requirements to the `.kantra` directory:
+. Add as a system-wide binary or add to the global `$PATH` variable:
+.. For example, to add the `mta-cli` binary to `/usr/bin` as a system-wide binary, using `sudo`, run:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ mv $HOME/kantra.<os>.<arch> $HOME/.kantra
+sudo mv ~/.kantra/mta-cli /usr/bin/
 ----
-+
-NOTE: The CLI can run with the requirements moved to the directory from which you run an analysis. During the analysis, the CLI checks for the requirements in this directory first, and if it does not find the requirements, it searches for them in the `$HOME/.kantra` directory.
 
+.. For example, to add to the global `$PATH` variable, run:
++
+[source,terminal,subs="attributes+"]
+----
+export PATH=$HOME/.kantra:$PATH
+----
+
++
+[NOTE]
+====
+The CLI can run with the requirements moved to the directory from which you run an analysis. During the analysis, the CLI checks for the requirements in this directory first, and if it does not find the requirements, it searches for them in the `$HOME/.kantra` directory.
+====
 
 . Optional: Display all `mta-cli analyze` command options:
 +
@@ -73,4 +93,3 @@ The command arguments represent the following:
 .Additional resources
 
 * xref:installing-downloadable-cli-zip_cli-guide[Installing the CLI .zip file]
-

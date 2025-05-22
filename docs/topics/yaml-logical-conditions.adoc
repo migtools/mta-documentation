@@ -1,0 +1,9 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-logical-conditions_{context}"]
+= Logical conditions
+
+The analyzer provides two basic logical conditions, `and` and `or`, which you can use to aggregate results of other conditions and create more complex queries.

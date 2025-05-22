@@ -17,7 +17,7 @@ Extracting the list of dependencies from compiled Java binaries is not always po
 
 [source,terminal,subs="attributes+"]
 ----
-{mta-cli} analyze --input=<path_to_source_code> --output=<path_to_output_directory>
+{mta-cli} analyze --input <path_to_source_code> --output <path_to_output_directory>
 ----
 
 All flags:
@@ -50,6 +50,9 @@ Flags:
       --jaeger-endpoint (string)          Jaeger endpoint to collect traces.
       --json-output                       Create analysis and dependency
                                           output as JSON.
+      --list-languages                    List all langauges in the source 
+                                          application. This flag is not 
+                                          supported for binary applications.                
       --list-sources                      List available migration sources.
       --list-targets                      List available migration targets.
   -l, --label-selector (string)           Run rules based on specified label
@@ -103,17 +106,24 @@ The list of flags above does not include the `--bulk` flag because this flag is 
 .Usage example
 
 . Get an example application to run analysis on.
+. List all languages in the source application:
++
+[source,terminal,subs="attributes+"]
+----
+$ {mta-cli} analyze --input <path_to_application> --list-languages
+----
++
 . List available target technologies.
 +
 [source,terminal,subs="attributes+"]
 ----
-{mta-cli} analyze --list-targets
+$ {mta-cli} analyze --list-targets
 ----
 . Run an analysis with a specified target technology, for example `cloud-readiness`.
 +
 [source,terminal,subs="attributes+"]
 ----
-{mta-cli} analyze --input=<path-to/example-applications/example-1> --output=<path-to-output-dir> --target=cloud-readiness
+$ {mta-cli} analyze --input <path-to/example-applications/example-1> --output <path-to-output-dir> --target cloud-readiness
 ----
 . Several analysis reports are created in your specified output path:
 +

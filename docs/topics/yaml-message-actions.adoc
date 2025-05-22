@@ -1,0 +1,29 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-message-actions_{context}"]
+= Message action
+
+A message action is employed to generate an issue with the specified message when a rule matches, for example:
+
+[source,yaml]
+----
+# When a match is found, the analyzer generates incidents with the same message.
+message: "helpful message about the violation"
+----
+
+You can also create a template message to include information about the match that has been interpolated through custom variables on the rule.
+// link link:#custom-variables[Custom Variables]):
+
+[source,yaml]
+----
+- ruleID: lang-ref-004
+   customVariables:
+   - pattern: '([A-z]+)\.get\(\)'
+      name: VariableName
+    message: "Found generic call - {{ VariableName }}"
+  when:
+    <CONDITION>
+----

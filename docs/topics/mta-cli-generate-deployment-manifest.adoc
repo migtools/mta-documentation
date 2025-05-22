@@ -1,0 +1,79 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="mta-generate-deployment-manifest_{context}"]
+= Generating the deployment manifest 
+Use the `generate` command to auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (CF) application. Based on the Helm template that you provide, the command generates manifests such as a ConfigMap and non-Kubernetes manifests, such as a Dockerfile, for application deployment. 
+
+.Prerequisites
+* You generated a discovery manifest.
+* You created a Helm template to capture required configuration for the {ocp} deployment. 
+
+.Procedure
+. Open the terminal application and navigate to the `<{ProductShortName}_HOME>/` directory.
+. To generate the deployment manifest as an output file:
++
+[source,terminal]
+----
+$ ./{mta-cli} generate helm --chart-dir helm_sample \
+--input <path_to_discovery-manifest> \
+--output-dir <location_of_deployment_manifest> \
+----
+. Verify the ConfigMap.
++
+[source,terminal]
+----
+$ ./{mta-cli} cd <location_of_deployment_manifest> \
+$ cat configmap.yaml
+$ cat Dockerfile
+----
+. Verify the Dockerfile.
++
+[source,terminal]
+----
+$ ./{mta-cli} cd <location_of_deployment_manifest> \
+$ cat Dockerfile
+----
+
+[source,terminal,subs="attributes+"]
+----
+Usage:
+$ {mta-cli} generate [flags]
+----
+
+[source,terminal,subs="attributes+"]
+----
+Usage:
+$ {mta-cli} generate helm [flags]
+----
+
+.Commands and Flags for `generate` 
+[width="100%",cols="30%,30%,40%",options="header"]
+|===
+|Commands | Flags| Description
+
+a|`generate`
+a|`-h`, `--help`
+a|Help for generate.
+
+.6+a|`generate helm`
+a|
+a|Generate the deployment manifest by using the Helm template.
+
+a|`--chart-dir`
+a|Specify the directory that contains the Helm chart.
+
+a|`--input`
+a|Specify the location of the < _discovery-manifest-name.yaml_ > to generate the deployment manifest.
+
+a|`--non-k8s-only`
+a|Generate only non-Kubernetes templates such as a Dockerfile.  
+
+a|`--output-dir`
+a|Specify the location to which the deployment manifests are saved.
+
+a|`--set`
+a|Overrides values of attributes in the discovery manifest with the key-value pair entered from the CLI.
+|===
