@@ -3,17 +3,19 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="running-the-containerless-mta-cli_{context}"]
-= Running the containerless CLI
+= Analyzing an application in the containerless mode
 
 Starting from {ProductShortName} 7.2.0, you can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime.
 
 [IMPORTANT]
 ====
-In {ProductShortName} 7.2.0 and later, containerless CLI is a default mode. To enable container runtime usage, you must set the `--run-local` flag to `false`:
+In {ProductShortName} 7.2.0 and later, containerless CLI is a default mode. To enable container runtime usage for the analysis of Java applications, you must set the `--run-local` flag to `false`:
 
 ----
 --run-local=false
 ----
+
+The analysis for other applications runs in the container mode automatically
 ====
 
 .Prerequisites
@@ -69,17 +71,17 @@ The CLI can run with the requirements moved to the directory from which you run 
 
 . Optional: Display all `mta-cli analyze` command options:
 +
-[source,terminal,subs="attributes+"]
-----
-mta-cli analyze --help
-----
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *mta-cli analyze --help*
+....
 
 . Run the application analysis:
 +
-[source,terminal,subs="attributes+"]
-----
-$ mta-cli analyze --overwrite --input <path_to_input>  --output <path_to_output> --target <target_source>
-----
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *mta-cli analyze --overwrite --input _<path_to_input>_  --output _<path_to_output>_ --target _<target_source>_*
+....
 +
 The command arguments represent the following:
 
@@ -92,4 +94,5 @@ The command arguments represent the following:
 [role="_additional-resources"]
 .Additional resources
 
-* xref:installing-downloadable-cli-zip_cli-guide[Installing the CLI .zip file]
+* xref:installing-cli-zip_installing-mta-cli[Installing the CLI .zip file]
+* xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]

@@ -1,0 +1,39 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+:_mod-docs-content-type: PROCEDURE
+
+[id="transforming-application-source-code_{context}"]
+= Transforming applications source code
+
+You can transform Java applications source code by using the `transform openrewrite` command. The `openrewrite` subcommand allows running `OpenRewrite` recipes on source code. 	
+
+NOTE: You can only use a single target to run the `transform overwrite` command. 		
+
+
+.Prerequisites
+
+* 
+
+.Procedure
+
+. Display the available `OpenRewrite` recipes:
++
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *mta-cli transform openrewrite --list-targets*
+....
+
+. Transform the application source code:
++
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *mta-cli transform openrewrite --input=_<path_to_source_code>_ --target=_<target_from_the_list>_*
+....
+
+. Inspect the target application source code `diff` to see the transformation. 		
+
+
+[role="_additional-resources"]
+.Additional resources
+
+* xref:available-openrewrite-recipes_performing-transformation[Available OpenRewrite recipes]

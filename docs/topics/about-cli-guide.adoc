@@ -1,9 +1,0 @@
-// Module included in the following assemblies:
-//
-// * docs/cli-guide/master.adoc
-
-:_content-type: CONCEPT
-[id="about-cli-guide_{context}"]
-= About the {UserCLIBookName}
-
-This guide is for engineers, consultants, and others who want to use the {ProductName} ({ProductShortName}) to migrate Java applications, .NET applications, or other components. In {ProductShortName} 7.1 and later, you can use {ProductShortName} to analyze applications written in languages other than Java. To run analysis on applications written in languages other than Java, add a custom rule set and do not specify a target language. This guide describes how to install and run the {CLIName}, review the generated reports, and take advantage of additional features.

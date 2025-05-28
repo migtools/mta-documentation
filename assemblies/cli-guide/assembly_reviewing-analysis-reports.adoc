@@ -1,0 +1,34 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-10
+
+ifdef::context[:parent-context-of-reviewing-analysis-reports: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="reviewing-analysis-reports"]
+endif::[]
+ifdef::context[]
+[id="reviewing-analysis-reports_{context}"]
+endif::[]
+= Reviewing analysis reports
+
+:context: reviewing-analysis-reports
+
+When you run an application analysis, the {ProductFullName} CLI generates an analysis report in the output directory that you specify by using the `--output` argument in the `mta-cli analyze` command.
+
+The output directory contains the following files and subdirectories: 	
+
+* analysis.log
+* dependencies.yaml
+* output.yaml
+* shim.log
+* static-report
+* static-report.log
+
+
+
+
+ifdef::parent-context-of-reviewing-analysis-reports[:context: {parent-context-of-reviewing-analysis-reports}]
+ifndef::parent-context-of-reviewing-analysis-reports[:!context:]
+

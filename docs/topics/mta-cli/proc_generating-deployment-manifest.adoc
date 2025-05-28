@@ -1,0 +1,48 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="generating-deployment-manifest_{context}"]
+= Generating a deployment manifest 
+
+You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (CF) application by using the `generate` command. Based on the Helm template that you provide, the command generates manifests, such as a ConfigMap, and non-Kubernetes manifests, such as a Dockerfile, for application deployment. 
+
+.Prerequisites
+
+* You generated a discovery manifest.
+* You created a Helm template with the required configuration for the {ocp} deployment. 
+
+.Procedure
+
+. Open the terminal application and navigate to the `<{ProductShortName}_HOME>/` directory.
+
+. Generate the deployment manifest as an output file:
++
+[subs="+quotes"]
+----
+$ *mta-cli generate helm --chart-dir helm_sample \
+--input _<path_to_discovery-manifest>_ \
+--output-dir _<location_of_deployment_manifest>_ \*
+----
+
+. Verify the ConfigMap:
++
+[subs="+quotes"]
+----
+$ *mta-cli cd _<location_of_deployment_manifest>_ \*
+$ *cat configmap.yaml*
+$ *cat Dockerfile*
+----
+. Verify the Dockerfile:
++
+[subs="+quotes"]
+----
+$ *mta-cli cd _<location_of_deployment_manifest>_ \*
+$ *cat Dockerfile*
+----
+
+[role="_additional-resources"]
+.Additional resources
+
+* xref:discover-generate-command-options_generating-assets[The discover and generate command options]

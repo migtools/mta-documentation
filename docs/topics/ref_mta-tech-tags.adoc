@@ -3,7 +3,7 @@
 // * docs/cli-guide/master.adoc
 
 :_content-type: REFERENCE
-[id="tech-tags_{context}"]
+[id="mta-tech-tags_{context}"]
 = Supported technology tags
 
 The following technology tags are supported in {ProductShortName} {ProductVersion}:
