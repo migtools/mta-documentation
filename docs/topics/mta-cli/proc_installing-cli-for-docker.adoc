@@ -21,13 +21,13 @@ To migrate applications built with .NET framework 4.5 or later on Windows to cro
 +
 [subs="+quotes"]
 ----
-*PS C:\Users\<user_name>> Enable-WindowsOptionalFeature -Online `
+PS C:\Users\<user_name>> *Enable-WindowsOptionalFeature -Online `
    -FeatureName Microsoft-Hyper-V-All*
 ----
 +
 [subs="+quotes"]
 ----
-*PS C:\Users\<user_name>> Enable-WindowsOptionalFeature -Online `
+PS C:\Users\<user_name>> *Enable-WindowsOptionalFeature -Online `
    -FeatureName Containers*
 ----
 +
@@ -38,7 +38,7 @@ You might need to reboot Windows.
 
 . Install Docker Desktop on Windows.
 
-.. Run the installer by double-click the `Docker_Desktop_Installer.exe` file. 
+.. Run the installer by double-clicking the `Docker_Desktop_Installer.exe` file. 
 +
 By default, Docker Desktop is installed to the `C:\Program Files\Docker\Docker` path.
 
@@ -48,19 +48,19 @@ By default, Docker Desktop is installed to the `C:\Program Files\Docker\Docker` 
 +
 [subs="+quotes"]
 ----
-*PS C:\Users\<user_name>> mkdir C:\Users\<user_name>\MTA*
+PS C:\Users\<user_name>> *mkdir C:\Users\<user_name>\MTA*
 ----
 
 . Extract the `{ProductShortNameLower}-{ProductVersion}-cli-windows.zip` file to the `MTA` folder:
 +
 [subs="+quotes"]
 ----
-*PS C:\Users\<user_name>> cd C:\Users\<user_name>\Downloads*
+PS C:\Users\<user_name>> *cd C:\Users\<user_name>\Downloads*
 ----
 +
 [subs="+quotes"]
 ----
-*PS C:\Users\<user_name>> Expand-Archive `
+PS C:\Users\<user_name>> *Expand-Archive `
    -Path "{ProductShortNameLower}-{ProductVersion}-cli-windows.zip" `
    -DestinationPath "C:\Users\<user_name>\MTA"*
 ----
@@ -69,7 +69,7 @@ By default, Docker Desktop is installed to the `C:\Program Files\Docker\Docker` 
 +
 [subs="+quotes"]
 ----
-*PS C:\Users\<user_name>> docker version*
+PS C:\Users\<user_name>> *docker version*
 ----
 +
 [subs="+quotes"]
@@ -80,7 +80,7 @@ Client:
  Go version:        go1.21.11
  Git commit:        7d4bcd8
  Built:             Sat Jun 29 00:03:32 2024
- OS/Arch:           windows/amd64
+ OS/Arch:           *windows/amd64*
  Context:           desktop-windows
 Server: Docker Desktop 4.32.0 (157355)
  Engine:
@@ -89,7 +89,7 @@ Server: Docker Desktop 4.32.0 (157355)
   Go version:       go1.21.11
   Git commit:       662f78c
   Built:            Sat Jun 29 00:02:13 2024
-  OS/Arch:          windows/amd64
+  OS/Arch:          *windows/amd64*
   Experimental:     false
 ----
 +
@@ -99,20 +99,20 @@ IMPORTANT: Ensure that the `OS/Arch` is set to `windows/amd64`.
 +
 [subs="+quotes"]
 ----
-*PS C:\Users\<user_name>> $env:PODMAN_BIN="C:\Windows\system32\docker.exe"*
+PS C:\Users\<user_name>> *$env:PODMAN_BIN="C:\Windows\system32\docker.exe"*
 ----
 
 . Set the `DOTNET_PROVIDER_IMG` environment variable to use the upstream `dotnet-external-provider`:
 +
 [subs="+quotes"]
 ----
-*PS C:\Users\<user_name>> $env:DOTNET_PROVIDER_IMG="quay.io/konveyor/dotnet-external-provider:v0.5.0"*
+PS C:\Users\<user_name>> *$env:DOTNET_PROVIDER_IMG="quay.io/konveyor/dotnet-external-provider:v0.5.0"*
 ----
 
 . Set the `RUNNER_IMG` environment variable to use the upstream image:
 +
 [subs="+quotes"]
 ----
-*PS C:\Users\<user_name>> $env:RUNNER_IMG="quay.io/konveyor/kantra:v0.5.0"*
+PS C:\Users\<user_name>> *$env:RUNNER_IMG="quay.io/konveyor/kantra:v0.5.0"*
 ----
 

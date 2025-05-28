@@ -4,14 +4,14 @@
 :_mod-docs-content-type: REFERENCE
 
 [id="mta-cli-analyze-flags_{context}"]
-= The analyze command flags
+= The analyze command options
 
-The following are the flags that you can use together with the `mta-cli analyze` command to adjust the command behavior to your needs.
+The following are the options that you can use together with the `mta-cli analyze` command to adjust the command behavior to your needs.
 
-.The flags to use with the mta-cli analyze command
+. `mta-cli analyze` command options
 [options="header"]
 |====
-|Flag|Description
+|Option|Description
 |`--analyze-known-libraries`|Analyze open-source libraries.
 |`--context-lines` (int)|A number of lines of source code to include in the output for each incident. The default is 100.
 |`--dependency-folders` (stringArray)|A directory for dependencies.

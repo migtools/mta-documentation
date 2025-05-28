@@ -5,31 +5,52 @@
 [id="analyzing-single-app-wth-mta-cli_{context}"]
 = Analyzing a single application
 
-You can use the {ProductFullName} {CLINameTitle} to perform an application analysis for a single application. The `analyze` supports running source code and binary analysis by using the `analyzer-lsp` tool. `analyzer-lsp` evaluates the rules for the language providers and determines rule matches. 	
+You can use the {ProductFullName} CLI to perform an application analysis for a single application. 
+
+NOTE: Extracting the list of dependencies from compiled Java binaries is not always possible during the analysis, especially if the dependencies are not embedded within the binary.
  
 .Procedure
 
-. Open a terminal and navigate to the directory where you installed the {ProductShortName} CLI.
-
-. Optional: List available target technologies:
+. Optional: List available target technologies for an analysis: 
 +
-[literal,subs="+quotes,verbatim,normal,normal"]
+[subs="+quotes"]
 ....
-$ *./{mta-cli} analyze --list-targets*
+$ *mta-cli analyze --list-targets*
 ....
 
 . Run the `{mta-cli}` binary:
 +
-[literal,subs="+quotes,verbatim,normal,normal"]
+[subs="+quotes"]
 ....
-$ *./{mta-cli} analyze --input _<path_to_source_code>_ --output _<path_to_output_directory>_ --source _<source_name>_ --target _<target_source_>*
+$ *mta-cli analyze --input _<path_to_input>_ --output _<path_to_output>_ --source _<source_name>_ --target _<target_name_>*
 ....
 +
 Specify the following arguments:
 
-* `--input`: The application to be evaluated.
-* `--output`: The output directory for the generated reports.
-* `--source`: The source technology for the application migration, for example, `weblogic`.
-* `--target`: The target technology for the application migration, for example, `eap8`.
+* `--input`: An application to be evaluated.
+* `--output`: An output directory for the generated reports. `mta-cli analyze` creates the following analysis reports: 
++
+----
+./
+├── analysis.log
+├── dependencies.yaml
+├── output.yaml
+├── shim.log
+├── static-report
+└── static-report.log
+----
+
+* `--source`: A source technology for the application migration, for example, `weblogic`.
+* `--target`: A target technology for the application migration, for example, `eap8`.
+
+. Access the generated analysis reports:
+
+.. In the output of the `mta-cli analyze` command, copy a path to the analysis report file.
+.. Paste the path to the browser of your choice. 
 
 
+[role="_additional-resources"]
+.Additional resources
+
+* xref:installing-cli-zip_installing-mta-cli[Installing the CLI .zip file]
+* xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]

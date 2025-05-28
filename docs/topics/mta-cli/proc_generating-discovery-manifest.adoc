@@ -1,0 +1,39 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="generating-discovery-manifest_{context}"]
+= Generating a discovery manifest 
+
+You can generate the discovery manifest for the Cloud Foundry (CF) application by using the `discover` command. The discovery manifest preserves configurations, such as application properties, resource allocations, environment variables, and service bindings found in the CF manifest. 
+
+.Prerequisites
+
+* You have {ProductShortName} {CLIName} version 7.3.0 installed.
+* You have a CF application manifest as a YAML file. 
+
+.Procedure
+
+. Open the terminal application and navigate to the `<{ProductShortName}_HOME>/` directory.
+
+. List supported platforms for the discovery process:
++
+[subs="+quotes"]
+----
+$ *mta-cli discover --list-platforms*
+----
+
+. Generate the discovery manifest for a CF application as an output file:
++
+[subs="+quotes"]
+----
+$ *mta-cli discover cloud-foundry \
+--input _<path_to_application-manifest>_ \
+--output _<path_to_discovery-manifest>_\*
+----
+
+[role="_additional-resources"]
+.Additional resources
+
+* xref:discover-generate-command-options_generating-assets[The discover and generate command options]

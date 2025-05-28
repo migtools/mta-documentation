@@ -21,14 +21,14 @@ You can use transformation to perform the following actions:
 * Transform Java applications source code by using the `transform openrewrite` command.
 * Convert XML rules to YAML rules by using the `transform rules` command.
 
-IMPORTANT: Performing transformation requires the container runtime to be configured. For more information, see xref:installing-using-podman_cli-guide[Installing the CLI by using Podman].
+IMPORTANT: Performing transformation requires the container runtime to be configured. 
 
 
-include::topics/proc_transforming-application-source-code.adoc[leveloffset=+1]
+include::topics/mta-cli/proc_transforming-application-source-code.adoc[leveloffset=+1]
 
-include::topics/ref_available-openrewrite-recipes.adoc[leveloffset=+1]
+include::topics/mta-cli/ref_available-openrewrite-recipes.adoc[leveloffset=+1]
 
-include::topics/proc_converting-xml-to-yaml.adoc[leveloffset=+1]
+include::topics/mta-cli/proc_converting-xml-to-yaml.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-performing-transformation[:context: {parent-context-of-performing-transformation}]
 ifndef::parent-context-of-performing-transformation[:!context:]

@@ -14,86 +14,39 @@ include::topics/templates/document-attributes.adoc[]
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-include::topics/mta-intro-to-the-cli.adoc[leveloffset=+1]
+include::topics/mta-cli/con_intro-to-the-cli.adoc[leveloffset=+1]
 
-include::topics/mta-migration-paths.adoc[leveloffset=+1]
+include::topics/mta-cli/ref_supported-migration-paths.adoc[leveloffset=+1]
 
 include::assemblies/cli-guide/assembly_installing-mta-cli.adoc[leveloffset=+1]
 
-// Install in disconnected environment
-include::topics/installing-mta-disconnected-environment.adoc[leveloffset=+2]
-
 include::assemblies/cli-guide/assembly_analyzing-applications-mta-cli.adoc[leveloffset=+1]
 
-include::assemblies/cli-guide/assembly_analyzing-multi-language-applications.adoc[leveloffset=+1]
+include::assemblies/cli-guide/assembly_analyzing-nonjava-applications.adoc[leveloffset=+1]
 
 include::assemblies/cli-guide/assembly_performing-transformation.adoc[leveloffset=+1]
 
-
-// Access the Report
-include::topics/access-report.adoc[leveloffset=+2]
-
-// Review the Reports
-include::topics/mta-review-reports.adoc[leveloffset=+1]
-
-// Export the Report in CSV Format
+//REWRITE FIRST (very much outdated)include::topics/access-report.adoc[leveloffset=+2]
+//include::topics/mta-review-reports.adoc[leveloffset=+1]
 // include::topics/csv-export.adoc[leveloffset=+1]
-
-// Mavenize Your Application
 // include::topics/mavenize.adoc[leveloffset=+1]
 
-//Generating platform Assets for application deployment
-include::topics/mta-cli-generate-assets.adoc[leveloffset=+1]
+include::assemblies/cli-guide/assembly_generating-assets.adoc[leveloffset=+1]
 
-//Generating the discovery manifest
-include::topics/mta-cli-generate-discovery-manifest.adoc[leveloffset=+2]
 
-//Generating the deployment manifest
-include::topics/mta-cli-generate-deployment-manifest.adoc[leveloffset=+2]
-
-//Generate asset for a Java application
-include::topics/mta-cli-generate-deployment-asset-example.adoc[leveloffset=+2]
-
-// Optimize {ProductShortName} Performance
-include::topics/mta-optimize-performance.adoc[leveloffset=+1]
+include::topics/mta-cli/ref_tips-for-performance-optimization.adoc[leveloffset=+1]
 
 // Configure {ProductShortName} to Exclude Files and Packages
 // include::topics/mta-exclude-files-and-packages.adoc[leveloffset=+2]
 
 // CLI known issues
-include::topics/cli-tool-known-issues.adoc[leveloffset=+3]
+include::topics/cli-tool-known-issues.adoc[leveloffset=+1]
 
-[appendix]
-== Reference material
 
-// {ProductShortName} Command-line Arguments
-include::topics/mta-cli-args.adoc[leveloffset=+2]
+include::assemblies/cli-guide/assembly_reference-material.adoc[leveloffset=+1]
 
-// Added in 4.3.0: list of supported Tech Tags
-include::topics/tech-tags.adoc[leveloffset=+2]
 
-// Rule Story Points
-include::topics/about-story-points.adoc[leveloffset=+2]
+include::topics/mta-cli/ref_contributing-to-mta-development.adoc[leveloffset=+1]
 
-For more information on categorizing tasks, see link:{ProductDocRulesGuideURL}/rule_categories_rules-development-guide#rule_categories_rules-development-guide[Using custom rule categories].
-
-=== Additional Resources
-
-// Get Involved
-include::topics/get-involved.adoc[leveloffset=+3]
-
-// Important Links
-include::topics/important-links.adoc[leveloffset=+3]
-
-// Report Issues with {ProductShortName}
-
-==== Reporting issues
-
-{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
-
-// **********************************
-// * Appendix: Revision Information *
-// **********************************
-include::topics/templates/revision-info.adoc[]
 
 :!cli-guide:

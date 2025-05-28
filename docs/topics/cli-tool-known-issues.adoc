@@ -5,7 +5,9 @@
 :_content-type: PROCEDURE
 
 [id="cli-tool-known-issues_{context}"]
-= {CLINameTitle} known issues
+= {ProductShortName} {CLINameTitle} known issues
+
+This section provides highlighted known issues in {ProductShortName} {CLINameTitle}.
 
 .Limitations with Podman on Microsoft Windows
 

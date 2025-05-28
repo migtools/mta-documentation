@@ -1,0 +1,57 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+:_mod-docs-content-type: REFERENCE
+
+[id="discover-generate-command-options_{context}"]
+= The discover and generate command options
+
+You can use the following options together with the `discover` or `generate` command to adjust the command behavior to your needs.
+
+.Options for `discover` and `generate` commands
+[width="100%",cols="30%,30%,40%",options="header"]
+|===
+| Command | Option | Description
+
+.2+a|`discover`
+a|`-h`, `--help`
+a|Display details for different command arguments.
+
+
+a|`--list-platforms`
+a|List supported platforms for the discovery process.
+
+
+.3+a|`discover cloud-foundry`
+a|
+a|Discover Cloud Foundry applications.
+
+a|`--input`
+a|Specify the location of the _<app-manifest-name>_.yaml file to discover the application configurations.
+
+a|`--output`
+a|Specify the location to save the _<discovery-manifest-name>_.yaml file.
+
+a|`generate`
+a|`-h`, `--help`
+a|Display details for different command arguments.
+
+.6+a|`generate helm`
+a|
+a|Generate a deployment manifest by using the Helm template.
+
+a|`--chart-dir`
+a|Specify a directory that contains the Helm chart.
+
+a|`--input`
+a|Specify a location of the _<discovery-manifest-name>_.yaml file to generate the deployment manifest.
+
+a|`--non-k8s-only`
+a|Generate only non-Kubernetes templates, such as a Dockerfile.  
+
+a|`--output-dir`
+a|Specify a location to which the deployment manifests are saved.
+
+a|`--set`
+a|Override values of attributes in the discovery manifest with the key-value pair entered from the CLI.
+|===
