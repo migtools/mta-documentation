@@ -142,16 +142,12 @@ The most commonly used CR settings are listed in this table:
 |NA
 |Storage class requested for the Tackle RW0 volumes
 
-|`rhsso_external_access`
-|`False`
-|Flag to indicate whether a dedicated route is created to access the {ProductShortName} managed RHSSO instance
-
 |`analyzer_container_limits_cpu`
 |`1`
 |Maximum number of CPUs the pod is allowed to use
 
 |`analyzer_container_limits_memory`
-|`4Gi`
+|`1Gi`
 |Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
 
 |`analyzer_container_requests_cpu`
@@ -159,7 +155,7 @@ The most commonly used CR settings are listed in this table:
 |Minimum number of CPUs the pod needs to run
 
 |`analyzer_container_requests_memory`
-|`4Gi`
+|`1Gi`
 |Minimum amount of memory the pod needs to run
 
 |`ui_container_limits_cpu`
@@ -267,34 +263,35 @@ To prevent out-of-memory events and protect nodes, use the `--eviction-hard` set
 The amount of memory available for running pods on this node is 28.9 GB. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
 
-[id="mta-7-red-hat-single-sign-on_{context}"]
-== Red Hat Single Sign-On
+[id="mta-7-red-hat-build-of-keycloak_{context}"]
+== Red Hat Build of Keycloak
 
-The {ProductShortName} uses link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red Hat Single Sign-On (RHSSO)] instance for user authentication and authorization.
+The {ProductShortName} 7.3.0 uses link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0[{rhbk-first}] instance for user authentication and authorization. 
 
-The {ProductShortName} operator manages the RHSSO instance and configures a dedicated link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] with necessary roles and permissions.
+The {ProductShortName} operator manages the {rhbk-short} instance and configures a dedicated link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/configuring-realms[realm] with necessary roles and permissions.
 
-{ProductShortName}-managed RHSSO instance allows you to perform advanced RHSSO configurations, such as link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating identity providers]. To access the link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[RHSSO Admin Console], enter the URL https://<_route_>/auth/admin in your browser by replacing <route> with the {ProductShortName} web console address.
+{ProductShortName}-managed {rhbk-short} instance allows you to perform advanced {rhbk-short} configurations, such as link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/identity_broker[integrating identity providers]. To access the link:hhttps://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/configuring-realms#using_the_admin_console[{rhbk-short} Admin Console], enter the URL https://<_route_>/auth/admin in your browser by replacing < _route_ > with the {ProductShortName} web console address.
 
 Example:
 
 * MTA web console: https://mta-openshiftmta.example.com/
-* RHSSO Admin console: https://mta-openshiftmta.example.com/auth/admin
+* {rhbk-short} Admin console: https://mta-openshiftmta.example.com/auth/admin
 
-The admin credentials for RHSSO are stored in a secret file named `credential-mta-rhsso` in the namespace where {ProductShortName} is installed.
+The admin credentials for {rhbk-short} are stored in a secret file named `mta-keycloak-rhbk` in the namespace where {ProductShortName} is installed.
 
 To retrieve your admin credentials, run the following command:
+[source,terminal]
 ----
-oc get secret credential-mta-rhsso -o yaml
+$ oc get secret mta-keycloak-rhbk -n openshift-mta -o json| jq -r '.data.password | @base64d'
 ----
 
-To create a dedicated route for the RHSSO instance, set the `rhsso_external_access` parameter to `true` in the Tackle custom resource (CR) for {ProductShortName}.
+//To create a dedicated route for the {rhbk-short} instance, set the `rhsso_external_access` parameter to `true` in the Tackle custom resource (CR) for {ProductShortName}. #QE asked to remove this line.
 
-include::analyzer-rbac-snippet.adoc[]
+//include::analyzer-rbac-snippet.adoc[]
 
 .Additional resources
-* link:https://docs.redhat.com/en/documentation/red_hat_single_sign-on/7.6/html-single/server_administration_guide/index#ldap[Configuring LDAP and Active Directory in RHSSO]
-* link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red Hat Single Sign-On features and concepts]
+* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#ldap[Configuring LDAP and Active Directory in {rhbk-short}]
+* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts[Red Hat Build of Keycloak features and concepts]
 
 [id="mta-roles-personas-users-permissions_{context}"]
 === Roles, Personas, Users, and Permissions
@@ -317,9 +314,9 @@ include::analyzer-rbac-snippet.adoc[]
 |Migrator
 |====
 
-The roles are already defined in your RHSSO instance. You do not need to create them.
+The roles are already defined in your {rhbk-short} instance. You do not need to create them.
 
-If you are an {ProductShortName} administrator, you can create users in your RHSSO and assign each user one or more roles, one role per persona.
+If you are an {ProductShortName} administrator, you can create users in your {rhbk-short} and assign each user one or more roles, one role per persona.
 
 [id="mta-roles-personas-ui-views_{context}"]
 ==== Roles, personas, and access to {WebName} views
@@ -360,7 +357,7 @@ The ability of administrators, architects, and migrators to access the *Administ
 [id="mta-roles-permissions_{context}"]
 ==== Roles and permissions
 
-The following table contains the roles and permissions (scopes) that {ProductShortName} seeds the managed RHSSO instance with:
+The following table contains the roles and permissions (scopes) that {ProductShortName} seeds the managed {rhbk-short} instance with:
 
 [width="100%",cols="34%,33%,33%",]
 |====

@@ -76,6 +76,10 @@ a|`-l`, `--label-selector`
 |String
 |Flag to run rules based on a specified label selector expression.
 
+a|`--list-languages`
+|
+|Flag to list available languages in a source application.
+
 a|`--list-providers`
 |
 |Flag to list available supported providers.

@@ -42,6 +42,18 @@ include::topics/mta-review-reports.adoc[leveloffset=+1]
 // Mavenize Your Application
 // include::topics/mavenize.adoc[leveloffset=+1]
 
+//Generating platform Assets for application deployment
+include::topics/mta-cli-generate-assets.adoc[leveloffset=+1]
+
+//Generating the discovery manifest
+include::topics/mta-cli-generate-discovery-manifest.adoc[leveloffset=+2]
+
+//Generating the deployment manifest
+include::topics/mta-cli-generate-deployment-manifest.adoc[leveloffset=+2]
+
+//Generate asset for a Java application
+include::topics/mta-cli-generate-deployment-asset-example.adoc[leveloffset=+2]
+
 // Optimize {ProductShortName} Performance
 include::topics/mta-optimize-performance.adoc[leveloffset=+1]
 

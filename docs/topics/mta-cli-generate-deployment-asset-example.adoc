@@ -1,0 +1,130 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="mta-generate-deployment-asset-example_{context}"]
+= Generating the discovery and deployment manifest example
+
+This example shows how to generate the discovery manifest and the deployment manifest of a Cloud Foundry (CF) Node.js application by using the `discover` and `generate` commands, respectively.
+
+For this example, the following files and directories are used:
+
+* CF Node.js application manifest name: `cf-nodejs-app.yaml`
+* Discovery manifest name: `discover.yaml`
+* Location of the application Helm chart: `helm_sample`
+* Deployment manifests: a ConfigMap and a Dockerfile
+* Output location of the deployment manifests: `newDir`
+
+In this example, it is assumed that the `cf-nodejs-app.yaml` is located in the same directory as the {ProductShortName} {CLIName} binary. If the CF application manifest location is different, you can also enter the location path to the manifest as the `input`.
+
+.Prerequisites
+* You installed {ProductShortName} {CLIName} 7.3.0.
+* You have a CF application manifest as a yaml file. 
+* You created a Helm template to capture the required configurations for the {ocp} deployment. 
+
+.Procedure
+. Open the terminal application and navigate to the `<{ProductShortName}_HOME>/` directory.
+
+. Verify the content of the CF Node.js application manifest:
++
+[source,terminal]
+----
+$ cat cf-nodejs-app.yaml
+name: cf-nodejs
+lifecycle: cnb
+buildpacks:
+  - docker://my-registry-a.corp/nodejs
+  - docker://my-registry-b.corp/dynatrace
+memory: 512M
+instances: 1
+random-route: true
+----
+. To generate the discover manifest for the CF Node.js application:
++
+[source,terminal]
+----
+$ ./{mta-cli} discover cloud-foundry \
+--input cf-nodejs-app.yaml \
+--output discover.yaml \
+----
+
+. Verify the content of the discover manifest:
++
+[source,terminal]
+----
+$ cat discover.yaml
+name: cf-nodejs
+randomRoute: true
+timeout: 60
+buildPacks:
+- docker://my-registry-a.corp/nodejs
+- docker://my-registry-b.corp/dynatrace
+instances: 1
+----
+
+. To generate the deployment manifest in the `newDir` directory by using the `discover.yaml`:
++
+[source,terminal]
+----
+$ ./{mta-cli} generate helm \
+--chart-dir helm_sample \
+--input discover.yaml --output-dir newDir
+----
+
+. Check the contents of the Dockerfile the `newDir` directory:
++
+[source,terminal]
+----
+$ cat ./newDir/Dockerfile
+FROM busybox:latest
+
+RUN echo "Hello cf-nodejs!"
+----
+
+. Check the contents of the ConfigMap in the `newDir` directory:
++
+[source,terminal]
+----
+$ cat ./newDir/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cf-nodejs-config
+data:
+  RANDOM_ROUTE: true
+  TIMEOUT: "60"
+  BUILD_PACKS: |
+    - docker://my-registry-a.corp/nodejs
+    - docker://my-registry-b.corp/dynatrace
+  INSTANCES: "1"
+----
+
+. To override the `name` to `nodejs-app` and `INSTANCES` to `2` in the ConfigMap:
++
+[source,terminal]
+----
+$ ./{mta-cli} generate helm \
+--chart-dir helm_sample \
+--input discover.yaml --set name="nodejs-app" \
+--set instances=2 \
+--output-dir newDir \
+----
+
+. Check the contents of the ConfigMap again:
++
+[source,terminal]
+----
+$ cat ./newDir/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodejs-app
+data:
+  RANDOM_ROUTE: true
+  TIMEOUT: "60"
+  BUILD_PACKS: |
+    - docker://my-registry-a.corp/nodejs
+    - docker://my-registry-b.corp/dynatrace
+  INSTANCES: "2"
+----
