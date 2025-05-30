@@ -1,0 +1,22 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-29
+
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-3-1_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.3.1.
+
+
+.`.NET` Framework application analysis fails in the {ProductShortName} {CLIName} 
+When you analyze `.NET` Framework applications in Windows containers by using the {ProductShortName} {CLIName}, the analysis fails for the following environment variables: 
+
+* `DOTNET_PROVIDER_IMG`: `quay.io/konveyor/dotnet-external-provider:release-0.7`
+* `RUNNER_IMG`: `quay.io/konveyor/kantra:latest`
+* `PODMAN_BIN`: `C:\Program Files\Docker\Docker\resources\bin\docker.exe`
+
+Workaround: Use the following version of the Dotnet provider image:
+`set DOTNET_PROVIDER_IMG=quay.io/konveyor/dotnet-external-provider:v0.5.0` 
+
+link:https://issues.redhat.com/browse/MTA-5203[(MTA-5203)]
