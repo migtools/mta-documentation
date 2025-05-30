@@ -23,6 +23,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 include::topics/ref_fixed-issues-7-3-1.adoc[leveloffset=+2]
 
+include::topics/ref_known-issues-7-3-1.adoc[leveloffset=+2]
+
 [id="mta-7-3-0"]
 == {ProductShortName} 7.3.0
 
