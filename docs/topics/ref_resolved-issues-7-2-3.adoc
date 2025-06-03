@@ -10,5 +10,5 @@
 
 This section provides highlighted issues that have been resolved in {ProductFullName} 7.2.3.
 
-.{ProductShortName} creates resources with auto-assigned ID after creating Restful resources with specific IDs
+.{ProductShortName} creates resources with auto-assigned IDs after creating Restful resources with specific IDs
 Previously in {ProductShortName}, when a resource had been created with a specific ID through REST calls after which another resource was created with an auto-assigned ID (through a REST call or in the user interface), it sometimes resulted in an `http-409` conflict. This issue has been resolved in {ProductShortName} 7.2.3. link:https://issues.redhat.com/browse/MTA-5288[(MTA-5288)]
