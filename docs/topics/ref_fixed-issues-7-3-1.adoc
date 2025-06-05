@@ -15,3 +15,11 @@ Previously, {ProductShortName} did not trigger custom rules when analyzing Java 
 .{ProductShortName} now analyzes Java applications without false positives
 Previously, {ProductShortName} sometimes generated false positive by matching 'line 1' of a Java file. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-4918[(MTA-4918)]
 
+.{ProductShortName} now generates consistent reports after containerized and local analysis of Java applications 
+Previously, {ProductShortName} generated reports with different number of issues after analyzing Java applications in containerized and containerless modes. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5090[(MTA-5090)]
+
+.{ProductShortName} now analyzes non-Java applications in containerized mode
+Previously, {ProductShortName} analyzed non-Java applications in containerless mode unless the `--run-local` flag was manually set to `false`. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5068[(MTA-5068)]
+
+.{ProductShortName} {CLIName} now lists languages for binary applications
+Previously, the `--list-languages` flag did not list languages for binary applications in the {ProductShortName} {CLIName}. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5089[(MTA-5089)]
