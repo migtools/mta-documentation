@@ -9,6 +9,5 @@
 This section provides highlighted known issues in {ProductFullName} version 7.3.1.
 
 
-.Rules are not triggered for pomless applications during cloud-readiness analysis
-When you analyze a pomless application for cloud-readiness, {ProductShortName} {CLIName} does not trigger custom rules. link:https://issues.redhat.com/browse/MTA-5049[MTA-5049] 
-//only custom rules?
+.{ProductShortName} {CLIName} does not detect dependencies for Gradle projects
+When you analyze Gradle projects in containerless mode, the {ProductShortName} {CLIName} does not detect dependencies during analysis. link:https://issues.redhat.com/browse/MTA-4033[(MTA-4033)]

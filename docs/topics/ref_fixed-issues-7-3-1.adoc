@@ -9,8 +9,7 @@
 This section provides the following bug fixes and resolves issues and other problems that have a significant impact on the {ProductFullName} 7.3.1.
 
 .{ProductShortName} now triggers custom rules for application analysis
-Previously, {ProductShortName} did not trigger custom rules when analyzing Java applications. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-4885[(MTA-4885)] 
-// only Java apps?
+Previously, {ProductShortName} did not trigger custom rules when analyzing applications. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-4885[(MTA-4885)] 
 
 .{ProductShortName} now analyzes Java applications without false positives
 Previously, {ProductShortName} sometimes generated false positive by matching 'line 1' of a Java file. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-4918[(MTA-4918)]
@@ -23,3 +22,6 @@ Previously, {ProductShortName} analyzed non-Java applications in containerless m
 
 .{ProductShortName} {CLIName} now lists languages for binary applications
 Previously, the `--list-languages` flag did not list languages for binary applications in the {ProductShortName} {CLIName}. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5089[(MTA-5089)]
+
+.Custom rules are now triggered for applications without the `pom` file
+Previously, {ProductShortName} {ProductShortName} did not trigger custom rules for applications without the `pom` file. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5049[MTA-5049]
