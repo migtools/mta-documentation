@@ -1,0 +1,12 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-29
+
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-3-1_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.3.1.
+
+.{ProductShortName} {CLIName} does not detect dependencies for Gradle projects
+When you analyze Gradle projects in containerless mode, the {ProductShortName} {CLIName} does not detect dependencies during analysis. link:https://issues.redhat.com/browse/MTA-4033[(MTA-4033)]
