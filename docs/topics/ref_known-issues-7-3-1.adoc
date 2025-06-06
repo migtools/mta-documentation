@@ -8,6 +8,5 @@
 
 This section provides highlighted known issues in {ProductFullName} version 7.3.1.
 
-
 .{ProductShortName} {CLIName} does not detect dependencies for Gradle projects
 When you analyze Gradle projects in containerless mode, the {ProductShortName} {CLIName} does not detect dependencies during analysis. link:https://issues.redhat.com/browse/MTA-4033[(MTA-4033)]
