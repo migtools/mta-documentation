@@ -80,9 +80,6 @@ include::topics/mta-cli-transform.adoc[leveloffset=+3]
 // Available OpenRewrite recipes
 include::topics/available-openrewrite-recipes.adoc[leveloffset=+4]
 
-// Access the Report
-include::topics/access-report.adoc[leveloffset=+2]
-
 // Multi-language application analysis
 include::topics/mta-cli-analyze-multi-lang-apps.adoc[leveloffset=+2]
 
@@ -93,7 +90,7 @@ include::topics/mta-cli-analyze-selected-provider.adoc[leveloffset=+3]
 include::topics/mta-cli-analyze-unsupported-provider.adoc[leveloffset=+3]
 
 // Review the Reports
-include::topics/mta-review-reports.adoc[leveloffset=+1]
+include::assemblies/cli-guide/assembly_reviewing-analysis-reports.adoc[leveloffset=+1]
 
 // Export the Report in CSV Format
 // include::topics/csv-export.adoc[leveloffset=+1]
@@ -119,7 +116,7 @@ include::topics/mta-optimize-performance.adoc[leveloffset=+1]
 // Configure {ProductShortName} to Exclude Files and Packages
 // include::topics/mta-exclude-files-and-packages.adoc[leveloffset=+2]
 
-[appendix]
+[appendix] 
 == Reference material
 
 // {ProductShortName} Command-line Arguments

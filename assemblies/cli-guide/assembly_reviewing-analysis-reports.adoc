@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-06-16
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-reviewing-analysis-reports: {context}]
+
+ifndef::context[]
+[id="reviewing-analysis-reports"]
+endif::[]
+ifdef::context[]
+[id="reviewing-analysis-reports_{context}"]
+endif::[]
+= Reviewing an analysis report
+
+:context: reviewing-analysis-reports
+
+After analyzing an application, you can access an analysis report to check the details of the entire application migration effort.
+
+include::topics/proc_accessing-analysis-report.adoc[leveloffset=+1]
+
+include::topics/ref_analysis-report-sections.adoc[leveloffset=+1]
+
+////
+[role="_additional-resources"]
+== Additional resources
+
+* link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide]
+* xref:some-module_{context}[]
+////
+
+ifdef::parent-context-of-reviewing-analysis-reports[:context: {parent-context-of-reviewing-analysis-reports}]
+ifndef::parent-context-of-reviewing-analysis-reports[:!context:]
+
