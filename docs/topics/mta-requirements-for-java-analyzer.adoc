@@ -6,11 +6,11 @@
 [id="mta-requirements-for-java-analyzer_{context}"]
 = Adding minimum requirements for Java analyzer and discovery
 
-There is a minimum requirement for the Java analyzer, and also the discovery task, which by default is set to 2 GB.
+The default minimum requirement for the Java analyzer, and also the discovery task, is set to 2.5 GB.
 
 While this minimum requirement can be lowered to 1.5 GB, it is not recommended.
 
-You can also increase this minimum requirement to more than 2 GB.
+You can also increase this minimum requirement to more than 2.5 GB.
 
 [source, yaml]
 ----
@@ -21,8 +21,8 @@ metadata:
   namespace: openshift-mta
 spec:
   feature_auth_required: 'true'
-  provider_java_container_limits_memory: 2Gi
-  provider_java_container_requests_memory: 2Gi
+  provider_java_container_limits_memory: 2.5Gi
+  provider_java_container_requests_memory: 2.5Gi
 ----
 
 [NOTE]
