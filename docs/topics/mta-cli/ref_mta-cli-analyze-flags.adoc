@@ -8,14 +8,14 @@
 
 The following are the options that you can use together with the `mta-cli analyze` command to adjust the command behavior to your needs.
 
-. `mta-cli analyze` command options
+.`mta-cli analyze` command options
 [options="header"]
 |====
 |Option|Description
-|`--analyze-known-libraries`|Analyze open-source libraries.
+|`--analyze-known-libraries` (bool)|Analyze open-source libraries.
 |`--context-lines` (int)|A number of lines of source code to include in the output for each incident. The default is 100.
 |`--dependency-folders` (stringArray)|A directory for dependencies.
-|`--enable-default-rulesets`|Run default rulesets with analysis. The default is `true`.
+|`--enable-default-rulesets` (bool)|Run default rulesets with analysis. The default is `true`.
 |`--help`|Display the available flags for `analyze` command.
 |`--http-proxy` (string)|An HTTP proxy string URL.
 |`--https-proxy` (string)|An HTTPS proxy string URL.
@@ -26,22 +26,22 @@ The following are the options that you can use together with the `mta-cli analyz
 ----
 |`--input` (string)|A path to the application source code or a binary.
 |`--jaeger-endpoint` (string)|A Jaeger endpoint to collect traces.
-|`--json-output`|Create analysis and dependence output as a JSON file.
+|`--json-output` (string)|Create analysis and dependence output as a JSON file.
+|`--label-selector` (string)|Run rules based on specified label selector expression.
+| `--list-languages` |List all languages in the source application. This flag is not supported for binary applications.
+| `--list-providers` |List available supported providers.
 |`--list-sources`|List rules for available migration sources.
 |`--list-targets`|List rules for available migration targets.
-|`--label-selector` (string)|Run rules based on specified label selector expression.
 |`--maven-settings` (string)|A path to the custom maven settings file to use.
-|`--overwrite`|Overwrite an output directory.
-|`-skip-static-report`|Do not generate a static report.
 |`--mode` (string) a|An analysis mode. Must be set to either of the following values:
 
 * `full` (default)
 * `source-only`
 |`--no-proxy` (string)|Proxy-excluded URLs (relevant only with proxy).
 |`--output` (string)|A path to the directory for analysis output.
-|`--overwrite`|Overwrite the output directory.
+|`--overwrite` (bool)|Overwrite the output directory.
 |`--rules` (stringArray)|A filename or directory that contains rule files.
-|`--skip-static-report`|Do not generate the static report.
+|`--skip-static-report` (bool)|Do not generate the static report.
 |`--source` (string) a|A source technology to consider for the analysis.
 To specify multiple sources, repeat the parameter, for example:
 
@@ -55,7 +55,7 @@ To specify multiple targets, repeat the parameter, for example:
 --target <target_1> --target <target_2> ...
 ----
 |`--log-level uint32`|A log level. The default is 4.
-|`--no-cleanup`|Do not clean up temporary resources.
+|`--no-cleanup` (bool)|Do not clean up temporary resources.
 |====
 
 

@@ -5,14 +5,14 @@
 [id="transforming-application-source-code_{context}"]
 = Transforming applications source code
 
-You can transform Java applications source code by using the `transform openrewrite` command. The `openrewrite` subcommand allows running `OpenRewrite` recipes on source code. 	
+To update Java libraries or frameworks, for example, `javax` or Spring Boot, you can transform Java application source code by using the `transform openrewrite` command. The `openrewrite` subcommand allows running `OpenRewrite` recipes on source code. 	
 
 NOTE: You can only use a single target to run the `transform overwrite` command. 		
 
 
 .Prerequisites
 
-* 
+* You configured the container runtime.
 
 .Procedure
 
@@ -30,10 +30,14 @@ $ *mta-cli transform openrewrite --list-targets*
 $ *mta-cli transform openrewrite --input=_<path_to_source_code>_ --target=_<target_from_the_list>_*
 ....
 
-. Inspect the target application source code `diff` to see the transformation. 		
+
+.Verification
+
+* Inspect the target application source code `diff` to see the transformation. 		
 
 
 [role="_additional-resources"]
 .Additional resources
 
 * xref:available-openrewrite-recipes_performing-transformation[Available OpenRewrite recipes]
+* xref:openrewrite-command-options_performing-transformation[The openrewrite command options]

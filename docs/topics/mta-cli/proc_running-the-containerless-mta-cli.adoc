@@ -3,7 +3,7 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="running-the-containerless-mta-cli_{context}"]
-= Analyzing an application in the containerless mode
+= Analyzing an application in containerless mode
 
 Starting from {ProductShortName} 7.2.0, you can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime.
 
@@ -20,75 +20,36 @@ The analysis for other applications runs in the container mode automatically
 
 .Prerequisites
 
-* You have OpenJDK version 17 or later installed on your system.
-* You have Maven version 3.9.9 or later installed on your system.
+* You installed the {ProductShortName} CLI. For more information, see xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file].
+* You installed Java Development Kit (JDK) version 17 or later.
+* If you use OpenJDK on Red Hat Enterprise Linux (RHEL) or Fedora, you installed the Java `devel` package.
+* You installed Maven version 3.9.9 or later.
 * The CLI assumes that a path to the `mvn` binary is correctly registered in the system variable. Therefore, ensure that you added `mvn` to the following variable:
 ** `Path` for Windows.
 ** `PATH` for Linux and macOS.
-* You have the `JAVA_HOME` environmental variable set.
-* You have the `JVM_MAX_MEM` system variable set.
+* You set the `JAVA_HOME` environmental variable.
+* You set the `JVM_MAX_MEM` system variable.
 +
-[NOTE]
-====
-If you do not set `JVM_MAX_MEM`, the analysis might hang.
-====
+NOTE: If you do not set `JVM_MAX_MEM`, the analysis might hang because Java might require more memory than the default `JVM_MAX_MEM` value.
 
-.Procedure for Linux
 
-After unpacking the whole zip file to `~/.kantra`, add that path to the `$PATH` variable.
-
-[NOTE]
-====
-Moving the `mta-cli` binary to `/usr/bin` requires root privileges, whereas adding that path to `$PATH` variable does not require root privileges.
-====
-
-. To extract the dependency zip file to `~/.kantra`, run:
-+
-[source,terminal,subs="attributes+"]
-----
-unzip $HOME/mta-cli.<os>.<arch>.zip -d $HOME/.kantra
-----
-. Add as a system-wide binary or add to the global `$PATH` variable:
-.. For example, to add the `mta-cli` binary to `/usr/bin` as a system-wide binary, using `sudo`, run:
-+
-[source,terminal,subs="attributes+"]
-----
-sudo mv ~/.kantra/mta-cli /usr/bin/
-----
-
-.. For example, to add to the global `$PATH` variable, run:
-+
-[source,terminal,subs="attributes+"]
-----
-export PATH=$HOME/.kantra:$PATH
-----
-
-+
-[NOTE]
-====
-The CLI can run with the requirements moved to the directory from which you run an analysis. During the analysis, the CLI checks for the requirements in this directory first, and if it does not find the requirements, it searches for them in the `$HOME/.kantra` directory.
-====
+.Procedure
 
 . Optional: Display all `mta-cli analyze` command options:
 +
-[literal,subs="+quotes,verbatim,normal,normal"]
+[subs="+quotes"]
 ....
 $ *mta-cli analyze --help*
 ....
 
 . Run the application analysis:
 +
-[literal,subs="+quotes,verbatim,normal,normal"]
+[subs="+quotes"]
 ....
 $ *mta-cli analyze --overwrite --input _<path_to_input>_  --output _<path_to_output>_ --target _<target_source>_*
 ....
 +
-The command arguments represent the following:
-
-** `--overwrite`: Overwrites the output folder if it exists.
-** `--input`: The application to be analyzed.
-** `--output`: The output directory for the generated reports.
-** `--target`: The target technology for the application migration, for example, `eap8`.
+NOTE: The `--overwrite` option overwrites the output folder if it exists.
 
 
 [role="_additional-resources"]

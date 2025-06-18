@@ -4,95 +4,72 @@
 
 :_content-type: PROCEDURE
 [id="installing-mta-disconnected-environment_{context}"]
-= Installing {ProductShortName} on a disconnected environment
+= Installing the CLI on a disconnected environment
 
-Starting from {ProductShortName} 7.2.0, you can run the application analysis for Java applications  in the containerless mode. 
+When your system is in a disconnected environment, you can install the {ProductFullName} command-line interface (CLI) by using an external computer to download the required images and by copying these images to the system you want to install {ProductShortName} CLI on.
 
-IMPORTANT: The containerless mode is set by default and is used automatically if all requirements are met. For more information, see xref:running-the-containerless-mta-cli_cli-guide[Running the containerless CLI].
+IMPORTANT: The following procedure applies only to container mode.
 
-However, if you want to analyze applications in languages other than Java or, for example, use xref:mta-cli-transform_cli-guide[transformation commands], you still need to use containers.
-
-
-On a connected device, first download and save the {ProductShortName} binary. Then download and save the Podman images, the {ProductShortName} CLI image and the provider image that you need.
-
-* Download the required {ProductShortName} CLI binary from the link:https://developers.redhat.com/products/mta/download[{ProductName} Red Hat Developer page]:
-** CLI for Linux x86_64 
-** CLI for Linux aarch64
-** CLI for MacOS x86_64
-** CLI for MacOS aarch64
-** CLI for Windows x86_64
-** CLI for Windows aarch64
-
-* On a connected device, download and save the images.
-
-* Copy the binary to the disconnected device.
-
-* In addition, you must save and import the associated container images by using Podman.
-
-== Downloading the Podman images
+NOTE: The analysis output in the disconnected environment usually results in less incidents because a dependency analysis does not run accurately without access to Maven.
 
 .Prerequisites
 
-* Podman installed. For more information, see link:https://podman.io/[Podman].
+* You downloaded the required {ProductShortName} CLI binary from {ProductName} Red Hat Developer page.
+* You installed the Podman tool on your system.
+* For the analysis of Java applications, you enabled container runtime usage by setting the `--run-local` flag to `false`: 
++
+----
+--run-local=false
+----
++
+The analysis of non-Java applications runs in container mode by default.
+
 
 .Procedure
 
-. Use Podman to authenticate to link:registry.redhat.io[registry.redhat.io]:
+. On a connected device, perform the following steps:
+
+.. Authenticate to registry.redhat.io:
 +
-[source,terminal]
+[subs="+quotes"]
 ----
-$ podman login registry.redhat.io
+$ *podman login registry.redhat.io*
 ----
 
-. Enter your username and then your password for registry.redhat.io:
+.. Run the `mta-cli` binary file. The binary file pulls the required provider images. For example:
 +
-[source,terminal]
+[subs="+quotes"]
 ----
-Username: <registry_service_account_username>
-Password: <registry_service_account_password>
+$ *mta-cli analyze*
 ----
 +
-You should see the following output:
+IMPORTANT: This command only pulls the required images. For example, if you  run a command that requires Java images, a .NET image will not be pulled.
+
+.. Display the image list:
 +
-[source,terminal]
-----
-Login Succeeded!
+[subs="+quotes"]
 ----
 
-. Use Podman to pull the image from the registry:
-+
-[source,terminal]
-----
-$ podman pull registry.redhat.io/mta/mta-cli-rhel9:7.1.0
-----
-
-. Use Podman to pull the provider image that you need from the registry:
-
-.. For Java, run:
-+
-[source,terminal]
-----
-$ podman pull registry.redhat.io/mta/mta-java-external-provider-rhel9:7.1.0
-----
-.. For .NET, run:
-+
-[source,terminal]
-----
-$ podman pull registry.redhat.io/mta/mta-dotnet-external-provider-rhel9:7.1.0
+$ *podman images*
+REPOSITORY                                                        TAG         IMAGE ID      CREATED       SIZE
+registry.redhat.io/mta/mta-generic-external-provider-rhel9        7.3.1       8b8d7fa14570  13 days ago   692 MB
+registry.redhat.io/mta/mta-cli-rhel9                              7.3.1       45422a12d936  13 days ago   1.6 GB
+registry.redhat.io/mta/mta-java-external-provider-rhel9           7.3.1       4d6d0912a38b  13 days ago   715 MB
+registry.redhat.io/mta/mta-dotnet-external-provider-rhel9         7.3.1       66ec9fc51408  13 days ago   1.27 GB
 ----
 
-. Save the images:
+.. Save the images:
 +
-[source,terminal]
+[subs="+quotes"]
 ----
-$ podman save <image> -o <my_image.image>
+$ *podman save _<image_ID>_ -o _<image_name>_.image*
 ----
 
-. Copy the `.image` file and the binary onto a USB or directly to the file system of the disconnected device.
+.. Copy the images onto a USB drive or directly to the file system of the disconnected device. 
 
-. On the disconnected device, run
+. On the disconnected device, enter:
 +
-[source,terminal]
+[subs="+quotes"]
 ----
-$ podman load --input <my_image.image>
+$ *podman load --input _<image_name>_.image*
 ----

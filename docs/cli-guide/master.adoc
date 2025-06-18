@@ -24,12 +24,9 @@ include::assemblies/cli-guide/assembly_analyzing-applications-mta-cli.adoc[level
 
 include::assemblies/cli-guide/assembly_analyzing-nonjava-applications.adoc[leveloffset=+1]
 
-include::assemblies/cli-guide/assembly_performing-transformation.adoc[leveloffset=+1]
+include::assemblies/cli-guide/assembly_reviewing-analysis-reports.adoc[leveloffset=+1]
 
-//REWRITE FIRST (very much outdated)include::topics/access-report.adoc[leveloffset=+2]
-//include::topics/mta-review-reports.adoc[leveloffset=+1]
-// include::topics/csv-export.adoc[leveloffset=+1]
-// include::topics/mavenize.adoc[leveloffset=+1]
+include::assemblies/cli-guide/assembly_performing-transformation.adoc[leveloffset=+1]
 
 include::assemblies/cli-guide/assembly_generating-assets.adoc[leveloffset=+1]
 

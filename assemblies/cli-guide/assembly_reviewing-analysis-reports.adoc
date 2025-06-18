@@ -11,22 +11,15 @@ endif::[]
 ifdef::context[]
 [id="reviewing-analysis-reports_{context}"]
 endif::[]
-= Reviewing analysis reports
+= Reviewing an analysis report
 
 :context: reviewing-analysis-reports
 
-When you run an application analysis, the {ProductFullName} CLI generates an analysis report in the output directory that you specify by using the `--output` argument in the `mta-cli analyze` command.
+After analyzing an application, you can access an analysis report to check the details of the entire application migration effort.
 
-The output directory contains the following files and subdirectories: 	
+include::topics/mta-cli/proc_accessing-analysis-report.adoc[leveloffset=+1]
 
-* analysis.log
-* dependencies.yaml
-* output.yaml
-* shim.log
-* static-report
-* static-report.log
-
-
+include::topics/mta-cli/ref_analysis-report-sections.adoc[leveloffset=+1]
 
 
 ifdef::parent-context-of-reviewing-analysis-reports[:context: {parent-context-of-reviewing-analysis-reports}]

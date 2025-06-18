@@ -11,7 +11,7 @@ endif::[]
 ifdef::context[]
 [id="analyzing-nonjava-applications_{context}"]
 endif::[]
-= Analyzing applications written in languages other than Java
+= Analyzing applications written in languages other than Java with {ProductShortName} command-line interface
 
 :context: analyzing-nonjava-applications
 

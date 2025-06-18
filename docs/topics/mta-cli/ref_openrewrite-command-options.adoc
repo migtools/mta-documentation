@@ -1,0 +1,23 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-06-18
+:_mod-docs-content-type: REFERENCE
+
+[id="openrewrite-command-options_{context}"]
+= The openrewrite command options
+
+The following are the options that you can use together with the `mta-cli transform openrewrite` command to adjust the command behavior to your needs.
+
+.The mta-cli transform openrewrite command options
+[options="header"]
+|====
+|Option|Description
+|`--goal` (string)|A target goal. The default is `"dryRun"`.
+|`--help`|Display all `mta-cli transform openrewrite` command options. 
+|`--input` (string)|A path to application source code directory.
+|`--list-targets`|List all available OpenRewrite recipes.
+|`-maven-settings` (string)|A path to a custom maven settings file.
+|`--target` (string)|A target OpenRewrite recipe.
+|`--log-level uint32`|A log level. The default is `4`.
+|`--no-cleanup`|Do not clean up temporary resources.
+|====
+

@@ -10,7 +10,9 @@ You can generate the discovery manifest for the Cloud Foundry (CF) application b
 
 .Prerequisites
 
-* You have {ProductShortName} {CLIName} version 7.3.0 installed.
+* You have Cloud Foundry (v3) as a source platform.
+* You have {ocp-short} as a target platform. 
+* You installed {ProductShortName} {CLIName} version 7.3.0.
 * You have a CF application manifest as a YAML file. 
 
 .Procedure

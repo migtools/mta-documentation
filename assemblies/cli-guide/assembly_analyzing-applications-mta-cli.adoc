@@ -11,7 +11,7 @@ endif::[]
 ifdef::context[]
 [id="analyzing-applications-mta-cli_{context}"]
 endif::[]
-= Analyzing Java applications with {ProductShortName} CLI
+= Analyzing Java applications with {ProductShortName} command-line interface
 
 :context: analyzing-applications-mta-cli
 

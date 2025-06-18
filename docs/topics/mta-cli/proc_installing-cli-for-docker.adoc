@@ -5,13 +5,13 @@
 [id="installing-cli-for-docker_{context}"]
 = Installing the CLI for use with Docker on Windows
 
-To migrate applications built with .NET framework 4.5 or later on Windows to cross-platform .NET 8.0, you must install the {CLINameTitle} for use with Docker on Windows.
+To migrate applications built with .NET framework version 4.5 or later on Windows to cross-platform .NET 8.0, you must install the CLI for use with Docker on Windows. To do so, you must configure Docker to use Windows containers first.
 
 .Prerequisites
 
 * A host with Windows 11+ 64-bit version 21H2 or higher.
 
-* You have download the Docker Desktop for Windows installer. For more details, see link:https://docs.docker.com/desktop/install/windows-install/[Install Docker Desktop on Windows].
+* You downloaded the Docker Desktop for Windows installer. For more details, see link:https://docs.docker.com/desktop/install/windows-install/[Install Docker Desktop on Windows].
 
 .Procedure
 
@@ -31,10 +31,7 @@ PS C:\Users\<user_name>> *Enable-WindowsOptionalFeature -Online `
    -FeatureName Containers*
 ----
 +
-[NOTE]
-====
-You might need to reboot Windows.
-====
+NOTE: You might need to reboot Windows for the change to take effect.
 
 . Install Docker Desktop on Windows.
 
@@ -42,7 +39,10 @@ You might need to reboot Windows.
 +
 By default, Docker Desktop is installed to the `C:\Program Files\Docker\Docker` path.
 
-.. Ensure that Docker will run Windows containers as the backend instead of Linux containers, deselect the `Use WSL 2 instead of Hyper-V` option on the Configuration page.
+.. Ensure that Docker will run Windows containers as the backend instead of Linux containers:
+
+... In the Windows task bar, right-click on the Docker icon.
+... Click Switch to Windows containers.
 
 . In PowerShell, create a folder for {ProductShortName}:
 +
@@ -65,7 +65,7 @@ PS C:\Users\<user_name>> *Expand-Archive `
    -DestinationPath "C:\Users\<user_name>\MTA"*
 ----
 
-. Ensure that Docker is running Windows containers:
+. Ensure that Docker is running Windows containers the `OS/Arch` is set to `windows/amd64`:
 +
 [subs="+quotes"]
 ----
@@ -92,14 +92,12 @@ Server: Docker Desktop 4.32.0 (157355)
   OS/Arch:          *windows/amd64*
   Experimental:     false
 ----
-+
-IMPORTANT: Ensure that the `OS/Arch` is set to `windows/amd64`.
 
-. Set the `PODMAN_BIN` environment variable to use Docker:
+. Set the `CONTAINER_TOOL` environment variable to use Docker:
 +
 [subs="+quotes"]
 ----
-PS C:\Users\<user_name>> *$env:PODMAN_BIN="C:\Windows\system32\docker.exe"*
+PS C:\Users\<user_name>> *$env:CONTAINER_TOOL="C:\Windows\system32\docker.exe"*
 ----
 
 . Set the `DOTNET_PROVIDER_IMG` environment variable to use the upstream `dotnet-external-provider`:
