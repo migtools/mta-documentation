@@ -19,9 +19,9 @@ _Story points_ are an abstract metric commonly used in Agile software developmen
 
 The {ProductName} uses story points to express the level of effort needed to migrate particular application constructs, and the application as a whole. It does not necessarily translate to man-hours, but the value must be consistent across tasks.
 
-include::topics/ref_effort-level-estimation.adoc[leveloffset=+1]
+include::topics/mta-cli/ref_effort-level-estimation.adoc[leveloffset=+1]
 
-include::topics/ref_migration-tasks-categories.adoc[leveloffset=+1]
+include::topics/mta-cli/ref_migration-tasks-categories.adoc[leveloffset=+1]
 
 
 ifdef::parent-context-of-rule-story-points[:context: {parent-context-of-rule-story-points}]

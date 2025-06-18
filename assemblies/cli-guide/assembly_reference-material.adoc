@@ -22,7 +22,7 @@ The following is information that you might find useful when using the {ProductF
 //include::topics/mta-cli-args.adoc[leveloffset=+2]
 
 // Added in 4.3.0: list of supported Tech Tags
-include::topics/ref_mta-tech-tags.adoc[leveloffset=+1]
+include::topics/mta-cli/ref_mta-tech-tags.adoc[leveloffset=+1]
 
 // Rule Story Points
 include::assembly_rule-story-points.adoc[leveloffset=+1]

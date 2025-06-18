@@ -30,18 +30,13 @@ include::assemblies/cli-guide/assembly_performing-transformation.adoc[leveloffse
 
 include::assemblies/cli-guide/assembly_generating-assets.adoc[leveloffset=+1]
 
-
-include::topics/mta-cli/ref_tips-for-performance-optimization.adoc[leveloffset=+1]
-
 // Configure {ProductShortName} to Exclude Files and Packages
 // include::topics/mta-exclude-files-and-packages.adoc[leveloffset=+2]
 
 // CLI known issues
 include::topics/cli-tool-known-issues.adoc[leveloffset=+1]
 
-
 include::assemblies/cli-guide/assembly_reference-material.adoc[leveloffset=+1]
-
 
 include::topics/mta-cli/ref_contributing-to-mta-development.adoc[leveloffset=+1]
 
