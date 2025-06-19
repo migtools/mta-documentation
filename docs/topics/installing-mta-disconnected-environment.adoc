@@ -6,7 +6,10 @@
 [id="installing-mta-disconnected-environment_{context}"]
 = Installing {ProductShortName} on a disconnected environment
 
-When your system is in a disconnected environment, you can install the Migration Toolkit for Applications (MTA) command-line interface (CLI) by using an external computer to download the required images and by copying these images to the system you want to install MTA CLI on.
+When your system is in a disconnected environment, you can install the {ProductFullName} command-line interface (CLI) by performing the following actions:
+
+. Download the {ProductShortName} CLI images by using an external computer.
+. Copy the downloaded images to the system you want to install the {ProductShortName} CLI on.
 
 IMPORTANT: The following procedure applies only to container mode.
 

@@ -14,7 +14,7 @@ endif::[]
 
 :context: reviewing-analysis-reports
 
-After analyzing an application, you can access an analysis report to check the details of the entire application migration effort.
+After analyzing an application, you can access an analysis report to check the details of the application migration effort.
 
 include::topics/proc_accessing-analysis-report.adoc[leveloffset=+1]
 
