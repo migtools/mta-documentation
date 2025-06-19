@@ -5,7 +5,7 @@
 [id="analyze-selected-provider_{context}"]
 = Analyzing an application for the selected supported language provider
 
-When analyzing an application by using the {ProductFullName} CLI, you can explicitly set a supported language provider according to your application’s language to run the analysis for. 
+You can explicitly set a supported language provider according to your application’s language to run the analysis for. 
 
 
 .Prerequisites

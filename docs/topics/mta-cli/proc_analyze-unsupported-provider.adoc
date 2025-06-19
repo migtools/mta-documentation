@@ -5,7 +5,7 @@
 [id="analyze-unsupported-provider_{context}"]
 = Analyzing an application for an unsupported language provider
 
-When analyzing an application by using the {ProductFullName} CLI, you can run the analysis for an unsupported language provider. To do so, you must overwrite the existing supported language provider with your own unsupported language provider. 	 
+You can run the analysis for an unsupported language provider. To do so, you must overwrite the existing supported language provider with your own unsupported language provider. 	 
 
 IMPORTANT: You must create a configuration file for your unsupported language provider before overriding the supported provider. 
 
@@ -14,7 +14,7 @@ IMPORTANT: You must create a configuration file for your unsupported language pr
 
 * You created a configuration file for your unsupported language provider, for example:
 +
-----
+....
 [
 {
 "name": "java",
@@ -29,7 +29,7 @@ IMPORTANT: You must create a configuration file for your unsupported language pr
 }]
 }
 ]
-----
+....
 
 .Procedure
 

@@ -42,7 +42,7 @@ By default, Docker Desktop is installed to the `C:\Program Files\Docker\Docker` 
 .. Ensure that Docker will run Windows containers as the backend instead of Linux containers:
 
 ... In the Windows task bar, right-click on the Docker icon.
-... Click Switch to Windows containers.
+... Click *Switch to Windows containers*.
 
 . In PowerShell, create a folder for {ProductShortName}:
 +
