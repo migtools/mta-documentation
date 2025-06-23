@@ -6,8 +6,14 @@
 
 This section provides highlighted known issues in {ProductFullName} version 7.2.3.
 
+.Running analysis on large `.EAR` binary filesobtains differents results
+
+When running analysis on large `.EAR` binary files, inconsistent results are returned. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-5588[(MTA-5588)]  
+
 .{ProductShortName} {CLIName} generates a process error in log after Java binary analysis using Microsoft Windows
+
 When you analyze Java binaries using Microsoft Windows, {ProductShortName} {CLIName} generates a process error when deleting files in the `exploded` directory after moving the decompiled files to the Java project path. This error does not affect the analysis results. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-5355[(MTA-5355)]
 
 .{ProductShortName} {CLIName} analysis can take a long time for multi-module binaries when dependency resolution fails
+
 When you analyze multi-module binaries in {ProductShortName} {CLIName}, the analysis can take a long time to complete if dependency resolution fails. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-5398[(MTA-5398)]
