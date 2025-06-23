@@ -10,7 +10,7 @@ This section provides highlighted known issues in {ProductFullName} version 7.2.
 
 When analyzing binary applications, {ProductShortName} relies on Maven search index to determine whether dependencies are internal to the application or whether the application is installed as an open-source dependency. Depending on the availability of the Maven search index, it is assumed that an open-source dependency is internal to the application and includes the dependency in the analysis results. In this case, analysis returns more incidents and greater effort to address issues found in dependencies, even if the user does not expect to see those results.
 
-In a future release, the dependency on the availability of the Maven search index being available will be removed to ensure the results are more deterministic.link:https://issues.redhat.com/browse/MTA-5588[(MTA-5588)]  
+In a future release, the dependency on the availability of the Maven search index will be removed to ensure the results are more deterministic. link:https://issues.redhat.com/browse/MTA-5588[(MTA-5588)]  
 
 .{ProductShortName} {CLIName} generates a process error in log after Java binary analysis using Microsoft Windows
 
