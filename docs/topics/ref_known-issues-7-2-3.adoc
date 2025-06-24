@@ -1,0 +1,21 @@
+:_template-generated: 2024-12-04
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-2-3_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.2.3.
+
+.Running analysis on large `.EAR` binary filesobtains differents results
+
+When analyzing binary applications, {ProductShortName} relies on Maven search index to determine whether dependencies are internal to the application or whether the application is installed as an open-source dependency. Depending on the availability of the Maven search index, it is assumed that an open-source dependency is internal to the application and includes the dependency in the analysis results. In this case, analysis returns more incidents and greater effort to address issues found in dependencies, even if the user does not expect to see those results.
+
+In a future release, the dependency on the availability of the Maven search index will be removed to ensure the results are more deterministic. link:https://issues.redhat.com/browse/MTA-5588[(MTA-5588)]  
+
+.{ProductShortName} {CLIName} generates a process error in log after Java binary analysis using Microsoft Windows
+
+When you analyze Java binaries using Microsoft Windows, {ProductShortName} {CLIName} generates a process error when deleting files in the `exploded` directory after moving the decompiled files to the Java project path. This error does not affect the analysis results. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-5355[(MTA-5355)]
+
+.{ProductShortName} {CLIName} analysis can take a long time for multi-module binaries when dependency resolution fails
+
+When you analyze multi-module binaries in {ProductShortName} {CLIName}, the analysis can take a long time to complete if dependency resolution fails. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-5398[(MTA-5398)]
