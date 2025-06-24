@@ -159,7 +159,7 @@ The most commonly used CR settings are listed in this table:
 |Minimum number of CPUs the pod needs to run
 
 |`analyzer_container_requests_memory`
-|`1Gi`
+|`512Mi`
 |Minimum amount of memory the pod needs to run
 
 |`ui_container_limits_cpu`
@@ -183,7 +183,7 @@ The most commonly used CR settings are listed in this table:
 |Maximum number of CPUs the Java provider resource is allowed to use
 
 |`provider_java_container_limits_memory`
-|`2Gi`
+|`2.5Gi`
 |Maximum amount of memory the Java provider resource is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
 
 |`provider_java_container_requests_cpu`
@@ -191,7 +191,7 @@ The most commonly used CR settings are listed in this table:
 |Minimum number of CPUs the Java provider resource needs to run
 
 |`provider_java_container_requests_memory`
-|`2Gi`
+|`2.5Gi`
 |Minimum amount of memory the Java provider resource needs to run
 |====
 
