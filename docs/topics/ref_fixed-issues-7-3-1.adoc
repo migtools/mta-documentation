@@ -1,0 +1,12 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-12
+
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-7-3-1_{context}"]
+= Fixed issues
+
+This section provides the following bug fixes and resolves issues and other problems that have a significant impact on the {ProductFullName} 7.3.1.
+
+.Resources limits and requests are now present on all pods
+In {ProductShortName} 7.3.1, all pods created by the `mta-operator` and the pod for the operator have resource limits and requests set. This way they also work in an environment where resource limits and requests are required, for example, when a project has resource quotas defined. link:https://issues.redhat.com/browse/MTA-5426[(MTA-5426)]
