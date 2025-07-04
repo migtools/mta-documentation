@@ -5,7 +5,7 @@
 [id="installing-cli-zip_{context}"]
 = Installing the CLI by using a .zip file
 
-You can install the {ProductFullName} command-line interface (CLI) by using the downloadable `.zip` file available at the link:https://developers.redhat.com/products/mta/download[official {ProductShortName} download page].
+You can install the {ProductFullName} command-line interface (CLI) by using the downloadable `.zip` file available on the link:https://developers.redhat.com/products/mta/download[official {ProductShortName} download page].
 
 
 .Prerequisites
@@ -22,7 +22,7 @@ NOTE: This prerequisite is not applicable for the containerless mode. For more i
 
 .Procedure
 
-. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} download page] and download one of the following operating system specific CLI file or the `src` file:
+. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} download page] and download one of the following operating system-specific CLI files or the `src` file:
 +
 * {ProductShortNameLower}-{ProductVersion}-cli-linux.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-macos.zip
@@ -33,4 +33,4 @@ NOTE: This prerequisite is not applicable for the containerless mode. For more i
 
 . Move the `mta-cli` binary to your `$PATH` variable.
 +
-NOTE: You can place the `mta-cli` binary in any folder that is included into the `$PATH` variable. Alternatively, you can add a folder that contains `mta-cli` to `$PATH`. This way, you do not need to specify a full path when using the CLI.
+NOTE: You can place the `mta-cli` binary in any folder that is included in the `$PATH` variable. Alternatively, you can add a folder that contains `mta-cli` to `$PATH`. This way, you do not need to specify a full path when using the CLI.

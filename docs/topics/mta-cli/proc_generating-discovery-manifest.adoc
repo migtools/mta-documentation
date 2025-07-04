@@ -19,7 +19,7 @@ You can generate the discovery manifest for the Cloud Foundry (CF) application b
 
 . Open the terminal application and navigate to the `<{ProductShortName}_HOME>/` directory.
 
-. List supported platforms for the discovery process:
+. List the supported platforms for the discovery process:
 +
 [subs="+quotes"]
 ----

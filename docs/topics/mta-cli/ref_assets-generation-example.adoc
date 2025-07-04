@@ -75,7 +75,7 @@ $ *mta-cli generate helm \
 --input discover.yaml --output-dir newDir*
 ----
 
-. Check the contents of the Dockerfile the `newDir` directory:
+. Check the contents of the Dockerfile in the `newDir` directory:
 +
 [subs="+quotes"]
 ----

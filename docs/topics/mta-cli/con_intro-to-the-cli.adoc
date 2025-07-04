@@ -17,7 +17,7 @@ The {ProductFullName} command-line interface (CLI) provides a comprehensive set 
 :FeatureName: Analyzing applications written in the .NET language
 include::../snippets/developer-preview-admonition.adoc[]
 
-:FeatureName: Analysing applications written in the Python and Node.js languages
+:FeatureName: Analyzing applications written in the Python and Node.js languages
 include::../snippets/technology-preview-admonition.adoc[]
 
 The CLI provides numerous reports that highlight the analysis without using the other tools. You can use the CLI to customize {ProductShortName} analysis options or integrate with external automation tools.

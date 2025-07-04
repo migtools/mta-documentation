@@ -5,7 +5,7 @@
 [id="installing-cli-for-docker_{context}"]
 = Installing the CLI for use with Docker on Windows
 
-To migrate applications built with .NET framework version 4.5 or later on Windows to cross-platform .NET 8.0, you must install the CLI for use with Docker on Windows. To do so, you must configure Docker to use Windows containers first.
+To migrate applications built with .NET framework version 4.5 or later, on Microsoft Windows to cross-platform .NET 8.0, you must install the CLI for use with Docker on Windows. To do so, you must configure Docker to use Windows containers first.
 
 .Prerequisites
 

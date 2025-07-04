@@ -13,11 +13,11 @@ When your system is in a disconnected environment, you can install the {ProductF
 
 IMPORTANT: The following procedure applies only to container mode.
 
-NOTE: The analysis output in the disconnected environment usually results in less incidents because a dependency analysis does not run accurately without access to Maven.
+NOTE: The analysis output in the disconnected environment usually results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
 
 .Prerequisites
 
-* You downloaded the required {ProductShortName} CLI binary from {ProductName} Red Hat Developer page.
+* You downloaded the required {ProductShortName} CLI binary from the link:https://developers.redhat.com/products/mta/download[{ProductName} Red Hat Developer page].
 * You installed the Podman tool on your system.
 * For the analysis of Java applications, you enabled container runtime usage by setting the `--run-local` flag to `false`: 
 +
@@ -46,7 +46,7 @@ $ *podman login registry.redhat.io*
 $ *mta-cli analyze*
 ....
 +
-IMPORTANT: This command only pulls the required images. For example, if you  run a command that requires Java images, a .NET image will not be pulled.
+IMPORTANT: This command only pulls the required images. For example, if you run a command that requires Java images, a .NET image will not be pulled.
 
 .. Display the image list:
 +

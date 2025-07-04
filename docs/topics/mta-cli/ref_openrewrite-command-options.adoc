@@ -13,9 +13,9 @@ The following are the options that you can use together with the `mta-cli transf
 |Option|Description
 |`--goal` (string)|A target goal. The default is `"dryRun"`.
 |`--help`|Display all `mta-cli transform openrewrite` command options. 
-|`--input` (string)|A path to application source code directory.
+|`--input` (string)|A path to the application source code directory.
 |`--list-targets`|List all available OpenRewrite recipes.
-|`-maven-settings` (string)|A path to a custom maven settings file.
+|`-maven-settings` (string)|A path to a custom Maven settings file.
 |`--target` (string)|A target OpenRewrite recipe.
 |`--log-level uint32`|A log level. The default is `4`.
 |`--no-cleanup`|Do not clean up temporary resources.

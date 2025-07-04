@@ -19,7 +19,7 @@ a|Display details for different command arguments.
 
 
 a|`--list-platforms`
-a|List supported platforms for the discovery process.
+a|List the supported platforms for the discovery process.
 
 
 .3+a|`discover cloud-foundry`
