@@ -10,9 +10,10 @@ include::topics/templates/document-attributes.adoc[]
 :imagesdir: topics/images
 :context: cli-guide
 :cli-guide:
- 
+
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
+
 
 include::topics/mta-cli/con_intro-to-the-cli.adoc[leveloffset=+1]
 
@@ -29,9 +30,6 @@ include::assemblies/cli-guide/assembly_reviewing-analysis-reports.adoc[leveloffs
 include::assemblies/cli-guide/assembly_performing-transformation.adoc[leveloffset=+1]
 
 include::assemblies/cli-guide/assembly_generating-assets.adoc[leveloffset=+1]
-
-// Configure {ProductShortName} to Exclude Files and Packages
-// include::topics/mta-exclude-files-and-packages.adoc[leveloffset=+2]
 
 // CLI known issues
 include::topics/mta-cli/cli-tool-known-issues.adoc[leveloffset=+1]
