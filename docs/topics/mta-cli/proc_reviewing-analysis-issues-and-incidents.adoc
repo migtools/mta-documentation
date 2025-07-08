@@ -1,0 +1,46 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-08
+:_mod-docs-content-type: PROCEDURE
+
+[id="reviewing-analysis-issues-and-incidents_{context}"]
+= Reviewing the analysis issues and incidents
+
+After an analysis is complete, you can review issues that might appear during an application migration. Each issue contains a list of files where a rule matched one or more times. These files include all the incidents within the issue. Each incident contains a detailed explanation of the issue and how to fix this issue.
+
+.Procedure
+
+. Open the analysis report. For more information, see xref:accessing-analysis-report_reviewing-analysis-reports[Accessing an analysis report].
+. Click *Issues*.
+. Click on the issue you want to check.
+. Under the *File* tab, click on a file to display an incident or incidents that triggered the issue.
+. Display the incident message by hovering over the line that triggered the incident, for example:
++
+[subs="+quotes"]
+....
+Use the Quarkus Maven plugin adding the following sections to the pom.xml file:
+<properties>
+<quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
+<quarkus.platform.version>3.1.0.Final</quarkus.platform.version>
+</properties>
+<build>
+<plugins>
+<plugin>
+<groupId>$</groupId>
+<artifactId>quarkus-maven-plugin</artifactId>
+<version>$</version>
+<extensions>true</extensions>
+<executions>
+<execution>
+<goals>
+<goal>build</goal>
+<goal>generate-code</goal>
+<goal>generate-code-tests</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+</plugins>
+</build>
+....
+
+
