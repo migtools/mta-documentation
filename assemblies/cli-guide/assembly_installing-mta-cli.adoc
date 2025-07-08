@@ -1,0 +1,31 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-14
+
+ifdef::context[:parent-context-of-installing-mta-cli: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="installing-mta-cli"]
+endif::[]
+ifdef::context[]
+[id="installing-mta-cli_{context}"]
+endif::[]
+= Installing {ProductShortName} command-line interface
+
+:context: installing-mta-cli
+
+You can install the {ProductFullName} command-line interface (CLI) on Linux, Windows, or macOS operating systems. 
+
+NOTE: You can also install the CLI for use with Docker on Windows. Note, however, that this is a Developer Preview feature only. 
+
+include::topics/mta-cli/proc_installing-cli-zip.adoc[leveloffset=+1]
+
+include::topics/mta-cli/proc_installing-mta-disconnected-environment.adoc[leveloffset=+1]
+
+include::topics/mta-cli/proc_installing-cli-for-docker.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-installing-mta-cli[:context: {parent-context-of-installing-mta-cli}]
+ifndef::parent-context-of-installing-mta-cli[:!context:]
+

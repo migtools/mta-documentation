@@ -1,0 +1,32 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-07-25
+:_mod-docs-content-type: PROCEDURE
+
+[id="analyze-selected-provider_{context}"]
+= Analyzing an application for the selected supported language provider
+
+You can explicitly set a supported language provider according to your application’s language to run the analysis for. 
+
+
+.Prerequisites
+
+* You have the latest version of {ProductShortName} CLI installed on your system. 
+
+
+.Procedure
+
+. List language providers supported for the analysis:
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --list-providers*
+....
+
+. Run the application analysis for the selected language provider: 
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --input _<path_to_input>_ --output _<path_to_output>_ --provider _<language_provider>_ --rules _<path_to_custom_rules>_*
+....
++
+IMPORTANT: Note that if you do not set the `--provider` option, the analysis might fail because it detects unsupported providers. The analysis will complete without `--provider` only if all discovered providers are supported. 

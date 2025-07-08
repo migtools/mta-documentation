@@ -1,0 +1,46 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+
+ifdef::context[:parent-context-of-analyzing-applications-mta-cli: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="analyzing-applications-mta-cli"]
+endif::[]
+ifdef::context[]
+[id="analyzing-applications-mta-cli_{context}"]
+endif::[]
+= Analyzing Java applications with {ProductShortName} command-line interface
+
+:context: analyzing-applications-mta-cli
+
+Depending on your scenario, you can use the {ProductFullName} {CLINameTitle} to perform the following actions:
+
+* Run the analysis against a single application.
+* Run the analysis against multiple applications:
+** In {ProductShortName} versions earlier than 7.1.0, you can enter a series of `--analyze` commands, each against an application and each generating a separate report. For more information, see xref:analyzing-single-app-wth-mta-cli_analyzing-applications-mta-cli[Running the {ProductShortName} {CLINameTitle} against an application].
+** In {ProductShortName} version 7.1.0 and later, you can use the `--bulk` option to analyze multiple applications at once and generate a single report. Note that this feature is a Developer Preview feature only. For more information, see xref:analyzing-multiple-apps-with-mta-cli_analyzing-applications-mta-cli[Analyzing multiple applications].
+
+[IMPORTANT]
+====
+Starting from {ProductShortName} version 7.2.0, you can run the application analysis for Java applications in the containerless mode. Note that this option is set by default and is used automatically only if all requirements are met. For more information, see xref:running-the-containerless-mta-cli_analyzing-applications-mta-cli[Analyzing an application in the containerless mode].
+
+However, if you want to analyze applications in languages other than Java or, for example, use xref:performing-transformation_cli-guide[transformation commands], you still need to use containers.
+====
+
+{ProductShortName} CLI supports running source code and binary analysis by using `analyzer-lsp`. `analyzer-lsp` is a tool that evaluates rules by using language providers.
+
+include::topics/mta-cli/proc_analyzing-single-app-with-mta-cli.adoc[leveloffset=+1]
+ 
+include::topics/mta-cli/proc_analyzing-multiple-apps-with-mta-cli.adoc[leveloffset=+1]
+
+include::topics/mta-cli/proc_running-the-containerless-mta-cli.adoc[leveloffset=+1]
+
+include::topics/mta-cli/ref_mta-cli-analyze-flags.adoc[leveloffset=+1]
+
+[role="_additional-resources"]
+
+ifdef::parent-context-of-analyzing-applications-mta-cli[:context: {parent-context-of-analyzing-applications-mta-cli}]
+ifndef::parent-context-of-analyzing-applications-mta-cli[:!context:]
+

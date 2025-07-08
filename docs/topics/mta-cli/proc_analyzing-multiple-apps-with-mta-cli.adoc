@@ -1,0 +1,48 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+:_mod-docs-content-type: PROCEDURE
+
+[id="analyzing-multiple-apps-with-mta-cli_{context}"]
+= Analyzing multiple applications
+
+You can use the {ProductFullName} {CLINameTitle} to perform an application analysis for multiple applications at once and generate a combined report.
+
+:FeatureName: Analyzing multiple applications
+include::../snippets/developer-preview-admonition.adoc[]
+
+.Procedure
+
+. Run the analysis for multiple applications.
++
+IMPORTANT: You must enter one input per analyze command, but make sure to enter the same output directory for all inputs.
++
+For example, to analyze example applications `A`, `B`, and `C`, enter the following commands: 
+
+.. For input `A`, enter:
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --bulk --input _<path_to_input_A>_ --output _<path_to_output_ABC>_ --source _<source_A>_ --target _<target_A>_*
+....
+
+.. For input `B`, enter:
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --bulk --input _<path_to_input_B>_ --output _<path_to_output_ABC>_  --source _<source_B>_ --target _<target_B>_*
+....
+
+.. For input `C`, enter:
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --bulk --input _<path_to_input_C>_ --output _<path_to_output_ABC>_  --source _<source_C>_ --target _<target_C>_*
+....
+
+. Access the analysis report. {ProductShortName} generates a single report, listing all issues that must be resolved before the applications can be migrated.
+
+[role="_additional-resources"]
+.Additional resources
+
+* xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
+* xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]

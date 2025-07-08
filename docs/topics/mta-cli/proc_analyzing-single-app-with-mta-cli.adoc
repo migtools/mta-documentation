@@ -1,0 +1,65 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+:_mod-docs-content-type: PROCEDURE
+
+[id="analyzing-single-app-wth-mta-cli_{context}"]
+= Analyzing a single application
+
+You can use the {ProductFullName} CLI to perform an application analysis for a single application. 
+
+NOTE: Extracting the list of dependencies from compiled Java binaries is not always possible during the analysis, especially if the dependencies are not embedded within the binary.
+ 
+.Procedure
+
+. Optional: List available target technologies for an analysis: 
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --list-targets*
+....
+
+. Run the analysis:
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --input _<path_to_input>_ --output _<path_to_output>_ --source _<source_name>_ --target _<target_name_>*
+....
++
+Specify the following arguments:
+
+* `--input`: An application to be evaluated.
+* `--output`: An output directory for the generated reports. `mta-cli analyze` creates the following analysis reports: 
++
+....
+./
+├── analysis.log
+├── dependencies.yaml
+├── output.yaml
+├── shim.log
+├── static-report
+└── static-report.log
+....
+
+* `--source`: A source technology for the application migration, for example, `weblogic`.
+* `--target`: A target technology for the application migration, for example, `eap8`.
+
+. Access the generated analysis report:
+
+.. In the output of the `mta-cli analyze` command, copy a path to the `index.html` analysis report file:
++
+[subs="+quotes"]
+....
+Report created: _<output_report_directory>_/index.html
+          	Access it at this URL: file:///_<output_report_directory>_/index.html
+....
+
+.. Paste the path to the browser of your choice. 
+
++
+Alternatively, press *Ctrl* and click on the path to the report file. 
+
+[role="_additional-resources"]
+.Additional resources
+
+* xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
+* xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]
