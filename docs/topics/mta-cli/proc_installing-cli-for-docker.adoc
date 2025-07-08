@@ -11,7 +11,7 @@ To migrate applications built with .NET framework version 4.5 or later, on Micro
 
 * A host with Windows 11+ 64-bit version 21H2 or higher.
 
-* You downloaded the Docker Desktop for Windows installer. For more details, see link:https://docs.docker.com/desktop/install/windows-install/[Install Docker Desktop on Windows].
+* You downloaded the Docker Desktop for Windows installation program. For more details, see link:https://docs.docker.com/desktop/install/windows-install/[Install Docker Desktop on Windows].
 
 .Procedure
 
