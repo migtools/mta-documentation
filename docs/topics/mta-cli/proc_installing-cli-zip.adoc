@@ -24,9 +24,12 @@ NOTE: This prerequisite is not applicable for the containerless mode. For more i
 
 . Navigate to the link:{DevDownloadPageURL}[{ProductShortName} download page] and download one of the following operating system-specific CLI files or the `src` file:
 +
-* {ProductShortNameLower}-{ProductVersion}-cli-linux.zip
-* {ProductShortNameLower}-{ProductVersion}-cli-macos.zip
-* {ProductShortNameLower}-{ProductVersion}-cli-windows.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-linux-amd64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-linux-arm64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-darwin-amd64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-darwin-arm64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-windows-amd64.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-windows-arm64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-src.zip
 
 . Extract the `.zip` file. `.zip` extracts the `mta-cli` binary, along with other required directories and files.
