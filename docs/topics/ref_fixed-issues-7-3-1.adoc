@@ -6,7 +6,40 @@
 [id="fixed-issues-7-3-1_{context}"]
 = Fixed issues
 
-This section provides the following bug fixes and resolves issues and other problems that have a significant impact on the {ProductFullName} 7.3.1.
+This section provides the following bug fixes and resolved issues and other problems that have a significant impact on the {ProductFullName} 7.3.1.
+
+.{ProductShortName} reports generated after a {CLIName} analysis now display the issue description
+Previously, after running an analysis in the {CLIName}, {ProductShortName} incorrectly displayed the incident message with the issue description for issues listed in the static report. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5293[(MTA-5293)]
+
+.{ProductShortName} {WebName} now completes application analysis in clusters with low resources
+Previously, when you ran containerized application analysis in a cluster with slower disk I/O or low storage, the technology discovery took longer and the analysis failed because the rule execution timed out with the error `unable to ask for Konveyor rule entry`. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5369[(MTA-5369)]
+
+.Custom rules are now triggered for applications without the `pom` file
+Previously, {ProductShortName} did not trigger custom rules for applications without the `pom` file. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5049[MTA-5049]
+
+.{ProductShortName} now triggers custom rules for application analysis
+Previously, {ProductShortName} did not trigger custom rules when analyzing applications. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-4885[(MTA-4885)] 
+
+.{ProductShortName} now analyzes Java applications without false positives
+Previously, {ProductShortName} sometimes generated a false positive by matching `line 1` of a Java file. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-4918[(MTA-4918)]
+
+.{ProductShortName} {CLIName} analysis is now optimized for multi-module binaries with dependencies
+Previously, when you analyzed multi-module binaries in the {ProductShortName} {CLIName}, the analysis could take a long time to complete if dependency resolution failed. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5398[(MTA-5398)]
+
+.{ProductShortName} {CLIName} now allows disabling dependency rules for analysis 
+Previously, {ProductShortName} {CLIName} ran dependency rules during application analysis without an option to skip such rules. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5399[(MTA-5399)]
+
+.{ProductShortName} {WebName} now allows the SSH URL of a Git repository as a source
+Previously, {ProductShortName} {WebName} did not permit you to enter the SSH URL of a Git repository as the source application. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5385[(MTA-5385)]
+
+.{ProductShortName} {WebName} now creates a Tackle custom resource that requires authentication
+Previously in {ProductShortName} {WebName}, creation of Tackle CR with the `feature_auth_required` field set to `true` failed. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5386[(MTA-5386)]
+
+.{ProductShortName} now runs Java rules when analyzing Java binaries in Windows
+Previously, when you performed a containerless analysis of compiled Java applications in Windows, {ProductShortName} did not match a Java rule and generated a Java Model (code 969) error. As a result, some rules did not trigger issues in the analysis report. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5427[(MTA-5427)]
+
+.{ProductShortName} {CLIName} now analyzes non-Java applications in containerized mode 
+Previously, when you analyzed non-Java applications, {ProductShortName} initiated the analysis in containerless mode. This issue has been resolved in {ProductShortName} 7.3.1. link:https://issues.redhat.com/browse/MTA-5068[(MTA-5068)]
 
 .Resources limits and requests are now present on all pods
-In {ProductShortName} 7.3.1, all pods created by the `mta-operator` and the pod for the operator have resource limits and requests set. This way they also work in an environment where resource limits and requests are required, for example, when a project has resource quotas defined. link:https://issues.redhat.com/browse/MTA-5426[(MTA-5426)]
+Previously in {ProductShortName} 7.3.1, all pods created by the `mta-operator` and the pod for the operator have resource limits and requests set. This way they also work in an environment where resource limits and requests are required, for example, when a project has resource quotas defined. link:https://issues.redhat.com/browse/MTA-5426[(MTA-5426)]

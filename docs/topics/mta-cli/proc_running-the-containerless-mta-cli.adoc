@@ -1,0 +1,59 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-11-15
+:_mod-docs-content-type: PROCEDURE
+
+[id="running-the-containerless-mta-cli_{context}"]
+= Analyzing an application in containerless mode
+
+Starting from {ProductShortName} 7.2.0, you can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime.
+
+[IMPORTANT]
+====
+In {ProductShortName} 7.2.0 and later, containerless CLI is a default mode. To enable container runtime usage for the analysis of Java applications, you must set the `--run-local` flag to `false`:
+
+----
+--run-local=false
+----
+
+The analysis for other applications runs in the container mode automatically
+====
+
+.Prerequisites
+
+* You installed the {ProductShortName} CLI. For more information, see xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file].
+* You installed Java Development Kit (JDK) version 17 or later.
+* If you use OpenJDK on Red Hat Enterprise Linux (RHEL) or Fedora, you installed the Java `devel` package.
+* You installed Maven version 3.9.9 or later.
+* The CLI assumes that a path to the `mvn` binary is correctly registered in the system variable. Therefore, ensure that you added `mvn` to the following variable:
+** `Path` for Windows.
+** `PATH` for Linux and macOS.
+* You set the `JAVA_HOME` environmental variable.
+* You set the `JVM_MAX_MEM` system variable.
++
+NOTE: If you do not set `JVM_MAX_MEM`, the analysis might hang because Java might require more memory than the default `JVM_MAX_MEM` value.
+
+
+.Procedure
+
+. Optional: Display all `mta-cli analyze` command options:
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --help*
+....
+
+. Run the application analysis:
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --overwrite --input _<path_to_input>_  --output _<path_to_output>_ --target _<target_source>_*
+....
++
+NOTE: The `--overwrite` option overwrites the output folder if it exists.
+
+
+[role="_additional-resources"]
+.Additional resources
+
+* xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
+* xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]

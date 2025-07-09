@@ -1,0 +1,41 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-07-30
+:_mod-docs-content-type: PROCEDURE
+
+[id="analyze-unsupported-provider_{context}"]
+= Analyzing an application for an unsupported language provider
+
+You can run the analysis for an unsupported language provider. To do so, you must overwrite the existing supported language provider with your own unsupported language provider. 	 
+
+IMPORTANT: You must create a configuration file for your unsupported language provider before overriding the supported provider. 
+
+
+.Prerequisites
+
+* You created a configuration file for your unsupported language provider, for example:
++
+....
+[
+{
+"name": "java",
+"address": "localhost:14651"
+"initConfig": [{
+"location": "<java-app-path>",
+"providerSpecificConfig": {
+"bundles": "<bundle-path>",
+"jvmMaxMem": "2G",
+},
+"analysisMode": "source-only"
+}]
+}
+]
+....
+
+.Procedure
+
+* Override an existing supported language provider with your unsupported provider and run the analysis:
++
+[subs="+quotes"]
+....
+$ *mta-cli analyze --provider-override _<path_to_configuration_file>_ --output _<path_to_output>_ --rules _<path_to_custom_rules>_*
+....

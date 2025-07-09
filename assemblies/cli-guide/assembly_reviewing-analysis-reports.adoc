@@ -16,17 +16,11 @@ endif::[]
 
 After analyzing an application, you can access an analysis report to check the details of the application migration effort.
 
-include::topics/proc_accessing-analysis-report.adoc[leveloffset=+1]
+include::topics/mta-cli/proc_accessing-analysis-report.adoc[leveloffset=+1]
 
-include::topics/ref_analysis-report-sections.adoc[leveloffset=+1]
+include::topics/mta-cli/ref_analysis-report-sections.adoc[leveloffset=+1]
 
-////
-[role="_additional-resources"]
-== Additional resources
-
-* link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide]
-* xref:some-module_{context}[]
-////
+include::topics/mta-cli/proc_reviewing-analysis-issues-and-incidents.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-reviewing-analysis-reports[:context: {parent-context-of-reviewing-analysis-reports}]
 ifndef::parent-context-of-reviewing-analysis-reports[:!context:]

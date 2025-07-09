@@ -21,7 +21,11 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="mta-7-3-1"]
 == {ProductShortName} 7.3.1
 
+include::topics/ref_new-features-7-3-1.adoc[leveloffset=+2]
+
 include::topics/ref_fixed-issues-7-3-1.adoc[leveloffset=+2]
+
+include::topics/ref_known-issues-7-3-1.adoc[leveloffset=+2]
 
 [id="mta-7-3-0"]
 == {ProductShortName} 7.3.0
@@ -39,7 +43,7 @@ include::topics/analyzer-rbac-known-issue-snippet.adoc[]
 
 // include::topics/svn-checkout-fails-issue-snippet.adoc[]
 
-For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12447880[{ProductShortName} 7.2.0 known issues] in Jira.
+For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12469170[{ProductShortName} 7.3.1 known issues] in Jira.
 
 
 :!release-notes:

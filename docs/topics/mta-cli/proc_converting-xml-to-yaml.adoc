@@ -1,0 +1,35 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+:_mod-docs-content-type: PROCEDURE
+
+[id="converting-xml-to-yaml_{context}"]
+= Converting XML rules to YAML rules
+
+You can convert the {ProductShortName} XML rules to the `analyzer-lsp` YAML rules, which are easier to maintain, by using the `mta-cli transform rules` command. To convert the rules, the `rules` subcommand uses the `windup-shim` tool. 					
+
+NOTE: The `mta-cli analyze` converts also automatically converts XML rules to YAML rules.
+
+NOTE: `analyzer-lsp` is the tool that evaluates the rules for the language providers and determines rule matches.  		
+
+
+
+.Prerequisites
+
+* You have the Podman tool installed and running.
+* If your system is in a disconnected environment, you copied Podman images to the file system of the disconnected device and uploaded these images to the local Podman.
+
+
+.Procedure
+
+* Convert the XML rules to the YAML rules:
+
+[literal,subs="+quotes,verbatim,normal,normal"]
+....
+$ *mta-cli transform rules --input=_<path_to_xml_rules>_ --output=_<path_to_output_directory>_*
+....
+
+[role="_additional-resources"]
+.Additional resources
+
+* xref:rules-command-options_performing-transformation[The rules command options]
+

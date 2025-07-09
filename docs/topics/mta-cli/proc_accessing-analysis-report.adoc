@@ -1,5 +1,5 @@
 :_newdoc-version: 2.18.5
-:_template-generated: 2025-06-16
+:_template-generated: 2025-06-18
 :_mod-docs-content-type: PROCEDURE
 
 [id="accessing-analysis-report_{context}"]
@@ -12,17 +12,9 @@ When you run an application analysis, a report is generated in the output direct
 * Copy the path of the `index.html` file from the analysis output and paste it in a browser of your choice:
 +
 [subs="+quotes"]
-----
+....
 Report created: _<output_report_directory>_/index.html
           	Access it at this URL: file:///_<output_report_directory>_/index.html
-----
+....
 +
 Alternatively, press *Ctrl* and click on the path of the `index.html` file.
-
-
-
-
-[role="_additional-resources"]
-.Additional resources
-* xref:running-cli[Running the CLI]
-
