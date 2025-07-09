@@ -1,0 +1,36 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-29
+
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-3-1_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.3.1.
+
+.Running analysis on large `.EAR` binary files obtains differents results
+
+When analyzing binary applications, {ProductShortName} relies on the Maven search index to determine whether dependencies are internal to the application or whether the application is installed as an open-source dependency. Depending on the availability of the Maven search index, it is assumed that an open-source dependency is internal to the application and includes the dependency in the analysis results. In this case, analysis returns more incidents and greater effort to address issues found in dependencies, even if the user does not expect to see those results. link:https://issues.redhat.com/browse/MTA-5588[(MTA-5588)]
+
+.{ProductShortName} {CLIName} generates a process error in log after Java binary analysis in Windows
+When you analyze Java binaries in Windows, {ProductShortName} {CLIName} generates a process error when deleting files in the `exploded` directory after moving the decompiled files to the Java project path. This error does not affect the analysis results. Currently, there is no workaround for this issue. link:https://issues.redhat.com/browse/MTA-5355[(MTA-5355)]
+
+.{ProductShortName} {CLIName} does not detect dependencies for Gradle projects
+When you analyze Gradle projects in containerless mode, the {ProductShortName} {CLIName} does not detect dependencies during analysis. link:https://issues.redhat.com/browse/MTA-4033[(MTA-4033)]
+
+.{ProductShortName} {WebName} static reports do not display rule description in incidents
+In incidents that are found in the static report after analysis, {ProductShortName} {WebName} does not describe the rule that triggered the incident. link:https://issues.redhat.com/browse/MTA-5643[(MTA-5643)]
+
+.`.NET` Framework application analysis fails in the {ProductShortName} {CLIName}
+
+When you analyze `.NET` Framework applications in Windows containers by using the {ProductShortName} {CLIName}, the analysis fails for the following environment variables:
+
+`DOTNET_PROVIDER_IMG`: `quay.io/konveyor/dotnet-external-provider:release-0.7`
+
+`RUNNER_IMG`: `quay.io/konveyor/kantra:latest`
+
+`PODMAN_BIN`: `C:\Program Files\Docker\Docker\resources\bin\docker.exe`
+
+Workaround: Use the following version of the Dotnet provider image:  
+
+`set DOTNET_PROVIDER_IMG=quay.io/konveyor/dotnet-external-provider:v0.5.0` link:https://issues.redhat.com/browse/MTA-5203[(MTA-5203)]
