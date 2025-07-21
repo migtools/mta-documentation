@@ -1,0 +1,13 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-29
+
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-7-3-2_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.3.2.
+
+.{ProductShortName} {WebName} connection breaks when you sort dependencies by labels after an analysis
+
+When you sort the dependencies by labels after analyzing an application in the {ProductShortName} {WebName}, the {WebName} displays an error about retrieving data. Currently, there is no workaround available. link:https://issues.redhat.com/browse/MTA-5981[(MTA-5981)]
