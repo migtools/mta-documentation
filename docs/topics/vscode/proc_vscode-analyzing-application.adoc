@@ -1,0 +1,37 @@
+// Module included in the following assemblies:
+//
+// * docs/vsc-extension-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="vscode-analyzing-application_{context}"]
+= Configuring and running an application analysis
+
+To analyze an application with the {ProductShortName} extension for Visual Studio Code, you must create a run configuration first.You can configure multiple run configurations to run against each project you import to Visual Studio Code.
+
+.Prerequisites
+
+* You installed the `{mta-cli}` executable. You can download `{mta-cli}` from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} download page].
+
+.Procedure
+
+. In *Extensions* view, click the {ProductName} icon (image:vs_extension_icon.png[{ProductShortName} code extension]) on the *Activity* bar.
+. Click the plus sign (*+*) next to *{ProductName}* to add a run configuration.
+. Fill in the following configuration fields:
+
+** *Name*: Enter a name for the analysis configuration or accept the default suggestion.
+
+** *cli*: Enter the path to the `{mta-cli}` executable, for example: `$HOME/{mta-cli}-{ProductDistributionVersion}/bin/{mta-cli}`.
+
+** *Input*: Set to the path of the project that you have open within your IDE: 
+
+... Click *Add*.
+... Perform one of the following actions:
+
+**** Enter the input file or directory and press *Enter*.
+**** Click *Open File Explorer* and select the directory.
+
+** *Target*: Select one or more target migration paths.
+
+. Right-click the run configuration and select *Run*.
++
+When the analysis is completed, you can click the *Open Report* button to open the {ProductShortName} report, which describes the issues you need to address before you migrate or modernize your application. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html-single/cli_guide/index#reviewing-analysis-reports_cli-guide[Reviewing an analysis report].
