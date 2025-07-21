@@ -6,7 +6,7 @@
 [id="vscode-analyzing-application_{context}"]
 = Configuring and running an application analysis
 
-To analyze an application with the {ProductShortName} extension for Visual Studio Code, you must create a run configuration first.You can configure multiple run configurations to run against each project you import to Visual Studio Code.
+To analyze an application with the {ProductShortName} extension for Visual Studio Code, you must create a run configuration first. You can configure multiple run configurations to run against each project you import to Visual Studio Code.
 
 .Prerequisites
 
@@ -16,7 +16,7 @@ To analyze an application with the {ProductShortName} extension for Visual Studi
 
 . In *Extensions* view, click the {ProductName} icon (image:vs_extension_icon.png[{ProductShortName} code extension]) on the *Activity* bar.
 . Click the plus sign (*+*) next to *{ProductName}* to add a run configuration.
-. Fill in the following configuration fields:
+. Specify the following configuration fields:
 
 ** *Name*: Enter a name for the analysis configuration or accept the default suggestion.
 
