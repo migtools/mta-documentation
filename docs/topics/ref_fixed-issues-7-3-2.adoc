@@ -1,0 +1,17 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-12
+
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-7-3-2_{context}"]
+= Fixed issues
+
+This section provides the following bug fixes and resolved issues that have a significant impact on the {ProductFullName} 7.3.2.
+
+.{ProductShortName} now generates consistent results after analyzing large .EAR binary files 
+
+Previously, when analyzing binary applications, {ProductShortName} relied on the Maven search index to determine whether dependencies were internal to the application or whether the application was installed as an open-source dependency. Depending on the availability of the Maven search index, it was assumed that an open-source dependency was internal to the application and includes the dependency in the analysis results. In this case, analysis returned more incidents and greater effort to address issues found in dependencies. This issue has been resolved in {ProductShortName} 7.3.2. link:https://issues.redhat.com/browse/MTA-5588[(MTA-5588)]
+
+.{ProductShortName} does not generate false positives when analyzing Java applications
+
+Previously, {ProductShortName} generated a false positive issue after analyzing a Java application dependency. This issue has been resolved in {ProductShortName} 7.3.2. link:https://issues.redhat.com/browse/MTA-4025[(MTA-4025)]
