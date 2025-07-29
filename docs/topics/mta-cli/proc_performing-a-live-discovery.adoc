@@ -1,0 +1,48 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-22
+:_mod-docs-content-type: PROCEDURE
+
+[id="performing-a-live-discovery_{context}"]
+= Performing a live discovery in a remote CF instance
+
+You can use a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.
+
+You can run the live discovery for a remote CF instance by using the `mta-cli discover cloud-foundry --use-live-connection --spaces=_<space_name>_` command.
+
+IMPORTANT: You must always define Cloud Foundry spaces to analyze during a live discovery by using the `--spaces` option.
+
+
+.Prerequisites
+* You have permission to remotely connect to the CF instance.
+
+.Procedure
+. Optional: Investigate the contents of the remote CF instance
++
+[subs="+quotes"]
+....
+$ *cf spaces*
+$ *cf apps*
+....
+
+. Copy the CF configuration file to the directory of your choice:
++
+[subs="+quotes"]
+....
+$ *mkdir _<path_to_the_directory>_/.cf*
+....
+
+. Run the live discovery in a remote CF instance:
++
+[subs="+quotes"]
+....
+$ *mta-cli discover cloud-foundry --use-live-connection --spaces=_<space_name>_ --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_*
+....
++
+The command runs the discovery for each application from each space.
++
+If you want to run the discovery for a specific application, enter, for example:
++
+[subs="+quotes"]
+....
+$ *mta-cli discover cloud-foundry --use-live-connection --app-name=_<application_name>_ --spaces=_<space_name>_ --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_* 
+....

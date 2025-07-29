@@ -11,9 +11,7 @@ You can generate the discovery manifest for the Cloud Foundry (CF) application b
 .Prerequisites
 
 * You have Cloud Foundry (v3) as a source platform.
-* You have {ocp-short} as a target platform. 
-* You installed {ProductShortName} {CLIName} version 7.3.0.
-* You have a CF application manifest as a YAML file. 
+* You installed {ProductShortName} {CLIName} version 7.3.0 or later.
 
 .Procedure
 
@@ -26,13 +24,11 @@ You can generate the discovery manifest for the Cloud Foundry (CF) application b
 $ *mta-cli discover --list-platforms*
 ----
 
-. Generate the discovery manifest for a CF application as an output file:
+. Generate the discovery manifest:
 +
 [subs="+quotes"]
 ----
-$ *mta-cli discover cloud-foundry \
---input _<path_to_application-manifest>_ \
---output _<path_to_discovery-manifest>_\*
+$ *mta-cli discover cloud-foundry --input _<path_to_input>_ --output-dir _<path_to_output-directory>_*
 ----
 
 [role="_additional-resources"]
