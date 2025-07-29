@@ -9,7 +9,7 @@ Starting from {ProductFullName} 7.2.0, you can perform an application analysis i
 
 .Prerequisites
 
-* You installed the {ProductShortName} extension version 7.2.0 or later on your system. For more information, see xref:installing-vs-code-extension_vsc-extension-guide[Installing the MTA extension for Visual Studio Code].
+* You installed the {ProductShortName} extension version 7.2.0 or later on your system. For more information, see xref:installing-vscode-extension_vsc-extension-guide[Installing the {ProductShortName} extension for Visual Studio Code].
 * You installed the {ProductShortName} distribution version 7.2.0 or later. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.2/html/cli_guide/installing_and_running_the_cli#installing-downloadable-cli-zip_cli-guide[Installing the CLI .zip file].
 
 .Procedure
@@ -31,5 +31,5 @@ $ *mv !(mta-cli) ~/.kantra/*
 
 .Verification
 
-* Verify that you created and configured the `.kantra` directory correctly by running the application analysis. For more information, see xref:analyzing-projects-with-vs-code-extension_vsc-extension-guide[Analyzing your projects with the MTA extension].
-
+* Verify that you created and configured the `.kantra` directory correctly by running the application analysis. For more information, see xref:vscode-analyzing-application_vsc-extension-guide[Configuring and running an application analysis].
+ 
