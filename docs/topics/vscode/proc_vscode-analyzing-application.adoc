@@ -2,7 +2,7 @@
 //
 // * docs/vsc-extension-guide/master.adoc
 
-:_content-type: PROCEDURE
+:_mod-docs-content-type: PROCEDURE
 [id="vscode-analyzing-application_{context}"]
 = Configuring and running an application analysis
 
