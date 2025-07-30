@@ -2,7 +2,7 @@
 //
 // * docs/vsc-extension-guide/master.adoc
 
-:_content-type: CONCEPT
+:_mod-docs-content-type: CONCEPT
 [id="vscode-extension-interface_{context}"]
 = {ProductShortName} Visual Studio Code extension interface
 
