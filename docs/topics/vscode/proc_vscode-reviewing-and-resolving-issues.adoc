@@ -2,7 +2,7 @@
 //
 // * docs/vsc-extension-guide/master.adoc
 
-:_content-type: PROCEDURE
+:_mod-docs-content-type: PROCEDURE
 [id="vscode-reviewing-and-resolving-issues_{context}"]
 = Reviewing and resolving migration issues
 
@@ -33,7 +33,7 @@ You can use a Quick Fix automatic code replacement to save time and ensure consi
 .Procedure
 
 . In the left pane, right-click an issue that has the Quick Fix icon (image:vs_optional.png[Optional or Quick Fix]) and select *Preview Quick Fix*.
-. To accept the suggested fix, right-click the issue again and select *Apply Quick Fix.*
+. To accept the suggested fix, right-click the issue again and select *Apply Quick Fix*.
 . Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
 ////
 
