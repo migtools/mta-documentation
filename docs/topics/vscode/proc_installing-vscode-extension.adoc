@@ -2,7 +2,7 @@
 //
 // * docs/vsc-extension-guide/master.adoc
 
-:_content-type: PROCEDURE
+:_mod-docs-content-type: PROCEDURE
 [id="installing-vscode-extension_{context}"]
 = Installing the {ProductShortName} extension for Visual Studio Code
 
@@ -12,9 +12,9 @@ You can install the {ProductShortName} extension for Visual Studio Code (VS Code
 
 * You installed the Java Development Kit (JDK). {ProductShortName} supports the following JDKs:
 
-** Oracle JDK 17 or later.
-** Eclipse Temurin™ JDK 17 or later.
-** OpenJDK 17 or later.
+** Oracle JDK 17 or later
+** Eclipse Temurin™ JDK 17 or later
+** OpenJDK 17 or later
 
 * You have 8 GB of RAM available.
 
@@ -29,7 +29,7 @@ You can install the {ProductShortName} extension for Visual Studio Code (VS Code
 $ *export JAVA_HOME=jdk11*
 ....
 
-. In VS Code, click the *Extensions* icon on the Activity bar to open the *Extensions* view.
+. In VS Code, click the *Extensions* icon on the *Activity* bar to open the *Extensions* view.
 . Enter `{ProductName}` in the Search field.
 . Select the *{ProductName}* extension and click *Install*.
 +
