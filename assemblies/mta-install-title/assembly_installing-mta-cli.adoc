@@ -11,7 +11,7 @@ endif::[]
 ifdef::context[]
 [id="installing-mta-cli_{context}"]
 endif::[]
-= Installing {ProductShortName} command-line interface
+= Installing the {ProductName} command-line interface
 
 :context: installing-mta-cli
 
@@ -19,11 +19,11 @@ You can install the {ProductFullName} command-line interface (CLI) on Linux, Win
 
 NOTE: You can also install the CLI for use with Docker on Windows. Note, however, that this is a Developer Preview feature only. 
 
-include::topics/mta-cli/proc_installing-cli-zip.adoc[leveloffset=+1]
+include::topics/mta-install/proc_installing-cli-zip.adoc[leveloffset=+1]
 
-include::topics/mta-cli/proc_installing-mta-disconnected-environment.adoc[leveloffset=+1]
+include::topics/mta-install/proc_installing-mta-disconnected-environment.adoc[leveloffset=+1]
 
-include::topics/mta-cli/proc_installing-cli-for-docker.adoc[leveloffset=+1]
+include::topics/mta-install/proc_installing-cli-for-docker.adoc[leveloffset=+1]
 
 
 ifdef::parent-context-of-installing-mta-cli[:context: {parent-context-of-installing-mta-cli}]

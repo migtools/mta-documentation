@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-red-hat-build-of-keycloak: {context}]
+
+ifndef::context[]
+[id="red-hat-build-of-keycloak"]
+endif::[]
+ifdef::context[]
+[id="red-hat-build-of-keycloak_{context}"]
+endif::[]
+= Red Hat Build of Keycloak
+
+:context: red-hat-build-of-keycloak
+
+Starting from version 7.3.0, {ProductShortName} uses the link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0[Red Hat Build of Keycloak (RHBK)] instance for user authentication and authorization. An RHBK instance is installed during the installation of the {ProductShortName} user interface. The {ProductShortName} Operator manages the RHBK instance and configures a dedicated realm with necessary roles and permissions. 
+
+You can use the {ProductShortName}-managed RHBK instance to perform advanced RHBK configurations, such as link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/identity_broker[integrating identity providers]. 
+
+include::topics/mta-install/proc_accessing-rhbk-admin-console.adoc[leveloffset=+1]
+
+include::topics/mta-install/con_roles-personas-users-permissions.adoc[leveloffset=+1]
+
+
+
+ifdef::parent-context-of-red-hat-build-of-keycloak[:context: {parent-context-of-red-hat-build-of-keycloak}]
+ifndef::parent-context-of-red-hat-build-of-keycloak[:!context:]
+
