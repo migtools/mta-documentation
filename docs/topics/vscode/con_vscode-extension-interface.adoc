@@ -1,7 +1,3 @@
-// Module included in the following assemblies:
-//
-// * docs/vsc-extension-guide/master.adoc
-
 :_mod-docs-content-type: CONCEPT
 [id="vscode-extension-interface_{context}"]
 = {ProductShortName} Visual Studio Code extension interface
