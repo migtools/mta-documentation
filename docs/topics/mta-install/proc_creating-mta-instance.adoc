@@ -1,0 +1,31 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-08-01
+:_mod-docs-content-type: PROCEDURE
+
+[id="creating-mta-instance_{context}"]
+= Creating a MTA instance
+
+You can use the {ProductFullName} user interface (UI) to assess and analyze your applications to get insights about the adoption process, at both the portfolio and application levels as you inventory, assess, analyze, and manage applications for faster migration to Red Hat OpenShift. 			
+
+.Prerequisites
+
+* You installed the {ProductShortName} Operator on your system. For more information, see xref:installing-mta-operator_installing-mta-ui[Installing the Migration Toolkit for Applications Operator].
+* 4 vCPUs, 8 GB RAM, and 40 GB persistent storage. 					
+* Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.13-4.15.	
+* You are logged in as a user with `cluster-admin` permissions. 		
+
+
+.Procedure
+. Click *MTA Operator*. 					
+. Under *Provided APIs*, search for *Tackle* and click *Create Instance*. 	
+. Access the user interface from your browser by using the route exposed by the `mta-ui` application within OpenShift. 					
+. Log in to the user interface instance by using the default credentials:
+** User name: `admin`
+** Password: `Passw0rd!`
+. When prompted, create a new password. 
+
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles]
+

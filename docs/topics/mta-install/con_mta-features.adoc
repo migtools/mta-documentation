@@ -1,0 +1,17 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: CONCEPT
+
+[id="mta-features_{context}"]
+= {ProductShortName} features
+
+{ProductFullName} provides the following features to simplify upgrades with more migration paths: 	
+
+* *Application inventory and assessment modules* to assist organizations in managing, classifying, and tagging their applications while assessing application suitability for deployment in containers, including flagging potential risks for migration strategies.	
+* *Full integration with source code and binary repositories* to automate the retrieval of applications for analysis along with proxy integration, including HTTP and HTTPS proxy configuration managed in the user interface. 					
+* *Improved analysis capabilities* with new analysis modes, including source and dependency modes that parse repositories to gather dependencies and add these dependencies to the overall scope of the analysis. You can also use a simplified user experience to configure the analysis scope, including open source libraries. 		
+* *Enhanced Role-Based Access Control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-build-of-keycloak[Red Hat build of Keycloak] to define new differentiated personas (administrator, architect, and migrator) with different permissions to suit the needs of each user, including credentials management for multiple credential types. 					
+* *Administration perspective* to provide tool-wide configuration management for administrators. 					
+* *Support for Red Hat OpenShift on AWS (ROSA)* introduced in {ProductShortName} version 7.0.0. 		
+* *Support for Azure Red Hat OpenShift (ARO)* introduced in version MTA 7.0.0. 	
+* *Support for analyzing different languages* introduced in {ProductShortName} version 7.1.0.
