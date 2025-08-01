@@ -5,6 +5,7 @@
 [id="configuring-kantra-directory_{context}"]
 = Configuring the .kantra directory
  
+[role="_abstract"]
 Starting from {ProductFullName} 7.2.0, you can perform an application analysis in the containerless mode. Before running the analysis, you must create and configure the `.kantra` directory.
 
 .Prerequisites

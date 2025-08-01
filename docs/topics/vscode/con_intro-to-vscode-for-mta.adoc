@@ -1,3 +1,4 @@
+// AsciiDocDITA.ShortDescription, warning, Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
 :_newdoc-version: 2.18.5
 :_template-generated: 2025-07-21
 :_mod-docs-content-type: CONCEPT

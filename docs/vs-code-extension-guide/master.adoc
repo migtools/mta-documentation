@@ -9,13 +9,13 @@
 :IDEName: Microsoft Visual Studio Code
 :mta:
 include::topics/templates/document-attributes.adoc[]
-:_content-type: ASSEMBLY
+:_mod-docs-content-type: ASSEMBLY
 = Visual Studio Code Extension Guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-
+ 
 include::topics/vscode/con_intro-to-vscode-for-mta.adoc[leveloffset=+1]
  
 // Remove after other files that include this modules use the new topics/vscode/con_intro-to-vscode-for-mta.adoc module instead!!!
