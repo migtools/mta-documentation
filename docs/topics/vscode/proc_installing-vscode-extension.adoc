@@ -1,11 +1,8 @@
-// Module included in the following assemblies:
-//
-// * docs/vsc-extension-guide/master.adoc
-
 :_mod-docs-content-type: PROCEDURE
 [id="installing-vscode-extension_{context}"]
 = Installing the {ProductShortName} extension for Visual Studio Code
 
+[role="_abstract"]
 You can install the {ProductShortName} extension for Visual Studio Code (VS Code).
 
 .Prerequisites
