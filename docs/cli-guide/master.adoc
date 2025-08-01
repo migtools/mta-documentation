@@ -19,8 +19,6 @@ include::topics/mta-cli/con_intro-to-the-cli.adoc[leveloffset=+1]
 
 include::topics/mta-cli/ref_supported-migration-paths.adoc[leveloffset=+1]
 
-include::assemblies/cli-guide/assembly_installing-mta-cli.adoc[leveloffset=+1]
-
 include::assemblies/cli-guide/assembly_analyzing-applications-mta-cli.adoc[leveloffset=+1]
 
 include::assemblies/cli-guide/assembly_analyzing-nonjava-applications.adoc[leveloffset=+1]

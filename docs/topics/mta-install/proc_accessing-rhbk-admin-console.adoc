@@ -1,0 +1,34 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: PROCEDURE
+
+[id="accessing-rhbk-admin-console_{context}"]
+= Accessing the RHBK Admin Console
+
+To perform advanced configurations to an RHBK instance, you must be logged in to the RHBK Admin Console
+
+.Procedure
+
+. Retrieve your admin credentials:
++
+[subs="+quotes"]
+----
+$ *oc get secret mta-keycloak-rhbk -n openshift-mta -o json| jq -r '.data.password | @base64d'*
+----
++
+The admin credentials for RHBK are stored in the `mta-keycloak-rhbk` secret file in the namespace where you installed MTA. 	
+
+. Enter the following URL in your browser:
++
+[subs="+quotes,attributes"]
+----
+https://_<web_console_address>_/auth/admin
+----
+
+. Access the RHBK Admin Console by entering your credentials.
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#ldap[Configuring LDAP and Active Directory in RHBK]
+* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts[Red Hat Build of Keycloak features and concepts ]
+
