@@ -23,7 +23,7 @@ To create {ProductFullName} instances, you must first install the {ProductShortN
 . On the *Install Operator* page, click *Install*. 	
 . Optional: Review and edit the custom resource (CR) settings.
 +
-A window for creating CR settings pops up automatically after the installation of MTA Operator is complete. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.
+A window for creating CR settings opens automatically after the installation of MTA Operator is complete. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.
 +
 Alternatively, to work directly with the YAML file, click the *YAML* view and review the CR settings that are listed in the spec section of the YAML file. For more details about commonly used CR settings, see xref:custom-resource-settings_installing-mta-ui[Custom resource settings].
 +	
