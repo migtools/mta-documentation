@@ -1,11 +1,8 @@
-// Module included in the following assemblies:
-//
-// * docs/vsc-extension-guide/master.adoc
-
 :_mod-docs-content-type: PROCEDURE
 [id="vscode-reviewing-and-resolving-issues_{context}"]
 = Reviewing and resolving migration issues
 
+[role="_abstract"]
 You can use the {ProductShortName} extension icons to prioritize issues based on their severity.
 
 .Procedure
