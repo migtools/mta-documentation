@@ -1,10 +1,4 @@
-// AsciiDocDITA.ShortDescription, warning, Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
-// Module included in the following assemblies:
-//
-// * docs/vsc-extension-guide/master.adoc
-
 :_mod-docs-content-type: PROCEDURE
-// AsciiDocDITA.AttributeReference, suggestion, {context}
 [id="vscode-analyzing-application_{context}"]
 = Configuring and running an application analysis
 
