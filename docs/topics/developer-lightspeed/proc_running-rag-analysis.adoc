@@ -1,0 +1,31 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="running-rag-analysis_{context}"]
+= Running an analysis by using solution server
+
+[role="_abstract"]
+Solution server uses Retrieval Augmented Generation (RAG) to generate a resolution contextually. Solution server derives the context from rules and past changes to similar issues in the codebase of your organization and generates a hint or a prompt for your large language model (LLM). The LLM defines the issues and generates resolutions given the contextual prompt. 
+
+An analysis completed by the solution server shows the success metrics for incidents. Success metrics 
+
+.Prerequisites
+
+* You installed the {ProductShortName} distribution version 8.0.0 in your system.
+* You installed Jave 17+ and Maven 3.9.9+ in your system. 
+* You installed the {ProductFullName} extension version 8.0.0 in VS Code. 
+* You installed the latest version of Language Support for Java(TM) by Red Hat extension in Visual Studio (VS) Code.
+* You opened a Java project in your VS Code workspace.
+* You enabled the solution server in the {mta-dl-plugin} extension settings and restarted VS Code.
+* You configured an analysis profile.
+
+.Procedure
+
+. Review and resolve the issues from the `Analysis results` space of the `Konveyor view analysis` page by the following tabs: 
+
+* *All*:  lists all incidents identified in your project.
+* *Files*: lists all the files in your project for which the analysis identified issues that must be resolved. 
+* *Issues*: lists all issues across different files in your project. 
+
+You can also apply resolutions for all files at once from the `Resolutions` pane.

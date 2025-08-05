@@ -1,0 +1,35 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+
+ifdef::context[:parent-context-of-run-dev-lightspeed-analysis: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="run-dev-lightspeed-analysis"]
+endif::[]
+ifdef::context[]
+[id="run-dev-lightspeed-analysis_{context}"]
+endif::[]
+= Generating and resolving issues by using {mta-dl-plugin}
+
+:context: run-dev-lightspeed-analysis
+
+After you complete the configurations, the next step is running an analysis to identify the issues and generate suggestions to address the issues. You can run an analysis by using {mta-dl-plugin} by using the solution server or in the agent mode.
+
+When you run an analysis in either mode, {mta-dl-plugin} automatically performs the following tasks: 
+
+* Displays issues in all the files in your project in the `Issues` pane.
+* Generates new files in `Resolutions` pane that have the updates to the code that resolves the issues detected in the current analysis. You can review the changes, apply, or revert the fixes. 
+* Click `Source Control` to access all the newly generated files with the latest file listed at the top.
+
+If you apply all the resolutions, {mta-dl-plugin} applies the changes and triggers another analysis to check if there are more issues.
+ 
+include::topics/developer-lightspeed/proc_running-rag-analysis.adoc[leveloffset=+1]
+
+include::[leveloffset=+1]
+
+
+ifdef::parent-context-of-run-dev-lightspeed-analysis[:context: {parent-context-of-run-dev-lightspeed-analysis}]
+ifndef::parent-context-of-run-dev-lightspeed-analysis[:!context:]
+
