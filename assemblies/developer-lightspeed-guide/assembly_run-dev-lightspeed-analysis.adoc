@@ -11,23 +11,24 @@ endif::[]
 ifdef::context[]
 [id="run-dev-lightspeed-analysis_{context}"]
 endif::[]
-= Generating and resolving issues by using {mta-dl-plugin}
+= Generating and resolving issues 
 
 :context: run-dev-lightspeed-analysis
 
-After you complete the configurations, the next step is running an analysis to identify the issues and generate suggestions to address the issues. You can run an analysis by using {mta-dl-plugin} by using the solution server or in the agent mode.
+After you complete the configurations, the next step is running an analysis to identify the issues in the code and generate suggestions to address the issues. You can run an analysis by using {mta-dl-plugin}  in the solution server mode or in the agent mode.
 
-When you run an analysis in either mode, {mta-dl-plugin} automatically performs the following tasks: 
+When you run an analysis using either mode, {mta-dl-plugin} automatically performs the following tasks: 
 
-* Displays issues in all the files in your project in the `Issues` pane.
-* Generates new files in `Resolutions` pane that have the updates to the code that resolves the issues detected in the current analysis. You can review the changes, apply, or revert the fixes. 
-* Click `Source Control` to access all the newly generated files with the latest file listed at the top.
+* Displays issues in all the files in your project in the *Issues* pane.
+* 
+* Generates new files in *Resolutions* pane. These files have the updates to the code that resolves the issues detected in the current analysis. You can review the changes, apply, or revert the updates. 
+* Click *Source Control* to access the newly generated files from all analysis that you ran, with the latest file listed at the top.
 
 If you apply all the resolutions, {mta-dl-plugin} applies the changes and triggers another analysis to check if there are more issues.
  
 include::topics/developer-lightspeed/proc_running-rag-analysis.adoc[leveloffset=+1]
 
-include::[leveloffset=+1]
+include::topics/developer-lightspeed/proc_apply-rag-resolution.adoc[leveloffset=+1]
 
 
 ifdef::parent-context-of-run-dev-lightspeed-analysis[:context: {parent-context-of-run-dev-lightspeed-analysis}]

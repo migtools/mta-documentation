@@ -1,0 +1,33 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="apply-rag-resolution_{context}"]
+= Applying resolutions after a solution server analysis
+
+[role="_abstract"]
+
+Applying a fix in {mta-dl-plugin} 
+
+.Prerequisites
+
+* You installed the {ProductShortName} distribution version 8.0.0 in your system.
+* You installed Jave 17+ and Maven 3.9.9+ in your system. 
+* You installed the {ProductFullName} extension version 8.0.0 in VS Code. 
+* You installed the latest version of Language Support for Java(TM) by Red Hat extension in Visual Studio (VS) Code.
+* You opened a Java project in your VS Code workspace.
+//check what's the alternative for Konveyor Analysis View in the d/s build.
+* You configured a profile on the *Konveyor Analysis View* page and ran an analysis.
+
+.Procedure
+
+. Review the issues from the *Analysis results* space of the *Konveyor view analysis* page by the following tabs: 
+.. *All*: lists all incidents identified in your project.
+.. *Files*: lists all the files in your project for which the analysis identified issues that must be resolved. 
+.. *Issues*: lists all issues across different files in your project.
+. Use the *Category* drop down to filter issues based on the how crucial the fix is for the target migration. You can filter mandatory, potential, and optional issues. 
+. Click *Has Success Rate* to check how many times the same issue resolution was accepted in previous analysis.
+. Click the solution tool to trigger automated updates to your code for all incidents, specific files, or specific issues based on the category.
+{mta-dl-plugin} generates new files with the updated code.
+. Review the code update in a *diff* or a *merge* view.
+. Click *Apply all* in the *Resolutions* pane to permanently apply the changes to your code.
