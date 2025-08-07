@@ -7,7 +7,9 @@
 
 [role="_abstract"]
 
-Applying a fix in {mta-dl-plugin} 
+When you use {mta-dl-plugin} to find a solution for the issues in your code, you first get a migration hint about what needs to be fixed to resolve the issues and the corresponding updates to your code in newly generated files. You can review the changes to the code in the new files and apply the resolutions. 
+
+{mta-dl-plugin} then triggers another round of analysis to check if more issues must be fixed in the code.
 
 .Prerequisites
 
@@ -27,7 +29,7 @@ Applying a fix in {mta-dl-plugin}
 .. *Issues*: lists all issues across different files in your project.
 . Use the *Category* drop down to filter issues based on the how crucial the fix is for the target migration. You can filter mandatory, potential, and optional issues. 
 . Click *Has Success Rate* to check how many times the same issue resolution was accepted in previous analysis.
-. Click the solution tool to trigger automated updates to your code for all incidents, specific files, or specific issues based on the category.
+. Click the solution tool to trigger automated updates to your code. If you applied any category filter, code updates are made for all incidents, specific files, or specific issues based on the filter.
 {mta-dl-plugin} generates new files with the updated code.
-. Review the code update in a *diff* or a *merge* view.
+. Review and (optionally) edit the code update in a *diff* or a *merge* view.
 . Click *Apply all* in the *Resolutions* pane to permanently apply the changes to your code.
