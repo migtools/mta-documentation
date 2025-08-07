@@ -1,0 +1,60 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-08-07
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-and-enhancements-8-0_{context}"]
+= New features and enhancements
+
+[role="_abstract"]
+{ProductFullName} version {ProductVersion} provides the following major new features and enhancements. 
+
+
+.{ProductShortName} CLI supports running a live discovery in a remote CF instance
+
+With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files. You can run the live discovery for a remote CF instance by using the `mta-cli discover cloud-foundry --use-live-connection --spaces=_<space_name>_` command.
+
+(link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
+
+
+.{ProductShortName} CLI supports concealing sensitive information in a discovery manifest
+
+You can conceal sensitive information, for example, services and docker credentials, in a Cloud Foundry (CF) discovery manifest by using the `mta-cli discover cloud-foundry --conceal-sensitive-data` command. This command generates the following files:
+
+* A discovery manifest
+* A file with concealed data
+
+(link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
+
+////
+NOT READY for the review YET
+.{ProductShortName} supports accessing analysis insights from the dynamic report
+
+Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, insights were only available in the analysis output and a static report after you ran an application analysis. With this enhancement, you can access analysis insights also from a dynamic report.
+
+(link:https://issues.redhat.com/browse/MTA-5420[MTA-5420])
+////
+
+////
+NOT READY for the review YET
+
+.A new VS Code IDE plug-in for application analysis and 
+
+With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-in to perform the following actions:
+* Run a standard application analysis 
+* Generative AI use-case
+
+(link:https://issues.redhat.com/browse/MTA-5360[MTA-5360])
+////
+
+.Setting default credentials is supported in the {ProductShotName} UI
+
+Before this update, you could only assign credentials to an application manually, once you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications, each of these applications requiring credentials for application discovery tasks. With this update, instead of manually defining credentials, you can define credentials that will be used by default for an application that does not have any credentials assigned to it.
+
+[IMPORTANT]
+====
+You can only set Maven or source control credentials as default credentials. You can only define one default credential per credential type.
+====
+
+(link:https://issues.redhat.com/browse/MTA-5254[MTA-5254])
+
+

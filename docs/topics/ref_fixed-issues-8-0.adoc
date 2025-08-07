@@ -1,0 +1,16 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-08-07
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-0_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+{ProductFullName} version {ProductVersion} provides the following fixed issues and other problems that have a significant impact. 
+
+
+.The default `values.yaml` file is merged with the discover `values.yaml` file when generating a deployment manifest
+
+Before this update, when you generated a deployment manifest by using the Helm template, the default values in the`values.yaml` file, packaged with the Helm chart, were ignored. Consequently, only the values from the `values.yaml` file created after running the `mta-cli discover` command were used. With this update, the default `values.yaml` file is merged with the discover `values.yaml` file.
+
+(link:https://issues.redhat.com/browse/MTA-5793[MTA-5793])
