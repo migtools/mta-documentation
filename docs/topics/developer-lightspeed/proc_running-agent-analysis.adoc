@@ -3,7 +3,7 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="running-agent-analysis_{context}"]
-= Running an analysis by using agent mode
+= Running an analysis in agent mode
 
 [role="_abstract"]
 In the agent mode, {mta-dl-plugin} planning agent creates the context about an issue and picks a sub agent that is most suited to resolve the issue. The sub agent runs an automated analysis to detect issues and generate files with the updated resolutions in one stream. 

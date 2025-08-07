@@ -11,7 +11,7 @@ endif::[]
 ifdef::context[]
 [id="run-dev-lightspeed-analysis_{context}"]
 endif::[]
-= Generating and resolving issues 
+= Running an analysis and resolving issues 
 
 :context: run-dev-lightspeed-analysis
 
