@@ -1,0 +1,23 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-08-07
+:_mod-docs-content-type: REFERENCE
+
+[id="removed-features-8-0_{context}"]
+= Removed features
+
+[role="_abstract"]
+This section provides a list of all features removed in {ProductFullName} {ProductVersion}. All removed features were deprecated in earlier releases and are no longer supported. 
+
+
+.XML rules are no longer supported
+
+In {ProductFullName} {ProductVersion}, support for XML rules has been removed. Bug fixes and support are provided only through the end of the {ProductShortName} version 7.0 lifecycle. 
+
+(link:https://issues.redhat.com/browse/MTA-5357[MTA-5357])
+
+////
+NOT YET CONFIRMED
+
+* IntelliJ deprecation in MTA 7 and removal in MAT 8
+* Eclipse deprecation: Is it just deprecated or removed in MTA 8??? Eclipse plug-in End of support declared in MTA 8.0.
+////
