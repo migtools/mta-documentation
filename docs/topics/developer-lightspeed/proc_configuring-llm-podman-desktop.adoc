@@ -1,0 +1,21 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-llm-podman_{context}"]
+= Configuring the LLM in Podman Desktop
+
+[role="_abstract"]
+
+Podman desktop configuration. See this example if you want to use your local model deployed through the Podman AI lab extension. 
+
+
+Provider settings configuration is mandatory for all large language models (LLMs), no matter how you deployed the model. You must configure an API key for the LLM, the base URL, and other parameters to connect your LLM with {mta-dl-plugin} in the `provider-settings.json` file. 
+
+.Prerequisites
+
+* You configured an API key for your LLM.
+
+.Procedure
+
+. .

@@ -1,0 +1,19 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: CONCEPT
+
+[id="model-as-a-service_{context}"]
+= Deploying an LLM as a scalable service 
+
+[role="_abstract"]
+{mta-dl-plugin} also supports large language models (LLMs) that are deployed as a scalable service on {ocp-full} clusters. These deployments, called model-as-a-service (MaaS), provide you with greater control to optimize resources such as compute, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) while enabling you to leverage artificial intelligence to perform operations at a large scale.
+
+
+The workflow for configuring an LLM on {ocp-short} AI can be broadly divided into the following parts:
+
+* Installing and configuring resources: from creating an {ocp} cluster to configuring node auto scaling
+* Configuring OpenShift AI: from creating a data science project to creating an accelerator profile
+* Deploying the LLM: from uploading a model to deploying the model
+* Preparing the LLM for analysis: from downloading the CA certificates to updating the `provider.settings` file.
+* Configuring monitoring and alerting for the storage resource: creating a ConfigMap for monitoring storage and an alerting configuration file.
