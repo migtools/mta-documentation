@@ -1,0 +1,24 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+
+ifdef::context[:parent-context-of-preparing-llm-analysis: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="preparing-llm-analysis"]
+endif::[]
+ifdef::context[]
+[id="preparing-llm-analysis_{context}"]
+endif::[]
+= Preparing the large language model for analysis 
+:context: preparing-llm-analysis
+
+abc
+
+include::topics/developer-lightspeed/proc_downloading-certificate.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_configuring-openai-api-key.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-preparing-llm-analysis[:context: {parent-context-of-preparing-llm-analysis}]
+ifndef::parent-context-of-preparing-llm-analysis[:!context:]

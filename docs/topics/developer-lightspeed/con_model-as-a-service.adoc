@@ -14,6 +14,6 @@ The workflow for configuring an LLM on {ocp-short} AI can be broadly divided int
 
 * Installing and configuring resources: from creating an {ocp} cluster to configuring node auto scaling
 * Configuring OpenShift AI: from creating a data science project to creating an accelerator profile
-* Deploying the LLM: from uploading a model to deploying the model
+* Connecting OpenShift AI with the LLM: from uploading a model to exporting tokens and SSL certificate for the LLM
 * Preparing the LLM for analysis: from downloading the CA certificates to updating the `provider.settings` file.
-* Configuring monitoring and alerting for the storage resource: creating a ConfigMap for monitoring storage and an alerting configuration file.
+//* Configuring monitoring and alerting for the storage resource: creating a ConfigMap for monitoring storage and an alerting configuration file.

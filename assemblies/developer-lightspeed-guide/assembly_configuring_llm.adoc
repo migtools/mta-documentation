@@ -29,9 +29,13 @@ You can run an LLM from the following providers:
 
 include::topics/developer-lightspeed/con_model-as-a-service.adoc[leveloffset=+1]
 
-include::assembly_maas-oc-install-config.adoc[leveloffset=+2]
+include::assembly_maas-oc-install-config.adoc[leveloffset=+1]
 
-include::assembly_configuring-openshift-ai.adoc[leveloffset=+2]
+include::assembly_configuring-openshift-ai.adoc[leveloffset=+1]
+
+include::assembly_connecting-openshift-ai-llm.adoc[leveloffset=+1]
+
+include::assembly_preparing-llm-analysis.adoc[leveloffset=+1]
 
 include::topics/developer-lightspeed/proc_configuring-llm-podman-desktop.adoc[leveloffset=+1]
 
