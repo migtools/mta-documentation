@@ -13,7 +13,7 @@
 [id="what-is-the-toolkit_{context}"]
 = About the {ProductName}
 
-[discrete]
+[id="what-is-the-mta_{context}"]
 == What is the {ProductName}?
 
 The {ProductName} ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.
@@ -33,7 +33,7 @@ The {ProductName} ({ProductShortName}) is an extensible and customizable rule-ba
 
 For more information about use cases and migration paths, see the link:https://developers.redhat.com/products/{LC_PSN}/use-cases[{ProductShortName} for developers] web page.
 
-[discrete]
+[id="mta-simplify-migration_{context}"]
 == How does the {ProductName} simplify migration?
 
 The {ProductName} looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.
@@ -41,7 +41,8 @@ The {ProductName} looks for common resources and known trouble spots when migrat
 {ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.
 
 ifndef::getting-started-guide[]
-[discrete]
+
+[id="how-to-learn-more_{context}"]
 == How do I learn more?
 
 See the link:{ProductDocIntroToMTAGuideURL}[Introduction to the {DocInfoProductName}] to learn more about the features, supported configurations, system requirements, and available tools in the {ProductName}.
