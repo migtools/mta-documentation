@@ -7,13 +7,17 @@
 = Deploying an LLM as a scalable service 
 
 [role="_abstract"]
-{mta-dl-plugin} also supports large language models (LLMs) that are deployed as a scalable service on {ocp-full} clusters. These deployments, called model-as-a-service (MaaS), provide you with greater control to optimize resources such as compute, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) while enabling you to leverage artificial intelligence to perform operations at a large scale.
 
+The code suggestions differ based on various parameters about the large language model (LLM) used for an analysis. Hence, model-as-a-service enables you more control over using {mta-dl-plugin} with an LLM that is trained for your specific requirements than general purpose models from the public AI providers.
+
+{mta-dl-plugin} is built to analyze better when it can access code changes resulting from analysis performed at scale across many application teams. In an enterprise, changes at scale become more consistent when the LLMs that generate the code change suggestions are shared across application teams than when each team uses a different LLM. This approach calls for a common strategy in an enterprise to manage the underlying resources that power the models that must be exposed to multiple members in different teams.
+
+To cater to an enterprise-wide LLM deployment, {mta-dl-plugin} integrates with LLMs that are deployed as a scalable service on {ocp-full} clusters. These deployments, called model-as-a-service (MaaS), provide you with a granular control over resources such as compute, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) while enabling you to leverage LLMs to perform analysis at a large scale.
 
 The workflow for configuring an LLM on {ocp-short} AI can be broadly divided into the following parts:
 
-* Installing and configuring resources: from creating an {ocp} cluster to configuring node auto scaling
-* Configuring OpenShift AI: from creating a data science project to creating an accelerator profile
-* Connecting OpenShift AI with the LLM: from uploading a model to exporting tokens and SSL certificate for the LLM
-* Preparing the LLM for analysis: from downloading the CA certificates to updating the `provider.settings` file.
-//* Configuring monitoring and alerting for the storage resource: creating a ConfigMap for monitoring storage and an alerting configuration file.
+* Installing and configuring infrastructure resources
+* Configuring OpenShift AI
+* Connecting OpenShift AI with the LLM
+* Preparing the LLM for analysis
+//* Configuring monitoring and alerting for the storage resource: creating a ConfigMap for monitoring storage and an alert configuration file.

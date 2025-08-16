@@ -1,0 +1,44 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-machine-auto-scaling_{context}"]
+= Configuring machine auto scaling
+
+[role="_abstract"]
+The machine autoscaler adjusts the number of machines in the compute machine sets that you deploy in an {ocp-full} cluster. The machine autoscaler makes more machines when the cluster runs out of resources to support more deployments. Any changes to the values in `MachineAutoscaler` resources, such as the minimum or maximum number of instances, are immediately applied to the compute machine set they target.
+
+To deploy a `MachineAutoscaler` CR for each compute machine set:
+
+.Procedure
+
+. Modify the parameters for the `MachineAutoscaler` custom resource (CR) by using the sample resource definition file.
++
+[source, yaml]
+----
+cat << EOF > <filename>.yml
+apiVersion: autoscaling.openshift.io/v1beta1
+kind: MachineAutoscaler
+metadata:
+  name: CLUSTER_NAME-CLUSTER_ID-gpu-AVAILABILITY_ZONE
+  namespace: "openshift-machine-api"
+spec:
+  minReplicas: 0
+  maxReplicas: 2
+  scaleTargetRef:
+    apiVersion: machine.openshift.io/v1beta1
+    kind: MachineSet
+    name: CLUSTER_NAME-CLUSTER_ID-gpu-AVAILABILITY_ZONE
+EOF
+----
+
+See link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/machine_management/applying-autoscaling#additional-resources-2[Machine autoscaler resource definition] for descriptions of the CR parameters.
++
+. Enter the following command to deploy the cluster auto scaler CR.
++
+[source, terminal]
+----
+$ oc create -f <filename>.yaml
+----
+
+After you deploy the `MachineAutoscaler` CR, you must configure the {ocp-short} AI operator.

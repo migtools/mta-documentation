@@ -6,10 +6,8 @@
 = Creating an identity provider
 
 [role="_abstract"]
-abc
 
-.Prerequisites
-
+Configure `htpasswd` authentication for users to log in to the {ocp-short} cluster. You can configure this identity provider in the {ocp-short} UI 
 
 
 .Procedure
