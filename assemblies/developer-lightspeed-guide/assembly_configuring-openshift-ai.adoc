@@ -14,7 +14,7 @@ endif::[]
 = Configuring {ocp-short} AI 
 :context: configuring-openshift-ai
 
-abc  
+The configurations that you must complete for {ocp-short} AI include creating a data science project instance for the {ocp-short} AI operator in the *Red Hat {ocp} Service on AWS* web console. Next, you can configure model-specific configurations in the *Red Hat {ocp-short} AI* console.
 
 include::topics/developer-lightspeed/proc_creating-datascience-cluster.adoc[leveloffset=+1]
 

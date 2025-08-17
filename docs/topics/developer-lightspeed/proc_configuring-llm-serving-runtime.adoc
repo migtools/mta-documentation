@@ -6,11 +6,33 @@
 = Configuring the LLM serving runtime
 
 [role="_abstract"]
-abc
+It takes several minutes to scale nodes and pull the image to serve the virtual large language model (vLLM). However, the default time for deploying a vLLM is 10 minutes. A vLLM deployment that takes longer fails on the {ocp-short} AI cluster. 
 
-.Prerequisites
-
-
+To mitigate this issue, you must enter a custom serving time configuration.
 
 .Procedure
 
+. On the {ocp-short} AI dashboard, click *Settings > Serving runtimes*.
+The *Serving runtimes* page lists the `vLLM ServingRuntime for KServe` custom resource (CR).
+`KServe` orchestrates model serving for all types of models and includes model-serving runtimes that implement the loading of given types of model servers. KServe also handles the lifecycle of the deployment object, storage access, and networking setup.
+
+. Click on the kebab menu for `vLLM ServingRuntime for KServe` and select *Duplicate serving runtime*.
+
+. Enter a different display name for the serving runtime and increase the value for `serving.knative.dev/progress-deadline` to `60m`.
+
+. To support multiple GPU nodes and scaling, add `--distributed-executor-backend` and `--tensor-parallel-size` to `containers.args` as follows:
++
+[source, yaml]
+----
+spec:
+  containers:
+    - args:
+        - --port=8080
+        - --model=/mnt/models
+        - --served-model-name={{.Name}}
+        - --distributed-executor-backend=mp
+        - --tensor-parallel-size=8
+----
++
+
+Next, you must create an accelerator profile if you want to run a GPU node for the first time.

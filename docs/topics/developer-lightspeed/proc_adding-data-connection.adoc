@@ -6,11 +6,27 @@
 = Adding a data connection
 
 [role="_abstract"]
-abc
-
-.Prerequisites
-
-
+In {ocp-short}, a project is a Kubernetes namespace with additional annotations, and is the main way that you can manage user access to resources. A project organizes your data science work in one place and also allows you to collaborate with other developers in your organization.
 
 .Procedure
 
+From the *Data Science Cluster* tab of the operator, click *Data science projects*.
+The *Data science projects* page shows a list of projects that you can access. For each user-requested project in the list, the *Name* column shows the project display name, the user who requested the project, and the project description.
+
+. Click *Create project*.
+In the *Create project* dialog, update the *Name* field to enter a unique display name for your project.
+Optional: If you want to change the default resource name for your project, click *Edit resource name*.
++
+The resource name is what your resource is labeled in {ocp-short}. Valid characters include lowercase letters, numbers, and hyphens (-). The resource name cannot exceed 30 characters, and it must start with a letter and end with a letter or number.
++
+[NOTE]
+====
+You cannot change the resource name after the project is created. You can edit only the display name and the description.
+====
++
+
+. Optional: In the *Description* field, provide a project description.
+
+. Click *Create*.
+
+. After you create the project, select *Red Hat OpenShift AI* from the Bento menu at the top to launch the {ocp} AI console.

@@ -6,11 +6,31 @@
 = Creating an accelerator profile
 
 [role="_abstract"]
-abc
 
-.Prerequisites
+Taints and tolerations allow the NVidia GPU nodes to control which pods should (or should not) be scheduled on them. A taint allows a node to refuse a pod to be scheduled unless that pod has a matching toleration.
 
-
+You can use accelerators to configure taints and associated tolerance levels for the GPU nodes. 
 
 .Procedure
 
+. On the {ocp-short} AI dashboard, click *Settings > Accelerator profiles*.
+
+. Click *Create accelerator profile*.
+
+. On the *Create accelerator profile* dialog, type `NVIDIA GPU` as the *Name* and `nvidia.com/gpu` as the *Identifier*.
+
+. To enable or disable the accelerator profile immediately after creation, click the toggle in the *Enable* column. 
+
+. Click *Add toleration* to open the *Add toleration* dialog. 
+Toleration schedules pods with matching taints.
+
+. From the *Operator* list, select `Exists`. 
+The key/effect parameters in the taint must match the same parameters configured under toleration in the pod. You must leave a blank value parameter, which matches any value. 
+
+. Enter `nvidia.com/gpu` as the key.
+
+. From the *Effect* list, select `NoSchedule`. New pods that do not match the taint are not scheduled onto that node. Existing pods on the node remain.
+
+. Click *Add* to add the toleration configuration for the node.
+
+. Click *Create accelerator profile* to complete the accelerator configuration.
