@@ -35,7 +35,7 @@ include::assembly_maas-oc-install-config.adoc[leveloffset=+2]
 
 include::assembly_configuring-openshift-ai.adoc[leveloffset=+2]
 
-include::assembly_connecting-openshift-ai-llm.adoc[leveloffset=+2]
+include::assembly_deploying-openshift-ai-llm.adoc[leveloffset=+2]
 
 include::assembly_preparing-llm-analysis.adoc[leveloffset=+2]
 
