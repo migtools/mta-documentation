@@ -14,9 +14,7 @@ endif::[]
 = Preparing the large language model for analysis 
 :context: preparing-llm-analysis
 
-abc
-
-include::topics/developer-lightspeed/proc_downloading-certificate.adoc[leveloffset=+1]
+To access the large language model (LLM), you must create an API key for the model and update settings in {mta-dl-plugin} to enable the extension to use the LLM.
 
 include::topics/developer-lightspeed/proc_configuring-openai-api-key.adoc[leveloffset=+1]
 
