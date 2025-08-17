@@ -6,11 +6,68 @@
 = Deploying the LLM
 
 [role="_abstract"]
-abc
+
+After you configure the data connection, you must deploy the model in {ocp-short} AI web console.
 
 .Prerequisites
 
-
+A user with `admin` privileges has enabled the single-model serving platform on your {ocp-short} cluster.
 
 .Procedure
 
+. In the {ocp-short} AI dashboard, navigate to the project details page and click the *Models* tab.
+
+. In the *Single-model serving platform* tile, click *Select single-model* to open the *Deploy model* dialog.
+
+. Complete the following configurations:
++
+.. *Model name*: enter the model name in RFC compliant format.
+.. *Serving runtime*: select the serving runtime you configured.
+.. *Model framework*: select *vLLM*.
+.. *Model server size*: select *Large*.
+.. *Accelerator*: select the accelerator you configured.
+.. *Number of accelerators*: enter *8*
+.. *Make deployed models available through an external route*: enable the option.
+.. *Require token authentication*: enable the option.
+.. *Existing connection*: enable existing connection under *Source model location*.
+.. *Connection*: select the data connection name for the data connection you created
+.. *Path*: Enter the path to your model. For example, Llama-3.1-8B-Instruct.
++
+. Click *Deploy*.
+On the *Models* tab, an endpoint and token will be provided for your model after it is provisioned.
++
+. To simplify accessing the model, export variables after the model status becomes ready. Replace _<values>_ in the command with applicable values for the variables.
++
+[source, terminal]
+----
+export SERVING_NAME=<serving-name>
+export NAMESPACE=<project-name>
+export TOKEN=$(oc get secret -n $NAMESPACE default-name-$SERVING_NAME-sa -o go-template='{{ .data.token }}' | base64 -d)
+export ENDPOINT=https://$(oc get route -n istio-system ${SERVING_NAME}-${NAMESPACE} -o go-template='{{ .spec.host }}')
+curl -k -w %{certs} $ENDPOINT > ca-cert.pem
+export SSL_CERT_FILE=ca-cert.pem
+export REQUESTS_CA_BUNDLE=ca-cert.pem
+export OPENAI_API_BASE="$ENDPOINT/v1"
+----
+
+.Verification
+
+You can verify the successful deployment of the model by using the following `curl` command. Replace `ROVIDED_ENDPOINT` and `PROVIDED_TOKEN` with the values on the *Models* tab. The following command has an example model name which must be replaced with the model that you deployed.
+
+[source, terminal]
+----
+$ export ENDPOINT=PROVIDED_ENDPOINT
+$ export TOKEN=PROVIDED_TOKEN
+$ curl -k -H "Authorization: Bearer $TOKEN"  -H "Content-Type: application/json" \
+-d '{"model": "llama-3.1-8B-instruct", \
+"prompt": "Write a hello world program in python", \
+"max_tokens": 100, "temperature": 0.01 }' \
+${ENDPOINT}/v1/completions
+----
+
+After you deploy the LLM, scale down the service by using the following command:
+
+[source, terminal]
+----
+oc process deploy-model -p SERVING_NAME=<serving-name> -p MODEL_PATH=<model-path> | oc delete -f -
+----

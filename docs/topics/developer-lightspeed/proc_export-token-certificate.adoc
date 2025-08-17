@@ -14,3 +14,8 @@ abc
 
 .Procedure
 
+
+curl -k -w %{certs} $ENDPOINT > ca-cert.pem
+export SSL_CERT_FILE=ca-cert.pem
+export REQUESTS_CA_BUNDLE=ca-cert.pem
+export OPENAI_API_BASE="$ENDPOINT/v1"
