@@ -14,5 +14,6 @@ include::topics/templates/document-attributes.adoc[]
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
+include::assemblies/developer-lightspeed-guide/assembly_configuring-dev-lightspeed-ide.adoc[leveloffset=+1]
 
 :!mta-developer-lightspeed:
