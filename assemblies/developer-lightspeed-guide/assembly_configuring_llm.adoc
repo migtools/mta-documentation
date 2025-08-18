@@ -16,7 +16,7 @@ endif::[]
 
 In an analysis, {mta-dl-plugin} provides the large language model (LLM) with the contextual prompt to identify the issues in the current application and generate suggestions to resolve them.
 
-{mta-dl-plugin} is designed to be model agnostic. It works with LLMs that are run in different environments (in cloud, as local AI, as a shared service) to support analyzing Java applications in a wide range of scenarios. You can choose an LLM from well-known providers, local models that you run from Ollama or Podman desktop, and OpenAI API compatible models that are configured as Model-as-a-Service deployments. 
+{mta-dl-plugin} is designed to be model agnostic. It works with LLMs that are run in different environments (in local containers, as local AI, as a shared service) to support analyzing Java applications in a wide range of scenarios. You can choose an LLM from well-known providers, local models that you run from Ollama or Podman desktop, and OpenAI API compatible models that are configured as Model-as-a-Service deployments. 
 
 The result of an analysis performed by {mta-dl-plugin} depends on the parameters of the LLM that you choose. 
 
