@@ -5,7 +5,10 @@
 [id="installing-mta-operator_{context}"]
 = Installing the {ProductShortName} Operator
 
-To create {ProductFullName} instances, you must first install the {ProductShortName} Operator. The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance. 	
+[role="_abstract"]
+To create {ProductFullName} instances, you must first install the {ProductShortName} Operator. 
+
+The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance. 	
 
 .Prerequisites
 

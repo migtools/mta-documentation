@@ -5,7 +5,10 @@
 [id="mta-rules_{context}"]
 = {ProductShortName} rules
 
-The {ProductFullName} contains rule-based migration tools (analyzers) that you can use to analyze the application user interfaces (APIs), technologies, and architectures used by the applications you plan to migrate. {ProductShortName} analyzer rules use the following rule pattern: 
+[role="_abstract"]
+The {ProductFullName} contains rule-based migration tools (analyzers) that you can use to analyze the application user interfaces (APIs), technologies, and architectures used by the applications you plan to migrate. 
+
+{ProductShortName} analyzer rules use the following rule pattern: 
 
 ----
 when(condition)

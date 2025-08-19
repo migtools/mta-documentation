@@ -5,7 +5,10 @@
 [id="creating-mta-instance_{context}"]
 = Creating a MTA instance
 
+[role="_abstract"]
 You can use the {ProductFullName} user interface (UI) to assess and analyze your applications to get insights about the adoption process at both the portfolio and application levels as you inventory, assess, analyze, and manage applications for faster migration to Red Hat OpenShift.
+
+To use the {ProductShortName} UI for assessing and analyzing your applications, you must create a {ProductShortName} instance first.
 
 .Prerequisites
 
