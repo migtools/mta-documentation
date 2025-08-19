@@ -5,7 +5,10 @@
 [id="mta-tools_{context}"]
 = {ProductShortName} tools
 
-You can use the following {ProductFullName} tools for assistance in the various stages of your migration and modernization efforts: 		
+[role="_abstract"]
+Different {ProductFullName} tools provide assistance in the various stages of your migration and modernization efforts. 		
+
+You can use the following {ProductShortName} tools for assessing and analyzing your applications: 		
 
 * *User interface (UI)*
 +	

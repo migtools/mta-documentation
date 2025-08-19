@@ -5,7 +5,10 @@
 [id="installing-cli-zip_{context}"]
 = Installing the CLI by using a .zip file
 
-You can install the {ProductFullName} command-line interface (CLI) by using the downloadable `.zip` file available on the link:https://developers.redhat.com/products/mta/download[official {ProductShortName} download page].
+[role="_abstract"]
+You can use the {ProductFullName} command-line interface (CLI) to assess and analyze your applications to prepare them for the migration.
+
+You can install the {ProductShortName} CLI by using the downloadable `.zip` file available on the link:https://developers.redhat.com/products/mta/download[official {ProductShortName} download page].
 
 
 .Prerequisites

@@ -7,7 +7,10 @@
 [appendix,id="contributing-to-mta-development"]
 = Contributing to the {ProductShortName} project
 
-To help the {ProductName} cover most application constructs and server configurations, including yours, you can help with any of the following items:
+[role="_abstract"]
+You can help the {ProductName} to cover most application constructs and server configurations, including yours. 
+
+You can provide your help with any of the following items:
 
 * Send an email to jboss-migration-feedback@redhat.com and let us know what {ProductShortName} migration rules must cover.
 * Provide example applications to test migration rules.
