@@ -6,7 +6,10 @@
 [id="supported-migration-paths_{context}"]
 = Supported {ProductName} migration paths
 
-You can run the {ProductFullName} analysis to assess your applications' suitability for migration to multiple target platforms. {ProductShortName} supports the following migration paths:
+[role="_abstract"]
+You can use the {ProductFullName} to assess your applications' suitability for migration to multiple target platforms. 
+
+{ProductShortName} supports the following migration paths:
 
 .Supported Java migration paths
 [width="99%",cols="19%,10%,10%,10%,10%,10%,10%,10%,10%",options="^,header"]

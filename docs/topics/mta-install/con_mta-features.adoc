@@ -5,7 +5,11 @@
 [id="mta-features_{context}"]
 = {ProductShortName} features
 
-{ProductFullName} provides the following features to simplify upgrades with more migration paths: 	
+[role="_abstract"]
+{ProductFullName} provides the many features that simplify upgrades with multiple migration paths. 
+
+
+{ProductShortName} brings the following benefits for application analysis and assessment: 	
 
 * *Application inventory and assessment modules* to assist organizations in managing, classifying, and tagging their applications while assessing application suitability for deployment in containers, including flagging potential risks for migration strategies.	
 * *Full integration with source code and binary repositories* to automate the retrieval of applications for analysis along with proxy integration, including HTTP and HTTPS proxy configuration managed in the user interface. 					

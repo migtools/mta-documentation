@@ -5,7 +5,8 @@
 [id="accessing-rhbk-admin-console_{context}"]
 = Accessing the RHBK Admin Console
 
-To perform advanced configurations to an RHBK instance, you must be logged in to the RHBK Admin Console
+[role="_abstract"]
+To perform advanced configurations to an RHBK instance, you must be logged in to the RHBK Admin Console.
 
 .Procedure
 

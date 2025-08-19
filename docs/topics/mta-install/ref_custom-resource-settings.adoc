@@ -6,7 +6,10 @@
 [id="custom-resource-settings_{context}"]
 = Custom resource settings
 
-The following are the most commonly used custom resource (CR) settings that you can find in the `spec` section of the YAML file.
+[role="_abstract"]
+When installing the {ProductrFullName} Operator, you might need to create custom resource (CR) settings. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.
+
+The following are the most commonly used CR settings that you can find in the `spec` section of the YAML file.
 
 .Common custom resource settings
 [options="header"]
@@ -29,4 +32,8 @@ The following are the most commonly used custom resource (CR) settings that you 
 |`analyzer_container_requests_cpu `|1|A minimum number of CPUs the pod needs to run.
 |`analyzer_container_requests_memory `|4GB|Minimum amount of memory the pod needs to run.
 |====
+
+[role="_additional-resources"]
+.Additional resources
+* xref:installing-mta-operator_installing-mta-ui[Installing the {ProductShortName} Operator]
 

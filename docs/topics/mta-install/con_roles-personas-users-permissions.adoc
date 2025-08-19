@@ -5,7 +5,10 @@
 [id="roles-personas-users-permissions_{context}"]
 = Roles, personas, users, and permissions
 
-The {ProductFullName} uses three roles, each corresponds to a persona. The roles are already defined in your RHBK instance. You do not need to create them. If you are an {ProductShortName} administrator, you can create users in your RHBK and assign each user one or more roles, one role per persona. Although a user can have more than one role, each role corresponds to a specific persona:
+[role="_abstract"]
+The {ProductFullName} uses three roles, each corresponds to a persona. The roles are already defined in your RHBK instance. You do not need to create them. If you are an {ProductShortName} administrator, you can create users in your RHBK and assign each user one or more roles, one role per persona. 
+
+A user can have more than one role. Each role must correspond to a specific persona:
 
 * The `tackle-admin` role corresponds to the Administrator persona. The administrator has all the permissions that architects and migrators have, along with the ability to create some application-wide configuration parameters that other users can consume but cannot change or view, for example, Git credentials or Maven `settings.xml` files.
 
