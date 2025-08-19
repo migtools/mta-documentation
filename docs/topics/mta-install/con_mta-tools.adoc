@@ -39,7 +39,7 @@ You can migrate and modernize applications by using the {ProductName} add-ons fo
 
 
 +
-You can use these add-on to perform the following tasks: 
+You can use these add-ons to perform the following tasks: 
 
 ** Analyze your projects by using customizable sets of rules. 			
 ** Mark issues in the source code. 					
