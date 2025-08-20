@@ -5,7 +5,7 @@
 [id="configuring-developer-lightspeed-profile-settings_{context}"]
 = Configuring the {mta-dl-plugin} profile settings
 
-To run an analysis using {mta-dl-plugin}, you must configure a profile that contains all the necessary configurations for an analysis, such as source and target technologies and API key to connect with your chosen large language model (LLM). 
+To run an analysis using {mta-dl-plugin}, you must configure a profile that contains all the necessary configurations for an analysis, such as source and target technologies and API key to connect to your chosen large language model (LLM). 
 
 .Prerequisites
 
