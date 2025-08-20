@@ -35,8 +35,8 @@ After you install the {ProductShortName} extension in Visual Studio (VS) Code, y
 |Log level|Set the log level for the {ProductShortName} binary. The default log level is `debug`. The log level increases or decreases the verbosity of logs. 
 |RPC Server Path|Displays the path to the solution server binary. If you do not modify the path, {mta-dl-plugin} uses the bundled binary.
 |Analyzer path|Specify a {ProductShortName} custom binary path. If you do not provide a path, {mta-dl-plugin} uses the default path to the binary.
-|Solution Server:URL|Configure the URL of the Solution Server end point. This field comes with the default URL.
-|Solution Server:enabled|Enable the Solution Server client ({ProductShortName} extension) to connect with the Solution Server to perform analysis.
+|Solution Server:URL|Configure the URL of the Solution Server end point. This field has the default URL.
+|Solution Server:enabled|Enable the Solution Server client ({ProductShortName} extension) to connect to the Solution Server to perform analysis.
 |Analyze on save|Enable this setting for {mta-dl-plugin} to run an analysis on a file that is saved after code modification. This setting is enabled automatically when you enable Agentic AI mode.
 |Agent mode|Enable the experimental Agentic AI flow for analysis. {mta-dl-plugin} runs an automated analysis of a file to identify issues and suggest resolutions. After you accept the solutions, {mta-dl-plugin} makes the changes in the code and re-analyzes the file. 
 |Super agent mode|
