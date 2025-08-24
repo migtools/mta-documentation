@@ -41,7 +41,6 @@ spec:
 ...
 ----
 +
-
 [NOTE]
 ====
 The default large language model (LLM) provider is `ChatIBMGenAI`. You may also enter `google` or `openai` as providers.
