@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+
+ifdef::context[:parent-context-of-solution-server-configurations: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="solution-server-configurations"]
+endif::[]
+ifdef::context[]
+[id="solution-server-configurations_{context}"]
+endif::[]
+= Solution Server Configurations
+:context: solution-server-configurations
+
+[role=_abstract]
+Solution server is a component that allows {mta-dl-plugin} to build a collective memory of code changes from all analysis performed in an organization. In the local context of an analysis run in the Visual Studio (VS) Code, the Solution Server augments previous patterns of how codes changed to resolve issues (also called solved examples) that were similar to those in the current file, and suggests a resolution that has a higher confidence level derived from previous solutions.
+
+As {mta-dl-plugin} is an optional set of features in {ProductShortName}, you must complete the following configurations before you can access settings necessary to use AI analysis.
+
+include::topics/developer-lightspeed/proc_tackle-llm-secret.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-solution-server-configurations[:context: {parent-context-of-solution-server-configurations}]
+ifndef::parent-context-of-solution-server-configurations[:!context:]
+
