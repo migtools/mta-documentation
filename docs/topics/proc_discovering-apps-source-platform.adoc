@@ -1,0 +1,42 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="discovering-apps-source-platform_{context}"]
+= Discovering applications through source platform 
+
+[role="_abstract"]
+A source platform instance can be linked with one or more applications. After you configure a source platform, you can discover and import one or more applications to {ProductShortName}.
+
+.Prerequisites
+//should the users be logged in to the CF instance for application discovery?
+
+* You configured at least one source platform instance in the *Administration* mode.
+
+.Procedure
+
+. In the {ProductShortName} user interface, select the *Administration* working mode.
+
+. Select a *Source Platform* on the *Source platforms* page.
++
+The source platform instance is created. A source platform instance can be linked with one or more applications.
++
+. Click the Options menu ({kebab}) of a source platform and click *Discover applications*. The *Discover applications* window appears.
++
+The discovery process imports all or selected applications that are deployed in the source platform instance to the *Applications Inventory* page on {ProductShortName}. 
+
+. Type the platform coordinate details based on which {ProductShortName} filters applications during the discovery process. For example:
++
+[source, json]
+----
+{
+    "names": ["app-a", "app-b"],
+    "spaces": ["example-space"]
+}
+----
++
+. Review the configuration and click *Discover applications*. Close the *Discover applications* window.
++
+This action tiggers an application import task.
+
+. (Optional) Hover over the source platform name to check the status of the application import task and click the application import task to view the task details in YAML format.

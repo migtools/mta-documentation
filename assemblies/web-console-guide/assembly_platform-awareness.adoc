@@ -1,0 +1,39 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+
+ifdef::context[:parent-context-of-platform-awareness: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="platform-awareness"]
+endif::[]
+ifdef::context[]
+[id="platform-awareness_{context}"]
+endif::[]
+= Platform awareness in {ProductShortName} {WebName}
+
+:context: platform-awareness
+
+Starting with 8.0.0, {ProductShortName} supports platform awareness to retrieve platform and runtime configurations of applications directly from source platform instances. Platform awareness retrieves source platform configurations for applications that are available in {ProductShortName} or to discover (import) new applications from a platform instance. In {ProductShortName} 8.0.0, Red Hat supports Cloud Foundry (CF) as the source platform. 
+
+Perform the following tasks in the {ProductShortName} {WebName}:
+
+. Create multiple source platform (CF) instances. 
+. Link an application created in the {ProductShortName} {WebName} to the source platform.
+. Generate the discovery manifest. 
+
+You can retrieve platform and runtime configurations for more than one application simultanously. Similarly, you can generate the discovery manifests per application or in bulk. 
+
+In the asset generation phase, the discovery manifests are converted into assets or deployment manifests that you can use to redeploy the applications to {ocp-short} or Kubernetes platforms.
+
+include::topics/proc_creating-source-platform.adoc[leveloffset=+1]
+
+include::topics/proc_discovering-apps-source-platform.adoc[leveloffset=+1]
+
+include::topics/proc_adding-source-platform-application.adoc[leveloffset=+1]
+
+include::topics/proc_generating-discovery-manifest.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-platform-awareness[:context: {parent-context-of-platform-awareness}]
+ifndef::parent-context-of-platform-awareness[:!context:]
