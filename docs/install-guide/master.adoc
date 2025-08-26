@@ -1,0 +1,31 @@
+:mta:
+include::topics/templates/document-attributes.adoc[]
+:_mod-docs-content-type: ASSEMBLY
+[id="installing-mta-title"]
+= Installing the Migration Toolkit for Applications
+
+:toc:
+:toclevels: 4
+:numbered:
+:imagesdir: topics/images
+:context: installing-mta-title
+:installing-mta-title:
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[leveloffset=+1]
+
+//Introduction to MTA
+include::assemblies/mta-install-title/assembly_intro-to-mta.adoc[leveloffset=+1]
+
+include::topics/mta-cli/ref_supported-migration-paths.adoc[leveloffset=+1]
+
+//Installing MTA
+include::assemblies/mta-install-title/assembly_installing-mta-ui.adoc[leveloffset=+1]
+
+include::assemblies/mta-install-title/assembly_installing-mta-cli.adoc[leveloffset=+1]
+
+include::topics/mta-cli/ref_contributing-to-mta-development.adoc[leveloffset=+1]
+
+
+
+:!installing-mta-title:
