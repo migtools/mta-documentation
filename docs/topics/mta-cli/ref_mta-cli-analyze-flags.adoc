@@ -13,7 +13,12 @@ The following are the options that you can use together with the `mta-cli analyz
 |====
 |Option|Description
 |`--analyze-known-libraries` (bool)|Analyze open-source libraries.
-|`--context-lines` (int)|A number of lines of source code to include in the output for each incident. The default is 100.
+|`--disable-maven-search`| Set the flag to `true` to disable {ProductShortName} from relying on the Maven search index to determine if a dependency is publicly available (such as an open-source dependency) or internal to the Java binary application during analysis. 
+
+When you disable Maven search, {ProductShortName} at first tries to determine dependencies from the the JAR file's POM file (if any). If this method does not succeed, {ProductShortName} goes through the directory structure to determine dependencies. This method may not produce a reliable dependency classification since the package structure can differ from what is expected by {ProductShortName}. You may see more number of incidents because some dependencies may be wrongly classified as internal.
+
+By default, `--disable-maven-search` is set to `false`. Therefore, {ProductShortName} uses the SHA digest of the JAR file to search the Maven search index. This setting generates more accurate dependencies but the drawback is that the Maven search index is frequently unavailable.
+|`--context-lines` (int)|The number of lines of source code to include in the output for each incident. The default is 100.
 |`--dependency-folders` (stringArray)|A directory for dependencies.
 |`--enable-default-rulesets` (bool)|Run default rulesets with analysis. The default is `true`.
 |`--help`|Display the available flags for the `analyze` command.
