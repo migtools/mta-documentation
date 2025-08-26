@@ -1,0 +1,25 @@
+:mta:
+include::topics/templates/document-attributes.adoc[]
+:toc:
+:toclevels: 3
+:numbered:
+
+:imagesdir: topics/images
+:context: release-notes
+:release-notes:
+:_mod-docs-content-type: ASSEMBLY
+= Release Notes
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+
+include::topics/ref_new-features-and-enhancements-8-0.adoc[leveloffset=+1]
+
+include::topics/ref_removed-features-8-0.adoc[leveloffset=+1]
+
+include::topics/ref_fixed-issues-8-0.adoc[leveloffset=+1]
+
+
+
+:!release-notes:
