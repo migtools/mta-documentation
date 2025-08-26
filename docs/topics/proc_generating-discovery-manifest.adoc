@@ -6,7 +6,9 @@
 = Generating discovery manifests
 
 [role="_abstract"]
-To generate discovery manifest, you must link the applications to their source platform through coordinates. Next, you must retrieve the application configuration from the source platform (CF) instance. The application configuration will be collected in a discovery manifest which is later used to generate assets (deployment manifests).
+To generate discovery manifest, you must retrieve the application configuration from the Cloud Foundry (CF) source platform instance. {ProductShortName} generates a discovery manifest that has the application configuration which you can later use to generate assets (deployment manifests).
+
+You ca retrieve configuration for one or more applications at a time.
 
 .Prerequisites
 //should the users be logged in to the CF instance to generate discovery manifest?

@@ -6,7 +6,7 @@
 = Adding a source platform in an application
 
 [role="_abstract"]
-You can associate applications that are created in {ProductShortName} with their Cloud Foundry (CF) instances. Associate an {ProductShortName} application with its Cloud Foundry (CF) instance by configuring the application's coordinates in the source platform. The specific coordinates vary depending on the source platform you select. For example, the coordinates for CF instances are *name* and *space*. 
+You can associate applications that you created in {ProductShortName} with their Cloud Foundry (CF) instances by configuring the application's coordinates in the source platform. The specific coordinates vary depending on the source platform you select. For example, the coordinates for CF instances are *name* and *space*. 
 
 .Prerequisites
 
@@ -16,17 +16,29 @@ You can associate applications that are created in {ProductShortName} with their
 
 . In the {ProductShortName} user interface, select the *Migration* working mode.
 . Click *Application Inventory* in the left menu bar.
-. Click the edit icon ({icon-edit}). The *New application* dialog appears.
+. Click the edit icon ({icon-edit}). The *Update application* dialog appears.
 . In the form, enter the following information:
-.. *Name*: A unique name for the new application.
-.. *Description*: A short description of the application (optional).
-.. *Business service*: A purpose of the application (optional).
-.. *Tags*: Software tags that characterize the application.
-.. *Owner*: A registered software owner from the drop-down list (optional).
-.. *Contributors*: Contributors from the drop-down list (optional).
-.. *Comments*: Relevant comments on the migrated application.
-. Click *Source code* and enter the following fields:
-.. *Repository type*: *Git* or *Subversion*.
-.. *Source repository*: A URL of the repository where the software code is saved.
-.. *Branch*: An application code branch in the repository (optional).
-.. *Root path*: A root path inside the repository for the target application (optional).
+. Click *Source platform* and enter the following fields:
+.. *Source platform*: Select a source platform instance.
+.. *Source platform coordinates*: Enable the source platform coordinates to enter application coordinates in JSON. For example, a CF instance coordinates can be:
++
+[source, json]
+----
+{
+    "names": ["app-a", "app-b"],
+    "spaces": ["example-space"]
+}
+----
+.. *name*: Type the name of the application.
+.. *space*: Configure the CF space in which the app is deployed in the source platform.
+. Click *Save* and close the *Update application* dialog.
+
+.Verification
+
+To verify that the coordinates you configured are saved in {ProductShortName}:
+
+. Click anywhere on the appication row to open the side drawer.
+
+. Click the *Platform* tab to verify the source platform coordinates that you configured.
+
+. Enable the *JSON* switch for the source platform coordinates to check the coordinates in JSON format.
