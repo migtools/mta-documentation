@@ -1,0 +1,80 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-22
+:_mod-docs-content-type: PROCEDURE
+
+[id="concealing-sensitive-information_{context}"]
+= Concealing sensitive information in a discovery manifest
+
+You can conceal sensitive information, for example, services and docker credentials, in a Cloud Foundry (CF) discovery manifest by using the `mta-cli discover cloud-foundry --conceal-sensitive-data` command. This command generates the following files:
+
+* A discovery manifest
+* A file with concealed data
+
+NOTE: If you do not specify the `--conceal-sensitive-data` option, the option is automatically set to `false`.
+
+
+
+.Procedure
+. Display the contents of the CF manifest and locate sensitive data:
++
+[subs="+quotes"]
+....
+$ *cat _<manifest_name>_.yaml*
+name: _<manifest_name>_
+disk_quota: 512M
+memory: 500M
+timeout: 10
+docker:
+ image:myregistry/myapp:latest
+ username: *docker-registry-user*
+....
+
+. Generate the discovery manifest for the CF application as an output file and conceal sensitive data:
++
+[subs="+quotes"]
+....
+$ *mta-cli discover cloud-foundry --conceal-sensitive-data=true --input _<path_to_application_manifest>_ --output-dir _<path_to_output_directory>_*
+....
+
+
+
+.Verification
+. Display the repository structure:
++
+[subs="+quotes,macros"]
+....
+$ *tree _<path_to_discovery_manifest>_*
+_<path_to_discovery_manifest>_
+├── discover_manifestpass:[_]_<app-name>_.yaml
+├── secretspass:[_]_<discovery_manifest_name>_.yaml
+
+1 directory, 2 files
+....
+
+. Display the contents of the discovery manifest:
++
+[subs="+quotes"]
+....
+$ *cat _<discovery_manifest_name>_.yaml*
+name: _<discovery_manifest_name>_
+timeout: 10
+docker:
+ image:myregistry/myapp:latest
+ username: *$(f0e9ea9e-1913-446f-8483-da9301373eef)*
+disk: 512M
+memory: 500M
+instances: 1
+....
++
+The sensitive data was replaced with a UUID (Universally Unique Identifier).
+
+
+. Display the contents of the `secretspass:[_]_<discovery_manifest_name>_.yaml` file:
++
+[subs="+quotes,macros"]
+....
+$ *cat secretspass:[_]_<discovery_manifest_name>_.yaml*
+f0e9ea9e-1913-446f-8483-da9301373eef: docker-registry-user
+....
++
+The file contains the mapping of the UUID to the concealed sensitive data.

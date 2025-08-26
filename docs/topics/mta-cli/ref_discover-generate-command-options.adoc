@@ -13,24 +13,63 @@ You can use the following options together with the `discover` or `generate` com
 |===
 | Command | Option | Description
 
-.2+a|`discover`
+.5+a|`discover`
+a|`--app-name`
+a|An application to run the discovery for.
+
 a|`-h`, `--help`
 a|Display details for different command arguments.
 
+a|`--list-apps`
+a|List the available applications on the source platform, for example:
+
+[subs="+quotes"]
+----
+$ *mta-cli discover cloud-foundry --use-live-connection --spaces=space,space-2 --cf-config=/home/gloria/ --list-apps*
+INFO[0000] Cloud Foundry client created successfully
+INFO[0000] Analyzing space space_name=space
+INFO[0006] Apps discovered count=2
+INFO[0006] Analyzing space space_name=space-2
+INFO[0007] Apps discovered count=1
+Space: space
+- nginx
+- test-app
+Space: space-2
+- test-app
+----
 
 a|`--list-platforms`
 a|List the supported platforms for the discovery process.
 
+a|`--log-level`
+a|Set the log level, for example, `discover --log-level 1`. The default log level is `4`.
 
-.3+a|`discover cloud-foundry`
+.6+a|`discover cloud-foundry`
 a|
 a|Discover Cloud Foundry applications.
 
+a|`--conceal-sensitive-data`
+a|Extract sensitive information from a discovery manifest and put it into a separate file.
+
 a|`--input`
-a|Specify the location of the _<app-manifest-name>_.yaml file to discover the application configurations.
+a|Specify the location of the YAML manifest file to discover the CF applications, for example:
+
+* A path to the single application manifest.
+* A path to the Cloud Foundry manifest. 
+* A path to the directory with multiple manifest files.
 
 a|`--output`
 a|Specify the location to save the _<discovery-manifest-name>_.yaml file.
+
+a|`--spaces`
+a|A comma-separated list of Cloud Foundry spaces to analyze during a live discovery, for example:
+
+----
+--spaces=space1,space2,…
+----
+
+a|`--use-live-connection`
+a|Enable real-time discovery by using live platform connections.
 
 a|`generate`
 a|`-h`, `--help`
