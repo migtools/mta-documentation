@@ -80,7 +80,7 @@ The *Create Tackle* window opens in *Form* view.
 The most commonly used CR settings are listed in this table:
 +
 .Tackle CR settings
-[cols="40%,15%,55%", options="header"]
+[cols="25%,15%,65%", options="header"]
 |====
 |Name
 |Default
@@ -129,6 +129,14 @@ The most commonly used CR settings are listed in this table:
 |`maven_data_volume_size`
 |`100Gi`
 |Size requested for the Maven m2 cache volume; deprecated in {ProductShortName} 6.0.1
+
+|`disable_maven_search`
+|`false`
+|Set the flag to `true` to disable {ProductShortName} from relying on the Maven search index to determine if a dependency is publicly available (such as an open-source dependency) or internal to the Java binary application during analysis. 
+
+When you disable Maven search, {ProductShortName} at first tries to determine dependencies from the the JAR file's POM file (if any). If this method does not succeed, {ProductShortName} goes through the directory structure to determine dependencies. This method may not produce a reliable dependency classification since the package structure can differ from what is expected by {ProductShortName}. You may see more number of incidents because some dependencies may be wrongly classified as internal.
+
+By default, `--disable-maven-search` is set to `false`. Therefore, {ProductShortName} uses the SHA digest of the JAR file to search the Maven search index. This setting generates more accurate dependencies but the drawback is that the Maven search index is frequently unavailable.
 
 |`rwx_storage_class`
 |NA
