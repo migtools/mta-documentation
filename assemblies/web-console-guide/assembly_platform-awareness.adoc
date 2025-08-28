@@ -15,7 +15,9 @@ endif::[]
 
 :context: platform-awareness
 
-Starting with 8.0.0, {ProductShortName} supports platform awareness to retrieve platform and runtime configurations of applications directly from source platform instances. Platform awareness retrieves source platform configurations for applications that are available in {ProductShortName} or to discover (import) new applications from a platform instance. In {ProductShortName} 8.0.0, Red Hat supports Cloud Foundry (CF) as the source platform. 
+Starting with 8.0.0, {ProductShortName} supports platform awareness to retrieve platform and runtime configurations of applications directly from source platform instances. Retrieving platform configurations (also known as discovery) is an alternative method to importing and preparing applications for migrations to target platforms. The discovery process generates the discovery manifest which you can later use to generate the final set of assets required to deploy the applications in the target platform.
+
+Platform awareness works in two ways: for retrieving source platform configurations for applications that are available in {ProductShortName} or by discovering (import) new applications from a platform instance. In {ProductShortName} 8.0.0, Red Hat supports Cloud Foundry (CF) as the source platform. 
 
 Perform the following tasks in the {ProductShortName} {WebName}:
 
