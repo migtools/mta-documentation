@@ -1,0 +1,28 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="generating-deployment-assets_{context}"]
+= Generating deployment assets
+
+[role="_abstract"]
+When you generate assets for an application, the generators render manifests for all the migration paths associated with the archetype of the application. 
+
+.Prerequisites
+
+//provide link to platform awareness for the discovery manifest.
+. You generated the discovery manifest.
+. You configured the application tags in an archetype.
+. You configured generators and target profile in the archetype.
+
+.Procedure
+
+. In the *Migration* view, click *Applications*.
+. Click the Options menu ({kebab}) of an application.
+. Click *Generate assets* to open the *Generate assets* dialog.
+. Select a target profile and click *Next*.
+. Click the toggle button to open the JSON view where you can enter the parameter values.
+. Click *Next* to review the configurations to generate assets.
+. Click *Generate assets*.
+
+You can view the generated assets in the asset respository that you configured.
