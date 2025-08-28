@@ -6,7 +6,7 @@
 = Configuring a generator
 
 [role="_abstract"]
-You can create custom tags for applications that {ProductShortName} assesses or analyzes.
+You can also override values for fields present in the discovery manifest in the generator. and provide a new parameter t
 
 .Procedure
 

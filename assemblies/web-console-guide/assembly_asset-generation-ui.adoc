@@ -20,19 +20,20 @@ Starting with 8.0.0, asset generation in {ProductShortName} {WebName} allows you
 
 The workflow to generate assets depend on the following entities:
 
-* Application - The application includes the discovery manifest, the criteria tag, and the asset repository.  
-+
-The discovery manifest contains the platform and runtime configurations from the source platform (CF) instances. During asset generation, the discovery manifest is parsed by generator templates that produce the final asset for deployment. 
-+
-The application also contains criteria tags that link the application with an Archetype. 
-+
-The asset repository is where you find the final assets for deployment in the target platform.
+* Generators - A generator takes a templating engine, such as Helm, along with a set of templates as input configuration to parse the discovery manifest. Generators use the templates to collect configurations needed to produce deployment assets based on the target platform and the migration path. For example, the migration path for an EAP 6 application could be OpenJDK 21 or EAP 8 while the target platform for the EAP 6 application could be Kubernetes. Thus, generators support the intent of the migration by generating the required assets. 
 
-* Generators - The generators parse the discovery manifest. To do so, a generator configuration contains a templating engine such as Helm.
-
-* Target profiles - 
+* Target profiles - You create a target profile by selecting a collection of generators. 
 
 * Archetypes - 
+
+* Application - The application includes the discovery manifest, the criteria tag, and the asset repository.  
++
+//provide the retrieve configuration link after publishing the doc
+The configuration retrieval process generates a discovery manifest that contains the platform and runtime configurations from the source platform (CF) instances. During asset generation, the discovery manifest is parsed by generator templates that produce the final assets for deployment. 
++
+The application also contains criteria tags that must be configured in an Archetype. 
++
+The asset repository is where you find the generated assets for deployment in the target platform.
 
 Asset generation is designed to closely link the generated assets to the migration paths configured through the target profile. Achieves this goal through modular configurations of generators and target profile. Allows you to reuse the configurations for different deployments.
 
