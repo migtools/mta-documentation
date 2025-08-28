@@ -6,7 +6,7 @@
 = Discovering applications through source platform 
 
 [role="_abstract"]
-A source platform instance can be linked with one or more applications. After you configure a source platform, you can discover and import one or more applications to {ProductShortName}.
+After you configure a source platform, you can discover and import one or more applications to {ProductShortName}.
 
 .Prerequisites
 //should the users be logged in to the CF instance for application discovery?

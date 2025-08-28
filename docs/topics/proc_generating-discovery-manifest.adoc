@@ -6,30 +6,37 @@
 = Generating discovery manifests
 
 [role="_abstract"]
-To generate discovery manifest, you must retrieve the application configuration from the Cloud Foundry (CF) source platform instance. {ProductShortName} generates a discovery manifest that has the application configuration which you can later use to generate assets (deployment manifests).
+To generate discovery manifest, you must retrieve the application configuration from the Cloud Foundry (CF) source platform instance. {ProductShortName} generates a discovery manifest that has the application configuration, which you can later use to generate assets (deployment manifests).
 
-You ca retrieve configuration for one or more applications at a time.
+You can retrieve configuration for one or more applications at a time.
 
 .Prerequisites
 //should the users be logged in to the CF instance to generate discovery manifest?
 * You are logged in to the Cloud Foundry instance.
 
+* You configured a source platform for the applications for which you need to retrieve configurations.
+
 .Procedure
 
 . In the {ProductShortName} user interface, select the *Migration* working mode.
-. Click *Application Inventory* in the left menu bar.
-. Click *Create new*. The *New application* dialog appears.
-. In the form, enter the following information:
-.. *Name*: A unique name for the new application.
-.. *Description*: A short description of the application (optional).
-.. *Business service*: A purpose of the application (optional).
-.. *Tags*: Software tags that characterize the application.
-.. *Owner*: A registered software owner from the drop-down list (optional).
-.. *Contributors*: Contributors from the drop-down list (optional).
-.. *Comments*: Relevant comments on the migrated application.
-. Click *Source code* and enter the following fields:
-.. *Repository type*: *Git* or *Subversion*.
-.. *Source repository*: A URL of the repository where the software code is saved.
-.. *Branch*: An application code branch in the repository (optional).
-.. *Root path*: A root path inside the repository for the target application (optional).
 
+. Click *Application Inventory* in the left menu bar.
+
+. You can retrieve configuration for one or more applications.
++
+.. To retrieve configuration for an application:
+... Select an application and click the Options menu ({kebab}).
+... Click *Retrieve Configurations*.
+.. To retrieve configurations for multiple applications:
+... Select the target applications or click the Select all option ({select-all-menu}).
+... Click the Options menu near *Analyze* at the top and click *Retrieve Configurations*.
++
+. You can review the read-only configurations in the *Retrieve Configurations* dialog and click *Retrieve*.
+{ProductShortName} triggers a task to retrieve configuration for each application.
+
+.Verification
+
+. Click an application row to open the application details pane and click the *Platform* tab.
+
+//are sensitive information such as passwords hashed?
+. Review the discovery manifest with the retrieved configuration and download the JSON configuration.

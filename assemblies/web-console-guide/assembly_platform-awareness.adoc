@@ -25,8 +25,6 @@ Perform the following tasks in the {ProductShortName} {WebName}:
 
 You can retrieve platform and runtime configurations for more than one application simultanously. Similarly, you can generate the discovery manifests per application or in bulk. 
 
-In the asset generation phase, the discovery manifests are converted into assets or deployment manifests that you can use to redeploy the applications to {ocp-short} or Kubernetes platforms.
-
 include::topics/proc_creating-source-platform.adoc[leveloffset=+1]
 
 include::topics/proc_discovering-apps-source-platform.adoc[leveloffset=+1]
