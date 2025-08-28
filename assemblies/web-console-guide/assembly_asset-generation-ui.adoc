@@ -16,8 +16,33 @@ endif::[]
 :context: asset-generation-ui
 
 [role=_abstract]
-abc
+Starting with 8.0.0, asset generation in {ProductShortName} {WebName} allows you to create different  assets (for example, a ConfigMap, deployment.yaml, service.yaml, and so on) required to deploy applications from Cloud Foundry (CF) instances to target platforms. 
 
+The workflow to generate assets depend on the following entities:
+
+* Application - The application includes the discovery manifest, the criteria tag, and the asset repository.  
++
+The discovery manifest contains the platform and runtime configurations from the source platform (CF) instances. During asset generation, the discovery manifest is parsed by generator templates that produce the final asset for deployment. 
++
+The application also contains criteria tags that link the application with an Archetype. 
++
+The asset repository is where you find the final assets for deployment in the target platform.
+
+* Generators - The generators parse the discovery manifest. To do so, a generator configuration contains a templating engine such as Helm.
+
+* Target profiles - 
+
+* Archetypes - 
+
+Asset generation is designed to closely link the generated assets to the migration paths configured through the target profile. Achieves this goal through modular configurations of generators and target profile. Allows you to reuse the configurations for different deployments.
+
+include::topics/proc_configuring-asset-repository.adoc[leveloffset=+1]
+
+include::topics/proc_configuring-generators.adoc[leveloffset=+1]
+
+include::topics/proc_configuring-target-profiles.adoc[leveloffset=+1]
+
+include::topics/proc_generating-deployment-assets.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-generating-assets[:context: {parent-context-of-asset-generation-ui}]
 ifndef::parent-context-of-asset-generation-ui[:!context:]
