@@ -13,6 +13,6 @@ This section provides highlighted known issues in {ProductFullName} version 7.3.
 When you sort the dependencies by labels after analyzing an application in the {ProductShortName} {WebName}, the {WebName} displays an error about retrieving data. Currently, there is no workaround available. link:https://issues.redhat.com/browse/MTA-5981[(MTA-5981)]
 
 .Analysis performance may degrade in a disconnected environment or when Maven central is not available
-When you run an analysis by using the {ProductShortName} on a host with no access to Maven central and without disabling Maven search index (`--disable-maven-search = false`), the analysis performance may degrade, as {ProductShortName} tries to access it. 
+When you run an analysis by using the {ProductShortName} on a host with no access to Maven central and without disabling the Maven search index (`--disable-maven-search=false`), the analysis performance may degrade, as {ProductShortName} tries to access it. 
 
-As a workaround: you can manually set `--disable-maven-search=true` for CLI analysis and set `disable_maven_search: true` in the Tackle custom resource of the {ProductShortName} operator for an analysis in the {Webname}. link:https://issues.redhat.com/browse/MTA-6045[MTA-6045]
+As a workaround, Maven search can be disabled: you can manually set `--disable-maven-search=true` for CLI analysis and set `disable_maven_search: true` in the Tackle custom resource of the {ProductShortName} operator for an analysis in the {Webname}. link:https://issues.redhat.com/browse/MTA-6045[MTA-6045]
