@@ -1,0 +1,24 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-asset-generation-ui: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="asset-generation-ui"]
+endif::[]
+ifdef::context[]
+[id="asset-generation-ui_{context}"]
+endif::[]
+= Generating assets for application deployment in {WebName}
+
+:context: asset-generation-ui
+
+[role=_abstract]
+abc
+
+
+ifdef::parent-context-of-generating-assets[:context: {parent-context-of-asset-generation-ui}]
+ifndef::parent-context-of-asset-generation-ui[:!context:]
+
