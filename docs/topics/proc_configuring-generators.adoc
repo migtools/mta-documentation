@@ -6,28 +6,38 @@
 = Configuring a generator
 
 [role="_abstract"]
-You can also override values for fields present in the discovery manifest in the generator. and provide a new parameter t
+Generators contain a repository of templates that are required to generate different asset manifests. 
+
+To create a generator:
+
+.Prerequisites
+
+* You installed {ProductShortName} 8.0.0 operator to access the web console.
+* You are an administrator with access to the *Administration* mode in the {ProductShortName} {WebName}.
+* As an administrator, you configured a source control credential for the template repository (if applicable).
 
 .Procedure
 
-. In the *Migration* view, click *Controls*.
-. Click the *Tags* tab.
-. Click *Create tag*.
-. In the *Name* field in the opened dialogue, enter a unique name for the tag.
-. Click the *Tag category* field and select the category tag to associate with the tag.
-. Click *Create*.
-. Optional: Edit the created tag or tag category:
-** Edit the tag:
-... In the list of tag categories under the *Tags* tab, open the list of tags in the desired category.
-... Select *Edit* from the drop-down menu and edit the tag name in the *Name* field.
-... Click the *Tag category* field and select the category tag to associate with the tag.	
-... Click *Save*.
-** Edit the tag category:
-... Under the *Tags* tab, select a defined tag category and click *Edit*.
-... Edit the tag category’s name in the *Name* field.
-... Edit the category’s *Rank* value.	
-... Click the *Color* field and select a color for the tag category. 			
-... Click *Save*. 		
- 
-
-
+. In the *Administration* view, click *Generators*.
++
+On the *Generators* page, you can create, edit, and delete generators.
+. Click *Create new generator*.
+. Configure the following fields:
+.. In the *Name* field in the opened dialogue, enter a unique name for the generator.
+.. Select *Helm* as the generator.
+.. Click *Template repository* to expand the section.
+... Select a *Repository type* from *Git* and *Subversion*.
+... (Optional) Enter the URL of your repository that contains the Helm templates.
+... (Optional) Enter the *Branch* of your repository.
+... (Optional) Enter the *Root path* of your repository.
+... Select the credentials to access your repository if it is private.
+.. (Optional) Click *Values* and enter the new value for an attribute in the discovery manifest as a key-value pair.
++ 
+The values you enter overrides the value of in the discovery manifest when the generator generates the assets. 
+.. (Optional) Click *Parameters* to enter parameters and their default values as a key-value pair.
++
+Parameter fields will require user inputs before the template generates the assets. 
++
+NOTE: During template instantiation, parameter takes precedence over values and values takes precedence over the configurations present in the discovery manifest.
+. Click *Save*.
+You can click anywhere on the generator row to open the details view that shows the generator configuration details, parameters, and values.
