@@ -1,0 +1,27 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+
+ifdef::context[:parent-context-of-configuring-openshift-ai: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="configuring-openshift-ai"]
+endif::[]
+ifdef::context[]
+[id="configuring-openshift-ai_{context}"]
+endif::[]
+= Configuring {ocp-short} AI 
+:context: configuring-openshift-ai
+
+The configurations that you must complete for {ocp-short} AI include creating a data science project instance in the {ocp-short} AI operator. Next, you can configure model-specific configurations in the *Red Hat {ocp-short} AI* console.
+
+include::topics/developer-lightspeed/proc_creating-datascience-cluster.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_configuring-llm-serving-runtime.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_creating-accelerator-profile.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-configuring-openshift-ai[:context: {parent-context-of-configuring-openshift-ai}]
+ifndef::parent-context-of-configuring-openshift-ai[:!context:]

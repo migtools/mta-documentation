@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+
+ifdef::context[:parent-context-of-deploying-openshift-ai-llm: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="deploying-openshift-ai-llm"]
+endif::[]
+ifdef::context[]
+[id="deploying-openshift-ai-llm_{context}"]
+endif::[]
+= Deploying the large language model 
+:context: deploying-openshift-ai-llm
+
+To connect the {ocp-short} AI platform to a large language model (LLM), first, you must upload your LLM to a data source.
+
+{ocp-short} AI, that runs on pods in a Red Hat {ocp-short} on AWS (ROSA) cluster, can access the LLM from a data source such as an Amazon Web Services (AWS) S3 storage. You must create an AWS S3 bucket and configure access permission so that it can access the pods running in the ROSA cluster. See how to enable link:https://docs.redhat.com/en/documentation/red_hat_openshift_service_on_aws/4/html/authentication_and_authorization/assuming-an-aws-iam-role-for-a-service-account#how-service-accounts-assume-aws-iam-roles-in-user-defined-projects_assuming-an-aws-iam-role-for-a-service-account[service account to assume AWS IAM role to access the ROSA pods]. 
+
+Next, you must configure a data connection to the bucket and deploy the LLM from the {ocp-short} AI platform.
+
+include::topics/developer-lightspeed/proc_adding-data-connection.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_deploying-the-model.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-deploying-openshift-ai-llm[:context: {parent-context-of-deploying-openshift-ai-llm}]
+ifndef::parent-context-of-deploying-openshift-ai-llm[:!context:]

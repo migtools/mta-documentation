@@ -1,0 +1,127 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="creating-gpu-machine-set_{context}"]
+= Creating a GPU machine set
+
+[role="_abstract"]
+
+The `machineset` custom resource contains details about the underlying infrastructure such as compute instance from a public cloud provider, block devices, region and zone of the compute instance, and accelarator to your {ocp-short} cluster.
+
+//Please confirm if the instance type m6i.2xlarge in the oc cluster configuration can be different than g5.48xlarge in the machineset configuration.
+
+.Procedure
+
+. Log in to the {ocp-short} CLI and type the following command to get `CLUSTER_NAME`, `CLUSTER_ID`, `AVALABILITY_ZONE`, and `REGION` to list currently available machineset in your cluster:
++
+[source, terminal]
+----
+$ oc get machineset -n openshift-machine-api
+----
++
+. Enter the following command to view values of a specific compute machine set custom resource (CR):
++
+[source, terminal]
+----
+$ oc get machineset <machineset_name> \
+  -n openshift-machine-api -o yaml
+----
++
+. Enter the values for `CLUSTER_NAME`, `CLUSTER_ID`, `AVALABILITY_ZONE`, `REGION`, `instanceType`, `cluster-api/accelerator` in the sample `machineset` YAML configuration.
++
+. Type the following command to create the `machineset` resource for nodes in your {ocp-short} cluster.
++
+[source, terminal]
+----
+oc create -f machineset.yml
+----
++
+. Enter the following command to get the status of the `machineset`, `machine`, and `node` CRs.
++
+[source, terminal]
+----
+watch 'oc get machineset -n openshift-machine-api && oc get machines -n openshift-machine-api && oc get nodes'
+----
++
+.Sample `machineset` yaml file
+[source, yaml]
+----
+cat << EOF > machineset.yml
+apiVersion: machine.openshift.io/v1beta1
+kind: MachineSet
+metadata:
+  annotations:
+    capacity.cluster-autoscaler.kubernetes.io/labels: kubernetes.io/arch=amd64
+    machine.openshift.io/GPU: "8"
+    machine.openshift.io/memoryMb: "786432"
+    machine.openshift.io/vCPU: "192"
+  labels:
+    machine.openshift.io/cluster-api-cluster: CLUSTER_NAME-CLUSTER_ID
+  name: CLUSTER_NAME-CLUSTER_ID-gpu-AVAILABILITY_ZONE
+  namespace: openshift-machine-api
+spec:
+  selector:
+    matchLabels:
+      machine.openshift.io/cluster-api-cluster: CLUSTER_NAME-CLUSTER_ID
+      machine.openshift.io/cluster-api-machineset: CLUSTER_NAME-CLUSTER_ID-gpu-AVAILABILITY_ZONE
+  template:
+    metadata:
+      labels:
+        machine.openshift.io/cluster-api-cluster: CLUSTER_NAME-CLUSTER_ID
+        machine.openshift.io/cluster-api-machine-role: gpu
+        machine.openshift.io/cluster-api-machine-type: gpu
+        machine.openshift.io/cluster-api-machineset: CLUSTER_NAME-CLUSTER_ID-gpu-AVAILABILITY_ZONE
+    spec:
+      replicas: 0
+      lifecycleHooks: {}
+      metadata:
+        labels:
+          cluster-api/accelerator: A10G
+          node-role.kubernetes.io/gpu: ""
+      providerSpec:
+        value:
+          ami:
+            id: ami-0c65d71e89d43aa90 <1>
+          apiVersion: awsproviderconfig.openshift.io/v1beta1
+          blockDevices:
+          - ebs:
+              iops: 0
+              kmsKey: {}
+              volumeSize: 240
+              volumeType: gp2
+          credentialsSecret:
+            name: aws-cloud-credentials
+          deviceIndex: 0
+          iamInstanceProfile:
+            id: CLUSTER_NAME-CLUSTER_ID-worker-profile
+          instanceType: g5.48xlarge
+          kind: AWSMachineProviderConfig
+          metadata:
+            creationTimestamp: null
+          metadataServiceOptions: {}
+          placement:
+            availabilityZone: AVAILABILITY_ZONE
+            region: REGION
+          securityGroups:
+          - filters:
+            - name: tag:Name
+              values:
+              - CLUSTER_NAME-CLUSTER_ID-node
+          - filters:
+            - name: tag:Name
+              values:
+              - CLUSTER_NAME-CLUSTER_ID-lb
+          subnet:
+            filters:
+            - name: tag:Name
+              values:
+              - CLUSTER_NAME-CLUSTER_ID-subnet-private-AVAILABILITY_ZONE
+          tags:
+          - name: kubernetes.io/cluster/CLUSTER_NAME-CLUSTER_ID
+            value: owned
+          userDataSecret:
+            name: worker-user-data
+EOF
+----
+<1> Specify a valid Red Hat Enterprise Linux CoreOS (RHCOS) Amazon Machine Image (AMI) for your AWS zone for your OpenShift Container Platform nodes. If you want to use an AWS Marketplace image, you must complete the OpenShift Container Platform subscription from the AWS Marketplace to obtain an AMI ID for your region.

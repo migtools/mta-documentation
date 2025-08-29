@@ -1,0 +1,36 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-openai-api-key_{context}"]
+= Configuring the OpenAI API key
+
+[role="_abstract"]
+After you deployed a model and exported the self-signed SSL certificate, you must configure the OpenAI API compatible key to use the large language model (LLM). Update the API key and base URL in the `provider-settings`YAML configuration to use the LLM for an {mta-dl-plugin} analysis.
+
+.Procedure
+
+. Enter the following command to generate the `OPENAI_API_KEY`:
++
+[source, terminal]
+----
+$ export OPENAI_API_KEY=$(oc create token --duration=87600h -n ${NAMESPACE} ${SERVING_NAME}-sa)
+----
+//command to access the generated key?
+. Next, you must enter the following configuration in the `provider-settings.yaml` in the {mta-dl-plugin} Visual Studio (VS) Code extension. 
++
+[source, yaml]
+----
+openshift-kai-test-generation: &active
+    environment:
+      SSL_CERT_FILE: "<name-of-SSL_CERT_FILE>"
+      REQUESTS_CA_BUNDLE: "<name-of-REQUESTS_CA_BUNDLE>"
+      OPENAI_API_KEY: "<OPENAI_API_KEY>"
+
+    provider: "ChatOpenAI"
+    args:
+      model: "<serving-name>"
+      base_url:  "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.migration.redhat.com/v1"
+----
+
+You must now be able to use the model for application analysis by using the {mta-dl-plugin} extension.

@@ -1,0 +1,14 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="creating-identity-provider_{context}"]
+= Creating an identity provider
+
+[role="_abstract"]
+
+Configure `htpasswd` authentication for users to log in to the {ocp-short} cluster. You can configure this identity provider in the {ocp-short} UI 
+
+
+.Procedure
+

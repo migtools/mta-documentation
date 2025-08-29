@@ -1,0 +1,44 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="adding-data-connection_{context}"]
+= Adding a data connection
+
+[role="_abstract"]
+In {ocp-short}, a project is a Kubernetes namespace with additional annotations, and is the main way that you can manage user access to resources. A project organizes your data science work in one place and also allows you to collaborate with other developers in your organization.
+
+In your data science project, you must create a data connection to your existing S3-compatible storage bucket to which you uploaded a large language model.
+
+.Prerequisites
+
+You need the following credential information for the storage buckets:
+
+* Endpoint URL
+* Access key
+* Secret key
+* Region
+* Bucket name
+
+If you do not have this information, contact your storage administrator.
+
+.Procedure
+
+. In the {ocp-short} AI web console, select *Data science projects*.
+The *Data science projects* page shows a list of projects that you can access. For each user-requested project in the list, the *Name* column shows the project display name, the user who requested the project, and the project description.
+
+. Click *Create project*.
+In the *Create project* dialog, update the *Name* field to enter a unique display name for your project.
++
+. Optional: In the *Description* field, provide a project description.
+
+. Click *Create*.
+Your project is listed on the *Data science projects* page.
+
+. Click the name of your project, select the *Connections* tab, and click *Create connection*.
+
+. In the *Connection type* drop down, select *S3 compatible object storage - v1*.
+
+. In the *Connection details* section, enter the connection name, the access key, the secret key, endpoint to your storage bucket, and the region.
+
+. Click *Create*.

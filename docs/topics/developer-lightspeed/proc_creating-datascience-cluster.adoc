@@ -1,0 +1,22 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="creating-datascience-cluster_{context}"]
+= Creating a DataScience project cluster
+
+[role="_abstract"]
+
+To create a Data science project instance:
+
+.Prerequisites
+
+* You have `admin` rights to access the *Red Hat {ocp-short} Service on AWS* cluster.
+
+.Procedure
+
+. Install the {ocp} AI operator on the *Red Hat {ocp-short} Service on AWS* web console.
+
+. From the *Data Science Cluster* tab of the operator, click *Create DataScienceCluster* to create an instance with default values.
+
+. After you create the *Data Science Cluster* instance, select *Red Hat OpenShift AI* from the application launcher icon at the top to launch the {ocp} AI web console.

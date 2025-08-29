@@ -1,0 +1,32 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+
+ifdef::context[:parent-context-of-maas-oc-install-config: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="maas-oc-install-config"]
+endif::[]
+ifdef::context[]
+[id="maas-oc-install-config_{context}"]
+endif::[]
+= Installing and configuring {ocp-short} cluster
+:context: maas-oc-install-config
+
+As a member of the hybrid cloud infrastructure team, your initial set of tasks to deploy a large language model (LLM) through model-as-a-service involves creating {ocp-short} clusters with primary and secondary nodes and configuring an identity provider with role-based access control for users to log in to the clusters. 
+
+Next, you configure the GPU operators required to run an LLM, GPU nodes, and auto scaling for the GPU nodes in your namespace on {ocp-short} AI. The following procedures refer to an {ocp-full} cluster hosted on Amazon Web Services. 
+
+include::topics/developer-lightspeed/proc_install-oc-cluster.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_configuring-operators.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_creating-gpu-machine-set.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_configuring-node-auto-scaling.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_configuring-machine-auto-scaling.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-maas-oc-install-config[:context: {parent-context-of-maas-oc-install-config}]
+ifndef::parent-context-of-maas-oc-install-config[:!context:]

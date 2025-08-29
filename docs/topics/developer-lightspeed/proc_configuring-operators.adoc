@@ -1,0 +1,26 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-operators_{context}"]
+= Configuring operators for {ocp-short} AI
+
+[role="_abstract"]
+
+The {ocp-short} AI operator automatically installs all the required operators. However, since this example model-as-a-service deployment needs NVidia GPUs, you must install the following operators in your {ocp-short} AI namespace:
+
+* NVIDIA GPU Operator (provided by NVIDIA Corporation) - The NVIDIA GPU Operator uses the Operator framework within {ocp-full} to manage the full lifecycle of NVIDIA software components required to run GPU-accelerated workloads. The components include the NVIDIA drivers (to enable CUDA), the Kubernetes device plugin for GPUs, the NVIDIA Container Toolkit, automatic node tagging using GPU feature discovery (GFD), DCGM-based monitoring, and others. See link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/hardware_accelerators/nvidia-gpu-architecture[NVidia GPU Architecture] for more information.
+
+* Node Feature Discovery Operator (provided by Red Hat) - The Node Feature Discovery Operator (NFD) is a Kubernetes add-on for detecting hardware features and system configuration. It manages the detection of hardware features and configuration in an {ocp-full} cluster by labeling the nodes with hardware-specific information. NFD labels the host with node-specific attributes, such as PCI cards, kernel, operating system version, and so on.
+
+.Procedure
+
+. Log in to the {ocp} cluster web interface with `cluster-admin` privileges.
+
+. Select *Node Feature Discovery Operator* on the *Operators* page.
+
+. In the *NodeFeatureDiscovery* tab, click *Create a NodeFeatureDiscovery* to create an instance with default values.
+
+. Select *Nvidia GPU Operator* on the *Operators* page.
+
+. In the *ClusterPolicy* tab, click *Create a ClusterPolicy* to create an instance with default values.

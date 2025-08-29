@@ -1,0 +1,52 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-node-auto-scaling_{context}"]
+= Configuring GPU node auto scaling
+
+[role="_abstract"]
+The cluster autoscaler increases and decreases the size of the cluster based on deployment needs.
+
+To autoscale your cluster, you must deploy a `ClusterAutoscaler` custom resource (CR), and then deploy a `MachineAutoscaler` CR for each compute machine set.
+
+.Procedure
+
+. Modify the parameters for the `ClusterAutoscaler` custom resource (CR) by using the sample resource definition file.
++
+[source, yaml]
+----
+cat << EOF > <filename>.yml
+apiVersion: autoscaling.openshift.io/v1
+kind: ClusterAutoscaler
+metadata:
+  generation: 1
+  name: default
+spec:
+  logVerbosity: 4
+  maxNodeProvisionTime: 15m
+  podPriorityThreshold: -10
+  resourceLimits:
+    gpus:
+    - max: 16
+      min: 0
+      type: A10G
+  scaleDown:
+    delayAfterAdd: 20m
+    delayAfterDelete: 5m
+    delayAfterFailure: 30s
+    enabled: true
+    unneededTime: 5m
+EOF
+----
+
+See link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/machine_management/applying-autoscaling#additional-resources-2[Cluster autoscaler resource definition] for descriptions of the CR parameters.
++
+. Enter the following command to deploy the cluster auto scaler CR.
++
+[source, terminal]
+----
+$ oc create -f <filename>.yaml
+----
+
+After you deploy the `ClusterAutoscaler` CR, you must deploy at least one `MachineAutoscaler` CR.

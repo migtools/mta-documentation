@@ -1,0 +1,11 @@
+<title>MTA Developer Lightspeed Guide</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>Using the {ProductName} command-line interface to migrate your applications</subtitle>
+<abstract>
+    <para>Use {ProductFullName} Developer Lightspeed for application modernization in your organization by running Artificial Intelligence-driven static code analysis for Java applications.</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />

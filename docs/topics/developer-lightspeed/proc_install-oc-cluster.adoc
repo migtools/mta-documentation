@@ -1,0 +1,72 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="install-oc-cluster_{context}"]
+= Installing an {ocp-short} cluster
+
+[role="_abstract"]
+
+The following procedure considers m6i.2xlarge Amazon EC2 M6i instances for the primary nodes. See link:https://aws.amazon.com/ec2/instance-types/m6i/[Amazon EC2 M6i Instances] to consider instances that are suitable for your requirements.
+
+To create an OpenShift cluster with three AWS primary and secondary nodes:
+
+.Procedure
+
+. Download the {ocp-short} stable client from the link:https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/[mirror site].
++
+. Extract the tar file in your system with the following command:
++
+[source,terminal]
+----
+tar xvzf <file-name>
+----
++
+. Place the `oc` binary in a directory on your `$PATH`.
++ 
+. Create an _install-config_.yml file with the following configurations. Replace `BASE.DOMAIN`, `CLUSTER_NAME`, `PULL_SECRET`, and `SSL_PUBLIC_KEY` with applicable values.
++
+[source, yaml]
+----
+additionalTrustBundlePolicy: Proxyonly
+apiVersion: v1
+baseDomain: BASE.DOMAIN
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform:
+    aws:
+      type: m6i.2xlarge
+  replicas: 3
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform:
+    aws:
+      type: m6i.2xlarge
+  replicas: 3
+metadata:
+  creationTimestamp: null
+  name: CLUSTER_NAME
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 10.0.0.0/16
+  networkType: OVNKubernetes
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  aws:
+    region: REGION
+publish: External
+pullSecret: 'PULL_SECRET'
+sshKey: |
+  SSH_PUBLIC_KEY
+----
++ Run `./openshift-install create cluster` from the `oc` binary path to install the {ocp-short} cluster.
+
+Next, install OpenShift AI operator in your {ocp-short} cluster and configure link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html-single/authentication_and_authorization/index#identity-provider-htpasswd-about_configuring-htpasswd-identity-provider[htpasswd authentication] for users to log in to the {ocp} AI operator.

@@ -1,0 +1,45 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+
+ifdef::context[:parent-context-of-configuring-llm: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="configuring-llm"]
+endif::[]
+ifdef::context[]
+[id="configuring-llm_{context}"]
+endif::[]
+= Configuring large language models for analysis
+:context: configuring-llm
+
+In an analysis, {mta-dl-plugin} provides the large language model (LLM) with the contextual prompt to identify the issues in the current application and generate suggestions to resolve them.
+
+{mta-dl-plugin} is designed to be model agnostic. It works with LLMs that are run in different environments (in local containers, as local AI, as a shared service) to support analyzing Java applications in a wide range of scenarios. You can choose an LLM from well-known providers, local models that you run from Ollama or Podman desktop, and OpenAI API compatible models that are configured as Model-as-a-Service deployments. 
+
+The result of an analysis performed by {mta-dl-plugin} depends on the parameters of the LLM that you choose. 
+
+You can run an LLM from the following generative AI providers:
+
+* OpenAI 
+* Azure OpenAI
+* Google Gemini
+* Amazon Bedrock
+* Deepseek 
+* OpenShift AI  
+
+include::topics/developer-lightspeed/con_model-as-a-service.adoc[leveloffset=+1]
+
+include::assembly_maas-oc-install-config.adoc[leveloffset=+2]
+
+include::assembly_configuring-openshift-ai.adoc[leveloffset=+2]
+
+include::assembly_deploying-openshift-ai-llm.adoc[leveloffset=+2]
+
+include::assembly_preparing-llm-analysis.adoc[leveloffset=+2]
+
+include::topics/developer-lightspeed/proc_configuring-llm-podman-desktop.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-configuring-llm[:context: {parent-context-of-configuring-llm}]
+ifndef::parent-context-of-configuring-llm[:!context:]
