@@ -30,4 +30,5 @@ An example workflow for configuring an LLM service on {ocp-short} AI broadly req
 ** Configure an OpenAI API key
 ** Update the OpenAI API key and the base URL in `provider-settings.yaml`.
 
-See xref:ref_example-llm-configurations.adoc[Provider settings configuration] to configure the base URL and LLM key in the {mta-dl-plugin} VS Code extension.
+//provide the link to the document after publishing
+See Provider settings configuration to configure the base URL and LLM key in the {mta-dl-plugin} VS Code extension.
