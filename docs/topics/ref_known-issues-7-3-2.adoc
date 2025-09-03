@@ -20,7 +20,7 @@ As a workaround, Maven search can be disabled: you can manually set `--disable-m
 
 .An application analysis lasts longer when Maven credentials are missing
 
-If you do not assign Maven credentials to an application manually or do not set these credentials as default, an application analysis might last longer. In addition, the Analyzer and Tech Discovery steps complete with the following error:
+If you do not manually assign Maven credentials to an application that requires them or do not set these credentials as default, an application analysis might last longer. In addition, the Analyzer and Tech Discovery steps complete with the following error:
 
 ----
 error: 'unable to ask for Konveyor rule entry'
