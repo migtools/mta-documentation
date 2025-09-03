@@ -16,3 +16,14 @@ When you sort the dependencies by labels after analyzing an application in the {
 When you run an analysis by using the {ProductShortName} on a host with no access to Maven central and without disabling the Maven search index (`--disable-maven-search=false`), the analysis performance may degrade, as {ProductShortName} tries to access it. 
 
 As a workaround, Maven search can be disabled: you can manually set `--disable-maven-search=true` for CLI analysis and set `disable_maven_search: true` in the Tackle custom resource of the {ProductShortName} operator for an analysis in the {Webname}. link:https://issues.redhat.com/browse/MTA-6045[(MTA-6045)]
+
+
+.An application analysis lasts longer when Maven credentials are missing
+
+If you do not assign Maven credentials to an application manually or do not set these credentials as default, an application analysis might last longer. In addition, the Analyzer and Tech Discovery steps complete with the following error:
+
+----
+error: 'unable to ask for Konveyor rule entry'
+----
+
+To work around this problem, assign Maven credentials to the application or set these credentials as default before running the application analysis.
