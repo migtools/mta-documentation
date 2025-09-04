@@ -1,0 +1,20 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-asset-repository_{context}"]
+= Configuring an asset repository
+
+[role="_abstract"]
+{ProductShortName} generates assets and publishes them to an asset repository that you configure. If you do not configure an asset repository, the application repository is taken as the default repository for the generated assets.
+
+.Procedure
+
+. In the *Migration* view, click *Applications*.
+. Click the edit icon (image:icon_edit.png[]) to update an imported application.
+. In the *Update application* dialog, click *Asset repository* and configure the following details:
+... Select the *Asset repository type* from *Git* or *Subversion*.
+... Enter the asset repository URL in the *Asset repository* field.
+... Enter the *Branch* of your repository.
+... Enter the *Root path* of your repository.
+. Click *Save*.
