@@ -1,0 +1,30 @@
+:mta:
+include::topics/templates/document-attributes.adoc[]
+:_mod-docs-content-type: ASSEMBLY
+[id="mta-developer-lightspeed"]
+= MTA Developer Lightspeed
+
+:toc:
+:toclevels: 4
+:numbered:
+:imagesdir: topics/images
+:context: mta-developer-lightspeed
+:mta-developer-lightspeed:
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+
+include::assemblies/developer-lightspeed-guide/assembly_getting-started.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/con_prerequisites.adoc[leveloffset=+2]
+
+include::topics/developer-lightspeed/con_persistent-volumes.adoc[leveloffset=+2]
+
+include::topics/developer-lightspeed/con_installation.adoc[leveloffset=+2]
+
+include::topics/developer-lightspeed/con_developer-lightspeed-pathways.adoc[leveloffset=+2]
+
+include::topics/developer-lightspeed/ref_example-code-suggestion.adoc[leveloffset=+2]
+
+:!mta-developer-lightspeed:
