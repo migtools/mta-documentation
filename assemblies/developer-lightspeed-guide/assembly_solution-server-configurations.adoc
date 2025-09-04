@@ -15,7 +15,12 @@ endif::[]
 :context: solution-server-configurations
 
 [role=_abstract]
-Solution server is a component that allows {mta-dl-plugin} to build a collective memory of code changes from all analysis performed in an organization. In the local context of an analysis run in the Visual Studio (VS) Code, the Solution Server augments previous patterns of how codes changed to resolve issues (also called solved examples) that were similar to those in the current file, and suggests a resolution that has a higher confidence level derived from previous solutions.
+Solution server is a component that allows {mta-dl-full} to build a collective memory of code changes from all analysis performed in an organization. In the local context of an analysis run in the Visual Studio (VS) Code, the Solution Server augments previous patterns of how code changed to resolve issues (also called solved examples) that were similar to those in the current file, and suggests a resolution that has a higher confidence level derived from previous solutions.
+
+The Solution Server delivers two primary benefits to users:
+
+* Contextual Hints: It surfaces examples of past migration solutions—including successful user modifications and accepted fixes—offering actionable hints for difficult or previously unsolved migration problems.
+* Migration Success Metrics - It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully migrating a given code segment.
 
 As {mta-dl-plugin} is an optional set of features in {ProductShortName}, you must complete the following configurations before you can access settings necessary to use AI analysis.
 
@@ -25,4 +30,3 @@ include::topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed.adoc[leve
 
 ifdef::parent-context-of-solution-server-configurations[:context: {parent-context-of-solution-server-configurations}]
 ifndef::parent-context-of-solution-server-configurations[:!context:]
-

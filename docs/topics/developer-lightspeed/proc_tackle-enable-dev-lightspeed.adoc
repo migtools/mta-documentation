@@ -8,20 +8,21 @@
 [role="_abstract"]
 Solution Server integrates with the {ProductShortName} Hub backend component to use the database and volumes necessary to store and retrieve the solved examples. 
 
-To enable Solution Server and other AI configurations in the {ProductShortName} VS Code extension, you must modify the Tackle custom resource (CR) with additional parameters.
+To enable Solution Server and other AI configurations in the {mta-dl-full} VS Code extension, you must modify the Tackle custom resource (CR) with additional parameters.
 
 .Prerequisites
 
 //the hard link must be changed to the same topic in 8.0.0 that has the `{mta-dl-plugin}-database` req.
-. You deployed an additional RWO volume for  `{mta-dl-plugin}-database` if you want to use {mta-dl-plugin}. See link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/user_interface_guide/mta-7-installing-web-console-on-openshift_user-interface-guide#openshift-persistent-volume-requirements_user-interface-guide[Persistent volume requirements] for more information.
+. You deployed an additional RWO volume for  the `{mta-dl-plugin}-database` if you want to use {mta-dl-plugin}. See link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/user_interface_guide/mta-7-installing-web-console-on-openshift_user-interface-guide#openshift-persistent-volume-requirements_user-interface-guide[Persistent volume requirements] for more information.
 
 . You installed the {ProductShortName} operator v8.0.0.
 
 
 .Procedure
 
-. Log in to the {ocp-short} cluster and switch to the `openshift-mta` project.
+. Log in to the {ocp-short} cluster and switch to the `openshift-mta` project. 
 +
+
 . Edit the Tackle custom resource (CR) settings in the `tackle_hub.yml` to enable {mta-dl-plugin} and then enter applicable values for `kai_llm_provider` and `kai_llm_model` variables. 
 +
 [source, yaml]
@@ -40,13 +41,15 @@ spec:
 ...
 ----
 +
-//How about Amazon Bedrock, Deepseek, and Azure OpenAI?
+
 [NOTE]
 ====
 The default large language model (LLM) provider is `ChatIBMGenAI`. You may also enter `google` or `openai` as providers.
 ====
+//How about Azure OpenAI, Amazon Bedrock, Ollama, and model in OpenShift AI?
 +
-. Apply the Tackle CR by using the following command.
+
+. Apply the Tackle CR by in the `openshift-mta` project using the following command.
 +
 [source, terminal]
 ----
