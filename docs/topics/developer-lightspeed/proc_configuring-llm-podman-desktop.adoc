@@ -42,7 +42,7 @@ You must configure these specifications in the {mta-dl-plugin} extension.
 export OPENAI_API_BASE=<server-url>
 ----
 +
-. In the VS Code, click *Configure GenAI Settings* to open the `provider-settings.yaml` file.
+. In the {mta-dl-plugin} extension, type `Open the GenAI model provider configuration file` in the Command Pallete to open the `provider-settings.yaml` file.
 
 . Enter the model details from Podman Desktop. For example, use the following configuration for a Mistral model. 
 +

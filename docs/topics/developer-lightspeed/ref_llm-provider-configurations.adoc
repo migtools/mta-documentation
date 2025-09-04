@@ -19,7 +19,7 @@ Access the `provider-settings.yaml` from the VS Code Command Pallete by typing `
 
 You can select one provider from the list by using the `&active` anchor in the name of the provider. To use a model from another provider, move the `&active` anchor to the desired provider block and restart the solution server on the `Open {ProductShortName} Analysis View` screen.
 
-For example, enter the following configurations for an OpenAI model:
+For an OpenAI model:
 
 [source, yaml]
 ----
@@ -50,6 +50,8 @@ For Amazon Bedrock:
 ----
 AmazonBedrock:
     environment:
+      ## May have to use if no global `~/.aws/credentials`
+      AWS_DEFAULT_REGION: us-east-1
       AWS_ACCESS_KEY_ID: "" # Required if a global ~/.aws/credentials file is not present
       AWS_SECRET_ACCESS_KEY: "" # Required if a global ~/.aws/credentials file is not present
       AWS_DEFAULT_REGION: "" # Required
@@ -57,6 +59,12 @@ AmazonBedrock:
     args:
       model: meta.llama3-70b-instruct-v1:0 # Required
 ----
+
+[NOTE]
+====
+It is recommended to use the link:https://aws.amazon.com/cli/[AWS CLI] and verify that you have command line access to AWS services before you proceed with the `provider-settings` configurations.
+====
+
 
 For Google Gemini:
 
@@ -70,20 +78,36 @@ GoogleGenAI:
       model: gemini-2.5-pro # Required
 ----
 
+For Ollama:
+
+[source, yaml]
+----
+models:
+  ChatOllama: 
+    provider: "ChatOllama"
+    args:
+      model: "granite-code:8b-instruct"
+      baseUrl: "127.0.0.1:11434" # example URL
+----
+
 For a model named "my-model" deployed in {ocp-short} AI with "example-model" as the serving name:
 
 //check if openshift prefix is required for OpenShift AI model provider, like "openshift-example-model" or can it be just "example-model"
 [source, yaml]
 ----
 models:
-  openshift-example-model: &active
+  openshift-example-model: 
     environment:
-      SSL_CERT_FILE: "<Server's SSL_CERT_FILE>"
-      REQUESTS_CA_BUNDLE: "<Server's REQUESTS_CA_BUNDLE>"
-      OPENAI_API_KEY: "<Server's OPENAI_API_KEY>"
-
+      CA_BUNDLE: "<Servers CA Bundle path>"
+      ALLOW_INSECURE: "true"
     provider: "ChatOpenAI"
     args:
       model: "my-model"
-      base_url: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.migration.redhat.com/v1"
+      configuration:
+        base_url: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.migration.redhat.com/v1"
 ----
+
+[NOTE]
+====
+When you change the `model` deployed in {ocp-short} AI, you must also change the `base_url` endpoint.
+====

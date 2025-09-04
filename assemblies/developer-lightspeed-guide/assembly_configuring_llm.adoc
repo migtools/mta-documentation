@@ -26,6 +26,7 @@ You can run an LLM from the following generative AI providers:
 * Azure OpenAI
 * Google Gemini
 * Amazon Bedrock 
+* Ollama
 
 You can also run OpenAI API-compatible LLMs deployed as a service in your OpenShift AI cluster or deployed locally in the Podman AI Lab in your system.
 
