@@ -1,0 +1,36 @@
+:_mod-docs-content-type: PROCEDURE
+[id="vscode-reviewing-and-resolving-issues_{context}"]
+= Reviewing and resolving migration issues
+
+[role="_abstract"]
+You can use the {ProductShortName} extension icons to prioritize issues based on their severity.
+
+.Procedure
+
+. Select a run configuration directory on the left pane.
+. Expand its folders to view the *Hints* generated for each application file.
+. Select a hint to view the source code.
+. Right-click a hint and select *View Details* to view the Rule ID and other information.
+. Prioritize issues based on the following icons, which are displayed next to each hint:
+
+** image:vs_mandatory.png[Mandatory]: You must fix the issue for a successful migration.
+** image:vs_potential.png[Warning]: You might need to address the issue during the migration.
+
+. Resolve issues by editing the code of a file with a hint:
+
+.. In the left pane, right-click an issue and select *Open Code*.
+.. Make any changes needed to the code and save the file.
+.. Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
+
+////
+ == Using a Quick Fix
+
+You can use a Quick Fix automatic code replacement to save time and ensure consistency in resolving repetitive issues.
+
+.Procedure
+
+. In the left pane, right-click an issue that has the Quick Fix icon (image:vs_optional.png[Optional or Quick Fix]) and select *Preview Quick Fix*.
+. To accept the suggested fix, right-click the issue again and select *Apply Quick Fix*.
+. Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
+////
+

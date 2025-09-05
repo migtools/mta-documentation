@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-21
+:_mod-docs-content-type: CONCEPT
+
+[id="intro-to-vscode-for-mta_{context}"]
+= Introduction to the {ProductShortName} extension for Microsoft Visual Code
+
+You can migrate and modernize applications by using the {ProductName} ({ProductShortName}) {AddonType} for {IDEName}.
+
+The {ProductShortName} {AddonType} can perform the following actions:
+
+* Analyze your projects with customizable rulesets.
+* Mark issues in the source code.
+* Provide guidance to fix the issues.
+* Perform automatic code replacement, if possible.
+
+ifdef::vsc-extension-guide[]
+The {ProductShortName} extension is also compatible with Visual Studio Codespaces, the Microsoft cloud-hosted development environment.
+endif::[]
+
+ifdef::idea-plugin-guide[]
+The {AddonType} supports both the Community Edition and the Ultimate version of {IDEName}.
+endif::[]
+
+
+// This module can be reused in the following files, if needed:
+//
+// * docs/intellij-idea-plugin-guide/master.adoc
+// * docs/eclipse-code-ready-guide/master.adoc
