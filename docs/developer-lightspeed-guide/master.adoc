@@ -15,4 +15,6 @@ include::topics/templates/document-attributes.adoc[]
 include::topics/making-open-source-more-inclusive.adoc[]
 
 
+include::topics/developer-lightspeed/con_getting-started.adoc[leveloffset=+1]
+
 :!mta-developer-lightspeed:
