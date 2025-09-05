@@ -1,0 +1,20 @@
+:mta:
+include::topics/templates/document-attributes.adoc[]
+:_mod-docs-content-type: ASSEMBLY
+[id="mta-developer-lightspeed"]
+= MTA Developer Lightspeed Guide
+
+:toc:
+:toclevels: 4
+:numbered:
+:imagesdir: topics/images
+:context: mta-developer-lightspeed
+:mta-developer-lightspeed:
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+
+include::topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc[leveloffset=+1]
+
+:!mta-developer-lightspeed:
