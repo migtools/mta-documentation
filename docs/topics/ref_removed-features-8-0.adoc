@@ -9,15 +9,19 @@
 This section provides a list of all features removed in {ProductFullName} {ProductVersion}. All removed features were deprecated in earlier releases and are no longer supported. 
 
 
-.XML rules are no longer supported
+.XML rules are removed
 
-In {ProductFullName} {ProductVersion}, support for XML rules has been removed. Bug fixes and support are provided only through the end of the {ProductShortName} version 7.0 lifecycle. 
+In {ProductFullName} {ProductVersion}, XML rules are removed and are no longer supported. Bug fixes and support are provided only through the end of the {ProductShortName} version 7.0 lifecycle. 
 
 (link:https://issues.redhat.com/browse/MTA-5357[MTA-5357])
+
+
+.The Eclipse IDE plug-in is removed
+
+The Eclipse IDE plug-in for {ProductFullName}, which you could use to analyze the effort for migrating and modernizing your applications, is removed and is no longer supported. As an alternative, you can use the {ProductName} extension for Visual Studio Code (VS Code).
 
 ////
 NOT YET CONFIRMED
 
 * IntelliJ deprecation in MTA 7 and removal in MAT 8
-* Eclipse deprecation: Is it just deprecated or removed in MTA 8??? Eclipse plug-in End of support declared in MTA 8.0.
 ////
