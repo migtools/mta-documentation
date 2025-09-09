@@ -14,3 +14,18 @@
 Before this update, when you generated a deployment manifest by using the Helm template, the default values in the`values.yaml` file, packaged with the Helm chart, were ignored. Consequently, only the values from the `values.yaml` file created after running the `mta-cli discover` command were used. With this update, the default `values.yaml` file is merged with the discover `values.yaml` file.
 
 (link:https://issues.redhat.com/browse/MTA-5793[MTA-5793])
+
+
+.{ProductShortName} CLI no longer fails to detect dependencies for Gradle projects
+
+Before this update, when you ran an application analysis for Gradle projects in containerless mode, {ProductFullName} command-line interface (CLI) did not detect Gradle dependencies. As a consequence, the analysis report did not list the dependencies and displayed an error message in the analysis logs instead. With this update, the issue is fixed. As a result, {ProductShortName} CLI detects Gradle dependencies after the analysis is complete.
+
+(link:https://issues.redhat.com/browse/MTA-4033[MTA-5793])
+
+
+.{ProductShortName} UI no longer fails to analyze projects built with Gradle version 7 and later
+
+Before this update, when you analyzed an application built with Gradle in `Source code + dependencies` mode in the {ProductFullName} user interface (UI), the analysis  failed if you had Gradle version 7 and later. With this update, the issue is fixed.
+(link:https://issues.redhat.com/browse/MTA-5907[MTA-5907])
+
+
