@@ -1,0 +1,23 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-09
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-8-0_{context}"]
+= Known issues
+
+{ProductFullName} version {ProductVersion} is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+
+
+.An analysis might fail after MTA CLI is upgraded without a cleanup
+
+An application analysis by using the {ProductFullName} command-line interface (CLI) might fail after you perform the following actions:
+
+. Run the analysis on the current {ProductShortName} CLI version.
+. Upgrade to and deploy the newer {ProductShortName} CLI version.
+. Run the analysis on the newly deployed {ProductShortName} CLI version.
+
+To work around this problem, clean up metadata and cache:
+
+. Clear the `.metadata` subdirectory under the directory from which you ran the `mta-cli analyze` command. 
+. Clear the Maven cache.
+
