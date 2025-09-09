@@ -8,7 +8,7 @@
 [role="_abstract"]
 Create a source platform instance to retrieve platform and runtime configurations for one or more applications. 
 
-A platform engineer, who has administrator privileges to access Cloud Foundry (CF), can share the CF platform URL with the architect who oversees the migration effort in {ProductShortName}. The {ProductShortName} architect can configure one or more CF platform instances in the {ProductShortName} user interface. 
+A platform engineer, who has administrator privileges to access Cloud Foundry (CF), can configure one or more CF platform instances in the {ProductShortName} user interface. 
 
 .Prerequisites
 //should the users be logged in to the CF instance for application discovery?
@@ -18,30 +18,13 @@ A platform engineer, who has administrator privileges to access Cloud Foundry (C
 .Procedure
 
 . In the {ProductShortName} user interface, select the *Administration* working mode.
-. Click *Source Platform* in the left menu bar to go to the *Source platforms* page.
+. Click *Source platform* in the left menu bar to go to the *Source platforms* page.
 . Click *Create new platform*. The *Create new platform* dialog appears.
 . In the form, enter the following information:
 .. *Name*: A unique name for the CF instance.
 .. *Type*: Select *Cloud Foundry* from the drop down menu.
-.. *URL*: A purpose of the application (optional).
-.. *Credentials*: Select the name of the CF platform credentials that you configured.
+.. *URL*: API URL to the source platform.
+.. *Credentials*: Select the name of the source platform credentials that you configured.
 . Click *Create*.
 +
 The source platform instance is created. A source platform instance can be linked with one or more applications.
-+
-. Click the Options menu ({kebab}) of a source platform and click *Discover applications* to discover all or selected applications deployed in the source platform instance. The *Discover applications* window appears.
-+
-This action imports multiple applications that are deployed on the platform instance to the *Applications Inventory* page on {ProductShortName}.
-
-. Type the platform coordinate details based on which {ProductShortName} filters applications during the discovery process. For example:
-+
-[source, json]
-----
-{
-    "names": ["app-a", "app-b"],
-    "spaces": ["example-space"]
-}
-----
-+
-
-. (Optional) Hover over the source platform name to check the status of the application import task and click the application import task to view the task details in YAML format.
