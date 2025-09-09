@@ -11,7 +11,7 @@ This section provides a list of all features removed in {ProductFullName} {Produ
 
 .XML rules are removed
 
-In {ProductFullName} {ProductVersion}, XML rules are removed and are no longer supported. Bug fixes and support are provided only through the end of the {ProductShortName} version 7.0 lifecycle. 
+In {ProductFullName} {ProductVersion}, XML rules are removed and are no longer supported both in the {ProductShortName} user interface (UI) and command-line interface (CLI).
 
 (link:https://issues.redhat.com/browse/MTA-5357[MTA-5357])
 
