@@ -11,7 +11,9 @@
 
 .{ProductShortName} CLI supports running a live discovery in a remote CF instance
 
-With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files. You can run the live discovery for a remote CF instance by using the `mta-cli discover cloud-foundry --use-live-connection --spaces=_<space_name>_` command.
+With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files. 
+
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
@@ -22,6 +24,8 @@ You can conceal sensitive information, for example, services and docker credenti
 
 * A discovery manifest
 * A file with concealed data
+
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#concealing-sensitive-information_generating-assets[Concealing sensitive information in a discovery manifest].
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
@@ -48,12 +52,11 @@ With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-i
 
 .Setting default credentials is supported in the {ProductShotName} UI
 
-Before this update, you could only assign credentials to an application manually, once you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications, each of these applications requiring credentials for application discovery tasks. With this update, instead of manually defining credentials, you can define credentials that will be used by default for an application that does not have any credentials assigned to it.
+Before this update, you could only assign credentials to an application manually, once you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications, each of these applications requiring credentials for language and technology discovery tasks. With this update, instead of manually defining credentials, you can define credentials that will be used by default for an application that does not have any credentials assigned to it.
 
-[IMPORTANT]
-====
-You can only set Maven or source control credentials as default credentials. You can only define one default credential per credential type.
-====
+IMPORTANT:You can only set Maven or source control credentials as default credentials. You can only define one default set of credentials per credential type.
+
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/user_interface_guide/index#setting-default-credentials_managing-applications-mta-ui[Setting default credentials].
 
 (link:https://issues.redhat.com/browse/MTA-5254[MTA-5254])
 
