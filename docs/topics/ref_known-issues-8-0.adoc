@@ -21,3 +21,5 @@ To work around this problem, clean up metadata and cache:
 . Clear the `.metadata` subdirectory under the directory from which you ran the `mta-cli analyze` command. 
 . Clear the Maven cache.
 
+(link:https://issues.redhat.com/browse/MTA-6125[MTA-6125])
+
