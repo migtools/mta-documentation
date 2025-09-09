@@ -29,14 +29,11 @@ For more information, see link:https://docs.redhat.com/en/documentation/migratio
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
-////
-NOT READY for the review YET
 .{ProductShortName} supports accessing analysis insights from the dynamic report
 
 Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, insights were only available in the analysis output and a static report after you ran an application analysis. With this enhancement, you can access analysis insights also from a dynamic report.
 
 (link:https://issues.redhat.com/browse/MTA-5420[MTA-5420])
-////
 
 ////
 NOT READY for the review YET
