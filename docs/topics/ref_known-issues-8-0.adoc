@@ -25,3 +25,6 @@ To work around this problem, clean up metadata and cache:
 
 //TBD by Prabha - Kai
 //https://issues.redhat.com/browse/MTA-6126
+
+//TBD by Prabha - Custom rules KI
+https://issues.redhat.com/browse/MTA-6129
