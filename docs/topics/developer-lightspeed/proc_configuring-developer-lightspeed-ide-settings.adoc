@@ -41,8 +41,8 @@ After you install the {ProductShortName} extension in Visual Studio (VS) Code, y
 |Solution Server:Auth| Enable authentication for the Solution Server. 
 |Solution Server:Auth Realm| Enter the name of the Keycloak realm for Solution Server. 
 
-If you enabled authentication for the Solution Server, you must configure a link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts[Keycloak realm] to allow clients to connect with the Solution Server. An administrator can configure SSL for the realm.
-|Solution Server: Auth Insecure|This option is enabled by default to skip SSL certificate verification when clients connect with the Solution Server. Disable the setting to allow secure connections to the Solution Server.
+If you enabled authentication for the Solution Server, you must configure a link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts[Keycloak realm] to allow clients to connect to the Solution Server. An administrator can configure SSL for the realm.
+|Solution Server: Auth Insecure|This option is enabled by default to skip SSL certificate verification when clients connect to the Solution Server. Disable the setting to allow secure connections to the Solution Server.
 |Analyze on save|Enable this setting for {mta-dl-plugin} to run an analysis on a file that is saved after code modification. This setting is enabled automatically when you enable Agentic AI mode.
 |Diff editor type|Select from diff or merge view to review the suggested solutions after running an analysis. The diff view shows the old code and a copy of the code with changes side-by-side. The merge view overlays the changes in the code in a single view.
 |Gen AI:Enabled|This option is enabled by default. It enables you to get code fixes by using {mta-dl-plugin} with a large language model.
