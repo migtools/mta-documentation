@@ -8,6 +8,16 @@
 [role="_abstract"]
 {ProductFullName} version {ProductVersion} provides the following major new features and enhancements. 
 
+//TBD by Prabha - Developer Lightspeed
+
+
+//TBD by Prabha - Solution Server
+
+
+//TBD by Prabha - Platform Awareness
+
+
+//TBD by Prabha - Asset Generation for UI
 
 .{ProductShortName} CLI supports running a live discovery in a remote CF instance
 
