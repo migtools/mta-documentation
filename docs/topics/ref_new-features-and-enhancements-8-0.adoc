@@ -19,6 +19,7 @@
 
 //TBD by Prabha - Asset Generation for UI
 
+
 .{ProductShortName} CLI supports running a live discovery in a remote CF instance
 
 With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files. 
@@ -43,19 +44,25 @@ For more information, see link:https://docs.redhat.com/en/documentation/migratio
 
 Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, insights were only available in the analysis output and a static report after you ran an application analysis. With this enhancement, you can access analysis insights also from a dynamic report.
 
+//Add when the section is ready - For more information, see link:<link_to_the_section[section name].
+
 (link:https://issues.redhat.com/browse/MTA-5420[MTA-5420])
 
-////
-NOT READY for the review YET
 
-.A new VS Code IDE plug-in for application analysis and 
+.A new VS Code IDE plug-in for application analysis
 
-With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-in to perform the following actions:
-* Run a standard application analysis 
-* Generative AI use-case
+With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-in that has the following features:
+* Standard application analysis and issue detection
+* Generative AI (GenAI) feature:
+** When enabled, you can use GenAI to find solutions for the analysis incidents. Note that GenAI is enabled by default.
+** When disabled, you can run a standard application analysis.
++
+NOTE: You must restart your server after changing the Gen AI settings for the change to take effect.
+
+//Add when the section is ready - For more information, see link:<link_to_the_section[section name].
 
 (link:https://issues.redhat.com/browse/MTA-5360[MTA-5360])
-////
+
 
 .Setting default credentials is supported in the {ProductShotName} UI
 
