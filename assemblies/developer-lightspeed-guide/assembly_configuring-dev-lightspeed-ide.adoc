@@ -16,10 +16,10 @@ endif::[]
 
 :context: configuring-dev-lightspeed-ide
 
-You must configure the following settings in {mta-dl-plugin}:
+You must configure the following settings in {mta-dl-full}:
 
-* Visual Studio Code IDE settings for all analysis.
-* Profile settings that provide context for a particular analysis.
+* Visual Studio Code IDE settings.
+* Profile settings that provide context before you request a code fix for a particular application.
  
 include::topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings.adoc[leveloffset=+1]
 
