@@ -1,0 +1,31 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-08
+
+ifdef::context[:parent-context-of-configuring-dev-lightspeed-ide: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="configuring-dev-lightspeed-ide"]
+endif::[]
+ifdef::context[]
+[id="configuring-dev-lightspeed-ide_{context}"]
+endif::[]
+= Using {ProductShortName} with Developer Lightspeed in IDE
+
+
+:context: configuring-dev-lightspeed-ide
+
+You must configure the following settings in {mta-dl-full}:
+
+* Visual Studio Code IDE settings.
+* Profile settings that provide context before you request a code fix for a particular application.
+ 
+include::topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_configuring-developer-profile-settings.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-configuring-dev-lightspeed-ide[:context: {parent-context-of-configuring-dev-lightspeed-ide}]
+ifndef::parent-context-of-configuring-dev-lightspeed-ide[:!context:]
+
