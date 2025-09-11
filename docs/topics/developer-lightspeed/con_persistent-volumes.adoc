@@ -1,0 +1,12 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: CONCEPT
+
+[id="persistent-volumes_{context}"]
+= Persistent volume requirements
+
+[role="_abstract"]
+The Solution Server component requires a backend database to store code changes from previous analyses. 
+
+If you plan to enable Solution Server, you must create a `5Gi` `RWO` persistent volume used by the {mta-dl-plugin} database. See link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/user_interface_guide/mta-7-installing-web-console-on-openshift_user-interface-guide#openshift-persistent-volume-requirements_user-interface-guide[Persistent volume requirements] for more information.
