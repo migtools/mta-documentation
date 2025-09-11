@@ -5,7 +5,7 @@
 [id="known-issues-8-0_{context}"]
 = Known issues
 
-{ProductFullName} version {ProductVersion} is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+{ProductFullName} version 8.0.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
 
 
 .An analysis might fail after MTA CLI is upgraded without a cleanup
