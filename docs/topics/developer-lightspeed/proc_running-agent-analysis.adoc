@@ -1,0 +1,56 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="running-agent-analysis_{context}"]
+= Running an analysis in agent mode
+
+[role="_abstract"]
+In the agent mode, the {mta-dl-plugin} planning agent creates the context for an issue and picks a sub-agent that is most suited to resolve the issue. The sub-agent runs an automated scan to describe how the issue can be resolved and generates files with the updated resolutions in one stream. 
+
+You can review the updated files and approve or reject the changes to the code. The agent runs another automated analysis to detect new issues in the code that may have occurred because of the accepted changes or diagnostic issues that your tool may generate following a previous analysis. If you allow the process to continue, {mta-dl-plugin} runs the stream again and generates a new file with the latest updates.
+
+When using the agent mode, you can reject the changes or discontinue the stream but cannot edit the updated files during the stream.
+
+.Prerequisites
+
+* You installed the {ProductShortName} distribution version 8.0.0 in your system.
+* You installed Java 17+ and Maven 3.9.9+ in your system. 
+* You installed the {ProductFullName} extension version 8.0.0 in VS Code. 
+* You installed the latest version of Language Support for Java(TM) by Red Hat extension in Visual Studio (VS) Code.
+* You opened a Java project in your VS Code workspace.
+//check what's the alternative for Konveyor references in the d/s build.
+* You configured an analysis profile on the *Konveyor Analysis View* page.
+
+.Procedure
+
+. Verify that agent mode is enabled in one of the following ways:
++
+.. Type `Ctrl + Shift + P` in VS Code search (Linux/Windows system) and `Cmd + Shift + P` for Mac to go to the command palette. 
+.. Enter `Preferences: Open User Settings (JSON)` to open the `settings.json` file.
+//check later to see how Konveyor and kai references are changed
+.. Ensure that `konveyor.kai.agentMode` is set to `true`.
++
+OR
++
+.. Go to *Extensions > {mta-dl-plugin} > settings*
+//check the settings to see how Kai:Agent Mode is changed
+.. Click the *Agent Mode* option to enable the server. 
++
+. Click the {mta-dl-plugin} extension and click *Open Konveyor Analysis View*.
++
+. Select a profile for the analysis.
++
+. Click *Start* to start the {ProductShortName} RPC server.
++
+. Click *Run Analysis* on the *Konveyor Analysis View* page.
+The *Resolution Details* tab opens, where you can view the automated analysis that makes changes in applicable files.
++
+. Click *Review Changes* option to open the editor that shows the diff view of the modified file.
++
+. Review the changes and click *Apply* to update the file with all the changes or *Reject* to reject all changes. If you applied the changes, then {mta-dl-plugin} creates the updated file with code changes.
++
+. Open *Source Control* to access the updated file.
++
+. In the *Resolution Details* view, accept the proposal from {mta-dl-plugin} to make further changes. 
+The stream of analysis repeats, after which you can review and accept change. {mta-dl-plugin} creates the file with the code changes, and the stream continues until you reject the proposal for further analysis.
