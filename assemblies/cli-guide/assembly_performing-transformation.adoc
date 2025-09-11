@@ -16,10 +16,7 @@ endif::[]
 
 :context: performing-transformation
 
-You can use transformation to perform the following actions:
-
-* Transform Java applications source code by using the `transform openrewrite` command.
-* Convert XML rules to YAML rules by using the `transform rules` command.
+You can use transformation to transform Java applications source code by using the `transform openrewrite` command.
 
 IMPORTANT: Performing transformation requires the container runtime to be configured. 
  
@@ -30,9 +27,6 @@ include::topics/mta-cli/ref_available-openrewrite-recipes.adoc[leveloffset=+1]
 
 include::topics/mta-cli/ref_openrewrite-command-options.adoc[leveloffset=+1]
 
-include::topics/mta-cli/proc_converting-xml-to-yaml.adoc[leveloffset=+1]
-
-include::topics/mta-cli/ref_rules-command-options.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-performing-transformation[:context: {parent-context-of-performing-transformation}]
 ifndef::parent-context-of-performing-transformation[:!context:]

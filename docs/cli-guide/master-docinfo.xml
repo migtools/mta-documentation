@@ -1,7 +1,7 @@
-<title>CLI Guide</title>
+<title>Using the {ProductShortName} command-line interface to analyze applications</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Using the {ProductName} command-line interface to migrate your applications</subtitle>
+<subtitle>Using the {ProductName} command-line interface to prepare your applications for migration</subtitle>
 <abstract>
     <para>By using the {ProductFullName} command-line interface (CLI), you can assess and prioritize migration and modernization efforts for applications written in different languages. You can use the CLI to customize {ProductShortName} analysis options or integrate with external automation tools.</para>
 </abstract>
