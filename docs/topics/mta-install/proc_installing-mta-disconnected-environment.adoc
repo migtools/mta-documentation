@@ -6,6 +6,9 @@
 [id="installing-mta-disconnected-environment_{context}"]
 = Installing the CLI on a disconnected environment
 
+[role="_abstract"]
+In certain cases, you might want to install the {ProductFullName} command-line interface (CLI) when no internet connection is available.
+
 When your system is in a disconnected environment, you can install the {ProductFullName} command-line interface (CLI) by performing the following actions:
 
 . Download the required images by using an external computer.
