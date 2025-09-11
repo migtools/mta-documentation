@@ -6,8 +6,7 @@
 = Fixed issues
 
 [role="_abstract"]
-{ProductFullName} version {ProductVersion} provides the following fixed issues and other problems that have a significant impact. 
-
+{ProductFullName} version 8.0.0 provides the following fixed issues and other problems that have a significant impact. 
 
 .The default `values.yaml` file is merged with the discover `values.yaml` file when generating a deployment manifest
 
@@ -25,7 +24,8 @@ Before this update, when you ran an application analysis for Gradle projects in 
 
 .{ProductShortName} UI no longer fails to analyze projects built with Gradle version 7 and later
 
-Before this update, when you analyzed an application built with Gradle in `Source code + dependencies` mode in the {ProductFullName} user interface (UI), the analysis  failed if you had Gradle version 7 and later. With this update, the issue is fixed.
+Before this update, when you analyzed an application built with Gradle in `Source code + dependencies` mode in the {ProductFullName} user interface (UI), the analysis  failed if you had Gradle version 7 or later installed. With this update, the issue is fixed.
+
 (link:https://issues.redhat.com/browse/MTA-5907[MTA-5907])
 
 
