@@ -3,12 +3,12 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="running-rag-analysis_{context}"]
-= Running an analysis by using solution server
+= Running an analysis in solution server mode
 
 [role="_abstract"]
-Solution server uses Retrieval Augmented Generation (RAG) to generate a resolution based on a context. Solution server derives the context from rules and past changes to similar issues in the codebase of your organization and generates a prompt for your large language model (LLM). The LLM generates migration hints for the issues that it detects based on the contextual prompt. 
+Solution server uses Retrieval Augmented Generation (RAG) to extract a pattern of resolution that improves the context. {mta-dl-plugin} derives the context from rules, past changes to in the codebase ro resolve issues, and from migration hits created by the solution server by working with the large language model (LLM).  
 
-An analysis completed by the solution server identifies the issues in the code. It displays the success metrics for incidents and issues. Success metrics indicate the confidence level in applying the code fix based on how many times the update was applied in past analysis.
+{mta-dl-plugin} generates a prompt for your large language model (LLM) based on the derived context. The LLM generates suggestions to resolve issues identified by running the static code analysis. 
 
 .Prerequisites
 
@@ -41,4 +41,4 @@ OR
 +
 . Click *Run Analysis* on the  *Konveyor Analysis View* page.
 
-To resolve the identified issues, see Applying resolutions after a solution server analysis.
+To resolve the identified issues, see xref:proc_apply-rag-resolution_mta-developer-lightspeed[Applying resolutions] after generating suggestions to change code.

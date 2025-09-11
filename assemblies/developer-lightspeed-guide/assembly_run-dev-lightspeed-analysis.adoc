@@ -15,15 +15,16 @@ endif::[]
 
 :context: run-dev-lightspeed-analysis
 
-After you complete the configurations, the next step is running an analysis to identify the issues in the code and generate suggestions to address the issues. You can run an analysis by using {mta-dl-plugin} in the solution server mode or in the agent mode.
+After you complete the configurations, the next step is running an analysis to identify the issues in the code and generate suggestions to resolve the issues. You can get suggestions to fix code by using {mta-dl-full}.
 
-When you run an analysis using either mode, {mta-dl-plugin} automatically performs the following tasks: 
+When you run an analysis, {ProductShortName} displays the issues in the *Analysis Results* view.
 
-* Displays issues in all the files in your project in the *Issues* pane.
-* While generating suggestions to resolve issues, you can view the migration hints that explain the resolution and in which files the updates are applied.
-* Generates new files in *Resolutions* pane. These files have the updates to the code that resolves the issues detected in the current analysis. You can review the changes, apply, or revert the updates. 
+When you request code fix suggestions, {mta-dl-plugin} performs the following tasks: 
 
-If you apply all the resolutions, {mta-dl-plugin} applies the changes and triggers another analysis to check if there are more issues.
+* Streams LLM messages that describe the issue description, resolution, and the file in which the updates are applied.
+* Generates new files in the *Resolutions* pane. These files have the updates to the code to resolve the issues detected in the current analysis. You can review the changes, apply, or revert the updates. 
+
+If you apply all the resolutions, {mta-dl-plugin} applies the changes and triggers another analysis to check if there are more issues. Subsequent analysis reports fewer issues and incidents.
  
 include::topics/developer-lightspeed/proc_running-rag-analysis.adoc[leveloffset=+1]
 
