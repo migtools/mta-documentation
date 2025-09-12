@@ -1,0 +1,22 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: PROCEDURE
+
+[id="displaying-automated-tasks_{context}"]
+= Displaying automated tasks
+
+After you add a new application to the *Application Inventory*, you can display the automated tasks created by adding the application:
+
+* The language discovery task identifies the programming languages in the application.
+* The technology discovery task identifies specific technologies in the application. 
+
+These tasks automatically add appropriate tags to the application, reducing the effort involved in manually assigning tags to the application. After these tasks are complete, the number of tags added to the application appears under the *Tags* column.
+
+NOTE: You can add additional tags manually as needed. When MTA analyzes the application, it can add additional tags to the application automatically. 	
+
+.Procedure
+
+. In the *Application Inventory*, hover over the application name to display the automated tasks.
+. Display the application tags:
+.. Click on the application’s row entry. A side pane opens. 	
+.. Click the *Tags* tab. The tags attached to the application are displayed. 	

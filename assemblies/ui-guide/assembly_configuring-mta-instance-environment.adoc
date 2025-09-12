@@ -1,0 +1,47 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-configuring-mta-instance-environment: {context}]
+
+ifndef::context[]
+[id="configuring-mta-instance-environment"]
+endif::[]
+ifdef::context[]
+[id="configuring-mta-instance-environment_{context}"]
+endif::[]
+= Configuring the {ProductName} instance environment
+
+:context: configuring-mta-instance-environment
+
+You can configure the Migration Toolkit for Applications (MTA) instance environment by setting up the following parameters: 		
+
+* General	 				
+* Credentials					
+* Repositories 				
+* Proxy
+* Custom migration targets			
+* Issue management			
+* Assessment questionnaires	
+
+== Prerequisites
+
+* You installed the {ProductShortName} UI. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/install-guide/installing-mta-ui_installing-mta-title[Installing the Migration Toolkit for Applications user interface].
+
+include::assembly_configuring-credentials.adoc[leveloffset=+1]
+
+include::assembly_configuring-repositories.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_configuring-proxy-settings.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_creating-custom-migration-targets.adoc[leveloffset=+1]
+
+
+== Next steps
+
+* xref:configuring-mta-instance_user-interface-guide[Configure a {ProductName} instance].
+
+
+ifdef::parent-context-of-configuring-mta-instance-environment[:context: {parent-context-of-configuring-mta-instance-environment}]
+ifndef::parent-context-of-configuring-mta-instance-environment[:!context:]
+
