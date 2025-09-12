@@ -4,7 +4,7 @@
 :_mod-docs-content-type: CONCEPT
 
 [id="developer-lightspeed-logs_{context}"]
-= Debugging {mt-dl-plugin}
+= Debugging {mta-dl-plugin}
 
 [role="_abstract"]
 {mta-dl-full} generates logs to debug issues specific to the extension host and the {ProductShortName} analysis and RPC server. You can also configure the log level for the {mta-dl-plugin} in the extension settings. The default log level is *debug*.
