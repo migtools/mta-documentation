@@ -28,6 +28,8 @@ ifdef::mta[]
 :WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 7.3.2
 :PluginName: MTA plugin
+:mta-dl-full: Red Hat Developer Lightspeed for migration toolkit for applications
+:mta-dl-plugin: Developer Lightspeed for MTA
 // :MavenProductVersion: 7.0.0.GA-redhat-00001
 :ProductDistributionVersion: 7.3.2.GA-redhat
 :ProductDistribution: mta-7.3.2.GA-cli-offline.zip
@@ -94,6 +96,7 @@ endif::[]
 :ocp-short: OpenShift Container Platform
 :ocp-first: {ocp-full} (RHOCP)
 :rh-ocp-local: Red Hat OpenShift Local
+:ocp-name: OpenShift 
 
 // ********************
 // * Product versions *
