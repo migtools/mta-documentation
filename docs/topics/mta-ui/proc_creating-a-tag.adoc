@@ -1,0 +1,34 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: PROCEDURE
+
+[id="creating-a-tag_{context}"]
+= Creating a tag
+
+{ProductFullName} uses tags in multiple categories and provides a list of default values. However, you can create your own tag category and a new tag that is not in the default list.
+
+You can create and configure an instance in any order. However, the following is the most efficient order for creating tags:
+
+. Create Tag categories 					
+. Create Tags 	
+
+.Procedure
+
+. Create a tag category:
+.. In the *Migration* view, click *Controls*. 						
+.. Click *Tags*. 						
+.. Click *Create tag category*. 						
+.. Enter the following information: 						
+* Name 								
+* Rank: The order in which the tags appear on the applications. 	
+* Color 								
+.. Click *Create*. 			
+
+. Create a tag:
+.. In the *Migration* view, click *Controls*. 				
+.. Click *Tags*. 							
+.. Click *Create tag*. 							
+.. Enter the following information: 							
+* Name 									
+* Tag category 									
+.. Click *Create*. 

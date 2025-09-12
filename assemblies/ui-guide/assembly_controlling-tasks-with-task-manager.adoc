@@ -1,0 +1,37 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-controlling-tasks-with-task-manager: {context}]
+
+ifndef::context[]
+[id="controlling-tasks-with-task-manager"]
+endif::[]
+ifdef::context[]
+[id="controlling-tasks-with-task-manager_{context}"]
+endif::[]
+= Controlling {ProductShortName} tasks by using Task Manager
+
+:context: controlling-tasks-with-task-manager
+
+*Task Manager* provides precise information about the {ProductFullName} tasks queued for execution. *Task Manager* handles the following types of tasks:
+
+* Application analysis
+* Language discovery
+* Technology discovery
+
+You can display task-related information either of the following ways:
+
+* To display active tasks, open the *Task Manager* drawer by clicking the notifications button.
+* To display all tasks, open the *Task Manager* page in the *Migration* view.
+
+include::topics/analyzer-rbac-snippet.adoc[]
+
+include::topics/mta-ui/proc_reviewing-a-task-log.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_controlling-task-order-with-task-manager.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-controlling-tasks-with-task-manager[:context: {parent-context-of-controlling-tasks-with-task-manager}]
+ifndef::parent-context-of-controlling-tasks-with-task-manager[:!context:]
+

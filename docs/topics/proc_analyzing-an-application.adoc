@@ -1,9 +1,0 @@
-:_newdoc-version: 2.15.0
-:_template-generated: 2024-2-21
-:_mod-docs-content-type: PROCEDURE
-
-[id="analyzing-an-application_{context}"]
-= Analyzing an application
-
-[role="_abstract"]
-You can use the {ProductFullName} user interface to configure and run an application analysis. The analysis determines which specific lines in the application must be modified before the application can be migrated or modernized. 

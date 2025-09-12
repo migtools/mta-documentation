@@ -1,0 +1,19 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: PROCEDURE
+
+[id="creating-a-business-service_{context}"]
+= Creating a business service
+
+The {ProductFullName} uses the business service attribute to specify the departments within the organization that use the application and that are affected by the migration.
+
+.Procedure
+
+. In the *Migration* view, click *Controls*. 						
+. Click *Business services*. 						
+. Click *Create new*. 						
+. Enter the following information: 						
+* Name 								
+* Description 								
+* Owner 								
+. Click *Create*. 		
