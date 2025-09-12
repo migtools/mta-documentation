@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-configuring-repositories: {context}]
+
+ifndef::context[]
+[id="configuring-repositories"]
+endif::[]
+ifdef::context[]
+[id="configuring-repositories_{context}"]
+endif::[]
+= Configuring repositories
+
+:context: configuring-repositories
+
+You can configure the following repository types for the {ProductFullName} instance environment: 			
+
+* Git 					
+* Subversion 					
+* Maven 	
+
+
+include::topics/mta-ui/proc_configuring-git-repos.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_configuring-subversion-repos.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_configuring-maven-repo.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-configuring-repositories[:context: {parent-context-of-configuring-repositories}]
+ifndef::parent-context-of-configuring-repositories[:!context:]
+
