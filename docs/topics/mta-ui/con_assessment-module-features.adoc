@@ -16,11 +16,11 @@ In {ProductShortName} 7.0, you can import and export assessment questionnaires. 
 * Conditional questions: You can include or exclude questions based on the application or archetype if a certain tag is present on this application or archetype.
 * Application auto-tagging based on answers: You can define tags to be applied to applications or archetypes if a certain answer was provided.
 * Automated answers from tags in applications or archetypes.
-
+ 
 +
-For more information, see xref:mta-custom-questionnaire_user-interface-guide[The custom assessment questionnaire].
+For more information, see xref:mta-custom-questionnaire_assessment-questionnaires[The custom assessment questionnaire].
 
-NOTE: You can customize and save the default questionnaire. For more information, see xref:mta-default-questionnaire_user-interface-guide[The default assessment questionnaire].
+NOTE: You can customize and save the default questionnaire. For more information, see xref:mta-default-questionnaire_assessment-questionnaires[The default assessment questionnaire].
 
 Multiple assessment questionnaires::
 The *Assessment* module supports multiple questionnaires, relevant to one or more applications.
@@ -28,7 +28,7 @@ The *Assessment* module supports multiple questionnaires, relevant to one or mor
 Archetypes::
 You can group applications with similar characteristics into archetypes. This allows you to assess multiple applications at once. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes. 
 +
-For more information, see xref:mta-archetypes_user-interface-guide[Working with archetypes].
+For more information, see xref:working-with-archetypes_user-interface-guide[Working with archetypes].
 
 
 
