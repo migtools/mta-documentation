@@ -35,18 +35,11 @@ metadata:
   namespace: openshift-mta
 spec:
   kai_solution_server_enabled: true
-  kai_llm_provider: ChatIBMGenAI
+  kai_llm_provider: <provider-name>
   # optional, pick a suitable model for your provider
   kai_llm_model: <model-name>
 ...
 ----
-+
-
-[NOTE]
-====
-The default large language model (LLM) provider is `ChatIBMGenAI`. You may also enter `google` or `openai` as providers.
-====
-//How about Azure OpenAI, Amazon Bedrock, Ollama, and model in OpenShift AI?
 +
 
 . Apply the Tackle CR by in the `openshift-mta` project using the following command.
