@@ -2,7 +2,7 @@
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="mta-developer-lightspeed"]
-= MTA Developer Lightspeed
+= Configuring and Using Developer Lightspeed for MTA
 
 :toc:
 :toclevels: 4
@@ -13,6 +13,10 @@ include::topics/templates/document-attributes.adoc[]
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
+
+
+
+
 
 include::assemblies/developer-lightspeed-guide/assembly_configuring-dev-lightspeed-ide.adoc[leveloffset=+1]
 
