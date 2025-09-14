@@ -1,0 +1,44 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: CONCEPT
+
+[id="prerequisites_{context}"]
+= Prerequisites
+
+[role="_abstract"]
+Before you install {mta-dl-plugin}, you must:
+
+* Install Language Support for Java(TM) by Red Hat extension
+
+* Install Java v17 and later
+
+* Install Maven v3.9.9 or later
+
+* Install Git and add it to the $PATH variable
+
+* Install the {ProductShortName} command line 8.0.0
+
+* Install the {ProductShortName} Operator 8.0.0
++
+
+The {ProductShortName} Operator is mandatory if you plan to enable the solution server to work with the large language model (LLM) for generating code changes. It enables you to log in to the `openshift-mta` project where you must deploy the Tackle custom resources (CR) required for running the Solution Server.
+
+* Create an API key for an LLM.
++
+
+You must enter the provider value and model name in Tackle custom resource (CR) to enable generative AI configuration in the {ProductShortName} VS Code plugin. 
++
+.Supported large language models and providers
+|===
+| LLM Provider (Tackle CR value) | Large language model in Tackle CR 
+
+| Open AI (`openai`) | `gpt-4`, `gpt-4o`, `gpt-4o-mini`, `gpt-3.5-turbo` 
+| Azure OpenAI (`azure_openai`) | `gpt-4`, `gpt-35-turbo` 
+| Amazon Bedrock (`bedrock`) | `anthropic.claude-3-5-sonnet-20241022-v2:0`, `meta.llama3-1-70b-instruct-v1:0` 
+| Google Gemini (`google`) | `gemini-2.0-flash-exp`, `gemini-1.5-pro` 
+| Ollama (`ollama`) | `llama3.1`, `codellama`, `mistral` 
+| Groq (`groq`) | `llama-3.1-70b-versatile`, `mixtral-8x7b-32768` 
+| Anthropic (`anthropic`) | `claude-3-5-sonnet-20241022`, `claude-3-haiku-20240307` 
+
+|===

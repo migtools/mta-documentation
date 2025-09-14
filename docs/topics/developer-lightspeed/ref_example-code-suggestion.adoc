@@ -1,0 +1,77 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: REFERENCE
+
+[id="example-code-generation_{context}"]
+= Generating code fix suggestions example
+
+[role="_abstract"]
+This example will walk you through generating code fixes for a Java application that must be migrated to `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `gpt-4` model from `OpenAI` as the large language model (LLM).
+
+.Procedure
+
+. Open the `my-Java` project in Visual Studio (VS) Code.
+
+. Download the {mta-dl-full} extension from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[VS Code marketplace].
+
+. Open Command Palette:
+
+.. Type `Ctrl+Shift+P` in Windows and Linux systems.
+.. Type `Cmd+Shift+P` in Mac systems.
+
+. Type `Preferences: Open Settings (UI)` in the Command Palette to open the VS Code settings and select `Extension > {ProductShortName}`.
+
+. Select `MTA:Agent Mode` and restart VS Code.
+
+. In the {mta-dl-plugin} extension, click `Open {ProductShortName} Analysis View`.
+
+. Type `MTA: Manage Analysis Profile` in the Command Palette to open the analysis profile page.
+
+. Configure the following fields:
+
+.. *Profile Name*: Type a profile name
+
+.. *Target Technologies*: `quarkus`
+
+.. *Use Default Rules*: Toggle the button to use default rules for `quarkus`
+
+. Close the profile manager.
+
+. Type `MTA: Open the Gen AI model provider configuration file` in the Command Palette.
+
+. Configure the following in the `provider-settings` file and close it:
++
+[source, yaml]
+----
+models:
+  OpenAI: &active
+    environment:
+      OPENAI_API_KEY: "_<your-API-key>_" # Required
+    provider: ChatOpenAI
+    args:
+      model: gpt-4 # Required
+----
+
+. Type `{ProductShortName}: Open {ProductShortName} Analysis View` in the Command Palette.
+
+. Click *Start* to start the {mta-dl-plugin} server.
++
+Starting the server activates the *Run Analysis* feature and the Agent mode.
+
+. Select the profile you configured and toggle the *Agent Mode* on. 
+
+. Click *Run Analysis* to scan the Java application.
++
+{ProductShortName} identifies the issues in the code.
+
+. Click the solutions icon in an issue to request suggestions to resolve the issue.
++
+{mta-dl-plugin} streams the issue description, code change that resolves the issue, and the file in which the changes are to be made.
++
+You can review the code changes in a diff editor and accept or reject the changes. If you accept the changes, {mta-dl-plugin} creates a new file with the accepted code changes.
++
+. Click *Continue* to allow {mta-dl-plugin} to run a follow-up analysis. 
++
+This round of analysis detects lint issues, compilation issues, or diagnostic issues that may have occurred when you accepted the suggested code change.
++
+Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated rounds of scan if you allow until all issues are resolved. 
