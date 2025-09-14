@@ -45,7 +45,7 @@ ifdef::mta[]
 :op-system-base-full: Red Hat Enterprise Linux (RHEL)
 :op-system-base: RHEL
 endif::[]
-
+// to be removed
 ifdef::mtr[]
 :ProductName: Migration Toolkit for Runtimes
 :DocInfoProductName: Migration Toolkit for Runtimes
