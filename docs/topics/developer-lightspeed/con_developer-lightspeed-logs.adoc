@@ -8,11 +8,11 @@
 
 [role="_abstract"]
 {mta-dl-full} generates logs to debug issues specific to the extension host and the {ProductShortName} analysis and RPC server. You can also configure the log level for the {mta-dl-plugin} in the extension settings. The default log level is *debug*.
-// Konveyor in the output panel??.
 
 Extension logs are stored as `extension.log` with automatic rotation. The maximum size of the log file is 10 MB and three files are retained. Analyzer RPC logs are stored as `analyzer.log` without rotation.
 
 [id="dev-lightspeed-access-logs_{context}"]
+
 == Access the logs
 
 You can access the extension logs in the following ways:
@@ -28,6 +28,7 @@ To access the analyzer log file, go to `.vscode/mta-logs` directory in your proj
 You can also inspect webview content by using the webview logs. To access the webview logs, type `Open Webview Developer Tools` in the VS Code Command Palette.
 
 [id="dev-lightspeed-archive-logs_{context}"]
+
 == Archive logs
 
 The archival feature helps you to save the following information:
