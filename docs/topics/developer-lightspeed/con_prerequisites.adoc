@@ -13,23 +13,23 @@ Before you install {mta-dl-plugin}, you must:
 
 * Install Java v17 and later
 
-* Install Maven v3.9+
+* Install Maven v3.9.9 or later
 
 * Install Git and add it to the $PATH variable
 
-* Installed the {ProductShortName} command line 8.0.0
+* Install the {ProductShortName} command line 8.0.0
 
-* Installed the {ProductShortName} Operator 8.0.0
+* Install the {ProductShortName} Operator 8.0.0
 +
 
-The Operator is mandatory if you plan to enable solution server to work with the LLM for generating code changes. It enables you to log in to the `openshift-mta` project where you must deploy the Tackle custom resources (CR) required for running the Solution Server.
+The {ProductShortName} Operator is mandatory if you plan to enable the solution server to work with the large language model (LLM) for generating code changes. It enables you to log in to the `openshift-mta` project where you must deploy the Tackle custom resources (CR) required for running the Solution Server.
 
-* Create an API key for a large language model (LLM).
+* Create an API key for an LLM.
 +
 
 You must enter the provider value and model name in Tackle custom resource (CR) to enable generative AI configuration in the {ProductShortName} VS Code plugin. 
 +
-.Supported large langage models and providers
+.Supported large language models and providers
 |===
 | LLM Provider (Tackle CR value) | Large language model in Tackle CR 
 

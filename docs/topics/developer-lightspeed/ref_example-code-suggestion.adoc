@@ -6,7 +6,7 @@
 = Generating code fix suggestions example
 
 [role="_abstract"]
-This example will walk you through generating code fixes for a Java application that must be migrated to `quarkus`. To generate resolutions for issues in the code, we use agentic AI mode and `gpt-4` model from `OpenAI` as the large language model (LLM).
+This example will walk you through generating code fixes for a Java application that must be migrated to `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `gpt-4` model from `OpenAI` as the large language model (LLM).
 
 .Procedure
 
