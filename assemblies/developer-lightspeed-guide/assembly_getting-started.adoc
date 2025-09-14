@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-getting-started: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="getting-started"]
+endif::[]
+ifdef::context[]
+[id="getting-started_{context}"]
+endif::[]
+= Getting started with {mta-dl-plugin}
+
+:context: getting-started
+
+[role="_abstract"]
+The Getting started section contains information to walk you through the prerequisites, persistent volume requirements, installation, and workflows that help you to decide how you want to use {mta-dl-full}.
+
+
+
+ifdef::parent-context-of-getting-started[:context: {parent-context-of-getting-started}]
+ifndef::parent-context-of-getting-started[:!context:]
+
