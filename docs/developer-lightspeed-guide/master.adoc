@@ -2,7 +2,7 @@
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="mta-developer-lightspeed"]
-= MTA Developer Lightspeed
+= Configuring and Using Developer Lightspeed for MTA
 
 :toc:
 :toclevels: 4
@@ -28,3 +28,4 @@ include::topics/developer-lightspeed/con_developer-lightspeed-pathways.adoc[leve
 include::topics/developer-lightspeed/ref_example-code-suggestion.adoc[leveloffset=+2]
 
 :!mta-developer-lightspeed:
+
