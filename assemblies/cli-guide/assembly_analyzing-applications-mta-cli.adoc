@@ -29,6 +29,11 @@ Starting from {ProductShortName} version 7.2.0, you can run the application anal
 However, if you want to analyze applications in languages other than Java or, for example, use xref:performing-transformation_cli-guide[transformation commands], you still need to use containers.
 ====
 
+[NOTE]
+====
+The analysis output in the disconnected environment usually results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
+====
+
 {ProductShortName} CLI supports running source code and binary analysis by using `analyzer-lsp`. `analyzer-lsp` is a tool that evaluates rules by using language providers.
 
 include::topics/mta-cli/proc_analyzing-single-app-with-mta-cli.adoc[leveloffset=+1]

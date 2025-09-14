@@ -1,11 +1,9 @@
-<title>IntelliJ IDEA Plugin Guide</title>
+<title>Developer Lightspeed Guide</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Identify and resolve migration issues by analyzing your applications with the {ProductName} plugin for IntelliJ IDEA.</subtitle>
+<subtitle>Using the {ProductName} Developer Lightspeed to modernize your applications</subtitle>
 <abstract>
-	<para>
-		Use {ProductFullName} Developer Lightspeed for application modernization in your organization by running Artificial Intelligence-driven code updates after a static code analysis for Java applications.
-	</para>
+    <para>you can use {ProductFullName} Developer Lightspeed for application modernization in your organization by running Artificial Intelligence-driven static code analysis for Java applications.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>
