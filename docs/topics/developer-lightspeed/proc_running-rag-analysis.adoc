@@ -41,4 +41,4 @@ OR
 +
 . Click *Run Analysis* on the  *Konveyor Analysis View* page.
 
-To resolve the identified issues, see xref:proc_apply-rag-resolution_run-dev-lightspeed-analysis[Applying resolutions] after generating suggestions to change code.
+To resolve the identified issues, see Applying resolutions after generating suggestions to change code.
