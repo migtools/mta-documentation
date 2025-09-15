@@ -6,24 +6,24 @@
 [id="intro-to-the-developer-lightspeed_{context}"]
 = Introduction to the {mta-dl-plugin}
 
-Starting from 8.0.0, {ProductFullName} integrates with large language models (LLM) through the {mta-dl-full} component in the Visual Studio (VS) Code extension. You can use {mta-dl-plugin} to make LLM-driven code changes to resolve issues found through static code analysis of Java applications.    
+Starting from 8.0.0, {ProductFullName} integrates with large language models (LLM) through the {mta-dl-full} component in the Visual Studio (VS) Code extension. You can use {mta-dl-plugin} to apply LLM-driven code changes to resolve issues found through static code analysis of Java applications.    
 
 [id="use-case-ai-code-fix_{context}"]
 == Use case for AI-driven code fixes
 
-{ProductFullName} performs the static code analysis for a specified target technology to which you want to migrate your applications. Red Hat provides 2400+ analysis rules in {ProductShortName} for various Java technologies and you can extend the ruleset for custom frameworks or new technologies by creating custom rules. 
+{ProductShortName} performs the static code analysis for a specified target technology to which you want to migrate your applications. Red Hat provides 2400+ analysis rules in {ProductShortName} for various Java technologies and you can extend the ruleset for custom frameworks or new technologies by creating custom rules. 
 
-The static code analysis describes the issues in your code that must be resolved. As you perform analysis for a large portfolio of applications, the issue description and the rule definition that may contain additional information form a large corpus of data that contains repetitive patterns of problem definitions and  solutions. 
+The static code analysis identifies issues in your code that must be resolved. When working with a large portfolio of applications, the issue descriptions and rule definitions generate a large corpus of repetitive problem statements and solutions. As a result, migrators often duplicate work by resolving the same issues across multiple applications and migration waves.
 
 Migrators do duplicate work by resolving issues that are repeated across applications in different migration waves.
 
 [id="how-developerlightspped-works_{context}"]
 == How does {mta-dl-plugin} work
 
-{mta-dl-plugin} works by collecting and storing the changes in the code for a large collection of applications, finding context to generate prompts for the large language model (LLM) of your choice, and by generating migrating hints produced by the LLM to resolve specific issues. 
+{mta-dl-plugin} works by collecting and storing code changes across many applications, generating context to create prompts for the LLM of your choice, and producing migration hints from the LLM to resolve specific issues.
 
 The LLM generates migration hints based on the context shared by the {mt-dl-plugin}.
-The context allows the LLM to "reason" and generate the hints. This mechanism helps to overcome the limited context size in LLMs that prevents them from analyzing the entire source code of an application. 
+The context allows the LLM to "reason" and generate the hints. This implementation helps to overcome the limited context size that prevents LLMs from analyzing the source code of an entire application and knowledge gap which often lack organization-specific details because they are not trained on that data. 
 
 The context is a combination of the following inputs that are shared with the LLM:
 
@@ -31,9 +31,9 @@ The context is a combination of the following inputs that are shared with the LL
 
 * (Optional) Extra information that you include in the rules. The default and custom rules may contain additional information that helps {mta-dl-plugin} to define the context. 
 +
-* A solved example is created when a Migrator accepts a resolution in a previous analysis that results in updated code or an unfamiliar issue in a legacy application that the Migrator manually fixed. Solved examples are stored in the Solution Server. 
+* When you enable the Solution Server, a solved example is created when a Migrator accepts a resolution in a previous analysis that results in updated code or an unfamiliar issue in a legacy application that the Migrator manually fixed. Solved examples are stored in the Solution Server. 
 +
-More instances of solved examples for an issue enhances the context and improves the success metrics of rules that trigger the issue. A higher success metrics of an issue refers to the higher confidence level associated with the accepted resolutions for that issue in previous analyses.
+More instances of solved examples for an issue enhance the context and improves the success metrics of rules that trigger the issue. A higher success metrics of an issue refers to the higher confidence level associated with the accepted resolutions for that issue in previous analyses.
 
 * (Optional) If you enable the solution server mode, the Solution Server extracts a pattern of solution that can be used by the LLM to generate a more accurate migration hint. 
 +
@@ -41,7 +41,7 @@ The improvement in the quality of migration hints results in more accurate code 
 +
 This cyclical improvement of resolution pattern from the solution server and improved migration hints lead to more reliable code changes as you migrate applications in different migration waves
 
-The Solution Server acts as an institutional memory that stores changes to source codes after analyzing applications in your organization. This helps you to leverage the recurring patterns of solutions for issues that are repeated in many applications. 
+The Solution Server acts as institutional memory capturing code changes from previous migrations. This helps you to leverage the recurring patterns of solutions for issues that are repeated in many applications. 
 
 Thus, when you deploy {mta-dl-plugin} for analyzing your entire application portfolio, it enables you to be consistent with the common fixes you need to make in the source code of any Java application. 
 
