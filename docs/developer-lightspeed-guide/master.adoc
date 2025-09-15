@@ -40,5 +40,9 @@ include::topics/developer-lightspeed/ref_llm-provider-configurations.adoc[levelo
 
 include::topics/developer-lightspeed/proc_configuring-llm-podman-desktop.adoc[leveloffset=+2]
 
+include::topics/developer-lightspeed/assembly_configuring-dev-lightspeed-ide.adoc[leveloffset=+1]
+
+
+
 
 :!mta-developer-lightspeed:
