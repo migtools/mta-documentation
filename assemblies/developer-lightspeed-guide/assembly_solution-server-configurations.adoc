@@ -1,0 +1,47 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+
+ifdef::context[:parent-context-of-solution-server-configurations: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="solution-server-configurations"]
+endif::[]
+ifdef::context[]
+[id="solution-server-configurations_{context}"]
+endif::[]
+= Solution Server Configurations
+:context: solution-server-configurations
+
+[role=_abstract]
+Solution server is a component that allows {mta-dl-plugin} to build a collective memory of code changes from all analysis performed in an organization. Wen you request code fix for issues in the Visual Studio (VS) Code, the Solution Server augments previous patterns of how codes changed to resolve issues (also called solved examples) that were similar to those in the current file, and suggests a resolution that has a higher confidence level derived from previous solutions. After you accept a suggested code fix, the solution server works with the large language model (LLM) to improve the hints about the issue that becomes part of the context. An improved context enables the LLM to generate more reliable code fix suggestions in future cases.
+
+The Solution Server delivers two primary benefits to users:
+
+* *Contextual Hints*: It surfaces examples of past migration solutions — including successful user modifications and accepted fixes — offering actionable hints for difficult or previously unsolved migration problems.
+* *Migration Success Metrics*: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully migrating a given code segment.
+
+As {mta-dl-plugin} is an optional set of features in {ProductShortName}, you must complete the following configurations before you can access settings necessary to use AI analysis.
+
+.Supported large language models and providers
+|===
+| LLM Provider (Tackle CR value) | Large language model in Tackle CR 
+
+| Open AI (`openai`) | `gpt-4`, `gpt-4o`, `gpt-4o-mini`, `gpt-3.5-turbo` 
+| Azure OpenAI (`azure_openai`) | `gpt-4`, `gpt-35-turbo` 
+| Amazon Bedrock (`bedrock`) | `anthropic.claude-3-5-sonnet-20241022-v2:0`, `meta.llama3-1-70b-instruct-v1:0` 
+| Google Gemini (`google`) | `gemini-2.0-flash-exp`, `gemini-1.5-pro` 
+| Ollama (`ollama`) | `llama3.1`, `codellama`, `mistral` 
+| Groq (`groq`) | `llama-3.1-70b-versatile`, `mixtral-8x7b-32768` 
+| Anthropic (`anthropic`) | `claude-3-5-sonnet-20241022`, `claude-3-haiku-20240307` 
+
+|===
+
+include::topics/developer-lightspeed/proc_tackle-llm-secret.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-solution-server-configurations[:context: {parent-context-of-solution-server-configurations}]
+ifndef::parent-context-of-solution-server-configurations[:!context:]
+
