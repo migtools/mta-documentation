@@ -1,0 +1,34 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: CONCEPT
+
+[id="llm-service-openshift-ai_{context}"]
+= Deploying an LLM as a service in {ocp-short} AI
+
+[role="_abstract"]
+The code suggestions from {mta-dl-full} differ based on the large language model (LLM) that you use. Therefore, you may want to use an LLM that caters to your specific requirements.
+
+{mta-dl-plugin} integrates with LLMs that are deployed as a scalable service on {ocp-full} clusters. These deployments provide you with a granular control over resources such as compute, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) while enabling you to leverage LLMs to perform analysis at a large scale.
+
+An example workflow for configuring an LLM service on {ocp-short} AI broadly requires the following configurations:
+
+* Installing and configuring the following infrastructure resources:
+** {ocp-short} cluster and installing the {ocp-short} AI Operator
+** Configure a GPU machineset
+** (Optional) Configure an auto scaler custom resource (CR) and a machine scaler CR 
+* Configuring {ocp-short} AI platform
+** Configure a data science project
+** Configure a serving runtime
+** Configure an accelerator profile
+* Deploying the LLM through {ocp-short} AI
+** Uploading your model to an AWS compatible bucket
+** Add a data connection
+** Deploy the LLM in your {ocp} AI data science project
+** Export the SSL certificate, `OPENAI_API_BASE` URL and other environment variables to access the LLM
+* Preparing the LLM for analysis
+** Configure an OpenAI API key
+** Update the OpenAI API key and the base URL in `provider-settings.yaml`.
+
+//provide the link to the document after publishing
+See Provider settings configuration to configure the base URL and LLM key in the {mta-dl-plugin} VS Code extension.
