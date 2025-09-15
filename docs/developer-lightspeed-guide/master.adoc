@@ -26,6 +26,10 @@ include::topics/developer-lightspeed/con_developer-lightspeed-pathways.adoc[leve
 
 include::topics/developer-lightspeed/ref_example-code-suggestion.adoc[leveloffset=+2]
 
-include::assemblies/developer-lightspeed-guide/assembly_solution-server-configurations.adoc[leveloffset=+1]
+include::topics/developer-lightspeed/assembly_solution-server-configurations.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_tackle-llm-secret.adoc[leveloffset=+2]
+
+include::topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed.adoc[leveloffset=+2]
 
 :!mta-developer-lightspeed:
