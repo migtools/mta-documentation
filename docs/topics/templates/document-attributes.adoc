@@ -13,7 +13,7 @@
 ifdef::mta[]
 :ProductName: Migration Toolkit for Applications
 :DocInfoProductName: Migration Toolkit for Applications
-:DocInfoProductNumber: 7.3
+:DocInfoProductNumber: 8.0
 :ProductShortName: MTA
 :ProductShortNameLower: mta
 :ProductFullName: Migration Toolkit for Applications (MTA)
@@ -26,13 +26,13 @@ ifdef::mta[]
 :WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 7.3.1
+:ProductVersion: 8.0.0
 :PluginName: MTA plugin
 :mta-dl-full: Red Hat Developer Lightspeed for migration toolkit for applications
 :mta-dl-plugin: Developer Lightspeed for MTA
 // :MavenProductVersion: 7.0.0.GA-redhat-00001
-:ProductDistributionVersion: 7.3.1.GA-redhat
-:ProductDistribution: mta-7.3.1.GA-cli-offline.zip
+:ProductDistributionVersion: 8.0.0.GA-redhat
+:ProductDistribution: mta-8.0.0.GA-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/MTA/issues

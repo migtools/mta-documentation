@@ -6,7 +6,7 @@
 [id="intro-to-the-developer-lightspeed_{context}"]
 = Introduction to the {mta-dl-plugin}
 
-Starting from 8.0.0, you can use {mta-dl-full} to modernize applications in your organization by running Artificial Intelligence-driven code changes to resolve issues found through static code analysis of Java applications. 
+Starting from 8.0.0, {ProductFullName} integrates with large language models (LLM) through the {mta-dl-full} component in the Visual Studio (VS) Code extension. You can use {mta-dl-plugin} to make LLM-driven code changes to resolve issues found through static code analysis of Java applications.    
 
 [id="use-case-ai-code-fix_{context}"]
 == Use case for AI-driven code fixes
