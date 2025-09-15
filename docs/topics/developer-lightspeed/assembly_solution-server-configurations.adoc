@@ -26,21 +26,21 @@ As {mta-dl-plugin} is an optional set of features in {ProductShortName}, you mus
 
 .Supported large language models and providers
 |===
-| LLM Provider (Tackle CR value) | Large language model in Tackle CR 
+| LLM Provider (Tackle CR value) | Large language model in Tackle CR
 
-| Open AI (`openai`) | `gpt-4`, `gpt-4o`, `gpt-4o-mini`, `gpt-3.5-turbo` 
-| Azure OpenAI (`azure_openai`) | `gpt-4`, `gpt-35-turbo` 
-| Amazon Bedrock (`bedrock`) | `anthropic.claude-3-5-sonnet-20241022-v2:0`, `meta.llama3-1-70b-instruct-v1:0` 
-| Google Gemini (`google`) | `gemini-2.0-flash-exp`, `gemini-1.5-pro` 
-| Ollama (`ollama`) | `llama3.1`, `codellama`, `mistral` 
-| Groq (`groq`) | `llama-3.1-70b-versatile`, `mixtral-8x7b-32768` 
-| Anthropic (`anthropic`) | `claude-3-5-sonnet-20241022`, `claude-3-haiku-20240307` 
+| Open AI (`openai`) | `gpt-4`, `gpt-4o`, `gpt-4o-mini`, `gpt-3.5-turbo`
+| Azure OpenAI (`azure_openai`) | `gpt-4`, `gpt-35-turbo`
+| Amazon Bedrock (`bedrock`) | `anthropic.claude-3-5-sonnet-20241022-v2:0`, `meta.llama3-1-70b-instruct-v1:0`
+| Google Gemini (`google`) | `gemini-2.0-flash-exp`, `gemini-1.5-pro`
+| Ollama (`ollama`) | `llama3.1`, `codellama`, `mistral`
+| Groq (`groq`) | `llama-3.1-70b-versatile`, `mixtral-8x7b-32768`
+| Anthropic (`anthropic`) | `claude-3-5-sonnet-20241022`, `claude-3-haiku-20240307`
 
 |===
 
-include::topics/developer-lightspeed/proc_tackle-llm-secret.adoc[leveloffset=+1]
+// include::topics/developer-lightspeed/proc_tackle-llm-secret.adoc[leveloffset=+1]
 
-include::topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed.adoc[leveloffset=+1]
+// include::topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-solution-server-configurations[:context: {parent-context-of-solution-server-configurations}]
 ifndef::parent-context-of-solution-server-configurations[:!context:]
