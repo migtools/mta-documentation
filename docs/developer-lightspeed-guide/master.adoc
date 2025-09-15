@@ -26,4 +26,6 @@ include::topics/developer-lightspeed/con_developer-lightspeed-logs.adoc[leveloff
 
 include::assemblies/developer-lightspeed-guide/assembly_configuring_llm.adoc[leveloffset=+1]
 
+include::assemblies/developer-lightspeed-guide/assembly_configuring_llm.adoc[leveloffset=+1]
+
 :!mta-developer-lightspeed:
