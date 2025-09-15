@@ -96,7 +96,7 @@ endif::[]
 :ocp-short: OpenShift Container Platform
 :ocp-first: {ocp-full} (RHOCP)
 :rh-ocp-local: Red Hat OpenShift Local
-
+:ocp-name: OpenShift
 // ********************
 // * Product versions *
 // ********************
