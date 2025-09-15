@@ -40,6 +40,8 @@ include::topics/developer-lightspeed/proc_configuring-llm-podman-desktop.adoc[le
 
 include::topics/developer-lightspeed/assembly_configuring-dev-lightspeed-ide.adoc[leveloffset=+1]
 
+include::topics/developer-lightspeed/assembly_run-dev-lightspeed-analysis.adoc[leveloffset=+1]
+
 
 
 
