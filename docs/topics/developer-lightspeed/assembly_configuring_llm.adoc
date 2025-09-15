@@ -32,11 +32,11 @@ You can run an LLM from the following generative AI providers:
 
 You can also run OpenAI API-compatible LLMs deployed as a service in your OpenShift AI cluster or deployed locally in the Podman AI Lab in your system.
 
-// include::topics/developer-lightspeed/con_llm-service-openshift-ai.adoc[leveloffset=+1]
+include::con_llm-service-openshift-ai.adoc[leveloffset=+1]
 
-// include::topics/developer-lightspeed/ref_llm-provider-configurations.adoc[leveloffset=+1]
+include::ref_llm-provider-configurations.adoc[leveloffset=+1]
 
-// include::topics/developer-lightspeed/proc_configuring-llm-podman-desktop.adoc[leveloffset=+1]
+include::proc_configuring-llm-podman-desktop.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-configuring-llm[:context: {parent-context-of-configuring-llm}]
 ifndef::parent-context-of-configuring-llm[:!context:]
