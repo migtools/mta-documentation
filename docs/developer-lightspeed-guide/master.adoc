@@ -12,7 +12,6 @@ include::topics/templates/document-attributes.adoc[]
 :mta-developer-lightspeed:
 
 //Inclusive language statement
-include::topics/making-open-source-more-inclusive.adoc[]
 
 
 
