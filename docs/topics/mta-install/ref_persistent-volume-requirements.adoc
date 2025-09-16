@@ -1,0 +1,21 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-10
+
+:_mod-docs-content-type: REFERENCE
+
+[id="persistent-volume-requirements_{context}"]
+= Persistent volume requirements
+
+[role="_abstract"]
+To successfully deploy, the {ProductShortName} Operator requires two ReadWriteOnce (RWO) persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires additional two ReadWriteMany (RWX) PVs that are used by Maven and the hub file storage. 
+
+.Required persistent volumes
+[options="header"]
+|====
+|Name|Default size|Access mode|Description
+|`hub database`|10GB |RWO|A hub database that includes information about applications, stakeholders, business services, and other {ProductShortName}-related information. 
+|`hub bucket`|100GB|RWX|A hub file storage that is required if the `rwx_supported` configuration option is set to `true`. 
+|`keycloak postgresql`|1GB|RWO|The Keycloak back end database.
+|`cache`|100GB|RWX|Maven m2 cache that is required if the `rwx_supported` configuration option is set to `true`.
+|====
+
