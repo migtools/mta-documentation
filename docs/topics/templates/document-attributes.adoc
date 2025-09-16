@@ -30,7 +30,6 @@ ifdef::mta[]
 :PluginName: MTA plugin
 :mta-dl-full: Red Hat Developer Lightspeed for migration toolkit for applications
 :mta-dl-plugin: Developer Lightspeed for MTA
-
 :ProductDistributionVersion: 8.0.0.GA-redhat
 :ProductDistribution: mta-8.0.0.GA-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
@@ -47,7 +46,7 @@ ifdef::mta[]
 :op-system-base-full: Red Hat Enterprise Linux (RHEL)
 :op-system-base: RHEL
 endif::[]
-
+// to be removed
 ifdef::mtr[]
 :ProductName: Migration Toolkit for Runtimes
 :DocInfoProductName: Migration Toolkit for Runtimes
