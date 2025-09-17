@@ -15,6 +15,7 @@ endif::[]
 
 :context: run-dev-lightspeed-analysis
 
+[role="_abstract"]
 After you complete the configurations, the next step is running an analysis to identify the issues in the code and generate suggestions to resolve the issues. You can get suggestions to fix code by using {mta-dl-full}.
 
 When you run an analysis, {ProductShortName} displays the issues in the *Analysis Results* view.
