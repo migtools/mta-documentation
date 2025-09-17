@@ -1,0 +1,59 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="tackle-enable-dev-lightspeed_{context}"]
+= Enabling {mta-dl-plugin} in Tackle custom resource
+
+[role="_abstract"]
+Solution Server integrates with the {ProductShortName} Hub backend component to use the database and volumes necessary to store and retrieve the solved examples. 
+
+To enable Solution Server and other AI configurations in the {mta-dl-full} VS Code extension, you must modify the Tackle custom resource (CR) with additional parameters.
+
+.Prerequisites
+
+//the hard link must be changed to the same topic in 8.0.0 that has the `{mta-dl-plugin}-database` req.
+. You deployed an additional RWO volume for  the `{mta-dl-plugin}-database` if you want to use {mta-dl-plugin}. See link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/user_interface_guide/mta-7-installing-web-console-on-openshift_user-interface-guide#openshift-persistent-volume-requirements_user-interface-guide[Persistent volume requirements] for more information.
+
+. You installed the {ProductShortName} operator v8.0.0.
+
+
+.Procedure
+
+. Log in to the {ocp-short} cluster and switch to the `openshift-mta` project. 
++
+
+. Edit the Tackle custom resource (CR) settings in the `tackle_hub.yml` to enable {mta-dl-plugin} and then enter applicable values for `kai_llm_provider` and `kai_llm_model` variables. 
++
+[source, yaml]
+----
+---
+kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  kai_solution_server_enabled: true
+  kai_llm_provider: <provider-name>
+  # optional, pick a suitable model for your provider
+  kai_llm_model: <model-name>
+...
+----
++
+
+. Apply the Tackle CR by in the `openshift-mta` project using the following command.
++
+[source, terminal]
+----
+ $ kubectl apply -f tackle_hub.yaml
+----
+
+.Verification
+
+. Enter the following command to verify the {mta-dl-plugin} resources.
++
+[source, terminal]
+----
+kubectl get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'
+----
