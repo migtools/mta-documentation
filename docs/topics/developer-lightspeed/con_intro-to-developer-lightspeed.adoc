@@ -75,13 +75,3 @@ When you use the Solution Server mode, {mta-dl-plugin} delivers a solution for a
 * *Contextual code generation* - By leveraging AI for static code analysis, {mta-dl-plugin} breaks down complex problems into more manageable ones, providing the LLM with focused context to generate meaningful results. This helps overcome the limited context size of LLMs when dealing with large codebases.
 * *No fine tuning* - You also do not need to fine tune your model with a suitable data set for analysis which leaves you free to use and switch LLM models to respond to your requirements.
 * *Learning and Improvement* - As more parts of a codebase are migrated with {mta-dl-plugin}, it can use RAG to learn from the available data and provide better recommendations in subsequent application analysis.
-
-include::con_prerequisites.adoc[leveloffset=+1]
-
-include::con_persistent-volumes.adoc[leveloffset=+1]
-
-include::con_installation.adoc[leveloffset=+1]
-
-include::con_developer-lightspeed-pathways.adoc[leveloffset=+1]
-
-include::ref_example-code-suggestion.adoc[leveloffset=+1]
