@@ -50,9 +50,9 @@ In this situation, the following solutions are suggested:
 
 . Ensure the application can be fully compiled.
 ====
-
+ 
 [role="_additional-resources"]
 .Additional resources
-* xref:assessment-questionnaires_managing-mta-questionnaires[{ProductShortName} assessment questionnaires]
-* xref:managing-mta-questionnaires_managing-mta-questionnaires[Managing assessment questionnaires]
+* xref:assessment-questionnaires_assessing-applications[{ProductShortName} assessment questionnaires]
+* xref:managing-mta-questionnaires_assessing-applications[Managing assessment questionnaires]
 

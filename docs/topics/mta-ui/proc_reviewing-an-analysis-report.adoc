@@ -3,7 +3,7 @@
 // * docs/web-console-guide/master.adoc
 
 :_mod-docs-content-type: PROCEDURE
-[id=reviewing-an-analysis-report_{context}"]
+[id="reviewing-an-analysis-report_{context}"]
 = Reviewing analysis details
 
 You can display the activity log of the analysis. The activity log contains such analysis details as, for example, analysis steps.
