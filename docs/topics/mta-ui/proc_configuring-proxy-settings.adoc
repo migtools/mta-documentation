@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="configuring-proxy-settings_{context}"]
+= Configuring proxy settings
+
+You can configure HTTP and HTTPS proxy settings for the {ProductFullName} instance environment.
+
+.Procedure
+
+. In the *Administration* view, click *Proxy*.
+. Enable the *HTTP proxy* or *HTTPS proxy* switch to enable the proxy connection.
+. Enter the following information:
+* Proxy host
+* Proxy port
+. Optional: Enable the *HTTP proxy credentials* or *HTTPS proxy credentials* switch to enable authentication.
+. Click *Insert*.

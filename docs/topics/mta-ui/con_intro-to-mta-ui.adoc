@@ -1,0 +1,13 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: CONCEPT
+
+[id="intro-to-mta-ui_{context}"]
+= Introduction to the {ProductName} user interface
+
+You can use the {ProductFullName} user interface (UI) to assess and analyze applications for risks and suitability for migration to hybrid cloud environments on Red Hat OpenShift. You can get insights about potential issues in the adoption process, at both the portfolio and application levels as you inventory, assess, analyze, and manage applications for faster migration to OpenShift.
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/installing-mta-title/index[Installing the Migration Toolkit for Applications]
+

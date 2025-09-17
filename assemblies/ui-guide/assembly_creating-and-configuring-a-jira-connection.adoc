@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-creating-and-configuring-a-jira-connection: {context}]
+
+ifndef::context[]
+[id="creating-and-configuring-a-jira-connection"]
+endif::[]
+ifdef::context[]
+[id="creating-and-configuring-a-jira-connection_{context}"]
+endif::[]
+= Creating and configuring a Jira connection
+
+:context: creating-and-configuring-a-jira-connection
+
+You can track application migrations by creating a Jira issue for each migration within the {ProductFullName} user interface (UI).
+
+include::topics/mta-ui/proc_configuring-jira-credentials.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_creating-a-jira-connection.adoc[leveloffset=+1]
+
+
+
+
+ifdef::parent-context-of-creating-and-configuring-a-jira-connection[:context: {parent-context-of-creating-and-configuring-a-jira-connection}]
+ifndef::parent-context-of-creating-and-configuring-a-jira-connection[:!context:]
+

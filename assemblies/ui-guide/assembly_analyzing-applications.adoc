@@ -1,0 +1,32 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-analyzing-applications: {context}]
+
+ifndef::context[]
+[id="analyzing-applications"]
+endif::[]
+ifdef::context[]
+[id="analyzing-applications_{context}"]
+endif::[]
+= Analyzing an application with MTA
+
+:context: analyzing-applications
+
+You can use the {ProductFullName} user interface (UI) to configure and run an application analysis. The analysis determines which specific lines in the application must be modified before the application can be migrated or modernized. 			
+
+include::topics/mta-ui/proc_configuring-and-running-an-application-analysis.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_reviewing-an-analysis-report.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_accessing-unmatched-rules.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_downloading-an-analysis-report.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_accessing-analysis-insights.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-analyzing-applications[:context: {parent-context-of-analyzing-applications}]
+ifndef::parent-context-of-analyzing-applications[:!context:]
+

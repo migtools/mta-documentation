@@ -1,0 +1,15 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="configuring-subversion-repos_{context}"]
+= Configuring subversion repositories
+
+You can configure subversion repositories in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
+
+.Procedure
+
+. In *Administration* view, click *Repositories* and then click *Subversion*.
+// ![](/Tackle2/Views/SubsConfig.png)
+. Enable the *Consume insecure Subversion repositories* switch.

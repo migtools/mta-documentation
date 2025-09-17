@@ -1,0 +1,36 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-configuring-mta-instance: {context}]
+
+ifndef::context[]
+[id="configuring-mta-instance"]
+endif::[]
+ifdef::context[]
+[id="configuring-mta-instance_{context}"]
+endif::[]
+= Configuring a {ProductName} instance
+
+:context: configuring-mta-instance
+
+If you are a project architect, you can configure the instance’s key parameters before migration. You can add and edit these parameters as needed. The following parameters define applications, individuals, teams, verticals, or areas within an organization affected or participating in the migration:
+
+* Stakeholders 					
+* Stakeholder groups 					
+* Job functions 					
+* Business services 					
+* Tag categories 					
+* Tags 	
+
+include::topics/mta-ui/proc_creating-a-stakeholder.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_creating-a-business-service.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_creating-a-tag.adoc[leveloffset=+1]
+
+
+
+ifdef::parent-context-of-configuring-mta-instance[:context: {parent-context-of-configuring-mta-instance}]
+ifndef::parent-context-of-configuring-mta-instance[:!context:]
+
