@@ -6,7 +6,7 @@
 = Generating code fix suggestions example
 
 [role="_abstract"]
-This example will walk you through generating code fixes for a Java application that must be migrated to `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `gpt-4` model from `OpenAI` as the large language model (LLM).
+This example will walk you through generating code fixes for a Java application that must be migrated to the target technology `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
 
 .Procedure
 
@@ -19,11 +19,11 @@ This example will walk you through generating code fixes for a Java application 
 .. Type `Ctrl+Shift+P` in Windows and Linux systems.
 .. Type `Cmd+Shift+P` in Mac systems.
 
-. Type `Preferences: Open Settings (UI)` in the Command Palette to open the VS Code settings and select `Extension > {ProductShortName}`.
+. Type `Preferences: Open Settings (UI)` in the Command Palette to open the VS Code settings and select `Extensions > {ProductShortName}`.
 
-. Select `MTA:Agent Mode` and restart VS Code.
+. Select `Gen AI:Agent Mode`.
 
-. In the {mta-dl-plugin} extension, click `Open {ProductShortName} Analysis View`.
+. In the {mta-dl-plugin} extension, click `Open Analysis View`.
 
 . Type `MTA: Manage Analysis Profile` in the Command Palette to open the analysis profile page.
 
@@ -33,7 +33,7 @@ This example will walk you through generating code fixes for a Java application 
 
 .. *Target Technologies*: `quarkus`
 
-.. *Use Default Rules*: Toggle the button to use default rules for `quarkus`
+.. *Custom Rules*: Select custom rules if you want to include them while running the analysis. By default, {mta-dl-plugin} enables *Use Default Rules* for `quarkus`.
 
 . Close the profile manager.
 
@@ -44,34 +44,40 @@ This example will walk you through generating code fixes for a Java application 
 [source, yaml]
 ----
 models:
-  OpenAI: &active
+  openshift-example-model: &active
     environment:
-      OPENAI_API_KEY: "_<your-API-key>_" # Required
-    provider: ChatOpenAI
+      OPENAI_API_KEY: "<Server's OPENAI_API_KEY>"
+      CA_BUNDLE: "<Servers CA Bundle path>"
+    provider: "ChatOpenAI"
     args:
-      model: gpt-4 # Required
+      model: "my-model"
+      configuration:
+        baseURL: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.example.com/v1"
 ----
-
-. Type `{ProductShortName}: Open {ProductShortName} Analysis View` in the Command Palette.
-
-. Click *Start* to start the {mta-dl-plugin} server.
 +
-Starting the server activates the *Run Analysis* feature and the Agent mode.
+[NOTE]
+====
+You must change the `provider-setting` configuration if you plan to use a different LLM provider.
+====
 
-. Select the profile you configured and toggle the *Agent Mode* on. 
+. Type `{ProductShortName}: Open Analysis View` in the Command Palette.
+
+. Click *Start* to start the {ProductShortName} RPC server.
+
+. Select the profile you configured. 
 
 . Click *Run Analysis* to scan the Java application.
 +
 {ProductShortName} identifies the issues in the code.
 
-. Click the solutions icon in an issue to request suggestions to resolve the issue.
+. Click the solutions icon (image:solutions-icon-new.png[]) in an issue to request suggestions to resolve the issue.
 +
-{mta-dl-plugin} streams the issue description, code change that resolves the issue, and the file in which the changes are to be made.
+{mta-dl-plugin} streams the issue description, a preview of the code changes that resolve the issue, and the file(s) in which the changes are to be made.
 +
-You can review the code changes in a diff editor and accept or reject the changes. If you accept the changes, {mta-dl-plugin} creates a new file with the accepted code changes.
+You can review the code changes in the editor and accept or reject the changes. If you accept the changes, {mta-dl-plugin} creates a new file with the accepted code changes.
 +
 . Click *Continue* to allow {mta-dl-plugin} to run a follow-up analysis. 
 +
 This round of analysis detects lint issues, compilation issues, or diagnostic issues that may have occurred when you accepted the suggested code change.
 +
-Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated rounds of scan if you allow until all issues are resolved. 
+Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated iterations of scan if you allow until all issues are resolved. 

@@ -5,34 +5,30 @@
 [id="configuring-developer-lightspeed-profile-settings_{context}"]
 = Configuring the {mta-dl-plugin} profile settings
 
-Starting with {ProductFullName} 8.0.0, you can use the Visual Studio Code plugin to run an analysis to discover issues in the code. You can optionally enable {mta-dl-full} to get AI-assisted code suggestions.
+[role="_abstract"]
+You can use the Visual Studio (VS) Code plugin to run an analysis to discover issues in the code. You can optionally enable {mta-dl-full} to get AI-assisted code suggestions.
 
 To generate code changes using {mta-dl-plugin}, you must configure a profile that contains all the necessary configurations, such as source and target technologies and the API key to connect to your chosen large language model (LLM). 
 
 .Prerequisites
 
-* You installed the {ProductFullName} extension version 8.0.0 in VS Code. 
-* You completed the solution server configurations in Tackle custom resource if you opt to use solution server.
-* You installed the {ProductShortName} version 8.0.0 in your system. 
-* You installed the latest version of Language Support for Java(TM) by Red Hat extension in VS Code.
-* You installed Jave 17+ and Maven 3.9.9+ in your system. 
-* You installed Git and add it to the $PATH variable. 
+* You completed the solution server configurations in Tackle custom resource if you opt to use the solution server.
 * You opened a Java project in your VS Code workspace.
 
 .Procedure
 
-. Open the `Konveyor View Analysis` page in either of the following ways: 
+. Open the `{ProductShortName} View Analysis` page in either of the following ways: 
 +
-.. Click the screen icon on the `Konveyor Issues` pane of the {ProductShortName} extension. 
-.. Type `Ctrl + Shift + P` on the search bar to open the Command Palette and enter `Konveyor:Open Konveyor Analysis View`.
+.. Click the book icon on the `{ProductShortName}: Issues` pane of the {ProductShortName} extension. 
+.. Type `Ctrl + Shift + P` or `Cmd + Shift + P` on the search bar to open the Command Palette and enter `{ProductShortName}:Open Analysis View`.
 +
-. Click the settings button on the `Konveyor View Analysis` page to configure a profile for your project.
+. Click the settings button on the `{ProductShortName} View Analysis` page to configure a profile for your project.
 The `Get Ready to Analyze` pane lists the follwoing basic configurations required for an analysis: 
 +
 
 .Verification
 
-After you complete the profile configuration, close the `Get Ready to Analyze` pane. You can verify that your configuration works by running an analysis. See run an analysis.
+After you complete the profile configuration, close the `Get Ready to Analyze` pane. You can verify that your configuration works by running an analysis. 
 
 .{mta-dl-plugin}  profile settings
 [cols="20%,80%a",options="header",]
@@ -52,3 +48,5 @@ You must configure either target or source tehcnologies before running an analys
 |Set rules|Enable default rules and select your custom rule that you want {ProductShortName} to use for an analysis. You can use the custom rules in addition to the default rules.
 |Configure generative AI|This option opens the `provider-settings.yaml` file that contains API keys and other parameters for all supported LLMs. By default, {mta-dl-plugin} is configured to use OpenAI LLM. To change the model, update the anchor `&active` to the desired block. Modify this file with the required arguments, such as the model and API key, to complete the setup. 
 |====
+
+See for xref:llm-provider-settings_configuring-llm[Configuring LLM provider settings] to complete the LLM provider configuration.
