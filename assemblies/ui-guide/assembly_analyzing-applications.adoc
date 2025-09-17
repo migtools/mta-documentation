@@ -24,6 +24,8 @@ include::topics/mta-ui/proc_accessing-unmatched-rules.adoc[leveloffset=+1]
 
 include::topics/mta-ui/proc_downloading-an-analysis-report.adoc[leveloffset=+1]
 
+include::topics/mta-ui/proc_accessing-analysis-insights.adoc[leveloffset=+1]
+
 
 ifdef::parent-context-of-analyzing-applications[:context: {parent-context-of-analyzing-applications}]
 ifndef::parent-context-of-analyzing-applications[:!context:]
