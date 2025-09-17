@@ -13,15 +13,17 @@ ifdef::context[]
 endif::[]
 = Using {ProductShortName} with Developer Lightspeed in IDE
 
-
 :context: configuring-dev-lightspeed-ide
 
+[role="_abstract"]
 You must configure the following settings in {mta-dl-full}:
 
 * Visual Studio Code IDE settings.
 * Profile settings that provide context before you request a code fix for a particular application.
 
 include::proc_configuring-developer-lightspeed-ide-settings.adoc[leveloffset=+1]
+
+include::proc_configuring-solution-server-settings-file.adoc[leveloffset=+1]
 
 include::proc_configuring-developer-profile-settings.adoc[leveloffset=+1]
 

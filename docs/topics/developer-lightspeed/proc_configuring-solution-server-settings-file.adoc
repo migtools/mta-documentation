@@ -1,0 +1,55 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-02-26
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-solution-server-settings-file_{context}"]
+= Configuring the solution server settings
+
+[role="_abstract"]
+You need a Keycloak realm and the solution server URL to connect {mta-dl-plugin} extension with the Solution Server.
+
+.Prerequisites
+
+* The Solution Server URL is available.
+
+* An administrator configured the Keycloak realm for the Solution Server.
+
+.Procedure
+
+. Type `Ctrl + Shift + P`  or `Cmd + Shift + P` on the search bar and enter `Preferences:Open User Settings (JSON)`. 
+
+. In the `settings.json` file, enter `Ctrl + SPACE` to enable the auto-complete for the Solution Server configurable fields.
+
+. Modify the following configuration as necessary:
++
+
+[source, yaml]
+----
+{
+    "mta-vscode-extension.solutionServer": {
+
+        "url": "https://mta-openshift-mta-kai.apps.konveyor-ai.example.com/hub/services/kai/api",
+
+        "enabled": true,
+        "auth": {
+            
+           "enabled": true, #you must enter the username and password
+           "insecure": true,
+           "realm": "mta"
+        },
+        
+    }
+}
+----
++
+
+[NOTE]
+====
+When you enable Solution Server authentication for the first time, you must enter the `username` and `password` in the VS Code search bar.
+====
++
+
+[TIP]
+====
+Enter `MTA: Restart Solution Server` in the Command Palette to restart the Solution Server.
+====
