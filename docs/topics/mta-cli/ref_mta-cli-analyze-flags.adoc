@@ -46,7 +46,7 @@ By default, `--disable-maven-search=false`. Therefore, {ProductShortName} uses t
 |`--output` (string)|A path to the directory for analysis output.
 |`--overwrite` (bool)|Overwrite the output directory.
 |`--rules` (stringArray)|A filename or directory that contains rule files.
-|`--run-local`|Enable or disable container runtime usage for Java applications. For example, to enable container runtime, set `--run-local` to `false`. The analysis of non-Java applications runs in container mode by default.
+|`--run-local`|Enable or disable container runtime usage for Java applications. For example, to enable container runtime, set `--run-local` to `false`. Note that the analysis of non-Java applications runs in container mode only.
 |`--skip-static-report` (bool)|Do not generate the static report.
 |`--source` (string) a|A source technology to consider for the analysis.
 To specify multiple sources, repeat the parameter, for example:
