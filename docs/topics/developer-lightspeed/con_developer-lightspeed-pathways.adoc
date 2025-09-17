@@ -4,37 +4,34 @@
 :_mod-docs-content-type: CONCEPT
 
 [id="how-to-use-developer-lightspeed_{context}"]
-= Introducing {mta-dl-plugin}
+= How to use {mta-dl-plugin}
 
 [role="_abstract"]
-Starting with {ProductFullName} 8.0.0, you can run an application analysis using the {ProductShortName} Visual Studio (VS) Code plug-in. An {ProductShortName} analysis detects the issues in the code given a set of targets for migration. 
+You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application. {mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context that is shared with a large language model (LLM). The LLM suggests code resolutions based on the issue description, context, and previous examples of code changes to resolve issues. 
 
-You can opt to use {mta-dl-full} features to request a code fix suggestion. {mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context that is shared with a large language model (LLM). The LLM suggests code resolutions based on the issue description, context, and previous examples of code changes to resolve issues. 
-
-To make code changes by using the LLM, you must enable the generative AI option, along with either the Solution Server mode or the Agent mode. The configurations that you complete before you request code fixes depend on the mode you prefer.
-//Is it ok for users to enable all three settings? Gen AI, Solution Server, and Agent mode.
+To make code changes by using the LLM, you must enable the generative AI option, along with either the Solution Server or the Agent AI. The configurations that you complete before you request code fixes depend on how you prefer to request code resolutions.
 
 [NOTE]
 ====
 If you make any change after enabling the generative AI settings in the extension, you must restart the extension for the change to take effect.
 ====
 
-[id="config-to-use-solution-server_{context}"]
+To use the Solution Server for code fix suggestions:
 
-== Configurations to use the solution server
+* Create a secret for your LLM key in the {ocp} cluster.
 
-* Enable the solution server in the Tackle custom resource (CR). 
+* Enable the Solution Server in the Tackle custom resource (CR).
 
-* Configure the LLM key and the base URL of your model in the Tackle CR.
+* Configure the LLM base URL and model in the Tackle CR.
 
-* Enable the generative AI option and configure the solution server in the {mta-dl-plugin} extension settings.
+* Enable the generative AI option in the {ProductShortName} extension settings.
 
-* Configure the profile settings for code fixes and activate the LLM provider in the `provider-settings.yaml` file. 
+* Add the Solution Server configuration in the `settings.json` file.
 
-[id="config-to-use-agent-mode_{context}"]
+* Configure the profile settings and activate the LLM provider in the `provider-settings.yaml` file. 
 
-== Configurations to use the agent mode
+To use the agent mode for code fix suggestions:
 
-* Enable the generative AI and the agent mode in the {mta-dl-plugin} extension settings.
+* Enable the generative AI and the agent mode in the {ProductShortName} extension settings.
 
-* Configure the profile settings for code fixes and activate the LLM provider in the `provider-settings.yaml` file. 
+* Configure the profile settings and activate the LLM provider in the `provider-settings.yaml` file. 
