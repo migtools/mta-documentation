@@ -1,0 +1,77 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-08-07
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-and-enhancements-8-0_{context}"]
+= New features and enhancements
+
+[role="_abstract"]
+{ProductFullName} version {ProductVersion} provides the following major new features and enhancements. 
+
+//TBD by Prabha - Developer Lightspeed
+
+
+//TBD by Prabha - Solution Server
+
+
+//TBD by Prabha - Platform Awareness
+
+
+//TBD by Prabha - Asset Generation for UI
+
+
+.{ProductShortName} CLI supports running a live discovery in a remote CF instance
+
+With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files. 
+
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
+
+(link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
+
+
+.{ProductShortName} CLI supports concealing sensitive information in a discovery manifest
+
+You can conceal sensitive information, for example, services and Docker credentials, in a Cloud Foundry (CF) discovery manifest by using the `mta-cli discover cloud-foundry --conceal-sensitive-data` command. This command generates the following files:
+
+* A discovery manifest
+* A file with concealed data
+
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#concealing-sensitive-information_generating-assets[Concealing sensitive information in a discovery manifest].
+
+(link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
+
+.{ProductShortName} supports accessing analysis insights from the dynamic report
+
+Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, insights were only available in the analysis output and a static report after you ran an application analysis. With this enhancement, you can access analysis insights also from a dynamic report.
+
+//Add when the section is ready - For more information, see link:<link_to_the_section[section name].
+
+(link:https://issues.redhat.com/browse/MTA-5420[MTA-5420])
+
+
+.A new VS Code IDE plug-in for application analysis
+
+With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-in that has the following features:
+* Standard application analysis and issue detection
+* Generative AI (GenAI) feature:
+** When enabled, you can use GenAI to find solutions for the analysis incidents. Note that GenAI is enabled by default.
+** When disabled, you can run a standard application analysis.
++
+NOTE: You must restart your server after changing the Gen AI settings for the change to take effect.
+
+//Add when the section is ready - For more information, see link:<link_to_the_section[section name].
+
+(link:https://issues.redhat.com/browse/MTA-5360[MTA-5360])
+
+
+.Setting default credentials is supported in the {ProductShotName} UI
+
+Before this update, you could only assign credentials to an application manually once you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications, each of these applications requiring credentials for language and technology discovery tasks. With this update, instead of manually defining credentials, you can define credentials that will be used by default for an application that does not have any credentials assigned to it.
+
+IMPORTANT:You can only set Maven or source control credentials as default credentials. You can only define one default set of credentials per credential type.
+
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/user_interface_guide/index#setting-default-credentials_managing-applications-mta-ui[Setting default credentials].
+
+(link:https://issues.redhat.com/browse/MTA-5254[MTA-5254])
+
+
