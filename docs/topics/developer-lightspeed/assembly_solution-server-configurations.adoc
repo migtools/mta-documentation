@@ -15,7 +15,7 @@ endif::[]
 :context: solution-server-configurations
 
 [role=_abstract]
-Solution server is a component that allows {mta-dl-plugin} to build a collective memory of code changes from all analysis performed in an organization. Wen you request code fix for issues in the Visual Studio (VS) Code, the Solution Server augments previous patterns of how codes changed to resolve issues (also called solved examples) that were similar to those in the current file, and suggests a resolution that has a higher confidence level derived from previous solutions. After you accept a suggested code fix, the solution server works with the large language model (LLM) to improve the hints about the issue that becomes part of the context. An improved context enables the LLM to generate more reliable code fix suggestions in future cases.
+Solution server is a component that allows {mta-dl-plugin} to build a collective memory of code changes from all analysis performed in an organization. When you request code fix for issues in the Visual Studio (VS) Code, the Solution Server augments previous patterns of how codes changed to resolve issues (also called solved examples) that were similar to those in the current file, and suggests a resolution that has a higher confidence level derived from previous solutions. After you accept a suggested code fix, the solution server works with the large language model (LLM) to improve the hints about the issue that becomes part of the context. An improved context enables the LLM to generate more reliable code fix suggestions in future cases.
 
 The Solution Server delivers two primary benefits to users:
 
@@ -24,17 +24,16 @@ The Solution Server delivers two primary benefits to users:
 
 As {mta-dl-plugin} is an optional set of features in {ProductShortName}, you must complete the following configurations before you can access settings necessary to use AI analysis.
 
-.Supported large language models and providers
+.Configurable large language models and providers
 |===
-| LLM Provider (Tackle CR value) | Large language model in Tackle CR
+| LLM Provider (Tackle CR value) | Large language model examples for Tackle CR configuration
 
+|{ocp-name} AI platform| Models deployed in an OpenShift AI cluster that can be accessed by using Open AI-compatible API
 | Open AI (`openai`) | `gpt-4`, `gpt-4o`, `gpt-4o-mini`, `gpt-3.5-turbo`
 | Azure OpenAI (`azure_openai`) | `gpt-4`, `gpt-35-turbo`
 | Amazon Bedrock (`bedrock`) | `anthropic.claude-3-5-sonnet-20241022-v2:0`, `meta.llama3-1-70b-instruct-v1:0`
 | Google Gemini (`google`) | `gemini-2.0-flash-exp`, `gemini-1.5-pro`
 | Ollama (`ollama`) | `llama3.1`, `codellama`, `mistral`
-| Groq (`groq`) | `llama-3.1-70b-versatile`, `mixtral-8x7b-32768`
-| Anthropic (`anthropic`) | `claude-3-5-sonnet-20241022`, `claude-3-haiku-20240307`
 
 |===
 
