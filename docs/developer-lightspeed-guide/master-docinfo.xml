@@ -3,7 +3,7 @@
 <productnumber>{DocInfoProductNumber}</productnumber>
 <subtitle>Using the {ProductName} Developer Lightspeed to modernize your applications</subtitle>
 <abstract>
-    <para>you can use {ProductFullName} Developer Lightspeed for application modernization in your organization by running Artificial Intelligence-driven static code analysis for Java applications.</para>
+    <para>By using Developer Lightspeed for Migration Toolkit for Applications (MTA), you can modernize applications in your organization by applying LLM-driven code changes to resolve issues found through static code analysis. You can automate code fixes, review and apply the suggested code changes with minimum manual effort.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>

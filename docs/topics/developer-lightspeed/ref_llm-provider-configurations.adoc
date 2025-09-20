@@ -4,10 +4,10 @@
 :_mod-docs-content-type: REFERENCE
 
 [id="llm-provider-settings_{context}"]
-= Provider settings configuration
+= Configuring LLM provider settings 
 
 [role="_abstract"]
-{mta-dl-full} is large language model (LLM) agnostic and intergrates with an LLM of your choice. 
+{mta-dl-full} is large language model (LLM) agnostic and integrates with an LLM of your choice. 
 
 To enable {mta-dl-full} to access your large language model (LLM), you must enter the LLM provider configurations in the `provider-settings.yaml` file. 
 
@@ -15,9 +15,39 @@ The `provider-settings.yaml` file contains a list of LLM providers that are supp
 
 The provider settings file is available in the {mta-dl-plugin} Visual Studio (VS) Code extension.
 
-Access the `provider-settings.yaml` from the VS Code Command Pallete by typing `Open the GenAI model provider configuration file`. 
+Access the `provider-settings.yaml` from the VS Code Command Palette by typing `Open the GenAI model provider configuration file`. 
 
-You can select one provider from the list by using the `&active` anchor in the name of the provider. To use a model from another provider, move the `&active` anchor to the desired provider block and restart the solution server on the `Open {ProductShortName} Analysis View` screen.
+[NOTE]
+====
+You can select one provider from the list by using the `&active` anchor in the name of the provider. To use a model from another provider, move the `&active` anchor to _**one**_ of the desired provider blocks and restart the solution server on the `Open {ProductShortName} Analysis View` screen.
+====
+
+For a model named "my-model" deployed in {ocp-name} AI with "example-model" as the serving name:
+
+//check if openshift prefix is required for OpenShift AI model provider, like "openshift-example-model" or can it be just "example-model"
+[source, yaml]
+----
+models:
+  openshift-example-model: &active
+    environment:
+      CA_BUNDLE: "<Servers CA Bundle path>"
+      ALLOW_INSECURE: "true"
+    provider: "ChatOpenAI"
+    args:
+      model: "my-model"
+      configuration:
+        base_url: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.migration.redhat.com/v1"
+----
+
+[NOTE]
+====
+When you change the `model` deployed in {ocp-name} AI, you must also change the `model` argument and the `base_url` endpoint.
+====
+
+[NOTE]
+====
+If you want to select a public LLM provider, you must move the `&active` anchor to the desired block and change the provider arguments.
+====
 
 For an OpenAI model:
 
@@ -35,7 +65,7 @@ For Azure OpenAI:
 
 [source, yaml]
 ----
-AzureChatOpenAI:
+AzureChatOpenAI: &active
     environment:
       AZURE_OPENAI_API_KEY: "" # Required
     provider: AzureChatOpenAI
@@ -48,7 +78,7 @@ For Amazon Bedrock:
 
 [source, yaml]
 ----
-AmazonBedrock:
+AmazonBedrock: &active
     environment:
       ## May have to use if no global `~/.aws/credentials`
       AWS_DEFAULT_REGION: us-east-1
@@ -70,7 +100,7 @@ For Google Gemini:
 
 [source, yaml]
 ----
-GoogleGenAI:
+GoogleGenAI: &active
     environment:
       GOOGLE_API_KEY: "" # Required
     provider: ChatGoogleGenerativeAI
@@ -83,31 +113,9 @@ For Ollama:
 [source, yaml]
 ----
 models:
-  ChatOllama: 
+  ChatOllama: &active
     provider: "ChatOllama"
     args:
       model: "granite-code:8b-instruct"
       baseUrl: "127.0.0.1:11434" # example URL
 ----
-
-For a model named "my-model" deployed in {ocp-short} AI with "example-model" as the serving name:
-
-//check if openshift prefix is required for OpenShift AI model provider, like "openshift-example-model" or can it be just "example-model"
-[source, yaml]
-----
-models:
-  openshift-example-model: 
-    environment:
-      CA_BUNDLE: "<Servers CA Bundle path>"
-      ALLOW_INSECURE: "true"
-    provider: "ChatOpenAI"
-    args:
-      model: "my-model"
-      configuration:
-        base_url: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.migration.redhat.com/v1"
-----
-
-[NOTE]
-====
-When you change the `model` deployed in {ocp-short} AI, you must also change the `base_url` endpoint.
-====

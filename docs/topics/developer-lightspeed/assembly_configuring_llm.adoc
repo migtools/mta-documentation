@@ -14,9 +14,9 @@ endif::[]
 = Configuring large language models for analysis
 :context: configuring-llm
 
-To generate suggestions to resolves issues in the code, {mta-dl-plugin} provides the large language model (LLM) with the contextual prompt, migration hints, and solved examples to generate suggestions to resolve issues identified in the current code by running an analysis.
+{mta-dl-plugin} provides the large language model (LLM) with the contextual prompt, migration hints, and solved examples to generate suggestions for resolving issues identified in the current code.
 
-{mta-dl-plugin} is designed to be model agnostic. It works with LLMs that are run in different environments (in local containers, as local AI, as a shared service) to support analyzing Java applications in a wide range of scenarios. You can choose an LLM from well-known providers, local models that you run from Ollama or Podman desktop, and OpenAI API compatible models.
+{mta-dl-plugin} is designed to be model agnostic. It works with LLMs that are run in different environments (in local containers, as local AI, or as a shared service) to support analyzing Java applications in a wide range of scenarios. You can choose an LLM from well-known providers, local models that you run from Ollama or Podman desktop, and OpenAI API compatible models.
 
 The code fix suggestions produced to resolve issues detected through an analysis depends on the LLM's capabilities.
 
@@ -27,10 +27,11 @@ You can run an LLM from the following generative AI providers:
 * Google Gemini
 * Amazon Bedrock
 * Ollama
-* Groq
-* Anthropic
 
-You can also run OpenAI API-compatible LLMs deployed as a service in your OpenShift AI cluster or deployed locally in the Podman AI Lab in your system.
+You can also run OpenAI API-compatible LLMs deployed as:
+
+* A service in your {ocp-name} AI cluster 
+* Locally in the Podman AI Lab in your system.
 
 include::con_llm-service-openshift-ai.adoc[leveloffset=+1]
 
