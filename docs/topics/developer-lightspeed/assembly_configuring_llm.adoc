@@ -29,6 +29,7 @@ You can run an LLM from the following generative AI providers:
 * Ollama
 
 You can also run OpenAI API-compatible LLMs deployed as:
+
 * A service in your {ocp-name} AI cluster 
 * Locally in the Podman AI Lab in your system.
 
