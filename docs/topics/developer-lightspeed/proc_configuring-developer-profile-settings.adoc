@@ -11,12 +11,7 @@ To generate code changes using {mta-dl-plugin}, you must configure a profile tha
 
 .Prerequisites
 
-* You installed the {ProductFullName} extension version 8.0.0 in VS Code. 
-* You completed the solution server configurations in Tackle custom resource if you opt to use solution server.
-* You installed the {ProductShortName} version 8.0.0 in your system. 
-* You installed the latest version of Language Support for Java(TM) by Red Hat extension in VS Code.
-* You installed Jave 17+ and Maven 3.9.9+ in your system. 
-* You installed Git and add it to the $PATH variable. 
+* You completed the solution server configurations in Tackle custom resource if you opt to use the solution server.
 * You opened a Java project in your VS Code workspace.
 
 .Procedure
