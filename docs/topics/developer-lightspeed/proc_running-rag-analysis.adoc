@@ -3,7 +3,7 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="running-rag-analysis_{context}"]
-= Running an analysis in solution server mode
+= Generating code resolutions from solution server 
 
 [role="_abstract"]
 Solution server uses Retrieval Augmented Generation (RAG) to extract a pattern of resolution that improves the context. {mta-dl-plugin} derives the context from rules, past changes to in the codebase ro resolve issues, and from migration hits created by the solution server by working with the large language model (LLM).  
@@ -12,13 +12,8 @@ Solution server uses Retrieval Augmented Generation (RAG) to extract a pattern o
 
 .Prerequisites
 
-* You installed the {ProductShortName} distribution version 8.0.0 in your system.
-* You installed Jave 17+ and Maven 3.9.9+ in your system. 
-* You installed the {ProductFullName} extension version 8.0.0 in VS Code. 
-* You installed the latest version of Language Support for Java(TM) by Red Hat extension in Visual Studio (VS) Code.
 * You opened a Java project in your VS Code workspace.
-//check what's the alternative for Konveyor references in the d/s build.
-* You configured an analysis profile on the *Konveyor Analysis View* page.
+* You configured an analysis profile on the *{ProductShortName} Analysis View* page.
 
 .Procedure
 
@@ -26,19 +21,19 @@ Solution server uses Retrieval Augmented Generation (RAG) to extract a pattern o
 +
 .. Type `Ctrl + Shift + P` in VS Code search (Linux/Windows system) and `Cmd + Shift + P` for Mac to go to the command palette. 
 .. Enter `Preferences: Open User Settings (JSON)` to open the `settings.json` file.
-.. Ensure that `konveyor.solutionServer.enabled` is set to `true`.
+.. Ensure that `mta-vscode-extension.solutionServer.enabled` is set to `true`.
 +
 OR
 +
 .. Go to *Extensions > {mta-dl-plugin} > settings*
 .. Click the *Solution Server:Enabled* option to enable the server. 
 +
-. Click the {mta-dl-plugin} extension and click *Open Konveyor Analysis View*.
+. Click the {mta-dl-plugin} extension and click *Open {ProductShortName} Analysis View*.
 +
 . Select a profile for the analysis.
 +
 . Click *Start* to start the {ProductShortName} RPC server.
 +
-. Click *Run Analysis* on the  *Konveyor Analysis View* page.
+. Click *Run Analysis* on the  *{ProductShortName} Analysis View* page.
 
 To resolve the identified issues, see Applying resolutions after generating suggestions to change code.
