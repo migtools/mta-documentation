@@ -22,7 +22,7 @@ Creation of an archetype is defined by a series of *tags*, *stakeholders*, and *
 
 * *Criteria tags* are tags that the archetype requires to include an application as a member.
 +
-NOTE: If the archetype criteria tags match an application only partially, this application cannot be a member of the archetype. For example, if the application _a_ only has tag _a_, but the archetype _a_ criteria tags include tags _a_ AND _b_, the application _a_ will not be a member of the archetype _a_.
+NOTE: An application must have all of the archetype's criteria tags to be a member. For example, if the application _a_ only has tag _a_, but the archetype _a_ criteria tags include tags _a_ AND _b_, the application _a_ will not be a member of the archetype _a_.
 
 * *Archetype tags* are tags that are applied to the archetype entity.
 

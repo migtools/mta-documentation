@@ -13,7 +13,7 @@ A migration wave is a group applications that you can migrate on a given schedul
 . In the *Migration* view, click *Migration waves*.
 . Click *Create new*. The *New migration wave* window opens.
 . Enter the following information:
-* *Name* (optional). If the name is not given, you can use the start and end dates to identify migration waves.
+* *Name* (optional). If you do not provide a name, the migration wave can be identified by its start and end dates.
 * *Potential start date*. This date must be later than the current date.
 * *Potential end date*. This date must be later than the start date.
 * *Stakeholders* (optional)
