@@ -20,7 +20,6 @@ You can configure the following repository types for the {ProductFullName} insta
 * Subversion 					
 * Maven 	
 
-
 include::topics/mta-ui/proc_configuring-git-repos.adoc[leveloffset=+1]
 
 include::topics/mta-ui/proc_configuring-subversion-repos.adoc[leveloffset=+1]
