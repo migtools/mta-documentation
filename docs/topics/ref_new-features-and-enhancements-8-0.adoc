@@ -52,10 +52,12 @@ Analysis insights contain information about the technologies used in the applica
 .A new VS Code IDE plug-in for application analysis
 
 With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-in that has the following features:
+
 * Standard application analysis and issue detection
 * Generative AI (GenAI) feature:
 ** When enabled, you can use GenAI to find solutions for the analysis incidents. Note that GenAI is enabled by default.
 ** When disabled, you can run a standard application analysis.
+
 +
 NOTE: You must restart your server after changing the Gen AI settings for the change to take effect.
 
