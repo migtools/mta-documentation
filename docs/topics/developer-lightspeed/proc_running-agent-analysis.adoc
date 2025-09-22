@@ -23,7 +23,7 @@ When using the agent mode, you can reject the changes or discontinue the stream 
 +
 .. Type `Ctrl + Shift + P` in VS Code search (Linux/Windows system) and `Cmd + Shift + P` for Mac to go to the command palette. 
 .. Enter `Preferences: Open User Settings (JSON)` to open the `settings.json` file.
-.. Ensure that `mta-vscode-extensionkonveyor.genai.agentMode` is set to `true`.
+.. Ensure that `mta-vscode-extension.genai.agentMode` is set to `true`.
 +
 OR
 +
