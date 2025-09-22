@@ -10,8 +10,8 @@ include::topics/templates/document-attributes.adoc[]
 :_mod-doc-content-type: ASSEMBLY
 = Release Notes
 
-//Inclusive language statement
-include::topics/making-open-source-more-inclusive.adoc[]
+// Bring back when 8.1 is out [id="mta-8-0-0"]
+//== {ProductShortName} 8.0.0
 
 //[id="release-notes-introduction"]
 //== Introduction
