@@ -8,7 +8,7 @@
 
 To track  your application migrations, you can define a Jira instance in {ProductShortName} and establish a connection to that instance.
 
-IMPORTANT: You cannot remove a Jira connection that you used for creating issues for a migration wave as long as the issues exist in Jira, even after the migration wave is deleted.
+IMPORTANT: You cannot remove a Jira connection that you used for creating issues for a migration wave if the issues exist in Jira, even after the migration wave is deleted.
 
 .Prerequisites
 

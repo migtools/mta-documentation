@@ -15,7 +15,7 @@ IMPORTANT: If you analyze an application that requires Maven credentials to acce
 ====
 When your system is in a disconnected environment, but you have access to a Maven proxy, the application analysis runs without failure. However, if you do not have access to the Maven proxy, Maven cannot build the application because it cannot access the required dependencies.	
 
-Note also that the analysis output in the disconnected environment usually results in less incidents because a dependency analysis does not run accurately without access to Maven.
+Note also that the analysis output in the disconnected environment usually results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
 ====
 
 
