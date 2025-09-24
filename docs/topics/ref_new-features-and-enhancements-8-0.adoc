@@ -12,7 +12,7 @@
 
 You can opt to use Developer Lightspeed for {ProductShortName} features in the VS Code extension. With the Developer Lightspeed feature, you to use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application. 
 
-The core features of Developer Lightspeed for MTA are:
+The Developer Lightspeed for {ProductShortName} core features are the following:
 
 * RAG solution: The Developer Lightspeed for MTA uses Retrieval Augmented Generation for context-based resolutions of issues in code. Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code. 
 +
