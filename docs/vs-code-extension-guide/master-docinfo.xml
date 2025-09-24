@@ -1,9 +1,9 @@
 <title>Visual Studio Code Extension Guide</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Identify and resolve migration issues by analyzing your applications with the {ProductName} extension for Visual Studio Code.</subtitle>
+<subtitle>Using the {ProductName} extension for Visual Studio Code to identify and resolve migration issues</subtitle>
 <abstract>
-    <para>This guide describes how to use the {ProductName} extension for Visual Studio Code to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift..</para>
+    <para>You can use the {ProductName} extension for Visual Studio Code to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. You can analyze your applications and identify and resolve issues to prepare these applications for a successful migration.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>
