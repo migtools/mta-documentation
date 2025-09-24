@@ -32,9 +32,9 @@ The Solution Server delivers two primary benefits to users:
 
 
 
-.MTA supports platform awareness to import applications from source platform instances
+.{ProductShortName} supports platform awareness to import applications from source platform instances
 
-Starting with MTA 8.0.0, you can use platform awareness to discover applications from a source platform and import them into the MTA application inventory. MTA discovers the applications by their coordinates in the source platform where they are deployed. Platform awareness enables you to use the platform and runtime configurations of applications to create a discovery manifest that can be used to generate other deployment assets. In MTA 8.0.0, you can discover applications deployed in the Cloud Foundry platform.
+You can use platform awareness to discover applications from a source platform and import them into the {ProductShortName} application inventory. {ProductShortName} discovers the applications by their coordinates in the source platform where they are deployed. With platform awareness, you can use the platform and runtime configurations of applications to create a discovery manifest that can be used to generate other deployment assets. In {ProductShortName} 8.0.0, you can discover applications deployed in the Cloud Foundry platform.
 
 (link:https://issues.redhat.com/browse/MTA-4846[MTA-4846])
 
