@@ -14,19 +14,19 @@ You can opt to use Developer Lightspeed for {ProductShortName} features in the V
 
 The Developer Lightspeed for {ProductShortName} core features are the following:
 
-* RAG solution: The Developer Lightspeed for MTA uses Retrieval Augmented Generation for context-based resolutions of issues in code. Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code. 
+* RAG solution: The Developer Lightspeed for {ProductShortName} uses Retrieval Augmented Generation (RAG) for context-based resolutions of issues in code. Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code. 
 +
-The context is a combination of the source code, the issue description, and solved examples. Solved examples contain code changes accepted by users for other migrations, code modified by the user manually, and a pattern of resolution for an issue that can be used in future. 
+The context is a combination of the source code, the issue description, and solved examples. Solved examples contain code changes you accepted for other migrations, code you manually modified, and a pattern of resolution for an issue that you can use in future. 
 
-* Solution Server: Solution server is a component that allows Developer Lightspeed for MTA to build a collective memory of code changes from all analysis performed in an organization. It also works with the LLM to improve the pattern of resolutions from solved examples for future analysis.
+* Solution Server: Solution server is a component that allows Developer Lightspeed for {ProductShortName} to build a collective memory of code changes from all analysis performed in an organization. It also works with the LLM to improve the pattern of resolutions from solved examples for future analysis.
 +
 The Solution Server delivers two primary benefits to users:
 
-** Contextual Hints: It surfaces examples of past migration solutions — including successful user modifications and accepted fixes — offering actionable hints for difficult or previously unsolved migration problems.
+** Contextual Hints: It surfaces examples of past migration solutions, including successful user modifications and accepted fixes, offering actionable hints for difficult or previously unsolved migration problems.
 
-** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of Developer Lightspeed for MTA successfully resolving a given migration issue or incident.
+** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of Developer Lightspeed for {ProductShortName} successfully resolving a given migration issue or incident.
 
-* Agentic AI: In the agent mode, Developer Lightspeed for MTA makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
+* Agentic AI: In the agent mode, Developer Lightspeed for {ProductShortName} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
 
 (link:https://issues.redhat.com/browse/MTA-5378[MTA-5738])
 
