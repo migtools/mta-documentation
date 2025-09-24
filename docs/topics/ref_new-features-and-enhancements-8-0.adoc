@@ -28,19 +28,22 @@ The Solution Server delivers two primary benefits to users:
 
 * Agentic AI: In the agent mode, Developer Lightspeed for MTA makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
 
-link:https://issues.redhat.com/browse/MTA-5378([MTA-5738])
+(link:https://issues.redhat.com/browse/MTA-5378[MTA-5738])
 
 
 
 .MTA supports platform awareness to import applications from source platform instances
 
 Starting with MTA 8.0.0, you can use platform awareness to discover applications from a source platform and import them into the MTA application inventory. MTA discovers the applications by their coordinates in the source platform where they are deployed. Platform awareness enables you to use the platform and runtime configurations of applications to create a discovery manifest that can be used to generate other deployment assets. In MTA 8.0.0, you can discover applications deployed in the Cloud Foundry platform.
-link:https://issues.redhat.com/browse/MTA-4846([MTA-4846])
+
+(link:https://issues.redhat.com/browse/MTA-4846[MTA-4846])
 
 
 .MTA supports asset generation for application migration in the web console
 
-Starting with MTA 8.0.0, you can use the discovery manifest to generate assets in the web console to deploy applications in OpenShift Container Platform or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. link:https://issues.redhat.com/browse/MTA-4847([MTA-4847])
+Starting with MTA 8.0.0, you can use the discovery manifest to generate assets in the web console to deploy applications in OpenShift Container Platform or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. 
+
+(link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
 
 .{ProductShortName} CLI supports running a live discovery in a remote CF instance
