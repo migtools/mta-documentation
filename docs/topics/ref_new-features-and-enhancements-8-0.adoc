@@ -8,39 +8,37 @@
 [role="_abstract"]
 {ProductFullName} version {ProductVersion} provides the following major new features and enhancements. 
 
-**Developer LightspeedDeveloper Lightspeed for MTA is now available in the VS Code extension**
+.Developer Lightspeed for {ProductShortName} is available in the VS Code extension
 
-Starting with MTA 8.0.0, you can opt to use Developer Lightspeed for MTA features in the VS Code extension. The Developer Lightspeed feature enables you to use a large language model of your choice to request code changes for resolving the issues found through a static code analysis of your Java application. 
+Starting with MTA 8.0.0, you can opt to use Developer Lightspeed for {ProductShortName} features in the VS Code extension. The Developer Lightspeed feature enables you to use a large language model of your choice to request code changes for resolving the issues found through a static code analysis of your Java application. 
 
 The core features of Developer Lightspeed for MTA are:
 
-- RAG solution: The Developer Lightspeed for MTA uses Retrieval Augmented Generation for context-based resolutions of issues in code. Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code. 
-
+* RAG solution: The Developer Lightspeed for MTA uses Retrieval Augmented Generation for context-based resolutions of issues in code. Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code. 
++
 The context is a combination of the source code, the issue description, and solved examples. Solved examples contain code changes accepted by users for other migrations, code modified by the user manually, and a pattern of resolution for an issue that can be used in future. 
 
-- Solution Server: Solution server is a component that allows Developer Lightspeed for MTA to build a collective memory of code changes from all analysis performed in an organization. It also works with the LLM to improve the pattern of resolutions from solved examples for future analysis.
-
+* Solution Server: Solution server is a component that allows Developer Lightspeed for MTA to build a collective memory of code changes from all analysis performed in an organization. It also works with the LLM to improve the pattern of resolutions from solved examples for future analysis.
++
 The Solution Server delivers two primary benefits to users:
 
-      - Contextual Hints: It surfaces examples of past migration solutions — including successful user modifications and accepted fixes — offering actionable hints for difficult or previously unsolved migration problems.
+** Contextual Hints: It surfaces examples of past migration solutions — including successful user modifications and accepted fixes — offering actionable hints for difficult or previously unsolved migration problems.
 
-     - Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of Developer Lightspeed for MTA successfully resolving a given migration issue or incident.
+** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of Developer Lightspeed for MTA successfully resolving a given migration issue or incident.
 
-- Agentic AI: In the agent mode, Developer Lightspeed for MTA makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
+* Agentic AI: In the agent mode, Developer Lightspeed for MTA makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
 
 link:https://issues.redhat.com/browse/MTA-5378([MTA-5738])
 
 
-//TBD by Prabha - Solution Server
 
-
-**MTA now supports platform awareness to import applications from source platform instances**
+.MTA supports platform awareness to import applications from source platform instances
 
 Starting with MTA 8.0.0, you can use platform awareness to discover applications from a source platform and import them into the MTA application inventory. MTA discovers the applications by their coordinates in the source platform where they are deployed. Platform awareness enables you to use the platform and runtime configurations of applications to create a discovery manifest that can be used to generate other deployment assets. In MTA 8.0.0, you can discover applications deployed in the Cloud Foundry platform.
 link:https://issues.redhat.com/browse/MTA-4846([MTA-4846])
 
 
-**MTA now supports asset generation for application migration in the web console**
+.MTA supports asset generation for application migration in the web console
 
 Starting with MTA 8.0.0, you can use the discovery manifest to generate assets in the web console to deploy applications in OpenShift Container Platform or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. link:https://issues.redhat.com/browse/MTA-4847([MTA-4847])
 
@@ -95,7 +93,7 @@ NOTE: You must restart your server after changing the Gen AI settings for the ch
 
 Before this update, you could only assign credentials to an application manually once you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications, each of these applications requiring credentials for language and technology discovery tasks. With this update, instead of manually defining credentials, you can define credentials that will be used by default for an application that does not have any credentials assigned to it.
 
-IMPORTANT:You can only set Maven or source control credentials as default credentials. You can only define one default set of credentials per credential type.
+IMPORTANT: You can only set Maven or source control credentials as default credentials. You can only define one default set of credentials per credential type.
 
 For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/user_interface_guide/index#setting-default-credentials_managing-applications-mta-ui[Setting default credentials].
 
