@@ -30,8 +30,7 @@ In addition to the overall prerequisites, you have configured the following:
 |====
 |Settings |Description
 |Log level|Set the log level for the {ProductShortName} binary. The default log level is `debug`. The log level increases or decreases the verbosity of logs. 
-|Analyzer path|Displays the path to the solution server binary. If you do not modify the path, {mta-dl-plugin} uses the bundled binary.
-|Analyzer path|Specify a MTA custom binary path. If you do not provide a path, Developer Lightspeed for MTA uses the default path to the binary.
+|Analyzer path|Specify an {ProductShortName} custom binary path. If you do not provide a path, Developer Lightspeed for MTA uses the default path to the binary.
 |Auto Accept on Save|This option is enabled by default. When you accept the changes suggested by the LLM, the updated code is saved automatically in a new file. Disable this option if you want to manually save the new file after accepting the suggested code changes.
 |Gen AI:Enabled|This option is enabled by default. It enables you to get code fixes by using {mta-dl-plugin} with a large language model.
 |Gen AI: Agent mode|Enable the experimental Agentic AI flow for analysis. {mta-dl-plugin} runs an automated analysis of a file to identify issues and suggest resolutions. After you accept the solutions, {mta-dl-plugin} makes the changes in the code and re-analyzes the file. 
