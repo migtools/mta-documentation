@@ -10,7 +10,7 @@
 
 .Developer Lightspeed for {ProductShortName} is available in the VS Code extension
 
-Starting with MTA 8.0.0, you can opt to use Developer Lightspeed for {ProductShortName} features in the VS Code extension. The Developer Lightspeed feature enables you to use a large language model of your choice to request code changes for resolving the issues found through a static code analysis of your Java application. 
+You can opt to use Developer Lightspeed for {ProductShortName} features in the VS Code extension. With the Developer Lightspeed feature, you to use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application. 
 
 The core features of Developer Lightspeed for MTA are:
 
