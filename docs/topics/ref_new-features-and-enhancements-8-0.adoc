@@ -39,9 +39,9 @@ You can use platform awareness to discover applications from a source platform a
 (link:https://issues.redhat.com/browse/MTA-4846[MTA-4846])
 
 
-.MTA supports asset generation for application migration in the web console
+.{ProductShortName} supports asset generation for application migration in the web console
 
-Starting with MTA 8.0.0, you can use the discovery manifest to generate assets in the web console to deploy applications in OpenShift Container Platform or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. 
+You can use the discovery manifest to generate assets in the web console to deploy applications in OpenShift Container Platform or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. 
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
