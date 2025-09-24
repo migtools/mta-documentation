@@ -11,8 +11,7 @@ Starting with {ProductFullName} 8.0.0, you can run an application analysis using
 
 You can opt to use {mta-dl-full} features to request a code fix suggestion. {mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context that is shared with a large language model (LLM). The LLM suggests code resolutions based on the issue description, context, and previous examples of code changes to resolve issues. 
 
-To make code changes by using the LLM, you must enable the generative AI option, along with either the Solution Server mode or the Agent mode. The configurations that you complete before you request code fixes depend on the mode you prefer.
-//Is it ok for users to enable all three settings? Gen AI, Solution Server, and Agent mode.
+To make code changes by using the LLM, you must enable the generative AI option, along with either the Solution Server or the Agent AI. The configurations that you complete before you request code fixes depend on the mode you prefer.
 
 [NOTE]
 ====

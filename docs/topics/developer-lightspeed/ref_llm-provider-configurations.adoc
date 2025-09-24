@@ -19,7 +19,7 @@ Access the `provider-settings.yaml` from the VS Code Command Palette by typing `
 
 [NOTE]
 ====
-You can select one provider from the list by using the `&active` anchor in the name of the provider. To use a model from another provider, move the `&active` anchor to _**one**_ of the desired provider blocks and restart the solution server on the `Open {ProductShortName} Analysis View` screen.
+You can select one provider from the list by using the `&active` anchor in the name of the provider. To use a model from another provider, move the `&active` anchor to _**one**_ of the desired provider blocks.
 ====
 
 For a model named "my-model" deployed in {ocp-name} AI with "example-model" as the serving name:

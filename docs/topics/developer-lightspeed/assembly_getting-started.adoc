@@ -16,7 +16,7 @@ endif::[]
 :context: getting-started
 
 [role="_abstract"]
-The Getting started section contains information to walk you through the prerequisites, persistent volume requirements, installation, and workflows that help you to decide how you want to use {mta-dl-full}.
+The Getting started section contains information to walk you through the prerequisites, persistent volume requirements, installation, and workflows that help you to decide how you want to use the {mta-dl-full}.
 
 include::con_prerequisites.adoc[leveloffset=+1]
 

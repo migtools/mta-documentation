@@ -21,7 +21,7 @@ This example will walk you through generating code fixes for a Java application 
 
 . Type `Preferences: Open Settings (UI)` in the Command Palette to open the VS Code settings and select `Extensions > {ProductShortName}`.
 
-. Select `Gen AI:Agent Mode` and restart VS Code.
+. Select `Gen AI:Agent Mode`.
 
 . In the {mta-dl-plugin} extension, click `Open Analysis View`.
 
