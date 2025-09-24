@@ -24,9 +24,11 @@ To work around this problem, clean up metadata and cache:
 
 (link:https://issues.redhat.com/browse/MTA-6125[MTA-6125])
 
-.{ProductShortName} analysis result does not change based on the addition or removal of a custom rule 
+.{ProductShortName} analysis result does not change if you add or remove a custom rule 
 
-When you use Developer Lightspeed for {ProductShortName}, the analysis results do not change based on the inclusion or removal of a custom rule. If you remove a custom rule after the first analysis, subsequent analysis results detect the incident for the custom rule. Conversely, if you add the custom rule after the first analysis, subsequent analysis does not detect the incident based on the custom rule. link:https://issues.redhat.com/browse/MTA-6128[MTA-6128]
+When you use Developer Lightspeed for {ProductShortName}, the analysis results do not change if you include or remove a custom rule but do not restart the analyzer process. 
+Workaround: you must restart the analyzer process by clicking the Start/Stop button after making a configuration change.
+link:[https://issues.redhat.com/browse/MTA-6128([MTA-6128])](https://issues.redhat.com/browse/MTA-6128[MTA-6128)
 //https://issues.redhat.com/browse/MTA-6126
 
 //TBD by Prabha - Custom rules KI
