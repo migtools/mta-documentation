@@ -1,0 +1,16 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-08-01
+:_mod-docs-content-type: PROCEDURE
+
+[id="reviewing-a-task-log_{context}"]
+= Reviewing a task log
+
+To find details and logs of a particular {ProductFullName} task, you can use the *Task Manager* page. 
+
+.Procedure
+
+. In the *Migration* view, click *Task Manager*.
+. Click the *Options* menu ({kebab}) for the selected task.
+. Click *Task details*.
++
+Alternatively, click on the task status in the *Status* column.

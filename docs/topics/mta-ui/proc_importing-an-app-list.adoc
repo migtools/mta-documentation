@@ -1,0 +1,35 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="importing-an-app-list_{context}"]
+= Importing a list of applications
+
+You can import a `.csv` file that contains a list of applications and their attributes to the {ProductFullName} user-interface (UI).
+
+NOTE: Importing a list of applications does not overwrite any of the existing applications.
+
+.Procedure
+
+. Download a CSV template for importing application lists: 	
+.. In the *Migration* view, click *Application inventory*. 			
+.. Click the Options menu ({kebab}) to the right of *Review*. 					
+.. Click *Manage imports* to open the *Application imports* page. 			
+.. Click the Options menu ({kebab}) to the right of *Import*. 					
+.. Click *Download CSV template*. 	
+
+. Add the list of applications to the `.csv` import file. Ensure the file contains all the required information in the required format. 	
+. In the *Migration* view, click *Application Inventory*.
+. Click the Options menu ({kebab}).
+. Click *Import*.
+. Select the desired file and click *Open*.
+. Optional: Select *Enable automatic creation of missing entities*. This option is selected by default.
+
+.Verification
+
+. Verify that the import has completed and check the number of accepted or rejected rows.
+. Review the imported applications by clicking the arrow to the left of the checkbox.
++
+IMPORTANT: Accepted rows might not match the number of applications in the Application inventory list because some rows are dependencies. To verify, check the *Record Type* column of the CSV file for applications defined as `1` and dependencies defined as `2`.
+

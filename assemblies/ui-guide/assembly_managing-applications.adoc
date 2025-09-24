@@ -1,0 +1,55 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-managing-applications: {context}]
+
+ifndef::context[]
+[id="managing-applications"]
+endif::[]
+ifdef::context[]
+[id="managing-applications_{context}"]
+endif::[]
+= Managing applications with {MTA}
+
+:context: managing-applications
+
+You can use the {ProductFullName} user interface (UI) to perform the following tasks to prepare your applications for the assessment and analysis: 	
+
+* Add applications
+* Assign application credentials
+* Import a list of applications
+* Download a CSV template for importing application lists
+* Create application migration waves
+* Create Jira issues for migration waves
+
+{ProductShortName} UI applications have the following attributes:
+
+* Name (free text)
+* Description (optional, free text)
+* Business service (optional, chosen from a list)
+* Tags (optional, chosen from a list)
+* Owner (optional, chosen from a list)
+* Contributors (optional, chosen from a list)
+* Source code (a path entered by the user)
+* Binary (a path entered by the user)
+
+
+include::topics/mta-ui/proc_adding-applications.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_displaying-automated-tasks.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_importing-an-app-list.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_assigning-application-credentials.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_setting-default-credentials.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_creating-migration-waves.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_creating-jira-issues-for-migration-wave.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-managing-applications[:context: {parent-context-of-managing-applications}]
+ifndef::parent-context-of-managing-applications[:!context:]
+
