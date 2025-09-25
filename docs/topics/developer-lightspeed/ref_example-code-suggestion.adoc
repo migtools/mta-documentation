@@ -6,7 +6,7 @@
 = Generating code fix suggestions example
 
 [role="_abstract"]
-This example will walk you through generating code fixes for a Java application that must be migrated to `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `gpt-4` model from `OpenAI` as the large language model (LLM).
+This example will walk you through generating code fixes for a Java application that must be migrated to `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
 
 .Procedure
 
@@ -19,11 +19,11 @@ This example will walk you through generating code fixes for a Java application 
 .. Type `Ctrl+Shift+P` in Windows and Linux systems.
 .. Type `Cmd+Shift+P` in Mac systems.
 
-. Type `Preferences: Open Settings (UI)` in the Command Palette to open the VS Code settings and select `Extension > {ProductShortName}`.
+. Type `Preferences: Open Settings (UI)` in the Command Palette to open the VS Code settings and select `Extensions > {ProductShortName}`.
 
-. Select `MTA:Agent Mode` and restart VS Code.
+. Select `Gen AI:Agent Mode`.
 
-. In the {mta-dl-plugin} extension, click `Open {ProductShortName} Analysis View`.
+. In the {mta-dl-plugin} extension, click `Open Analysis View`.
 
 . Type `MTA: Manage Analysis Profile` in the Command Palette to open the analysis profile page.
 
@@ -33,7 +33,7 @@ This example will walk you through generating code fixes for a Java application 
 
 .. *Target Technologies*: `quarkus`
 
-.. *Use Default Rules*: Toggle the button to use default rules for `quarkus`
+.. *Custom Rules*: Select custom rules if you want to include them while running the analysis. By default, {mta-dl-plugin} enables *Use Default Rules* for `quarkus`.
 
 . Close the profile manager.
 
@@ -44,21 +44,29 @@ This example will walk you through generating code fixes for a Java application 
 [source, yaml]
 ----
 models:
-  OpenAI: &active
+  openshift-example-model: &active
     environment:
-      OPENAI_API_KEY: "_<your-API-key>_" # Required
-    provider: ChatOpenAI
+      OPENAI_API_KEY: "<Server's OPENAI_API_KEY>"
+      CA_BUNDLE: "<Servers CA Bundle path>"
+    provider: "ChatOpenAI"
     args:
-      model: gpt-4 # Required
+      model: "my-model"
+      configuration:
+        baseURL: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.migration.redhat.com/v1"
 ----
++
+[NOTE]
+====
+You must change the `provider-setting` configuration if you plan to use a different LLM provider.
+====
 
-. Type `{ProductShortName}: Open {ProductShortName} Analysis View` in the Command Palette.
+. Type `{ProductShortName}: Open Analysis View` in the Command Palette.
 
 . Click *Start* to start the {mta-dl-plugin} server.
 +
-Starting the server activates the *Run Analysis* feature and the Agent mode.
+Starting the server activates the *Run Analysis* feature.
 
-. Select the profile you configured and toggle the *Agent Mode* on. 
+. Select the profile you configured. 
 
 . Click *Run Analysis* to scan the Java application.
 +

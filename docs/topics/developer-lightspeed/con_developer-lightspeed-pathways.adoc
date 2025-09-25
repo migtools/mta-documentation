@@ -4,24 +4,21 @@
 :_mod-docs-content-type: CONCEPT
 
 [id="how-to-use-developer-lightspeed_{context}"]
-= Introducing {mta-dl-plugin}
+= How to use {mta-dl-plugin}
 
 [role="_abstract"]
 Starting with {ProductFullName} 8.0.0, you can run an application analysis using the {ProductShortName} Visual Studio (VS) Code plug-in. An {ProductShortName} analysis detects the issues in the code given a set of targets for migration. 
 
 You can opt to use {mta-dl-full} features to request a code fix suggestion. {mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context that is shared with a large language model (LLM). The LLM suggests code resolutions based on the issue description, context, and previous examples of code changes to resolve issues. 
 
-To make code changes by using the LLM, you must enable the generative AI option, along with either the Solution Server mode or the Agent mode. The configurations that you complete before you request code fixes depend on the mode you prefer.
-//Is it ok for users to enable all three settings? Gen AI, Solution Server, and Agent mode.
+To make code changes by using the LLM, you must enable the generative AI option, along with either the Solution Server or the Agent AI. The configurations that you complete before you request code fixes depend on the mode you prefer.
 
 [NOTE]
 ====
 If you make any change after enabling the generative AI settings in the extension, you must restart the extension for the change to take effect.
 ====
 
-[id="config-to-use-solution-server_{context}"]
-
-== Configurations to use the solution server
+To use the solution server for code fix suggestions:
 
 * Enable the solution server in the Tackle custom resource (CR). 
 
@@ -31,9 +28,7 @@ If you make any change after enabling the generative AI settings in the extensio
 
 * Configure the profile settings for code fixes and activate the LLM provider in the `provider-settings.yaml` file. 
 
-[id="config-to-use-agent-mode_{context}"]
-
-== Configurations to use the agent mode
+To use the agent mode for code fix suggestions:
 
 * Enable the generative AI and the agent mode in the {mta-dl-plugin} extension settings.
 
