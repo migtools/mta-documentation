@@ -51,8 +51,6 @@ In addition to the overall prerequisites, you have configured the following:
                     ** "insecure": Set to `true` to skip SSL certificate verification when clients connect to the Solution Server. Set to `false` to allow secure connections to the Solution Server.
 
                     ** "realm": Enter the name of the Keycloak realm for Solution Server. If you enabled authentication for the Solution Server, you must configure a link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts[Keycloak realm] to allow clients to connect to the Solution Server. An administrator can configure SSL for the realm.
-
-                    See xref:proc_configuring-solution-server-settings-file.adoc[Configuring the solution server settings] for an example configuration.
 |Debug:Webview|Enable debug level logging for Webview message handling in VS Code. 
 
 |====
