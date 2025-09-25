@@ -31,7 +31,7 @@ Before this update, when you analyzed an application built with Gradle in `Sourc
 
 .The discovery manifest lists all defined web processes in the application
 
-Before this update, the `mta-cli discover` command only moved an application-level process with the process type explicitly defined to the `processes` block in the discovery manifest. Consequently, the discovery manifest did not list implicit application-level processes in the `processes` block. This resulted in the violation of the recommended clarity and proper configuration, especially if multiple process types were planned. With this update, `mta-cli discover` moves both implicit and explicit application-level process types to the `processes` block in the discovery manifest.
+Before this update, the `mta-cli discover` command only moved an application-level process with the process type explicitly defined to the `processes` block in the discovery manifest. Consequently, the discovery manifest did not list implicit application-level processes in the `processes` block. This resulted in the violation of the recommended clarity and proper configuration practices, especially if multiple process types were planned. With this update, `mta-cli discover` moves both implicit and explicit application-level process types to the `processes` block in the discovery manifest.
 
 
 (link:https://issues.redhat.com/browse/MTA-6030[MTA-6030])
