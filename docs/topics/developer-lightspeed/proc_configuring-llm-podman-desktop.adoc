@@ -45,7 +45,7 @@ export OPENAI_API_BASE=<server-url>
 +
 [source, yaml]
 ----
-podman_mistral: 
+podman_mistral: &active
     provider: "ChatOpenAI"
      environment:
       OPENAI_API_KEY: "unused value"

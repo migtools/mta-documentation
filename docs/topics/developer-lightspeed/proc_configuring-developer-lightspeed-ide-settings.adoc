@@ -21,7 +21,7 @@ In addition to the overall prerequisites, you have configured the following:
 +
 .. Click `Extensions > MTA CLI Extension for VSCode > Settings`
 +
-.. Type `Ctrl + Shift + P` on the search bar to open the Command Palette and enter `Preferences: Open Settings (UI)`. Go to `Extensions > MTA` to open the settings page.
+.. Type `Ctrl + Shift + P` or `Cmd + Shift + P` on the search bar to open the Command Palette and enter `Preferences: Open Settings (UI)`. Go to `Extensions > MTA` to open the settings page.
 +
 . Configure the settings described in the following table:
 
@@ -43,14 +43,16 @@ In addition to the overall prerequisites, you have configured the following:
  
                      * “enabled”: Enter a boolean value. Set `true` for connecting the Solution Server client ({mta-dl-plugin} extension) to the Solution Server.
 
-                     * “url”: Configure the URL of the Solution Server end point. This field has the localhost as the default URL.
+                     * “url”: Configure the URL of the Solution Server end point. 
 
                      * “auth”: The authentication settings allows you to configure a list of options to authenticate to the solution server. 
-                    ** "enabled": Set to `true` to enable authentication.
+                    ** "enabled": Set to `true` to enable authentication. If you enable authentication, then you must configure the Solution Server realm.
 
                     ** "insecure": Set to `true` to skip SSL certificate verification when clients connect to the Solution Server. Set to `false` to allow secure connections to the Solution Server.
 
                     ** "realm": Enter the name of the Keycloak realm for Solution Server. If you enabled authentication for the Solution Server, you must configure a link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts[Keycloak realm] to allow clients to connect to the Solution Server. An administrator can configure SSL for the realm.
+
+                    See xref:proc_configuring-solution-server-settings-file_context[Configuring the solution server settings] for an example configuration.
 |Debug:Webview|Enable debug level logging for Webview message handling in VS Code. 
 
 |====

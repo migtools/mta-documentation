@@ -47,13 +47,12 @@ models:
   openshift-example-model: &active
     environment:
       OPENAI_API_KEY: "<Server's OPENAI_API_KEY>"
-      REQUESTS_CA_BUNDLE: "<Servers CA Bundle path>"
-      ALLOW_INSECURE: "true"
+      CA_BUNDLE: "<Servers CA Bundle path>"
     provider: "ChatOpenAI"
     args:
       model: "my-model"
       configuration:
-        base_url: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.migration.redhat.com/v1"
+        baseURL: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.migration.redhat.com/v1"
 ----
 +
 [NOTE]
