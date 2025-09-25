@@ -237,6 +237,6 @@ include::topics/mta-web-controlling-task-order-with-task-manager.adoc[leveloffse
 // **********************************
 // * Appendix: Revision Information *
 // **********************************
-include::topics/templates/revision-info.adoc[]
+//include::topics/templates/revision-info.adoc[]
 
 :user-interface-guide!:
