@@ -49,10 +49,10 @@ To successfully deploy, the {ProductShortName} Operator requires 2 RWO persisten
 |RWX
 |Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
 
-|`{mta-dl-plugin} database`
+|`kai-db` database
 |`5Gi`
-|`RWO`
-|{mta-dl-plugin} database required to run an AI-driven analysis.
+|RWO
+|{mta-dl-plugin} database required to run an AI-assisted code resolution.
 //verify the final d/s name of this resource.
 |====
 
