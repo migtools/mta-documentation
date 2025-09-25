@@ -51,7 +51,7 @@ To successfully deploy, the {ProductShortName} Operator requires 2 RWO persisten
 
 |`kai-db` database
 |`5Gi`
-|`RWO`
+|RWO
 |The {mta-dl-plugin} database required to run an AI-assisted code resolution request.
 |====
 
