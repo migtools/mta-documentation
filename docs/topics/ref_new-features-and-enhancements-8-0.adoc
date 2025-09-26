@@ -41,7 +41,7 @@ You can use platform awareness to discover applications from a source platform a
 
 .{ProductShortName} supports asset generation for application migration in the web console
 
-You can use the discovery manifest to generate assets in the web console to deploy applications in OpenShift Container Platform or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. 
+You can use the discovery manifest to generate assets in the web console to deploy applications in Red Hat OpenShift or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. 
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
@@ -66,9 +66,9 @@ For more information, see link:https://docs.redhat.com/en/documentation/migratio
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
-.{ProductShortName} supports accessing analysis insights from the dynamic report
+.Analysis insights are available in the {ProductShortName} UI
 
-Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, insights were only available in the analysis output and a static report after you ran an application analysis. With this enhancement, you can access analysis insights also from a dynamic report.
+Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, insights were only available in the analysis output and a static report after you ran an application analysis. With this enhancement, you can access analysis insights also from the {ProductFullName} user interface (UI).
 
 //Add when the section is ready - For more information, see link:<link_to_the_section[section name].
 
