@@ -3,9 +3,9 @@
 = Installing the {ProductShortName} extension for Visual Studio Code
 
 [role="_abstract"]
-You can install the {ProductShortName} extension for Visual Studio Code (VS Code).
+You can use the {ProductFullName} Visual Studio (VS) Code plugin to perform a standard application analysis. You can also enable Red Hat Developer Lightspeed for the Migration Toolkit for Applications (MTA) to use Generative AI (GenAI) capabilities to fix code issues before migrating to target technologies. Note that Developer Lightspeed for {ProductShortName} is enabled by default. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/developer-lightspeed-guide/index[Configuring and using Developer Lightspeed for {ProductShortName}].
 
-.Prerequisites
+.Prerequisites 
 
 * You installed the Java Development Kit (JDK). {ProductShortName} supports the following JDKs:
 
@@ -19,15 +19,4 @@ You can install the {ProductShortName} extension for Visual Studio Code (VS Code
 
 .Procedure
 
-. Set the `JAVA_HOME` environmental variable:
-+
-[subs="+quotes"]
-....
-$ *export JAVA_HOME=jdk11*
-....
-
-. In VS Code, click the *Extensions* icon on the *Activity* bar to open the *Extensions* view.
-. Enter `{ProductName}` in the Search field.
-. Select the *{ProductName}* extension and click *Install*.
-+
-The {ProductShortName} extension icon (image:vs_extension_icon.png[{ProductShortName} code extension]) is displayed on the Activity bar.
+* Install the {ProductShortName} {ProductVersion} Visual Studio (VS) Code plugin from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[VS Code marketplace]. 

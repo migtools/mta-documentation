@@ -1,34 +1,26 @@
 :_mod-docs-content-type: PROCEDURE
 [id="vscode-analyzing-application_{context}"]
-= Configuring and running an application analysis
+= Running an application analysis
 
 [role="_abstract"]
-To analyze an application with the {ProductShortName} extension for Visual Studio Code, you must create a run configuration first. You can configure multiple run configurations to run against each project you import to Visual Studio Code.
+You can run a static code analysis of an application with or without enabling the Generative AI (GenAI) features. The RPC (Remote Procedure Call) server runs the analysis to detect all issues in the code for one or more target technologies which you want to migrate the application to.
 
 .Prerequisites
 
-* You installed the `{mta-cli}` executable. You can download `{mta-cli}` from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} download page].
+* You opened a Java project in your VS Code workspace.
+* You configured an analysis profile on the *{ProductShortName} Analysis View* page. For more information, see xref:configuring-profile-settings_vsc-extension-guide[Configuring the {ProductShortName} profile settings].
 
 .Procedure
 
-. In *Extensions* view, click the {ProductName} icon (image:vs_extension_icon.png[{ProductShortName} code extension]) on the *Activity* bar.
-. Click the plus sign (*+*) next to *{ProductName}* to add a run configuration.
-. Specify the following configuration fields:
+. Click the {mta-dl-plugin} extension and click *Open {ProductShortName} Analysis View*.
 
-** *Name*: Enter a name for the analysis configuration or accept the default suggestion.
+. Select a profile for the analysis.
 
-** *cli*: Enter the path to the `{mta-cli}` executable, for example: `$HOME/{mta-cli}-{ProductDistributionVersion}/bin/{mta-cli}`.
+. Click *Start* to start the {ProductShortName} RPC server.
 
-** *Input*: Set to the path of the project that you have open within your IDE: 
+. Click *Run Analysis* on the *{ProductShortName} Analysis View* page.
 
-... Click *Add*.
-... Perform one of the following actions:
 
-**** Enter the input file or directory and press *Enter*.
-**** Click *Open File Explorer* and select the directory.
-
-** *Target*: Select one or more target migration paths.
-
-. Right-click the run configuration and select *Run*.
-+
-When the analysis is completed, you can click the *Open Report* button to open the {ProductShortName} report, which describes the issues you need to address before you migrate or modernize your application. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html-single/cli_guide/index#reviewing-analysis-reports_cli-guide[Reviewing an analysis report].
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/developer-lightspeed-guide/index[Configuring and using Developer Lightspeed for {ProductShortName}].
