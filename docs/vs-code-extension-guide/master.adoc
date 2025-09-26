@@ -10,10 +10,7 @@
 :mta:
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
-= Visual Studio Code Extension Guide
-
-//Inclusive language statement
-include::topics/making-open-source-more-inclusive.adoc[]
+= Configuring and using the Visual Studio Code Extension for MTA
 
  
 include::topics/vscode/con_intro-to-vscode-for-mta.adoc[leveloffset=+1]
@@ -23,9 +20,9 @@ include::topics/vscode/con_intro-to-vscode-for-mta.adoc[leveloffset=+1]
 
 include::topics/vscode/proc_installing-vscode-extension.adoc[leveloffset=+1]
 
-include::topics/vscode/proc_configuring-kantra-directory.adoc[leveloffset=+1]
+include::topics/vscode/proc_configuring-lighstspeed-ide-settings.adoc[leveloffset=+1]
 
-include::topics/vscode/con_vscode-extension-interface.adoc[leveloffset=+1]
+include::topics/vscode/proc_configuring-profile-settings.adoc[leveloffset=+1]
 
 include::topics/vscode/proc_vscode-analyzing-application.adoc[leveloffset=+1]
  
