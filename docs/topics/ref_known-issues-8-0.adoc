@@ -33,3 +33,12 @@ When you use Developer Lightspeed for {ProductShortName}, the analysis results d
 To work around this problem, restart the analyzer process by clicking the Start/Stop button after making a configuration change.
 
 (link:https://issues.redhat.com/browse/MTA-6129[MTA-6129])
+
+
+.`ANNOTATION` location rules do not match on FQNs
+
+The `ANNOTATION` search location does not properly use Fully Qualified Names (FQNs) to match annotations. This leads to incorrect matches and false positives in analysis issues. For example, a rule that searches for annotations using the `javax.enterprise.inject.Produces` pattern might incorrectly match the occurrences of the `javax.ws.rs.Produces` annotation in the source code.
+
+No known workaround exists.
+
+(link:https://issues.redhat.com/browse/MTA-6195[MTA-6195])
