@@ -1,0 +1,46 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-26
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-profile-settings_{context}"]
+= Configuring the {ProductShortName} profile settings
+
+[role="_abstract"]
+You can use the Visual Studio (VS) Code plugin to run an analysis to discover issues in the code. 
+
+To generate code changes by using the {ProductShortName} extension, you must configure a profile that contains all the necessary configurations, such as rules and source and target technologies. 
+
+.Prerequisites
+
+* You configured the VS Code IDE settings. For more information, see xref:configuring-lighstspeed-ide-settings_vsc-extension-guide[Configuring the {mta-dl-plugin} IDE settings].
+* You opened a Java project in your VS Code workspace.
+
+.Procedure
+
+. Open the `{ProductShortName} View Analysis` page by clicking the book icon on the `{ProductShortName}: Issues` pane of the {ProductShortName} extension. 
++
+Alternatively, type `Ctrl + Shift + P` or `Cmd + Shift + P` in the search bar to open the Command Palette and enter `{ProductShortName}:Open Analysis View`.
+
+. Click the settings button on the `{ProductShortName} View Analysis` page to configure a profile for your project. The `Get Ready to Analyze` pane has the following basic configurations required for an application analysis: 
++
+* Select profile: Create a profile that you can reuse for one or more analyses. 
+* Configure label selector: A label selector filters rules for analysis based on the source or target technology.
++
+Specify one or more target or source technologies. {mta-dl-plugin} uses this configuration to determine the rules to apply to a project during the analysis. If you mentioned a new target or a source technology in your custom rule, you can type that name to create and add the new item to the list.
++
+IMPORTANT: You must configure target or source technologies before running an analysis.
+
+* Set rules: Enable default rules and select your custom rule that you want {ProductShortName} to use for the analysis. You can use the custom rules in addition to the default rules. 
+
+.Verification
+
+* After you completed the profile configuration, close the `Get Ready to Analyze` pane and run an application analysis. 
+
+
+.Next steps
+* xref:vscode-analyzing-application_vsc-extension-guide[Run an application analysis].
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/developer-lightspeed-guide/index[Configuring and using Developer Lightspeed for {ProductShortName}].
+
