@@ -1,0 +1,24 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-asset-repository_{context}"]
+= Configuring an asset repository
+
+[role="_abstract"]
+{ProductFullName} generates assets and publishes them to an asset repository that you configure. If you do not configure an asset repository, the application repository is taken as the default to publish the generated assets.
+
+When you configure the asset repository for an application, you can also associate the Source Control credentials of the asset repository before generating assets. If you do not configure a Source Control credential for the asset repository, {ProductShortName} considers the source code repository credential as the default Source Control credential for the asset repository.
+
+.Procedure
+
+. In the *Migration* view, click *Applications*.
+. Click the edit icon (image:icon_edit.png[]) to update an imported application.
+. In the *Update application* dialog, click *Asset repository* and configure the following details:
+.. Select the *Asset repository type* from *Git* or *Subversion*.
+.. Enter the asset repository URL in the *Asset repository* field.
+.. Enter the *Branch* of your repository.
+.. Enter the *Root path* of your repository.
+. Click *Save* and close the *Update application* dialog.
+. Click *Manage Credentials* from the Options menu ({kebab}) of the application.
+. Select the asset repository credential on the *Manage Credentials* dialog and close the dialog.
