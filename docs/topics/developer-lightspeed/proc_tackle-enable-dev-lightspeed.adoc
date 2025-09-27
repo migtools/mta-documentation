@@ -54,7 +54,7 @@ spec:
 +
 [source, terminal]
 ----
- $ kubectl apply -f tackle_hub.yaml
+ $ oc apply -f tackle_hub.yaml
 ----
 
 .Verification
@@ -63,5 +63,5 @@ spec:
 +
 [source, terminal]
 ----
-kubectl get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'
+oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'
 ----

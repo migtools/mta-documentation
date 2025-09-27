@@ -52,7 +52,7 @@ models:
     args:
       model: "my-model"
       configuration:
-        baseURL: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.migration.redhat.com/v1"
+        baseURL: "https://<serving-name>-<data-science-project-name>.apps.konveyor-ai.example.com/v1"
 ----
 +
 [NOTE]
