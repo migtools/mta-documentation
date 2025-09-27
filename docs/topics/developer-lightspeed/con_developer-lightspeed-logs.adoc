@@ -11,33 +11,28 @@
 
 Extension logs are stored as `extension.log` with automatic rotation. The maximum size of the log file is 10 MB and three files are retained. Analyzer RPC logs are stored as `analyzer.log` without rotation.
 
-[id="dev-lightspeed-access-logs_{context}"]
-
-== Access the logs
-
-You can access the extension logs in the following ways:
-
-* *Command Palette*: Type `Show Logs` or `Open Log` and select `Extension Host`.
-
-* *Output panel*: Select `Extension Host` from the drop-down menu.
-
-* *Log file*: Go to `.vscode/mta-logs` directory in your project and open the extension log file.
-
-To access the analyzer log file, go to `.vscode/mta-logs` directory in your project and open the analyzer log file.
-
-You can also inspect webview content by using the webview logs. To access the webview logs, type `Open Webview Developer Tools` in the VS Code Command Palette.
-
 [id="dev-lightspeed-archive-logs_{context}"]
 
-== Archive logs
+== Archiving the logs
+
+To archive the logs as a zip file, type `{ProductShortName}: Generate Debug Archive` in the VS Code Command Palette and select the information type that must be archived as a log file. 
+
+The archive command allows capturing all relevant log files in a zip archive at the specified location in your project. By default, you can access the archived logs in the .vscode directory of your project.
 
 The archival feature helps you to save the following information:
 
-* Large language model (LLM) provider configuration 
+* Large language model (LLM) provider configuration: Fields from the provider settings that can be included in the archive. All fields are redacted for security reasons by default. Ensure that you do not expose any secrets.
 * LLM model arguments
-* Template configuration 
-* LLama header
-* LLM retry attempts
-* LLM retries delay
+* LLM traces: If you enabled tracing LLM interactions, you can choose to include LLM traces in the logs.
 
-Type `Generate Debug Archive` in the VS Code Command Palette and select the information type that must be archived as a log file. You can access the tar file of archived logs in the `.vscode` directory of your project.
+[id="dev-lightspeed-access-logs_{context}"]
+
+== Accessing the logs
+
+You can access the logs in the following ways:
+
+* *Log file*: Type `Developer: Open Extension Logs Folder` and open the `redhat.mta-vscode-extension` directory that contains the extension log and the analyzer log.
+
+* *Output panel*: Select `{mta-dl-plugin}` from the drop-down menu.
+
+* *Webview logs*: You can also inspect webview content by using the webview logs. To access the webview logs, type `Open Webview Developer Tools` in the VS Code Command Palette.

@@ -7,6 +7,8 @@
 = Prerequisites
 
 [role="_abstract"]
+This section lists the prerequisites required to successfully use the generative AI features in the {mta-dl-plugin} Visual Studio (VS) Code extension.
+
 Before you install {mta-dl-plugin}, you must:
 
 * Install Language Support for Java(TM) by Red Hat extension
@@ -17,28 +19,30 @@ Before you install {mta-dl-plugin}, you must:
 
 * Install Git and add it to the $PATH variable
 
-* Install the {ProductShortName} command line 8.0.0
-
 * Install the {ProductShortName} Operator 8.0.0
 +
 
-The {ProductShortName} Operator is mandatory if you plan to enable the solution server to work with the large language model (LLM) for generating code changes. It enables you to log in to the `openshift-mta` project where you must deploy the Tackle custom resources (CR) required for running the Solution Server.
+The {ProductShortName} Operator is mandatory if you plan to enable the solution server that works with the large language model (LLM) for generating code changes. It enables you to log in to the `openshift-mta` project where you must enable the Solution Server in the Tackle custom resources (CR).
 
 * Create an API key for an LLM.
 +
 
-You must enter the provider value and model name in Tackle custom resource (CR) to enable generative AI configuration in the {ProductShortName} VS Code plugin. 
+You must enter the provider value and model name in Tackle CR to enable generative AI configuration in the {ProductShortName} VS Code plugin. 
 +
-.Supported large language models and providers
+.Configurable large language models and providers
 |===
-| LLM Provider (Tackle CR value) | Large language model in Tackle CR 
+| LLM Provider (Tackle CR value) | Large language model examples for Tackle CR configuration
 
+| {ocp-name} AI platform| Models deployed in an {ocp-name} AI cluster that can be accessed by using Open AI-compatible API.
 | Open AI (`openai`) | `gpt-4`, `gpt-4o`, `gpt-4o-mini`, `gpt-3.5-turbo` 
 | Azure OpenAI (`azure_openai`) | `gpt-4`, `gpt-35-turbo` 
 | Amazon Bedrock (`bedrock`) | `anthropic.claude-3-5-sonnet-20241022-v2:0`, `meta.llama3-1-70b-instruct-v1:0` 
 | Google Gemini (`google`) | `gemini-2.0-flash-exp`, `gemini-1.5-pro` 
 | Ollama (`ollama`) | `llama3.1`, `codellama`, `mistral` 
-| Groq (`groq`) | `llama-3.1-70b-versatile`, `mixtral-8x7b-32768` 
-| Anthropic (`anthropic`) | `claude-3-5-sonnet-20241022`, `claude-3-haiku-20240307` 
 
 |===
+
+[NOTE]
+====
+The availability of public LLM models is maintained by the respective LLM provider.
+====
