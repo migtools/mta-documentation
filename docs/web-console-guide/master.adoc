@@ -1,14 +1,15 @@
+:mta:
+include::topics/templates/document-attributes.adoc[]
+:_mod-docs-content-type: ASSEMBLY
+[id="user-interface-guide"]
+= User Interface Guide
+
 :toc:
 :toclevels: 4
 :numbered:
-:mta:
-include::topics/templates/document-attributes.adoc[]
-
+:imagesdir: topics/images
 :context: user-interface-guide
 :user-interface-guide:
-:imagesdir: topics/images
-:_content-type: ASSEMBLY
-= User Interface Guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[leveloffset=+1]
@@ -164,7 +165,6 @@ include::topics/mta-web-downloading-app-list-template.adoc[leveloffset=+2]
 include::topics/mta-web-creating-migration-waves.adoc[leveloffset=+2]
 include::topics/mta-web-creating-jira-issues-for-migration-wave.adoc[leveloffset=+2]
 
-
 //6
 [id="assessing-and-analyzing-applications"]
 == Assessing and analyzing applications with MTA
@@ -231,12 +231,13 @@ include::topics/analyzer-rbac-snippet.adoc[]
 include::topics/mta-web-reviewing-a-task-log.adoc[leveloffset=+3]
 include::topics/mta-web-controlling-task-order-with-task-manager.adoc[leveloffset=+3]
 
-// include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
+include::topics/web-console/assembly_platform-awareness.adoc[leveloffset=+1]
 
+// include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
 
 // **********************************
 // * Appendix: Revision Information *
 // **********************************
-include::topics/templates/revision-info.adoc[]
+// include::topics/templates/revision-info.adoc[]
 
-:user-interface-guide!:
+:!user-interface-guide:

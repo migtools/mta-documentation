@@ -1,0 +1,47 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="adding-source-platform-application_{context}"]
+= Associating an application with a source platform
+
+[role="_abstract"]
+You can associate applications that you created in {ProductShortName} with their Cloud Foundry (CF) instances by configuring the application's coordinates in the source platform. 
+
+The specific coordinates vary depending on the source platform you select. For example, the coordinates for CF instances are *name* and *space*. 
+
+.Prerequisites
+
+* You configured at least one source platform instance in the *Administration* mode.
+
+.Procedure
+
+. In the {ProductShortName} user interface, select the *Migration* mode.
+. On the *Application Inventory* page, click the edit icon (image:icon_edit.png[]) in an application. The *Update application* dialog appears.
+. Enter the following information in the form:
+. Click *Source platform* and enter the following fields:
+.. *Source platform*: Select a source platform instance.
+.. *Source platform coordinates*: Configure the source platform coordinates in either way:
+... Enter the source platform coordinates in the fields. For example, *name* and *space* for a CF instance.
+... Enable the source platform coordinates to enter application coordinates in JSON. For example, a CF instance coordinates can be:
++
+[source, json]
+----
+{
+    "name": ["example-app"],
+    "space": ["example-space"]
+}
+----
+.. *name*: Type the name of the application.
+.. *space*: Configure the CF space in which the app is deployed in the source platform.
+. Click *Save* and close the *Update application* dialog.
+
+.Verification
+
+To verify that the coordinates you configured are saved in {ProductShortName}:
+
+. Click anywhere on the appication row to open the application details view.
+
+. Click the *Platform* tab to verify the source platform coordinates that you configured.
+
+. Enable the *JSON* switch for the source platform coordinates to check the coordinates in JSON format.
