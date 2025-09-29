@@ -1,0 +1,46 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="creating-a-jira-connection_{context}"]
+= Creating a Jira connection
+
+To track  your application migrations, you can define a Jira instance in {ProductShortName} and establish a connection to that instance.
+
+IMPORTANT: You cannot remove a Jira connection that you used for creating issues for a migration wave if the issues exist in Jira, even after the migration wave is deleted.
+
+.Prerequisites
+
+* You created {ProductShortName} credentials. For more information, see xref:configuring-jira-credentials_creating-and-configuring-a-jira-connection[Configuring Jira credentials]. 
+
+.Procedure
+
+. In *Administration* view, under *Issue Management*, click *Jira*.
+. Click *Create new*.
+. In the *New instance* window, enter the following information:
+* Name of the instance
+* URL of the web interface of your Jira account
+* Select either the *Jira Cloud* or *Jira Server/Data center* instance type from the list
+* Select credentials from the list
++
+[NOTE]
+====
+If you selected *Jira Cloud* as an instance type, only *Basic Auth* credentials are displayed in the list.
+
+If you selected *Jira Server/Data center* as an instance type, both *Basic Auth* and *Token Bearer* credentials are displayed. 
+
+Choose the type that is appropriate for the particular configuration of your Jira server or data center.
+====
++
+. By default, a connection cannot be established with a server with an invalid certificate. To override this restriction, enable the *Enable insecure communication* switch.
+. Click *Create*.
++
+The new connection instance appears on the *Jira configuration* page.
+
+.Verification
+
+* On the *Jira configuration* page, ensure that the connection has been established and authorized:
+
+** If the status of the *Connection* column displays *Connected*, the Jira connection is established and authorized.					
+** If the status of the *Connection* column displays *Not connected*, click the status to check the reason for the error. 

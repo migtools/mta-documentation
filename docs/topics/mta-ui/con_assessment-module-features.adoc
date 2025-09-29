@@ -1,0 +1,34 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+:_mod-docs-content-type: REFERENCE
+[id="assessment-module-features_{context}"]
+= The Assessment module features
+
+The {ProductFullName} *Assessment* module offers the following features for assessing and analyzing applications:
+
+Assessment hub::
+The *Assessment* hub integrates with the *Application inventory*.
+
+Enhanced assessment questionnaire capabilities::
+In {ProductShortName} 7.0, you can import and export assessment questionnaires. You can also design custom questionnaires with a downloadable template by using the YAML syntax, which includes the following features:
+
+* Conditional questions: You can include or exclude questions based on the application or archetype if a certain tag is present on this application or archetype.
+* Application auto-tagging based on answers: You can define tags to be applied to applications or archetypes if a certain answer was provided.
+* Automated answers from tags in applications or archetypes.
+ 
++
+For more information, see xref:mta-custom-questionnaire_assessment-questionnaires[The custom assessment questionnaire].
+
+NOTE: You can customize and save the default questionnaire. For more information, see xref:mta-default-questionnaire_assessment-questionnaires[The default assessment questionnaire].
+
+Multiple assessment questionnaires::
+The *Assessment* module supports multiple questionnaires, relevant to one or more applications.
+
+Archetypes::
+You can group applications with similar characteristics into archetypes. This allows you to assess multiple applications at once. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes. 
++
+For more information, see xref:working-with-archetypes_user-interface-guide[Working with archetypes].
+
+
+

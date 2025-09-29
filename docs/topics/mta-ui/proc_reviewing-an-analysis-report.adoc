@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="reviewing-an-analysis-report_{context}"]
+= Reviewing analysis details
+
+You can display the activity log of the analysis. The activity log contains such analysis details as, for example, analysis steps.
+
+.Procedure
+
+. In the *Migration* view, click *Application inventory*.
+. Click on the application row to open the application drawer. 
+. Click the *Reports* tab.
+. Click *View analysis details* for the activity log of the analysis.
+. Optional: For issues and dependencies found during the analysis, click the *Details* tab in the application drawer and click *Issues* or *Dependencies*.
++
+Alternatively, open the *Issues* or *Dependencies* page in the *Migration* view.
