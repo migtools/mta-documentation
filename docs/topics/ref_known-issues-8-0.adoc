@@ -49,6 +49,7 @@ No known workaround exists.
 The Solution Server throws a connection error when concurrent connections increase in a short span of time.
 To work around this problem, enter the following command to allow the Developer Lightspeed for {ProductShortName} database to expire idle connections:
 
+[source,terminal]
 ----
 oc -n openshift-mta exec deploy/kai-db – psql -U postgres -d postgres -c "ALTER ROLE kai SET idle_session_timeout = '1min'; ALTER ROLE kai SET idle_in_transaction_session_timeout = '1min';" 
 ----
