@@ -235,6 +235,10 @@ include::topics/web-console/assembly_platform-awareness.adoc[leveloffset=+1]
 
 // include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
 
+
+
+include::topics/web-console/assembly_asset-generation-ui.adoc[leveloffset=+1]
+
 // **********************************
 // * Appendix: Revision Information *
 // **********************************

@@ -31,7 +31,10 @@ The analysis for other applications runs in the container mode automatically
 * You set the `JVM_MAX_MEM` system variable.
 +
 NOTE: If you do not set `JVM_MAX_MEM`, the analysis might hang because Java might require more memory than the default `JVM_MAX_MEM` value.
-
+* For Gradle analysis:
+** You installed OpenJDK version 8.
+** You set `$JAVA8_HOME` and it is pointing to the OpenJDK 8 home directory.
+** Your project has a link:https://docs.gradle.org/current/userguide/gradle_wrapper.html[Gradle wrapper].
 
 .Procedure
 
