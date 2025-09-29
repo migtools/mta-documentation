@@ -30,6 +30,7 @@ ifdef::mta[]
 :PluginName: MTA plugin
 :mta-dl-full: Red Hat Developer Lightspeed for migration toolkit for applications
 :mta-dl-plugin: Developer Lightspeed for MTA
+:mta-URL: https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/{DocInfoProductNumber}/html-single/
 
 :ProductDistributionVersion: 8.0.0.GA-redhat
 :ProductDistribution: mta-8.0.0.GA-cli-offline.zip
