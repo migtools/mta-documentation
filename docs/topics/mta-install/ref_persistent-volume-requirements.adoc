@@ -7,15 +7,38 @@
 = Persistent volume requirements
 
 [role="_abstract"]
-To successfully deploy, the {ProductShortName} Operator requires two ReadWriteOnce (RWO) persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires additional two ReadWriteMany (RWX) PVs that are used by Maven and the hub file storage. 
+To successfully deploy, the {ProductShortName} Operator requires two ReadWriteOnce (RWO) persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires additional two ReadWriteMany (RWX) PVs that are used by Maven and the hub file storage.
 
 .Required persistent volumes
-[options="header"]
+[cols="25%,25%,25%,25%", options="header"]
 |====
-|Name|Default size|Access mode|Description
-|`hub database`|10GB |RWO|A hub database that includes information about applications, stakeholders, business services, and other {ProductShortName}-related information. 
-|`hub bucket`|100GB|RWX|A hub file storage that is required if the `rwx_supported` configuration option is set to `true`. 
-|`keycloak postgresql`|1GB|RWO|The Keycloak back end database.
-|`cache`|100GB|RWX|Maven m2 cache that is required if the `rwx_supported` configuration option is set to `true`.
-|====
+|Name
+|Default size
+|Access mode
+|Description
 
+|`hub database`
+|`10Gi`
+|RWO
+|Hub database
+
+|`hub bucket`
+|`100Gi`
+|RWX
+|Hub file storage; required if the `rwx_supported` configuration option is set to `true`
+
+|`keycloak postgresql`
+|`1Gi`
+|RWO
+|Keycloak back end database
+
+|`cache`
+|`100Gi`
+|RWX
+|Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
+
+|`kai-db` database
+|`5Gi`
+|RWO
+|{mta-dl-plugin} database required to run an AI-assisted code resolution.
+|====
