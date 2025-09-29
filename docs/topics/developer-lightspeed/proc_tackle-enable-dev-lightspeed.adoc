@@ -23,7 +23,15 @@ To enable Solution Server and other AI configurations in the {mta-dl-full} VS Co
 . Log in to the {ocp-short} cluster and switch to the `openshift-mta` project. 
 +
 
-. Edit the Tackle custom resource (CR) settings in the `tackle_hub.yml` to enable {mta-dl-plugin} and then enter applicable values for `kai_llm_provider` and `kai_llm_model` variables. 
+. Edit the Tackle CR settings in the `tackle_hub.yml` file with the following command:
++
+
+[source, terminal]
+----
+oc edit tackle
+----
+
+. Enter applicable values for `kai_llm_provider` and `kai_llm_model` variables. 
 +
 [source, yaml]
 ----
@@ -46,14 +54,14 @@ spec:
 +
 [source, terminal]
 ----
- $ kubectl apply -f tackle_hub.yaml
+ $ oc apply -f tackle_hub.yaml
 ----
 
 .Verification
 
-. Enter the following command to verify the {mta-dl-plugin} resources.
+. Enter the following command to verify the {mta-dl-plugin} resources deployed for Solution Server.
 +
 [source, terminal]
 ----
-kubectl get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'
+oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'
 ----
