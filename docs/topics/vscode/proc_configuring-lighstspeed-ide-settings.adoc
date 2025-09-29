@@ -3,7 +3,7 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="configuring-lighstspeed-ide-settings_{context}"]
-= Configuring the {mta-dl-plugin} IDE settings
+= Configuring the IDE settings
 
 [role="_abstract"]
 {ProductShortName} settings apply to every analysis that you perform by using the Visual Studio (VS) Code extension. The extension settings have the following categories:
