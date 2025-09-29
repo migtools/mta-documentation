@@ -1,0 +1,28 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="creating-source-platform_{context}"]
+= Creating a source platform in {ProductShortName} {WebName}
+
+[role="_abstract"]
+Create a source platform instance to retrieve platform and runtime configurations for one or more applications. 
+
+An {ProductShortName} administrator can configure one or more source platform instances in the {ProductShortName} user interface. 
+
+.Prerequisites
+* The {ProductShortName} administrator created a *Source Control* credential of the source platform such as Cloud Foundry (CF) in the *Administration* mode.
+
+.Procedure
+
+. In the {ProductShortName} user interface, select the *Administration* working mode.
+. Click *Source platform* in the left menu bar to go to the *Source platforms* page.
+. Click *Create new platform*. The *Create new platform* dialog appears.
+. In the form, enter the following information:
+.. *Name*: A unique name for the source platform (CF) instance.
+.. *Type*: Select source platform from the drop down menu. For example, *Cloud Foundry*.
+.. *URL*: API URL of the source platform. For example, the API URL of CF platform.
+.. *Credentials*: Select the name of the Source Control credentials that you configured for the source platform.
+. Click *Create*.
++
+The source platform instance is created. A source platform instance can be linked with one or more applications.

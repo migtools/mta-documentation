@@ -1,0 +1,38 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="generating-discovery-manifests_{context}"]
+= Generating discovery manifests
+
+[role="_abstract"]
+To generate discovery manifest, you must retrieve the application configuration from the Cloud Foundry (CF) source platform instance. {ProductShortName} generates a discovery manifest that has the application configuration, which you can later use to generate assets (deployment manifests).
+
+You can retrieve configuration for one or more applications at a time.
+
+.Prerequisites
+* The Cloud Foundry instance from which you want to retrive configuration is running.
+
+* You configured a source platform for the applications for which you need to retrieve configurations.
+
+.Procedure
+
+. In the {ProductShortName} user interface, select the *Migration* working mode.
+
+. On the *Application Inventory* page, you can retrieve configuration for one or more applications.
++
+.. To retrieve configuration for an application:
+... Select an application and click the Options menu ({kebab}).
+... Click *Retrieve Configurations*.
+.. To retrieve configurations for multiple applications:
+... Select the target applications or click the Select all option (image:select.png[]).
+... Click the Options menu near *Analyze* at the top and click *Retrieve Configurations*.
++
+. You can review the read-only configurations in the *Retrieve Configurations* dialog and click *Retrieve*.
+{ProductShortName} triggers a task to retrieve configuration for each application.
+
+.Verification
+
+. Click an application row to open the application details view and click the *Platform* tab.
+
+. Review the discovery manifest with the retrieved configuration and download the JSON configuration, if necessary.
