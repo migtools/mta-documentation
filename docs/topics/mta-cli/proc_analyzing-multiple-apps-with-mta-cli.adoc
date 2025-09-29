@@ -44,5 +44,5 @@ $ *mta-cli analyze --bulk --input _<path_to_input_C>_ --output _<path_to_output_
 [role="_additional-resources"]
 .Additional resources
 
-* link:{mta-URL}installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
+* link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
 * xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]
