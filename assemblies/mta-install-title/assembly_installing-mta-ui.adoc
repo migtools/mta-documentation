@@ -1,0 +1,35 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-10
+
+ifdef::context[:parent-context-of-installing-mta-ui: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="installing-mta-ui"]
+endif::[]
+ifdef::context[]
+[id="installing-mta-ui_{context}"]
+endif::[]
+= Installing the {ProductName} user interface
+:context: installing-mta-ui
+
+[role="_abstract"]
+You can install the {ProductFullName} user interface (UI) on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions. 			
+
+To create {ProductShortName} instances, you must first install the {ProductShortName} Operator. The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance. 
+	
+include::topics/mta-install/ref_persistent-volume-requirements.adoc[leveloffset=+1]
+
+include::assembly_red-hat-build-of-keycloak.adoc[leveloffset=+1]
+
+include::topics/mta-install/proc_installing-mta-operator.adoc[leveloffset=+1]
+
+include::topics/mta-install/proc_creating-mta-instance.adoc[leveloffset=+1]
+
+include::topics/mta-install/ref_custom-resource-settings.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-installing-mta-ui[:context: {parent-context-of-installing-mta-ui}]
+ifndef::parent-context-of-installing-mta-ui[:!context:]
+
