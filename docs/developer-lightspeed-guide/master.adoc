@@ -29,6 +29,6 @@ include::topics/developer-lightspeed/con_developer-lightspeed-logs.adoc[leveloff
 [id="mta-developer-lightspeed-appendix_{context}"]
 == Appendix
 
-include::topics/developer-lightspeed/mta-developer-lightspeed-data-usage.adoc[leveloffset=+1]
+include::topics/developer-lightspeed/mta-developer-lightspeed-data-usage.adoc[leveloffset=+2]
 
 :!mta-developer-lightspeed:
