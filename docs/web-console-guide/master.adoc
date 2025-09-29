@@ -32,6 +32,9 @@ include::assemblies/ui-guide/assembly_analyzing-applications.adoc[leveloffset=+1
 
 include::assemblies/ui-guide/assembly_controlling-tasks-with-task-manager.adoc[leveloffset=+1]
 
+include::topics/web-console/assembly_platform-awareness.adoc[leveloffset=+1]
+
+include::topics/web-console/assembly_asset-generation-ui.adoc[leveloffset=+1]
 
 include::topics/mta-cli/ref_contributing-to-mta-development.adoc[leveloffset=+1]
 
