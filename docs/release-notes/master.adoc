@@ -47,3 +47,4 @@ include::topics/analyzer-rbac-known-issue-snippet.adoc[]
 For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12469170[{ProductShortName} 7.3.1 known issues] in Jira.
 
 :!release-notes:
+ 
