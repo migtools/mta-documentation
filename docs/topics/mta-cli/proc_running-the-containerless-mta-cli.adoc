@@ -20,7 +20,7 @@ The analysis for other applications runs in the container mode automatically
 
 .Prerequisites
 
-* You installed the {ProductShortName} CLI. For more information, see xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file].
+* You installed the {ProductShortName} CLI. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/installing-mta-title/installing-mta-cli_installing-mta-title#installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file].
 * You installed Java Development Kit (JDK) version 17 or later.
 * If you use OpenJDK on Red Hat Enterprise Linux (RHEL) or Fedora, you installed the Java `devel` package.
 * You installed Maven version 3.9.9 or later.
@@ -58,5 +58,5 @@ NOTE: The `--overwrite` option overwrites the output folder if it exists.
 [role="_additional-resources"]
 .Additional resources
 
-* xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/installing-mta-title/installing-mta-cli_installing-mta-title#installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
 * xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]

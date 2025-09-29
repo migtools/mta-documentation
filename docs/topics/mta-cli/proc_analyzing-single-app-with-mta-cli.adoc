@@ -61,5 +61,5 @@ Alternatively, press *Ctrl* and click on the path to the report file.
 [role="_additional-resources"]
 .Additional resources
 
-* xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/installing-mta-title/installing-mta-cli_installing-mta-title#installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
 * xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]
