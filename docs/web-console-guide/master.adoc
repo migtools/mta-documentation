@@ -1,13 +1,8 @@
-mta:
-include::topics/templates/document-attributes.adoc[]
-:_mod-docs-content-type: ASSEMBLY
-[id="user-interface-guide"]
-= User Interface Guide
-
 :toc:
 :toclevels: 4
 :numbered:
-:imagesdir: topics/images
+:mta:
+include::topics/templates/document-attributes.adoc[]
 
 :context: user-interface-guide
 :user-interface-guide:
