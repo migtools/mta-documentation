@@ -1,0 +1,25 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: CONCEPT
+
+[id="mta-developer-lightspeed-data-usage_{context}"]
+= About data use
+
+{mta-dl-plugin} is a virtual assistant you interact with using natural language. Using the {mta-dl-plugin} interface, you send chat messages that {mta-dl-plugin} transforms and sends to the large language model (LLM) provider you have configured for your environment.
+
+These messages could potentially contain information provided by your users about themselves, your cluster, cluster resources, or other aspects of your business or working environment.
+
+{mta-dl-plugin} has limited capabilities to filter or redact the code snippets you provide to the LLM.
+
+Do not enter information into {mta-dl-plugin} that you do not want to send to the LLM provider.
+
+[id="mta-dev-lightspeed-bring-your-own-model_{context}"]
+== About Bring Your Own Model
+
+{mta-dl-plugin} does not provide its own inference services but uses a _Bring Your Own Model_ approach. This means that you are responsible for ensuring that the configured service meets your particular company policies and legal requirements, including any applicable terms with the third-party model provider.
+
+[id="mta-dev-lightspeed-responsibility_{context}"]
+== Your responsibility
+
+All the information your users share in their questions and responses with Developer Lightspeed for MTA is shared with the LLM inference service you configured. You are responsible for ensuring compliance with your company’s policies regarding the sharing of data with your chosen inference service.
