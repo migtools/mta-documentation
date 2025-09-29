@@ -10,230 +10,33 @@ include::topics/templates/document-attributes.adoc[]
 :imagesdir: topics/images
 :context: user-interface-guide
 :user-interface-guide:
+:imagesdir: topics/images
+:_content-type: ASSEMBLY
+= Configuring and managing the Migration Toolkit for Applications user interface
 
-//Inclusive language statement
-include::topics/making-open-source-more-inclusive.adoc[leveloffset=+1]
+include::topics/mta-ui/con_intro-to-mta-ui.adoc[leveloffset=+1]
 
-[id="mta-ui-guide-introduction"]
-== Introduction
+include::assemblies/ui-guide/assembly_configuring-mta-instance-environment.adoc[leveloffset=+1]
 
-// About the {WebConsoleBookName}
-include::topics/mta-about-console-guide.adoc[leveloffset=+2]
+include::assemblies/ui-guide/assembly_configuring-mta-instance.adoc[leveloffset=+1]
 
-// About {ProductName}
-include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
+include::assemblies/ui-guide/assembly_creating-and-configuring-a-jira-connection.adoc[leveloffset=+1]
 
-// About the {WebName}
-include::topics/about-the-user-interface.adoc[leveloffset=+2]]
+include::assemblies/ui-guide/assembly_managing-applications.adoc[leveloffset=+1]
 
-[id=mta-ui-interface-views]
-== User interface views
+include::assemblies/ui-guide/assembly_assessing-applications.adoc[leveloffset=+1]
 
-The {ProductName} ({ProductShortName}) {WebName} has two views:
+include::assemblies/ui-guide/assembly_tagging-applications.adoc[leveloffset=+1]
 
-* Administration view
-* Migration view
+include::assemblies/ui-guide/assembly_working-with-archetypes.adoc[leveloffset=+1]
 
-In *Administration* view, administrators can configure the instance environment, work with credentials and repositories, define HTTP and HTTPS proxies, create custom migration targets, manage issues, and add custom assessment questionnaires.
+//include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+3]
 
-In *Migration* view, all authorized users can review reports, add applications for assessment and analysis. perform application assessments and analyses, create migration waves, view issues that could potentially impact migration, view the status of analysis and discovery tasks through Task Manager. The permissions of the different user roles -- administrators, architects, and migrators -- vary in this view.
+include::assemblies/ui-guide/assembly_analyzing-applications.adoc[leveloffset=+1]
 
-// == Administration view
-// include::topics/mta-web-administration-view.adoc[leveloffset=+1]
-
-// Installation
-include::topics/mta-7-installing-web-console-on-openshift.adoc[leveloffset=+1]
-
-include::topics/mta-7-installing-web-console-on-ocp-local.adoc[leveloffset=+2]
-
-include::topics/mta-7-configuration-web-console-on-ocp-local.adoc[leveloffset=+3]
-
-include::topics/mta-requirements-for-java-analyzer.adoc[leveloffset=+2]
-
-[id="configuring-the-instance-environment"]
-== Configuring the instance environment
-
-You can configure the following in *Administration* view:
-
-* General
-* Credentials
-* Repositories
-* Proxy (HTTP and HTTPS proxy settings)
-* Custom migration targets
-* Issue management
-* Assessment questionnaires
-
-[id="general-configuration"]
-=== General
-
-You can enable or disable the following option:
-
-* Allow reports to be downloaded after running an analysis
-
-[id="configuring-credentials"]
-=== Configuring credentials
-
-You can configure the following types of credentials in *Administration* view:
-
-* Source control
-* Maven settings file
-* Proxy
-* Basic auth (Jira)
-* Bearer token (Jira)
-
-include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
-include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
-include::topics/mta-web-config-proxy-credentials.adoc[leveloffset=+3]
-
-[id="configuring-repositories"]
-=== Configuring repositories
-
-You can configure the following types of repositories in *Administration* view:
-
-* Git
-* Subversion
-* Maven
-
-include::topics/mta-web-config-git-repos.adoc[leveloffset=+3]
-include::topics/mta-web-config-subversion-repos.adoc[leveloffset=+3]
-
-[id="configuring-maven-repositories"]
-==== Configuring a Maven repository and reducing its size
-
-You can use the {ProductShortName} {WebName} to both configure a Maven repository and to reduce its size.
-
-include::topics/mta-web-config-maven-repo.adoc[leveloffset=+4]
-include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
-
-// === Configuring HTTP and HTTPS proxy settings
-include::topics/mta-web-proxy-config.adoc[leveloffset=2]
-
-include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
-
-// === Seeding instances
-include::topics/mta-web-seeding-instances.adoc[leveloffset=2]
-
-[id="creating-configuring-jira-connection"]
-== Creating and configuring a Jira connection
-
-You can track application migrations by creating a Jira issue for each migration from within the {ProductShortName} {WebName}. To be able to create Jira issues, you first need to do the following:
-
-. Create an {ProductShortName} credential to authenticate to the API of the Jira instance that you create in the next step.
-. Create a Jira instance in {ProductShortName} and establish a connection to that instance.
-
-include::topics/mta-web-config-jira-credentials.adoc[leveloffset=2]
-include::topics/mta-web-create-config-jira-connection.adoc[leveloffset=2]
-
-[NOTE]
-====
-A Jira connection that was used for xref:../../../docs/topics/mta-web-creating-jira-issues-for-migration-wave.adoc#mta-web-creating-jira-issues-for-migration-wave_{context}[creating issues for a migration wave] cannot be removed as long as the issues exist in Jira, even after the migration wave is deleted.
-====
-
-
-//7
-[id=working-with-applications-in-the-ui]
-== Managing applications with MTA
-
-You can use the {ProductFullName} {WebName} to perform the following tasks:
-
-* Add applications
-* Assign application credentials
-* Import a list of applications
-* Download a CSV template for importing application lists
-* Create application migration waves
-* Create Jira issues for migration waves
-
-{ProductShortName} {WebName} applications have the following attributes:
-
-* Name (free text)
-* Description (optional, free text)
-* Business service (optional, chosen from a list)
-* Tags (optional, chosen from a list)
-* Owner (optional, chosen from a list)
-* Contributors (optional, chosen from a list)
-* Source code (a path entered by the user)
-* Binary (a path entered by the user)
-
-//include::topics/mta-web-application-attributes.adoc[leveloffset=+2]
-include::topics/mta-web-adding-applications.adoc[leveloffset=+2]
-include::topics/mta-web-edit-application.adoc[leveloffset=+2]
-
-// include::topics/mta-web-review-application.adoc[leveloffset=+2]
-include::topics/mta-web-assigning-application-credentials.adoc[leveloffset=+2]
-include::topics/mta-web-importing-an-app-list.adoc[leveloffset=+2]
-include::topics/mta-web-downloading-app-list-template.adoc[leveloffset=+2]
-include::topics/mta-web-creating-migration-waves.adoc[leveloffset=+2]
-include::topics/mta-web-creating-jira-issues-for-migration-wave.adoc[leveloffset=+2]
-
-//6
-[id="assessing-and-analyzing-applications"]
-== Assessing and analyzing applications with MTA
-You can use the {ProductName} ({ProductShortName}) {WebName} to assess and analyze applications:
-
-* When adding to or editing the *Application Inventory*, {ProductShortName} automatically spawns programming language and technology discovery tasks. The tasks apply appropriate tags to the application, reducing the time you spend tagging the application manually.
-
-* When assessing applications, {ProductShortName} estimates the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. You can use the results of an assessment for discussions between stakeholders to determine whether applications are suitable for containerization.
-
-* When analyzing applications, {ProductShortName} uses rules to determine which specific lines in an application must be modified before the application can be migrated or modernized.
-
-include::topics/mta-assessment-changes-700.adoc[leveloffset=+2]
-include::topics/mta-introduction-questionnaire.adoc[leveloffset=+2]
-include::topics/mta-default-questionnaire.adoc[leveloffset=+3]
-include::topics/mta-custom-questionnaire.adoc[leveloffset=+3]
-include::topics/ref_yaml-template-for-custom-questionnaire.adoc[leveloffset=+4]
-include::topics/ref_custom-questionnaire-fields.adoc[leveloffset=+4]
-//include::topics/proc_listing-available-assessment-questionnaires.adoc[leveloffset=+3]
-include::topics/proc_managing-mta-questionnaires.adoc[leveloffset=+2]
-//include::topics/mta-view-questionnaire.adoc[leveloffset=+3]
-//include::topics/mta-export-questionnaire.adoc[leveloffset=+3]
-//include::topics/mta-import-questionnaire.adoc[leveloffset=+3]
-//include::topics/mta-delete-questionnaire.adoc[leveloffset=+3]
-
-//include::topics/mta-web-assessing-apps.adoc[leveloffset=+2]
-//include::topics/mta-web-assessment-module.adoc[leveloffset=+2]
-//include::topics/proc_creating-an-application.adoc[leveloffset=+3]
-//include::topics/proc_opening-an-existing-application.adoc[leveloffset=+3]
-include::topics/mta-web-assessing-apps.adoc[leveloffset=+2]
-include::topics/mta-web-reviewing-apps.adoc[leveloffset=+2]
-//include::topics/mta-web-review-tab.adoc[leveloffset=+3]
-include::topics/mta-web-viewing-an-assessment-report.adoc[leveloffset=+2]
-//include::topics/mta-web-run-assessment.adoc[leveloffset=+4]
-
-// include::topics/mta-web-skipping-assessment-of-apps.adoc[leveloffset=+3]
-
-include::topics/mta-web-tagging-an-application.adoc[leveloffset=+2]
-include::topics/proc_creating-application-tags.adoc[leveloffset=+3]
-//include::topics/proc_editing-application-tags.adoc[leveloffset=+3]
-//include::topics/proc_editing-tag-categories.adoc[leveloffset=+3]
-include::topics/proc_manual-tagging-of-an-application.adoc[leveloffset=+3]
-include::topics/con_automatic-tagging-of-an-application.adoc[leveloffset=+3]
-include::topics/proc_displaying-the-tags-of-an-application.adoc[leveloffset=+3]
-
-
-include::topics/mta-web-archetypes.adoc[leveloffset=+2]
-include::topics/proc_defining-an-archetype.adoc[leveloffset=+3]
-//include::topics/con_archetype-inheritance.adoc[leveloffset=+3]
-//include::topics/con_archetype-assessment.adoc[leveloffset=+3]
-include::topics/proc_assessing-an-archetype.adoc[leveloffset=+3]
-include::topics/proc_reviewing-an-archetype.adoc[leveloffset=+3]
-include::topics/proc_deleting-an-archetype.adoc[leveloffset=+3]
-// include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+3]
-
-include::topics/proc_analyzing-an-application.adoc[leveloffset=+2]
-include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+3]
-
-//include::topics/proc_displaying-the-analysis-details.adoc[leveloffset=+3]
-include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+3]
-include::topics/accessing-unmatched-rules.adoc[leveloffset=+3]
-include::topics/mta-web-downloading-an-analysis-report.adoc[leveloffset=+3]
-include::topics/mta-web-controlling-tasks-with-task-manager.adoc[leveloffset=+2]
-include::topics/analyzer-rbac-snippet.adoc[]
-include::topics/mta-web-reviewing-a-task-log.adoc[leveloffset=+3]
-include::topics/mta-web-controlling-task-order-with-task-manager.adoc[leveloffset=+3]
+include::assemblies/ui-guide/assembly_controlling-tasks-with-task-manager.adoc[leveloffset=+1]
 
 include::topics/web-console/assembly_platform-awareness.adoc[leveloffset=+1]
-
-// include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
 
 include::topics/web-console/assembly_asset-generation-ui.adoc[leveloffset=+1]
 
@@ -241,5 +44,6 @@ include::topics/web-console/assembly_asset-generation-ui.adoc[leveloffset=+1]
 // * Appendix: Revision Information *
 // **********************************
 // include::topics/templates/revision-info.adoc[]
+include::topics/mta-cli/ref_contributing-to-mta-development.adoc[leveloffset=+1]
 
 :!user-interface-guide:

@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-assessment-questionnaires: {context}]
+
+ifndef::context[]
+[id="assessment-questionnaires"]
+endif::[]
+ifdef::context[]
+[id="assessment-questionnaires_{context}"]
+endif::[]
+= {ProductShortName} assessment questionnaires
+
+:context: assessment-questionnaires
+
+The {ProductFullName} uses an assessment questionnaire, either xref:mta-default-questionnaire_assessment-questionnaires[default] or xref:mta-custom-questionnaire_assessment-questionnaires[custom], to assess the risks involved in containerizing an application. 
+
+The assessment report provides information about applications and risks associated with migration. The report also generates an adoption plan informed by the prioritization, business criticality, and dependencies of the applications submitted for assessment.
+
+include::topics/mta-ui/con_mta-default-questionnaire.adoc[leveloffset=+1]
+
+include::assembly_mta-custom-questionnaire.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-assessment-questionnaires[:context: {parent-context-of-assessment-questionnaires}]
+ifndef::parent-context-of-assessment-questionnaires[:!context:]
+

@@ -1,0 +1,60 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: CONCEPT
+
+[id="mta-tools_{context}"]
+= {ProductShortName} tools
+
+[role="_abstract"]
+Different {ProductFullName} tools provide assistance in the various stages of your migration and modernization efforts. 		
+
+You can use the following {ProductShortName} tools for assessing and analyzing your applications: 		
+
+* *User interface (UI)*
++	
+By using the user interface for the {ProductName}, you can perform the following tasks: 
+
+** Assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift. 			
+** Analyze the changes that must be made in the code of an application to containerize the application.
+
++ 	
+For more information about using the MTA user interface, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/user_interface_guide/index[User Interface Guide]. 			
+   
+* *Command-line interface (CLI)*
++
+The CLI is a command-line tool in the {ProductName} that you can use to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without using the other tools. The CLI includes a wide array of customization options. By using the CLI, you can tune {ProductShortName} analysis options or integrate with external automation tools.
++ 		
+For more information about using the CLI, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/cli_guide/index[CLI Guide]. 			
+	
+* *{ProductName} Operator*
++	
+By using the {ProductName} Operator, you can install the user interface on OpenShift Container Platform. 
++	
+For more information about the prerequisites for the MTA Operator installation, see link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles]. 				
+	
+* *IDE add-ons* 			
++
+You can migrate and modernize applications by using the {ProductName} add-ons for the following applications: 
++
+** Eclipse 					
+** Visual Studio Code, Visual Studio Codespaces, and Eclipse Che 	
+** IntelliJ IDEA, both the Community and Ultimate versions 
+
+
++
+You can use these add-ons to perform the following tasks: 
+
+** Analyze your projects by using customizable sets of rules. 			
+** Mark issues in the source code. 					
+** Fix the issues by using the provided guidance. 			
+** Use the automatic code replacement, if possible. 		
+
+
++
+For more information about using add-ons, see the following documentation:
+
+** link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/eclipse_plugin_guide/index[Eclipse Plugin Guide]
+** link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/intellij_idea_plugin_guide/index[IntelliJ IDEA Plugin Guide]
+** link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/visual_studio_code_extension_guide/index[Visual Studio Code Extension Guide]
+
+

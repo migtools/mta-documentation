@@ -1,0 +1,62 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-10
+:_mod-docs-content-type: PROCEDURE
+
+[id="installing-mta-operator_{context}"]
+= Installing the {ProductShortName} Operator
+
+[role="_abstract"]
+To create {ProductFullName} instances, you must first install the {ProductShortName} Operator. 
+
+The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance. 	
+
+.Prerequisites
+
+* 4 vCPUs, 8 GB RAM, and 40 GB persistent storage. 
+* Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.13-4.15.
+* 2 RWO persistent volumes (PVs) used by different components. For more information, see xref:[Persistent volume requirements].
+* You are logged in as a user with `cluster-admin` permissions. 	
+
+
+.Procedure
+
+. In the Red Hat OpenShift web console, click *Operators* and then click *OperatorHub*.	
+. Type _{ProductShortName}_ in the *Filter by keyword* field to search for the {ProductShortName} Operator. 					
+. Click the {ProductName} Operator and then click *Install*. 		
+. On the *Install Operator* page, click *Install*. 	
+. Optional: Review and edit the custom resource (CR) settings.
++
+A window for creating CR settings opens automatically after the installation of MTA Operator is complete. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.
++
+Alternatively, to work directly with the YAML file, click the *YAML* view and review the CR settings that are listed in the spec section of the YAML file. For more details about commonly used CR settings, see xref:custom-resource-settings_installing-mta-ui[Custom resource settings].
++	
+The `spec` section of the YAML file can have the following configuration:
++
+[subs="+quotes"]
+----
+kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  hub_bucket_volume_size: "2.5Gi"
+  maven_data_volume_size: "2.5Gi"
+  rwx_supported: "false"
+----
+. Verify that the MTA pods are running by clicking *Workloads* and then *Pods* in the *Administration* view. 	
+
+.Verification
+
+* Verify that the MTA Operator appears in the `openshift-mta` project with the status *Succeeded* by clicking *Operators* and then *Installed Operators*. 
+
+[role="_additional-resources"]
+.Next steps
+
+* xref:creating-mta-instance_installing-mta-ui[Create an {ProductShortName} instance].
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles]
+
+
