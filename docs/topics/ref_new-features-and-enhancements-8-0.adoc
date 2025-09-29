@@ -18,7 +18,7 @@ The Developer Lightspeed for {ProductShortName} core features are the following:
 +
 The context is a combination of the source code, the issue description, and solved examples. Solved examples contain code changes you accepted for other migrations, code you manually modified, and a pattern of resolution for an issue that you can use in future. 
 
-* Solution Server: Solution server is a component that allows Developer Lightspeed for {ProductShortName} to build a collective memory of code changes from all analysis performed in an organization. It also works with the LLM to improve the pattern of resolutions from solved examples for future analysis.
+* Solution Server (Technology Preview): Solution server is a component that allows Developer Lightspeed for {ProductShortName} to build a collective memory of code changes from all analysis performed in an organization. It also works with the LLM to improve the pattern of resolutions from solved examples for future analysis.
 +
 The Solution Server delivers two primary benefits to users:
 
