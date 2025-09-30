@@ -92,7 +92,7 @@ NOTE: You must restart your server after changing the Gen AI settings for the ch
 (link:https://issues.redhat.com/browse/MTA-5360[MTA-5360])
 
 
-.Setting default credentials is supported in the {ProductShotName} UI
+.Setting default credentials is supported in the {ProductShortName} UI
 
 Before this update, you could only assign credentials to an application manually once you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications, each of these applications requiring credentials for language and technology discovery tasks. With this update, instead of manually defining credentials, you can define credentials that will be used by default for an application that does not have any credentials assigned to it.
 
