@@ -10,49 +10,18 @@ include::topics/templates/document-attributes.adoc[]
 :_content-type: ASSEMBLY
 = Release Notes
 
-//Inclusive language statement
-include::topics/making-open-source-more-inclusive.adoc[]
+// Bring back when 8.1 is out [id="mta-8-0-0"]
+//== {ProductShortName} 8.0.0
 
-[id="release-notes-introduction"]
-== Introduction
+include::topics/ref_new-features-and-enhancements-8-0.adoc[leveloffset=+1]
 
-{ProductFullName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on {ocp-first}. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to {ocp-short} through the user interface (UI) and command-line interface (CLI).
+include::topics/ref_tech-previews-8-0.adoc[leveloffset=+1]
 
-[id="mta-7-3-2"]
-== {ProductShortName} 7.3.2
+include::topics/ref_removed-features-8-0.adoc[leveloffset=+1]
 
-include::topics/mta-rn-technical-changes-7-3-2.adoc[leveloffset=+2]
+include::topics/ref_known-issues-8-0.adoc[leveloffset=+1]
 
-include::topics/ref_fixed-issues-7-3-2.adoc[leveloffset=+2]
-
-include::topics/ref_known-issues-7-3-2.adoc[leveloffset=+2]
-
-[id="mta-7-3-1"]
-== {ProductShortName} 7.3.1
-
-include::topics/ref_new-features-7-3-1.adoc[leveloffset=+2]
-
-include::topics/ref_fixed-issues-7-3-1.adoc[leveloffset=+2]
-
-include::topics/ref_known-issues-7-3-1.adoc[leveloffset=+2]
-
-[id="mta-7-3-0"]
-== {ProductShortName} 7.3.0
-
-include::topics/ref_new-features-7-3-0.adoc[leveloffset=+2]
-
-include::topics/ref_fixed-issues-7-3-0.adoc[leveloffset=+2]
-
-include::topics/ref_known-issues-7-3-0.adoc[leveloffset=+2]
-
-//snippets required for release notes and other locations
-include::topics/analysis-dependency-rule-snippet.adoc[]
-
-include::topics/analyzer-rbac-known-issue-snippet.adoc[]
-
-// include::topics/svn-checkout-fails-issue-snippet.adoc[]
-
-For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12469170[{ProductShortName} 7.3.1 known issues] in Jira.
-
+include::topics/ref_fixed-issues-8-0.adoc[leveloffset=+1]
 
 :!release-notes:
+ 

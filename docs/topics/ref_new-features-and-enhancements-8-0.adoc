@@ -1,0 +1,105 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-08-07
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-and-enhancements-8-0_{context}"]
+= New features and enhancements
+
+[role="_abstract"]
+{ProductFullName} version {ProductVersion} provides the following major new features and enhancements. 
+
+.Developer Lightspeed for {ProductShortName} is available in the VS Code extension
+
+You can opt to use Developer Lightspeed for {ProductShortName} features in the VS Code extension. With the Developer Lightspeed feature, you to use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application. 
+
+The Developer Lightspeed for {ProductShortName} core features are the following:
+
+* RAG solution: The Developer Lightspeed for {ProductShortName} uses Retrieval Augmented Generation (RAG) for context-based resolutions of issues in code. Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code. 
++
+The context is a combination of the source code, the issue description, and solved examples. Solved examples contain code changes you accepted for other migrations, code you manually modified, and a pattern of resolution for an issue that you can use in future. 
+
+* Solution Server (Technology Preview): Solution server is a component that allows Developer Lightspeed for {ProductShortName} to build a collective memory of code changes from all analysis performed in an organization. It also works with the LLM to improve the pattern of resolutions from solved examples for future analysis.
++
+The Solution Server delivers two primary benefits to users:
+
+** Contextual Hints: It surfaces examples of past migration solutions, including successful user modifications and accepted fixes, offering actionable hints for difficult or previously unsolved migration problems.
+
+** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of Developer Lightspeed for {ProductShortName} successfully resolving a given migration issue or incident.
+
+* Agentic AI (Technology Preview): In the agent mode, Developer Lightspeed for {ProductShortName} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
+NOTE: To obtain support for features in {mta-dl-plugin}, you need an active Red Hat Advanced Developer Suite (RHADS) subscription.
+(link:https://issues.redhat.com/browse/MTA-5378[MTA-5738])
+
+
+
+.{ProductShortName} supports platform awareness to import applications from source platform instances
+
+You can use platform awareness to discover applications from a source platform and import them into the {ProductShortName} application inventory. {ProductShortName} discovers the applications by their coordinates in the source platform where they are deployed. With platform awareness, you can use the platform and runtime configurations of applications to create a discovery manifest that can be used to generate other deployment assets. In {ProductShortName} 8.0.0, you can discover applications deployed in the Cloud Foundry platform.
+
+(link:https://issues.redhat.com/browse/MTA-4846[MTA-4846])
+
+
+.{ProductShortName} supports asset generation for application migration in the web console
+
+You can use the discovery manifest to generate assets in the web console to deploy applications in Red Hat OpenShift or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. 
+
+(link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
+
+
+.{ProductShortName} CLI supports running a live discovery in a remote CF instance
+
+With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files. 
+
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
+
+(link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
+
+
+.{ProductShortName} CLI supports concealing sensitive information in a discovery manifest
+
+You can conceal sensitive information, for example, services and Docker credentials, in a Cloud Foundry (CF) discovery manifest by using the `mta-cli discover cloud-foundry --conceal-sensitive-data` command. This command generates the following files:
+
+* A discovery manifest
+* A file with concealed data
+
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#concealing-sensitive-information_generating-assets[Concealing sensitive information in a discovery manifest].
+
+(link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
+
+.Analysis insights are available in the {ProductShortName} UI
+
+Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, insights were only available in the analysis output and a static report after you ran an application analysis. With this enhancement, you can access analysis insights also from the {ProductFullName} user interface (UI).
+
+//Add when the section is ready - For more information, see link:<link_to_the_section[section name].
+
+(link:https://issues.redhat.com/browse/MTA-5420[MTA-5420])
+
+
+.A new VS Code IDE plug-in for application analysis
+
+With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-in that has the following features:
+
+* Standard application analysis and issue detection
+* Generative AI (GenAI) feature:
+** When enabled, you can use GenAI to find solutions for the analysis incidents. Note that GenAI is enabled by default.
+** When disabled, you can run a standard application analysis.
+
++
+NOTE: You must restart your server after changing the Gen AI settings for the change to take effect.
+
+//Add when the section is ready - For more information, see link:<link_to_the_section[section name].
+
+(link:https://issues.redhat.com/browse/MTA-5360[MTA-5360])
+
+
+.Setting default credentials is supported in the {ProductShortName} UI
+
+Before this update, you could only assign credentials to an application manually once you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications, each of these applications requiring credentials for language and technology discovery tasks. With this update, instead of manually defining credentials, you can define credentials that will be used by default for an application that does not have any credentials assigned to it.
+
+IMPORTANT: You can only set Maven or source control credentials as default credentials. You can only define one default set of credentials per credential type.
+
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/user_interface_guide/index#setting-default-credentials_managing-applications-mta-ui[Setting default credentials].
+
+(link:https://issues.redhat.com/browse/MTA-5254[MTA-5254])
+
+
