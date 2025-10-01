@@ -27,14 +27,18 @@ The Solution Server delivers two primary benefits to users:
 ** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of Developer Lightspeed for {ProductShortName} successfully resolving a given migration issue or incident.
 
 * Agentic AI (Technology Preview): In the agent mode, Developer Lightspeed for {ProductShortName} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
+
 NOTE: To obtain support for features in {mta-dl-plugin}, you need an active Red Hat Advanced Developer Suite (RHADS) subscription.
+
+For more information, see link:{mta-URL}/configuring_and_using_developer_lightspeed_for_mta/index[Configuring and Using Developer Lightspeed for MTA].
+
 (link:https://issues.redhat.com/browse/MTA-5378[MTA-5738])
-
-
 
 .{ProductShortName} supports platform awareness to import applications from source platform instances
 
 You can use platform awareness to discover applications from a source platform and import them into the {ProductShortName} application inventory. {ProductShortName} discovers the applications by their coordinates in the source platform where they are deployed. With platform awareness, you can use the platform and runtime configurations of applications to create a discovery manifest that can be used to generate other deployment assets. In {ProductShortName} 8.0.0, you can discover applications deployed in the Cloud Foundry platform.
+
+For more information, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index#platform-awareness_user-interface-guide[Platform awareness in MTA user interface].
 
 (link:https://issues.redhat.com/browse/MTA-4846[MTA-4846])
 
@@ -43,6 +47,8 @@ You can use platform awareness to discover applications from a source platform a
 
 You can use the discovery manifest to generate assets in the web console to deploy applications in Red Hat OpenShift or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. 
 
+For more information, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index#asset-generation-ui_user-interface-guide[Generating assets for application deployment in user interface].
+
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
 
@@ -50,7 +56,7 @@ You can use the discovery manifest to generate assets in the web console to depl
 
 With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files. 
 
-For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
+For more information, see link:{mta-URL}/using_the_mta_command-line_interface_to_analyze_applications/index#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
@@ -62,7 +68,7 @@ You can conceal sensitive information, for example, services and Docker credenti
 * A discovery manifest
 * A file with concealed data
 
-For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#concealing-sensitive-information_generating-assets[Concealing sensitive information in a discovery manifest].
+For more information, see link:{mta-URL}/using_the_mta_command-line_interface_to_analyze_applications/index#concealing-sensitive-information_generating-assets[Concealing sensitive information in a discovery manifest].
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
@@ -70,14 +76,14 @@ For more information, see link:https://docs.redhat.com/en/documentation/migratio
 
 Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, insights were only available in the analysis output and a static report after you ran an application analysis. With this enhancement, you can access analysis insights also from the {ProductFullName} user interface (UI).
 
-//Add when the section is ready - For more information, see link:<link_to_the_section[section name].
+For more information, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index#accessing-analysis-insights_analyzing-applications[Accessing analysis insights].
 
 (link:https://issues.redhat.com/browse/MTA-5420[MTA-5420])
 
 
-.A new VS Code IDE plug-in for application analysis
+.A new VS Code IDE plugin for application analysis
 
-With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-in that has the following features:
+With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plugin that has the following features:
 
 * Standard application analysis and issue detection
 * Generative AI (GenAI) feature:
@@ -87,7 +93,10 @@ With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-i
 +
 NOTE: You must restart your server after changing the Gen AI settings for the change to take effect.
 
-//Add when the section is ready - For more information, see link:<link_to_the_section[section name].
+For more information, see the following documentation:
+
+* link:{mta-URL}/configuring_and_using_developer_lightspeed_for_mta/index[Configuring and Using Developer Lightspeed for MTA]
+* link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index[Configuring and using the Visual Studio Code Extension for MTA]
 
 (link:https://issues.redhat.com/browse/MTA-5360[MTA-5360])
 
@@ -98,7 +107,7 @@ Before this update, you could only assign credentials to an application manually
 
 IMPORTANT: You can only set Maven or source control credentials as default credentials. You can only define one default set of credentials per credential type.
 
-For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/user_interface_guide/index#setting-default-credentials_managing-applications-mta-ui[Setting default credentials].
+For more information, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index#setting-default-credentials_managing-applications[Setting default credentials].
 
 (link:https://issues.redhat.com/browse/MTA-5254[MTA-5254])
 
