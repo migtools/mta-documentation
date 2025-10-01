@@ -7,7 +7,7 @@
 
 This section provides a list of all Technology Preview features available in {ProductFullName} {ProductVersion}.
 
-For information on Red Hat scope of support for Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]. 	
+For information on Red Hat's scope of support for Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]. 	
 
 .Support for the Solution Server in Developer Lightspeed (Technology Preview)
 
