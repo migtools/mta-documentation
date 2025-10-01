@@ -7,11 +7,11 @@
 
 This section provides a list of all Technology Preview features available in {ProductFullName} {ProductVersion}.
 
-For information on Red Hat scope of support for Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]. 	
+For information on Red Hat's scope of support for Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]. 	
 
 .Support for the Solution Server in Developer Lightspeed (Technology Preview)
 
-Solution server is a component that allows Developer Lightspeed for {ProductShortName} to build a collective memory of code changes from all analysis performed in an organization. This capability is a Technology Preview feature. The Solution server works with the LLM to improve the pattern of resolutions from solved examples for future analysis. 
+Solution Server is a component that allows Developer Lightspeed for {ProductShortName} to build a collective memory of code changes from all analysis performed in an organization. This capability is a Technology Preview feature. The Solution Server works with the LLM to improve the pattern of resolutions from solved examples for future analysis. 
 
 The Solution Server has the following benefits:
 
