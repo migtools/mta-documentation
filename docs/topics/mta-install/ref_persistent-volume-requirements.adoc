@@ -7,7 +7,7 @@
 = Persistent volume requirements
 
 [role="_abstract"]
-To successfully deploy, the {ProductShortName} Operator requires two ReadWriteOnce (RWO) persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires additional two ReadWriteMany (RWX) PVs that are used by Maven and the hub file storage.
+To successfully deploy, the {ProductShortName} Operator requires two ReadWriteOnce (RWO) persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires two additional ReadWriteMany (RWX) PVs that are used by Maven and the hub file storage.
 
 .Required persistent volumes
 [cols="25%,25%,25%,25%", options="header"]
@@ -30,7 +30,7 @@ To successfully deploy, the {ProductShortName} Operator requires two ReadWriteOn
 |`keycloak postgresql`
 |`1Gi`
 |RWO
-|Keycloak back end database
+|Keycloak backend database
 
 |`cache`
 |`100Gi`
