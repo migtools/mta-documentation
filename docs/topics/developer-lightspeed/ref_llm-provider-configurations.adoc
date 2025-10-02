@@ -4,16 +4,16 @@
 :_mod-docs-content-type: REFERENCE
 
 [id="llm-provider-settings_{context}"]
-= Configuring LLM provider settings 
+= Configuring LLM provider settings
 
 [role="_abstract"]
-{mta-dl-full} is large language model (LLM) agnostic and integrates with an LLM of your choice. To enable {mta-dl-plugin} to access your large language model (LLM), you must enter the LLM provider configurations in the `provider-settings.yaml` file. 
+{mta-dl-full} is large language model (LLM) agnostic and integrates with an LLM of your choice. To enable {mta-dl-plugin} to access your large language model (LLM), you must enter the LLM provider configurations in the `provider-settings.yaml` file.
 
-The `provider-settings.yaml` file contains a list of LLM providers that are suppored by default. The mandatory environment variables are different for each LLM provider. Depending on the provider that you choose, you can configure additional environment variables for a model in the `provider-settings.yaml` file. You can also enter a new provider with the required environment variables, the base URL, and the model name.
+The `provider-settings.yaml` file contains a list of LLM providers that are supported by default. The mandatory environment variables are different for each LLM provider. Depending on the provider that you choose, you can configure additional environment variables for a model in the `provider-settings.yaml` file. You can also enter a new provider with the required environment variables, the base URL, and the model name.
 
 The provider settings file is available in the {mta-dl-plugin} Visual Studio (VS) Code extension.
 
-Access the `provider-settings.yaml` from the VS Code Command Palette by typing `Open the GenAI model provider configuration file`. 
+Access the `provider-settings.yaml` from the VS Code Command Palette by typing `Open the GenAI model provider configuration file`.
 
 [NOTE]
 ====
