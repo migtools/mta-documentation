@@ -2,7 +2,7 @@
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="mta-developer-lightspeed"]
-= Configuring and Using Developer Lightspeed for MTA
+= Configuring and Using Red Hat Developer Lightspeed for MTA
 
 :toc:
 :toclevels: 4

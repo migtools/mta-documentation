@@ -1,9 +1,9 @@
 <title>Developer Lightspeed Guide</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Using the {ProductName} Developer Lightspeed to modernize your applications</subtitle>
+<subtitle>Using Red Hat Developer Lightspeed for Migration Toolkit for Applications to modernize your applications</subtitle>
 <abstract>
-    <para>By using Developer Lightspeed for Migration Toolkit for Applications (MTA), you can modernize applications in your organization by applying LLM-driven code changes to resolve issues found through static code analysis. You can automate code fixes, review and apply the suggested code changes with minimum manual effort.</para>
+    <para>By using Red Hat Developer Lightspeed for Migration Toolkit for Applications (MTA), you can modernize applications in your organization by applying LLM-driven code changes to resolve issues found through static code analysis. You can automate code fixes, review and apply the suggested code changes with minimum manual effort.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>

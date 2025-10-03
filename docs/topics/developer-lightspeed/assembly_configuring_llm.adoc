@@ -19,7 +19,7 @@ endif::[]
 
 {mta-dl-plugin} is designed to be model agnostic. It works with LLMs that are run in different environments (in local containers, as local AI, or as a shared service) to support analyzing Java applications in a wide range of scenarios. You can choose an LLM from well-known providers, local models that you run from Ollama or Podman desktop, and OpenAI API compatible models.
 
-The code fix suggestions produced to resolve issues detected through an analysis depends on the LLM's capabilities.
+The code fix suggestions produced to resolve issues detected through an analysis depend on the LLM's capabilities.
 
 You can run an LLM from the following generative AI providers:
 
@@ -31,7 +31,7 @@ You can run an LLM from the following generative AI providers:
 
 You can also run OpenAI API-compatible LLMs deployed as:
 
-* A service in your {ocp-name} AI cluster 
+* A service in your {ocp-name} AI cluster
 * Locally in the Podman AI Lab in your system.
 
 include::con_llm-service-openshift-ai.adoc[leveloffset=+1]

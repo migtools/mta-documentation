@@ -6,31 +6,29 @@
 = New features and enhancements
 
 [role="_abstract"]
-{ProductFullName} version {ProductVersion} provides the following major new features and enhancements. 
+{ProductFullName} version {ProductVersion} provides the following major new features and enhancements.
 
-.Developer Lightspeed for {ProductShortName} is available in the VS Code extension
+.{mta-dl-plugin} is available in the VS Code extension
 
-You can opt to use Developer Lightspeed for {ProductShortName} features in the VS Code extension. With the Developer Lightspeed feature, you to use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application. 
+You can opt to use {mta-dl-plugin} features in the VS Code extension. With the Developer Lightspeed feature, you can use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application.
 
-The Developer Lightspeed for {ProductShortName} core features are the following:
+The {mta-dl-plugin} core features are the following:
 
-* RAG solution: The Developer Lightspeed for {ProductShortName} uses Retrieval Augmented Generation (RAG) for context-based resolutions of issues in code. Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code. 
+* RAG solution: The {mta-dl-plugin} uses Retrieval Augmented Generation (RAG) for context-based resolutions of issues in code. Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code.
 +
-The context is a combination of the source code, the issue description, and solved examples. Solved examples contain code changes you accepted for other migrations, code you manually modified, and a pattern of resolution for an issue that you can use in future. 
+The context is a combination of the source code, the issue description, and solved examples. Solved examples contain code changes you accepted for other migrations, code you manually modified, and a pattern of resolution for an issue that you can use in the future.
 
-* Solution Server (Technology Preview): Solution server is a component that allows Developer Lightspeed for {ProductShortName} to build a collective memory of code changes from all analysis performed in an organization. It also works with the LLM to improve the pattern of resolutions from solved examples for future analysis.
+* Solution Server (Technology Preview): Solution Server is a component that allows {mta-dl-plugin} to build a collective memory of code changes from all analysis performed in an organization. It also works with the LLM to improve the pattern of resolutions from solved examples for future analysis.
 +
 The Solution Server delivers two primary benefits to users:
 
 ** Contextual Hints: It surfaces examples of past migration solutions, including successful user modifications and accepted fixes, offering actionable hints for difficult or previously unsolved migration problems.
 
-** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of Developer Lightspeed for {ProductShortName} successfully resolving a given migration issue or incident.
+** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully resolving a given migration issue or incident.
 
-* Agentic AI (Technology Preview): In the agent mode, Developer Lightspeed for {ProductShortName} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
+* Agentic AI (Technology Preview): In the agent mode, {mta-dl-plugin} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
 NOTE: To obtain support for features in {mta-dl-plugin}, you need an active Red Hat Advanced Developer Suite (RHADS) subscription.
 (link:https://issues.redhat.com/browse/MTA-5378[MTA-5738])
-
-
 
 .{ProductShortName} supports platform awareness to import applications from source platform instances
 
@@ -41,14 +39,14 @@ You can use platform awareness to discover applications from a source platform a
 
 .{ProductShortName} supports asset generation for application migration in the web console
 
-You can use the discovery manifest to generate assets in the web console to deploy applications in Red Hat OpenShift or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype. 
+You can use the discovery manifest to generate assets in the web console to deploy applications in Red Hat OpenShift or Kubernetes. The asset generation workflow includes generators, target profiles, and the archetypes. Generators parse the application manifest configurations to create the deployment assets for a specific kind of target platform. In the target profiles, you can run one or more generators in sequence for a given archetype.
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
 
 .{ProductShortName} CLI supports running a live discovery in a remote CF instance
 
-With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files. 
+With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.
 
 For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
 
@@ -101,5 +99,3 @@ IMPORTANT: You can only set Maven or source control credentials as default crede
 For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/user_interface_guide/index#setting-default-credentials_managing-applications-mta-ui[Setting default credentials].
 
 (link:https://issues.redhat.com/browse/MTA-5254[MTA-5254])
-
-
