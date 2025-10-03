@@ -20,7 +20,7 @@ To enable Solution Server and other AI configurations in the {mta-dl-full} VS Co
 
 .Procedure
 
-. Log in to the {ocp-short} cluster and switch to the `openshift-mta` project. 
+. Log in to the Red Hat {ocp-name} cluster and switch to the `openshift-mta` project. 
 +
 
 . Edit the Tackle CR settings in the `tackle_hub.yml` file with the following command:

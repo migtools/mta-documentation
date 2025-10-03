@@ -13,8 +13,8 @@ You can review the code updates and edit the suggested code resolutions before a
 .Prerequisites
 
 * You opened a Java project in your VS Code workspace.
-* You configured a profile on the *{ProductShortName} Analysis View* page
-* You ran an analysis after enabling solution server.
+* You configured a profile on the *{ProductShortName} Analysis View* page.
+* You ran an analysis after enabling the Solution Server.
 
 .Procedure
 
