@@ -18,7 +18,7 @@ If you make any change after enabling the generative AI settings in the extensio
 
 To use the Solution Server for code fix suggestions:
 
-* Create a secret for your LLM key in the {ocp} cluster.
+* Create a secret for your LLM key in the Red Hat {ocp-name} cluster.
 
 * Enable the Solution Server in the Tackle custom resource (CR).
 

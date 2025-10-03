@@ -14,7 +14,7 @@ The code suggestions from {mta-dl-full} differ based on the large language model
 An example workflow for configuring an LLM service on {ocp-name} AI broadly requires the following configurations:
 
 * Installing and configuring the following infrastructure resources:
-** {ocp-short} cluster and installing the {ocp-name} AI Operator
+** Red Hat {ocp-name} cluster and installing the {ocp-name} AI Operator
 ** Configure a GPU machineset
 ** (Optional) Configure an auto scaler custom resource (CR) and a machine scaler CR 
 * Configuring {ocp-name} AI platform
