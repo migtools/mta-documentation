@@ -22,7 +22,7 @@ Before you install {mta-dl-plugin}, you must:
 * Install the {ProductShortName} Operator 8.0.0
 +
 
-The {ProductShortName} Operator is mandatory if you plan to enable the solution server that works with the large language model (LLM) for generating code changes. It enables you to log in to the `openshift-mta` project where you must enable the Solution Server in the Tackle custom resources (CR).
+The {ProductShortName} Operator is mandatory if you plan to enable the Solution Server that works with the large language model (LLM) for generating code changes. It enables you to log in to the `openshift-mta` project where you must enable the Solution Server in the Tackle custom resources (CR).
 
 * Create an API key for an LLM.
 +

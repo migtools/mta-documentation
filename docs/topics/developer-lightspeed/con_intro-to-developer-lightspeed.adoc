@@ -37,7 +37,7 @@ More instances of solved examples for an issue enhances the context and improve 
 
 * (Optional) If you enable the Solution Server, it extracts a pattern of resolution, called the migration hint, that can be used by the LLM to generate a more accurate fix suggestion in a future analysis.
 +
-The improvement in the quality of migration hints results in more accurate code resolutions. Accurate code resolutions from the LLM result in the user accepting an update to the code. The updated code is stored in the solution server to generate a better migration hint in future.
+The improvement in the quality of migration hints results in more accurate code resolutions. Accurate code resolutions from the LLM result in the user accepting an update to the code. The updated code is stored in the Solution Server to generate a better migration hint in future.
 +
 This cyclical improvement of resolution pattern from the Solution Server and improved migration hints lead to more reliable code changes as you migrate applications in different migration waves.
 
