@@ -12,7 +12,7 @@ To generate code changes using {mta-dl-plugin}, you must configure a profile tha
 
 .Prerequisites
 
-* You completed the solution server configurations in Tackle custom resource if you opt to use the solution server.
+* You completed the Solution Server configurations in Tackle custom resource if you opt to use the Solution Server.
 * You opened a Java project in your VS Code workspace.
 
 .Procedure

@@ -3,10 +3,10 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="configuring-solution-server-settings-file_{context}"]
-= Configuring the solution server settings
+= Configuring the Solution Server settings
 
 [role="_abstract"]
-You need a Keycloak realm and the solution server URL to connect {mta-dl-plugin} extension with the Solution Server.
+You need a Keycloak realm and the Solution Server URL to connect {mta-dl-plugin} extension with the Solution Server.
 
 .Prerequisites
 
