@@ -8,13 +8,13 @@
 [role="_abstract"]
 After you install the {ProductShortName} extension in Visual Studio (VS) Code, you must provide your large language model (LLM) credentials to activate {mta-dl-plugin} settings in Visual Studio (VS) Code. 
 
-{mta-dl-plugin} settings are applied to all AI-assisted analysis that you perform by using the {ProductShortName} extension. The extension settings can be broadly categorized into debugging and logging, {mta-dl-plugin} settings, analysis related settings, and solution server settings.
+{mta-dl-plugin} settings are applied to all AI-assisted analysis that you perform by using the {ProductShortName} extension. The extension settings can be broadly categorized into debugging and logging, {mta-dl-plugin} settings, analysis related settings, and Solution Server settings.
 
 .Prerequisites
 
 In addition to the overall prerequisites, you have configured the following:
 
-* You completed the solution server configurations in Tackle custom resource if you opt to use the solution server.
+* You completed the Solution Server configurations in Tackle custom resource if you opt to use the Solution Server.
 
 .Procedure
 
@@ -40,7 +40,7 @@ In addition to the overall prerequisites, you have configured the following:
 |Trace directory|Configure the absolute path to the directory that contains the saved LLM interaction.
 |Trace enabled|Enable to trace {ProductShortName} communication with the LLM model. Traces are stored in the trace directory that you configured.
 |Demo mode|Enable to run {mta-dl-plugin} in demo mode that uses the LLM responses saved in the `cache` directory for analysis.
-|Solution Server:URL|Edit the configurations for solution server in `settings.json`:
+|Solution Server:URL|Edit the configurations for the Solution Server in `settings.json`:
  
                      * “enabled”: Enter a boolean value. Set `true` for connecting the Solution Server client ({mta-dl-plugin} extension) to the Solution Server.
 
