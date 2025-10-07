@@ -5,6 +5,7 @@
 [id="tech-previews-8-0_{context}"]
 = Technology Preview features
 
+[role="_abstract"]
 This section provides a list of all Technology Preview features available in {ProductFullName} {ProductVersion}.
 
 For information on Red Hat's scope of support for Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]. 	
