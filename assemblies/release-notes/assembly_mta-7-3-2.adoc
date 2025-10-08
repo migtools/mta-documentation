@@ -1,0 +1,30 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-09
+
+ifdef::context[:parent-context-of-mta-7-3-2: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="mta-7-3-2"]
+endif::[]
+ifdef::context[]
+[id="mta-7-3-2_{context}"]
+endif::[]
+= {ProductShortName} 7.3.2
+
+:context: mta-7-3-2
+
+[role="_abstract"]
+The {ProductShortName} 7.3.2 section describes the new features and enhancements, fixed issues, and known issues.
+
+include::topics/release-notes-topics/mta-rn-technical-changes-7-3-2.adoc[leveloffset=+1]
+
+include::topics/release-notes-topics/ref_fixed-issues-7-3-2.adoc[leveloffset=+1]
+
+include::topics/release-notes-topics/ref_known-issues-7-3-2.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-analyzing-multi-language-applications[:context: {parent-context-of-mta-7-3-2}]
+ifndef::parent-context-of-analyzing-multi-language-applications[:!context:]
+

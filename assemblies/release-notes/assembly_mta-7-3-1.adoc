@@ -1,0 +1,31 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-09
+
+ifdef::context[:parent-context-of-mta-7-3-1: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="mta-7-3-1"]
+endif::[]
+ifdef::context[]
+[id="mta-7-3-1_{context}"]
+endif::[]
+= {ProductShortName} 7.3.1
+
+:context: mta-7-3-1
+
+[role="_abstract"]
+This {ProductShortName} 7.3.1 section lists the new features and enhancements, fixed issues, and known issues.
+
+include::topics/release-notes-topics/ref_new-features-7-3-1.adoc[leveloffset=+1]
+
+include::topics/release-notes-topics/ref_fixed-issues-7-3-1.adoc[leveloffset=+1]
+
+include::topics/release-notes-topics/ref_known-issues-7-3-1.adoc[leveloffset=+1]
+
+For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12469170[{ProductShortName} 7.3.1 known issues] in Jira.
+
+ifdef::parent-context-of-analyzing-multi-language-applications[:context: {parent-context-of-mta-7-3-1}]
+ifndef::parent-context-of-analyzing-multi-language-applications[:!context:]
+
