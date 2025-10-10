@@ -6,9 +6,7 @@
 = Installing the {ProductShortName} Operator
 
 [role="_abstract"]
-To create {ProductFullName} instances, you must first install the {ProductShortName} Operator.
-
-The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift, such as the database, front end, and back end, to automatically create an {ProductShortName} instance.
+The {ProductFullName} Operator is a structural layer that manages resources deployed on OpenShift, such as the database, front end, and back end, to automatically create an {ProductShortName} instance.
 
 .Prerequisites
 
