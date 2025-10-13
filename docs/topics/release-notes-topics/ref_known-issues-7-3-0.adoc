@@ -40,3 +40,11 @@ Workaround: Set the `Analysis Mode` setting to `source-only`.
 NOTE: The Node.js provider does not have a dependency capability. Therefore, a dependency list cannot be generated. The same applies for the Python provider.
  
 (link:https://issues.redhat.com/browse/MTA-5070[MTA-5070])
+
+.Dependency rule of a custom rules file in analysis is not fired
+
+A custom dependency rule is not fired, and no related migration issue is found. link:https://issues.redhat.com/browse/MTA-3863[(MTA-3863)]
+
+.No multi-user access restrictions on resources
+
+An analyzer task does not have multi-user access restrictions on resources. For example, an analyzer task created by a user can be canceled by any other user. link:https://issues.redhat.com/browse/MTA-3819[(MTA-3819)]

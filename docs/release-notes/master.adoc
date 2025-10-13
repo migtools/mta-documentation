@@ -7,52 +7,22 @@ include::topics/templates/document-attributes.adoc[]
 :imagesdir: topics/images
 :context: release-notes
 :release-notes:
-:_content-type: ASSEMBLY
+:_mod-doc-content-type: ASSEMBLY
 = Release Notes
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-[id="release-notes-introduction"]
-== Introduction
+//[id="release-notes-introduction"]
+//== Introduction
 
-{ProductFullName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on {ocp-first}. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to {ocp-short} through the user interface (UI) and command-line interface (CLI).
+//{ProductFullName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on {ocp-first}. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to {ocp-short} through the user interface (UI) and command-line interface (CLI).
 
-[id="mta-7-3-2"]
-== {ProductShortName} 7.3.2
 
-include::topics/mta-rn-technical-changes-7-3-2.adoc[leveloffset=+2]
+include::assemblies/release-notes/assembly_mta-7-3-2.adoc[leveloffset=+1]
 
-include::topics/ref_fixed-issues-7-3-2.adoc[leveloffset=+2]
+include::assemblies/release-notes/assembly_mta-7-3-1.adoc[leveloffset=+1]
 
-include::topics/ref_known-issues-7-3-2.adoc[leveloffset=+2]
-
-[id="mta-7-3-1"]
-== {ProductShortName} 7.3.1
-
-include::topics/ref_new-features-7-3-1.adoc[leveloffset=+2]
-
-include::topics/ref_fixed-issues-7-3-1.adoc[leveloffset=+2]
-
-include::topics/ref_known-issues-7-3-1.adoc[leveloffset=+2]
-
-[id="mta-7-3-0"]
-== {ProductShortName} 7.3.0
-
-include::topics/ref_new-features-7-3-0.adoc[leveloffset=+2]
-
-include::topics/ref_fixed-issues-7-3-0.adoc[leveloffset=+2]
-
-include::topics/ref_known-issues-7-3-0.adoc[leveloffset=+2]
-
-//snippets required for release notes and other locations
-include::topics/analysis-dependency-rule-snippet.adoc[]
-
-include::topics/analyzer-rbac-known-issue-snippet.adoc[]
-
-// include::topics/svn-checkout-fails-issue-snippet.adoc[]
-
-For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12469170[{ProductShortName} 7.3.1 known issues] in Jira.
-
+include::assemblies/release-notes/assembly_mta-7-3-0.adoc[leveloffset=+1]
 
 :!release-notes:
