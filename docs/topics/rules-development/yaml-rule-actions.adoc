@@ -13,6 +13,7 @@ Rules can include the following types of actions:
 
 Each rule includes either one of them or both of them.
 
+[id="message-actions"]
 .Message actions
 
 When a message action matches the rule, it creates an issue. The custom data that providers export can be used in the message.

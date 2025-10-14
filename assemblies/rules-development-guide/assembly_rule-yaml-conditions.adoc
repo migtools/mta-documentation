@@ -1,0 +1,55 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-rule-yaml-conditions: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="rule-yaml-conditions"]
+endif::[]
+ifdef::context[]
+[id="rule-yaml-conditions_{context}"]
+endif::[]
+= Introduction to rule conditions
+
+:context: rule-yaml-conditions
+
+[role="_abstract"]
+Rule conditions.
+
+include::topics/rules-development/yaml-rule-conditions.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-provider-conditions.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-builin-provider.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-java-provider.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-java-locations.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-annotation-inspection.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-go-provider.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-dotnet-provider.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-condition-patterns.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-custom-variables.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-logical-conditions.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-and-condition.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-or-condition.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-chaining-condition-variables.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-chaining-java-provider.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-rule-yaml-conditions[:context: {parent-context-of-rule-yaml-conditions}]
+ifndef::parent-context-of-rule-yaml-conditions[:!context:]
+
+:!rule-yaml-conditions:

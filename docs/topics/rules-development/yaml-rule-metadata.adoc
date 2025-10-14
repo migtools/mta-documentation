@@ -2,22 +2,10 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_mod-docs-content-type: REFERENCE
-[id="yaml-rule-structure-syntax_{context}"]
-= YAML rule structure and syntax
+:_mod-docs-content-type: CONCEPT
 
-Rules are written in YAML. They consist of:
-
-* metadata
-* conditions
-* actions
-
-Rules instruct the analyzer to take specified actions when given conditions match.
-
-A YAML rule file in {ProductShortName} contains one or more YAML rules.
-
-[id="yaml-rule-metadata_{context}"]
-== Rule metadata
+[id="yaml-rule-metadata-structure_{context}"]
+= Rule metadata structure
 
 Rule metadata contains general information about the rule. The structure of metadata is as follows:
 
@@ -38,6 +26,6 @@ category: mandatory # <4>
 ----
 
 <1> *ruleID*: This is a unique ID for the rule. It must be unique within the ruleset.
-<2> *labels*: A list of string labels associated with the rule. (See link:./labels.md[Labels])
+<2> *labels*: A list of string labels associated with the rule. (See xref:yaml-rule-labels_{context}[Labels]).
 <3> *effort*: Effort is an integer value that indicates the level of effort needed to resolve this issue.
 <4> *category*: Category describes severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`. For more deails, see xref:yaml-rule-categories_{context}[Rule categories].
