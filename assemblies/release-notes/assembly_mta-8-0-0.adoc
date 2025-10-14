@@ -1,0 +1,35 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-09
+
+ifdef::context[:parent-context-of-mta-8-0-0: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="mta-8-0-0"]
+endif::[]
+ifdef::context[]
+[id="mta-8-0-0_{context}"]
+endif::[]
+= {ProductShortName} 8.0.0
+
+:context: mta-8-0-0
+
+[role="_abstract"]
+The {ProductShortName} 8.0.0 section lists the new features and enhancements, technology preview features, removed features, fixed issues, and known issues.
+
+include::topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc[leveloffset=+1]
+
+include::topics/release-notes-topics/ref_tech-previews-8-0.adoc[leveloffset=+1]
+
+include::topics/release-notes-topics/ref_removed-features-8-0.adoc[leveloffset=+1]
+
+include::topics/release-notes-topics/ref_known-issues-8-0.adoc[leveloffset=+1]
+
+include::topics/release-notes-topics/ref_fixed-issues-8-0.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-analyzing-multi-language-applications[:context: {parent-context-of-mta-8-0-0}]
+ifndef::parent-context-of-analyzing-multi-language-applications[:!context:]
+
+:!mta-8-0-0:
