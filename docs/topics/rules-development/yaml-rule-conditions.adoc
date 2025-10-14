@@ -1,0 +1,13 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-rule-conditions_{context}"]
+= Rule conditions
+
+{ProductShortName} supports the following types of conditions:
+
+* `provider`
+* `and`
+* `or`

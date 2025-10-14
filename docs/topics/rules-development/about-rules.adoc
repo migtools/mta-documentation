@@ -7,14 +7,15 @@
 [id="about-rules_{context}"]
 = The {ProductShortName} rules
 
-The {ProductFullName} contains rule-based migration tools (analyzers) that you can use to analyze the application user interfaces (APIs), technologies, and architectures used by the applications you plan to migrate. {ProductShortName} analyzer rules use the following rule pattern:
+The {ProductFullName} contains rule-based migration tools (analyzers) that you can use to analyze the application user interfaces (APIs), technologies, and architectures used by the applications you plan to migrate.
 
-----
-when(condition)
- message(message)
- tag(tags)
-----
+An analyzer rule is a set of instructions used to analyze source code and detect issues that are problematic for migration.
 
+The analyzer parses user-provided rules, applies them to applications' source code, and generates issues for matched rules.
+
+A collection of one or more rules forms a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal.
+
+The analyzer CLI takes rulesets as input arguments.
 
 You can use the {ProductShortName} rules internally to perform the following tasks:
 

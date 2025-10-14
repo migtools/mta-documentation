@@ -4,7 +4,7 @@
 
 :_mod-docs-content-type: REFERENCE
 [id="rules-important-links_{context}"]
-= Additional resources
+= {ProductName} development resources
 
 // * {ProductShortName} Javadocs: {LinkAPI}reporting/api/src/main/java
 * {ProductShortName} Jira issue tracker: {JiraWindupURL}

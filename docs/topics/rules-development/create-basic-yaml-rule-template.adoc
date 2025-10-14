@@ -4,7 +4,7 @@
 
 :_content-type: PROCEDURE
 [id="create-basic-yaml-rule-template_{context}"]
-= Creating a basic YAML rule template
+= Creating a YAML rule template
 
 {ProductShortName} YAML-based rules have the following basic structure:
 

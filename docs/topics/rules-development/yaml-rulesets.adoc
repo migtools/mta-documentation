@@ -4,7 +4,7 @@
 
 :_mod-docs-content-type: REFERENCE
 [id="yaml-rulesets_{context}"]
-= Rulesets
+= Creating and using a ruleset
 
 A set of rules forms a ruleset. {ProductShortName} does not require every rule file to belong to a ruleset, but you can use rulesets to group multiple rules that achieve a common goal and to pass the rules to the rules engine.
 
