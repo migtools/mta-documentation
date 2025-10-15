@@ -2,9 +2,11 @@
 //
 // * docs/intellij-idea-plugin-guide/master.adoc
 
+:_mod-docs-content-type: PROCEDURE
 [id="intellij-idea-plugin-run-configuration_{context}"]
 = Creating a run configuration
 
+[role="_abstract"]
 You can create multiple run configurations to run against each project you import to IntelliJ IDEA.
 
 .Procedure
