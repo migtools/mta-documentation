@@ -2,9 +2,11 @@
 //
 // * docs/intellij-idea-plugin-guide/master.adoc
 
+:_mod-docs-content-type: PROCEDURE
 [id="intellij-idea-plugin-reviewing-issues_{context}"]
 = Reviewing issues
 
+[role="_abstract"]
 You can use the {ProductShortName} plugin icons to prioritize issues based on their severity. You can see which issues have a _Quick Fix_ automatic code replacement and which do not.
 
 The results of an analysis are displayed in a directory format, showing the _hints_ and _classifications_ for each application analyzed.

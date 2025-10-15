@@ -2,10 +2,11 @@
 //
 // * docs/intellij-idea-plugin-guide/master.adoc
 
-:_content-type: PROCEDURE
+:_mod-docs-content-type: PROCEDURE
 [id="intellij-idea-plugin-extension_{context}"]
 = Installing the {ProductShortName} plugin for IntelliJ IDEA
 
+[role="_abstract"]
 You can install the {ProductShortName} plugin in the Ultimate and the Community Edition releases of IntelliJ IDEA.
 
 .Prerequisites
