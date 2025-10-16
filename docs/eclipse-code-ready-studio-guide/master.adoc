@@ -9,7 +9,7 @@
 :IDEName: Eclipse
 :mta:
 include::topics/templates/document-attributes.adoc[]
-:_content-type: ASSEMBLY
+:_mod-content-type: ASSEMBLY
 [id="eclipse-code-ready-studio-guide"]
 = Eclipse Plugin Guide
 
@@ -19,34 +19,34 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="introduction_{context}"]
 == Introduction
 
-include::topics/about-ide-addons.adoc[leveloffset=+2]
-include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/about-ide-addons-eclipse.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/what-is-the-toolkit-eclipse.adoc[leveloffset=+2]
 
 [id="installing-plugin_{context}"]
 == Installing the {PluginName}
 
 You can install the {PluginName} in a connected or a restricted network environment.
 
-include::topics/installing-java-development-kit.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/installing-java-development-kit-eclipse.adoc[leveloffset=+2]
 
-include::topics/installing-eclipse.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/installing-eclipse-new.adoc[leveloffset=+2]
 
-include::topics/adding-jboss-tools-dependencies-for-the-mta-plug-in.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/adding-jboss-tools-dependencies-for-the-mta-plug-in-eclipse.adoc[leveloffset=+2]
 
 
-include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-installing-plugin-eclipse.adoc[leveloffset=+2]
 
-include::topics/eclipse-accessing-tools.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-accessing-tools-eclipse.adoc[leveloffset=+2]
 
 [id="analyzing-projects-with-plugin_{context}"]
 == Analyzing your projects with the {PluginName}
 
 You can analyze your projects with the {PluginName} by creating a run configuration, running an analysis, and then reviewing and resolving migration issues detected by the {PluginName}.
 
-include::topics/eclipse-configuring-run.adoc[leveloffset=+2]
-include::topics/eclipse-analyzing-projects.adoc[leveloffset=+2]
-include::topics/eclipse-reviewing-issues.adoc[leveloffset=+2]
-include::topics/eclipse-resolving-issues.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-configuring-run-eclipse.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-analyzing-projects-eclipse.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-reviewing-issues-eclipse.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-resolving-issues-eclipse.adoc[leveloffset=+2]
 
 // TODO: Uncomment when uninstalling works and this is ready
 // include::topics/plugin-uninstall.adoc[leveloffset=+1]
@@ -54,11 +54,13 @@ include::topics/eclipse-resolving-issues.adoc[leveloffset=+2]
 [id="managing-rules_{context}"]
 == Managing rules
 
-The {PluginName} comes with a core set of *System* rules for analyzing projects and identifying migration and modernization issues.
+The {PluginName} includes a core set of *System* rules for analyzing projects and identifying migration and modernization issues.
 
 You can create and import custom rulesets.
 
-include::topics/eclipse-viewing-rules.adoc[leveloffset=+2]
-include::topics/eclipse-creating-custom-ruleset.adoc[leveloffset=+2]
-include::topics/eclipse-importing-custom-ruleset.adoc[leveloffset=+2]
-include::topics/eclipse-submitting-ruleset.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-viewing-rules-eclipse.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-creating-custom-ruleset-eclipse.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-importing-custom-ruleset-eclipse.adoc[leveloffset=+2]
+include::topics/mta-eclipse-plugin/eclipse-submitting-ruleset-eclipse.adoc[leveloffset=+2]
+
+:!eclipse-code-ready-studio-guide:
