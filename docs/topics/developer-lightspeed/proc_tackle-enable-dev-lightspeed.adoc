@@ -41,12 +41,17 @@ metadata:
   namespace: openshift-mta
 spec:
   kai_solution_server_enabled: true
-  kai_llm_provider: <provider-name>
+  kai_llm_provider: <provider-name> #For example, OpenAI.
   # optional, pick a suitable model for your provider
   kai_llm_model: <model-name>
 ...
 ----
 +
+
+[NOTE]
+====
+For the OpenAI provider, the `kai_llm_provider` value is `OpenAI`.
+====
 
 . Apply the Tackle CR by in the `openshift-mta` project using the following command.
 +
