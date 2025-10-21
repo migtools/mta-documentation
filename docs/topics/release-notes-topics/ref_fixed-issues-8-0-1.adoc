@@ -1,0 +1,43 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-08-07
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-0-1_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+{ProductFullName} version 8.0.1 provides the following fixed issues and other problems that have a significant impact. 
+
+.{ProductShortName} web console allows you to import applications on the application inventory
+
+In earlier releases, an {ProductShortName} Architect could not discover or import applications from a source platform on the application inventory page. As a result, only an {ProductShortName} Administrator could import the applications from the Source Platform page in the Administrator mode. This issue is fixed in 8.0.1. link:https://issues.redhat.com/browse/MTA-6120([MTA-6120])
+
+
+.{ProductShortName} displays source repository URL when you skip configuring the repository type field
+
+Previously, {ProductShortName} did not show the source repository URL in the application details view if you did not select between the `Git` or `Subversion` repository type. As a result, you could not run an analysis on the application source code. This issue is fixed in 8.0.1. You can now use {ProductShortName} to run an analysis on the source code even if you do not configure the repository type field. link:https://issues.redhat.com/browse/MTA-6105([MTA-6105])
+
+
+.{ProductShortName} triggers rules to match import statements with wildcard in Java applications analysis
+
+Previously, {ProductShortName} did not trigger rule to match import statements that contain a wildcard when analyzing a Java application. Consequently, specific incidents were not detected in the report after the analysis. This issue is fixed in 8.0.1. 
+link:https://issues.redhat.com/browse/MTA-4027([MTA-4027])
+
+.Concurrent usage of the {mta-dl-plugin} plugin for code resolution at scale no longer causes race conditions
+
+Previously, concurrent usage of the Solution Server through the {mta-dl-plugin} Visual Studio (VS) Code plugin for code resolution at scale caused race conditions for duplicate incidents. This issue is fixed in 8.0.1. The plugin generates resolutions for the incidents identified when many users use it concurrently. 
+link:https://issues.redhat.com/browse/MTA-6230([MTA-6230])
+
+.{ProductShortName} no longer fails language and tech discovery for Java application in SVN repositories
+
+Previously, for a Java application source code stored in an SVN repository, {ProductShortName} produced an error when trying to checkout the repository by using the SVN credential. As a result, the language and tech discovery of the application failed. This issue is fixed in 8.0.1. You can now analyze an application stored in SVN repository without any error.link:https://issues.redhat.com/browse/MTA-6141([MTA-6141])
+
+.{ProductShortName} rules for Java use FQN to match annotations in source code 
+
+Previously, the annotation rules for Java applications did not use Fully Qualified Names (FQNs) to match with the annotation location in rules. As a result, the rule triggered incorrect matches or false positives for issues. For example, a rule that looks for the `javax.enterprise.inject.Produces` incorrectly matched with occurrences of `javax.ws.rs.Produces`. This issue is fixed in 8.0.1. link:https://issues.redhat.com/browse/MTA-6195([MTA-6195])
+
+.{ProductShortName} flags open source dependencies in Gradle application 
+
+Previously, {ProductShortName} did not trigger a violation for open source libraries in a `source+dependency` analysis of a Gradle application. This issue is fixed in 8.0.1. 
+link:https://issues.redhat.com/browse/MTA-6211([MTA-6211])
+//Appears to be a fixed issue in 8.0.0. Should this be documented in 8.0.1? MTA-4033
