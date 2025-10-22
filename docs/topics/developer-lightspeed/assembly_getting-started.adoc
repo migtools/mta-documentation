@@ -37,3 +37,4 @@ include::ref_example-code-suggestion.adoc[leveloffset=+1]
 ifdef::parent-context-of-getting-started[:context: {parent-context-of-getting-started}]
 ifndef::parent-context-of-getting-started[:!context:]
 
+:!getting-started:
