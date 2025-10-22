@@ -50,7 +50,7 @@ spec:
 
 [NOTE]
 ====
-For the OpenAI provider, the `kai_llm_provider` value is `OpenAI`.
+For OpenAI models and LLMs deployed in the {ocp-name} AI cluster, enter `OpenAI` as the `kai_llm_provider` value.
 ====
 
 . Apply the Tackle CR by in the `openshift-mta` project using the following command.
