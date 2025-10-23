@@ -9,22 +9,15 @@ include::topics/templates/document-attributes.adoc[]
 :rules-development-guide:
 :_content-type: ASSEMBLY
 [id="rules-development-guide"]
-= Rules Development Guide
+= Configuring and using rules for {ProductShortName} analysis
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-[id="introduction_{context}"]
-== Introduction
 
-// About the Rules Development Guide
-include::topics/rules-guide-intro.adoc[leveloffset=+2]
+include::assemblies/rules-development-guide/assembly_rules-introduction.adoc[leveloffset=+1]
 
-// Use of <{ProductShortName}_HOME> in this Guide
-include::topics/mta-about-home-var.adoc[leveloffset=+3]
-
-// MTA Rules
-include::topics/about-rules.adoc[leveloffset=+2]
+include::topics/about-rules.adoc[leveloffset=+1]
 
 [id="creating-yaml-rules_{context}"]
 == Creating YAML rules
@@ -159,5 +152,6 @@ include::topics/rules-important-links.adoc[leveloffset=+3]
 // **********************************
 // * Appendix: Revision Information *
 // **********************************
-include::topics/templates/revision-info.adoc[]
-=======
+//include::topics/templates/revision-info.adoc[]
+
+:!rules-development-guide:
