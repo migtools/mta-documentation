@@ -42,3 +42,5 @@ include::proc_configuring-llm-podman-desktop.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-configuring-llm[:context: {parent-context-of-configuring-llm}]
 ifndef::parent-context-of-configuring-llm[:!context:]
+
+:!configuring-llm:
