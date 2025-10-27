@@ -12,10 +12,10 @@
 
 In the {ProductShortName} {WebName}, if you disable the `Allow insecure connection` for an application stored in the SVN repository and edit the application, the {WebName} displays a blank page some times with the `TypeError` `cannot read properties of undefined (reading 'kind')`.
 
-Currently, this issue does not have a workaround. link:https://issues.redhat.com/browse/MTA-6263([MTA-6263])
+No known workaround exists. link:https://issues.redhat.com/browse/MTA-6263([MTA-6263])
 
 .{ProductShortName} assessment form malfunctions when you use it with a custom questinnaire 
 
 In the {ProductShortName} {WebName}, selecting an answer to a question in the assessment form generated from a custom questionnaire causes the form to select an option available for another question.
 
-Currently, this issue does not have a workaround. link:https://issues.redhat.com/browse/MTA-6262([MTA-6262])
+No known workaround exists. link:https://issues.redhat.com/browse/MTA-6262([MTA-6262])
