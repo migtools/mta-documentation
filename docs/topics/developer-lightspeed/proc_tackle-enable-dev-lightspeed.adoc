@@ -15,7 +15,7 @@ To enable Solution Server and other AI configurations in the {mta-dl-full} VS Co
 //the hard link must be changed to the same topic in 8.0.0 that has the `{mta-dl-plugin}-database` req.
 . You deployed an additional RWO volume for  the `{mta-dl-plugin}-database` if you want to use {mta-dl-plugin}. See link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements] for more information.
 
-. You installed the {ProductShortName} operator v8.0.0.
+. You installed the {ProductShortName} Operator v8.0.0.
 
 
 .Procedure
