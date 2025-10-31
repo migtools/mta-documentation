@@ -7,9 +7,9 @@
 = Persistent volume requirements
 
 [role="_abstract"]
-To successfully deploy the {ProductShortName} Operator, you must create persistent volume (PV) used by different {ProductShortName} components.
+To successfully deploy the {ProductShortName} Operator, you must create a persistent volume (PV) used by different {ProductShortName} components.
 
-{ProductShortName} Operator requires two ReadWriteOnce (RWO) PVs. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires two additional ReadWriteMany (RWX) PVs that are used by Maven and the hub file storage.
+{ProductShortName} Operator requires two ReadWriteOnce (RWO) PVs. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator needs two additional ReadWriteMany (RWX) PVs used by Maven and the hub file storage.
 
 .Required persistent volumes
 [cols="25%,25%,25%,25%", options="header"]
@@ -27,7 +27,7 @@ To successfully deploy the {ProductShortName} Operator, you must create persiste
 |`hub bucket`
 |`100Gi`
 |RWX
-|Hub file storage; required if the `rwx_supported` configuration option is set to `true`
+|Hub file storage required if the `rwx_supported` configuration option is set to `true`.
 
 |`keycloak postgresql`
 |`1Gi`
@@ -37,7 +37,7 @@ To successfully deploy the {ProductShortName} Operator, you must create persiste
 |`cache`
 |`100Gi`
 |RWX
-|Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
+|Maven m2 cache required if the `rwx_supported` configuration option is set to `true`.
 
 |`kai-db` database
 |`5Gi`
