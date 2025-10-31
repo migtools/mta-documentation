@@ -20,6 +20,10 @@ include::assemblies/rules-development-guide/assembly_rule-yaml-metadata.adoc[lev
 
 include::assemblies/rules-development-guide/assembly_rule-yaml-conditions.adoc[leveloffset=+1]
 
+include::assemblies/rules-development-guide/assembly_java-conditions-detailed.adoc[leveloffset=+1]
+
+include::assemblies/rules-development-guide/assembly_logical-chaining-custom-variables.adoc[leveloffset=+1]
+
 include::assemblies/rules-development-guide/assembly_rule-yaml-actions.adoc[leveloffset=+1]
 
 include::assemblies/rules-development-guide/assembly_creating-rule.adoc[leveloffset=+1]

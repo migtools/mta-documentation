@@ -152,11 +152,11 @@ The following table summarizes available providers, their capabilities and all o
 
 |location
 |No
-|Source code location (see xref:yaml-java-locations_{context}[Java locations])
+|Source code location (see xref:yaml-java-locations_java-conditions-capabilities[Java locations])
 
 |annotated
 |No
-|Additional query to inspect annotations (see xref:yaml-annotation-inspection_{context}[Annotation inspection]).
+|Additional query to inspect annotations (see xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection]).
 
 .4+|dependency
 |name

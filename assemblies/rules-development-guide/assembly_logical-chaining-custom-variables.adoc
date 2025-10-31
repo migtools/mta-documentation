@@ -1,0 +1,38 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-logical-chaining-custom-variables: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="logical-chaining-custom-variables"]
+endif::[]
+ifdef::context[]
+[id="logical-chaining-custom-variables_{context}"]
+endif::[]
+= Logical conditions, condition chaining, and custom variables
+
+:context: logical-chaining-custom-variables
+
+[role="_abstract"]
+Logical conditions, nested conditions, chaining conditions, and custom variables.
+
+include::topics/rules-development/yaml-logical-conditions.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-and-condition.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-or-condition.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-chaining-condition-variables.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-chaining-java-provider.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-nested-condition.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-custom-variables.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-rule-logical-chaining-custom-variables[:context: {parent-context-of-rule-logical-chaining-custom-variables}]
+ifndef::parent-context-of-rule-logical-chaining-custom-variables[:!context:]
+
+:!logical-chaining-custom-variables:
