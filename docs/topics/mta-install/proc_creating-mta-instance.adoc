@@ -6,7 +6,7 @@
 = Creating an MTA instance
 
 [role="_abstract"]
-You can use the {ProductFullName} user interface (UI) to assess and analyze your applications to get insights about the adoption process at both the portfolio and application levels as you inventory, assess, analyze, and manage applications for faster migration to Red Hat OpenShift.
+You can use the {ProductFullName} user interface (UI) to get insights about the application adoption process at both the portfolio and application levels. You can use the {ProductShortName} UI to inventory, assess, analyze, and manage applications for faster migration to Red Hat OpenShift.
 
 To use the {ProductShortName} UI for assessing and analyzing your applications, you must create a {ProductShortName} instance first.
 
@@ -20,10 +20,11 @@ To use the {ProductShortName} UI for assessing and analyzing your applications, 
 
 .Procedure
 . Click *MTA Operator*.
-. Under *Provided APIs*, search for *Tackle* and click *Create Instance*.
-. Access the user interface from your browser by using the route exposed by the `mta-ui` application within OpenShift.
+. Under *Provided APIs*, search for *Tackle*.
+. Click *Create Instance*.
+. Access the user interface from your browser by using the route provided by the `mta-ui` application within Red Hat OpenShift.
 . Log in to the user interface instance by using the default credentials:
-** User name: `admin`
+** Username: `admin`
 ** Password: `Passw0rd!`
 . When prompted, create a new password.
 

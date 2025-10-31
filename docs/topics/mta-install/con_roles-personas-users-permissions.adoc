@@ -6,14 +6,14 @@
 = Roles, personas, users, and permissions
 
 [role="_abstract"]
-The {ProductFullName} uses three roles, each corresponds to a persona. The roles are already defined in your RHBK instance. You do not need to create them. If you are an {ProductShortName} administrator, you can create users in your RHBK and assign each user one or more roles, one role per persona. 
+The {ProductFullName} uses three roles, each corresponds to a persona. The roles are pre-defined in your Red Hat Build of Keycloak (RHBK) instance. If you are an {ProductShortName} administrator, you can create users in your RHBK instance and assign each user one or more roles, one role per persona. 
 
 A user can have more than one role. Each role must correspond to a specific persona:
 
-* The `tackle-admin` role corresponds to the Administrator persona. The administrator has all the permissions that architects and migrators have, along with the ability to create some application-wide configuration parameters that other users can consume but cannot change or view, for example, Git credentials or Maven `settings.xml` files.
+* The `tackle-admin` role corresponds to the Administrator persona. The administrator has all permissions that architects and migrators have. Administrators can also create application-wide configuration parameters that other users can consume but cannot change or view, for example, Git credentials or Maven `settings.xml` files.
 
-* The `tackle-architect` role corresponds to the Architect persona. An architect is a technical lead for the migration project who can run assessments and can create and modify applications and information related to them. The architect cannot modify or delete sensitive information but can consume it. For example, the architect can associate an existing credential to the repository of a specific application. 	
+* The `tackle-architect` role corresponds to the Architect persona. An architect is a technical lead for the migration project. Architects can run assessments and can create and modify applications and information related to the applications. Architects cannot modify or delete sensitive information, but can consume such information. For example, architects can associate an existing set of credentials to the repository of a specific application. 	
 
-* The `tackle-migrator` role corresponds to the Migrator persona. A migrator is a user who can analyze applications but not create, modify, or delete them. 
+* The `tackle-migrator` role corresponds to the Migrator persona. A migrator can analyze applications. However, the migrator cannot create, modify, or delete the applications. 
 
-{ProductShortName} has two views, *Administration* and *Migration*. Only administrators can access the *Administration* view. Architects and migrators have no access to Administration view, they cannot even see it. Administrators can perform all actions supported by *Migration* view. Architects and migrators can see all elements of *Migration* view but their ability to perform actions in *Migration* view depends on the permissions granted to their role.
+{ProductShortName} has two views, *Administration* and *Migration*. Only administrators can access the *Administration* view. Architects and migrators cannot see or access the *Administration* view. Administrators can perform all actions supported by the *Migration* view. Architects and migrators can see all elements of the *Migration* view. However, whether architects and migrators can perform actions in the *Migration* view depends on the permissions granted to their role.
