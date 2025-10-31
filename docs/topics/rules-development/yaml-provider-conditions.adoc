@@ -152,11 +152,11 @@ The following table summarizes available providers, their capabilities and all o
 
 |location
 |No
-|Source code location (see xref:#yaml-java-locations_rules-development-guide[Java locations])
+|Source code location (see xref:yaml-java-locations_java-conditions-capabilities[Java locations])
 
 |annotated
 |No
-|Additional query to inspect annotations (see xref:#yaml-annotation-inspection_rules-development-guide[Annotation inspection]).
+|Additional query to inspect annotations (see xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection]).
 
 .4+|dependency
 |name
@@ -215,7 +215,7 @@ The following table summarizes available providers, their capabilities and all o
 |hasTags
 |
 |
-|This is an inline list of string tags. See xref:#yaml-tag-actions_rules-development-guide[Tag action]
+|This is an inline list of string tags. See xref:yaml-rule-actions_rule-yaml-actions[Tag action]
 
 .5+|go
 |referenced

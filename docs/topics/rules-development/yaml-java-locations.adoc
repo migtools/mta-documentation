@@ -99,13 +99,13 @@ variable.
 * *FIELD* (declaration): matches against a type appearing in a field
 declaration. It can be coupled with an annotation match, this is, an
 annotation happening on the field (see
-link:#annotation-inspection[Annotation inspection])
+xref:yaml-annotation-inspection_{context}[Annotation inspection])
 * *METHOD*: matches against a given method declaration. It can be coupled
-with an annotation match (see link:#annotation-inspection[Annotation
-inspection]).
+with an annotation match                      
+(see xref:yaml-annotation-inspection_{context}[Annotation inspection]).
 * *CLASS* (declaration): matches against a given method declaration. Can
 be coupled with an annotation match (see
-link:#annotation-inspection[Annotation inspection]).
+xref:yaml-annotation-inspection_{context}[Annotation inspection]).
 
 
 The supported locations are the following:

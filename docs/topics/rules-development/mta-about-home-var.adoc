@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_content-type: CONCEPT
+:_mod-docs-content-type: CONCEPT
 [id="mta-about-home-var_{context}"]
 = Use of `<{ProductShortName}_HOME>` in this guide
 
