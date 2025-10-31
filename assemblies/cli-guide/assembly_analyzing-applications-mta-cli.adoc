@@ -44,8 +44,6 @@ include::topics/mta-cli/proc_running-the-containerless-mta-cli.adoc[leveloffset=
 
 include::topics/mta-cli/ref_mta-cli-analyze-flags.adoc[leveloffset=+1]
 
-[role="_additional-resources"]
-
 ifdef::parent-context-of-analyzing-applications-mta-cli[:context: {parent-context-of-analyzing-applications-mta-cli}]
 ifndef::parent-context-of-analyzing-applications-mta-cli[:!context:]
 
