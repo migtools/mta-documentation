@@ -16,9 +16,9 @@ endif::[]
 :context: installing-mta-cli
 
 [role="_abstract"]
-You can use the {ProductFullName} command-line interface (CLI) to assess and prioritize migration and modernization efforts for applications. You can use different command options to adapt the CLI behavior to your use case. You can tune the {ProductShortName} analysis options or integrate with external automation tools.
+You can use the {ProductFullName} command-line interface (CLI) to assess and prioritize migration and modernization efforts for applications. You can use different command options to adapt the CLI behavior to your needs. You can tune the {ProductShortName} analysis options or integrate with external automation tools.
 
-You can install the {ProductFullName} command-line interface (CLI) on Linux, Windows, or macOS operating systems. You can also install the CLI for use with Docker on Windows. Note, however, that this is a Developer Preview feature only. 
+You can install the {ProductFullName} command-line interface (CLI) on Linux, Windows, or macOS operating systems. You can also install the CLI for the use with Docker on Windows. Note, however, that this is a Developer Preview feature only. 
 
 include::topics/mta-install/proc_installing-cli-zip.adoc[leveloffset=+1]
 

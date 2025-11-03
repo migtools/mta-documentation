@@ -6,13 +6,13 @@
 = Installing the CLI for use with Docker on Windows
 
 [role="_abstract"]
-To migrate applications built with .NET framework version 4.5 or later, on Microsoft Windows to cross-platform .NET 8.0, you must install the CLI for use with Docker on Windows. 
+To migrate applications built with .NET framework version 4.5 or later, on Microsoft Windows to cross-platform .NET 8.0, you must install the CLI for the use with Docker on Windows. 
 
-To install the CLI for use with Docker on Windows, you must configure Docker to use Windows containers first.
+To install the CLI for the use with Docker on Windows, you must configure Docker to use Windows containers first.
 
 .Prerequisites
 
-* A host with Windows 11+ 64-bit version 21H2 or higher.
+* You have a host with 64-bit Windows 11, version 21H2 or later.
 
 * You downloaded the Docker Desktop for Windows installation program. For more details, see link:https://docs.docker.com/desktop/install/windows-install/[Install Docker Desktop on Windows].
 
@@ -42,9 +42,9 @@ NOTE: You might need to reboot Windows for the change to take effect.
 +
 By default, Docker Desktop is installed to the `C:\Program Files\Docker\Docker` path.
 
-.. Ensure that Docker will run Windows containers as the backend instead of Linux containers:
+.. Ensure that Docker runs Windows containers as the backend instead of Linux containers:
 
-... In the Windows task bar, right-click on the Docker icon.
+... In the Windows task bar, right-click the Docker icon.
 ... Click *Switch to Windows containers*.
 
 . In PowerShell, create a folder for {ProductShortName}:
