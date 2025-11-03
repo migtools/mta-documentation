@@ -8,7 +8,7 @@
 = How to contribute to the {ProductShortName} project
 
 [role="_abstract"]
-You can help the {ProductName} to cover most application builds and server configurations, including yours.
+You can help the {ProductFullName} to cover most application builds and server configurations, including yours.
 
 You can help with any of the following items:
 

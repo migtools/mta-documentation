@@ -6,7 +6,7 @@
 = {ProductShortName} features
 
 [role="_abstract"]
-{ProductFullName} includes many features that simplify upgrades with multiple migration paths. 
+The {ProductFullName} includes many features that simplify upgrades with multiple migration paths. 
 
 {ProductShortName} brings the following benefits for application analysis and assessment: 	
 

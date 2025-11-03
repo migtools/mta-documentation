@@ -7,7 +7,7 @@
 = Custom resource settings
 
 [role="_abstract"]
-When installing the {ProductrFullName} Operator, you might need to create custom resource (CR) settings. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.
+When installing the {ProductFullName} Operator, you might need to create custom resource (CR) settings. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.
 
 The following are the most commonly used CR settings that you can find in the `spec` section of the YAML file.
 
