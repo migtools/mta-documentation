@@ -2,7 +2,7 @@
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="cli-guide"]
-= Using the MTA command-line interface to analyze applications
+= Managing applications with the MTA command-line interface
 
 :toc:
 :toclevels: 4
