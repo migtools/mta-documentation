@@ -6,7 +6,7 @@
 = Roles, personas, users, and permissions
 
 [role="_abstract"]
-The {ProductFullName} uses three roles, each corresponds to a persona. The roles are pre-defined in your Red Hat Build of Keycloak (RHBK) instance. If you are an {ProductShortName} administrator, you can create users in your RHBK instance and assign each user one or more roles, one role per persona. 
+The {ProductFullName} uses three roles, each corresponding to a persona. The roles are pre-defined in your Red Hat Build of Keycloak (RHBK) instance. If you are an {ProductShortName} administrator, you can create users in your RHBK instance and assign each user one or more roles, one role per persona. 
 
 A user can have more than one role. Each role must correspond to a specific persona:
 

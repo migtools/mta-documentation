@@ -17,7 +17,7 @@ You can help with any of the following items:
 * Identify application components and problem areas that might be difficult to migrate:
 ** Write a short description of the problem migration areas.
 ** Write a brief overview describing how to solve the problem in migration areas.
-* Try {ProductName} on your application. Report any issues you meet. {ProductShortName} uses Jira as its issue tracking system. If you encounter an issue when using {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
+* Try {ProductName} on your application. Report any issues you meet. {ProductShortName} uses Jira as its issue tracking system. If you encounter an issue when using {ProductShortName}, submit a link:{JiraMTAURL}[Jira issue].
 * Contribute to the {ProductName} rules repository:
 ** Write a {ProductName} rule to identify or automate a migration process.
 ** Create a test for the new rule.

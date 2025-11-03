@@ -14,8 +14,8 @@ You can use the following {ProductShortName} tools for assessing and analyzing y
 +
 By using the user interface for the {ProductName}, you can perform the following tasks:
 
-** Assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift
-** Analyze the changes that you might need to apply to the code of an application to containerize this application
+** Assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift.
+** Analyze the changes that you might need to apply to the code of an application to containerize this application.
 
 +
 For more information about using the MTA user interface, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index[Configuring and managing the Migration Toolkit for Applications user interface].

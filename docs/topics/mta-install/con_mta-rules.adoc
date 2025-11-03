@@ -6,7 +6,7 @@
 = {ProductShortName} rules
 
 [role="_abstract"]
-The {ProductFullName} contains rule-based migration tools called analyzers. You can use analyzers to analyze the application user interfaces (APIs), technologies, and architectures used by the applications you want to migrate.
+The {ProductFullName} contains rule-based migration tools called analyzers. You can use analyzers to examine the technologies, architectures, and application user interfaces (APIs) of the applications you want to move.
 
 {ProductShortName} analyzer rules use the following rule pattern:
 
