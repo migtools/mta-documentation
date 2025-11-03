@@ -44,7 +44,7 @@ a|List the supported platforms for the discovery process.
 a|`--log-level`
 a|Set the log level, for example, `discover --log-level 1`. The default log level is `4`.
 
-.6+a|`discover cloud-foundry`
+.7+a|`discover cloud-foundry`
 a|
 a|Discover Cloud Foundry applications.
 
@@ -70,6 +70,13 @@ a|A comma-separated list of Cloud Foundry spaces to analyze during a live discov
 
 a|`--use-live-connection`
 a|Enable real-time discovery by using live platform connections.
+
+a|`--orgs`
+a|A comma-separated list of Cloud Foundry organizations that you specify to discover application manifests during a live discovery. For example,
+[source, terminal]
+----
+--orgs=org1,org2
+----
 
 a|`generate`
 a|`-h`, `--help`
