@@ -22,18 +22,20 @@ The specific coordinates vary depending on the source platform you select. For e
 . Click *Source platform* and enter the following fields:
 .. *Source platform*: Select a source platform instance.
 .. *Source platform coordinates*: Configure the source platform coordinates in either way:
-... Enter the source platform coordinates in the fields. For example, *name* and *space* for a CF instance.
+... Enter the source platform coordinates in the fields. For example, *name*, *space*, and *organization* for a CF instance.
 ... Enable the source platform coordinates to enter application coordinates in JSON. For example, a CF instance coordinates can be:
 +
 [source, json]
 ----
 {
     "name": ["example-app"],
-    "space": ["example-space"]
+    "space": ["example-space"],
+    "orgs": ["example-organization"]
 }
 ----
 .. *name*: Type the name of the application.
 .. *space*: Configure the CF space in which the app is deployed in the source platform.
+.. *organization*: Type the organization of the application in the source platform.
 . Click *Save* and close the *Update application* dialog.
 
 .Verification

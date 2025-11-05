@@ -19,12 +19,24 @@ Starting with 8.0.0, {ProductShortName} supports platform awareness to import al
 
 You can associate applications to source platforms in two ways: 
 
-* By manually configuring source platforms for applications that are available in {ProductShortName} inventory
+* By manually configuring source platforms for applications that are available in the {ProductShortName} inventory.
 
 * By discovering (importing) applications from a source platform instance. 
 In this case, the applications are connected with the source platform when they are imported in the {ProductShortName} inventory.
 
 In {ProductShortName} 8.0.0, Red Hat supports Cloud Foundry (CF) as the source platform. 
+
+Before you import applications in {ProductShortName}, you can discover them  by using a combination of the organization, spaces, and application configurations.
+
+{ProductShortName} discovers the application manifests in the following scenarios:
+
+* Organization without spaces: if you configure only the organization, MTA discovers the manifests of all applications deployed in all spaces in the organizations that you entered. You can specify one or more organizations as comma-separated values.
+* Spaces common across organizations: you can specify one or more space names available in multiple organizations to filter applications deployed in the spaces.
+* A specific application: You can discover a specific application deployed in a specific space in a particular organization.
+* Applications across spaces in an organization: You can explore applications that have the same name but deployed in different spaces by specifying the organization and the application name while leaving out the spaces configuration.
+* Invalid entries: If you enter an invalid space name or an organization that does not exist, MTA stores a log about skipping the space or the organization and continues to discover applications in other valid spaces and organizations. 
+
+.Retrieve platform and runtime configuration
 
 After you import applications, you can retrieve platform and runtime configurations (also known as discovery). Discovery is the process of fetching configurations of the imported applications that are connected to their source platform instances. The retrieval or discovery generates the discovery manifest that contain application configurations. 
 
@@ -38,7 +50,7 @@ You can perform the following tasks in the {ProductShortName} {WebName}:
 
 include::proc_creating-source-platform.adoc[leveloffset=+1]
 
-include::proc_discovering-apps-source-platform.adoc[leveloffset=+1]
+include::proc_discovering-apps-source-platform-administration-view.adoc[leveloffset=+1]
 
 include::proc_adding-source-platform-application.adoc[leveloffset=+1]
 
