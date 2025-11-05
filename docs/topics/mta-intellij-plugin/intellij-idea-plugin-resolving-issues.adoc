@@ -2,9 +2,12 @@
 //
 // * docs/intellij-idea-plugin-guide/master.adoc
 
+:_mod-docs-content-type: PROCEDURE
+
 [id="intellij-idea-plugin-resolving-issues_{context}"]
 = Resolving issues
 
+[role="_abstract"]
 You can resolve issues by doing one of the following:
 
 * Using a _Quick Fix_ to fix a code snippet that has a hint
