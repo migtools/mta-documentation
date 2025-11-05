@@ -1,7 +1,7 @@
-<title>Using the {ProductShortName} command-line interface</title>
+<title>Using the Migration Toolkit for Applications command-line interface</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Using the {ProductName} command-line interface to prepare your applications for modernization and migration</subtitle>
+<subtitle>Preparing your applications for modernization and migration by using the Migration Toolkit for Applications command-line interface</subtitle>
 <abstract>
     <para>By using the Migration Toolkit for Applications (MTA) command-line interface (CLI), you can assess and prioritize migration and modernization efforts for applications written in different languages. You can use the CLI to customize MTA analysis options or integrate with external automation tools. You can also use the MTA CLI to generate the manifests needed to deploy a Cloud Foundry (CF) application on Red Hat OpenShift.</para>
 </abstract>
