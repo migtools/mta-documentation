@@ -68,3 +68,9 @@ For OpenAI models and LLMs deployed in the {ocp-name} AI cluster, enter `OpenAI`
 ----
 oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'
 ----
++
+
+[NOTE]
+====
+When you enable Solution Server, the Solution Server API endpoint is served through the {ProductShortName} Hub. You need not complete any further task, such as creating a route for the Solution Server API.
+====
