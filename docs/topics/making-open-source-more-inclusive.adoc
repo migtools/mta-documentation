@@ -10,7 +10,7 @@
 // * docs/web-console-guide/master.adoc
 
 [preface]
-:_content-type: CONCEPT
+:_mod-docs-content-type: CONCEPT
 [id="making-open-source-more-inclusive"]
 = Making open source more inclusive
 [role="_abstract"]
