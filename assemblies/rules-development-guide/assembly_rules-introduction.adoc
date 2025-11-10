@@ -16,7 +16,7 @@ endif::[]
 :context: rules-introduction
 
 [role="_abstract"]
-Intro.
+
 
 include::topics/rules-development/rules-guide-intro.adoc[leveloffset=+1]
 
