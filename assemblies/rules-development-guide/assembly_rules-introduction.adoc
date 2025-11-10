@@ -16,9 +16,9 @@ endif::[]
 :context: rules-introduction
 
 [role="_abstract"]
+This guide is intended for software engineers who want to create custom YAML-based rules for {ProductName} ({ProductShortName}) tools.
 
-
-include::topics/rules-development/rules-guide-intro.adoc[leveloffset=+1]
+See the link:{ProductDocIntroToMTAGuideURL}[_{IntroToMTABookName}_] for an overview and the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] for details.
 
 // Use of <{ProductShortName}_HOME> in this Guide
 include::topics/rules-development/mta-about-home-var.adoc[leveloffset=+1]
