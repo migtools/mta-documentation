@@ -1,0 +1,51 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="discovering-apps-source-platform-migration-view_{context}"]
+= Discovering applications through source platform in the Migration view
+
+[role="_abstract"]
+After you configure a source platform, you can discover and import one or more applications to the {ProductShortName} application inventory in the *Migration* view.
+
+.Prerequisites
+
+* You configured at least one source platform instance in the *Administration* view.
+
+* Source platform instance must be running.
+
+.Procedure
+
+. In the {ProductShortName} user interface, select the *Migration* view.
+
+. Click the Options menu ({kebab}) near *Analyze*.
+
+. Click *Discover applications* to open the *Discover applications* window.
++
+The discovery process imports all or selected applications that are deployed in the source platform instance to the *Applications Inventory* page on {ProductShortName}. 
+
+. Select the source platform name from the drop-down list for application discovery.
+
+. Click *Next* to navigate to the *Filters*.
+
+. Optional: Click *+Add a name* to enter one application per text field and repeat the process to add more than one application. For example, app-a.
+
+. Optional: Click *+Add a space* to enter one space per text field and repeat the process to add more than one space. For example, space1.
+
+. Click *+Add an organization* to enter at least one organization per text field and repeat the process to add more than one organization. For example, org1.
++
+
+[NOTE]
+====
+For a CF instance, the application `names` field can contain globs. For example, `app*`.
+====
++
+
+. Click *Next* to review the configuration.
+
+. Click *Discover applications*.
+This action tiggers an application import task.
+
+. Close the *Discover applications* window.
++
+. Optional: Click the application import task to check the status of the  task and to view the task details in YAML format.
