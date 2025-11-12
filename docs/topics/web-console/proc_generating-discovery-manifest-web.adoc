@@ -17,7 +17,7 @@ You can retrieve configuration for one or more applications at a time.
 
 .Procedure
 
-. In the {ProductShortName} user interface, select the *Migration* working mode.
+. In the {ProductShortName} user interface, select the *Migration* working view.
 
 . On the *Application Inventory* page, you can retrieve configuration for one or more applications.
 +
