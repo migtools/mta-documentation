@@ -26,7 +26,9 @@ In this case, the applications are connected with the source platform when they 
 
 In {ProductShortName} 8.0.0, Red Hat supports Cloud Foundry (CF) as the source platform. 
 
-Before you import applications in {ProductShortName}, you can discover them  by using a combination of the organization, spaces, and application configurations.
+.Discover applications from source platform
+
+Before you import applications in {ProductShortName}, you can discover them  from the source platform by using a combination of the organization, spaces, and application name filters.
 
 {ProductShortName} discovers the application manifests in the following scenarios:
 

@@ -30,7 +30,7 @@ The specific coordinates vary depending on the source platform you select. For e
 {
     "name": ["example-app"],
     "space": ["example-space"],
-    "orgs": ["example-organization"]
+    "organization": ["example-organization"]
 }
 ----
 .. *name*: Type the name of the application.
@@ -42,7 +42,7 @@ The specific coordinates vary depending on the source platform you select. For e
 
 To verify that the coordinates you configured are saved in {ProductShortName}:
 
-. Click anywhere on the appication row to open the application details view.
+. Click anywhere on the application row to open the application details view.
 
 . Click the *Platform* tab to verify the source platform coordinates that you configured.
 
