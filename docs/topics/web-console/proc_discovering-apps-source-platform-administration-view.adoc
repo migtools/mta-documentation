@@ -8,7 +8,7 @@
 [role="_abstract"]
 After you configure a source platform, you can discover and import one or more applications to the {ProductShortName} application inventory.
 
-You can filter application manifests in the CF clusters by organizations and spaces. 
+You can filter application manifests in the CF clusters by organizations and spaces, and application names. 
 
 .Prerequisites
 
@@ -18,11 +18,11 @@ You can filter application manifests in the CF clusters by organizations and spa
 
 .Procedure
 
-. In the {ProductShortName} user interface, select the *Administration* working view.
+. In the {ProductShortName} user interface, select the *Administration* view.
 
-. Click *Source Platforms* in the navigation menu to go to the *Source Platforms* page.
+. Click *source platforms* in the navigation menu to go to the *Source Platforms* page.
 
-. Select a source platform on the *Source platforms* page.
+. Select a source platform on the *source platforms* page.
 
 . Click the Options menu ({kebab}) of a source platform.
 
@@ -30,11 +30,11 @@ You can filter application manifests in the CF clusters by organizations and spa
 +
 The discovery process imports all or selected applications deployed in the source platform instance to the *Applications Inventory* page on {ProductShortName}. 
 
-. Click *Add a name* to enter one application per text field and click *+* to add many applications. For example, app-a.
+. Optional: Click *+Add a name* to enter one application per text field and repeat the process to add more than one application. For example, app-a.
 
-. Click *Add a space* to enter one space per text field and click *+* to add many spaces. For example, space1.
+. Optional: Click *+Add a space* to enter one space per text field and repeat the process to add more than one space. For example, space1.
 
-. Click *Add an organization* to enter one organization per text field and click *+* to add many organizations. For example, org1.
+. Click *+Add an organization* to enter at least one organization per text field and  repeat the process to add more than one organization. For example, org1.
 +
 
 [NOTE]
