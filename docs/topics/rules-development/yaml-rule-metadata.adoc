@@ -7,7 +7,7 @@
 [id="yaml-rule-metadata-structure_{context}"]
 = Rule metadata structure
 
-Rule metadata contains general information about the rule. The structure of metadata is as follows:
+Rule metadata contains a unique rule ID, labels, effort, and category.
 
 [source,yaml]
 ----
@@ -28,4 +28,4 @@ category: mandatory # <4>
 <1> *ruleID*: This is a unique ID for the rule. It must be unique within the ruleset.
 <2> *labels*: A list of string labels associated with the rule. (See xref:yaml-rule-labels_{context}[Labels]).
 <3> *effort*: Effort is an integer value that indicates the level of effort needed to resolve this issue.
-<4> *category*: Category describes severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`. For more deails, see xref:yaml-rule-categories_{context}[Rule categories].
+<4> *category*: Category describes severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`. For more details, see xref:yaml-rule-categories_{context}[Rule categories].

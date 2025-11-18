@@ -26,7 +26,7 @@ You can use the {ProductShortName} rules internally to perform the following tas
 * Analyze the application code.
 * Build the reports.
 
-{ProductShortName} builds a data model based on the rule execution results and stores component data and relationships in a graph database. This database can then be queried and updated as required by the migration rules and for reporting purposes.
+{ProductShortName} builds a data model based on the analysis results and stores component data and relationships in a graph database. This database can then be queried and updated as required by the migration rules and for reporting purposes.
 
 
 [NOTE]

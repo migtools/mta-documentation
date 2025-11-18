@@ -16,7 +16,13 @@ endif::[]
 :context: rule-yaml-metadata
 
 [role="_abstract"]
-Rule metadata.
+The rule metadata contains information about the migration defined by the Architect. You can use rule metadata to:
+
+* Estimate the total migration effort 
+* Prioritize issues that must be resolved based on the effort
+* Evaluate if a resolution is mandatory through rule category before migrating the applications to the target technologies or platforms
+* Define labels for which MTA filterfilters rules to trigger a violation.
+
 
 include::topics/rules-development/yaml-rule-metadata.adoc[leveloffset=+1]
 

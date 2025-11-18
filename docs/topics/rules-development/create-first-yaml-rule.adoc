@@ -5,7 +5,6 @@
 :_mod-docs-content-type: PROCEDURE
 [id="create-first-yaml-rule_{context}"]
 = Creating a YAML rule
-
 This section guides you through the process of creating and testing your first {ProductShortName} YAML-based rule. This assumes that you have already installed {ProductShortName}. See link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI] in the _{UserCLIBookName}_ for installation instructions.
 
 In this example, you will create a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and to provide a link to the documentation that describes how to migrate the code.

@@ -102,8 +102,8 @@ For example, the analyzer adds a `konveyor.io/dep-source` label to dependencies 
 
 To exclude incidents for all such open source dependencies, you can use `--dep-label-selector` as follows:
 
-`konveyor-analyzer ... --dep-label-selector !konveyor.io/dep-source=open-source`
+`$ mta-cli ... --dep-label-selector !konveyor.io/dep-source=open-source`
 
 The Java provider in the analyzer can also add an exclude label to a list of packages. To exclude all such packages, you can use `--dep-label-selector` and the `!` operator as follows:
 
-`konveyor-analyzer ... --dep-label-selector !konveyor.io/exclude`
+`mta-cli ... --dep-label-selector !konveyor.io/exclude`

@@ -16,7 +16,12 @@ endif::[]
 :context: logical-chaining-custom-variables
 
 [role="_abstract"]
-Logical conditions, nested conditions, chaining conditions, and custom variables.
+You can create complex conditions in rules by using the following:
+
+* Logical conditions inform the provider how to handle more than one condition in a when block. You can aggregate or filter conditions using logical operations.
+* Condition chaining uses the output of one condition as the input in another condition of the when block. Assign the output to a variable in one condition and reuse it in other conditions in the when block.
+* Nested conditions to create conditions that depend on the evaluation of other conditions.
+* Custom variables to capture specific information from the code that is evaluated by a rule. You can use the custom variable in the message displayed for the code if it contains a violation defined by the rule.
 
 include::topics/rules-development/yaml-logical-conditions.adoc[leveloffset=+1]
 

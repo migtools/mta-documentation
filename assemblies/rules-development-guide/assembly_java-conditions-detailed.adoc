@@ -16,6 +16,13 @@ endif::[]
 :context: java-conditions-capabilities
 
 [role="_abstract"]
+The `java.referenced` capability in the when condition for Java rules can define search queries for the following fields in the source code:
+
+* Locations - such as the classes, methods, packages and so on
+* Annotations
+* Patterns
+
+You can refer to this section for a detailed explanation on the Locations, Annotations, and Patterns.
 
 
 include::topics/rules-development/yaml-java-provider.adoc[leveloffset=+1]

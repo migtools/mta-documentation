@@ -9,23 +9,32 @@
 [role="_abstract"]
 You can create custom rules for Golang (Go) applications based on the following example.
 
-Use the following custom rule to check if the custom resource definition exposed to the Kubernetes API server has a valid format in the source code.
+You can use the following custom rule to check if MTA triggers an incident when it detects a go file in your project.
 
-. Create a `yaml` file with the name of the rule in your `Home` directory. For example, `go-01.yaml`.
+//Use the following custom rule to check if the custom resource definition exposed to the Kubernetes API server has a valid format in the source code.
+
+. Create a `go-rule-001.yml` file in a directory. .
 
 . Copy the following rule in the `yaml` file:
 +
 
 [source, yaml]
 ----
-  ruleID: go-lang-ref-001
-  description: 
-  effort: 1
-  category: mandatory
-  when:
-    go.referenced:
-        pattern: "v1beta1.CustomResourceDefinition"
-  message: 'golang apiextensions/v1/customresourcedefinitions found {{file}}:{{lineNumber}}'
+  - message: “all go files”
+    ruleID: file-001
+    description: "Testing that we can get all the go files in the project"
+    links:
+    - title: "Golang"
+      url: "https://go.dev"
+    labels:
+     - "testing"
+     - "test"
+    category: potential
+    effort: 3
+    when:
+      builtin.file:
+        pattern: "*.go”
+
 ----
 
 . Create a test `go` file named *example.go* in your `Home` directory.
@@ -54,7 +63,7 @@ func main() {
 
 [source, terminal]
 ----
-$ mta-cli analyze --input /home/<USER>/example.go --output /home/<USER>/output/ --rules /home/<USER>/go-01.yaml
+$ ./mta-cli analyze -i <path_to_Go_project> -o <path_to_report_directory> \ –-run-local=false -–rules <path_to_go-rule-001.yml>
 ----
 
 . Open the static report in the path `/home/<USER>/output/static-report/` in your browser.
