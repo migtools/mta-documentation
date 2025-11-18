@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-09
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-8-0-1_{context}"]
+= Known issues
+
+[role="_abstract"]
+{ProductFullName} version 8.0.1 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+
+.{ProductShortName} {WebName} displays errors when you edit an SVN application that requires a secure connection
+
+In the {ProductShortName} {WebName}, if you disable the `Allow insecure connection` for an application stored in the SVN repository and edit the application, the {WebName} displays a blank page some times with the `TypeError` `cannot read properties of undefined (reading 'kind')`.
+
+No known workaround exists.  
+link:https://issues.redhat.com/browse/MTA-6263[MTA-6263]
+
+.{ProductShortName} assessment form malfunctions when you use it with a custom questionnaire 
+
+In the {ProductShortName} {WebName}, selecting an answer to a question in the assessment form generated from a custom questionnaire causes the form to select an option available for another question.
+
+Workaround: ensure that one or more `order` keys listed in a section, for example `answers`, have a unique order number. link:https://issues.redhat.com/browse/MTA-6262[MTA-6262]
+
+.{ProductShortName} does not trigger a violation for open source dependencies in Gradle applications 
+
+{ProductShortName} does not trigger a violation for open source libraries in a `source+dependency` analysis of a Gradle application. As a result, the analysis report does not list the incident for open source dependencies. 
+
+No known workaround exists. link:https://issues.redhat.com/browse/MTA-6211[MTA-6211]

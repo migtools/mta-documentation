@@ -13,15 +13,8 @@ include::topics/templates/document-attributes.adoc[]
 // Bring back when 8.1 is out [id="mta-8-0-0"]
 //== {ProductShortName} 8.0.0
 
-include::topics/ref_new-features-and-enhancements-8-0.adoc[leveloffset=+1]
+include::assemblies/release-notes/assembly_mta-8-0-1.adoc[leveloffset=+1]
 
-include::topics/ref_tech-previews-8-0.adoc[leveloffset=+1]
-
-include::topics/ref_removed-features-8-0.adoc[leveloffset=+1]
-
-include::topics/ref_known-issues-8-0.adoc[leveloffset=+1]
-
-include::topics/ref_fixed-issues-8-0.adoc[leveloffset=+1]
+include::assemblies/release-notes/assembly_mta-8-0-0.adoc[leveloffset=+1]
 
 :!release-notes:
- 
