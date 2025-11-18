@@ -38,7 +38,9 @@ You can perform the following tasks in the {ProductShortName} {WebName}:
 
 include::proc_creating-source-platform.adoc[leveloffset=+1]
 
-include::proc_discovering-apps-source-platform.adoc[leveloffset=+1]
+include::proc_discovering-apps-source-platform-administration-view.adoc[leveloffset=+1]
+
+include::proc_discovering-apps-source-platform-migration-view.adoc[leveloffset=+1]
 
 include::proc_adding-source-platform-application.adoc[leveloffset=+1]
 
