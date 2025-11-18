@@ -7,9 +7,22 @@
 
 You can use a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.
 
-You can run the live discovery for a remote CF instance by using the `mta-cli discover cloud-foundry --use-live-connection --spaces=_<space_name>_` command.
+While discovering the applications in CF, you can filter and list the applications in CF clusters before you import them in {ProductShortName}. Enter a list of comma-separated values by using the `--orgs` and `--spaces` flags. Use these flags with `--list-apps` to list the applications. 
 
-IMPORTANT: You must always define Cloud Foundry spaces to analyze during a live discovery by using the `--spaces` option.
+When you use the `--orgs` and `--spaces` flags with the `discover` command but without the `--list-apps` flag, {ProductShortName} discovers the applications but does not list them.
+
+{ProductShortName} discovers the applications in the following scenarios:
+
+* Organization without spaces: if you use only the `--orgs` flag, {ProductShortName} discovers all applications deployed in all spaces in the organizations that you entered. You can specify one or more organizations as comma-separated values.
+* Spaces common across organizations: you can specify one or more space names available in multiple organizations to filter applications deployed in the spaces.
+* A specific application: You can discover a specific application deployed in a specific space in a particular organization.
+* Applications across spaces in an organization: You can explore applications that have the same name but deployed in different spaces by specifying the organization and the application name while leaving out the `--spaces` option. 
+* Save manifests: Use the `--out-dir` flag to specify the location to which {ProductShortName} saves manifests of the discovered application. 
+* Invalid entries: If you enter an invalid space name or an organization that does not exist, {ProductShortName} stores a log about skipping the space or the organization and continues to discover applications in other valid spaces and organizations. 
+
+You can run the live discovery for a remote CF instance by using the `mta-cli discover cloud-foundry --use-live-connection --orgs=_<org_name>_ --spaces=_<space_name>_ --app-name=_<application_name>_ ` command.
+
+IMPORTANT: You must enter at least one Cloud Foundry organization by using the `--orgs` option to perform live discovery.
 
 
 .Prerequisites
@@ -35,14 +48,14 @@ $ *mkdir _<path_to_the_directory>_/.cf*
 +
 [subs="+quotes"]
 ....
-$ *mta-cli discover cloud-foundry --use-live-connection --spaces=_<space_name>_ --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_*
+$ *mta-cli discover cloud-foundry --use-live-connection --orgs=_<org_name>_ --spaces=_<space_name>_  --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_*
 ....
 +
-The command runs the discovery for each application from each space.
+The command runs the discovery for all applications from each space in the specified organization.
 +
 If you want to run the discovery for a specific application, enter, for example:
 +
 [subs="+quotes"]
 ....
-$ *mta-cli discover cloud-foundry --use-live-connection --app-name=_<application_name>_ --spaces=_<space_name>_ --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_* 
+$ *mta-cli discover cloud-foundry --use-live-connection --orgs=_<org_name>_  --spaces=_<space_name>_ --app-name=_<application_name>_ --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_* 
 ....

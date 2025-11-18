@@ -48,11 +48,10 @@ include::topics/mta-cli/proc_performing-a-live-discovery.adoc[leveloffset=+1]
 include::topics/mta-cli/proc_concealing-sensitive-information.adoc[leveloffset=+1]
 
 include::topics/mta-cli/proc_generating-deployment-manifest.adoc[leveloffset=+1]
- 
-include::topics/mta-cli/ref_discover-generate-command-options.adoc[leveloffset=+1]
 
 include::topics/mta-cli/ref_assets-generation-example.adoc[leveloffset=+1]
 
+include::topics/mta-cli/ref_discover-generate-command-options.adoc[leveloffset=+1]
 
 
 ifdef::parent-context-of-generating-assets[:context: {parent-context-of-generating-assets}]
