@@ -2,13 +2,13 @@
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="cli-guide"]
-= Using the Migration Toolkit for Applications command-line interface
+= Using the MTA command-line interface to analyze applications
 
 :toc:
 :toclevels: 4
 :numbered:
 :imagesdir: topics/images
-:context: cli-guide 
+:context: cli-guide
 :cli-guide:
 
 //Inclusive language statement
