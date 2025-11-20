@@ -6,16 +6,21 @@
 = {ProductShortName} features
 
 [role="_abstract"]
-{ProductFullName} provides the many features that simplify upgrades with multiple migration paths. 
-
+The {ProductFullName} includes many features that simplify upgrades with multiple migration paths. 
 
 {ProductShortName} brings the following benefits for application analysis and assessment: 	
 
-* *Application inventory and assessment modules* to assist organizations in managing, classifying, and tagging their applications while assessing application suitability for deployment in containers, including flagging potential risks for migration strategies.	
-* *Full integration with source code and binary repositories* to automate the retrieval of applications for analysis along with proxy integration, including HTTP and HTTPS proxy configuration managed in the user interface. 					
-* *Improved analysis capabilities* with new analysis modes, including source and dependency modes that parse repositories to gather dependencies and add these dependencies to the overall scope of the analysis. You can also use a simplified user experience to configure the analysis scope, including open source libraries. 		
-* *Enhanced Role-Based Access Control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-build-of-keycloak[Red Hat build of Keycloak] to define new differentiated personas (administrator, architect, and migrator) with different permissions to suit the needs of each user, including credentials management for multiple credential types. 					
-* *Administration perspective* to provide tool-wide configuration management for administrators. 					
-* *Support for Red Hat OpenShift on AWS (ROSA)* introduced in {ProductShortName} version 7.0.0. 		
-* *Support for Azure Red Hat OpenShift (ARO)* introduced in version MTA 7.0.0. 	
-* *Support for analyzing different languages* introduced in {ProductShortName} version 7.1.0.
+* *Application inventory and assessment modules* to help organizations assess applications' suitability for deployment in containers, including flagging potential risks for migration strategies.	
+* *Integration with source code and binary repositories* to automate the applications' retrieval for analysis, along with proxy integration, including HTTP and HTTPS proxy configuration managed in the user interface. 					
+* *Improved analysis capabilities* with different analysis modes, including source and dependency modes. These modes parse repositories to gather dependencies and add these dependencies to the overall scope of the analysis. You can also use a simplified user experience to configure the analysis scope, including open source libraries. 		
+* *Enhanced Role-Based Access Control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-build-of-keycloak[Red Hat build of Keycloak] to define the following personas:
+** Administrator
+** Architect
+** Migrator
+
++
+These personas have different permissions to suit the needs of each user, including credentials management for multiple credential types. 					
+* *Administration perspective* for administrators to manage tool-wide configuration. 					
+* *Support for Red Hat OpenShift on AWS (ROSA)*
+* *Support for Azure Red Hat OpenShift (ARO)*
+* *Support for analyzing applications written in different languages*

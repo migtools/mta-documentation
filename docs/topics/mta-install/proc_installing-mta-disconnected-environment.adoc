@@ -1,18 +1,14 @@
-// Module included in the following assemblies:
-//
-// * docs/cli-guide/master.adoc
-
-:_content-type: PROCEDURE
+:_mod-docs-content-type: PROCEDURE
 [id="installing-mta-disconnected-environment_{context}"]
 = Installing the CLI on a disconnected environment
 
 [role="_abstract"]
-In certain cases, you might want to install the {ProductFullName} command-line interface (CLI) when no internet connection is available.
+In certain cases, you might want to install the {ProductFullName} command-line interface (CLI) when the internet connection is not available.
 
 When your system is in a disconnected environment, you can install the {ProductFullName} command-line interface (CLI) by performing the following actions:
 
 . Download the required images by using an external computer.
-. Copying the downloaded images to the system you want to install {ProductShortName} CLI on.
+. Copy the downloaded images to the system you want to install the {ProductShortName} CLI on.
 
 IMPORTANT: The following procedure applies only to container mode.
 
@@ -35,27 +31,31 @@ The analysis of non-Java applications runs in container mode by default.
 
 . On a connected device, perform the following steps:
 
-.. Authenticate to registry.redhat.io:
+.. Authenticate to `registry.redhat.io`:
 +
 [subs="+quotes"]
 ....
 $ *podman login registry.redhat.io*
 ....
 
-.. Run the `mta-cli` binary file. The binary file pulls the required provider images. For example:
+.. Run the `mta-cli` binary file:
 +
 [subs="+quotes"]
 ....
 $ *mta-cli analyze*
 ....
 +
-IMPORTANT: This command only pulls the required images. For example, if you run a command that requires Java images, a .NET image will not be pulled.
+IMPORTANT: The binary file pulls only the required provider images. For example, if you run a command that requires Java images, the command will not pull .NET images.
 
 .. Display the image list:
 +
 [subs="+quotes"]
 ....
 $ *podman images*
+....
++
+[subs="+quotes"]
+....
 REPOSITORY                                                        TAG         IMAGE ID      CREATED       SIZE
 registry.redhat.io/mta/mta-generic-external-provider-rhel9        7.3.1       8b8d7fa14570  13 days ago   692 MB
 registry.redhat.io/mta/mta-cli-rhel9                              7.3.1       45422a12d936  13 days ago   1.6 GB

@@ -6,20 +6,20 @@
 = Installing the CLI by using a .zip file
 
 [role="_abstract"]
-You can use the {ProductFullName} command-line interface (CLI) to assess and analyze your applications to prepare them for the migration.
+You can use the {ProductFullName} command-line interface (CLI) to assess and analyze your applications to prepare these applications for the migration.
 
 You can install the {ProductShortName} CLI by using the downloadable `.zip` file available on the link:https://developers.redhat.com/products/mta/download[official {ProductShortName} download page].
 
 
 .Prerequisites
 
-* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from `registry.redhat.io`, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
+* You logged in to `registry.redhat.io`. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
 +
 NOTE: This prerequisite is not applicable for the containerless mode. For more information, see link:{mta-URL}/using_the_mta_command-line_interface_to_analyze_applications/index#running-the-containerless-mta-cli_analyzing-applications-mta-cli[Analyzing an application in containerless mode].
 
 * You installed Java Development Kit (JDK) version 17 or later.
 * You set the `JAVA_HOME` environmental variable.
-* You installed Maven version 3.9.9 or later with its binary added to the `$PATH` variable.
+* You installed Maven version 3.9.9 or later and added the Maven binary to the `$PATH` variable.
 
 .Procedure
 

@@ -15,9 +15,9 @@ endif::[]
 :context: installing-mta-ui
 
 [role="_abstract"]
-You can install the {ProductFullName} user interface (UI) on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions. 			
+By using the {ProductFullName} user interface (UI), you can assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift. You can also analyze the changes that you must apply to the application's code to containerize the application. You can install the {ProductName} UI on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions.			
 
-To create {ProductShortName} instances, you must first install the {ProductShortName} Operator. The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance. 
+To create {ProductShortName} instances, you must install the {ProductShortName} Operator first. The {ProductShortName} Operator is a structural layer that manages resources deployed on Red Hat OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance. 
 	
 include::topics/mta-install/ref_persistent-volume-requirements.adoc[leveloffset=+1]
 
