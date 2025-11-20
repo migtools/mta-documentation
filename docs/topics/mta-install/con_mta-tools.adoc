@@ -18,7 +18,7 @@ By using the user interface for the {ProductName}, you can perform the following
 ** Analyze the changes that must be made in the code of an application to containerize the application.
 
 +
-For more information about using the MTA user interface, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index[Configuring and managing the Migration Toolkit for Applications user interface].
+For more information about using the MTA user interface, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index[Configuring and managing the {ProductName} user interface].
 
 * *Command-line interface (CLI)*
 +

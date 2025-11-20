@@ -14,7 +14,7 @@ endif::[]
 
 :context: configuring-mta-instance-environment
 
-You can configure the Migration Toolkit for Applications (MTA) instance environment by setting up the following parameters: 		
+You can configure the {ProductFullName} instance environment by setting up the following parameters: 		
 
 * General	 				
 * Credentials					
@@ -26,7 +26,7 @@ You can configure the Migration Toolkit for Applications (MTA) instance environm
 
 == Prerequisites
 
-* You installed the {ProductShortName} UI. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/install-guide/installing-mta-ui_installing-mta-title[Installing the Migration Toolkit for Applications user interface].
+* You installed the {ProductShortName} UI. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/install-guide/installing-mta-ui_installing-mta-title[Installing the {ProductName} user interface].
 
 include::assembly_configuring-credentials.adoc[leveloffset=+1]
 
