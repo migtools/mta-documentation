@@ -1,0 +1,26 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="yaml-rule-structure-syntax_{context}"]
+= YAML rule structure and syntax
+
+{ProductShortName} analyzer rules use the following rule pattern:
+
+----
+when(condition)
+ message(message)
+ tag(tags)
+----
+
+Rules are written in YAML. They consist of:
+
+* metadata
+* conditions
+* actions
+
+Rules instruct the analyzer to take specified actions when given conditions match.
+
+A YAML rule file in {ProductShortName} contains one or more YAML rules.
+

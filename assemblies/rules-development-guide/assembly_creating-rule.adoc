@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-creating-rule: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="creating-rule"]
+endif::[]
+ifdef::context[]
+[id="creating-rule_{context}"]
+endif::[]
+= Creating custom rules
+
+:context: creating-rule
+
+[role="_abstract"]
+You can refer to example rules that describe how to create a YAML rule. This assumes that you already have MTA installed. See the MTA CLI Guide for installation instructions.
+
+//This section describes how to create a {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.//
+
+include::topics/rules-development/create-basic-yaml-rule-template.adoc[leveloffset=+1]
+
+include::topics/rules-development/create-first-yaml-rule.adoc[leveloffset=+1]
+
+include::topics/rules-development/create-go-custom-rule.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-creating-rule[:context: {parent-context-of-creating-rule}]
+ifndef::parent-context-of-creating-rule[:!context:]
+
+:!creating-rule:

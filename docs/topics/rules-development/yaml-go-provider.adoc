@@ -20,7 +20,7 @@ when:
 
 .`dependency`
 
-By using the `dependency` capability, the provider finds dependencies for an application.
+By using the `dependency` capability, the provider finds dependencies for a `Go` application.
 
 [source,yaml]
 ----

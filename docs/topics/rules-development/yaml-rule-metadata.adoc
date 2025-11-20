@@ -1,0 +1,31 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: CONCEPT
+
+[id="yaml-rule-metadata-structure_{context}"]
+= Rule metadata structure
+
+Rule metadata contains a unique rule ID, labels, effort, and category.
+
+[source,yaml]
+----
+ruleID: "unique_id" # <1>
+labels: # <2>
+  # key=value pair
+  - "label1=val1"
+  # valid label with value omitted
+  - "label2"
+  # valid label with empty value
+  - "label3="
+  # subdomain prefixed key
+  - "konveyor.io/label1=val1"
+effort: 1 # <3>
+category: mandatory # <4>
+----
+
+<1> *ruleID*: This is a unique ID for the rule. It must be unique within the ruleset.
+<2> *labels*: A list of string labels associated with the rule. (See xref:yaml-rule-labels_{context}[Labels]).
+<3> *effort*: Effort is an integer value that indicates the level of effort needed to resolve this issue.
+<4> *category*: Category describes severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`. For more details, see xref:yaml-rule-categories_{context}[Rule categories].

@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-rules-introduction: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="rules-introduction"]
+endif::[]
+ifdef::context[]
+[id="rules-introduction_{context}"]
+endif::[]
+= Introduction to rules
+
+:context: rules-introduction
+
+[role="_abstract"]
+This guide is intended for software engineers who want to create custom YAML-based rules for {ProductName} ({ProductShortName}) tools.
+
+See the link:{ProductDocIntroToMTAGuideURL}[_{IntroToMTABookName}_] for an overview and the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] for details.
+
+// Use of <{ProductShortName}_HOME> in this Guide
+include::topics/rules-development/mta-about-home-var.adoc[leveloffset=+1]
+
+include::topics/rules-development/about-rules.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-rule-structure-syntax.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-getting-started[:context: {parent-context-of-rules-introduction}]
+ifndef::parent-context-of-getting-started[:!context:]
+
+:!rules-introduction:
