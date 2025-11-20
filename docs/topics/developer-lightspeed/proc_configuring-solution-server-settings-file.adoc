@@ -34,7 +34,6 @@ You need a Keycloak realm and the Solution Server URL to connect {mta-dl-plugin}
         "auth": {
             
            "enabled": true, #you must enter the username and password
-           "insecure": true,
            "realm": "mta"
         },
         
