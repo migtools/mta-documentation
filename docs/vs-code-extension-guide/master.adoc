@@ -10,7 +10,7 @@
 :mta:
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
-= Configuring and using the Visual Studio Code Extension for MTA
+= Configuring and using the Visual Studio Code Extension for {ProductName}
 
  
 include::topics/vscode/con_intro-to-vscode-for-mta.adoc[leveloffset=+1]
