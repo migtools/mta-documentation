@@ -6,7 +6,7 @@
 = Known issues
 
 [role="_abstract"]
-{ProductFullName} version 8.0.1 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+{ProductFirstRef} ({ProductShortName}) version 8.0.1 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
 
 .{ProductShortName} {WebName} displays errors when you edit an SVN application that requires a secure connection
 

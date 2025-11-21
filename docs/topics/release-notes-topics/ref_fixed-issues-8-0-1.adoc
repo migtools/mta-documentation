@@ -6,7 +6,7 @@
 = Fixed issues
 
 [role="_abstract"]
-{ProductFullName} version 8.0.1 provides the following fixed issues and other problems that have a significant impact. 
+{ProductFirstRef} ({ProductShortName}) version 8.0.1 provides the following fixed issues and other problems that have a significant impact. 
 
 .{ProductShortName} enables you to target an organization when importing applications from Cloud Foundry
 
