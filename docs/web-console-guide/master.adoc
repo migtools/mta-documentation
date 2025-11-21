@@ -8,7 +8,7 @@ include::topics/templates/document-attributes.adoc[]
 :user-interface-guide:
 :imagesdir: topics/images
 :_content-type: ASSEMBLY
-= Configuring and managing the Migration Toolkit for Applications user interface
+= Configuring and managing the {ProductName} user interface
 
 include::topics/mta-ui/con_intro-to-mta-ui.adoc[leveloffset=+1]
 

@@ -2,7 +2,7 @@
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="installing-mta-title"]
-= Installing the Migration Toolkit for Applications
+= Installing the {ProductName}
 
 :toc:
 :toclevels: 4
