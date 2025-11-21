@@ -134,11 +134,9 @@ include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
 // Using Custom Rule Categories
 // include::topics/rule-categories.adoc[leveloffset=+1]
 
-[appendix]
-== Reference material
 
 // Rule Story Points
-include::topics/about-story-points.adoc[leveloffset=+2]
+//include::topics/about-story-points.adoc[leveloffset=+2]
 
 // removing section subject to a later re-write
 // For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
@@ -159,5 +157,6 @@ include::topics/rules-important-links.adoc[leveloffset=+3]
 // **********************************
 // * Appendix: Revision Information *
 // **********************************
-include::topics/templates/revision-info.adoc[]
-=======
+//include::topics/templates/revision-info.adoc[]
+
+:!rules-development-guide:
