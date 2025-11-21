@@ -12,7 +12,7 @@ Starting from 8.0.0, {ProductFullName} integrates with large language models (LL
 [id="use-case-ai-code-fix_{context}"]
 == Use case for AI-driven code fixes
 
-{ProductFullName} performs the static code analysis for a specified target technology to which you want to migrate your applications. Red Hat provides 2400+ analysis rules in {ProductShortName} for various Java technologies and you can extend the ruleset for custom frameworks or new technologies by creating custom rules.
+Migration toolkit for applications performs the static code analysis for a specified target technology to which you want to migrate your applications. Red Hat provides 2400+ analysis rules in {ProductShortName} for various Java technologies and you can extend the ruleset for custom frameworks or new technologies by creating custom rules.
 
 The static code analysis describes the issues in your code that must be resolved. As you perform analysis for a large portfolio of applications, the issue description and the rule definition that may contain additional information form a large corpus of data that contains repetitive patterns of problem definitions and  solutions.
 
