@@ -58,7 +58,7 @@ When you uploaded more than one custom rule at a time in the {ProductShortName} 
 
 .Analysis of binary applications classify open source dependencies
 
-When you analyzed Java binary applications, {ProductShortName} incorrectly classified  some open-source dependencies as internal dependencies. With this version, this issue if fixed. This leads to {ProductShortName} classifying external open source dependencies correctly after a source+dependency binary analysis. link:https://issues.redhat.com/browse/MTA-6357[MTA-6357]
+When you analyzed Java binary applications, {ProductShortName} incorrectly classified some open-source dependencies as internal dependencies. With this version, this issue if fixed. This leads to {ProductShortName} classifying external open source dependencies correctly after a source+dependency binary analysis. link:https://issues.redhat.com/browse/MTA-6357[MTA-6357]
 
 .{ProductShortName} {CLIName} parses the `VCP_SERVICES` environment variable correctly for Cloud Foundry applications with service binding
 
