@@ -55,3 +55,11 @@ When you analyzed a binary, the performance degraded because {ProductShortName} 
 .{ProductShortName} web console detects custom rules when many are uploaded at a time
 
 When you uploaded more than one custom rule at a time in the {ProductShortName} web console, the rules were not detected. With this version, this issue is fixed. You can upload one or more custom rules at once. link:https://issues.redhat.com/browse/MTA-6029[MTA-6029]
+
+.Analysis of binary applications classify open source dependencies accurately
+
+When you analyzed Java binary applications, {ProductShortName} incorrectly classified some open-source dependencies as internal dependencies. With this version, this issue if fixed. This leads to {ProductShortName} classifying embedded open source dependencies correctly after a source+dependency binary analysis. link:https://issues.redhat.com/browse/MTA-6357[MTA-6357]
+
+.{ProductShortName} {CLIName} correctly processes Cloud Foundry applications with service binding
+
+The discovery process of Cloud Foundry (CF) applications with service bindings by using live connection failed in {ProductShortName} {CLIName}. The {ProductShortName} {CLIName} did not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information for an array of services. For example, `cf bind-service _<application_name>_ postgres01`. With this version, this issue is fixed. As a result, {ProductShortName} {CLIName} successfully completes the discovery of CF applications with service bindings. link:https://issues.redhat.com/browse/MTA-6399[MTA-6399]
