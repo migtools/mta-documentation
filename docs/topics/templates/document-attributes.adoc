@@ -11,12 +11,12 @@
 // * Product names *
 // *****************
 ifdef::mta[]
-:ProductName: Migration Toolkit for Applications
-:DocInfoProductName: Migration Toolkit for Applications
+:ProductName: migration Toolkit for Applications
+:DocInfoProductName: migration Toolkit for Applications
 :DocInfoProductNumber: 8.0
 :ProductShortName: MTA
 :ProductShortNameLower: mta
-:ProductFullName: Migration Toolkit for Applications (MTA)
+:ProductFullName: migration Toolkit for Applications (MTA)
 :LC_PSN: mta
 :mta-cli: mta-cli
 :rhbk-first: Red Hat Build of Keycloak (RHBK)
