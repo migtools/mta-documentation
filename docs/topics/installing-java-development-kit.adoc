@@ -5,7 +5,7 @@
 [id="installing-java-development-kit_{context}"]
 = Installing Java Development Kit
 
-You must have the Java Development Kit (JDK) installed on your system prior to installing the Eclipse integrated development environment (IDE). {ProductFullName} supports the following JDKs: 		
+You must have the Java Development Kit (JDK) installed on your system prior to installing the Eclipse integrated development environment (IDE). Migration toolkit for applications supports the following JDKs: 		
 
 * OpenJDK 11 							
 * OpenJDK 17 							
