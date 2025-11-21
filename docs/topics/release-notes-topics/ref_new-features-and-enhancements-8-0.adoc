@@ -6,7 +6,7 @@
 = New features and enhancements
 
 [role="_abstract"]
-{ProductFullName} version {ProductVersion} provides the following major new features and enhancements.
+Migration toolkit for applications ({ProductShortName}) version {ProductVersion} provides the following major new features and enhancements.
 
 .{mta-dl-plugin} is available in the VS Code extension
 
