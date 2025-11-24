@@ -45,7 +45,21 @@ link:https://issues.redhat.com/browse/MTA-6424[MTA-6424]
 
 .`METHOD_CALL` and `CONSTRUCTOR_CALL` do not match expected locations
 
-Searches by using the `METHOD_CALL` and `CONSTRUCTOR_CALL` patterns do not match the expected methods and constructors. For example, `java.referenced: location: CONSTRUCTOR_CALLpattern: javax.servlet.UnavailableException(javax.servlet.Servlet,java.lang.String)` does not match `String str = "something"; Servlet s = exception1.getServlet(); UnavailableException exception2 = new UnavailableException(s, str);`.
+Searches by using the `METHOD_CALL` and `CONSTRUCTOR_CALL` patterns do not match the expected methods and constructors. For example:
+
+----
+    java.referenced:
+      location: CONSTRUCTOR_CALL
+      pattern: javax.servlet.UnavailableException(javax.servlet.Servlet,java.lang.String)
+----
+
+does not match
+
+----
+ String str = "something";
+ Servlet s = exception1.getServlet();
+ UnavailableException exception2 = new UnavailableException(s, str);
+----
 
 In addition, searches with Fully Qualified Names (FQN) specified do not match, for example, `java.referenced: location: CONSTRUCTOR_CALLpattern: UnavailableException(Servlet,String)`.
 

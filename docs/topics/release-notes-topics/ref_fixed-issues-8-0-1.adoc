@@ -75,10 +75,3 @@ When you uploaded more than one custom rule at a time in the {ProductShortName} 
 
 link:https://issues.redhat.com/browse/MTA-6029[MTA-6029]
 
-
-
-.{ProductShortName} CLI correctly processes applications with service bindings
-
-Before this update, when you used the {ProductFullName} command-line interface (CLI) to run an application discovery for a deployed Cloud Foundry (CF) application with a service binding, for example, `cf bind-service _<application_name>_ postgres01`, the discovery failed. With this release, the application discovery no longer fails for applications with service bindings.
-
-link:https://issues.redhat.com/browse/MTA-6399[MTA-6399]
