@@ -33,9 +33,9 @@ No known workaround exists.
 link:https://issues.redhat.com/browse/MTA-6211[MTA-6211]
 
 
-.Specifying target organizations for a Cloud Foundry discovery is not supported in {ProductShortName} UI
+.{ProductShortName} UI fails to process applications with service bindings
 
-When running an application discovery by using the {ProductFullName} user interface (UI), you cannot specify target organizations for a Cloud Foundry (CF) instance. You can only specify target CF spaces.
+When you use the {ProductFullName} user interface (UI) to run an application discovery for a deployed Cloud Foundry (CF) application with a service binding, {ProductShortName} UI does not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information. Consequently, the discovery fails.
 
 No known workaround exists.
 

@@ -74,4 +74,3 @@ link:https://issues.redhat.com/browse/MTA-6231[MTA-6231]
 When you uploaded more than one custom rule at a time in the {ProductShortName} web console, the rules were not detected. With this version, this issue is fixed. You can upload one or more custom rules at once.
 
 link:https://issues.redhat.com/browse/MTA-6029[MTA-6029]
-
