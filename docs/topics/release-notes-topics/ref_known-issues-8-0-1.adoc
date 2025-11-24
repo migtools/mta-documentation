@@ -32,5 +32,4 @@ No known workaround exists. link:https://issues.redhat.com/browse/MTA-6211[MTA-6
 
 When running an application discovery by using the {ProductFullName} command-line interface (CLI) or the user interface (UI), you cannot specify target organizations for a Cloud Foundry (CF) instance. You can only specify target CF spaces.
 
-
 No known workaround exists.
