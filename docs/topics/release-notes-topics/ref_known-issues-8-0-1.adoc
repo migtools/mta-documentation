@@ -37,7 +37,7 @@ link:https://issues.redhat.com/browse/MTA-6211[MTA-6211]
 
 When you use the {ProductFullName} user interface (UI) to run an application discovery for a deployed Cloud Foundry (CF) application with a service binding, {ProductShortName} UI does not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information. Consequently, the discovery fails.
 
-No known workaround exists.
+To work around this problem, run the application discovery by using the {ProductShortName} command-line interface (CLI).
 
 link:https://issues.redhat.com/browse/MTA-6424[MTA-6424]
 
