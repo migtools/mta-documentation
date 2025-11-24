@@ -13,23 +13,42 @@
 In the {ProductShortName} {WebName}, if you disable the `Allow insecure connection` for an application stored in the SVN repository and edit the application, the {WebName} displays a blank page some times with the `TypeError` `cannot read properties of undefined (reading 'kind')`.
 
 No known workaround exists.  
+
 link:https://issues.redhat.com/browse/MTA-6263[MTA-6263]
 
 .{ProductShortName} assessment form malfunctions when you use it with a custom questionnaire 
 
 In the {ProductShortName} {WebName}, selecting an answer to a question in the assessment form generated from a custom questionnaire causes the form to select an option available for another question.
 
-To work around this problem, ensure that one or more `order` keys listed in a section, for example `answers`, have a unique order number. link:https://issues.redhat.com/browse/MTA-6262[MTA-6262]
+To work around this problem, ensure that one or more `order` keys listed in a section, for example `answers`, have a unique order number. 
+
+link:https://issues.redhat.com/browse/MTA-6262[MTA-6262]
 
 .{ProductShortName} does not trigger a violation for open source dependencies in Gradle applications 
 
 {ProductShortName} does not trigger a violation for open source libraries in a `source+dependency` analysis of a Gradle application. As a result, the analysis report does not list the incident for open source dependencies. 
 
-No known workaround exists. link:https://issues.redhat.com/browse/MTA-6211[MTA-6211]
+No known workaround exists.
+
+link:https://issues.redhat.com/browse/MTA-6211[MTA-6211]
 
 
-.Specifying target organizations for a Cloud Foundry discovery is not supported
+.Specifying target organizations for a Cloud Foundry discovery is not supported in {ProductShortName} UI
 
-When running an application discovery by using the {ProductFullName} command-line interface (CLI) or the user interface (UI), you cannot specify target organizations for a Cloud Foundry (CF) instance. You can only specify target CF spaces.
+When running an application discovery by using the {ProductFullName} user interface (UI), you cannot specify target organizations for a Cloud Foundry (CF) instance. You can only specify target CF spaces.
 
 No known workaround exists.
+
+link:https://issues.redhat.com/browse/MTA-6424[MTA-6424]
+
+
+
+.`METHOD_CALL` and `CONSTRUCTOR_CALL` do not match expected locations
+
+Searches by using the `METHOD_CALL` and `CONSTRUCTOR_CALL` patterns do not match the expected methods and constructors. For example, `java.referenced: location: CONSTRUCTOR_CALLpattern: javax.servlet.UnavailableException(javax.servlet.Servlet,java.lang.String)` does not match `String str = "something"; Servlet s = exception1.getServlet(); UnavailableException exception2 = new UnavailableException(s, str);`.
+
+In addition, searches with Fully Qualified Names (FQN) specified do not match, for example, `java.referenced: location: CONSTRUCTOR_CALLpattern: UnavailableException(Servlet,String)`.
+
+No known workaround exists.
+
+link:https://issues.redhat.com/browse/MTA-6402[MTA-6402]
