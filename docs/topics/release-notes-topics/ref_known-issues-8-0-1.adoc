@@ -43,7 +43,7 @@ link:https://issues.redhat.com/browse/MTA-6424[MTA-6424]
 
 
 
-.`METHOD_CALL` and `CONSTRUCTOR_CALL` do not match expected locations
+.Rules with `METHOD_CALL` or `CONSTRUCTOR_CALL` do not match expected locations when specifying parameters
 
 Searches by using the `METHOD_CALL` and `CONSTRUCTOR_CALL` patterns do not match the expected methods and constructors. For example:
 
