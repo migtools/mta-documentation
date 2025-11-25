@@ -6,7 +6,7 @@
 = Installing Java Development Kit
 
 [role="_abstract"]
-You must have the Java Development Kit (JDK) installed on your system before installing the Eclipse integrated development environment (IDE). {ProductFullName} supports the following JDKs: 		
+You must have the Java Development Kit (JDK) installed on your system before installing the Eclipse integrated development environment (IDE). {ProductFirstRef} supports the following JDKs: 		
 
 * OpenJDK 11 							
 * OpenJDK 17 							
