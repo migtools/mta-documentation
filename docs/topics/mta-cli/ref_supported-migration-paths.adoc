@@ -7,7 +7,7 @@
 = Supported {ProductName} migration paths
 
 [role="_abstract"]
-You can use the {ProductFullName} to assess your applications' suitability for migration to multiple target platforms. 
+You can use the {ProductFullName} to assess your applications' suitability for the migration to multiple target platforms. 
 
 {ProductShortName} supports the following migration paths:
 
