@@ -8,23 +8,29 @@
 [role="_abstract"]
 {ProductFullName} version 8.0.1 provides the following fixed issues and other problems that have a significant impact. 
 
+.Binary application analysis latency is reduced in {ProductShortName} 
+
+When you analyzed a binary, the performance degraded because {ProductShortName} relied on Maven search. With this release, this issue is fixed by introducing the pre-generated Maven index that does not require connecting to an external index.
+
+link:https://issues.redhat.com/browse/MTA-6231[MTA-6231]
+
+.Analysis of binary applications classify open source dependencies accurately
+
+When you analyzed Java binary applications, {ProductShortName} incorrectly classified some open-source dependencies as internal dependencies. With this version, this issue if fixed. This leads to {ProductShortName} classifying embedded open source dependencies correctly after a source+dependency binary analysis. 
+
+link:https://issues.redhat.com/browse/MTA-6357[MTA-6357]
+
 .{ProductShortName} enables you to target an organization when importing applications from Cloud Foundry
 
 When you imported applications from Cloud Foundry (CF), {ProductShortName} did not have a provision for you to mention the CF organizations. With this release, this issue is fixed. You can configure one or more organizations, spaces, and applications for the discovery process. The spaces can belong to different organizations and the applications can belong to different spaces. You must specify at least one organization for application discovery. 
 
 link:https://issues.redhat.com/browse/MTA-6271[MTA-6271]
 
-.You can import Cloud Foundry applications from the application inventory in the {ProductShortName} web console 
+.{ProductShortName} {CLIName} correctly processes Cloud Foundry applications with service binding
 
-Before this update, an {ProductShortName} Architect could not discover or import applications from the Cloud Foundry (CF) source platform on the application inventory page. As a result, only an {ProductShortName} Administrator could import the applications from the Source Platform page in the Administrator mode. With this release, this issue is fixed. Architects can now import CF applications in the *Application Inventory*. 
+The discovery process of Cloud Foundry (CF) applications with service bindings by using live connection failed in {ProductShortName} {CLIName}. The {ProductShortName} {CLIName} did not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information for an array of services. For example, `cf bind-service _<application_name>_ postgres01`. With this version, this issue is fixed. As a result, {ProductShortName} {CLIName} successfully completes the discovery of CF applications with service bindings. 
 
-link:https://issues.redhat.com/browse/MTA-6120[MTA-6120]
-
-.You can complete an assessment by using a custom questionnaire in the {ProductShortName} {WebName} 
-
-Before this update, you could not proceed to the final step after filling in the responses to the custom questionnaire because the *Next* button was disabled in the web console. With this release, this issue is fixed.
-
-link:https://issues.redhat.com/browse/MTA-6143[MTA-6143]
+link:https://issues.redhat.com/browse/MTA-6399[MTA-6399]
 
 .Cloud Foundry applications imported in {ProductShortName} are tagged automatically
 
@@ -32,18 +38,11 @@ When you imported applications in {ProductShortName} from a Cloud Foundry (CF) i
 
 link:https://issues.redhat.com/browse/MTA-6282[MTA-6282]
 
-.{ProductShortName} displays source repository URL when you skip configuring the repository type field
+.You can import Cloud Foundry applications from the application inventory in the {ProductShortName} web console 
 
-{ProductShortName} did not show the source repository URL in the application details view if you did not select between the `Git` or `Subversion` repository type. As a result, you could not run an analysis on the application source code. With this release, this issue is fixed. You can now use {ProductShortName} to run an analysis on the source code even if you do not configure the repository type field.
+Before this update, an {ProductShortName} Architect could not discover or import applications from the Cloud Foundry (CF) source platform on the application inventory page. As a result, only an {ProductShortName} Administrator could import the applications on the *Source platforms* page in the Administrator mode. With this release, this issue is fixed. Architects can now import CF applications in the *Application Inventory*. 
 
-link:https://issues.redhat.com/browse/MTA-6105[MTA-6105]
-
-
-.{ProductShortName} triggers rules to match import statements with wildcard in Java applications analysis
-
-{ProductShortName} did not trigger rule to match import statements that contain a wildcard when analyzing a Java application. Consequently, specific incidents were not detected in the report after the analysis. With this release, this issue is fixed. 
-
-link:https://issues.redhat.com/browse/MTA-4027[MTA-4027]
+link:https://issues.redhat.com/browse/MTA-6120[MTA-6120]
 
 .Concurrent usage of {mta-dl-plugin} for code resolution at scale no longer causes race conditions
 
@@ -51,23 +50,41 @@ Concurrent usage of the Solution Server through the {mta-dl-plugin} Visual Studi
 
 link:https://issues.redhat.com/browse/MTA-6230[MTA-6230]
 
-.{ProductShortName} no longer fails language and tech discovery for Java application in SVN repositories
-
-Before this update, for a Java application source code stored in an SVN repository, {ProductShortName} produced an error when trying to checkout the repository by using the SVN credential. As a result, the language and tech discovery of the application failed. With this release, this issue is fixed. You can now analyze an application stored in SVN repository without any error.
-
-link:https://issues.redhat.com/browse/MTA-6141[MTA-6141]
-
 .{ProductShortName} rules for Java use FQN to match annotations in source code 
 
 Before this update, the annotation rules for Java applications did not use Fully Qualified Names (FQNs) to match with the annotation location in rules. As a result, the rule triggered incorrect matches or false positives for issues. For example, a rule that looked for the `javax.enterprise.inject.Produces` incorrectly matched with occurrences of `javax.ws.rs.Produces`. With this release, this issue is fixed.
 
 link:https://issues.redhat.com/browse/MTA-6195[MTA-6195]
 
-.Binary application analysis latency is reduced in {ProductShortName} 
+.{ProductShortName} triggers rules to match import statements with wildcard in Java applications analysis
 
-When you analyzed a binary, the performance degraded because {ProductShortName} relied on Maven search. With this release, this issue is fixed by introducing the pre-generated Maven index that does not require connecting to an external index.
+{ProductShortName} did not trigger rule to match import statements that contain a wildcard when analyzing a Java application. Consequently, specific incidents were not detected in the report after the analysis. With this release, this issue is fixed. 
 
-link:https://issues.redhat.com/browse/MTA-6231[MTA-6231]
+link:https://issues.redhat.com/browse/MTA-4027[MTA-4027]
+
+.{ProductShortName} {WebName} enables you to edit secure SVN application without an error
+
+When you disabled the `Allow insecure connection` for an application stored in the SVN repository and edited the application, the {WebName} displayed a blank page some times with the `TypeError` `cannot read properties of undefined (reading 'kind')`. With this version, this issue is fixed. You can edit secure SVN applications in the {ProductShortName} {WebName}.
+
+link:https://issues.redhat.com/browse/MTA-6263[MTA-6263]
+
+.{ProductShortName} no longer fails language and tech discovery for Java application in SVN repositories
+
+Before this update, for a Java application source code stored in an SVN repository, {ProductShortName} produced an error when trying to checkout the repository by using the SVN credential. As a result, the language and tech discovery of the application failed. With this release, this issue is fixed. You can now analyze an application stored in SVN repository without any error.
+
+link:https://issues.redhat.com/browse/MTA-6141[MTA-6141]
+
+.{ProductShortName} displays source repository URL when you skip configuring the repository type field
+
+{ProductShortName} did not show the source repository URL in the application details view if you did not select between the `Git` or `Subversion` repository type. As a result, you could not run an analysis on the application source code. With this release, this issue is fixed. You can now use {ProductShortName} to run an analysis on the source code even if you do not configure the repository type field.
+
+link:https://issues.redhat.com/browse/MTA-6105[MTA-6105]
+
+.You can complete an assessment by using a custom questionnaire in the {ProductShortName} {WebName} 
+
+Before this update, you could not proceed to the final step after filling in the responses to the custom questionnaire because the *Next* button was disabled in the web console. With this release, this issue is fixed.
+
+link:https://issues.redhat.com/browse/MTA-6143[MTA-6143]
 
 .{ProductShortName} web console detects custom rules when many are uploaded at a time
 
