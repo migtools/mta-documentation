@@ -6,7 +6,7 @@
 = Fixed issues
 
 [role="_abstract"]
-{ProductFullName} version 8.0.0 provides the following fixed issues and other problems that have a significant impact. 
+{ProductFirstRef} ({ProductShortName}) version 8.0.0 provides the following fixed issues and other problems that have a significant impact. 
 
 .The default `values.yaml` file is merged with the discover `values.yaml` file when generating a deployment manifest
 

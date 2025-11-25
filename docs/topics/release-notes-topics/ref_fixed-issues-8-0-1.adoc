@@ -6,7 +6,7 @@
 = Fixed issues
 
 [role="_abstract"]
-{ProductFullName} version 8.0.1 provides the following fixed issues and other problems that have a significant impact. 
+{ProductFirstRef} ({ProductShortName}) version 8.0.1 provides the following fixed issues and other problems that have a significant impact. 
 
 In {ProductShortName} 8.0.1 the performance of Java binary analysis has significantly improved.
 Before this change, when you analyzed Java binary applications, {ProductShortName} incorrectly classified some open-source dependencies as internal dependencies, it was then decompiled and analyzed, that caused the analysis to take longer to complete. Now, the location of the Maven index file is passed to the Java provider to determine if an embedded dependency is open-source or internal. This fix resolved the two following issues:
