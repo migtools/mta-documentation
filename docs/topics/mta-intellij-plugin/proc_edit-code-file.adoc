@@ -1,0 +1,17 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="editing-code-file_{context}"]
+= Editing the code of a file
+
+[role="_abstract"]
+You can directly edit a file displayed in the *Classifications* section of the *Results* directory. These files do not have any Quick Fixes.
+
+.Procedure
+
+. In the left pane, click the file you want to edit.
+. Make any changes needed to the code and save the file.
+. Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
++
+If you select *Mark as Complete*, a green check (image:intellij-idea-ok.png[Complete]) is displayed by the hint, replacing the error indicator.
