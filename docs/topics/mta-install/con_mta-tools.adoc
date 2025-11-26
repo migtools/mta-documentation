@@ -26,9 +26,9 @@ The CLI is a command-line tool in the {ProductName} that you can use to assess a
 +
 For more information about using the CLI, see link:{mta-URL}/using_the_mta_command-line_interface_to_analyze_applications/index[Using the MTA command-line interface to analyze applications].
 
-* *{ProductName} Operator*
+* *{ProductFirstRef} ({ProductShortName}) Operator*
 +
-By using the {ProductName} Operator, you can install the user interface on OpenShift Container Platform.
+By using the {ProductShortName} Operator, you can install the user interface on OpenShift Container Platform.
 +
 For more information about the prerequisites for the MTA Operator installation, see link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles].
 

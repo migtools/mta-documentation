@@ -5,7 +5,7 @@
 [id="creating-a-tag_{context}"]
 = Creating a tag
 
-{ProductFullName} uses tags in multiple categories and provides a list of default values. However, you can create your own tag category and a new tag that is not in the default list.
+{ProductFirstRef} uses tags in multiple categories and provides a list of default values. However, you can create your own tag category and a new tag that is not in the default list.
 
 You can create and configure an instance in any order. However, the following is the most efficient order for creating tags:
 

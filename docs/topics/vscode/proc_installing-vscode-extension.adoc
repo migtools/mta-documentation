@@ -3,7 +3,7 @@
 = Installing the {ProductShortName} extension for Visual Studio Code
 
 [role="_abstract"]
-You can use the {ProductFullName} Visual Studio (VS) Code plugin to perform a standard application analysis. You can also enable Red Hat Developer Lightspeed for the Migration Toolkit for Applications (MTA) to use Generative AI (GenAI) capabilities to fix code issues before migrating to target technologies. Note that Developer Lightspeed for {ProductShortName} is enabled by default. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/developer-lightspeed-guide/index[Configuring and using Developer Lightspeed for {ProductShortName}].
+You can use the {ProductFullName} Visual Studio (VS) Code plugin to perform a standard application analysis. You can also enable Red Hat Developer Lightspeed for the {ProductName} to use Generative AI (GenAI) capabilities to fix code issues before migrating to target technologies. Note that Developer Lightspeed for {ProductShortName} is enabled by default. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/developer-lightspeed-guide/index[Configuring and using Developer Lightspeed for {ProductShortName}].
 
 .Prerequisites 
 

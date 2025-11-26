@@ -8,7 +8,7 @@
 [role="_abstract"]
 To create the {ProductFullName} instances, you must install the {ProductShortName} Operator first.
 
-The {ProductFullName} Operator is a structural layer that manages resources deployed on Red Hat OpenShift, such as the database, front end, and back end, to automatically create an {ProductShortName} instance.
+The {ProductShortName} Operator is a structural layer that manages resources deployed on Red Hat OpenShift, such as the database, front end, and back end, to automatically create an {ProductShortName} instance.
 
 .Prerequisites
 
@@ -23,7 +23,7 @@ The {ProductFullName} Operator is a structural layer that manages resources depl
 . In the Red Hat OpenShift web console, click *Operators*.
 . Click *OperatorHub*.
 . Type _{ProductShortName}_ in the *Filter by keyword* field to search for the {ProductShortName} Operator.
-. Click *{ProductName} Operator*.
+. Click *{ProductFirstRef} Operator*.
 . Click *Install*.
 . On the *Install Operator* page, click *Install*.
 . Optional: Review and edit the custom resource (CR) settings.

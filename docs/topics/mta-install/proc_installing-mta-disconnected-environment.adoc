@@ -5,7 +5,7 @@
 [role="_abstract"]
 In certain cases, you might want to install the {ProductFullName} command-line interface (CLI) when the internet connection is not available.
 
-When your system is in a disconnected environment, you can install the {ProductFullName} command-line interface (CLI) by performing the following actions:
+When your system is in a disconnected environment, you can install the {ProductShortName} (CLI) by performing the following actions:
 
 . Download the required images by using an external computer.
 . Copy the downloaded images to the system you want to install the {ProductShortName} CLI on.
