@@ -6,6 +6,7 @@
 [id="yaml-annotation-inspection_{context}"]
 = Annotation inspection
 
+[role="_abstract"]
 You can add a query to match against specific annotations and their elements, for example:
 
 [source,yaml]
@@ -43,10 +44,10 @@ The structure of the `annotated` YAML element is:
 [source,yaml]
 ----
 annotated:
-  pattern: a Java regex to match the fully qualified name of the annotation (optional)
+  pattern: a Java regular expression to match the fully qualified name of the annotation (optional)
   elements: an array of elements to match within the annotation (optional)
   - name: the exact name of the element to match against
-    value: a Java regex to match the value of the element
+    value: a Java regular expression to match the value of the element
 ----
 
 It is also possible to match an annotation with specific elements, without having to specify the symbol it annotates. The following example would also match on the `@Bean` annotation in the same code as the previous example:

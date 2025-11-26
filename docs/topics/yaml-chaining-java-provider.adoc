@@ -6,6 +6,7 @@
 [id="yaml-chaining-java-provider_{context}"]
 = Chaining in the Java provider
 
+[role="_abstract"]
 In the `java` provider, the `filepaths` variable must be uppercased. for example:
 
 [source,yaml]

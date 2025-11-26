@@ -6,6 +6,7 @@
 [id="rules-important-links_{context}"]
 = Additional resources
 
+[role="_abstract"]
 // * {ProductShortName} Javadocs: {LinkAPI}reporting/api/src/main/java
 * {ProductShortName} Jira issue tracker: {JiraWindupURL}
 * {ProductShortName} mailing list: windup-eng@redhat.com

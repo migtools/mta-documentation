@@ -3,10 +3,11 @@
 // * docs/rules-development-guide/master.adoc
 // * docs/getting-started-guide/master.adoc
 
-:_content-type: CONCEPT
+:_mod-docs-content-type: CONCEPT
 [id="about-rules_{context}"]
 = The {ProductShortName} rules
 
+[role="_abstract"]
 The {ProductFullName} contains rule-based migration tools (analyzers) that you can use to analyze the application user interfaces (APIs), technologies, and architectures used by the applications you plan to migrate. {ProductShortName} analyzer rules use the following rule pattern:
 
 ----

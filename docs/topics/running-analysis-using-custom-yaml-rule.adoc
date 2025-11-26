@@ -2,10 +2,11 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_content-type: PROCEDURE
+:_mod-docs-content-type: PROCEDURE
 [id="running-analysis-using-custom-yaml-rule_{context}"]
 = Running an analysis using a custom YAML rule
 
+[role="_abstract"]
 To run an analysis, use the `--rules` option in the CLI.
 
 .Procedure

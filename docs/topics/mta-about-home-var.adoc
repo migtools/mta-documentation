@@ -2,10 +2,11 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_content-type: CONCEPT
+:_mod-docs-content-type: CONCEPT
 [id="mta-about-home-var_{context}"]
 = Use of `<{ProductShortName}_HOME>` in this guide
 
+[role="_abstract"]
 This guide uses the `<{ProductShortName}_HOME>` replaceable variable to denote the path to your {ProductShortName} installation.
 
 The {ProductShortNameLower}-{ProductVersion}-cli<OS>.zip* extracts a single binary called `mta-cli`.

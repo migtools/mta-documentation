@@ -6,6 +6,7 @@
 [id="yaml-provider-conditions_{context}"]
 = Provider condition
 
+[role="_abstract"]
 The analyzer engine enables multi-language source code analysis by using  *providers*. The source code of a technology is analyzed by the provider.
 
 The provider publishes what they can do with the source code in terms of capabilities.
@@ -148,7 +149,7 @@ The following table summarizes available providers, their capabilities and all o
 .3+|referenced
 |pattern
 |Yes
-|Regex pattern
+|Regular expression pattern
 
 |location
 |No
@@ -165,7 +166,7 @@ The following table summarizes available providers, their capabilities and all o
 
 |nameregex
 |No
-|Regex pattern to match the name.
+|Regular expression pattern to match the name.
 
 |upperbound
 |No
@@ -201,7 +202,7 @@ The following table summarizes available providers, their capabilities and all o
 .2+|filecontent
 |pattern
 |Yes
-|Regex pattern to match in content
+|Regular expression pattern to match in content
 
 |filePattern
 |No
@@ -221,7 +222,7 @@ The following table summarizes available providers, their capabilities and all o
 |referenced
 |pattern
 |Yes
-|Regex pattern.
+|Regular expression pattern.
 
 .4+|dependency
 |name
@@ -230,7 +231,7 @@ The following table summarizes available providers, their capabilities and all o
 
 |nameregex
 |No
-|Regex pattern to match the name.
+|Regular expression pattern to match the name.
 
 |upperbound
 |No

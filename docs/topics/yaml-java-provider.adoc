@@ -6,6 +6,7 @@
 [id="yaml-java-provider_{context}"]
 = Java provider
 
+[role="_abstract"]
 The `java` provider analyzes Java source code.
 
 This provider has the following capabilities:
@@ -21,13 +22,15 @@ By using the `referenced` capability, the provider finds references in the sourc
 ----
 when:
   java.referenced:
-    pattern: "<pattern>" # <1>
-    location: "<location>" # <2>
-    annotated: "<annotated>" # <3>
+    pattern: "<pattern>" 
+    location: "<location>"
+    annotated: "<annotated>" 
 ----
-<1> A regular expression pattern to match.
-<2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
-<3> Checks for specific annotations and their elements, such as name and value, in the Java code using a query. For example, the following query matches the `Bean` (url = “http://www.example.com”) annotation in the method.
+where:
+
+ `pattern` :: A regular expression pattern to match.
+ `location` :: Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
+ `annotated` :: Checks for specific annotations and their elements, such as name and value, in the Java code using a query. For example, the following query matches the `Bean` (url = “http://www.example.com”) annotation in the method.
 +
 [source,yaml]
 ----

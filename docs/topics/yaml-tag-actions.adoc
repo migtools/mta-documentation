@@ -6,6 +6,7 @@
 [id="yaml-tag-actions_{context}"]
 = Tag actions
 
+[role="_abstract"]
 A tag action instructs the analyzer to generate one or more tags for the application when a match is found. Each string in the `tag` field can be a comma-separated list of tags. Optionally, you can assign categories to tags.
 
 [source,yaml]
