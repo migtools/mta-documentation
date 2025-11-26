@@ -6,6 +6,7 @@
 [id="create-yaml-rule_{context}"]
 = Creating a YAML rule
 
+[role="_abstract"]
 Each rule file contains one or more YAML rules. Every rule comprises metadata, conditions and actions.
 
 .Procedure

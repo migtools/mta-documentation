@@ -6,6 +6,7 @@
 [id="yaml-dotnet-provider_{context}"]
 = Dotnet provider
 
+[role="_abstract"]
 The `dotnet` provider is an external provider used to analyze .NET and C# source code. Currently, the provider supports the `referenced` capability.
 
 .`referenced`
@@ -16,8 +17,10 @@ By using the `referenced` capability, the provider finds references in the sourc
 ----
 when:
   dotnet.referenced:
-    pattern: "<pattern>" # <1>
-    namespace: "<namespace>" # <2>
+    pattern: "<pattern>" 
+    namespace: "<namespace>" 
 ----
-<1> `pattern`: A regular expression (regex) pattern to match the desired reference. For example, `HttpNotFound`.
-<2> `namespace`: Specifies the namespace to search within. For example, `System.Web.Mvc`.
+where:
+
+ `pattern` :: A regular expression (regex) pattern to match the desired reference. For example, `HttpNotFound`.
+ `namespace` :: Specifies the namespace to search within. For example, `System.Web.Mvc`.

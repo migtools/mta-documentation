@@ -6,6 +6,7 @@
 [id="yaml-message-actions_{context}"]
 = Message action
 
+[role="_abstract"]
 A message action is employed to generate an issue with the specified message when a rule matches, for example:
 
 [source,yaml]

@@ -6,6 +6,7 @@
 [id="yaml-rule-labels_{context}"]
 = Rule labels
 
+[role="_abstract"]
 Labels are `key=val` pairs specified for rules or rulesets as well as dependencies. For dependencies, a provider adds the labels to the dependencies when retrieving them. Labels on a ruleset are automatically inherited by all the rules that belong to it.
 
 .Label format

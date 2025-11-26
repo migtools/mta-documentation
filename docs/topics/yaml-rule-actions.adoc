@@ -6,6 +6,7 @@
 [id="yaml-rule-actions_{context}"]
 = Rule actions
 
+[role="_abstract"]
 Rules can include the following types of actions:
 
 * message

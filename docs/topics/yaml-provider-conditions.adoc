@@ -6,6 +6,7 @@
 [id="yaml-provider-conditions_{context}"]
 = Provider condition
 
+[role="_abstract"]
 The analyzer engine enables multi-language source code analysis by using  *providers*. The source code of a technology is analyzed by the provider.
 
 The provider publishes what they can do with the source code in terms of capabilities.

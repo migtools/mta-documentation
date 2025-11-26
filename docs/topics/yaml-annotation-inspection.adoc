@@ -6,6 +6,7 @@
 [id="yaml-annotation-inspection_{context}"]
 = Annotation inspection
 
+[role="_abstract"]
 You can add a query to match against specific annotations and their elements, for example:
 
 [source,yaml]
