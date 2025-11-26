@@ -6,6 +6,7 @@
 [id="yaml-rule-hyperlinks_{context}"]
 = Hyperlinks
 
+[role="_abstract"]
 Hyperlinks can be provided along with a `message` or `tag` action to provide relevant information about the issue, which has been discovered:
 
 [source,yaml]

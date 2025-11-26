@@ -6,6 +6,7 @@
 [id="yaml-or-condition_{context}"]
 = OR condition
 
+[role="_abstract"]
 The `or` condition performs a logical OR operation on the results of an array of conditions.
 
 The `or` condition matches when _any_ of its child conditions matches, for example:
