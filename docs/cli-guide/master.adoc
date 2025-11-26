@@ -2,8 +2,8 @@
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="cli-guide"]
-= Using the {ProductName} command-line interface to analyze applications
-
+= Using the {ProductName} command-line interface
+ 
 :toc:
 :toclevels: 4
 :numbered:

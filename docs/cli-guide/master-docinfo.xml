@@ -1,9 +1,9 @@
-<title>Using the {ProductShortName} command-line interface to analyze applications</title>
+<title>Using the {ProductName} command-line interface</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Using the {ProductName} command-line interface to prepare your applications for migration</subtitle>
+<subtitle>Preparing your applications for modernization and migration by using the {ProductName} command-line interface</subtitle>
 <abstract>
-    <para>By using the {ProductFullName} command-line interface (CLI), you can assess and prioritize migration and modernization efforts for applications written in different languages. You can use the CLI to customize {ProductShortName} analysis options or integrate with external automation tools.</para>
+    <para>By using the {ProductFullName} command-line interface (CLI), you can assess and prioritize migration and modernization efforts for applications written in different languages. You can use the CLI to customize {ProductShortName} analysis options or integrate with external automation tools. You can also use the {ProductShortName} CLI to generate the manifests needed to deploy a Cloud Foundry (CF) application on Red Hat OpenShift.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>

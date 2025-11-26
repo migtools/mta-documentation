@@ -6,7 +6,7 @@
 = Accessing the RHBK Admin Console
 
 [role="_abstract"]
-To perform advanced configurations to an RHBK instance, you must be logged in to the RHBK Admin Console.
+To perform advanced configurations on an RHBK instance, you must log in to the RHBK Admin Console.
 
 .Procedure
 
@@ -17,7 +17,7 @@ To perform advanced configurations to an RHBK instance, you must be logged in to
 $ *oc get secret mta-keycloak-rhbk -n openshift-mta -o json| jq -r '.data.password | @base64d'*
 ----
 +
-The admin credentials for RHBK are stored in the `mta-keycloak-rhbk` secret file in the namespace where you installed MTA. 	
+The admin credentials for RHBK are stored in the `mta-keycloak-rhbk` secret file in the namespace where you installed {ProductShortName}. 	
 
 . Enter the following URL in your browser:
 +

@@ -6,7 +6,7 @@
 = {ProductShortName} tools
 
 [role="_abstract"]
-Different {ProductFullName} tools provide assistance in the various stages of your migration and modernization efforts.
+Different {ProductFullName} tools help in the various stages of your migration and modernization efforts.
 
 You can use the following {ProductShortName} tools for assessing and analyzing your applications:
 
@@ -15,7 +15,7 @@ You can use the following {ProductShortName} tools for assessing and analyzing y
 By using the user interface for the {ProductName}, you can perform the following tasks:
 
 ** Assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift.
-** Analyze the changes that must be made in the code of an application to containerize the application.
+** Analyze the changes that you might need to apply to the code of an application to containerize this application.
 
 +
 For more information about using the MTA user interface, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index[Configuring and managing the {ProductName} user interface].
@@ -24,7 +24,7 @@ For more information about using the MTA user interface, see link:{mta-URL}/conf
 +
 The CLI is a command-line tool in the {ProductName} that you can use to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without using the other tools. The CLI includes a wide array of customization options. By using the CLI, you can tune {ProductShortName} analysis options or integrate with external automation tools.
 +
-For more information about using the CLI, see link:link:{mta-URL}/using_the_mta_command-line_interface_to_analyze_applications/index[Using the MTA command-line interface to analyze applications].
+For more information about using the CLI, see link:{mta-URL}/using_the_mta_command-line_interface_to_analyze_applications/index[Using the MTA command-line interface to analyze applications].
 
 * *{ProductName} Operator*
 +
@@ -36,18 +36,17 @@ For more information about the prerequisites for the MTA Operator installation, 
 +
 You can migrate and modernize applications by using the {ProductName} add-ons for the following applications:
 +
-** Eclipse
-** Visual Studio Code, Visual Studio Codespaces, and Eclipse Che
-** IntelliJ IDEA, both the Community and Ultimate versions
+** Visual Studio Code
+** IntelliJ IDEA
 
 
 +
 You can use these add-ons to perform the following tasks:
 
-** Analyze your projects by using customizable sets of rules.
-** Mark issues in the source code.
-** Fix the issues by using the provided guidance.
-** Use the automatic code replacement, if possible.
+** Analyze your projects by using customizable sets of rules
+** Mark issues in the source code
+** Fix the issues by using the provided guidance
+** Use the automatic code replacement, if possible
 
 
 +
