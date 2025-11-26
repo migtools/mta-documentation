@@ -1,0 +1,22 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="using-quick-fix_{context}"]
+=  Using a Quick Fix
+
+[role="_abstract"]
+You can use a Quick Fix automatic code replacement to save time and ensure consistency in resolving repetitive issues. Quick Fixes are available for many issues displayed in the *Hints* section of the *Results* directory.
+
+.Procedure
+
+. In the left pane, click a hint that has an error indicator.
++
+Any Quick Fixes are displayed as child folders with the Quick Fix icon (image:intellij-idea-info.png[Quickfix]) on their left side.
+. Right-click a Quick Fix and select *Preview Quick Fix*.
++
+The current code and the suggested change are displayed in the *Preview Quick Fix* window.
+. To accept the suggested fix, click *Apply Quick Fix*.
+. Optional: Right-click the issue and select *Mark As Complete*.
++
+A green check (image:intellij-idea-ok.png[Complete]) is displayed by the hint, replacing the error indicator.
