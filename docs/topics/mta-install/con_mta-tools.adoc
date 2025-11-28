@@ -24,7 +24,7 @@ For more information about using the MTA user interface, see link:{mta-URL}/conf
 +
 The CLI is a command-line tool in the {ProductName} that you can use to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without using the other tools. The CLI includes a wide array of customization options. By using the CLI, you can tune {ProductShortName} analysis options or integrate with external automation tools.
 +
-For more information about using the CLI, see link:{mta-URL}/using_the_mta_command-line_interface_to_analyze_applications/index[Using the MTA command-line interface to analyze applications].
+For more information about using the CLI, see link:{mta-URL}/using_the_migration_toolkit_for_applications_command-line_interface/index[Using the {ProductName} command-line interface].
 
 * *{ProductFirstRef} ({ProductShortName}) Operator*
 +
@@ -54,6 +54,6 @@ For more information about using add-ons, see the following documentation:
 
 // ** link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/7.3/html/eclipse_plugin_guide/index[Eclipse Plugin Guide]
 ** link:{mta-URL}/intellij_idea_plugin_guide/index[IntelliJ IDEA Plugin Guide]
-** link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index[Configuring and using the Visual Studio Code Extension for MTA]
+** link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index[Configuring and using the Visual Studio Code Extension for {ProductShortName}]
 
 
