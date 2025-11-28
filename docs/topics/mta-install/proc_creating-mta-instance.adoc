@@ -12,7 +12,7 @@ To use the {ProductShortName} UI for assessing and analyzing your applications, 
 
 .Prerequisites
 
-* You installed the {ProductShortName} Operator on your system. For more information, see xref:installing-mta-operator_installing-mta-ui[Installing the Migration Toolkit for Applications Operator].
+* You installed the {ProductShortName} Operator on your system. For more information, see xref:installing-mta-operator_installing-mta-ui[Installing the {ProductShortName} Operator].
 * 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
 * Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.13-4.15.
 * You are logged in as a user with `cluster-admin` permissions.
