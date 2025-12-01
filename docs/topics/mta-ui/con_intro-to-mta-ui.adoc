@@ -9,5 +9,5 @@ You can use the {ProductFullName} user interface (UI) to assess and analyze appl
 
 [role="_additional-resources"]
 .Additional resources
-* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/installing-mta-title/index[Installing the Migration Toolkit for Applications]
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/installing-mta-title/index[Installing the {ProductName}]
 

@@ -6,7 +6,7 @@
 = Configuring an asset repository
 
 [role="_abstract"]
-{ProductFullName} generates assets and publishes them to an asset repository that you configure. If you do not configure an asset repository, the application repository is taken as the default to publish the generated assets.
+{ProductFirstRef} generates assets and publishes them to an asset repository that you configure. If you do not configure an asset repository, the application repository is taken as the default to publish the generated assets.
 
 When you configure the asset repository for an application, you can also associate the Source Control credentials of the asset repository before generating assets. If you do not configure a Source Control credential for the asset repository, {ProductShortName} considers the source code repository credential as the default Source Control credential for the asset repository.
 

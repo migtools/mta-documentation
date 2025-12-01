@@ -1,9 +1,9 @@
 <title>{WebConsoleBookName}</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Installing the Migration Toolkit for Applications user interface and command-line interface</subtitle>
+<subtitle>Installing the {ProductName} user interface and command-line interface</subtitle>
 <abstract>
-    <para>By using the Migration Toolkit for Applications (MTA), you can accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. For example, you can inventory, assess, analyze, and manage applications for faster migration to OpenShift through the user interface at both the portfolio and application levels.</para>
+    <para>By using the {ProductFullName}, you can accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. For example, you can inventory, assess, analyze, and manage applications for faster migration to OpenShift through the user interface at both the portfolio and application levels.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>
