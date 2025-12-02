@@ -16,32 +16,23 @@ include::topics/templates/document-attributes.adoc[]
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-[id="introduction"]
-== Introduction
-
 // About the IntelliJ IDEA plugin
-include::topics/mta-intellij-plugin/about-ide-addons-intellij.adoc[leveloffset=+2]
+include::topics/mta-intellij-plugin/about-ide-addons-intellij.adoc[leveloffset=+1]
 
 // About {ProductName}
-include::topics/mta-intellij-plugin/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/mta-intellij-plugin/what-is-the-toolkit.adoc[leveloffset=+1]
 
 // Install the plugin
 include::topics/mta-intellij-plugin/installing-intellij-idea-plugin.adoc[leveloffset=+1]
 
-[id="analyzing-projects-with-idea-plugin"]
-== Analyzing your projects with the {ProductShortName} plugin
+include::topics/mta-intellij-plugin/intellij-idea-plugin-run-configuration.adoc[leveloffset=+1]
 
-You can analyze your projects with the {ProductShortName} plugin by creating a run configuration and running an analysis.
+include::topics/mta-intellij-plugin/intellij-idea-plugin-reviewing-issues.adoc[leveloffset=+1]
 
-include::topics/mta-intellij-plugin/intellij-idea-plugin-run-configuration.adoc[leveloffset=+2]
+include::topics/mta-intellij-plugin/intellij-idea-plugin-resolving-issues.adoc[leveloffset=+1]
 
-[id="reviewing-and-resolving-migration-issues"]
-== Reviewing and resolving migration issues
+include::topics/mta-intellij-plugin/proc_quick-fix.adoc[leveloffset=+2]
 
-You can review and resolve migration issues identified by the {ProductShortName} plugin in the left pane.
-
-include::topics/mta-intellij-plugin/intellij-idea-plugin-reviewing-issues.adoc[leveloffset=+2]
-
-include::topics/mta-intellij-plugin/intellij-idea-plugin-resolving-issues.adoc[leveloffset=+2]
+include::topics/mta-intellij-plugin/proc_edit-code-file.adoc[leveloffset=+2]
 
 :!idea-plugin:

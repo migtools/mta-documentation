@@ -9,6 +9,11 @@
 [role="_abstract"]
 You can use the {ProductShortName} plugin icons to prioritize issues based on their severity. You can see which issues have a _Quick Fix_ automatic code replacement and which do not.
 
+[TIP]
+====
+You can review and resolve migration issues identified by the {ProductShortName} plugin in the left pane.
+====
+
 The results of an analysis are displayed in a directory format, showing the _hints_ and _classifications_ for each application analyzed.
 
 A _hint_ is a read-only snippet of code that contains a single issue that you should or must address before you can modernize or migrate an application. Often a Quick Fix is suggested, which you can accept or ignore.
