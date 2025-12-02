@@ -23,7 +23,7 @@ By using the `file` capability, the provider searches for files in the source co
 ----
 when:
   builtin.file:
-    pattern: "<regular_expression_to_match_filenames>"
+    pattern: "<regex_to_match_filenames>"
 ----
 
 .`filecontent`
@@ -34,8 +34,8 @@ By using the `filecontent` capability, the provider searches for content that ma
 ----
 when:
   builtin.filecontent:
-    filePattern: "<regular_expression_to_match_filenames_to_scope_search>"
-    pattern: "<regular_expression_to_match_content_in_the_matching_files>"
+    filePattern: "<regex_to_match_filenames_to_scope_search>"
+    pattern: "<regex_to_match_content_in_the_matching_files>"
 ----
 
 .`xml`
@@ -46,15 +46,13 @@ The `xml` capability enables the provider to query XPath expressions on a list o
 ----
 when:
   builtin.xml:
-    xpath: "<xpath_expressions>" 
-    filepaths: 
+    xpath: "<xpath_expressions>" # <1>
+    filepaths: # <2>
       - "/src/file1.xml"
       - "/src/file2.xml"
 ----
-where:
-
- `xpath` :: must be a valid XPath expression.
- `filepaths` :: is a list of files to apply the XPath query to.
+<1> `xpath` must be a valid XPath expression.
+<2> `filepaths` is a list of files to apply the XPath query to.
 
 .`json`
 
@@ -64,11 +62,9 @@ By using the `json` capability, the provider queries XPath expressions on a list
 ----
 when:
   builtin.json:
-    xpath: "<xpath_expressions>" 
+    xpath: "<xpath_expressions>" # <1>
 ----
-where:
-
- `xpath` :: must be a valid XPath expression.
+<1> `xpath` must be a valid XPath expression.
 
 .`hasTags`
 
@@ -78,10 +74,8 @@ By using the `hasTags` capability, the provider queries application tags. It que
 ----
 when:
   # when more than one tag is given, a logical AND is implied
-  hasTags:  
+  hasTags:  #<1>
     - "tag1"
     - "tag2"
 ----
-where:
-
- `hasTags` :: When more than one tag is given, a logical AND is implied.
+<1> When more than one tag is given, a logical AND is implied.
