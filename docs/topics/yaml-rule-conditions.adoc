@@ -6,6 +6,7 @@
 [id="yaml-rule-conditions_{context}"]
 = Rule conditions
 
+[role="_abstract"]
 Each rule has a `when` block, which specifies a condition that needs to be met for {ProductShortName} to perform a certain action.
 
 The `when` block contains one condition, but that condition can have multiple conditions nested under it.

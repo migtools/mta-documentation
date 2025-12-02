@@ -6,6 +6,7 @@
 [id="yaml-rule-structure-syntax_{context}"]
 = YAML rule structure and syntax
 
+[role="_abstract"]
 Rules are written in YAML. They consist of:
 
 * metadata
@@ -23,8 +24,8 @@ Rule metadata contains general information about the rule. The structure of meta
 
 [source,yaml]
 ----
-ruleID: "unique_id" # <1>
-labels: # <2>
+ruleID: "unique_id"  
+labels:  
   # key=value pair
   - "label1=val1"
   # valid label with value omitted
@@ -33,11 +34,12 @@ labels: # <2>
   - "label3="
   # subdomain prefixed key
   - "konveyor.io/label1=val1"
-effort: 1 # <3>
-category: mandatory # <4>
+effort: 1 
+category: mandatory 
 ----
+where:
 
-<1> *ruleID*: This is a unique ID for the rule. It must be unique within the ruleset.
-<2> *labels*: A list of string labels associated with the rule. (See link:./labels.md[Labels])
-<3> *effort*: Effort is an integer value that indicates the level of effort needed to resolve this issue.
-<4> *category*: Category describes severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`. For more deails, see xref:yaml-rule-categories_{context}[Rule categories].
+ *ruleID* :: This is a unique ID for the rule. It must be unique within the ruleset.
+ *labels* :: A list of string labels associated with the rule. (See link:./labels.md[Labels])
+ *effort* :: Effort is an integer value that indicates the level of effort needed to resolve this issue.
+ *category* :: Category describes severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`. For more deails, see xref:yaml-rule-categories_{context}[Rule categories].

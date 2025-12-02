@@ -7,6 +7,7 @@
 [id="yaml-java-locations_{context}"]
 = Java locations
 
+[role="_abstract"]
 The `java` provider allows scoping the search down to certain source code locations.
 
 * *IMPORT*: IMPORT allows for searches on class imports. It can either
@@ -99,13 +100,13 @@ variable.
 * *FIELD* (declaration): matches against a type appearing in a field
 declaration. It can be coupled with an annotation match, this is, an
 annotation happening on the field (see
-link:#annotation-inspection[Annotation inspection])
+link:#yaml-java-locations_rules-development-guide[Annotation inspection])
 * *METHOD*: matches against a given method declaration. It can be coupled
-with an annotation match (see link:#annotation-inspection[Annotation
+with an annotation match (see link:#yaml-java-locations_rules-development-guide[Annotation
 inspection]).
 * *CLASS* (declaration): matches against a given method declaration. Can
 be coupled with an annotation match (see
-link:#annotation-inspection[Annotation inspection]).
+link:#yaml-java-locations_rules-development-guide[Annotation inspection]).
 
 
 The supported locations are the following:
@@ -131,10 +132,12 @@ By using the `dependency` capability, the provider finds dependencies for a give
 ----
 when:
   java.dependency:
-    name: "<dependency_name>" # <1>
-    upperbound: "<version_string>" # <2>
-    lowerbound: "<version_string>" # <3>
+    name: "<dependency_name>" 
+    upperbound: "<version_string>" 
+    lowerbound: "<version_string>" 
 ----
-<1> Name of the dependency to search for.
-<2> Upper bound on the version of the dependency.
-<3> Lower bound on the version of the dependency.
+where:
+
+ `name` :: Name of the dependency to search for.
+ `upperbound` :: Upper bound on the version of the dependency.
+ `lowerbound` :: Lower bound on the version of the dependency.

@@ -6,6 +6,7 @@
 [id="yaml-chaining-condition-variables_{context}"]
 = Chaining Condition Variables
 
+[role="_abstract"]
 You can use the output of one condition as the input for filtering another one in the `and` and `or` conditions. This is called *condition chaining*.
 
 

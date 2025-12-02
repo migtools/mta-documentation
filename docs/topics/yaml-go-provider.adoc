@@ -1,4 +1,4 @@
-// Module included in the following assemblies:
+regular expression// Module included in the following assemblies:
 //
 // * docs/rules-development-guide/master.adoc
 
@@ -6,6 +6,7 @@
 [id="yaml-go-provider_{context}"]
 = Go provider
 
+[role="_abstract"]
 The `go` provider analyzes Go source code. This provider's capabilities are `referenced` and `dependency`.
 
 .`referenced`
@@ -15,7 +16,7 @@ By using the `referenced` capability, the provider finds references in the sourc
 [source,yaml]
 ----
 when:
-  go.referenced: "<regex_to_find_reference>"
+  go.referenced: "<regular_expression_to_find_reference>"
 ----
 
 .`dependency`
@@ -26,10 +27,15 @@ By using the `dependency` capability, the provider finds dependencies for an app
 ----
 when:
   go.dependency:
-    name: "<dependency_name>" # <1>
-    upperbound: "<version_string>" # <2>
-    lowerbound: "<version_string>" # <3>
+    name: "<dependency_name>" 
+    upperbound: "<version_string>" 
+    lowerbound: "<version_string>" 
 ----
-<1> Name of the dependency to search for.
-<2> Upper bound on the version of the dependency.
-<3> Lower bound on the version of the dependency.
+where:
+
+ `name` ::
+ Name of the dependency to search for.
+
+ `upperbound` :: Upper bound on the version of the dependency.
+
+ `lowerbound` :: Lower bound on the version of the dependency.

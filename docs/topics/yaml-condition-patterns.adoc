@@ -6,7 +6,8 @@
 [id="yaml-condition-patterns_{context}"]
 = Condition patterns
 
-The Language Server used by the Java provider is Eclipse’s JDTLS. Internally, the JDTLS uses the Eclipse Java Development Toolkit, which includes utilities for searching code in projects.
+[role="_abstract"]
+The Language Server used by the Java provider is Eclipse's JDTLS. Internally, the JDTLS uses the Eclipse Java Development Toolkit, which includes utilities for searching code in projects.
 
 In the `pattern` element of a `java.referenced` condition, you can search through application code by using these utilities. For more details, see link:https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2Fsearch%2FSearchPattern.html&anchor=createPattern[Class SearchPattern], which  contains all the information for building these patterns for `createPattern(String, int, int, int)`.
 

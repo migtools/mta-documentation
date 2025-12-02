@@ -6,6 +6,7 @@
 [id="create-yaml-rule_{context}"]
 = Creating a YAML rule
 
+[role="_abstract"]
 Each rule file contains one or more YAML rules. Every rule comprises metadata, conditions and actions.
 
 .Procedure
@@ -40,7 +41,7 @@ The table below lists the available providers and their capabilities. Select a p
 |`json`
 |Searches JSON files using JSONPath queries
 |`filecontent`
-|Searches content in regular files using RegEx patterns
+|Searches content in regular files using regular expression patterns
 |`file`
 |Finds files with names matching a given pattern
 |`hasTags`
@@ -75,7 +76,7 @@ The table below lists all available providers, their capabilities, and their fie
 .3+.^|`referenced`
 |`pattern`
 |Yes
-|RegEx pattern
+|Regular expression pattern
 |`location`
 |No
 |Source code location; see below for a list of all supported search locations
@@ -89,7 +90,7 @@ The table below lists all available providers, their capabilities, and their fie
 |Name of the dependency
 |`nameregex`
 |No
-|RegEx pattern to match the name
+|Regular expression pattern to match the name
 |`upperbound`
 |No
 |Matches version numbers lower than or equal to
@@ -119,7 +120,7 @@ The table below lists all available providers, their capabilities, and their fie
 .2+.^|`filecontent`
 |`pattern`
 |Yes
-|RegEx pattern to match in content
+|Regular expression pattern to match in content
 |`filePattern`
 |No
 |Only searches in files with names matching this pattern
@@ -134,7 +135,7 @@ The table below lists all available providers, their capabilities, and their fie
 |`referenced`
 |`pattern`
 |Yes
-|RegEx pattern
+|Regular expression pattern
 
 .4+.^|`dependency`
 |`name`
@@ -142,7 +143,7 @@ The table below lists all available providers, their capabilities, and their fie
 |Name of the dependency
 |`nameregex`
 |No
-|RegEx pattern to match the name
+|Regular expression pattern to match the name
 |`upperbound`
 |No
 |Matches version numbers lower than or equal to
