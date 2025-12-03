@@ -102,6 +102,12 @@ include::topics/running-analysis-using-custom-yaml-rule.adoc[leveloffset=+3]
 // Create Your First YAML Rule
 include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
 
+include::topics/create-go-custom-rule.adoc[leveloffset=+2]
+
+include::topics/create-python-custom-rule.adoc[leveloffset=+2]
+
+include::topics/create-nodejs-custom-rule.adoc[leveloffset=+2]
+
 // removing section subject to a later re-write
 // Testing XML Rules
 // include::topics/testing-rules.adoc[leveloffset=+1]
