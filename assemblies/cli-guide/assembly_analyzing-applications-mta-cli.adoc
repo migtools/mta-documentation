@@ -15,7 +15,10 @@ endif::[]
 
 :context: analyzing-applications-mta-cli
 
-Depending on your scenario, you can use the {ProductFullName} {CLINameTitle} to perform the following actions:
+[role="_abstract"]
+To assess and prioritize migration and modernization efforts for applications written in different languages, analyze your applications by using the {ProductFullName} {CLINameTitle}. 
+
+Depending on your scenario, you can use the {ProductShortName} CLI to perform the following actions:
 
 * Run the analysis against a single application.
 * Run the analysis against multiple applications:

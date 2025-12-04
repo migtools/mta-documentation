@@ -16,7 +16,8 @@ endif::[]
 
 :context: performing-transformation
 
-You can use transformation to transform Java applications source code by using the `transform openrewrite` command.
+[role="_abstract"]
+To accelerate your application modernization, use the {ProductFullName} command-line interface (CLI) to transform your source code. The transformation process applies predefined migration rules to your codebase, reducing the manual effort required to update Java libraries or frameworks.
 
 IMPORTANT: Performing transformation requires the container runtime to be configured. 
  

@@ -6,7 +6,8 @@
 [id="mta-cli-analyze-flags_{context}"]
 = The analyze command options
 
-The following are the options that you can use together with the `mta-cli analyze` command to adjust the command behavior to your needs.
+[role="_abstract"]
+You can customize the application analysis process with {ProductFullName} command-line interface (CLI) by using the `mta-cli analyze` command options. You can use these options to specify input sources, define target migration paths, configure output directories, and perform other adjustments.
 
 .`mta-cli analyze` command options
 [options="header"]

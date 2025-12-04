@@ -5,7 +5,10 @@
 [id="reviewing-analysis-issues-and-incidents_{context}"]
 = Reviewing the analysis issues and incidents
 
-After an analysis is complete, you can review issues that might appear during an application migration. Each issue contains a list of files where a rule matched one or more times. These files include all the incidents within the issue. Each incident contains a detailed explanation of the issue and how to fix this issue.
+[role="_abstract"]
+To identify specific code segments that require modification, review the issues and incidents provided in the {ProductFullName} command-lie interface analysis report. You can use these details to locate migration blockers within your source code and prioritize remediation tasks based on severity.
+
+Each issue contains a list of files where a rule matched one or more times. These files include all the incidents within the issue. Each incident contains a detailed explanation of the issue and how to fix this issue.
 
 .Procedure
 
