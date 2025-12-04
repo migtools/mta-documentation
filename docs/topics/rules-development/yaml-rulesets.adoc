@@ -13,9 +13,9 @@ The `ruleset.yaml` file stores the metadata of the ruleset.
 
 [source,yaml]
 ----
-name: "Name of the ruleset" # <1>
+name: "Name of the ruleset" 
 description: "Description of the ruleset"
-labels: #  <2>
+labels: 
   - key=val
 ----
 where:

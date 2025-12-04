@@ -64,7 +64,7 @@ By using the `json` capability, the provider queries XPath expressions on a list
 ----
 when:
   builtin.json:
-    xpath: "<xpath_expressions>" # <1>
+    xpath: "<xpath_expressions>" 
 ----
 where:
 
@@ -78,7 +78,7 @@ By using the `hasTags` capability, the provider queries application tags. It que
 ----
 when:
   # when more than one tag is given, a logical AND is implied
-  hasTags:  #<1>
+  hasTags:  
     - "tag1"
     - "tag2"
 ----

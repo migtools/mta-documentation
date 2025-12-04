@@ -68,15 +68,15 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 +
 [options="nowrap",subs="attributes+"]
 ----
-- ruleID: <UNIQUE_RULE_ID> <1>
-  description: <DESCRIPTION> <2>
+- ruleID: <UNIQUE_RULE_ID> 
+  description: <DESCRIPTION> 
   when:
-    <CONDITION(S)> <3>
-  message: <MESSAGE> <4>
-  labels: <LABELS> <5>
-  effort: <EFFORT> <6>
+    <CONDITION(S)> 
+  message: <MESSAGE> 
+  labels: <LABELS> 
+  effort: <EFFORT> 
   links:
-  - <LINKS> <7>
+  - <LINKS>
 ----
 +
 where:
