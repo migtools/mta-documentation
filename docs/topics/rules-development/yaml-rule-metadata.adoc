@@ -28,6 +28,6 @@ category: mandatory
 where:
 
  *ruleID* :: This is a unique ID for the rule. It must be unique within the ruleset.
- *labels* :: A list of string labels associated with the rule. (See xref:yaml-rule-labels_{context}[Labels]).
+ *labels* :: A list of string labels associated with the rule. (See xref:yaml-rule-labels_rule-yaml-metadata[Labels]).
  *effort* :: Effort is an integer value that indicates the level of effort needed to resolve this issue.
- *category* :: Category describes severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`. For more details, see xref:yaml-rule-categories_{context}[Rule categories].
+ *category* :: Category describes severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`. For more details, see xref:yaml-rule-categories_rule-yaml-metadata[Rule categories].

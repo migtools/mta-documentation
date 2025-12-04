@@ -123,21 +123,3 @@ The supported locations are the following:
 * `VARIABLE_DECLARATION`
 * `FIELD`
 * `METHOD`
-
-.`dependency`
-
-By using the `dependency` capability, the provider finds dependencies for a given application. {ProductShortName} generates a list of the application's dependencies, and you can use this capability to query the list and check whether a certain dependency exists for the application within a given range of the dependency's versions.
-
-[source,yaml]
-----
-when:
-  java.dependency:
-    name: "<dependency_name>" 
-    upperbound: "<version_string>" 
-    lowerbound: "<version_string>" 
-----
-where:
-
- `name` :: Name of the dependency to search for.
- `upperbound` :: Upper bound on the version of the dependency.
- `lowerbound` :: Lower bound on the version of the dependency.

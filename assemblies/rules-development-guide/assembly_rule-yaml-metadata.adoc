@@ -21,12 +21,10 @@ The rule metadata contains information about the migration defined by the Archit
 * Estimate the total migration effort 
 * Prioritize issues that must be resolved based on the effort
 * Evaluate if a resolution is mandatory through rule category before migrating the applications to the target technologies or platforms
-* Define labels for which MTA filterfilters rules to trigger a violation.
+* Define labels for which {ProductShortName} filters rules to trigger a violation.
 
 
 include::topics/rules-development/yaml-rule-metadata.adoc[leveloffset=+1]
-
-include::topics/rules-development/yaml-rule-hyperlinks.adoc[leveloffset=+1]
 
 include::topics/rules-development/yaml-rule-labels.adoc[leveloffset=+1]
 

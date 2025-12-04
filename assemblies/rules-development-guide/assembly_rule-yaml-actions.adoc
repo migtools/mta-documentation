@@ -24,6 +24,8 @@ include::topics/rules-development/yaml-tag-actions.adoc[leveloffset=+1]
 
 include::topics/rules-development/yaml-message-actions.adoc[leveloffset=+1]
 
+include::topics/rules-development/yaml-rule-hyperlinks.adoc[leveloffset=+1]
+
 ifdef::parent-context-of-rule-yaml-actions[:context: {parent-context-of-rule-yaml-actions}]
 ifndef::parent-context-of-rule-yaml-actions[:!context:]
 

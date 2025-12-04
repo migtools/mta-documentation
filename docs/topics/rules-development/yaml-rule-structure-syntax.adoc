@@ -7,13 +7,7 @@
 = YAML rule structure and syntax
 
 [role="_abstract"]
-{ProductShortName} analyzer rules use the following rule pattern:
-
-----
-when(condition)
- message(message)
- tag(tags)
-----
+Rules instruct the analyzer to take the specified actions when the given conditions match. In {ProductShortName}, a rule file contains one or more rules.
 
 Rules are written in YAML. They consist of:
 
@@ -21,7 +15,19 @@ Rules are written in YAML. They consist of:
 * conditions
 * actions
 
-Rules instruct the analyzer to take specified actions when given conditions match.
+{ProductShortName} analyzer rules have the following pattern:
 
-A YAML rule file in {ProductShortName} contains one or more YAML rules.
-
+[source, yaml]
+----
+ruleID:
+labels:
+category:
+effort:
+description:
+when:
+ <condition(s)>
+message: "message"
+tag: 
+ - tag_1, tag_2, tag_3
+ - key_1="value_1, value_2"
+----
