@@ -5,7 +5,8 @@
 [id="analyzing-multiple-apps-with-mta-cli_{context}"]
 = Analyzing multiple applications
 
-You can use the {ProductFullName} {CLINameTitle} to perform an application analysis for multiple applications at once and generate a combined report.
+[role="_abstract"]
+To efficiently assess the migration effort for a portfolio of applications, you can analyze multiple applications simultaneously by using the {ProductFullName} command-line interface (CLI). This bulk analysis generates reports for all specified applications, which helps you identify issues and prioritize tasks for large-scale migration projects.
 
 :FeatureName: Analyzing multiple applications
 include::../snippets/developer-preview-admonition.adoc[]

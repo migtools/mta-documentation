@@ -5,7 +5,8 @@
 [id="running-the-containerless-mta-cli_{context}"]
 = Analyzing an application in containerless mode
 
-Starting from {ProductShortName} 7.2.0, you can perform an application analysis for Java applications by using the {ProductShortName} CLI that does not require installation of a container runtime.
+[role="_abstract"]
+To analyze applications in environments where a container engine is not available or desired, you can run the {ProductFullName} command-line interface (CLI) in containerless mode. This way, you can execute assessments directly on your local machine by using the provided shell script, bypassing the need for Podman or Docker.
 
 [IMPORTANT]
 ====
@@ -15,7 +16,7 @@ In {ProductShortName} 7.2.0 and later, containerless CLI is a default mode. To e
 --run-local=false
 ----
 
-The analysis for other applications runs in the container mode automatically
+The analysis for other applications runs in the container mode automatically.
 ====
 
 .Prerequisites

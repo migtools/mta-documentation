@@ -6,7 +6,8 @@
 [id="available-openrewrite-recipes_{context}"]
 = Available OpenRewrite recipes
 
-The following are the `OpenRewrite` recipes that you can use for transforming application source code.
+[role="_abstract"]
+The {ProductFullName} command-line interface (CLI) provides `OpenRewrite` recipes that define specific code transformation logic. Check the following table to view the available recipes that you can use for transforming application source code.
 
 .Available OpenRewrite recipes
 [options="header"]

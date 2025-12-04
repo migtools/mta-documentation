@@ -2,27 +2,29 @@
 //
 // * docs/cli-guide/master.adoc
 
-:_content-type: PROCEDURE
+:_content-type: REFERENCE
 
 [id="cli-tool-known-issues_{context}"]
 = {ProductShortName} {CLINameTitle} known issues
 
-This section provides highlighted known issues in {ProductShortName} {CLINameTitle}.
+[role="_abstract"]
+Review the known issues for the {ProductFullName} command-line interface (CLI) to identify existing problems and apply workarounds.
 
-.Limitations with Podman on Microsoft Windows
+
+*Limitations with Podman on Microsoft Windows*
 
 The {CLINameTitle} is built and distributed with support for Microsoft Windows.
 
 However, when running any container image based on Red Hat Enterprise Linux 9 (RHEL9) or Universal Base Image 9 (UBI9), the following error can be returned when starting the container:
 
-[source,terminal]
+[subs="+quotes"]
 ----
 Fatal glibc error: CPU does not support x86-64-v2
 ----
 
 This error is caused because Red Hat Enterprise Linux 9 or Universal Base Image 9 container images must be run on a CPU architecture that supports `x86-64-v2`.
 
-For more details, see link:https://access.redhat.com/solutions/7057314[(Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2")].
+For more details, see link:https://access.redhat.com/solutions/7057314[Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2"].
 
 {CLINameTitle} runs the container runtime correctly. However, different container runtime configurations are not supported.
 
@@ -32,14 +34,14 @@ To achieve this, you replace the `CONTAINER_TOOL` path with the path to Docker.
 
 For example, if you experience this issue, instead of issuing:
 
-[source,terminal]
+[subs="+quotes"]
 ----
 CONTAINER_TOOL=/usr/local/bin/docker mta-cli analyze
 ----
 
 You replace `CONTAINER_TOOL` with the path to Docker:
 
-[source,terminal]
+[subs="+quotes"]
 ----
 <Docker Root Dir>=/usr/local/bin/docker mta-cli analyze
 ----

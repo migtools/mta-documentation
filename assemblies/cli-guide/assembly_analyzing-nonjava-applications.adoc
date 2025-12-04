@@ -15,7 +15,10 @@ endif::[]
 
 :context: analyzing-nonjava-applications
 
-Starting from {ProductFullName} version 7.1.0, you can run the application analysis on applications written in languages other than Java. You can perform the analysis either of the following ways:
+[role="_abstract"]
+To assess the migration effort for applications written in languages other than Java, you can analyze your source code by using the {ProductFullName} command-line interface (CLI). The analysis identifies dependencies and potential migration issues, helping you prioritize tasks and estimate the resources required to modernize your non-Java portfolio.
+
+You can perform the analysis either of the following ways:
 
 * Select a supported language provider to run the analysis for. 	
 * Overwrite the existing supported language provider with your own unsupported language provider, and then run the analysis on it.

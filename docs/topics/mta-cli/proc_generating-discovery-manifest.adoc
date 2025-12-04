@@ -6,6 +6,9 @@
 [id="generating-discovery-manifest_{context}"]
 = Generating a discovery manifest 
 
+[role="_abstract"]
+To validate your application inventory before performing a full analysis, you can generate a discovery manifest by using the {ProductFullName} command-line interface (CLI). The discovery process creates a list of applications found within a specified path, allowing you to verify the scope of your assessment.
+
 You can generate the discovery manifest for the Cloud Foundry (CF) application by using the `discover` command. The discovery manifest preserves configurations, such as application properties, resource allocations, environment variables, and service bindings found in the CF manifest. 
 
 .Prerequisites
