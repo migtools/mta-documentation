@@ -27,10 +27,15 @@ By using the `dependency` capability, the provider finds dependencies for a `Go`
 ----
 when:
   go.dependency:
-    name: "<dependency_name>" # <1>
-    upperbound: "<version_string>" # <2>
-    lowerbound: "<version_string>" # <3>
+    name: "<dependency_name>" 
+    upperbound: "<version_string>" 
+    lowerbound: "<version_string>" 
 ----
-<1> Name of the dependency to search for.
-<2> Upper bound on the version of the dependency.
-<3> Lower bound on the version of the dependency.
+where:
+
+ `name` ::
+ Name of the dependency to search for.
+
+ `upperbound` :: Upper bound on the version of the dependency.
+
+ `lowerbound` :: Lower bound on the version of the dependency.

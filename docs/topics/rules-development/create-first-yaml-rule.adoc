@@ -79,11 +79,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
   - <LINKS> <7>
 ----
 +
-<1> Unique ID for your rule. For example, `jboss5-web-class-loading`.
-<2> Text description of the rule.
-<3> Complete the `when` block specifying one or more conditions:
-.. Use the `builtin` provider's XML capability because this rule checks for a match in an XML file.
-.. To match on the `class-loading` element that is a child of `jboss-web`, use the XPath expression `jboss-web/web-loading` as an XML query. In this case, you need just one condition:
+where:
+
+  `ruleID` :: Unique ID for your rule. For example, `jboss5-web-class-loading`.
+  `description` :: Text description of the rule.
+  `when` :: Complete the `when` block specifying one or more conditions:
+  .. Use the `builtin` provider's XML capability because this rule checks for a match in an XML file.
 +
 [options="nowrap",subs="attributes+"]
 ----
@@ -91,22 +92,22 @@ when:
   builtin.xml:
     xpath: jboss-web/class-loading
 ----
-<4> Helpful message explaining the migration issue. The message is generated in the report when the rule matches. For example:
-+
-[options="nowrap",subs="attributes+"]
-----
-message: The class-loading element is no longer valid in the jboss-web.xml file.
-----
-<5> List of string labels for the rule.
-<6> Number of expected story points to fix this issue.
-<7> One or more hyperlinks pointing to documentation around the migration issues that you find.
-+
-[options="nowrap",subs="attributes+"]
-----
-links:
-- url: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6
+`message` :: Helpful message explaining the migration issue. The message is generated in the report when the rule matches. For example:
+
+  [options="nowrap",subs="attributes+"]
+  ----
+  message: The class-loading element is no longer valid in the jboss-web.xml file.
+  ----
+
+  `labels` :: List of string labels for the rule.
+  `effort` :: Number of expected story points to fix this issue.
+  `links` :: One or more hyperlinks pointing to documentation around the migration issues that you find.+
+  [options="nowrap",subs="attributes+"]
+  ----
+  links:
+    - url: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6
   title: Create or Modify Files That Control Class Loading in JBoss EAP 6
-----
+  ----
 +
 The rule is now complete and looks similar to the following:
 +

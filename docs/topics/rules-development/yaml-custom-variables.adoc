@@ -13,15 +13,17 @@ Provider conditions can have associated custom variables. You can use custom var
 ----
 - ruleID: lang-ref-004
    customVariables:
-   - pattern: '([A-z]+)\.get\(\)' # <1>
-      name: VariableName # <2>
-    message: "Found generic call - {{ VariableName }}" # <3>
+   - pattern: '([A-z]+)\.get\(\)' 
+      name: VariableName 
+    message: "Found generic call - {{ VariableName }}" 
   when:
       java.referenced:
           location: METHOD_CALL
           pattern: com.example.apps.GenericClass.get
 
 ----
-<1> `pattern`: A regular expression pattern that is matched on the source code line when a match is found.
-<2> `name`: The name of the variable that can be used in templates.
-<3> `message`: A template for a message using a custom variable.
+where:
+
+  `pattern` :: A regular expression pattern that is matched on the source code line when a match is found.
+  `name` :: The name of the variable that can be used in templates.
+  `message` :: A template for a message using a custom variable.
