@@ -17,9 +17,9 @@ The `when` condition of a YAML rule can be `provider`, `and` or `or`.
 
 .. Create a `provider` condition
 +
-The provider condition is used to define a search query for a specific language provider and to invoke a certain capability of the provider.
+The provider condition is used to define a search query for a specific language provider. Provider condition also specifies the capability of the provider used to complete the search query.
 +
-The condition's general format is `<provider_name>.<capability>`. The condition also has inner fields to specify details of the search. The way you create a `provider` condition and its inner fields depends on which provider you use and which capability you invoke.
+The condition's general format is `<provider_name>.<capability>`. The condition also has inner fields to specify details of the search. The way you create a `provider` condition and its inner fields depends on the provider you use and its capabilities.
 +
 The table below lists the available providers and their capabilities. Select a provider and its capability that suit the purpose of the rule you want to create. This part of the condition does not contain any of the condition's fields yet.
 +
@@ -129,7 +129,7 @@ The table below lists all available providers, their capabilities, and their fie
 |Yes
 |Finds files with names matching this pattern
 |`hasTags`
-3+^| This is an inline list of string tags. See *Tag Actions* in xref:yaml-rule-actions_{context}[Rule Actions] for details on tag format.
+3+^| This is an inline list of string tags. See *Tag Actions* in xref:yaml-tag-actions_rule-yaml-actions[Tag Actions] for details on tag format.
 
 .5+.^|`go`
 |`referenced`

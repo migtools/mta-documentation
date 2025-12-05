@@ -7,4 +7,4 @@
 = Logical conditions
 
 [role="_abstract"]
-The analyzer provides two basic logical conditions, `and` and `or`, which you can use to aggregate results of other conditions and create more complex queries.
+The analyzer provides two basic logical conditions, `and` and `or`, which you can use to aggregate results of other conditions.

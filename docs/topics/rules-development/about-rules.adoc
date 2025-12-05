@@ -1,0 +1,31 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+// * docs/getting-started-guide/master.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="about-rules_{context}"]
+= The {ProductShortName} rules
+
+[role="_abstract"]
+The {ProductFullName} contains rule-based migration tools called analyzers that use pluggable providers to analyze static code, dependencies, and other files in your application. 
+
+Analyzers work with providers to detect issues that cause problems when you migrate the application to target technologies.The rule definition contains metadata description and condition patterns that describe a violation.
+
+The analyzer runs a search query on the source code to match the violation described in the rule definition. The rule definition also contains a message that MTA displays when triggering an issue because of the violation.The analyzer uses the default and user-provided (custom) rules during an analysis to generate issues. 
+
+[NOTE]
+====
+An {ProductShortName} Architect can create custom analyzer rules. You can use custom rules to identify the use of custom libraries or other components that might not be covered by the provided standard migration rules.
+
+A collection of one or more rules forms a ruleset. Creating rulesets provides a way of organizing multiple rules that analyze source code for a specific target platform.
+
+You can use rules or The analyzer {CLIName} takes rulesets as input arguments. In {ProductShortName}, you can perform rule-based analysis in the CLI, user interface, or by using one of the IDE plug-ins.
+
+The issue description and metadata in rules are also used by the Developer Lightspeed for {ProductShortName} to form well-defined contexts. These contexts generate AI-assisted resolutions for the issues detected through an analysis. See link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/configuring_and_using_red_hat_developer_lightspeed_for_mta/index[Configuring and Using Red Hat Developer Lightspeed for MTA] for more information.
+
+
+ifndef::rules-development-guide[]
+For instructions on how to write custom rules, see [_{RulesDevBookName}_].
+endif::rules-development-guide[]
+====

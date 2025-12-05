@@ -1,0 +1,43 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-logical-chaining-custom-variables: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="logical-chaining-custom-variables"]
+endif::[]
+ifdef::context[]
+[id="logical-chaining-custom-variables_{context}"]
+endif::[]
+= Logical conditions, condition chaining, and custom variables
+
+:context: logical-chaining-custom-variables
+
+[role="_abstract"]
+You can create complex conditions in rules by using the following:
+
+* Logical conditions inform the provider how to handle more than one condition in a when block. You can aggregate or filter conditions using logical operations.
+* Condition chaining uses the output of one condition as the input in another condition of the when block. Assign the output to a variable in one condition and reuse it in other conditions in the when block.
+* Nested conditions to create conditions that depend on the evaluation of other conditions.
+* Custom variables to capture specific information from the code that is evaluated by a rule. You can use the custom variable in the message displayed for the code if it contains a violation defined by the rule.
+
+include::topics/rules-development/yaml-logical-conditions.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-and-condition.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-or-condition.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-chaining-condition-variables.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-chaining-java-provider.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-nested-condition.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-custom-variables.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-rule-logical-chaining-custom-variables[:context: {parent-context-of-rule-logical-chaining-custom-variables}]
+ifndef::parent-context-of-rule-logical-chaining-custom-variables[:!context:]
+
+:!logical-chaining-custom-variables:
