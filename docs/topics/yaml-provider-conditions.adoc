@@ -28,7 +28,7 @@ The analyzer currently supports the following `provider` conditions:
 * `dotnet`
 +
 :FeatureName: dotnet provider
-include::technology-preview.adoc[]
+include::snippets/technology-preview-admonition.adoc[]
 
 
 [[table-Supported-providers-and-rule-conditions]]

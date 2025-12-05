@@ -40,8 +40,8 @@ The analyzer CLI takes rulesets as input arguments.
 
 include::topics/yaml-rule-structure-syntax.adoc[leveloffset=+2]
 
-include::topics/yaml-rule-labels.adoc[leveloffset=+2]
-
+include::topics/ref_yaml-rule-labels.adoc[leveloffset=+2]
+ 
 [id="creating-basic-yaml-rules_{context}"]
 === Creating a basic YAML rule
 
