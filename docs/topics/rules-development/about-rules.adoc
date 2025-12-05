@@ -9,7 +9,10 @@
 
 [role="_abstract"]
 The {ProductFullName} contains rule-based migration tools called analyzers that use pluggable providers to analyze static code, dependencies, and other files in your application. 
-Analyzers work with providers to detect issues that cause problems when you migrate the application to target technologies. The rule definition contains metadata description and condition patterns that describe a violation. The analyzer runs a search query on the source code to match the violation described in the rule definition. The rule definition also contains a message that MTA displays when triggering an issue because of the violation.The analyzer uses the default and user-provided (custom) rules during an analysis to generate issues. 
+
+Analyzers work with providers to detect issues that cause problems when you migrate the application to target technologies.The rule definition contains metadata description and condition patterns that describe a violation.
+
+The analyzer runs a search query on the source code to match the violation described in the rule definition. The rule definition also contains a message that MTA displays when triggering an issue because of the violation.The analyzer uses the default and user-provided (custom) rules during an analysis to generate issues. 
 
 [NOTE]
 ====

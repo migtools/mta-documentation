@@ -24,7 +24,6 @@ The `java.referenced` capability in the when condition for Java rules can define
 
 You can refer to this section for a detailed explanation on the Locations, Annotations, and Patterns.
 
-
 include::topics/rules-development/yaml-java-provider.adoc[leveloffset=+1]
 
 include::topics/rules-development/yaml-java-locations.adoc[leveloffset=+1]

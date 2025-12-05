@@ -11,7 +11,7 @@
 The `java` provider allows scoping the search down to certain source code locations.
 
 * *IMPORT*: IMPORT allows for searches on class imports. It can either
-be used with FQNs or an asterisk to allow for wider matches:
+be used with Fully Qualified Names (FQNs) or an asterisk to allow for wider matches:
 
 [source,yaml]
 ----
@@ -29,15 +29,18 @@ import org.apache.lucene.search.Sort;
 import org.apache.lucene.search.SortField;
 ----
 
-:warning: If you want to match using an asterisk (`++*++`) for a wider
+[TIP]
+==== 
+If you want to match using an asterisk (`++*++`) for a wider
 range of results, it is recommended to place it directly after the
 package, not after the dot:
 
-:no++_++entry++_++sign: `org.apache.lucene.search.++*++`
-:white++_++check++_++mark: `org.apache.lucene.search++*++`
+INCORRECT: `org.apache.lucene.search.++*++`
+CORRECT: `org.apache.lucene.search++*++`
+====
 
-* *PACKAGE*: the PACKAGE location matches on any usage of a package, be
-it in an import or used as part of a fully qualified name in the code:
+* *PACKAGE*: the `PACKAGE` location matches on any usage of a package, be
+it in an import or used as part of an FQN in the code:
 
 [source,yaml]
 ----
@@ -46,11 +49,13 @@ java.referenced:
   location: PACKAGE
 ----
 
-would match on both the import and the fully qualified usage:
+would match on each of the following import and the FQN usage:
 
 [source,java]
 ----
-import org.apache.lucene.search.*;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.Sort;
+import org.apache.lucene.search.SortField;
 ----
 
 [source,java]
@@ -60,16 +65,12 @@ public class Test {
 }
 ----
 
-:warning: As in the IMPORT condition, try to avoid using asterisk
-(`++*++`) right after the package-separation dot (`.`) for better
-results.
-
 * *CONSTRUCTOR++_++CALL* and *METHOD++_++CALL*: for matching
 constructors and methods, respectively. The pattern possibilities are
 quite varied, and it is possible to match against specific return types,
 arguments, etc.
 
-For instance, looking for a method named "`method`" declared on
+For instance, looking for a method named `method` declared on
 `org.konveyor.MyClass` that returns a `List` of a type that extends
 `java.lang.String` and accepts a single parameter:
 
@@ -88,38 +89,76 @@ Presently, fully qualified static method matching is prone
 to errors.
 ====
 
-* *TYPE*: matches against types in general, appearing anywhere.
-* *INHERITANCE*: matches against a class inheriting from a given type.
-* *ANNOTATION*: matches against annotations.
-* *IMPLEMENTS++_++TYPE*: matches against any type implementing the given
-type.
-* *ENUM++_++CONSTANT*: matches against enum constants.
-* *RETURN++_++TYPE*: matches against a type being returned by a method.
-* *VARIABLE++_++DECLARATION*: matches against a type being declared as a
-variable.
-* *FIELD* (declaration): matches against a type appearing in a field
+.Supported Java locations
+|===
+|Location |Description |Rule condition example 
+
+|TYPE|Matches against all types including classes, interfaces, enum, and annotation types that appear anywhere.
+a|The following example looks for a class that implements `java.util.List`.
+[source, yaml]
+----
+  java.referenced:
+   location: TYPE
+   pattern: java.util.List
+----
+|INHERITANCE|Matches against a class inheriting from a given type.
+|abc
+|ANNOTATION|Matches against annotations.
+a|The following example matches the `@Bean` annotation in the source code.
+[source, yaml]
+----
+when:
+  java.referenced:
+    location: ANNOTATION
+    pattern: org.framework.Bean
+    annotated:
+      elements:
+        - name: url
+          value: "http://www.example.com"
+----
+|IMPLEMENTS_TYPE|Matches against any type implementing the given type.
+a|The following example looks for a class that implements `java.util.ArrayList`.
+[source, yaml]
+----
+  java.referenced:
+   location: IMPLEMENTS_TYPE
+   pattern: java.util.ArrayList
+----
+|ENUM_CONSTANT|Matches against enum constants.|abc
+|RETURN_TYPE|Matches against a type being returned by a method.|abc
+|VARIABLE_DECLARATION|Matches against a type being declared as a variable|abc
+|FIELD (declaration)|Matches against a type appearing in a field
 declaration. It can be coupled with an annotation match, this is, an
-annotation happening on the field (see
-xref:yaml-annotation-inspection_{context}[Annotation inspection])
-* *METHOD*: matches against a given method declaration. It can be coupled
-with an annotation match                      
-(see xref:yaml-annotation-inspection_{context}[Annotation inspection]).
-* *CLASS* (declaration): matches against a given method declaration. Can
-be coupled with an annotation match (see
-xref:yaml-annotation-inspection_{context}[Annotation inspection]).
+annotation happening on the field. See
+xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection]|abc
+|METHOD|Matches against a given method declaration. It can be coupled
+with an annotation match. See
+xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection]
+a|The following example locates all methods that return `java.lang.String`.
+[source, yaml]
+----
+java.referenced:
+ location: METHOD
+ pattern: '* java.lang.String' 
+----
+|CLASS (declaration)|Matches against a given method declaration. Can
+be coupled with an annotation match. See
+xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection].
+a|The following example locates all classes under the `javax.xml` package occurring in all locations of the source code.
+[source, yaml]
+----
+java.referenced:
+  pattern: javax.xml*
+----
+|CONSTRUCTOR_CALL|Matches against a constructor.|abc
+|IMPORT|Matches against class imports. You can use it with FQNs or an asterisk (*) to allow for wider matches.
+a|
+[source, yaml]
+----
+java.referenced:
+  pattern: org.apache.lucene.search*
+  location: IMPORT
+----
+|PACKAGE|Matches on any usage of a package, be it in an import or used as part of a fully qualified name in the code.|abc
 
-
-The supported locations are the following:
-
-* `CONSTRUCTOR_CALL`
-* `TYPE`
-* `INHERITANCE`
-* `METHOD_CALL`
-* `ANNOTATION`
-* `IMPLEMENTS_TYPE`
-* `ENUM_CONSTANT`
-* `RETURN_TYPE`
-* `IMPORT`
-* `VARIABLE_DECLARATION`
-* `FIELD`
-* `METHOD`
+|===
