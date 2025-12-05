@@ -90,6 +90,7 @@ to errors.
 ====
 
 .Supported Java locations
+[%autowidth]
 |===
 |Location |Description |Rule condition example 
 
@@ -97,6 +98,7 @@ to errors.
 a|The following example looks for a class that implements `java.util.List`.
 [source, yaml]
 ----
+ when:
   java.referenced:
    location: TYPE
    pattern: java.util.List
@@ -120,6 +122,7 @@ when:
 a|The following example looks for a class that implements `java.util.ArrayList`.
 [source, yaml]
 ----
+ when:
   java.referenced:
    location: IMPLEMENTS_TYPE
    pattern: java.util.ArrayList
@@ -137,9 +140,10 @@ xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspecti
 a|The following example locates all methods that return `java.lang.String`.
 [source, yaml]
 ----
-java.referenced:
- location: METHOD
- pattern: '* java.lang.String' 
+when:
+ java.referenced:
+   location: METHOD
+   pattern: '* java.lang.String' 
 ----
 |CLASS (declaration)|Matches against a given method declaration. Can
 be coupled with an annotation match. See
@@ -147,7 +151,8 @@ xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspecti
 a|The following example locates all classes under the `javax.xml` package occurring in all locations of the source code.
 [source, yaml]
 ----
-java.referenced:
+when:
+ java.referenced:
   pattern: javax.xml*
 ----
 |CONSTRUCTOR_CALL|Matches against a constructor.|abc
@@ -155,10 +160,18 @@ java.referenced:
 a|
 [source, yaml]
 ----
-java.referenced:
-  pattern: org.apache.lucene.search*
-  location: IMPORT
+when:
+ java.referenced:
+   pattern: org.apache.lucene.search*
+   location: IMPORT
 ----
-|PACKAGE|Matches on any usage of a package, be it in an import or used as part of a fully qualified name in the code.|abc
-
+|PACKAGE|Matches on any usage of a package, be it in an import or used as part of a fully qualified name in the code.
+a|The following example matches all occurrences of `org.jboss` package and its sub packages in the source code.
+[source, yaml]
+----
+when:
+  java.referenced:
+    location: PACKAGE
+    pattern: org.jboss*
+----
 |===
