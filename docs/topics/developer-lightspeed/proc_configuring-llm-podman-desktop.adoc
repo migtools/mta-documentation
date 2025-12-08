@@ -49,8 +49,9 @@ podman_mistral: &active
      environment:
       OPENAI_API_KEY: "unused value"
     args:
-      model: "mistral-7b-instruct-v0-2"
-      base_url: "http://localhost:35841/v1"
+     model: "ibm-granite/granite-3.3-8b-instruct-GGUF"
+     configuration:
+       baseURL: "http://localhost:56885/v1"
 ----
 +
 [NOTE]
