@@ -7,7 +7,7 @@
 = The discover and generate command options
 
 [role="_abstract"]
-The {ProductFullName} command-line interface (CLI) provides options that you can use together with the `discover` or `generate` commands to customize the discovery of applications and the generation of static assets.  Check the following table to identify the available arguments for defining input paths, output locations, and the scope of your assessment.
+The {ProductFullName} command-line interface (CLI) provides options that you can use together with the `discover` or `generate` commands to customize the discovery of applications and the generation of static assets. Check the following table to identify the available arguments for defining input paths, output locations, and the scope of your assessment.
 
 .Options for `discover` and `generate` commands
 [width="100%",cols="30%,30%,40%",options="header"]
