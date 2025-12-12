@@ -20,8 +20,6 @@ ifdef::mta[]
 :ProductFirstRef: Migration toolkit for applications
 :LC_PSN: mta
 :mta-cli: mta-cli
-:rhbk-first: Red Hat Build of Keycloak (RHBK)
-:rhbk-short: RHBK
 :DocInfoProductNameURL: migration_toolkit_for_applications
 :WebName: user interface
 :WebNameTitle: User Interface
@@ -36,18 +34,11 @@ ifdef::mta[]
 :ProductDistributionVersion: 8.0.1.GA-redhat
 :ProductDistribution: mta-8.0.1.GA-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
-:IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/MTA/issues
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 // OpenShift
-:ocp-first: {ocp-full} ({OCP-short})
 :ocp-full: OpenShift Container Platform
 :ocp-short: OpenShift
 :ocp: OCP
-:ocp-version: 4.20
-:ocp-supported: 4.19, 4.18
-:op-system-base-full: Red Hat Enterprise Linux (RHEL)
-:op-system-base: RHEL
 endif::[]
 
 ifdef::mtr[]
@@ -68,9 +59,7 @@ ifdef::mtr[]
 :ProductDistributionVersion: 1.2.7.GA-redhat-00001
 :ProductDistribution: mtr-1.2.7.GA-offline
 :DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
-:IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/WINDUP
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mtr/
 endif::[]
 
 // *******************
@@ -90,14 +79,9 @@ endif::[]
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rule Development Guide
-:EclipseCrsGuideTitle: Eclipse Plugin Guide
-:MavenBookName: Maven Plugin Guide
-:IntelliJBookName: IntelliJ IDEA Plugin Guide
 
 :ocp-full: Red Hat OpenShift Container Platform
 :ocp-short: OpenShift Container Platform
-:ocp-first: {ocp-full} (RHOCP)
-:rh-ocp-local: Red Hat OpenShift Local
 :ocp-name: OpenShift
 // ********************
 // * Product versions *
@@ -106,25 +90,15 @@ endif::[]
 // :ProductRelease: 4
 // :ProductVersion: 4.0
 
-:MavenProductVersion: 5.3.0.Final
 
 :IntroToMTABookName: Introduction to the {DocInfoProductName}
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/using_the_mta_command-line_interface_to_analyze_applications/index
-:ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html/{WebNameURL}/index
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
-:EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_plugin_guide
-:IntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
 :ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
-:ProductDocUserInterfaceGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/{WebNameURL}
 :ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
-:ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
-:ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
-:ProductDocIntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
-:OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
 :LinkAPI: https://github.com/windup/windup/blob/master/
 
 //Links to MTA and MTR Jira project pages:
-:JiraMTRURL: https://issues.redhat.com/projects/WINDUP
 :JiraMTAURL: https://issues.redhat.com/projects/MTA
 
 // URLs for downloads on developers.redhat.com
@@ -138,6 +112,5 @@ endif::[]
 :icon-check: &#x2714;
 :icon-x: &#x2718;
 :kebab: image:kebab.png[title="Options menu"]
-:reports: image:reports.png[title="*Reports* icon"]
 :edit: image:icon-edit.png[title="*Edit* icon"]
 
