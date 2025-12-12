@@ -8,7 +8,8 @@
 [id="effort-level-estimation_{context}"]
 = Guidelines for the level of effort estimation
 
-The following are the general guidelines {ProductShortName} uses when estimating the level of effort required for a rule.
+[role="_abstract"]
+View the general guidelines the {ProductFullName} uses for effort level estimations to determine the complexity of issues identified during the analysis. Understanding the rule story points helps you predict the time and resources required to migrate your applications effectively.
 
 .Guidelines for the level of effort estimation
 [cols="25%,15%,60%", options="header"]

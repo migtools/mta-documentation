@@ -6,7 +6,8 @@
 [id="mta-tech-tags_{context}"]
 = Supported technology tags
 
-The following technology tags are supported in {ProductShortName} {ProductVersion}:
+[role="_abstract"]
+View the {ProductFullName} technology tags supported by the {ProductShortName} command-line interface (CLI). You can use these tags to classify applications and identify application information, for example, technologies used within the application. 
 
 * 0MQ Client
 * 3scale

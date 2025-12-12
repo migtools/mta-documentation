@@ -5,7 +5,10 @@
 [id="analyze-unsupported-provider_{context}"]
 = Analyzing an application for an unsupported language provider
 
-You can run the analysis for an unsupported language provider. To do so, you must overwrite the existing supported language provider with your own unsupported language provider. 	 
+[role="_abstract"]
+To estimate the migration effort for applications built with technologies not natively supported by the {ProductFullName} command-line interface, analyze the source code. The analysis generates a report containing the details of the application migration effort, including potential migration issues. You can use the report to prioritize tasks and estimate the resources needed for the migration.
+
+To run the analysis for an unsupported language provider, you must overwrite the existing supported language provider with your own unsupported language provider.  	 
 
 IMPORTANT: You must create a configuration file for your unsupported language provider before overriding the supported provider. 
 

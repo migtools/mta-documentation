@@ -15,9 +15,8 @@ endif::[]
 
 :context: rule-story-points
 
-_Story points_ are an abstract metric commonly used in Agile software development to estimate the level of effort required to implement a feature or change.
-
-The {ProductName} uses story points to express the level of effort needed to migrate particular application constructs, and the application as a whole. It does not necessarily translate to man-hours, but the value must be consistent across tasks.
+[role="_abstract"]
+View the {ProductFullName} rule story points to estimate the level of effort required for specific migration tasks. Understanding these values helps you prioritize application migration based on complexity and resource requirements.
 
 include::topics/mta-cli/ref_effort-level-estimation.adoc[leveloffset=+1]
 

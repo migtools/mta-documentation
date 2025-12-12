@@ -5,7 +5,10 @@
 [id="analyzing-single-app-wth-mta-cli_{context}"]
 = Analyzing a single application
 
-You can use the {ProductFullName} CLI to perform an application analysis for a single application.
+[role="_abstract"]
+To assess the effort required to migrate a specific application, you can analyze this application individually by using the {ProductFullName} command-line interface (CLI). 
+
+The analysis generates a report containing the details of the application migration effort, including potential migration issues. You can use the report to prioritize tasks and estimate the resources needed for the migration.
 
 NOTE: Extracting the list of dependencies from compiled Java binaries is not always possible during the analysis, especially if the dependencies are not embedded within the binary.
 
