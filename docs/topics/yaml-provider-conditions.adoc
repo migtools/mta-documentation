@@ -26,10 +26,9 @@ The analyzer currently supports the following `provider` conditions:
 * `java`
 * `go`
 * `dotnet`
-+
-:FeatureName: dotnet provider
-include::snippets/technology-preview-admonition.adoc[]
 
+:FeatureName: Dotnet provider
+include::developer-preview-feature.adoc[]
 
 [[table-Supported-providers-and-rule-conditions]]
 [options="header"][cols="99,99,99,99"][%autowidth]
