@@ -1,0 +1,69 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="create-go-custom-rule_{context}"]
+= Creating a custom Go rule
+
+[role="_abstract"]
+You can create custom rules for Golang (Go) applications based on the following example.
+
+You can use the following custom rule to check if {ProductShortName} triggers an incident when it detects a `go` file in your project.
+
+.Procedure
+. Create a `go-rule-001.yml` file in a directory. 
+
+. Copy the following rule in the `yaml` file:
++
+
+[source, yaml]
+----
+- message: golang apiextensions/v1/customresourcedefinitions found 
+  description: "golang apiextensions/v1/customresourcedefinitions found"
+  ruleID: go-lang-ref-001
+  effort: 1
+  when:
+    go.referenced:
+      pattern: "v1beta1.CustomResourceDefinition"
+----
+
+. Create a test `go` file named *example.go* in your `Home` directory.
+
+. Paste the following code in the *example.go* file:
++
+
+[source, go]
+----
+package main
+
+import (
+	"fmt"
+
+	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
+)
+
+func main() {
+	fmt.Println(v1beta1.CustomResourceDefinition{})
+
+}
+----
+
+. Run the following command in the {ProductShortName} CLI:
++
+
+[source, terminal]
+----
+$ ./mta-cli analyze -i _<path_to_Go_project>_ -o _<path_to_report_directory>_ \ --run-local=false --rules _<path_to_go-rule-001.yml>_
+----
++
+
+[NOTE]
+====
+Add the `--overwrite` option if you want to use the same directory for the report when you run subsequent tests. {ProductShortName} overwrites the current report with the result of the latest analysis that you run.
+====
+
+. Open the static report at `/home/<USER>/output/static-report/` in your browser.
+
+. Navigate to the issues to verify the `golang apiextensions/v1/customresourcedefinitions found {{file}}:{{lineNumber}}` issue.
+

@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-rule-rulesets: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="rule-rulesets"]
+endif::[]
+ifdef::context[]
+[id="rule-rulesets_{context}"]
+endif::[]
+= Rulesets
+
+:context: rule-rulesets
+
+[role="_abstract"]
+A set of rules forms a ruleset. MTA does not require every rule file to belong to a ruleset, but you can use rulesets to group multiple rules that achieve a common goal and to pass the rules to the rules engine.
+
+To use multiple rule files, you need to place them in a directory and to add a ruleset.yaml file. Then the directory is treated as a ruleset, and you can pass it as input to the `--rules` option.
+Note that if you want to use the `--target` or `--source` option in the CLI, the engine will only select rules that match the label for that target. Therefore, make sure that you have added target or source labels on your rules. See xref:reserved-label_rule-yaml-metadata[Reserved labels] for more details.
+
+include::topics/rules-development/yaml-rulesets.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-rule-rulesets[:context: {parent-context-of-rule-rulesets}]
+ifndef::parent-context-of-rule-rulesets[:!context:]
+
+:!rule-rulesets:
