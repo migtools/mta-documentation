@@ -1,0 +1,31 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+// * docs/getting-started-guide/master.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="about-rules_{context}"]
+= The {ProductShortName} rules
+
+[role="_abstract"]
+The {ProductFullName} contains rule-based migration tools called analyzers that use pluggable providers to analyze static code, dependencies, and other files in your application. 
+
+Analyzers work with providers to detect issues that cause problems when you migrate the application to target technologies. The rule definition contains metadata description and condition patterns that describe a violation.
+
+The analyzer runs a search query on the source code to match the violation described in the rule definition. The rule definition also contains a message that MTA displays when triggering an issue because of the violation. The analyzer uses default and user-provided (custom) rules during an analysis to identify issues. 
+
+[NOTE]
+====
+An {ProductShortName} Architect can create custom rules. You can use custom rules to identify the use of custom libraries or other components in the source code that might not be covered by the standard migration rules.
+====
+
+A collection of one or more rules is called a ruleset. Creating rulesets provides a way of organizing multiple rules that analyze the source code for a specific target platform.
+
+You can use rules or rulesets as input arguments in an analysis. You can perform a rule-based analysis in the {ProductShortName} CLI, user interface, or by using one of the IDE plug-ins for {ProductShortName} (Visual Studio Code or IntelliJ).
+
+The rules can be used by {mta-dl-plugin} to generate AI-assisted code resolutions. The issue description and metadata in rules are used by the {mta-dl-plugin} to form well-defined contexts. These contexts generate AI-assisted suggestions to resolve issues in the code that are identified through an analysis. See link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/configuring_and_using_red_hat_developer_lightspeed_for_mta/index[Configuring and Using Red Hat Developer Lightspeed for MTA] for more information.
+
+
+ifndef::rules-development-guide[]
+For instructions on how to write custom rules, see [_{RulesDevBookName}_].
+endif::rules-development-guide[]

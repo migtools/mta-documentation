@@ -1,0 +1,60 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-provider-conditions: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="provider-conditions"]
+endif::[]
+ifdef::context[]
+[id="provider-conditions_{context}"]
+endif::[]
+= Providers and rule conditions 
+
+:context: provider-conditions
+
+[role="_abstract"]
+The providers are the modular components in charge of analyzing a given language. Providers are able to analyze code by leveraging the Language Server Protocol (LSP). Through the LSP, all code analysis is abstracted away from the analysis engine and left to the specific LSP server to run the search query defined in the rule on the source code. 
+
+Additionally, {ProductShortName} provides a built-in provider with abilities such as XML parsing, running regular expressions on files, and so on.
+
+Currently, {ProductShortName} supports the following providers:
+
+* Builtin
+* Java 
+* Go 
+* External providers (for `Python`, `Dotnet` and `Node.js` applications) initialized by the generic provider binary
+
+[NOTE]
+====
+You can use the generic provider binary to create an external provider for any language that is compliant with link:https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/[LSP 3.17 specifications].
+====
+
+.Using the provider capability in custom rules
+
+In a rule, the when block is where the conditions for matching the rule are specified. Each provider offers a series of capabilities to do matching.. The search query in the rule condition can contain patterns, code locations, specific dependencies to be found, etc, to evaluate the source code and dependencies. The provider sends the LSP server a request to check the search query against the application being analyzed. When the LSP server returns a match for the search in the source code, the analyzer triggers a violation.
+
+The syntax for the when block is as follows: contains one condition, but that condition can have multiple conditions nested under it.
+
+----
+when:
+  <condition>
+    <nested-condition>
+----
+
+include::topics/rules-development/yaml-provider-conditions.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-builtin-provider.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-java-provider.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-go-provider.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-dotnet-provider.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-provider-conditions[:context: {parent-context-of-provider-conditions}]
+ifndef::parent-context-of-provider-conditions[:!context:]
+
+:!provider-conditions:

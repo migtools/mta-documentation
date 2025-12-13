@@ -1,0 +1,226 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+
+[id="yaml-java-locations_{context}"]
+= Java locations
+
+[role="_abstract"]
+The `java` provider allows scoping the search down to certain source code locations.
+
+* *IMPORT*: IMPORT allows for searches on class imports. It can either
+be used with Fully Qualified Names (FQNs) or an asterisk to allow for wider matches:
+
+[source,yaml]
+----
+java.referenced:
+  pattern: org.apache.lucene.search*
+  location: IMPORT
+----
+
+would match on each of these imports:
+
+[source,java]
+----
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.Sort;
+import org.apache.lucene.search.SortField;
+----
+
+[TIP]
+==== 
+If you want to match using an asterisk (`++*++`) for a wider
+range of results, it is recommended to place it directly after the
+package, not after the dot:
+
+INCORRECT: `org.apache.lucene.search.++*++`
+CORRECT: `org.apache.lucene.search++*++`
+====
+
+* *PACKAGE*: the `PACKAGE` location matches on any usage of a package, be
+it in an import or used as part of an FQN in the code:
+
+[source,yaml]
+----
+java.referenced:
+  pattern: org.apache.lucene.search*
+  location: PACKAGE
+----
+
+would match on each of the following import and the FQN usage:
+
+[source,java]
+----
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.Sort;
+import org.apache.lucene.search.SortField;
+----
+
+[source,java]
+----
+public class Test {
+  private org.apache.lucene.search.Query query;
+}
+----
+
+* *CONSTRUCTOR++_++CALL* and *METHOD++_++CALL*: for matching
+constructors and methods, respectively. The pattern possibilities are
+quite varied, and it is possible to match against specific return types,
+arguments, etc.
+
+For instance, looking for a method named `method` declared on
+`org.konveyor.MyClass` that returns a `List` of a type that extends
+`java.lang.String` and accepts a single parameter:
+
+[source,yaml]
+----
+java.referenced:
+  location: METHOD
+  pattern: 'org.konveyor.Myclass.method(*) java.util.List<? extends java.lang.String>'
+----
+
+More information about the possibilities of these patterns can be found in link:https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2Fsearch%2FSearchPattern.html&anchor=createPattern(java.lang.String,int,int,int)[the official Java documentaion, which contain all the information for building these patterns] in the `createPattern(String, int, int, int)` section.
+
+[WARNING] 
+====
+Presently, fully qualified static method matching is prone
+to errors.
+====
+
+.Supported Java locations
+[cols="3,3,6"]
+|===
+|Location |Description |Rule condition example
+
+|TYPE|Matches against all types including classes, interfaces, enum, and annotation types that appear anywhere.
+a|The following example looks for a class that implements `java.util.List`.
+[source, yaml]
+----
+ when:
+  java.referenced:
+   location: TYPE
+   pattern: java.util.List
+---- 
+|ANNOTATION|Matches against annotations.
+a|The following example matches the `@Bean` annotation in the source code.
+[source, yaml]
+----
+when:
+  java.referenced:
+    location: ANNOTATION
+    pattern: org.framework.Bean
+    annotated:
+      elements:
+        - name: url
+          value: "http://www.example.com"
+----
+|IMPLEMENTS_TYPE|Matches against any type implementing the given type.
+a|The following example looks for a class that implements `java.util.ArrayList`.
+[source, yaml]
+----
+ when:
+  java.referenced:
+   location: IMPLEMENTS_TYPE
+   pattern: java.util.ArrayList
+----
+|RETURN_TYPE|Matches against a type being returned by a method.
+a|The following example searches for `@PersistenceContext` annotation for injecting data sources and `@Produces` annotation on the `EntityManager`. These annotations are not required when you target migrating the source code to `Quarkus`.
+[source, yaml]
+----
+when:
+  java.referenced:
+    location: RETURN_TYPE
+      pattern: javax.persistence.EntityManager
+      annotated:
+        pattern: javax.enterprise.inject.Produces
+----
+|VARIABLE_DECLARATION|Matches against a type being declared as a variable
+a|The following example searches for `QueueConnectionFactory` that was used to obtain connection to JMS queues appearing as a variable declaration. Replace the string `QueueConnectionFactory` with `ConnectionFactory`.
+[source, yaml]
+----
+when:
+  - java.referenced:
+      location: VARIABLE_DECLARATION
+      pattern: javax.jms.QueueConnectionFactory
+----
+|FIELD|Matches against a type appearing in a field
+declaration. It can be coupled with an annotation match happening on the field. See
+xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection]
+a|The following example searches for `QueueConnectionFactory` appearing in a field declaration was used to obtain connection to JMS queues. Replace the string `QueueConnectionFactory` with `ConnectionFactory`.
+[source, yaml]
+----
+when:
+  - java.referenced:
+      location: FIELD_DECLARATION
+      pattern: javax.jms.QueueConnectionFactory
+----
+|METHOD|Matches against a given method declaration. It can be coupled
+with an annotation match. See
+xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection]
+a|The following example locates all methods that return `java.lang.String`.
+[source, yaml]
+----
+when:
+ java.referenced:
+   location: METHOD
+   pattern: '* java.lang.String' 
+----
+|METHOD_CALL|Matches against the method call in the source code.
+a|The following example matches the `getConnection` method call of the `java.sql.DriverManager` class with three parameters of type `String`.
+[source, yaml]
+----
+when:
+  java.referenced:
+    location: METHOD_CALL
+    pattern: java.sql.DriverManager.getConnection(java.lang.String, java.lang.String, java.lang.String)
+----
+|CLASS (declaration)|Matches against a given method declaration. Can
+be coupled with an annotation match. See
+xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection].
+a|The following example locates all classes under the `javax.xml` package occurring in all locations of the source code.
+[source, yaml]
+----
+when:
+ java.referenced:
+  pattern: javax.xml*
+----
+|CONSTRUCTOR_CALL|Matches against constructor calls in the source code.
+a|The following example matches the `FileOutputStream` constructor call that takes a String and a boolean value as input parameters.
+[source, yaml]
+----
+when:
+  java.referenced:
+    location: CONSTRUCTOR_CALL
+    pattern: java.io.FileOutputStream(java.lang.String, boolean)
+----
+|IMPORT|Matches against class imports. You can use it with FQNs or an asterisk (*) to allow for wider matches.
+a|The following example matches with the import of `org.apache.lucene.search` package and sub packages in the source code.
+[source, yaml]
+----
+when:
+ java.referenced:
+   pattern: org.apache.lucene.search*
+   location: IMPORT
+----
+|PACKAGE|Matches on any usage of a package, be it in an import or used as part of a fully qualified name in the code.
+a|The following example matches all occurrences of `org.jboss` package and its sub packages in the source code.
+[source, yaml]
+----
+when:
+  java.referenced:
+    location: PACKAGE
+    pattern: org.jboss*
+----
+|INHERITANCE|Matches against a class inheriting from a given type.
+a|The following example searches for interfaces that extend the `org.jboss.system.ServiceMBeanSupport` class. 
+
+[source, yaml]
+----
+ when:
+  java.referenced:
+    pattern: 'org.jboss.system.ServiceMBeanSupport'
+    location: INHERITANCE
+----
+|===

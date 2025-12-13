@@ -114,3 +114,5 @@ endif::[]
 :kebab: image:kebab.png[title="Options menu"]
 :edit: image:icon-edit.png[title="*Edit* icon"]
 
+//Developer Preview and Technology Preview snippets
+//Add additional software names as needed -- for example DevPreview-software_name_2

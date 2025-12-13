@@ -1,4 +1,4 @@
-regular expression// Module included in the following assemblies:
+// Module included in the following assemblies:
 //
 // * docs/rules-development-guide/master.adoc
 
@@ -7,7 +7,7 @@ regular expression// Module included in the following assemblies:
 = Go provider
 
 [role="_abstract"]
-The `go` provider analyzes Go source code. This provider's capabilities are `referenced` and `dependency`.
+The `go` provider analyzes `Go` source code. This provider's capabilities are `referenced` and `dependency`.
 
 .`referenced`
 
@@ -16,12 +16,12 @@ By using the `referenced` capability, the provider finds references in the sourc
 [source,yaml]
 ----
 when:
-  go.referenced: "<regular_expression_to_find_reference>"
+  go.referenced: "<regex_to_find_reference>"
 ----
 
 .`dependency`
 
-By using the `dependency` capability, the provider finds dependencies for an application.
+By using the `dependency` capability, the provider finds dependencies for a `Go` application.
 
 [source,yaml]
 ----

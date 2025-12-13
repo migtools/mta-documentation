@@ -33,20 +33,3 @@ when:
         location: IMPORT
         pattern: junit.junit
 ----
-
-[id="yaml-nested-and-condition_{context}"]
-== Nested conditions
-Conditions can also be nested within other conditions.
-
-. Example
-
-[source,yaml]
-----
-when:
-  and:
-  - and:
-    - go.referenced: "*CustomResourceDefinition*"
-    - java.referenced:
-        pattern: "*CustomResourceDefinition*"
-  - go.referenced: "*CustomResourceDefinition*"
-----

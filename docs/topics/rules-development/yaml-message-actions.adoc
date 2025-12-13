@@ -1,0 +1,41 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-message-actions_{context}"]
+= Message action
+
+[role="_abstract"]
+A message action is used to generate an issue with the specified message when a rule condition matches the source code, for example:
+
+[source,yaml]
+----
+- ruleID: test-rule
+  message: Test rule matched. Please resolve this migration issue.
+  when:
+    <CONDITION>
+----
+
+Optionally, a message can include hyperlinks to external URLs that provide relevant information about the issue or a quick fix.
+
+[source,yaml]
+----
+links:
+  - url: "konveyor.io"
+    title: "Short title for the link"
+----
+
+You can also create a template message to include information about the match that has been interpolated through xref:yaml-custom-variables_logical-chaining-custom-variables[custom variables] on the rule.
+// link link:#custom-variables[Custom Variables]):
+
+[source,yaml]
+----
+- ruleID: lang-ref-004
+   customVariables:
+   - pattern: '([A-z]+)\.get\(\)'
+      name: VariableName
+    message: "Found generic call - {{ VariableName }}"
+  when:
+    <CONDITION>
+----
