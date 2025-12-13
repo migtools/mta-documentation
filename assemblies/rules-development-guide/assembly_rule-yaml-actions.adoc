@@ -1,0 +1,36 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-rule-yaml-actions: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="rule-yaml-actions"]
+endif::[]
+ifdef::context[]
+[id="rule-yaml-actions_{context}"]
+endif::[]
+= Rule actions
+
+:context: rule-yaml-actions
+
+[role="_abstract"]
+You can use rule actions to generate information about the source code. The rule action information can be included in a violation or used to categorize the source code.
+
+Rules can include the following types of actions:
+
+* `Message`: use message action to display an informative message in the static report that contains the violation triggered by the rule. See xref:yaml-message-actions_rule-yaml-actions[Message action] for more information.
+* `Tag`: use tags to categorize parts of the source code. For example, Backend=Java, where Backend is the key and Java is the value. See xref:yaml-tag-actions_rule-yaml-actions[Tag actions] for more information.
+Each rule includes either one of them or both of them. 
+
+include::topics/rules-development/yaml-tag-actions.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-message-actions.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-rule-hyperlinks.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-rule-yaml-actions[:context: {parent-context-of-rule-yaml-actions}]
+ifndef::parent-context-of-rule-yaml-actions[:!context:]
+
+:!rule-yaml-actions:

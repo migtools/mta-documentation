@@ -1,0 +1,39 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-rulesets_{context}"]
+= Creating and using a custom ruleset
+
+[role="_abstract"]
+You can create a ruleset by placing one or more custom rules in a directory and creating a `ruleset.yaml` file at the directory root. When you perform an analysis, you pass this directory as input to the {ProductShortName} {CLIName} by using the `--rules` option. All rules in this directory are treated as a part of the ruleset defined by the `ruleset.yaml` file.
+
+The `ruleset.yaml` file stores the metadata of the ruleset. You can group multiple similar custom rules and create a ruleset for them. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, {ProductShortName} treats all the files in the directory as belonging to the ruleset defined in the `ruleset.yaml` file.
+
+[source,yaml]
+----
+name: "Name of the ruleset" 
+description: "Description of the ruleset"
+labels: 
+  - key=val
+----
+where:
+
+  `name` :: The name must be unique within the provided rulesets.
+  `labels` :: Ruleset labels are inherited by all rules that belong to the ruleset.
+
+To perform any application analysis, enter:
+
+[source,terminal]
+----
+$ mta-cli analyze --input=<application_to_analyze> --output=<output_dir> --rules=<custom_rule_dir> --enable-default-rulesets=false
+----
+
+*  Replace `<application_to_analyze>` with the name of your application.
+*  Replace `<output_dir>` with the directory of your choice.
+*  Replace `<custom_rule_dir>` with the custom rule file.
+* To use multiple rule files, you need to place them in a directory and to add a `ruleset.yaml` file. Then the directory is treated as a _ruleset_, and you can pass it as input to the `--rules` option.
++
+
+Note that if you want to use the `--target` or `--source` option in the CLI, the engine will only select rules that match the label for that target. Therefore, make sure that you have added target or source labels on your rules. See xref:reserved-label_rule-yaml-metadata[Reserved labels] for more details.

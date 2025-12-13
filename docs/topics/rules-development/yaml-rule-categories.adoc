@@ -7,6 +7,8 @@
 = Rule categories
 
 [role="_abstract"]
+Rule categories are applied per rule. The Architect assigns one of the following rule categories to indicate the risk associated with not resolving an issue.
+
 * `mandatory`: You must resolve the issue for a successful migration. If you do not make the changes, the resulting application will not build or run successfully. Examples include the replacement of proprietary APIs that are not supported in the target platform.
 
 * `optional`: If you do not resolve the issue, the application should work, but the results might not be optimal. If you do not make the change at the time of migration, it is recommended to include it on the schedule soon after your migration is completed.

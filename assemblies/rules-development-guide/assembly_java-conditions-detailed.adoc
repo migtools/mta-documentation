@@ -1,0 +1,36 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-java-conditions-capabilities: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="java-conditions-capabilities"]
+endif::[]
+ifdef::context[]
+[id="java-conditions-capabilities_{context}"]
+endif::[]
+= Java condition and capabilities 
+
+:context: java-conditions-capabilities
+
+[role="_abstract"]
+The `java.referenced` capability in the when condition for Java rules can define search queries for the following fields in the source code:
+
+* Locations - such as the classes, methods, packages and so on
+* Annotations
+* Patterns
+
+You can refer to this section for a detailed explanation on the Locations, Annotations, and Patterns.
+
+include::topics/rules-development/yaml-java-locations.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-annotation-inspection.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-condition-patterns.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-rule-java-conditions-capabilities[:context: {parent-context-of-rule-java-conditions-capabilities}]
+ifndef::parent-context-of-rule-java-conditions-capabilities[:!context:]
+
+:!java-conditions-capabilities:
