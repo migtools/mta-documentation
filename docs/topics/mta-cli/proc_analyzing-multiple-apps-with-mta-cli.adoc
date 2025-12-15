@@ -6,7 +6,7 @@
 = Analyzing multiple applications
 
 [role="_abstract"]
-To efficiently assess the migration effort for a portfolio of applications, you can analyze multiple applications simultaneously by using the {ProductFullName} command-line interface (CLI). This bulk analysis generates reports for all specified applications, which helps you identify issues and prioritize tasks for large-scale migration projects.
+To efficiently assess the migration effort for a portfolio of applications, you can analyze multiple applications simultaneously by using the {ProductFullName} command-line interface (CLI). This bulk analysis generates reports for all specified applications. You can use the reports to identify issues and prioritize tasks for large-scale migration projects.
 
 :FeatureName: Analyzing multiple applications
 include::../snippets/developer-preview-admonition.adoc[]
