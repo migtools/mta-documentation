@@ -15,7 +15,10 @@ endif::[]
 
 :context: generating-assets
 
-Starting from {ProductShortName} version 7.3.0, you can use the `discover` and `generate` commands in containerless mode to automatically generate the manifests needed to deploy a Cloud Foundry (CF) application in the {ocp-short}: 
+[role="_abstract"]
+To enable offline review and simplify the distribution of assessment results, you can generate static assets by using the {ProductFullName} command-line interface. This process produces standalone reports and data files, allowing you to share migration insights with stakeholders without requiring access to the analysis environment.
+
+You can use the `discover` and `generate` commands in containerless mode to automatically generate the manifests needed to deploy a Cloud Foundry (CF) application in the {ocp-short}: 
 
 * Use the `discover` command to generate the discovery manifest in the YAML format directly from a CF instance or from either of the following manifest files:
 
@@ -30,8 +33,6 @@ The discovery manifest preserves the specifications found in the CF manifest. Th
 
 :FeatureName: Generating platform assets for application deployment
 include::topics/snippets/developer-preview-admonition.adoc[]
-
-.Benefits of generating deployment assets
 
 Generating deployment assets has the following benefits:
 
@@ -49,7 +50,7 @@ include::topics/mta-cli/proc_concealing-sensitive-information.adoc[leveloffset=+
 
 include::topics/mta-cli/proc_generating-deployment-manifest.adoc[leveloffset=+1]
 
-include::topics/mta-cli/ref_assets-generation-example.adoc[leveloffset=+1]
+include::topics/mta-cli/proc_assets-generation-example.adoc[leveloffset=+1]
 
 include::topics/mta-cli/ref_discover-generate-command-options.adoc[leveloffset=+1]
 

@@ -6,6 +6,9 @@
 [id="generating-deployment-manifest_{context}"]
 = Generating a deployment manifest 
 
+[role="_abstract"]
+To prepare your application for deployment to a container platform, generate a deployment manifest by using the {ProductFullName} command-line interface (CLI). Generating the deployment manifest creates the necessary configuration files to define your application's resources, streamlining the transition to your target environment.
+
 You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (CF) application by using the `generate` command. Based on the Helm template that you provide, the command generates manifests, such as a ConfigMap, and non-Kubernetes manifests, such as a Dockerfile, for application deployment. 
 
 .Prerequisites

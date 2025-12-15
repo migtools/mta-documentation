@@ -16,7 +16,8 @@ endif::[]
 
 :context: reference-material
 
-The following is information that you might find useful when using the {ProductFullName} CLI. 
+[role="_abstract"]
+View the {ProductFullName} command-line interface (CLI) reference resources that might help you when using the CLI. The resources include information about technology tags and rule story points.
 
 // {ProductShortName} Command-line Arguments
 //include::topics/mta-cli-args.adoc[leveloffset=+2]
@@ -28,6 +29,9 @@ include::topics/mta-cli/ref_mta-tech-tags.adoc[leveloffset=+1]
 include::assembly_rule-story-points.adoc[leveloffset=+1]
 
 
+[role="_additional-resources"]
+== Additional resources
+* link:{mta-URL}/rules_development_guide/index[Rules Development Guide]
 
 ifdef::parent-context-of-reference-material[:context: {parent-context-of-reference-material}]
 ifndef::parent-context-of-reference-material[:!context:]

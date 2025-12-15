@@ -5,7 +5,10 @@
 [id="analyze-selected-provider_{context}"]
 = Analyzing an application for the selected supported language provider
 
-You can explicitly set a supported language provider according to your application’s language to run the analysis for. 
+[role="_abstract"]
+To assess the effort required to migrate non-Java applications, analyze your source code by using the {ProductFullName} command-line interface (CLI). 
+
+You can select a language provider to analyze from the list of supported providers. The analysis generates a report containing the details of the application migration effort, including potential migration issues. You can use the report to prioritize tasks and estimate the resources needed for the migration.
 
 
 .Prerequisites

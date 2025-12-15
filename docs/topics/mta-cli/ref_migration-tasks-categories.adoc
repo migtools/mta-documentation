@@ -6,7 +6,10 @@
 [id="migration-tasks-categories_{context}"]
 = Migration tasks categories
 
-In addition to the xref:effort-level-estimation_rule-story-points[level of effort], you can categorize migration tasks to indicate the severity of the task. The following categories are used to group issues to help prioritize the migration effort.
+[role="_abstract"]
+View the {ProductFullName} migration task categories that you can use to indicate the severity of a migration task. Understanding these categories helps you prioritize migration tasks based on their criticality and estimated effort.
+
+{ProductFirstRef} uses the following categories to group issues to help prioritize the migration effort:
 
 Mandatory:: The task must be completed for a successful migration. If the changes are not made, the resulting application will not build or run successfully. Examples include replacement of proprietary APIs that are not supported in the target platform.
 
@@ -17,8 +20,3 @@ Potential:: The task should be examined during the migration process, but there 
 
 Information:: The task is included to inform you of the existence of certain files. These might need to be examined or modified as part of the modernization effort, but changes are typically not required.
 //An example of this would be the presence of a logging dependency or a Maven `pom.xml`.
-
-[role="_additional-resources"]
-.Additional resources
-
-* link:{ProductDocRulesGuideURL}/rule_categories_rules-development-guide#rule_categories_rules-development-guide[Using custom rule categories]

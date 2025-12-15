@@ -7,9 +7,7 @@
 = Supported {ProductName} migration paths
 
 [role="_abstract"]
-You can use the {ProductFullName} to assess your applications' suitability for the migration to multiple target platforms. 
-
-{ProductShortName} supports the following migration paths:
+You can use the {ProductFullName} to assess your applications' suitability for the migration to multiple target platforms. Review the supported migration paths to verify that your planned migration uses a valid combination of source and target technologies. Adhering to these paths helps ensure that {ProductShortName} can successfully analyze and migrate your applications.
 
 .Supported Java migration paths
 [width="99%",cols="19%,10%,10%,10%,10%,10%,10%,10%,10%",options="^,header"]
