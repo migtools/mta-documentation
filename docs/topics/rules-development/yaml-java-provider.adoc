@@ -1,0 +1,69 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-java-provider_{context}"]
+= Java provider
+
+[role="_abstract"]
+The `java` provider analyzes Java source code.
+
+This provider has the following capabilities:
+
+* `referenced`
+* `dependency`
+
+.`referenced`
+
+By using the `referenced` capability, the provider finds references in the source code. This capability takes three input parameters: `pattern`, `location`, and `annotated`.
+
+[source,terminal]
+----
+when:
+  java.referenced:
+    pattern: "<pattern>" 
+    location: "<location>" 
+    annotated: "<annotated>" 
+----
+where:
+
+ `pattern` :: A regular expression pattern to match.
+ `location` :: Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
+ `annotated` :: Checks for specific annotations and their elements, such as name and value, in the Java code using a query. For example, the following query matches the `Bean` (url = “http://www.example.com”) annotation in the method.
+
+
+[source,yaml]
+----
+ annotated:
+      pattern: org.framework.Bean
+      elements:
+      - name: url
+        value: "http://www.example.com"
+----
+
+See xref:java-conditions-capabilities[Java condition and capabilities] for a detailed explanation on `java.referenced` capabilities.
+
+.`dependency`
+
+The Java provider has `dependency` capability. The `dependency` capability enables the provider to generate a list of dependencies for a given application.
+You can use a `dependency` condition to query this list and check whether a certain dependency, with a version range, exists for the application. The dependency can be internal or external/open source.
+For example, to check if a Java application has a certain dependency, you create a `java.dependency` condition:
+
+[source, yaml]
+----
+when:
+  java.dependency:
+    name: junit.junit
+    upperbound: 4.12.2
+    lowerbound: 4.4.0
+----
+
+You can use the `dependency` capability to check if a Java application has Fabric8 Kubernetes client of version 5.0.100 or lower:
+
+[source, yaml]
+----
+- java.dependency:
+    name: io.fabric8.kubernetes-client
+    lowerbound: 5.0.100
+----

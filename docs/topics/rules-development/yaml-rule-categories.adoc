@@ -1,0 +1,16 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-rule-categories_{context}"]
+= Rule categories
+
+[role="_abstract"]
+Rule categories are applied per rule. The Architect assigns one of the following rule categories to indicate the risk associated with not resolving an issue.
+
+* `mandatory`: You must resolve the issue for a successful migration. If you do not make the changes, the resulting application will not build or run successfully. Examples include the replacement of proprietary APIs that are not supported in the target platform.
+
+* `optional`: If you do not resolve the issue, the application should work, but the results might not be optimal. If you do not make the change at the time of migration, it is recommended to include it on the schedule soon after your migration is completed.
+
+* `potential`: You need to examine the issue during the migration process, but there is not enough detailed information to determine if the task is mandatory for the migration to succeed. An example of such an issue is migrating a third-party proprietary type when there is no directly compatible type on the target platform.

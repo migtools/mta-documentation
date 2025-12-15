@@ -1,0 +1,35 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-or-condition_{context}"]
+= OR condition
+
+[role="_abstract"]
+The `or` condition performs a logical OR operation on the results of an array of conditions.
+
+The `or` condition matches when _any_ of its child conditions match, for example:
+
+[source,yaml]
+----
+when:
+  or:
+    - <condition1>
+    - <condition2>
+----
+
+.Example
+
+[source,yaml]
+----
+when:
+  or:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit
+----

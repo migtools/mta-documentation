@@ -1,0 +1,36 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-rule-yaml-metadata: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="rule-yaml-metadata"]
+endif::[]
+ifdef::context[]
+[id="rule-yaml-metadata_{context}"]
+endif::[]
+= Rule metadata
+
+:context: rule-yaml-metadata
+
+[role="_abstract"]
+The rule metadata contains information about the migration defined by the Architect. You can use rule metadata to:
+
+* Estimate the total migration effort. 
+* Prioritize issues that must be resolved based on the effort.
+* Evaluate if a resolution is mandatory through rule category before migrating the applications to the target technologies or platforms.
+* Define labels used by {ProductShortName} to filter rules for an analysis.
+
+
+include::topics/rules-development/yaml-rule-metadata.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-rule-labels.adoc[leveloffset=+1]
+
+include::topics/rules-development/yaml-rule-categories.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-rule-yaml-metadata[:context: {parent-context-of-rule-yaml-metadata}]
+ifndef::parent-context-of-rule-yaml-metadata[:!context:]
+
+:!rule-yaml-metadata:
