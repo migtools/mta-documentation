@@ -3,7 +3,7 @@
 :_mod-docs-content-type: REFERENCE
 
 [id="example-code-generation_{context}"]
-= Generating code fix suggestions example
+= Generating code fix suggestions 
 
 [role="_abstract"]
 This example will walk you through generating code fixes for a Java application that must be migrated to the target technology `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
@@ -14,10 +14,7 @@ This example will walk you through generating code fixes for a Java application 
 
 . Download the {mta-dl-full} extension from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[VS Code marketplace].
 
-. Open Command Palette:
-
-.. Type `Ctrl+Shift+P` in Windows and Linux systems.
-.. Type `Cmd+Shift+P` in Mac systems.
+. Type `Ctrl+Shift+P` (Windows and Linux systems) or `Cmd+Shift+P` (Mac systems).
 
 . Type `Preferences: Open Settings (UI)` in the Command Palette to open the VS Code settings and select `Extensions > {ProductShortName}`.
 
@@ -25,21 +22,15 @@ This example will walk you through generating code fixes for a Java application 
 
 . In the {mta-dl-plugin} extension, click `Open Analysis View`.
 
-. Type `MTA: Manage Analysis Profile` in the Command Palette to open the analysis profile page.
+. Type `MTA: Manage Analysis Profile` in the Command Palette and configure the following fields:
 
-. Configure the following fields:
+** *Profile Name*: Type a profile name
 
-.. *Profile Name*: Type a profile name
+** *Target Technologies*: `quarkus`
 
-.. *Target Technologies*: `quarkus`
+** *Custom Rules*: Select custom rules if you want to include them while running the analysis. By default, {mta-dl-plugin} enables *Use Default Rules* for `quarkus`.
 
-.. *Custom Rules*: Select custom rules if you want to include them while running the analysis. By default, {mta-dl-plugin} enables *Use Default Rules* for `quarkus`.
-
-. Close the profile manager.
-
-. Type `MTA: Open the Gen AI model provider configuration file` in the Command Palette.
-
-. Configure the following in the `provider-settings` file and close it:
+. Type `MTA: Open the Gen AI model provider configuration file` in the Command Palette to configure the following in the `provider-settings` file:
 +
 [source, yaml]
 ----
@@ -60,13 +51,9 @@ models:
 You must change the `provider-setting` configuration if you plan to use a different LLM provider.
 ====
 
-. Type `{ProductShortName}: Open Analysis View` in the Command Palette.
+. On the `{ProductShortName}: Open Analysis View` page, click *Start* to start the {ProductShortName} RPC server.
 
-. Click *Start* to start the {ProductShortName} RPC server.
-
-. Select the profile you configured. 
-
-. Click *Run Analysis* to scan the Java application.
+. Select the profile you configured and click *Run Analysis* to scan the Java application.
 +
 {ProductShortName} identifies the issues in the code.
 
