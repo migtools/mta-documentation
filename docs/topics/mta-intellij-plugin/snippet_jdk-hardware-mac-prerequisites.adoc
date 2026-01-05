@@ -1,5 +1,6 @@
 :_mod-docs-content-type: SNIPPET
 
+[role="_abstract"]
 The following are the prerequisites for the {ProductFullName} installation:
 
 * Java Development Kit (JDK) is installed. {ProductShortName} supports the following JDKs:
