@@ -35,4 +35,4 @@ Alternatively, open the setting by performing the following steps:
 
 [role="_additional-resources"]
 .Additional resources
-* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/developer-lightspeed-guide/index[Configuring and using Developer Lightspeed for {ProductShortName}].
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/developer-lightspeed-guide/index[Configuring and using Developer Lightspeed for {ProductShortName}]
