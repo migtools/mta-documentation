@@ -25,6 +25,7 @@ In addition to the overall prerequisites, you have configured the following:
 .. Type `Ctrl + Shift + P` or `Cmd + Shift + P` on the search bar to open the Command Palette and enter `Preferences: Open Settings (UI)`. Go to `Extensions > MTA` to open the settings page.
 +
 . Configure the settings described in the following table:
++
 
 .{mta-dl-plugin}  extension settings
 [cols="40%,60%a",options="header",]

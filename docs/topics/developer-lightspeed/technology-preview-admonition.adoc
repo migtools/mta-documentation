@@ -2,6 +2,8 @@
 // the include. Otherwise it will result in an incorrect replacement.
 // use :FeatureName:
 
+:_mod-docs-content-type: SNIPPET
+
 [IMPORTANT]
 ====
 [subs="attributes+"]
