@@ -6,8 +6,9 @@
 [id="fixed-issues-7-3-2_{context}"]
 = Fixed issues
 
-This section provides the following bug fixes and resolved issues that have a significant impact on the {ProductFullName} 7.3.2.
+[role="_abstract"]
+This section provides the following bug fixes that have a significant impact on the {ProductFullName} 7.3.2.
 
-.{ProductShortName} now generates consistent results after analyzing large .EAR binary files 
+{ProductShortName} now generates consistent results after analyzing large .EAR binary files::
 
 Previously, when analyzing binary applications, {ProductShortName} relied on the Maven search index to determine whether embedded dependencies were internal to the application or were publicly available (usually classified as open-source dependency). Depending on the availability of the Maven search index, an open-source dependency could be wrongly classified as internal to the application and was included as a dependency in the analysis results. In this case, the analysis returned more incidents and greater effort to address issues found in dependencies. This issue has been resolved in {ProductShortName} 7.3.2 by adding the flag `--disable-maven-search` to the `analyze` command. When disabled, the analysis will consistently classify dependencies. link:https://issues.redhat.com/browse/MTA-5588[(MTA-5588)]

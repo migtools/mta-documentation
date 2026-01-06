@@ -6,10 +6,13 @@
 [id="new-features-7-3-1_{context}"]
 = New features
 
+[role="_abstract"]
 This section provides the new features and improvements of the {ProductFullName} 7.3.1. 
 
-.FIPS is now supported in {ProductShortName}
+FIPS is now supported in {ProductShortName}::
++
 
 Federal Information Processing Standards (FIPS) are a set of computer security standards developed by the United States federal government in line with the Federal Information Security Management Act (FISMA).
++
 
 {ProductFullName} has been tested and works on FIPS-enabled {ProductShortName} clusters.

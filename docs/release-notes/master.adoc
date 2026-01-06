@@ -8,6 +8,7 @@ include::topics/templates/document-attributes.adoc[]
 :context: release-notes
 :release-notes:
 :_mod-doc-content-type: ASSEMBLY
+[id="release-notes-7-3_{context}"]
 = Release Notes
 
 // Bring back when 8.1 is out [id="mta-8-0-0"]
@@ -16,13 +17,6 @@ include::topics/templates/document-attributes.adoc[]
 //[id="release-notes-introduction"]
 //== Introduction
 
-<<<<<<< HEAD
-=======
-include::assemblies/release-notes/assembly_mta-8-0-0.adoc[leveloffset=+1]
-//[id="release-notes-introduction"]
-//== Introduction
-
->>>>>>> e901c2e (MTA Release Notes 7.3 - Modularization Work)
 //{ProductFullName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on {ocp-first}. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to {ocp-short} through the user interface (UI) and command-line interface (CLI).
 
 

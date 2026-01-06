@@ -6,45 +6,53 @@
 [id="known-issues-7-3-0_{context}"]
 = Known issues
 
-This section provides highlighted known issues in {ProductFullName} version 7.3.0.
+[role="_abstract"]
+This section provides known issues in {ProductFullName} version 7.3.0.
 
 
-.`.NET` Framework application analysis fails in the {ProductShortName} {CLIName} 
+`.NET` Framework application analysis fails in the {ProductShortName} {CLIName}:: 
 When you analyze `.NET` Framework applications in Windows containers by using the {ProductShortName} {CLIName}, the analysis fails for the following environment variables: 
 
 * `DOTNET_PROVIDER_IMG`: `quay.io/konveyor/dotnet-external-provider:release-0.7`
 * `RUNNER_IMG`: `quay.io/konveyor/kantra:latest`
 * `PODMAN_BIN`: `C:\Program Files\Docker\Docker\resources\bin\docker.exe`
++
 
 Workaround: Use the following version of the Dotnet provider image:
 `set DOTNET_PROVIDER_IMG=quay.io/konveyor/dotnet-external-provider:v0.5.0` 
++
 
 link:https://issues.redhat.com/browse/MTA-5203[(MTA-5203)]
 
-.Non-Java applications are analyzed in containerless mode in the {ProductShortName} CLI
+Non-Java applications are analyzed in containerless mode in the {ProductShortName} CLI::
 When you analyze non-Java applications, {ProductShortName} initiates the analysis in containerless mode. 
++
 
 Workaround: set the `--run-local=false` flag to analyze non-Java applications. link:https://issues.redhat.com/browse/MTA-5068[(MTA-5068)]
 
 
-.Application analysis fails to get a list of dependencies for Node.js in the {ProductShortName} UI
+Application analysis fails to get a list of dependencies for Node.js in the {ProductShortName} UI::
 
 When you run an application analysis for the Node.js language provider by using the {ProductShortName} user-interface (UI), the analysis completes with the following error displayed in the analysis log:
++
 
 ----
 level=error msg="failed to get list of dependencies for provider" error="dependency provider path not set" provider=nodejs'
 ----
++
 
 Workaround: Set the `Analysis Mode` setting to `source-only`. 
++
 
 NOTE: The Node.js provider does not have a dependency capability. Therefore, a dependency list cannot be generated. The same applies for the Python provider.
- 
++
+
 (link:https://issues.redhat.com/browse/MTA-5070[MTA-5070])
 
-.Dependency rule of a custom rules file in analysis is not fired
+Dependency rule of a custom rules file in analysis is not fired::
 
 A custom dependency rule is not fired, and no related migration issue is found. link:https://issues.redhat.com/browse/MTA-3863[(MTA-3863)]
 
-.No multi-user access restrictions on resources
+No multi-user access restrictions on resources::
 
 An analyzer task does not have multi-user access restrictions on resources. For example, an analyzer task created by a user can be canceled by any other user. link:https://issues.redhat.com/browse/MTA-3819[(MTA-3819)]
