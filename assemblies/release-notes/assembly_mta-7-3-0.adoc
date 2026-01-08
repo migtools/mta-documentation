@@ -16,7 +16,7 @@ endif::[]
 :context: mta-7-3-0
 
 [role="_abstract"]
-The {ProductShortName} 7.3.0 section lists the new features and enhancements, technology preview and developer preview features, fixed issues, and known issues.
+The {ProductShortName} 7.3.0 section lists the new features and enhancements, Technology Preview and developer preview features, fixed issues, and known issues.
 
 include::topics/release-notes-topics/ref_new-features-7-3-0.adoc[leveloffset=+1]
 

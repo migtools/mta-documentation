@@ -11,11 +11,12 @@ This section provides a list of all Technology Preview features available in Mig
 
 For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview[Technology Preview Features Support Scope].
 
-.Support for Python and Node.js language providers is available
+Support for Python and Node.js language providers is available::
 
 In addition to the Java and Go language providers, support for the Python and Node.js language providers is now available for the application analysis in {ProductShortName} 7.3.0. As a result, you can now perform the following actions for these providers in the {ProductShortName} user-interface (UI):
 
 * Add custom migration targets. 
 * Run custom rules. 
++
 
 (link:https://issues.redhat.com/browse/MTA-4542[MTA-4542])

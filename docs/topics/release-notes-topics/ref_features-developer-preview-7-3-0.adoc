@@ -11,17 +11,19 @@ This section provides a list of all Developer Preview features available in Migr
 
 For more information about the support scope of Red Hat Developer Preview features, see link:https://access.redhat.com/support/offerings/devpreview[Developer Preview Features Support Scope].
 
-.Asset generation is available in {ProductShortName} CLI 
+Asset generation is available in {ProductShortName} CLI::
 
 Starting with {ProductShortName} 7.3.0, you can run the `discover` and `generate` commands in the {CLIName}: 
 
 * The `discover` command generates the discovery manifest that preserves the platform and runtime configurations defined in the Cloud Foundry (CF) application manifest.
 * The `generate` command uses the discovery manifest to generate the deployment manifest in a Kubernetes-native format to prepare it for {ocp-full} deployments. You can also use the command to generate non-Kubernetes manifests such as a Dockerfile.
++
 
 (link:https://issues.redhat.com/browse/MTA-4610[MTA-4610])
 
-.Listing all languages in an application is available 
+Listing all languages in an application is available::
 
 In {ProductShortName} 7.3.0, you can list all languages in an application by using the `--list-languages` flag in the {CLIName}. The listed language that has no supported providers requires a custom rule set and the `--override-provider-settings` flag when you analyze the application.
++
 
 (link:https://issues.redhat.com/browse/MTA-4798[MTA-4798])
