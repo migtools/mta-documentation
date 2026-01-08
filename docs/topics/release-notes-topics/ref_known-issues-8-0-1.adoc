@@ -8,37 +8,42 @@
 [role="_abstract"]
 {ProductFirstRef} ({ProductShortName}) version 8.0.1 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
 
-.{ProductShortName} assessment form malfunctions when you use it with a custom questionnaire 
+
+{ProductShortName} assessment form malfunctions when you use it with a custom questionnaire::
 
 In the {ProductShortName} {WebName}, selecting an answer to a question in the assessment form generated from a custom questionnaire causes the form to select an option available for another question.
++
+To work around this problem, ensure that one or more `order` keys listed in a section, for example `answers`, have a unique order number.
++
+(link:https://issues.redhat.com/browse/MTA-6262[MTA-6262])
 
-To work around this problem, ensure that one or more `order` keys listed in a section, for example `answers`, have a unique order number. 
-
-link:https://issues.redhat.com/browse/MTA-6262[MTA-6262]
-
-.{ProductShortName} UI does not trigger a violation for open source dependencies in Gradle applications 
+{ProductShortName} UI does not trigger a violation for open source dependencies in Gradle applications:: 
 
 {ProductShortName} UI does not trigger a violation for open source libraries when you run a `source+dependency` analysis of a Gradle application. As a result, the analysis report does not list incidents for open source dependencies. 
++
 
 To work around this problem, analyze Gradle applications by using the {ProductShortName} command-line interface (CLI).
++
+(link:https://issues.redhat.com/browse/MTA-6211[MTA-6211])
 
-link:https://issues.redhat.com/browse/MTA-6211[MTA-6211]
 
-
-.{ProductShortName} UI fails to process applications with service bindings
+{ProductShortName} UI fails to process applications with service bindings::
 
 When you use the {ProductFullName} user interface (UI) to run an application discovery for a deployed Cloud Foundry (CF) application with a service binding, {ProductShortName} UI does not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information. Consequently, the discovery fails.
++
 
 To work around this problem, run the application discovery by using the {ProductShortName} command-line interface (CLI).
++
+(link:https://issues.redhat.com/browse/MTA-6424[MTA-6424])
 
-link:https://issues.redhat.com/browse/MTA-6424[MTA-6424]
 
-
-.Rules with `METHOD_CALL` or `CONSTRUCTOR_CALL` do not match expected locations when specifying parameters
+Rules with `METHOD_CALL` or `CONSTRUCTOR_CALL` do not match expected locations when specifying parameters::
 
 Search patterns in Java rules that have the `METHOD_CALL` and `CONSTRUCTOR_CALL` locations do not match the expected methods and constructors in the application source code. 
++
 
 For example:
++
 
 [source, yaml]
 ----
@@ -46,8 +51,8 @@ For example:
       location: CONSTRUCTOR_CALL
       pattern: javax.servlet.UnavailableException(javax.servlet.Servlet,java.lang.String)
 ----
-
 does not match
++
 
 [source, java]
 ----
@@ -55,8 +60,10 @@ does not match
  Servlet s = exception1.getServlet();
  UnavailableException exception2 = new UnavailableException(s, str);
 ----
++
 
 In addition, search patterns that do not contain Fully Qualified Names (FQN) do not match. For example:
++
 
 [source, yaml]
 ----
@@ -64,7 +71,9 @@ In addition, search patterns that do not contain Fully Qualified Names (FQN) do 
       location: CONSTRUCTOR_CALL
       pattern: UnavailableException(Servlet s,String str)
 ----
++
 
 No known workaround exists.
++
 
-link:https://issues.redhat.com/browse/MTA-6402[MTA-6402]
+(link:https://issues.redhat.com/browse/MTA-6402[MTA-6402])
