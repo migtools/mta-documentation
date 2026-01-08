@@ -8,6 +8,8 @@
 [id="about-ide-addons_{context}"]
 = About the {ProductShortName} {AddonType} for {IDEName}
 
+
+[role="_abstract"]
 You can migrate and modernize applications by using the {ProductName} ({ProductShortName}) {AddonType} for {IDEName}.
 
 The {ProductShortName} {AddonType} analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.

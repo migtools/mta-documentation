@@ -5,6 +5,7 @@
 [id="intro-to-vscode-for-mta_{context}"]
 = Introduction to the {ProductShortName} extension for Microsoft Visual Code
 
+[role="_abstract"]
 You can migrate and modernize applications by using the {ProductName} ({ProductShortName}) {AddonType} for {IDEName}.
 
 The {ProductShortName} {AddonType} can perform the following actions:
