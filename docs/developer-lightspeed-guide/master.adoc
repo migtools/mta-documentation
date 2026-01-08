@@ -11,7 +11,6 @@ include::topics/templates/document-attributes.adoc[]
 :context: mta-developer-lightspeed
 :mta-developer-lightspeed:
 
-
 include::topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc[leveloffset=+1]
 
 include::topics/developer-lightspeed/assembly_getting-started.adoc[leveloffset=+1]
