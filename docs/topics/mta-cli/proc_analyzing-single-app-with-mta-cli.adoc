@@ -29,18 +29,16 @@ $ *mta-cli analyze --input _<path_to_input>_ --output _<path_to_output>_ --sourc
 ....
 +
 Specify the following arguments:
+
 * `--input`: An application to be evaluated.
 * `--output`: An output directory for the generated reports. `mta-cli analyze` creates the following analysis reports:
-+
-....
-\./
-├── analysis.log
-├── dependencies.yaml
-├── output.yaml
-├── shim.log
-├── static-report
-└── static-report.log
-....
+
+** `analysis.log`
+** `dependencies.yaml`
+** `output.yaml`
+** `shim.log`
+** `static-report`
+** `static-report.log`
 
 * `--source`: A source technology for the application migration, for example, `weblogic`.
 * `--target`: A target technology for the application migration, for example, `eap8`.
