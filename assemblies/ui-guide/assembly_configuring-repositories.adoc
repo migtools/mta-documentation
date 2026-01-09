@@ -14,6 +14,9 @@ endif::[]
 
 :context: configuring-repositories
 
+[role="_abstract"]
+To allow the {ProductFullName} access the data required for the migration tasks, configure source and binary repositories in the user interface (UI).
+
 You can configure the following repository types for the {ProductFullName} instance environment: 			
 
 * Git 					

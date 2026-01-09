@@ -6,14 +6,16 @@
 [id="configuring-maven-repo_{context}"]
 = Configuring a Maven repository
 
-You can both configure a Maven repository and reduce its size in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
+[role="_abstract"]
+To allow the {ProductFullName} access the data required for the migration tasks, configure Maven repositories in the user interface (UI). By configuring these repositories, you allow {ProductShortName} to access your source code to identify modernization paths and required steps for your modernization efforts.
+
+You can both configure a Maven repository and reduce its size in the *Repositories* view of the {ProductShortName} UI.
 
 IMPORTANT: If the `rwx_supported` configuration option of the Tackle CR is set to `false`, both the *Local artifact repository* field and the *Clear repository* button are disabled. Therefore, you cannot perform the following procedure. 
 
 .Procedure
 
 . In *Administration* view, click *Repositories* and then click *Maven*.
-// ![](/Tackle2/Views/MavenConfig.png)
 . Enable the *Consume insecure artifact repositories* switch.
 . Optional:To reduce the size of the Maven repository, click the *Clear repository* link. 
 +
