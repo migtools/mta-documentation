@@ -16,9 +16,9 @@ endif::[]
 :context: asset-generation-ui
 
 [role=_abstract]
-Starting with 8.0.0, asset generation in {ProductShortName} {WebName} allows you to create different  assets (manifests) required to deploy applications from Cloud Foundry (CF) instances to {ocp-full} or Kubernetes. 
+To create different assets (manifests) required to deploy applications from Cloud Foundry (CF) instances to {ocp-full} or Kubernetes, use asset generation in {ProductShortName} {WebName}.
 
-To generate assets, you must become familiar with the following entities:
+To generate assets, familiarize yourself with the following entities:
 
 * Archetypes - Archetypes contain one or more criteria tags to identify technologies such as EAP 6. An archetype helps you to classify applications based on technologies common to them. For asset generation, you can plan your migration paths by archetypes because you configure the other asset generation entities  in the archetype (for example, target profiles that contain the generators). 
 
@@ -41,13 +41,13 @@ The asset repository is where you find the generated assets for deployment in th
 
 You can reuse generators in different archetypes.
 
-include::proc_configuring-generators.adoc[leveloffset=+1]
+include::topics/mta-ui/proc_configuring-generators.adoc[leveloffset=+1]
 
-include::proc_configuring-target-profiles.adoc[leveloffset=+1]
+include::topics/mta-ui/proc_configuring-target-profiles.adoc[leveloffset=+1]
 
-include::proc_configuring-asset-repository.adoc[leveloffset=+1]
+include::topics/mta-ui/proc_configuring-asset-repository.adoc[leveloffset=+1]
 
-include::proc_generating-deployment-assets.adoc[leveloffset=+1]
+include::topics/mta-ui/proc_generating-deployment-assets.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-generating-assets[:context: {parent-context-of-asset-generation-ui}]
 ifndef::parent-context-of-asset-generation-ui[:!context:]

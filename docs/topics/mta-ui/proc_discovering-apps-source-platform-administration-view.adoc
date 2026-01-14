@@ -5,8 +5,8 @@
 [id="discovering-apps-source-platform_{context}"]
 = Discovering applications through source platform in the Administration view
 
-[role="_abstract"]
-After you configure a source platform, you can discover and import one or more applications to the {ProductShortName} application inventory.
+[role="_abstract"] 
+After you configured a source platform, discover and import one or more applications to the {ProductShortName} application inventory.
 
 You can filter application manifests in the CF clusters by organizations and spaces, and application names. 
 
@@ -36,10 +36,9 @@ The discovery process imports all or selected applications deployed in the sourc
 
 . Click *+Add an organization* to enter at least one organization per text field and repeat the process to add more than one organization. For example, org1.
 +
-
 [NOTE]
 ====
-For a CF instance, the application `names` field can contain globs. For example, `app*`.
+For a CF instance, the application `names` field can contain glob expressions (globs), for example, `app*`.
 ====
 
 . Click *Next* to review the configuration.

@@ -5,7 +5,8 @@
 [id="controlling-task-order-with-task-manager_{context}"]
 = Controlling the order of task execution
 
-You can use *Task Manager* to preempt a {ProductFullName} task you have scheduled for execution. 
+[role="_abstract"]
+To preempt a {ProductFullName} task you have scheduled for execution, control this task by using *Task Manager*.
 
 [NOTE]
 ====

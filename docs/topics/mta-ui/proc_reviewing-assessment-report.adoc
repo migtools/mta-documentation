@@ -6,7 +6,10 @@
 [id="reviewing-assessment-report_{context}"]
 = Reviewing an assessment report
 
-An {ProductShortName} assessment report displays an aggregated assessment of the data obtained from multiple questionnaires for multiple applications.
+[role="_abstract"]
+To identify migration risks and estimate the effort required for modernization, review the assessment report in the {ProductFullName} user interface (UI).
+
+A {ProductShortName} assessment report displays an aggregated assessment of the data obtained from multiple questionnaires for multiple applications.
 
 .Procedure
 

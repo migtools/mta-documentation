@@ -5,15 +5,17 @@
 [id="generating-deployment-assets_{context}"]
 = Generating deployment assets
 
-[role="_abstract"]
+[role="_abstract"] 
+To prepare your application for deployment to a container platform, generate deployment assets in the {ProductFullName} user-interface (UI).
+
 When you generate assets for an application, the generators render manifests for all the migration paths associated with the archetype of the application. 
 
 .Prerequisites
 
 //provide link to platform awareness for the discovery manifest.
-. You generated the discovery manifest.
-. You configured the application tags in an archetype.
-. You configured generators and target profile in the archetype.
+* You generated the discovery manifest.
+* You configured the application tags in an archetype.
+* You configured generators and target profile in the archetype.
 
 .Procedure
 
@@ -25,4 +27,5 @@ When you generate assets for an application, the generators render manifests for
 . Click *Next* to review the configurations to generate assets.
 . Click *Generate assets*.
 
-You can view the generated assets in the asset respository that you configured.
++
+You can view the generated assets in the asset repository that you configured.

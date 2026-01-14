@@ -6,7 +6,8 @@
 [id="reviewing-an-analysis-report_{context}"]
 = Reviewing analysis details
 
-You can display the activity log of the analysis. The activity log contains such analysis details as, for example, analysis steps.
+[role="_abstract"]
+To review analysis details, for example, analysis steps, access an activity log in the {ProductFullName} user interface (UI).
 
 .Procedure
 

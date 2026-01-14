@@ -10,22 +10,23 @@ endif::[]
 ifdef::context[]
 [id="controlling-tasks-with-task-manager_{context}"]
 endif::[]
-= Controlling {ProductShortName} tasks by using Task Manager
+= Managing {ProductShortName} tasks by using Task Manager
 
 :context: controlling-tasks-with-task-manager
 
-*Task Manager* provides precise information about the {ProductFullName} tasks queued for execution. *Task Manager* handles the following types of tasks:
+
+[role="_abstract"]
+To get information about the {ProductFullName} tasks queued for execution, access *Task Manager*.
+
+*Task Manager* handles the following types of tasks:
 
 * Application analysis
 * Language discovery
 * Technology discovery
 
-You can display task-related information either of the following ways:
-
-* To display active tasks, open the *Task Manager* drawer by clicking the notifications button.
-* To display all tasks, open the *Task Manager* page in the *Migration* view.
-
 include::topics/analyzer-rbac-snippet.adoc[]
+
+include::topics/mta-ui/proc_displaying-mta-tasks.adoc[leveloffset=+1]
 
 include::topics/mta-ui/proc_reviewing-a-task-log.adoc[leveloffset=+1]
 

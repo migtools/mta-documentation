@@ -5,8 +5,10 @@
 [id="managing-mta-questionnaires_{context}"]
 = Managing assessment questionnaires
 
-[role="_abstract"]
-By using the {ProductShortName} user interface, you can perform the following actions on assessment questionnaires:
+[role="_abstract"] 
+To adjust the scope of your assessments, manage questionnaires in the {ProductFullName} user interface (UI). By importing, viewing, or deleting questionnaires, you  control the criteria the {ProductShortName} UI uses to evaluate the suitability of your applications for modernization.
+
+By using the {ProductShortName} UI, you can perform the following actions on assessment questionnaires:
 
 * Display the questionnaire. You can also display the answer choices and their associated risk weight.
 * Export the questionnaire to the desired location on your system. 

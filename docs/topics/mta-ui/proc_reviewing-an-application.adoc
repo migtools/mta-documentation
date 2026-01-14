@@ -6,7 +6,8 @@
 [id="reviewing-an-application_{context}"]
 = Reviewing an application
 
-You can use the {ProductName} ({ProductShortName}) {WebName} to determine the migration strategy and work priority for each application.
+[role="_abstract"]
+To determine the migration strategy and work priority for each application, review the application by using the {ProductFullName} user interface (UI).
 
 IMPORTANT: You can review only one application at a time.
 

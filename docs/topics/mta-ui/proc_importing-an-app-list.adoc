@@ -6,7 +6,10 @@
 [id="importing-an-app-list_{context}"]
 = Importing a list of applications
 
-You can import a `.csv` file that contains a list of applications and their attributes to the {ProductFullName} user-interface (UI).
+[role="_abstract"]
+To streamline the process of adding and preparing multiple applications for an analysis, import an application list into the {ProductFullName} user interface (UI).
+
+You can add multiple applications in bulk by using a `.csv` file and importing this file to the {ProductShortName} UI.
 
 NOTE: Importing a list of applications does not overwrite any of the existing applications.
 

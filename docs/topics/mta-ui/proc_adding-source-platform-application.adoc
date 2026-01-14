@@ -5,8 +5,8 @@
 [id="adding-source-platform-application_{context}"]
 = Associating an application with a source platform
 
-[role="_abstract"]
-You can associate applications that you created in {ProductShortName} with their Cloud Foundry (CF) instances by configuring the application's coordinates in the source platform. 
+[role="_abstract"] 
+Associate applications that you created in {ProductShortName} with their Cloud Foundry (CF) instances by configuring the application's coordinates in the source platform. 
 
 The specific coordinates vary depending on the source platform you select. For example, the coordinates for CF instances are *name* and *space*. 
 
