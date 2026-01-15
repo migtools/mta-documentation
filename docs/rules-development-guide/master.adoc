@@ -7,106 +7,30 @@ include::topics/templates/document-attributes.adoc[]
 :imagesdir: topics/images
 :context: rules-development-guide
 :rules-development-guide:
-:_mod-docs-content-type: ASSEMBLY
+:_mod-content-type: ASSEMBLY
 [id="rules-development-guide"]
-= Rules Development Guide
+= Configuring and using rules for an {ProductShortName} analysis
+
+[role="abstract"]
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-[id="introduction_{context}"]
-== Introduction
+include::assemblies/rules-development-guide/assembly_rules-introduction.adoc[leveloffset=+1]
 
-// About the Rules Development Guide
-include::topics/rules-guide-intro.adoc[leveloffset=+2]
+include::assemblies/rules-development-guide/assembly_rule-yaml-metadata.adoc[leveloffset=+1]
 
-// Use of <{ProductShortName}_HOME> in this Guide
-include::topics/mta-about-home-var.adoc[leveloffset=+3]
+include::assemblies/rules-development-guide/assembly_rule-yaml-conditions.adoc[leveloffset=+1]
 
-// MTA Rules
-include::topics/about-rules.adoc[leveloffset=+2]
+include::assemblies/rules-development-guide/assembly_java-conditions-detailed.adoc[leveloffset=+1]
 
-[id="creating-yaml-rules_{context}"]
-== Creating YAML rules
+include::assemblies/rules-development-guide/assembly_logical-chaining-custom-variables.adoc[leveloffset=+1]
 
-Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
+include::assemblies/rules-development-guide/assembly_rule-yaml-actions.adoc[leveloffset=+1]
 
-The analyzer parses user-provided rules, applies them to applications' source code, and generates issues for matched rules.
+include::assemblies/rules-development-guide/assembly_creating-rule.adoc[leveloffset=+1]
 
-A collection of one or more rules forms a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal.
-
-The analyzer CLI takes rulesets as input arguments.
-
-
-include::topics/yaml-rule-structure-syntax.adoc[leveloffset=+2]
-
-include::topics/ref_yaml-rule-labels.adoc[leveloffset=+2]
- 
-[id="creating-basic-yaml-rules_{context}"]
-=== Creating a basic YAML rule
-
-This section describes how to create a basic {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
-
-include::topics/create-basic-yaml-rule-template.adoc[leveloffset=+3]
-
-include::topics/yaml-rule-categories.adoc[leveloffset=+3]
-
-include::topics/yaml-rule-actions.adoc[leveloffset=+3]
-
-include::topics/yaml-rule-conditions.adoc[leveloffset=+3]
-
-include::topics/yaml-tag-actions.adoc[leveloffset=+3]
-
-include::topics/yaml-message-actions.adoc[leveloffset=+3]
-
-include::topics/yaml-rule-hyperlinks.adoc[leveloffset=+3]
-
-include::topics/yaml-provider-conditions.adoc[leveloffset=+3]
-
-include::topics/yaml-builin-provider.adoc[leveloffset=+4]
-
-include::topics/yaml-java-provider.adoc[leveloffset=+4]
-
-include::topics/yaml-java-locations.adoc[leveloffset=+4]
-
-include::topics/yaml-annotation-inspection.adoc[leveloffset=+4]
-
-include::topics/yaml-go-provider.adoc[leveloffset=+4]
-
-include::topics/yaml-dotnet-provider.adoc[leveloffset=+4]
-
-include::topics/yaml-condition-patterns.adoc[leveloffset=+3]
-
-include::topics/yaml-custom-variables.adoc[leveloffset=+3]
-
-include::topics/yaml-logical-conditions.adoc[leveloffset=+3]
-
-include::topics/yaml-and-condition.adoc[leveloffset=+4]
-
-include::topics/yaml-or-condition.adoc[leveloffset=+4]
-
-include::topics/yaml-chaining-condition-variables.adoc[leveloffset=+4]
-
-include::topics/yaml-chaining-java-provider.adoc[leveloffset=+5]
-
-include::topics/yaml-rulesets.adoc[leveloffset=+3]
-
-
-
-include::topics/create-basic-yaml-ruleset-template.adoc[leveloffset=+3]
-
-include::topics/create-yaml-rule.adoc[leveloffset=+3]
-
-include::topics/running-analysis-using-custom-yaml-rule.adoc[leveloffset=+3]
-
-// Create Your First YAML Rule
-include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
-
-include::topics/create-go-custom-rule.adoc[leveloffset=+2]
-
-include::topics/create-python-custom-rule.adoc[leveloffset=+2]
-
-include::topics/create-nodejs-custom-rule.adoc[leveloffset=+2]
+include::assemblies/rules-development-guide/assembly_rule-rulesets.adoc[leveloffset=+1]
 
 // removing section subject to a later re-write
 // Testing XML Rules
@@ -139,7 +63,8 @@ include::topics/create-nodejs-custom-rule.adoc[leveloffset=+2]
 // removing section subject to a later re-write
 // Using Custom Rule Categories
 // include::topics/rule-categories.adoc[leveloffset=+1]
-
+//[appendix]
+//== Reference material
 
 // Rule Story Points
 //include::topics/about-story-points.adoc[leveloffset=+2]
@@ -147,7 +72,12 @@ include::topics/create-nodejs-custom-rule.adoc[leveloffset=+2]
 // removing section subject to a later re-write
 // For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
 
-=== Additional resources
+== Additional resources
+
+//include::topics/rules-important-links.adoc[leveloffset=+1]
+
+* {ProductShortName} Jira issue tracker: {JiraWindupURL}
+* {ProductShortName} mailing list: windup-eng@redhat.com
 
 // removing section subject to a later re-write
 // Review the Existing MTA XML Rules
@@ -158,7 +88,6 @@ include::topics/create-nodejs-custom-rule.adoc[leveloffset=+2]
 // include::topics/fork-ruleset-repo.adoc[leveloffset=+3]
 
 // Important Links
-include::topics/rules-important-links.adoc[leveloffset=+3]
 
 // **********************************
 // * Appendix: Revision Information *

@@ -1,0 +1,41 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-go-provider_{context}"]
+= Go provider
+
+[role="_abstract"]
+The `go` provider analyzes `Go` source code. This provider's capabilities are `referenced` and `dependency`.
+
+.`referenced`
+
+By using the `referenced` capability, the provider finds references in the source code.
+
+[source,yaml]
+----
+when:
+  go.referenced: "<regex_to_find_reference>"
+----
+
+.`dependency`
+
+By using the `dependency` capability, the provider finds dependencies for a `Go` application.
+
+[source,yaml]
+----
+when:
+  go.dependency:
+    name: "<dependency_name>" 
+    upperbound: "<version_string>" 
+    lowerbound: "<version_string>" 
+----
+where:
+
+ `name` ::
+ Name of the dependency to search for.
+
+ `upperbound` :: Upper bound on the version of the dependency.
+
+ `lowerbound` :: Lower bound on the version of the dependency.

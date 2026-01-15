@@ -1,0 +1,21 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-nested-condition_{context}"]
+= Nested conditions
+
+[role="_abstract"]
+Conditions can also be nested within other conditions.
+
+[source,yaml]
+----
+when:
+  and:
+  - and:
+    - go.referenced: "*CustomResourceDefinition*"
+    - java.referenced:
+        pattern: "*CustomResourceDefinition*"
+  - go.referenced: "*CustomResourceDefinition*"
+----

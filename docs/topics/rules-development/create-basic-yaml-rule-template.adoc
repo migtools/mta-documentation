@@ -4,7 +4,7 @@
 
 :_mod-docs-content-type: PROCEDURE
 [id="create-basic-yaml-rule-template_{context}"]
-= Creating a basic YAML rule template
+= Creating a YAML rule template
 
 [role="_abstract"]
 {ProductShortName} YAML-based rules have the following basic structure:
@@ -22,7 +22,7 @@ when(condition)
 [source,terminal]
 ----
 - category: mandatory
-  description: |
+  description: 
    <DESCRIPTION TITLE>
    <DESCRIPTION TEXT>
   effort: <EFFORT>
