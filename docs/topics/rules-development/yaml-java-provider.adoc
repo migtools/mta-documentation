@@ -67,3 +67,8 @@ You can use the `dependency` capability to check if a Java application has Fabri
     name: io.fabric8.kubernetes-client
     lowerbound: 5.0.100
 ----
+
+[NOTE]
+====
+When you use the `java` provider for an analysis, the analysis results have lower precision for projects that cannot be built. Consequently, the analysis result is affected in other ways. For example, dependencies cannot be found and the analyzer inspects the `pom` file.
+====
