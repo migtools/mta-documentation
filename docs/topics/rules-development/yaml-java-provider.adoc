@@ -70,5 +70,5 @@ You can use the `dependency` capability to check if a Java application has Fabri
 
 [NOTE]
 ====
-When you use the `java` provider for an analysis, the analysis results have lower precision for projects that cannot be built. Consequently, the analysis result is affected in other ways. For example, dependencies cannot be found and the analyzer inspects the `pom` file.
+When you use the `java` provider for an analysis, the analysis results have lower precision for projects that cannot be built. Consequently, when {ProductShortName} is unable to build a `Maven` project, it falls back to parsing the `pom` file to get the list of dependencies.
 ====
