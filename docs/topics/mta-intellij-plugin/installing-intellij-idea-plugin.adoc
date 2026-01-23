@@ -10,8 +10,27 @@
 You can install the {ProductShortName} plugin in the Ultimate and the Community Edition releases of IntelliJ IDEA.
 
 .Prerequisites
-include::snippet_jdk-hardware-mac-prerequisites.adoc[]
+The following are the prerequisites for the {ProductFullName} installation:
 
+* Java Development Kit (JDK) is installed. {ProductShortName} supports the following JDKs:
+
+** Oracle JDK 17 or later
+** Eclipse Temurin™ JDK 17 or later
+** OpenJDK 17 or later
+
+* 8 GB of RAM is required for {ProductShortName}.
+
+* macOS installation: the value of `maxproc` must be `2048` or greater.
+
+* Java Development Kit (JDK) is installed. {ProductShortName} supports the following JDKs:
+
+** Oracle JDK 17 or later
+** Eclipse Temurin™ JDK 17 or later
+** OpenJDK 17 or later
+
+* 8 GB of RAM is required for {ProductShortName}.
+
+* macOS installation: the value of `maxproc` must be `2048` or greater.
 * The latest version of `{LC_PSN}-cli` from the link:{DevDownloadPageURL}[{ProductShortName} download page]
 
 .Procedure
