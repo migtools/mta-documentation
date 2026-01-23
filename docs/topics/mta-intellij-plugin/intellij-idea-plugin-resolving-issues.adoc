@@ -2,7 +2,7 @@
 //
 // * docs/intellij-idea-plugin-guide/master.adoc
 
-:_mod-docs-content-type: PROCEDURE
+:_mod-docs-content-type: REFERENCE
 
 [id="intellij-idea-plugin-resolving-issues_{context}"]
 = Resolving issues
@@ -12,4 +12,3 @@ You can resolve issues by doing one of the following:
 
 * Using a _Quick Fix_ to fix a code snippet that has a hint
 * Editing the code of a file that appears in a classification
-
