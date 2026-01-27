@@ -25,7 +25,10 @@ You can display task-related information either of the following ways:
 * To display active tasks, open the *Task Manager* drawer by clicking the notifications button.
 * To display all tasks, open the *Task Manager* page in the *Migration* view.
 
-include::topics/analyzer-rbac-snippet.adoc[]
+[WARNING]
+====
+There are no multi-user access restrictions on resources. For example, an analyzer task created by a user can be canceled by any other user.
+====
 
 include::topics/mta-ui/proc_reviewing-a-task-log.adoc[leveloffset=+1]
 
