@@ -15,7 +15,7 @@ endif::[]
 
 :context: asset-generation-ui
 
-[role=_abstract]
+[role="_abstract"]
 To create different assets (manifests) required to deploy applications from Cloud Foundry (CF) instances to {ocp-full} or Kubernetes, use asset generation in {ProductShortName} {WebName}.
 
 To generate assets, familiarize yourself with the following entities:

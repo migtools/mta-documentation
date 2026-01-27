@@ -7,7 +7,7 @@
 = Setting up automatic tagging
 
 [role="_abstract"]
-To classify applications based on their technology stack, utilize automatic tagging in the {ProductFullName} user interface (UI).
+To classify applications based on their technology stack, use automatic tagging in the {ProductFullName} user interface (UI).
 
 {ProductFullName} UI automatically spawns language discovery and technology discovery tasks when adding an application to the *Application Inventory*. When the language discovery task is running, the technology discovery and analysis tasks wait until the language discovery task is finished. These tasks automatically add tags to the application. {ProductShortName} can automatically add tags to the application based on the application analysis. Automatic tagging is especially useful when dealing with large portfolios of applications.
 
