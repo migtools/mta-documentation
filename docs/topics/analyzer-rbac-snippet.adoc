@@ -1,6 +1,0 @@
-// snippet
-
-[WARNING]
-====
-There are no multi-user access restrictions on resources. For example, an analyzer task created by a user can be canceled by any other user.
-====

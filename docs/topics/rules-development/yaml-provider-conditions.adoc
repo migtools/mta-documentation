@@ -1,0 +1,456 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="yaml-provider-conditions_{context}"]
+= Provider condition
+
+[role="_abstract"]
+The analyzer engine enables multi-language source code analysis by using *providers*. The source code of a technology is analyzed by the provider.
+
+The provider publishes what they can do with the source code in terms of capabilities.
+
+The provider condition instructs the analyzer to use a specific provider and one of its capabilities. In general, it follows the `<provider_name>.<capability>` pattern.
+
+[source,terminal]
+----
+when:
+  <provider_name>.<capability>
+    <input_fields>
+----
+
+The analyzer currently supports the following `provider` conditions:
+
+* `builtin`
+* `java`
+* `go`
+* `nodejs`
+* `python`
+* `dotnet`
+
+:FeatureName: Dotnet provider
+
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is a Developer Preview feature only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated SLA.
+====
+:!FeatureName:
+
+
+[[table-Supported-providers-and-rule-conditions]]
+[options="header"][cols="99,99,99,99"][%autowidth]
+|===
+
+|Provider rule conditions |Provider name
+
+| Providers that are fully supported and included in the product
+| `java`
+
+| Providers that have rules already defined in the product
+a| 
+* `dotnet`
+* `java`
+
+|Providers that require custom rulesets for analysis
+a|
+* `go`
+* `python`
+* `nodejs`
+|===
+
+//Some providers have *dependency_ capability*. The dependency_capability means that the provider generates a list of dependencies for a given application.
+
+//You can use a dependency_condition to query this list and check whether a
+//certain dependency, with a version range, exists for the application.
+
+//For example, to check if a Java application has a certain dependency, you create a `java.dependency` condition:
+
+
+The following table summarizes all the providers and their
+capabilities:
+
+.Summary of providers and their capabilities
+[width="100%",cols="15%,25%,60%",options="header",]
+|===
+|Provider Name |Capabilities |Description
+
+.2+|`java`
+|referenced
+a|Find references of a pattern with an optional code location for detailed searches. 
+For example, 
+[source,yaml]
+----
+when:
+  java.referenced:
+    <fields>
+----
+|dependency
+a|Check whether the application has a given dependency.
+For example, 
+
+[source,yaml]
+----
+when:
+  java.dependency:
+    <fields>
+----
+
+.5+|`builtin`
+|xml
+|Search XML files using xpath queries.
+
+
+|`json`
+a|Search JSON files using `jsonpath` queries.
+For example,
+[source, yaml]
+----
+when:
+  builtin.json:
+    <fields> 
+----
+
+|filecontent
+a|Search content in regular files using regular expression patterns.
+For example,
+[source, yaml]
+----
+when:
+  builtin.filecontent:
+    <fields> 
+----
+
+
+|file
+a|Find files with names matching a given pattern.
+For example,
+[source, yaml]
+----
+when:
+  builtin.file:
+    <fields> 
+----
+
+|hasTags
+a|Check whether a tag is created for the application using a tagging rule.
+For example,
+[source, yaml]
+----
+when:
+  builtin.hasTags:
+    <fields> 
+----
+
+.2+|`go`
+|referenced
+a|Find references to a pattern.
+For example, 
+[source,yaml]
+----
+when:
+  go.referenced:
+    <fields>
+----
+
+|dependency
+a|Check whether the application has a given dependency.
+For example, 
+[source,yaml]
+----
+when:
+  go.dependency:
+    <fields>
+----
+|===
+
+Following the example in the previous table, you can create the first part of the condition that does not contain any of the condition fields.
+
+.Example
+
+To create a `java` provider condition that uses the `referenced` capability:
+
+[source,yaml]
+----
+when:
+  java.referenced:
+    <fields>
+----
+
+[NOTE]
+====
+Depending on the _provider_ and the _capability_, there will be different `<fields>` in the condition.
+====
+
+The following table summarizes available providers, their capabilities and all of their fields:
+
+.Summary of providers, their capabilities, and their fields
+[width="100%",cols="10%,10%,10%,10%,60%",options="header",]
+|===
+|Provider |Capability |Fields |Required |Description
+
+.7+|xref:yaml-java-provider_rules-prov-cond[java]
+.3+|referenced
+|pattern
+|Yes
+a|Regular expression pattern.
+For example,
+[source, yaml]
+----
+when:
+  java.referenced:
+    location: PACKAGE
+    pattern: org.jboss.*
+----
+
+|location
+|No
+a|Source code location. See xref:yaml-java-locations_java-conditions-capabilities[Java locations].
+For example,
+[source, yaml]
+----
+when:
+  java.referenced:
+    pattern: org.kubernetes*
+    location: IMPORT
+----
+
+|annotated
+|No
+a|Additional query to inspect annotations. See xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection].
+For example,
+[source, yaml]
+----
+when:
+  java.referenced:
+    location: ANNOTATION
+    pattern: javax.ejb.Singleton
+----
+
+.4+|dependency
+|name
+|Yes
+a|Name of the dependency.
+For example,
+[source, yaml]
+----
+when:
+  java.dependency:
+    name: junit.junit
+----
+
+|nameregex
+|No
+|Regular expression pattern to match the name.
+
+|upperbound
+|No
+a|Match versions lower than or equal to.
+For example,
+[source, yaml]
+----
+when:
+  java.dependency:
+    name: junit.junit
+    upperbound: 4.12.2
+----
+
+|lowerbound
+|No
+a|Match versions greater than or equal to.
+For example,
+[source, yaml]
+----
+when:
+  java.dependency:
+    name: junit.junit
+    upperbound: 4.12.2
+    lowerbound: 4.4.0
+----
+
+.9+|xref:yaml-builtin-provider_rules-prov-cond[builtin]
+.3+|xml
+|xpath
+|Yes
+a|Xpath query
+[source, yaml]
+----
+when:
+  builtin.xml:
+    xpath: "//dependencies/dependency"
+----
+
+|namespaces
+|No
+a|A map to scope down query to namespaces.
+[source, yaml]
+----
+when:
+  builtin.xml:
+    filepaths:
+     - beans.xml
+    namespaces:
+        b: http://xmlns.jcp.org/xml/ns/javaee
+    xpath: /b:beans
+----
+
+|filepaths
+|No
+a|Optional list of files to scope down search.
+[source, yaml]
+----
+when:
+    or:
+    - builtin.xml:
+        xpath: "//dependencies/dependency"
+        filepaths: "{{poms.filepaths}}"
+      from: poms
+    - builtin.file:
+        pattern: pom.xml
+      as: poms
+      ignore: true
+----
+
+.2+|json
+|xpath
+|Yes
+a|Xpath query
+For example,
+[source, yaml]
+----
+when:
+    and:
+    - builtin.json:
+        xpath: //inclusionTestNode
+----
+
+|filepaths
+|No
+a|Optional list of files to scope down search.
+For example,
+[source, yaml]
+----
+when:
+    and:
+    - builtin.json:
+        xpath: //inclusionTestNode
+        filepaths: "{{incTest.filepaths}}"
+----
+
+.2+|filecontent
+|pattern
+|Yes
+a|Regular expression pattern to match in content.
+For example,
+
+[source, yaml]
+----
+when:
+  builtin.filecontent:
+    pattern: "import.*React"
+----
+
+|filePattern
+|No
+a|Only search in files with names matching this pattern.
+For example,
+
+[source, yaml]
+----
+when:
+  builtin.filecontent:
+    pattern: "import.*React"
+    filePattern: "\\.tsx$"
+----
+
+|file 
+|pattern
+|Yes
+a|Find files with names matching this pattern.
+For example,
+[source, yaml]
+----
+when:
+    builtin.file:
+      pattern: "*.go"
+----
+
+|hasTags
+|
+|
+a|This is an inline list of string tags. See xref:yaml-tag-actions_rule-yaml-actions[Tag action]
+For example,
+
+[source, yaml]
+----
+when:
+  or:
+   - builtin.hasTags:
+     - Golang
+     - Kubernetes
+----
+
+.5+|xref:yaml-go-provider_rules-prov-cond[go]
+|referenced
+|pattern
+|Yes
+a|Regular expression pattern.
+For example,
+[source, yaml]
+----
+when:
+  go.referenced:
+    pattern: "v1beta1.CustomResourceDefinition"
+----
+
+.4+|dependency
+|name
+|Yes
+a|Name of the dependency.
+For example,
+[source, yaml]
+----
+when:
+  - go.dependency:
+      name: sigs.k8s.io/structured-merge-diff/v4
+----
+
+|nameregex
+|No
+|Regular expression pattern to match the name.
+
+|upperbound
+|No
+a|Match versions lower than or equal to.
+For example,
+[source, yaml]
+----
+when:
+  - go.dependency:
+      name: sigs.k8s.io/structured-merge-diff/v4
+      upperbound: v4.2.2
+----
+
+|lowerbound
+|No
+a|Match versions greater than or equal to.
+For example,
+[source, yaml]
+----
+when:
+  - go.dependency:
+      name: sigs.k8s.io/structured-merge-diff/v4
+      lowerbound: v4.2.0
+----
+
+.3+|xref:yaml-dotnet-provider_rules-prov-cond[dotnet]
+.2+|referenced
+|pattern
+|Yes
+|Regular expression to match a reference in the source code. For example, `HttpNotFound`.
+
+|namespace
+|Yes
+|Specify the namespace within which the search query must be run. For example, `System.Web.Mvc`.
+|===
