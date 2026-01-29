@@ -29,10 +29,6 @@ include::topics/mta-intellij-plugin/intellij-idea-plugin-run-configuration.adoc[
 
 include::topics/mta-intellij-plugin/intellij-idea-plugin-reviewing-issues.adoc[leveloffset=+1]
 
-include::topics/mta-intellij-plugin/intellij-idea-plugin-resolving-issues.adoc[leveloffset=+1]
-
-include::topics/mta-intellij-plugin/proc_quick-fix.adoc[leveloffset=+2]
-
-include::topics/mta-intellij-plugin/proc_edit-code-file.adoc[leveloffset=+2]
+include::assemblies/intellij-plugin-guide/assembly_resolving-issues.adoc[leveloffset=+1]
 
 :!idea-plugin:
