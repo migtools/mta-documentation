@@ -57,5 +57,8 @@ In addition to the overall prerequisites, you have configured the following:
 
 |====
 
-See xref:configuring-solution-server-settings-file_{context}[Configuring the solution server settings] for an example Solution Server configuration.
+[role="_additional-resources"]
+.Additional resources
+
+* xref:configuring-solution-server-settings-file_{context}[Configuring the solution server settings]
 

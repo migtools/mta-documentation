@@ -5,8 +5,8 @@
 [id="creating-application-tags_{context}"]
 = Creating application tags
 
-[role="_abstract"]
-You can create custom tags for applications that {ProductShortName} assesses or analyzes.
+[role="_abstract"] 
+To categorize applications according to your needs, create custom tags in the {ProductFullName} user interface (UI).
 
 .Procedure
 

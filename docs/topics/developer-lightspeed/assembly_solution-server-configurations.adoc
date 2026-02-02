@@ -25,7 +25,6 @@ The Solution Server delivers two primary benefits to users:
 Solution Server is an optional component in {mta-dl-plugin}. You must complete the following configurations before you can place a code resolution request.
 
 :FeatureName: Solution Server
-
 [IMPORTANT]
 ====
 [subs="attributes+"]

@@ -1,0 +1,53 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-centralized-configurations: {context}]
+
+ifndef::context[]
+[id="centralized-configurations"]
+endif::[]
+ifdef::context[]
+[id="centralized-configurations_{context}"]
+endif::[]
+= Analyzing an application with centralized profiles
+
+:context: centralized-configurations
+
+[role="_abstract"]
+Use standardized configurations across components of {ProductFirstRef} such as the {WebName}, {CLIName}, and the Visual Studio Code {PluginName} by using the centralized configuration management in {ProductFullName}.
+
+As an Architect, you can create, edit, and delete  custom migration targets and configurations. For example, analysis profiles and custom rulesets in the {ProductShortName} {WebName}. The analysis profiles contain the following details:
+
+* Analysis configuration
+.. Mode of analysis (for example, `source code`)
+.. Scope of an analysis (for example, application analysis that includes all dependencies, including known Open Source libraries)
+.. Migration targets (default or custom)
+* Advanced configuration
+.. Custom rules
+.. Rule labels to include or exclude rules for an analysis
+
+As a Migrator, can use these profiles to perform an application analysis. 
+
+The {ProductShortName} Hub stores and syncs the profile configurations. {ProductShortName} components periodically sync with the Hub and pull the analysis profiles that contain the latest updates to the configuration.
+
+
+:FeatureName: Analysis Profile
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+:!FeatureName:
+
+include::topics/mta-ui/proc_configuring-profile-for-an-application-analysis.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_creating-custom-migration-targets.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_running-an-analysis-using-profile.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-centralized-configurations[:context: {parent-context-of-centralized-configurations}]
+ifndef::parent-context-of-centralized-configurations[:!context:]
+

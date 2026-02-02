@@ -5,10 +5,10 @@
 [id="displaying-the-tags-of-an-application_{context}"]
 = Displaying application tags
 
-[role="_abstract"]
-You can display the tags attached to a particular application.
+[role="_abstract"] 
+To verify the application classification, display application tags in the {ProductFullName} user interface (UI).
 
-NOTE: You can display the tags that were attached automatically only _after_ you have run an application analysis.
+NOTE: You can display the tags that were attached automatically only _after_ you ran an application analysis.
 
 .Procedure
 

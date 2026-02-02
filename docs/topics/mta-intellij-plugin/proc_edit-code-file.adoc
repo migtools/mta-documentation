@@ -14,4 +14,4 @@ You can directly edit a file displayed in the *Classifications* section of the *
 . Make any changes needed to the code and save the file.
 . Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
 +
-If you select *Mark as Complete*, a green check (image:intellij-idea-ok.png[Complete]) is displayed by the hint, replacing the error indicator.
+If you select *Mark as Complete*, the Complete indicator (image:intellij-idea-ok.png[Complete], a green check mark) is displayed by the hint, replacing the error indicator.

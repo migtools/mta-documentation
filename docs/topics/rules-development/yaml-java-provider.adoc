@@ -30,7 +30,7 @@ where:
 
  `pattern` :: A regular expression pattern to match.
  `location` :: Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
- `annotated` :: Checks for specific annotations and their elements, such as name and value, in the Java code using a query. For example, the following query matches the `Bean` (url = “http://www.example.com”) annotation in the method.
+ `annotated` :: Checks for specific annotations and their elements, such as name and value, in the Java code by using a query. For example, the following query matches the `Bean` (URL = “http://www.example.com”) annotation in the method.
 
 
 [source,yaml]
@@ -47,7 +47,7 @@ See xref:java-conditions-capabilities[Java condition and capabilities] for a det
 .`dependency`
 
 The Java provider has `dependency` capability. The `dependency` capability enables the provider to generate a list of dependencies for a given application.
-You can use a `dependency` condition to query this list and check whether a certain dependency, with a version range, exists for the application. The dependency can be internal or external/open source.
+You can use a `dependency` condition to query this list and check whether a certain dependency, with a version range, exists for the application. The dependency can be internal or external or open source.
 For example, to check if a Java application has a certain dependency, you create a `java.dependency` condition:
 
 [source, yaml]
