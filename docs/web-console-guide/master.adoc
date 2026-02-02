@@ -8,6 +8,7 @@ include::topics/templates/document-attributes.adoc[]
 :user-interface-guide:
 :imagesdir: topics/images
 :_content-type: ASSEMBLY
+[id="user-interface-guide"]
 = Configuring and managing the {ProductName} user interface
 
 include::topics/mta-ui/con_intro-to-mta-ui.adoc[leveloffset=+1]
@@ -27,6 +28,7 @@ include::assemblies/ui-guide/assembly_tagging-applications.adoc[leveloffset=+1]
 include::assemblies/ui-guide/assembly_working-with-archetypes.adoc[leveloffset=+1]
 
 //include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+3]
+include::assemblies/ui-guide/assembly_centralized-configurations-analysis.adoc[leveloffset=+1]
 
 include::assemblies/ui-guide/assembly_analyzing-applications.adoc[leveloffset=+1]
 
@@ -38,4 +40,4 @@ include::topics/web-console/assembly_asset-generation-ui.adoc[leveloffset=+1]
 
 include::topics/mta-cli/ref_contributing-to-mta-development.adoc[leveloffset=+1]
 
-:user-interface-guide!:
+:!user-interface-guide:

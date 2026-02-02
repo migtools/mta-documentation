@@ -4,9 +4,10 @@
 
 :_mod-docs-content-type: PROCEDURE
 [id="configuring-and-running-an-application-analysis_{context}"]
-= Configuring and running an application analysis
+= Configuring and running an application analysis manually
 
-You can analyze more than one application at a time against more than one transformation target in the same analysis.
+[role="_abstract"]
+A a migrator, can analyze more than one application at a time against more than one transformation target in the same analysis. 
 
 IMPORTANT: If you analyze an application that requires Maven credentials to access private repositories, you must assign these credentials in the Credentials section of the Administration view. Otherwise, there might be an impact on the quality of the analysis, identified issues, or the {ProductShortName} performance. For more information, see xref:configuring-credentials_configuring-mta-instance-environment[Configuring credentials].
 
@@ -30,14 +31,16 @@ Note also that the analysis output in the disconnected environment usually resul
 . Click *Analyze*.
 +
 // ![](/Tackle2/AppAssessAnalyze/AnalysisMode.png)
-
-. Select the *Analysis mode* from the list:
+. Select *Manual selection* in the *Mode* section for the analysis. You can provide a unique configuration for an analysis.
+ 
+. Click *Next* to go to the *Configure analysis* section. You can configure the analysis source, target platforms, and the scope of the dependency analysis. 
+. Select the *Analysis source* from the list:
 * Binary
 * Source code
 * Source code and dependencies
 * Upload a local binary. This option only appears if you are analyzing a single application. If you chose this option, you are prompted to *Upload a local binary*. Either drag a file into the area provided or click *Upload* and select the file to upload.
 . Click *Next*.
-. Select one or more target options for the analysis:
+. Select one or more target options in *Set targets* for the analysis:
 
 * Application server migration to either of the following platforms:
 ** JBoss EAP 7
@@ -61,7 +64,7 @@ Note also that the analysis output in the disconnected environment usually resul
 * Application and internal dependencies only.
 * Application and all dependencies, including known Open Source libraries.
 * Select the list of packages to be analyzed manually. If you choose this option, type the file name and click *Add*.
-* Exclude packages. If you choose this option, type the name of the package and click *Add*.
+* Exclude packages. If you toggle this option on, type the name of the package and click *Add*.
 
 . Click *Next*.
 . In *Advanced*, you can attach additional custom rules to the analysis by selecting the *Manual* or *Repository* mode:
@@ -71,14 +74,17 @@ Note also that the analysis output in the disconnected environment usually resul
 IMPORTANT: Attaching custom rules is optional if you have already attached a migration target to the analysis. If you have not attached any migration target, you must attach rules.
 
 . Optional: Set any of the following options:
-* Target
-* Source(s)
-* Excluded rules tags. Rules with these tags are not processed. Add or delete as needed.
+* Additional target labels
+* Additional source labels
+* Excluded rules labels. Rules with these labels are not processed. Add or delete as needed.
+* Select *Save analysis options as an analysis profile*. You can save the current configuration as an analysis profile by providing a unique name. The configuration is saved in the *Analysis Profiles* menu.
 * Enable automated tagging. Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.
 +
 NOTE: Automatically attached tags are displayed only _after_ you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
 +
-NOTE: Analysis engines use standard rules for a comprehensive set of migration targets. However, if the target is not included, is a customized framework, or the application is written in a language that is not supported, for example, Ruby, you can add custom rules by skipping the target selection in the Set Target tab and uploading custom rule files in the Custom Rules tab. Only custom rule files that are uploaded manually are validated.
+NOTE: Analysis engines use standard rules for a comprehensive set of migration targets. However, if the target is not included, is a customized framework, or the application is written in a language that is not supported, for example, Ruby, you can add custom rules by skipping the target selection in the *Set targets* tab. Upload custom rule files in the Custom Rules tab. Only custom rule files that are uploaded manually are validated.
++
+* Enable enhanced analysis details.
 
 . Click *Next*.
 . In *Review*, verify the analysis parameters.
