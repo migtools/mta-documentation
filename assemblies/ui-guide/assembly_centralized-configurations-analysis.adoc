@@ -1,0 +1,44 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-centralized-configurations: {context}]
+
+ifndef::context[]
+[id="centralized-configurations"]
+endif::[]
+ifdef::context[]
+[id="centralized-configurations_{context}"]
+endif::[]
+= Analyzing an application with centralized profiles
+
+:context: centralized-configurations
+
+[role="_abstract"]
+Centralized configuration management allows organizations to enforce standardized configurations across various components of {ProductFirstRef}. This feature allows Architects to create and manage configurations, for example, analysis profiles and custom rulesets. Migrators can use these configurations that are available as profiles to perform an application analysis and code resolutions before migrating to a target platform. 
+
+The profile configurations are synced with the {ProductShortName} Hub. {ProductShortName} components such as {CLIName}  {WebName}, and the {PluginName} periodically sync with the Hub and pull the configuration profiles with the latest changes.
+
+
+:FeatureName: Analysis Profile
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+:!FeatureName:
+
+
+//which navigation options are not visible to the migrators but only to the architects?
+
+include::topics/mta-ui/proc_configuring-profile-for-an-application-analysis.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_creating-custom-migration-targets.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_running-an-analysis-using-profile.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-centralized-configurations[:context: {parent-context-of-centralized-configurations}]
+ifndef::parent-context-of-centralized-configurations[:!context:]
+
