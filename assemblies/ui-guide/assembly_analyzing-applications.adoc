@@ -14,7 +14,8 @@ endif::[]
 
 :context: analyzing-applications
 
-You can use the {ProductFullName} user interface (UI) to configure and run an application analysis. The analysis determines which specific lines in the application must be modified before the application can be migrated or modernized. 			
+[role="_abstract"]
+To identify potential risks and modernization requirements, run an analysis on your applications in the {ProductFullName} user interface (UI). 
 
 include::topics/mta-ui/proc_configuring-and-running-an-application-analysis.adoc[leveloffset=+1]
 

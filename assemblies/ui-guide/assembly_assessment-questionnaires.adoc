@@ -14,9 +14,8 @@ endif::[]
 
 :context: assessment-questionnaires
 
-The {ProductFullName} uses an assessment questionnaire, either xref:mta-default-questionnaire_assessment-questionnaires[default] or xref:mta-custom-questionnaire_assessment-questionnaires[custom], to assess the risks involved in containerizing an application. 
-
-The assessment report provides information about applications and risks associated with migration. The report also generates an adoption plan informed by the prioritization, business criticality, and dependencies of the applications submitted for assessment.
+[role="_abstract"]
+To determine the readiness of your portfolio for modernization, use assessment questionnaires to provide the {ProductFullName} user interface (UI) with the details required for the migration process. The {ProductFullName} uses either xref:mta-default-questionnaire_assessment-questionnaires[default] or xref:mta-custom-questionnaire_assessment-questionnaires[custom] assessment questionnaire 
 
 include::topics/mta-ui/con_mta-default-questionnaire.adoc[leveloffset=+1]
 

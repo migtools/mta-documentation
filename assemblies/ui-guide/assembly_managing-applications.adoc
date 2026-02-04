@@ -14,7 +14,10 @@ endif::[]
 
 :context: managing-applications
 
-You can use the {ProductFullName} user interface (UI) to perform the following tasks to prepare your applications for the assessment and analysis: 	
+[role="_abstract"]
+To configure your portfolio for modernization and migration, prepare your applications for the assessment and analysis in the {ProductFullName} user interface (UI).
+
+You can use the {ProductShortName} UI to perform the following tasks: 	
 
 * Add applications
 * Assign application credentials

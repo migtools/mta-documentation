@@ -6,19 +6,21 @@
 [id="accessing-unmatched-rules_{context}"]
 = Accessing unmatched rules
 
-To access unmatched rules, you must run the analysis with enhanced logging enabled.
+[role="_abstract"]
+To review the rules that did not find matching rules during an application analysis, access the list of unmatched rule IDs in the {ProductFullName} user interface (UI).
+
+NOTE: To access unmatched rules, you must run the analysis with enhanced logging enabled.
 
 .Procedure
 
 . Navigate to *Advanced* under *Application analysis*.
 . Select *Options*.
 . Check *Enhanced advanced analysis details*.
-
-When you run an analysis:
-
-. Navigate to *Reports* in the side drawer.
-. Click *View analysis details*, which opens the YAML/JSON format log view.
-. Select the `issues.yaml` file.
-. For each ruleset, there is an *unmatched* section that lists the rule IDs that do not find match rules.
+. Run an analysis.
+. Access unmatched rules:
+.. Navigate to *Reports* in the side drawer.
+.. Click *View analysis details*, which opens the YAML/JSON format log view.
+.. Select the `issues.yaml` file.
+.. For each ruleset, there is an *unmatched* section that lists the rule IDs that do not find match rules.
 +
 image::unmatched-rules.png[unmatched rule IDs in issues.yaml]

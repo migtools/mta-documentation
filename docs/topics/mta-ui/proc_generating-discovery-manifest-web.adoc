@@ -5,7 +5,9 @@
 [id="generating-discovery-manifests_{context}"]
 = Generating discovery manifests
 
-[role="_abstract"]
+[role="_abstract"] 
+To validate your application inventory before performing a full analysis, generate a discovery manifest in the {ProductFullName} user-interface (UI).
+
 To generate discovery manifest, you must retrieve the application configuration from the Cloud Foundry (CF) source platform instance. {ProductShortName} generates a discovery manifest that has the application configuration, which you can later use to generate assets (deployment manifests).
 
 You can retrieve configuration for one or more applications at a time.
@@ -19,12 +21,13 @@ You can retrieve configuration for one or more applications at a time.
 
 . In the {ProductShortName} user interface, select the *Migration* working view.
 
-. On the *Application Inventory* page, you can retrieve configuration for one or more applications.
-+
-.. To retrieve configuration for an application:
+. On the *Application Inventory* page, you can retrieve configuration for one or more applications:
+
+* Retrieve configuration for a single application:
 ... Select an application and click the Options menu ({kebab}).
 ... Click *Retrieve Configurations*.
-.. To retrieve configurations for multiple applications:
+
+* Retrieve configurations for multiple applications:
 ... Select the target applications or click the Select all option (image:select.png[]).
 ... Click the Options menu near *Analyze* at the top and click *Retrieve Configurations*.
 +

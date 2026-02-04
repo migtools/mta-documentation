@@ -6,9 +6,7 @@
 = Configuring a generator
 
 [role="_abstract"]
-Generators contain a repository of templates that are required to generate different asset manifests. 
-
-To create a generator:
+To get templates required to generate different asset manifests, configure generators that contain a repository with these templates
 
 .Prerequisites
 
@@ -27,14 +25,14 @@ On the *Generators* page, you can create, edit, and delete generators.
 .. Select *Helm* as the generator.
 .. Click *Template repository* to expand the section.
 ... Select a *Repository type* from *Git* and *Subversion*.
-... (Optional) Enter the URL of your repository that contains the Helm templates.
-... (Optional) Enter the *Branch* of your repository.
-... (Optional) Enter the *Root path* of your repository.
+... Optional: Enter the URL of your repository that contains the Helm templates.
+... Optional: Enter the *Branch* of your repository.
+... Optional: Enter the *Root path* of your repository.
 ... Select the credentials to access your repository if it is private.
-.. (Optional) Click *Values* and enter the new value for an attribute in the discovery manifest as a key-value pair.
+.. Optional: Click *Values* and enter the new value for an attribute in the discovery manifest as a key-value pair.
 + 
 During asset generation, the generator overrides the value of the matching attribute in the discovery manifest with the value you enter. 
-.. (Optional) Click *Parameters* to enter parameters and their default values as a key-value pair.
+.. Optional: Click *Parameters* to enter parameters and their default values as a key-value pair.
 +
 Parameter fields will require user inputs before the template generates the assets. 
 +

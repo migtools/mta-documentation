@@ -5,7 +5,8 @@
 [id="reviewing-a-task-log_{context}"]
 = Reviewing a task log
 
-To find details and logs of a particular {ProductFullName} task, you can use the *Task Manager* page. 
+[role="_abstract"]
+To find details and logs of a particular {ProductFullName} task, access the *Task Manager* page. 
 
 .Procedure
 
