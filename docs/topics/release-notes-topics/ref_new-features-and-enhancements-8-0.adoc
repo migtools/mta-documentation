@@ -30,7 +30,7 @@ The Solution Server delivers two primary benefits to users:
 NOTE: To obtain support for features in {mta-dl-plugin}, you need an active Red Hat Advanced Developer Suite (RHADS) subscription.
 
 
-(link:https://issues.redhat.com/browse/MTA-5378[MTA-5738])
+(link:https://issues.redhat.com/browse/MTA-5371[MTA-5371])
 --
 
 {ProductShortName} supports platform awareness to import applications from source platform instances::
