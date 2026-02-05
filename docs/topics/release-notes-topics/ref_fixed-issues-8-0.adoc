@@ -17,7 +17,7 @@ Before this update, when you generated a deployment manifest by using the Helm t
 {ProductShortName} CLI no longer fails to detect dependencies for Gradle projects::
 Before this update, when you ran an application analysis for Gradle projects in containerless mode, {ProductFullName} command-line interface (CLI) did not detect Gradle dependencies. As a consequence, the analysis report did not list the dependencies and displayed an error message in the analysis logs instead. With this update, the issue is fixed. As a result, {ProductShortName} CLI detects Gradle dependencies after the analysis is complete.
 +
-(link:https://issues.redhat.com/browse/MTA-4033[MTA-5793])
+(link:https://issues.redhat.com/browse/MTA-4033[MTA-4033])
 
 
 {ProductShortName} UI no longer fails to analyze projects built with Gradle version 7 and later::
