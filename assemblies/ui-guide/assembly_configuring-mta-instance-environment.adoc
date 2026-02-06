@@ -10,7 +10,7 @@ ifdef::context[:parent-context-of-configuring-mta-instance-environment: {context
 
 ifndef::context[]
 [id="configuring-mta-instance-environment"]
-eConfigure instance, environment, credentials, repos Manage applications and assessmentsing-mta-instance-environment
+Configure instance, environment, credentials, repos Manage applications and assessmentsing-mta-instance-environment
 
 [role="_abstract"]
 Configure the {ProductFullName} instance environment: credentials, repositories, proxy, custom migration targets, issue management, and assessment questionnaires.
