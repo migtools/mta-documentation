@@ -4,6 +4,10 @@ include::topics/templates/document-attributes.adoc[]
 [id="mta-developer-lightspeed"]
 = Configuring and Using Red Hat Developer Lightspeed for MTA
 
+[role="_abstract"]
+
+Configure Red Hat Developer Lightspeed for MTA to apply LLM-driven code changes and resolve issues from static analysis of Java applications. The document covers prerequisites, installation, Solution Server, and running analyses in Visual Studio Code.
+
 :toc:
 :toclevels: 4
 :numbered:

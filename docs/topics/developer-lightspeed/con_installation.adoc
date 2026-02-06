@@ -7,6 +7,6 @@
 = Installation
 
 [role="_abstract"]
-You can install the {ProductFullName} 8.0.0 Visual Studio (VS) Code plug-in from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[VS Code marketplace].
+You can install the {ProductFullName} 8.0.0 Visual Studio Code plugin from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[Visual Studio Code marketplace].
 
-You can use the {ProductShortName} VS Code plug-in to perform analysis and optionally enable {mta-dl-full} to use generative AI capabilities. You can fix code issues before migrating the application to target technologies by using the generative AI capabilities. 
+You can use the {ProductShortName} Visual Studio Code plugin to perform analysis and optionally enable {mta-dl-full} to use generative AI capabilities. You can fix code issues before migrating the application to target technologies by using the generative AI capabilities. 
