@@ -12,11 +12,11 @@ This example will walk you through generating code fixes for a Java application 
 
 . Open the `my-Java` project in Visual Studio (VS) Code.
 
-. Download the {mta-dl-full} extension from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[VS Code marketplace].
+. Download the {mta-dl-full} extension from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[Visual Studio Code marketplace].
 
 . Type `Ctrl+Shift+P` (Windows and Linux systems) or `Cmd+Shift+P` (Mac systems).
 
-. Type `Preferences: Open Settings (UI)` in the Command Palette to open the VS Code settings and select `Extensions > {ProductShortName}`.
+. Type `Preferences: Open Settings (UI)` in the Command Palette to open the Visual Studio Code settings and select `Extensions > {ProductShortName}`.
 
 . Select `Gen AI:Agent Mode`.
 
@@ -65,6 +65,6 @@ You can review the code changes in the editor and accept or reject the changes. 
 +
 . Click *Continue* to allow {mta-dl-plugin} to run a follow-up analysis. 
 +
-This round of analysis detects lint issues, compilation issues, or diagnostic issues that may have occurred when you accepted the suggested code change.
+This round of analysis detects lint issues, compilation issues, or diagnostic issues that might have occurred when you accepted the suggested code change.
 +
-Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated iterations of scan if you allow until all issues are resolved. 
+Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated iterations of scan if you allow until the tool resolves all issues. 

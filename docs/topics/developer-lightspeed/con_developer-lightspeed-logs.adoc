@@ -9,13 +9,13 @@
 [role="_abstract"]
 {mta-dl-full} generates logs to debug issues specific to the extension host and the {ProductShortName} analysis and RPC server. You can also configure the log level for the {mta-dl-plugin} in the extension settings. The default log level is *debug*.
 
-Extension logs are stored as `extension.log` with automatic rotation. The maximum size of the log file is 10 MB and three files are retained. Analyzer RPC logs are stored as `analyzer.log` without rotation.
+The extension stores logs as `extension.log` with automatic rotation. The log file is limited to 10 MB and the system retains three files. The analyzer stores RPC logs as `analyzer.log` without rotation.
 
 [id="dev-lightspeed-archive-logs_{context}"]
 
 == Archiving the logs
 
-To archive the logs as a zip file, type `{ProductShortName}: Generate Debug Archive` in the VS Code Command Palette and select the information type that must be archived as a log file. 
+To archive the logs as a zip file, type `{ProductShortName}: Generate Debug Archive` in the Visual Studio Code Command Palette and select the information type that must be archived as a log file. 
 
 The archive command allows capturing all relevant log files in a zip archive at the specified location in your project. By default, you can access the archived logs in the .vscode directory of your project.
 
@@ -35,4 +35,4 @@ You can access the logs in the following ways:
 
 * *Output panel*: Select `{mta-dl-plugin}` from the drop-down menu.
 
-* *Webview logs*: You can also inspect webview content by using the webview logs. To access the webview logs, type `Open Webview Developer Tools` in the VS Code Command Palette.
+* *Webview logs*: You can also inspect webview content by using the webview logs. To access the webview logs, type `Open Webview Developer Tools` in the Visual Studio Code Command Palette.
