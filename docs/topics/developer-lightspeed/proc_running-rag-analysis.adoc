@@ -10,7 +10,7 @@ You can run a static code analysis of an application with or without enabling th
 
 .Prerequisites
 
-* You opened a Java project in your VS Code workspace.
+* You opened a Java project in your Visual Studio Code workspace.
 * You configured an analysis profile on the *{ProductShortName} Analysis View* page.
 
 .Procedure

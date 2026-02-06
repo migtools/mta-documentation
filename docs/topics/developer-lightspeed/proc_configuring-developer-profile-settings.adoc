@@ -13,7 +13,7 @@ To generate code changes using {mta-dl-plugin}, you must configure a profile tha
 .Prerequisites
 
 * You completed the Solution Server configurations in Tackle custom resource if you opt to use the Solution Server.
-* You opened a Java project in your VS Code workspace.
+* You opened a Java project in your Visual Studio Code workspace.
 
 .Procedure
 
@@ -23,9 +23,8 @@ To generate code changes using {mta-dl-plugin}, you must configure a profile tha
 .. Type `Ctrl + Shift + P` or `Cmd + Shift + P` on the search bar to open the Command Palette and enter `{ProductShortName}:Open Analysis View`.
 +
 . Click the settings button on the `{ProductShortName} View Analysis` page to configure a profile for your project.
-The `Get Ready to Analyze` pane lists the following basic configurations required for an analysis:
+The `Get Ready to Analyze` pane lists the following basic configurations needed for an analysis:
 +
-
 .Verification
 
 After you complete the profile configuration, close the `Get Ready to Analyze` pane. You can verify that your configuration works by running an analysis.
@@ -46,7 +45,7 @@ If you mentioned a new target or a source technology in your custom rule, you ca
 You must configure either target or source technologies before running an analysis.
 ====
 |Set rules|Enable default rules and select your custom rule that you want {ProductShortName} to use for an analysis. You can use the custom rules in addition to the default rules.
-|Configure generative AI|This option opens the `provider-settings.yaml` file that contains API keys and other parameters for all supported LLMs. By default, {mta-dl-plugin} is configured to use OpenAI LLM. To change the model, update the anchor `&active` to the desired block. Modify this file with the required arguments, such as the model and API key, to complete the setup.
+|Configure generative AI|This option opens the `provider-settings.yaml` file that contains API keys and other parameters for all supported LLMs. By default, {mta-dl-plugin} is configured to use OpenAI LLM. To change the model, update the anchor `&active` to the desired block. Modify this file with the necessary arguments, such as the model and API key, to complete the setup.
 |====
 
 See for xref:llm-provider-settings_configuring-llm[Configuring LLM provider settings] to complete the LLM provider configuration.

@@ -12,7 +12,7 @@ You can review the code updates and edit the suggested code resolutions before a
 
 .Prerequisites
 
-* You opened a Java project in your VS Code workspace.
+* You opened a Java project in your Visual Studio Code workspace.
 * You configured a profile on the *{ProductShortName} Analysis View* page.
 * You ran an analysis after enabling the Solution Server.
 
@@ -20,9 +20,9 @@ You can review the code updates and edit the suggested code resolutions before a
 
 . Review the issues from the *Analysis results* space of the *{ProductShortName} view analysis* page by the following tabs: 
 .. *All*: lists all incidents identified in your project.
-.. *Files*: lists all the files in your project for which the analysis identified issues that must be resolved. 
+.. *Files*: lists all the files in your project for which the analysis identified issues that you must resolve. 
 .. *Issues*: lists all issues across different files in your project.
-. Use the *Category* drop down to filter issues based on how crucial the fix is for the target migration. You can filter mandatory, potential, and optional issues. 
+. Use the *Category* drop-down to filter issues based on how crucial the fix is for the target migration. You can filter mandatory, potential, and optional issues. 
 . Click *Has Success Rate* to check how many times the same issue resolution was accepted in previous analysis.
 . Click the solution tool to trigger automated updates to your code. If you applied any category filter, code updates are made for all incidents, specific files, or specific issues based on the filter.
 {mta-dl-plugin} generates new files with the updated code.
