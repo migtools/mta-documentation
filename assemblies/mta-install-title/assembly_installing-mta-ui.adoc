@@ -4,18 +4,15 @@
 ifdef::context[:parent-context-of-installing-mta-ui: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: install-and-configure-mta
+// Statement: When I adopt MTA, I want to install and configure the CLI or UI so I can start analyzing and migrating applications.
+// Persona: Admin, Developer
 
-ifndef::context[]
-[id="installing-mta-ui"]
-endif::[]
-ifdef::context[]
-[id="installing-mta-ui_{context}"]
-endif::[]
-= Installing the {ProductName} user interface
-:context: installing-mta-ui
+
+ifndef::coInstall CLI (zip or Docker) Install and configure MTA UI/operator-mta-ui
 
 [role="_abstract"]
-By using the {ProductFullName} user interface (UI), you can assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift. You can also analyze the changes that you must apply to the application's code to containerize the application. You can install the {ProductName} UI on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions.			
+Install the {ProductFullName} UI on OpenShift to assess containerization risks and analyze code changes. Use the {ProductShortName} Operator to create and manage instances.
 
 To create {ProductShortName} instances, you must install the {ProductShortName} Operator first. The {ProductShortName} Operator is a structural layer that manages resources deployed on Red Hat OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance. 
 	

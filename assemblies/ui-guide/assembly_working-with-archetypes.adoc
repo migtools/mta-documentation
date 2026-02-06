@@ -1,18 +1,19 @@
 :_newdoc-version: 2.18.5
 :_template-generated: 2025-09-12
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: configure-mta-instance-and-apps
+// Statement: When I use the MTA UI, I want to configure the MTA instance, credentials, and repositories so I can analyze and manage applications.
+// Persona: Admin
 
-ifdef::context[:parent-context-of-working-with-archetypes: {context}]
 
-ifndef::context[]
-[id="working-with-archetypes"]
-endif::[]
-ifdef::context[]
-[id="working-with-archetypes_{context}"]
+ifdef::context[:parent-context-of-working-with-archetypes: {context}Configure instance, environment, credentials, repos Manage applications and assessmentspes_{context}"]
 endif::[]
 = Working with archetypes
 
 :context: working-with-archetypes
+
+[role="_abstract"]
+Use archetypes to group applications by common characteristics and assess multiple applications at once.
 
 An *archetype* is a group of applications with common characteristics. You can use archetypes to assess multiple applications at once.
 

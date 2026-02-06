@@ -6,6 +6,10 @@
 [id="method-discover_{context}"]
 = Discover phase
 
+
+[role="_abstract"]
+Discovery method and process for MTA documentation.
+
 .Red Hat migration methodology: Discover phase
 image::RHAMT_AMM_Methodology_446947_0617_ECE_Discover.png[Red Hat Migration Methodology: Discover]
 

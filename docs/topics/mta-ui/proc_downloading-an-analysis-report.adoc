@@ -6,6 +6,10 @@
 [id="downloading-an-analysis-report_{context}"]
 = Downloading an analysis report
 
+
+[role="_abstract"]
+Download an analysis report from the MTA UI to share or archive migration results.
+
 An {ProductShortName} analysis report contains several sections, including a listing of the technologies used by the application, the dependencies of the application, and the lines of code that must be changed to successfully migrate or modernize the application.
 
 For more information about the contents of an {ProductShortName} analysis report, see link:{ProductDocUserGuideURL}#reviewing-analysis-reports_cli-guide[Reviewing the reports].

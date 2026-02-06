@@ -5,8 +5,7 @@
 [id="analysis-report-sections_{context}"]
 = Analysis report sections
 
-[role="_abstract"]
-The {ProductFullName} command-line interface (CLI) analysis report includes distinct sections that organize the report details by severity, technology, and application details. Check the following table to understand the purpose of each report section to help you navigate the report and interpret specific migration data.
+[role="_abstract"]The {ProductFullName} command-line interface (CLI) analysis report includes distinct sections that organize the report details by severity, technology, and application details. Check the following table to understand the purpose of each report section to help you navigate the report and interpret…
 
 NOTE: You can only review the report applicable to the current application.
 

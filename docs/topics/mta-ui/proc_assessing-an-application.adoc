@@ -6,6 +6,10 @@
 [id="assessing-an-application_{context}"]
 = Assessing an application
 
+
+[role="_abstract"]
+Assess an application to estimate containerization effort and risks.
+
 You can estimate the risks and costs involved in preparing applications for containerization by performing application assessment. You can assess an application and display the currently saved assessments by using the Assessment module.
 
 The {ProductFullName} assesses applications according to a set of questions relevant to the application, such as dependencies.

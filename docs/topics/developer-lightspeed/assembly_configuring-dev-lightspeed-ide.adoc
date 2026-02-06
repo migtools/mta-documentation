@@ -4,12 +4,14 @@
 ifdef::context[:parent-context-of-configuring-dev-lightspeed-ide: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: use-developer-lightspeed
+// Statement: When I want AI-assisted code fixes, I want to use Developer Lightspeed so I can resolve migration issues with LLM suggestions.
+// Persona: Developer
+
 
 ifndef::context[]
 [id="configuring-dev-lightspeed-ide"]
-endif::[]
-ifdef::context[]
-[id="configuring-dev-lightspeed-ide_{context}"]
+endifConfigure LLM and Solution Server Run RAG or agent analysis and apply resolutionscontext}"]
 endif::[]
 = Using {ProductShortName} with Developer Lightspeed in IDE
 

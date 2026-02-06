@@ -1,0 +1,223 @@
+# MTA Documentation — JTBD (Jobs-to-be-Done) Mapping
+# Maps existing assemblies and topics to user jobs for DITA migration and content restructuring.
+# Use with: scripts/cqa_jtbd_validate.py
+#
+# JTBD format: When I [situation], I want to [motivation], so I can [outcome].
+# Each assembly should represent one user story (CQA 2.1).
+
+version: "1.0"
+product: "Migration Toolkit for Applications (MTA)"
+
+jobs:
+  # ——— Main job: Migrate application to target runtime ———
+  - id: migrate-application
+    statement: "When I need to move my application to OpenShift or a new runtime, I want to assess effort, transform code, and generate deployment assets, so I can complete the migration with minimal risk."
+    persona: "Developer, Application owner"
+    outcomes:
+      - "Understand migration effort and priorities"
+      - "Transform source code to target technology"
+      - "Generate deployment manifests and assets"
+    assemblies: []  # Cross-cutting; covered by sub-jobs
+
+  # ——— Job: Assess migration effort (analyze applications) ———
+  - id: assess-migration-effort-cli
+    statement: "When I use the CLI, I want to analyze my applications so I can assess and prioritize migration effort."
+    persona: "Developer"
+    outcomes:
+      - "Get analysis reports with migration issues"
+      - "Run analysis for single or multiple apps"
+      - "Use containerless or container-based analysis"
+    assemblies:
+      - path: assemblies/cli-guide/assembly_analyzing-applications-mta-cli.adoc
+        shortdesc_focus: "Assess and prioritize migration effort by analyzing Java applications with the MTA CLI."
+      - path: assemblies/cli-guide/assembly_analyzing-nonjava-applications.adoc
+      - path: assemblies/cli-guide/assembly_reviewing-analysis-reports.adoc
+    topics:
+      - docs/topics/mta-cli/con_intro-to-the-cli.adoc
+      - docs/topics/mta-cli/proc_analyzing-single-app-with-mta-cli.adoc
+      - docs/topics/mta-cli/proc_analyzing-multiple-apps-with-mta-cli.adoc
+      - docs/topics/mta-cli/proc_running-the-containerless-mta-cli.adoc
+      - docs/topics/mta-cli/ref_mta-cli-analyze-flags.adoc
+
+  - id: assess-migration-effort-ui
+    statement: "When I use the MTA UI, I want to configure and run application analysis so I can see which lines must change for migration."
+    persona: "Developer, Team lead"
+    outcomes:
+      - "Configure and run analysis from the UI"
+      - "Review reports and insights"
+    assemblies:
+      - path: assemblies/ui-guide/assembly_analyzing-applications.adoc
+    topics:
+      - docs/topics/mta-ui/proc_configuring-and-running-an-application-analysis.adoc
+      - docs/topics/mta-ui/proc_reviewing-an-analysis-report.adoc
+      - docs/topics/mta-ui/proc_downloading-an-analysis-report.adoc
+      - docs/topics/mta-ui/proc_accessing-analysis-insights.adoc
+
+  # ——— Job: Transform application source code ———
+  - id: transform-source-code
+    statement: "When I have analysis results, I want to transform my application source code so I can apply automated migration recipes."
+    persona: "Developer"
+    outcomes:
+      - "Run OpenRewrite and other transformations"
+      - "Apply fixes for migration issues"
+    assemblies:
+      - path: assemblies/cli-guide/assembly_performing-transformation.adoc
+    topics:
+      - docs/topics/mta-cli/proc_transforming-application-source-code.adoc
+      - docs/topics/mta-cli/ref_available-openrewrite-recipes.adoc
+
+  # ——— Job: Generate deployment assets ———
+  - id: generate-deployment-assets
+    statement: "When I am ready to deploy, I want to generate deployment manifests and assets so I can move my application to the target platform."
+    persona: "Developer, DevOps"
+    outcomes:
+      - "Generate discovery and deployment manifests"
+      - "Publish assets to repository"
+    assemblies:
+      - path: assemblies/cli-guide/assembly_generating-assets.adoc
+      - path: assemblies/web-console-guide/assembly_asset-generation-ui.adoc
+    topics:
+      - docs/topics/mta-cli/proc_generating-discovery-manifest.adoc
+      - docs/topics/mta-cli/proc_generating-deployment-manifest.adoc
+      - docs/topics/web-console/proc_generating-discovery-manifest-web.adoc
+      - docs/topics/web-console/proc_generating-deployment-assets.adoc
+
+  # ——— Job: Configure and use MTA (install & configure) ———
+  - id: install-and-configure-mta
+    statement: "When I adopt MTA, I want to install and configure the CLI or UI so I can start analyzing and migrating applications."
+    persona: "Admin, Developer"
+    outcomes:
+      - "Install CLI (zip or Docker)"
+      - "Install and configure MTA UI/operator"
+    assemblies:
+      - path: assemblies/mta-install-title/assembly_intro-to-mta.adoc
+      - path: assemblies/mta-install-title/assembly_installing-mta-cli.adoc
+      - path: assemblies/mta-install-title/assembly_installing-mta-ui.adoc
+    topics:
+      - docs/topics/mta-install/proc_installing-cli-zip.adoc
+      - docs/topics/mta-install/proc_installing-cli-for-docker.adoc
+      - docs/topics/mta-install/proc_installing-mta-operator.adoc
+      - docs/topics/mta-install/proc_creating-mta-instance.adoc
+
+  - id: configure-mta-instance-and-apps
+    statement: "When I use the MTA UI, I want to configure the MTA instance, credentials, and repositories so I can analyze and manage applications."
+    persona: "Admin"
+    outcomes:
+      - "Configure instance, environment, credentials, repos"
+      - "Manage applications and assessments"
+    assemblies:
+      - path: assemblies/ui-guide/assembly_configuring-mta-instance-environment.adoc
+      - path: assemblies/ui-guide/assembly_configuring-mta-instance.adoc
+      - path: assemblies/ui-guide/assembly_configuring-credentials.adoc
+      - path: assemblies/ui-guide/assembly_configuring-repositories.adoc
+      - path: assemblies/ui-guide/assembly_managing-applications.adoc
+      - path: assemblies/ui-guide/assembly_assessing-applications.adoc
+      - path: assemblies/ui-guide/assembly_tagging-applications.adoc
+      - path: assemblies/ui-guide/assembly_working-with-archetypes.adoc
+
+  # ——— Job: Use IDE extensions (VS Code, IntelliJ) ———
+  - id: use-vscode-extension
+    statement: "When I develop in VS Code, I want to run MTA analysis and resolve issues in my IDE so I can migrate without leaving my editor."
+    persona: "Developer"
+    outcomes:
+      - "Install and configure VS Code extension"
+      - "Analyze and review/resolve issues"
+    assemblies: []
+    topics:
+      - docs/topics/vscode/con_intro-to-vscode-for-mta.adoc
+      - docs/topics/vscode/proc_installing-vscode-extension.adoc
+      - docs/topics/vscode/proc_vscode-analyzing-application.adoc
+      - docs/topics/vscode/proc_vscode-reviewing-and-resolving-issues.adoc
+
+  - id: use-intellij-plugin
+    statement: "When I develop in IntelliJ IDEA, I want to run MTA analysis and apply quick fixes so I can migrate from within the IDE."
+    persona: "Developer"
+    outcomes:
+      - "Install IntelliJ plugin and run analysis"
+      - "Review and resolve issues"
+    assemblies:
+      - path: assemblies/intellij-plugin-guide/assembly_resolving-issues.adoc
+    topics:
+      - docs/topics/mta-intellij-plugin/installing-intellij-idea-plugin.adoc
+      - docs/topics/mta-intellij-plugin/intellij-idea-plugin-reviewing-issues.adoc
+      - docs/topics/mta-intellij-plugin/proc_quick-fix.adoc
+
+  # ——— Job: Use Developer Lightspeed (AI-assisted migration) ———
+  - id: use-developer-lightspeed
+    statement: "When I want AI-assisted code fixes, I want to use Developer Lightspeed so I can resolve migration issues with LLM suggestions."
+    persona: "Developer"
+    outcomes:
+      - "Configure LLM and Solution Server"
+      - "Run RAG or agent analysis and apply resolutions"
+    assemblies:
+      - path: assemblies/developer-lightspeed-guide/assembly_getting-started.adoc
+      - path: docs/topics/developer-lightspeed/assembly_configuring-dev-lightspeed-ide.adoc
+      - path: docs/topics/developer-lightspeed/assembly_run-dev-lightspeed-analysis.adoc
+    topics:
+      - docs/topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc
+      - docs/topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings.adoc
+      - docs/topics/developer-lightspeed/proc_running-rag-analysis.adoc
+      - docs/topics/developer-lightspeed/proc_running-agent-analysis.adoc
+      - docs/topics/developer-lightspeed/proc_apply-rag-resolution.adoc
+
+  # ——— Job: Web console (asset generation, platform awareness) ———
+  - id: use-web-console-assets
+    statement: "When I use the web console, I want to create source platforms, discover apps, and generate assets so I can migrate from Cloud Foundry (or similar) to OpenShift."
+    persona: "Migrator, Admin"
+    outcomes:
+      - "Create source platform and discover applications"
+      - "Configure generators and target profiles"
+      - "Generate deployment assets"
+    assemblies:
+      - path: assemblies/web-console-guide/assembly_asset-generation-ui.adoc
+      - path: docs/topics/web-console/assembly_platform-awareness.adoc
+    topics:
+      - docs/topics/web-console/proc_creating-source-platform.adoc
+      - docs/topics/web-console/proc_discovering-apps-source-platform-administration-view.adoc
+      - docs/topics/web-console/proc_discovering-apps-source-platform-migration-view.adoc
+      - docs/topics/web-console/proc_configuring-generators.adoc
+      - docs/topics/web-console/proc_configuring-target-profiles.adoc
+      - docs/topics/web-console/proc_configuring-asset-repository.adoc
+      - docs/topics/web-console/proc_generating-deployment-assets.adoc
+
+  # ——— Job: Develop custom rules ———
+  - id: develop-custom-rules
+    statement: "When MTA does not cover my migration scenario, I want to create custom YAML rules so I can extend analysis and transformation for my stack."
+    persona: "Advanced developer, Architect"
+    outcomes:
+      - "Create YAML rules and rulesets"
+      - "Use conditions, actions, and providers"
+    assemblies:
+      - path: assemblies/rules-development-guide/assembly_rules-introduction.adoc
+      - path: assemblies/rules-development-guide/assembly_creating-rule.adoc
+      - path: assemblies/rules-development-guide/assembly_rule-yaml-metadata.adoc
+      - path: assemblies/rules-development-guide/assembly_rule-yaml-conditions.adoc
+      - path: assemblies/rules-development-guide/assembly_rule-yaml-actions.adoc
+      - path: assemblies/rules-development-guide/assembly_rule-rulesets.adoc
+    topics:
+      - docs/topics/rules-development/about-rules.adoc
+      - docs/topics/rules-development/create-first-yaml-rule.adoc
+      - docs/topics/rules-development/yaml-rule-structure-syntax.adoc
+      - docs/topics/rules-development/yaml-rule-conditions.adoc
+      - docs/topics/rules-development/yaml-rule-actions.adoc
+
+  # ——— Reference and supporting content ———
+  - id: reference-and-resources
+    statement: "When I need details on options, paths, or reference material, I want to find CLI flags, migration paths, and contributing info in one place."
+    persona: "Developer"
+    outcomes:
+      - "Look up CLI options and migration paths"
+      - "Contribute to MTA"
+    assemblies:
+      - path: assemblies/cli-guide/assembly_reference-material.adoc
+    topics:
+      - docs/topics/mta-cli/ref_supported-migration-paths.adoc
+      - docs/topics/mta-cli/ref_mta-cli-analyze-flags.adoc
+      - docs/topics/mta-cli/ref_contributing-to-mta-development.adoc
+
+# DITA content types used in MTA (CQA 2.1 modularization)
+content_types:
+  - concept   # con_*.adoc — explains what/why
+  - procedure # proc_*.adoc — step-by-step how-to
+  - reference # ref_*.adoc — options, reference data
+  - assembly  # assembly_*.adoc — map of modules; one user story per assembly

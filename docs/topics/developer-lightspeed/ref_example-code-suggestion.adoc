@@ -5,8 +5,7 @@
 [id="example-code-generation_{context}"]
 = Generating code fix suggestions 
 
-[role="_abstract"]
-This example will walk you through generating code fixes for a Java application that must be migrated to the target technology `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
+[role="_abstract"]This example will walk you through generating code fixes for a Java application that must be migrated to the target technology `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name}…
 
 .Procedure
 

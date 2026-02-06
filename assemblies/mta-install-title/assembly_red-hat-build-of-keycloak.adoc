@@ -15,7 +15,7 @@ endif::[]
 :context: red-hat-build-of-keycloak
 
 [role="_abstract"]
-Starting from version 7.3.0, the {ProductFullName} uses the link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0[Red Hat Build of Keycloak (RHBK)] instance for user authentication and authorization. A RHBK instance is installed during the installation of the {ProductShortName} user interface. The {ProductShortName} Operator manages the RHBK instance and configures a dedicated realm with necessary roles and permissions. 
+{ProductFullName} uses Red Hat Build of Keycloak (RHBK) for user authentication and authorization. The {ProductShortName} Operator installs and manages the RHBK instance and configures a dedicated realm.
 
 You can use the {ProductShortName}-managed RHBK instance to perform advanced RHBK configurations, such as link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/identity_broker[integrating identity providers]. 
 

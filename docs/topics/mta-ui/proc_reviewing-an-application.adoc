@@ -6,6 +6,10 @@
 [id="reviewing-an-application_{context}"]
 = Reviewing an application
 
+
+[role="_abstract"]
+Review an application assessment in the MTA UI to see containerization effort and risks.
+
 You can use the {ProductName} ({ProductShortName}) {WebName} to determine the migration strategy and work priority for each application.
 
 IMPORTANT: You can review only one application at a time.

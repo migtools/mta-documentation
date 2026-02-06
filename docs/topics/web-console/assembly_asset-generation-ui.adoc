@@ -15,6 +15,10 @@ endif::[]
 
 :context: asset-generation-ui
 
+
+[role="_abstract"]
+Generate deployment assets in the MTA web console for Cloud Foundry to OpenShift.
+
 [role=_abstract]
 Starting with 8.0.0, asset generation in {ProductShortName} {WebName} allows you to create different  assets (manifests) required to deploy applications from Cloud Foundry (CF) instances to {ocp-full} or Kubernetes. 
 

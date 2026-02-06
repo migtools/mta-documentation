@@ -14,6 +14,9 @@ endif::[]
 
 :context: mta-custom-questionnaire
 
+[role="_abstract"]
+Import and define custom assessment questionnaires with YAML syntax, including conditional questions and tag-based logic.
+
 You can use the {ProductFullName} to import a custom assessment questionnaire by using a custom YAML syntax to define the questionnaire. The YAML syntax supports the following features:
 
 Conditional questions::

@@ -6,6 +6,10 @@
 [id="configuring-proxy-settings_{context}"]
 = Configuring proxy settings
 
+
+[role="_abstract"]
+Configure proxy settings for the MTA instance so that analysis can access resources through a proxy.
+
 You can configure HTTP and HTTPS proxy settings for the {ProductFullName} instance environment.
 
 .Procedure

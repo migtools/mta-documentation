@@ -6,6 +6,10 @@
 [id="reviewing-an-analysis-report_{context}"]
 = Reviewing analysis details
 
+
+[role="_abstract"]
+Review an analysis report in the MTA UI to see migration issues and required changes.
+
 You can display the activity log of the analysis. The activity log contains such analysis details as, for example, analysis steps.
 
 .Procedure

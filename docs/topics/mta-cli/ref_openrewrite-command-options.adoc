@@ -5,8 +5,7 @@
 [id="openrewrite-command-options_{context}"]
 = The openrewrite command options
 
-[role="_abstract"]
-The {ProductFullName} command-line interface (CLI) provides the `mta-cli transform openrewrite` command options to customize the transformation of your application source code. Check the following table to identify the available arguments for applying specific migration recipes and controlling the output of the transformation process.
+[role="_abstract"]The {ProductFullName} command-line interface (CLI) provides the `mta-cli transform openrewrite` command options to customize the transformation of your application source code. Check the following table to identify the available arguments for applying specific migration recipes and controlling the…
 
 .The mta-cli transform openrewrite command options
 [options="header"]

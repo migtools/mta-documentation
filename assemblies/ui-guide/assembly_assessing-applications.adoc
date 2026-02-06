@@ -1,18 +1,20 @@
 :_newdoc-version: 2.18.5
 :_template-generated: 2025-09-12
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: configure-mta-instance-and-apps
+// Statement: When I use the MTA UI, I want to configure the MTA instance, credentials, and repositories so I can analyze and manage applications.
+// Persona: Admin
+
 
 ifdef::context[:parent-context-of-assessing-applications: {context}]
 
-ifndef::context[]
-[id="assessing-applications"]
-endif::[]
-ifdef::context[]
-[id="assessing-applications_{context}"]
-endif::[]
+ifndefConfigure instance, environment, credentials, repos Manage applications and assessmentsdif::[]
 = Assessing applications with the MTA
 
 :context: assessing-applications
+
+[role="_abstract"]
+Use the {ProductFullName} UI to assess applications and estimate risks, costs, and effort for containerization.
 
 You can use the {ProductFullName} user interface (UI) to assess applications. When assessing applications, {ProductShortName} estimates the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. You can use the results of an assessment for discussions between stakeholders to determine whether applications are suitable for containerization.
 

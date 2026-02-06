@@ -6,6 +6,10 @@
 [id="configuring-subversion-repos_{context}"]
 = Configuring subversion repositories
 
+
+[role="_abstract"]
+Configure Subversion repositories for the MTA instance.
+
 You can configure subversion repositories in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
 
 .Procedure

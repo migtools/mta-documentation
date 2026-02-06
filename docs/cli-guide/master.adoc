@@ -3,7 +3,10 @@ include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="cli-guide"]
 = Using the {ProductName} command-line interface
- 
+
+[role="_abstract"]
+Analyze, transform, and generate assets for application migration using the {ProductName} CLI. Covers installation, analysis, reports, transformation, and reference material.
+
 :toc:
 :toclevels: 4
 :numbered:

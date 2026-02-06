@@ -4,6 +4,9 @@
 ifdef::context[:parent-context-of-performing-transformation: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: transform-source-code
+// Statement: When I have analysis results, I want to transform my application source code so I can apply automated migration recipes.
+// Persona: Developer
 
 ifndef::context[]
 [id="performing-transformation"]
@@ -13,14 +16,12 @@ ifdef::context[]
 endif::[]
 = Performing a transformation with the {ProductShortName} command-line interface
 
-
 :context: performing-transformation
 
 [role="_abstract"]
-To accelerate your application modernization, use the {ProductFullName} command-line interface (CLI) to transform your source code. The transformation process applies predefined migration rules to your codebase, reducing the manual effort required to update Java libraries or frameworks.
+So you can apply automated migration recipes. Use the {ProductFullName} CLI to transform source code and apply predefined migration rules to reduce manual effort.
 
-IMPORTANT: Performing transformation requires the container runtime to be configured. 
- 
+IMPORTANT: Performing transformation requires the container runtime to be configured.
 
 include::topics/mta-cli/proc_transforming-application-source-code.adoc[leveloffset=+1]
 
@@ -28,7 +29,5 @@ include::topics/mta-cli/ref_available-openrewrite-recipes.adoc[leveloffset=+1]
 
 include::topics/mta-cli/ref_openrewrite-command-options.adoc[leveloffset=+1]
 
-
 ifdef::parent-context-of-performing-transformation[:context: {parent-context-of-performing-transformation}]
 ifndef::parent-context-of-performing-transformation[:!context:]
-

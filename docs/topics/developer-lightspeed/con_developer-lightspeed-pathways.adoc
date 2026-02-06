@@ -6,8 +6,7 @@
 [id="how-to-use-developer-lightspeed_{context}"]
 = How to use {mta-dl-plugin}
 
-[role="_abstract"]
-You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application. {mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context that is shared with a large language model (LLM). The LLM suggests code resolutions based on the issue description, context, and previous examples of code changes to resolve issues. 
+[role="_abstract"]You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application. {mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context that is shared with a large…
 
 To make code changes by using the LLM, you must enable the generative AI option, along with either the Solution Server or the Agent AI. The configurations that you complete before you request code fixes depend on how you prefer to request code resolutions.
 

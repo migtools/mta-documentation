@@ -5,6 +5,10 @@
 [id="assessment-module-features_{context}"]
 = The Assessment module features
 
+
+[role="_abstract"]
+Overview of assessment module features in the MTA UI.
+
 The {ProductFullName} *Assessment* module offers the following features for assessing and analyzing applications:
 
 Assessment hub::

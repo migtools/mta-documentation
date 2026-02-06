@@ -5,8 +5,7 @@
 [id="performing-a-live-discovery_{context}"]
 = Performing a live discovery in a remote CF instance
 
-[role="_abstract"]
-You can perform a live discovery to determine what is deployed in a certain Cloud Foundry (CF) cluster by using the {ProductFullName} command-line interface (CLI). For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.
+[role="_abstract"]You can perform a live discovery to determine what is deployed in a certain Cloud Foundry (CF) cluster by using the {ProductFullName} command-line interface (CLI). For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access…
 
 While discovering the applications in CF, you can filter and list the applications in CF clusters before you import them in {ProductShortName}. Enter a list of comma-separated values by using the `--orgs` and `--spaces` flags. Use these flags with `--list-apps` to list the applications. 
 

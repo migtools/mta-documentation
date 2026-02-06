@@ -6,6 +6,10 @@
 [id="creating-jira-issues-for-migration-wave_{context}"]
 = Creating Jira issues for a migration wave
 
+
+[role="_abstract"]
+Create Jira issues for a migration wave in the MTA UI.
+
 You can use a migration wave to create Jira issues automatically for each application assigned to the migration wave. A separate Jira issue is created for each application associated with the migration wave. The following fields of each issue are filled in automatically:
 
 * Title: `Migrate <application name>`

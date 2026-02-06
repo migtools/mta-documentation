@@ -5,6 +5,10 @@
 [id="reviewing-a-task-log_{context}"]
 = Reviewing a task log
 
+
+[role="_abstract"]
+Review task log entries in the MTA UI to troubleshoot analysis or assessment tasks.
+
 To find details and logs of a particular {ProductFullName} task, you can use the *Task Manager* page. 
 
 .Procedure

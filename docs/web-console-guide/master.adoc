@@ -10,6 +10,9 @@ include::topics/templates/document-attributes.adoc[]
 :_content-type: ASSEMBLY
 = Configuring and managing the {ProductName} user interface
 
+[role="_abstract"]
+Configure the {ProductName} UI: instance, credentials, repositories, applications, assessments, tagging, archetypes, and asset generation.
+
 include::topics/mta-ui/con_intro-to-mta-ui.adoc[leveloffset=+1]
 
 include::assemblies/ui-guide/assembly_configuring-mta-instance-environment.adoc[leveloffset=+1]

@@ -4,6 +4,10 @@
 ifdef::context[:parent-context-of-analyzing-applications-mta-cli: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: assess-migration-effort-cli
+// Statement: When I use the CLI, I want to analyze my applications so I can assess and prioritize migration effort.
+// Persona: Developer
+
 
 ifndef::context[]
 [id="analyzing-applications-mta-cli"]
@@ -16,7 +20,7 @@ endif::[]
 :context: analyzing-applications-mta-cli
 
 [role="_abstract"]
-To assess and prioritize migration and modernization efforts for applications written in different languages, analyze your applications by using the {ProductFullName} {CLINameTitle}. 
+Assess and prioritize migration effort by analyzing your Java applications with the {ProductFullName} CLI. Run single- or multiple-app analysis and get reports that highlight required changes.
 
 Depending on your scenario, you can use the {ProductShortName} CLI to perform the following actions:
 
@@ -40,7 +44,7 @@ The analysis output in the disconnected environment usually results in fewer inc
 {ProductShortName} CLI supports running source code and binary analysis by using `analyzer-lsp`. `analyzer-lsp` is a tool that evaluates rules by using language providers.
 
 include::topics/mta-cli/proc_analyzing-single-app-with-mta-cli.adoc[leveloffset=+1]
- 
+
 include::topics/mta-cli/proc_analyzing-multiple-apps-with-mta-cli.adoc[leveloffset=+1]
 
 include::topics/mta-cli/proc_running-the-containerless-mta-cli.adoc[leveloffset=+1]
@@ -49,4 +53,3 @@ include::topics/mta-cli/ref_mta-cli-analyze-flags.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-analyzing-applications-mta-cli[:context: {parent-context-of-analyzing-applications-mta-cli}]
 ifndef::parent-context-of-analyzing-applications-mta-cli[:!context:]
-

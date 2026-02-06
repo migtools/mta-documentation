@@ -5,6 +5,10 @@
 [id="assessing-an-archetype_{context}"]
 = Assessing an archetype
 
+
+[role="_abstract"]
+Assess an archetype to evaluate multiple applications with common characteristics.
+
 An archetype is considered assessed when all required questionnaires have been answered.
 
 NOTE: If an application is associated with several archetypes, this application is considered assessed when all associated archetypes have been assessed. 

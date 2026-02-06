@@ -6,8 +6,7 @@
 [id="yaml-java-provider_{context}"]
 = Java provider
 
-[role="_abstract"]
-The `java` provider analyzes Java source code.
+[role="_abstract"]The `java` provider analyzes Java source code. Use this when writing or matching rules.
 
 This provider has the following capabilities:
 

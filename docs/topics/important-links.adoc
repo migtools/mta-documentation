@@ -7,6 +7,10 @@
 [id="important-links_{context}"]
 = {ProductName} development resources
 
+
+[role="_abstract"]
+Important links for MTA documentation and resources.
+
 Use the following resources to learn and contribute to the {ProductName} development:
 
 * {ProductShortName} forums: https://developer.jboss.org/en/windup

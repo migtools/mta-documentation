@@ -6,6 +6,10 @@
 [id="reviewing-assessment-report_{context}"]
 = Reviewing an assessment report
 
+
+[role="_abstract"]
+Review an assessment report in the MTA UI to see risks and adoption plan details.
+
 An {ProductShortName} assessment report displays an aggregated assessment of the data obtained from multiple questionnaires for multiple applications.
 
 .Procedure

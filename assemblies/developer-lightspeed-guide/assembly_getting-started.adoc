@@ -4,6 +4,9 @@
 ifdef::context[:parent-context-of-getting-started: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: use-developer-lightspeed
+// Statement: When I want AI-assisted code fixes, I want to use Developer Lightspeed so I can resolve migration issues with LLM suggestions.
+// Persona: Developer
 
 ifndef::context[]
 [id="getting-started"]
@@ -16,10 +19,13 @@ endif::[]
 :context: getting-started
 
 [role="_abstract"]
-The Getting started section contains information to walk you through the prerequisites, persistent volume requirements, installation, and workflows that help you to decide how you want to use {mta-dl-full}.
+Get started with {mta-dl-full}: prerequisites, persistent volume requirements, installation, and workflows to resolve migration issues with LLM suggestions.
 
+include::topics/developer-lightspeed/con_prerequisites.adoc[leveloffset=+1]
 
+include::topics/developer-lightspeed/con_installation.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/con_developer-lightspeed-pathways.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-getting-started[:context: {parent-context-of-getting-started}]
 ifndef::parent-context-of-getting-started[:!context:]
-

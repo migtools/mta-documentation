@@ -4,6 +4,9 @@ include::topics/templates/document-attributes.adoc[]
 [id="mta-developer-lightspeed"]
 = Configuring and Using Red Hat Developer Lightspeed for MTA
 
+[role="_abstract"]
+Configure and use Red Hat Developer Lightspeed for MTA to get AI-assisted code suggestions and resolve migration issues in VS Code.
+
 :toc:
 :toclevels: 4
 :numbered:

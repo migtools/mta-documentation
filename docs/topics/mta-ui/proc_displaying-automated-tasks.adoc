@@ -5,6 +5,10 @@
 [id="displaying-automated-tasks_{context}"]
 = Displaying automated tasks
 
+
+[role="_abstract"]
+Display automated tasks and their status in the MTA UI to monitor analysis and discovery.
+
 After you add a new application to the *Application Inventory*, you can display the automated tasks created by adding the application:
 
 * The language discovery task identifies the programming languages in the application.

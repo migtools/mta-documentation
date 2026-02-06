@@ -4,6 +4,9 @@ include::topics/templates/document-attributes.adoc[]
 [id="installing-mta-title"]
 = Installing the {ProductName}
 
+[role="_abstract"]
+Install the {ProductName} CLI or user interface on OpenShift, and learn about supported migration paths and introduction to MTA.
+
 :toc:
 :toclevels: 4
 :numbered:

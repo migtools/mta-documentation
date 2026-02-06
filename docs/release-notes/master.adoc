@@ -10,6 +10,9 @@ include::topics/templates/document-attributes.adoc[]
 :_content-type: ASSEMBLY
 = Release Notes
 
+[role="_abstract"]
+Release notes for {ProductShortName} 8.0.0 and 8.0.1: new features, enhancements, known issues, and fixes.
+
 // Bring back when 8.1 is out [id="mta-8-0-0"]
 //== {ProductShortName} 8.0.0
 

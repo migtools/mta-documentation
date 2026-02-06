@@ -4,6 +4,10 @@
 ifdef::context[:parent-context-of-analyzing-multi-language-applications: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: assess-migration-effort-cli
+// Statement: When I use the CLI, I want to analyze my applications so I can assess and prioritize migration effort.
+// Persona: Developer
+
 
 ifndef::context[]
 [id="analyzing-nonjava-applications"]
@@ -16,7 +20,7 @@ endif::[]
 :context: analyzing-nonjava-applications
 
 [role="_abstract"]
-To assess the migration effort for applications written in languages other than Java, you can analyze your source code by using the {ProductFullName} command-line interface (CLI). The analysis identifies dependencies and potential migration issues, helping you prioritize tasks and estimate the resources required to modernize your non-Java portfolio.
+Assess migration effort for non-Java applications with the {ProductFullName} CLI. The analysis identifies dependencies and migration issues so you can prioritize and estimate modernization effort.
 
 You can perform the analysis either of the following ways:
 

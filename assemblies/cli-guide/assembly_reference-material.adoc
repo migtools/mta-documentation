@@ -4,17 +4,12 @@
 ifdef::context[:parent-context-of-reference-material: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: reference-and-resources
+// Statement: When I need details on options, paths, or reference material, I want to find CLI flags, migration paths, and contributing info in one place.
+// Persona: Developer
 
-ifndef::context[]
-[id="reference-material"]
-endif::[]
-ifdef::context[]
-[id="reference-material_{context}"]
-[appendix,id="reference-material"]
-endif::[]
-= Reference material
 
-:context: reference-material
+ifndef::Look up CLI options and migration paths Contribute to MTA
 
 [role="_abstract"]
 View the {ProductFullName} command-line interface (CLI) reference resources that might help you when using the CLI. The resources include information about technology tags and rule story points.

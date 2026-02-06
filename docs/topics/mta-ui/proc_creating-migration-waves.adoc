@@ -6,6 +6,10 @@
 [id="creating-migration-waves_{context}"]
 = Creating a migration wave
 
+
+[role="_abstract"]
+Create migration waves to group and track application migrations.
+
 A migration wave is a group applications that you can migrate on a given schedule. You can track each migration by exporting a list of the wave's applications to the Jira issue management system. This automatically creates a separate Jira issue for each application of the migration wave.
 
 .Procedure
