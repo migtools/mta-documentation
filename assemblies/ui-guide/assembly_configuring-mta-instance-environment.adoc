@@ -1,32 +1,37 @@
 :_newdoc-version: 2.18.5
 :_template-generated: 2025-09-12
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: configure-mta-instance-and-apps
+// Statement: When I use the MTA UI, I want to configure the MTA instance, credentials, and repositories so I can analyze and manage applications.
+// Persona: Admin
+
 
 ifdef::context[:parent-context-of-configuring-mta-instance-environment: {context}]
 
 ifndef::context[]
 [id="configuring-mta-instance-environment"]
-endif::[]
-ifdef::context[]
-[id="configuring-mta-instance-environment_{context}"]
-endif::[]
-= Configuring the {ProductName} instance environment
+Configure instance, environment, credentials, repos Manage applications and assessmentsing-mta-instance-environment
 
-:context: configuring-mta-instance-environment
+[role="_abstract"]
+Configure the {ProductFullName} instance environment: credentials, repositories, proxy, custom migration targets, issue management, and assessment questionnaires.
 
-You can configure the {ProductFullName} instance environment by setting up the following parameters: 		
+You can configure the {ProductFullName} instance environment by setting up the following parameters:
 
-* General	 				
-* Credentials					
-* Repositories 				
+* General
+* Credentials
+* Repositories
 * Proxy
-* Custom migration targets			
-* Issue management			
-* Assessment questionnaires	
+* Custom migration targets
+* Issue management
+* Assessment questionnaires
 
 == Prerequisites
 
 * You installed the {ProductShortName} UI. For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/install-guide/installing-mta-ui_installing-mta-title[Installing the {ProductName} user interface].
+
+== Next steps
+
+* xref:configuring-mta-instance_user-interface-guide[Configure a {ProductName} instance].
 
 include::assembly_configuring-credentials.adoc[leveloffset=+1]
 
@@ -35,12 +40,6 @@ include::assembly_configuring-repositories.adoc[leveloffset=+1]
 include::topics/mta-ui/proc_configuring-proxy-settings.adoc[leveloffset=+1]
 
 include::topics/mta-ui/proc_creating-custom-migration-targets.adoc[leveloffset=+1]
-
-
-== Next steps
-
-* xref:configuring-mta-instance_user-interface-guide[Configure a {ProductName} instance].
-
 
 ifdef::parent-context-of-configuring-mta-instance-environment[:context: {parent-context-of-configuring-mta-instance-environment}]
 ifndef::parent-context-of-configuring-mta-instance-environment[:!context:]

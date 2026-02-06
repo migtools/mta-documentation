@@ -5,8 +5,7 @@
 [id="running-the-containerless-mta-cli_{context}"]
 = Analyzing an application in containerless mode
 
-[role="_abstract"]
-To analyze applications in environments where a container engine is not available or desired, you can run the {ProductFullName} command-line interface (CLI) in containerless mode. This way, you can execute assessments directly on your local machine by using the provided shell script, bypassing the need for Podman or Docker.
+[role="_abstract"]To analyze applications in environments where a container engine is not available or desired, you can run the {ProductFullName} command-line interface (CLI) in containerless mode. This way, you can execute assessments directly on your local machine by using the provided shell script, bypassing the…
 
 [IMPORTANT]
 ====

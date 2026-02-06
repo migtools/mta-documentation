@@ -4,16 +4,19 @@
 ifdef::context[:parent-context-of-platform-awareness: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
-
-ifndef::context[]
-[id="platform-awareness"]
-endif::[]
+// JTBD job: use-web-console-assets
+// Statement: When I use the web console, I want to create source platforms, discover apps, and generate assets so I can migrate from Cloud Foundry (or similar) to OpenShift.
+// Persona:Create source platform and discover applications Configure generators and target profiles:[]
 ifdef::context[]
 [id="platform-awareness_{context}"]
 endif::[]
 = Platform awareness in {ProductShortName} {WebName}
 
 :context: platform-awareness
+
+
+[role="_abstract"]
+Use platform awareness in the MTA web console for migration planning.
 
 Starting with 8.0.0, {ProductShortName} supports platform awareness to import all or selective applications directly from source platform instances. 
 

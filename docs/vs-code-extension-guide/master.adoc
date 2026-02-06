@@ -14,6 +14,9 @@ include::topics/templates/document-attributes.adoc[]
 [id="configuring-using-vs-code-plugin"]
 = Configuring and using the Visual Studio Code Extension for {ProductShortName}
 
+[role="_abstract"]
+Install and configure the VS Code extension for {ProductShortName} to analyze applications and resolve migration issues in your editor.
+
 include::topics/vscode/con_intro-to-vscode-for-mta.adoc[leveloffset=+1]
  
 // Remove after other files that include this modules use the new topics/vscode/con_intro-to-vscode-for-mta.adoc module instead!!!

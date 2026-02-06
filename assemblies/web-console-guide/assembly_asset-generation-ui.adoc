@@ -4,19 +4,12 @@
 ifdef::context[:parent-context-of-asset-generation-ui: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: use-web-console-assets
+// Statement: When I use the web console, I want to create source platforms, discover apps, and generate assets so I can migrate from Cloud Foundry (or similar) to OpenShift.
+// Persona: MigratorCreate source platform and discover applications Configure generators and target profileson-ui
 
-ifndef::context[]
-[id="asset-generation-ui"]
-endif::[]
-ifdef::context[]
-[id="asset-generation-ui_{context}"]
-endif::[]
-= Generating assets for application deployment in {WebName}
-
-:context: asset-generation-ui
-
-[role=_abstract]
-Starting with 8.0.0, asset generation in {ProductShortName} {WebName} allows you to create different  assets (manifests) required to deploy applications from Cloud Foundry (CF) instances to {ocp-full} or Kubernetes. 
+[role="_abstract"]
+Generate deployment assets (manifests) in {ProductShortName} {WebName} to deploy applications from Cloud Foundry to {ocp-full} or Kubernetes. Use archetypes, generators, and target profiles to plan migration paths.
 
 To generate assets, you must become familiar with the following entities:
 

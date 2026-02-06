@@ -6,8 +6,7 @@
 [id="yaml-rulesets_{context}"]
 = Creating and using a custom ruleset
 
-[role="_abstract"]
-You can create a ruleset by placing one or more custom rules in a directory and creating a `ruleset.yaml` file at the directory root. When you perform an analysis, you pass this directory as input to the {ProductShortName} {CLIName} by using the `--rules` option. All rules in this directory are treated as a part of the ruleset defined by the `ruleset.yaml` file.
+[role="_abstract"]You can create a ruleset by placing one or more custom rules in a directory and creating a `ruleset.yaml` file at the directory root. When you perform an analysis, you pass this directory as input to the {ProductShortName} {CLIName} by using the `--rules` option. All rules in this directory are…
 
 The `ruleset.yaml` file stores the metadata of the ruleset. You can group multiple similar custom rules and create a ruleset for them. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, {ProductShortName} treats all the files in the directory as belonging to the ruleset defined in the `ruleset.yaml` file.
 

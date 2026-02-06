@@ -1,18 +1,19 @@
 :_newdoc-version: 2.18.5
 :_template-generated: 2025-09-12
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: configure-mta-instance-and-apps
+// Statement: When I use the MTA UI, I want to configure the MTA instance, credentials, and repositories so I can analyze and manage applications.
+// Persona: Admin
 
-ifdef::context[:parent-context-of-tagging-applications: {context}]
 
-ifndef::context[]
-[id="tagging-applications"]
-endif::[]
-ifdef::context[]
-[id="tagging-applications_{context}"]
+ifdef::context[:parent-context-of-tagging-applications:Configure instance, environment, credentials, repos Manage applications and assessmentst}"]
 endif::[]
 = Tagging an application
 
 :context: tagging-applications
+
+[role="_abstract"]
+Attach tags to applications to classify them, identify technologies, and associate archetypes for automatic assessment.
 
 You can attach various tags to the application that you are analyzing. You can use tags to classify applications and instantly identify application information, for example, an application type, data center location, and technologies used within the application. You can also use tagging to associate archetypes to applications for automatic assessment. For more information about archetypes, see xref:working-with-archetypes_user-interface-guide[Working with archetypes].
 

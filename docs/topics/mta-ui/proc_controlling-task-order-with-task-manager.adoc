@@ -5,6 +5,10 @@
 [id="controlling-task-order-with-task-manager_{context}"]
 = Controlling the order of task execution
 
+
+[role="_abstract"]
+Control task order with Task Manager in the MTA UI.
+
 You can use *Task Manager* to preempt a {ProductFullName} task you have scheduled for execution. 
 
 [NOTE]

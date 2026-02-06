@@ -6,6 +6,10 @@
 [id="configuring-maven-repo_{context}"]
 = Configuring a Maven repository
 
+
+[role="_abstract"]
+Configure Maven repository settings for the MTA instance.
+
 You can both configure a Maven repository and reduce its size in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
 
 IMPORTANT: If the `rwx_supported` configuration option of the Tackle CR is set to `false`, both the *Local artifact repository* field and the *Clear repository* button are disabled. Therefore, you cannot perform the following procedure. 

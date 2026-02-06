@@ -6,6 +6,10 @@
 [id="configuring-git-repos_{context}"]
 = Configuring Git repositories
 
+
+[role="_abstract"]
+Configure Git repositories for the MTA instance so applications can be analyzed from Git.
+
 You can configure Git repositories in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
 
 .Procedure

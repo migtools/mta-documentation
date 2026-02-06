@@ -1,18 +1,17 @@
 :_newdoc-version: 2.18.5
 :_template-generated: 2025-09-12
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: configure-mta-instance-and-apps
+// Statement: When I use the MTA UI, I want to configure the MTA instance, credentials, and repositories so I can analyze and manage applications.
+// Persona: Admin
+
 
 ifdef::context[:parent-context-of-managing-applications: {context}]
 
-ifndef::context[]
-[id="managing-applications"]
-endif::[]
-ifdef::context[]
-[id="managing-applications_{context}"]
-endif::[]
-= Managing applications with {MTA}
+Configure instance, environment, credentials, repos Manage applications and assessmentsanaging-applications
 
-:context: managing-applications
+[role="_abstract"]
+Add applications, assign credentials, import app lists, create migration waves, and create Jira issues in the {ProductFullName} UI to prepare for assessment and analysis.
 
 You can use the {ProductFullName} user interface (UI) to perform the following tasks to prepare your applications for the assessment and analysis: 	
 

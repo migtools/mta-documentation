@@ -5,6 +5,10 @@
 [id="creating-a-stakeholder_{context}"]
 = Creating a stakeholder
 
+
+[role="_abstract"]
+Create a stakeholder in the MTA UI for assessment and review.
+
 You can create and configure an instance in any order. However, the following is the most efficient order for creating stakeholders: 						
 
 . Create Stakeholder groups. Note that by default, no stakeholder groups are defined.

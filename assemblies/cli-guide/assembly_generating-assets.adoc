@@ -4,6 +4,10 @@
 ifdef::context[:parent-context-of-generating-assets: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: generate-deployment-assets
+// Statement: When I am ready to deploy, I want to generate deployment manifests and assets so I can move my application to the target platform.
+// Persona: Developer, DevOps
+
 
 ifndef::context[]
 [id="generating-assets"]
@@ -16,7 +20,7 @@ endif::[]
 :context: generating-assets
 
 [role="_abstract"]
-To enable offline review and simplify the distribution of assessment results, you can generate static assets by using the {ProductFullName} command-line interface. This process produces standalone reports and data files, allowing you to share migration insights with stakeholders without requiring access to the analysis environment.
+Generate static reports and deployment manifests with the {ProductFullName} CLI so you can share migration insights and deploy Cloud Foundry applications to {ocp-short}. Use the `discover` and `generate` commands in containerless mode.
 
 You can use the `discover` and `generate` commands in containerless mode to automatically generate the manifests needed to deploy a Cloud Foundry (CF) application in the {ocp-short}: 
 

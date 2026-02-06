@@ -5,6 +5,10 @@
 [id="creating-a-tag_{context}"]
 = Creating a tag
 
+
+[role="_abstract"]
+Create a tag in the MTA UI for classifying applications.
+
 {ProductFirstRef} uses tags in multiple categories and provides a list of default values. However, you can create your own tag category and a new tag that is not in the default list.
 
 You can create and configure an instance in any order. However, the following is the most efficient order for creating tags:

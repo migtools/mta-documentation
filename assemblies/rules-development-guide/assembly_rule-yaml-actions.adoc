@@ -4,14 +4,8 @@
 ifdef::context[:parent-context-of-rule-yaml-actions: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
-
-ifndef::context[]
-[id="rule-yaml-actions"]
-endif::[]
-ifdef::context[]
-[id="rule-yaml-actions_{context}"]
-endif::[]
-= Rule actions
+// JTBD job: develop-custom-rules
+// Statement: When MTA does not cover my migration scenario, I want to create custom YAML rules so I can extend analysis and transformation for myCreate YAML rules and rulesets Use conditions, actions, and providersRule actions
 
 :context: rule-yaml-actions
 

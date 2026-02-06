@@ -15,7 +15,7 @@ endif::[]
 :context: intro-to-mta
 
 [role="_abstract"]
-The {ProductFullName} is a set of tools that you can use to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. {ProductShortName} looks for common resources and problematic spots when migrating applications. It gives a high-level view of the technologies used by the application. {ProductShortName} also generates a detailed report that evaluates a migration or modernization path. By using this report, you can estimate the effort needed for large-scale projects and reduce the workload involved in the process. 
+Use {ProductFullName} to accelerate application modernization on Red Hat OpenShift. Assess applications, analyze migration paths, and generate reports to estimate effort and reduce workload.
 
 By using {ProductShortName}, you can perform the following tasks: 		
 

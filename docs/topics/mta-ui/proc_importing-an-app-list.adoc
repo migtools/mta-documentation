@@ -6,6 +6,10 @@
 [id="importing-an-app-list_{context}"]
 = Importing a list of applications
 
+
+[role="_abstract"]
+Import a list of applications into the MTA UI from a CSV or similar source.
+
 You can import a `.csv` file that contains a list of applications and their attributes to the {ProductFullName} user-interface (UI).
 
 NOTE: Importing a list of applications does not overwrite any of the existing applications.

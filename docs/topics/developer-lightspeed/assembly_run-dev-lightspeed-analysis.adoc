@@ -4,6 +4,10 @@
 ifdef::context[:parent-context-of-run-dev-lightspeed-analysis: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: use-developer-lightspeed
+// Statement: When I want AI-assisted code fixes, I want to use Developer Lightspeed so I can resolve migration issues with LLM suggestions.
+// Persona: Developer
+
 
 ifndef::context[]
 [id="run-dev-lightspeed-analysis"]
@@ -11,12 +15,12 @@ endif::[]
 ifdef::context[]
 [id="run-dev-lightspeed-analysis_{context}"]
 endif::[]
-= Running an analysis and resolving issues
+= Running Developer Lightspeed analysis
 
 :context: run-dev-lightspeed-analysis
 
 [role="_abstract"]
-After you complete the configurations, the next step is running an analysis to identify the issues in the code and generate suggestions to resolve the issues. You can get suggestions to fix code by using {mta-dl-full}.
+After you configure Developer Lightspeed, run an analysis to identify issues and generate suggestions. Use {mta-dl-full} to get code fix suggestions and resolve migration issues.
 
 When you run an analysis, {ProductShortName} displays the issues in the *Analysis Results* view.
 

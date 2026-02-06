@@ -5,6 +5,10 @@
 [id="creating-a-business-service_{context}"]
 = Creating a business service
 
+
+[role="_abstract"]
+Create a business service in the MTA UI for organizing applications.
+
 The {ProductFullName} uses the business service attribute to specify the departments within the organization that use the application and that are affected by the migration.
 
 .Procedure

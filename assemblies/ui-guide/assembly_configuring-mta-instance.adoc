@@ -1,18 +1,21 @@
 :_newdoc-version: 2.18.5
 :_template-generated: 2025-09-12
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: configure-mta-instance-and-apps
+// Statement: When I use the MTA UI, I want to configure the MTA instance, credentials, and repositories so I can analyze and manage applications.
+// Persona: Admin
+
 
 ifdef::context[:parent-context-of-configuring-mta-instance: {context}]
 
-ifndef::context[]
-[id="configuring-mta-instance"]
-endif::[]
-ifdef::context[]
-[id="configuring-mta-instance_{context}"]
+ifndef::conteConfigure instance, environment, credentials, repos Manage applications and assessmentsontext}"]
 endif::[]
 = Configuring a {ProductName} instance
 
 :context: configuring-mta-instance
+
+[role="_abstract"]
+Configure stakeholders, business services, tags, and other instance parameters before migration.
 
 If you are a project architect, you can configure the instance’s key parameters before migration. You can add and edit these parameters as needed. The following parameters define applications, individuals, teams, verticals, or areas within an organization affected or participating in the migration:
 

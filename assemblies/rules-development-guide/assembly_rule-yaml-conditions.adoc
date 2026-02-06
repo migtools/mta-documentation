@@ -4,6 +4,9 @@
 ifdef::context[:parent-context-of-rules-prov-cond: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: develop-custom-rules
+// Statement: When MTA does not cover my migration scenario, I want to create custom YAML rules so I can extend analysis and transformation for my stack.
+// Persona: Rule developer
 
 ifndef::context[]
 [id="rules-prov-cond"]
@@ -16,9 +19,7 @@ endif::[]
 :context: rules-prov-cond
 
 [role="_abstract"]
-The providers are the modular components in charge of analyzing a given language. Providers are able to analyze code by leveraging the Language Server Protocol (LSP). Through the LSP, all code analysis is abstracted away from the analysis engine and left to the specific LSP server to run the search query defined in the rule on the source code. 
-
-Additionally, {ProductShortName} provides a built-in provider with abilities such as XML parsing, running regular expressions on files, and so on.
+Use providers and rule conditions to analyze code with the Language Server Protocol (LSP). {ProductShortName} includes built-in and language-specific providers; the when block in a rule defines matching conditions.
 
 Currently, {ProductShortName} supports the following providers:
 

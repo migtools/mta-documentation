@@ -4,11 +4,12 @@
 ifdef::context[:parent-context-of-intellij-resolving-issues: {context}]
 
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: use-intellij-plugin
+// Statement: When I develop in IntelliJ IDEA, I want to run MTA analysis and apply quick fixes so I can migrate from within the IDE.
+// Persona: Developer
 
-ifndef::context[]
-[id="intellij-resolving-issues"]
-endif::[]
-ifdef::context[]
+
+ifndef::context[]Install IntelliJ plugin and run analysis Review and resolve issuesntext[]
 [id="intellij-resolving-issues_{context}"]
 endif::[]
 :context: intellij-resolving-issues

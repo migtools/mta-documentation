@@ -5,6 +5,10 @@
 [id="manual-tagging-of-an-application_{context}"]
 = Manually tagging an application
 
+
+[role="_abstract"]
+Manually tag an application in the MTA UI to classify it for assessment and analysis.
+
 You can tag an application manually, both before or after you run an application analysis.
 
 .Procedure

@@ -5,8 +5,7 @@
 [id="concealing-sensitive-information_{context}"]
 = Concealing sensitive information in a discovery manifest
 
-[role="_abstract"]
-To prevent the exposure of confidential data, such as services and docker credentials, configure the {ProductFullName} command-line interface (CLI) to conceal sensitive details in a Cloud Foundry (CF) discovery manifest. This way, you can safely share the results with stakeholders while maintaining security compliance.
+[role="_abstract"]To prevent the exposure of confidential data, such as services and docker credentials, configure the {ProductFullName} command-line interface (CLI) to conceal sensitive details in a Cloud Foundry (CF) discovery manifest. This way, you can safely share the results with stakeholders while…
 
 You can conceal sensitive information by using the `mta-cli discover cloud-foundry --conceal-sensitive-data` command. This command generates the following files:
 

@@ -6,8 +6,7 @@
 [id="yaml-rule-actions_{context}"]
 = Types of rule actions
 
-[role="_abstract"]
-Rules can include the following types of actions:
+[role="_abstract"]Rules can include the following types of actions: Use this when writing or matching rules.
 
 * message
 * tag

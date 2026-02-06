@@ -1,18 +1,21 @@
 :_newdoc-version: 2.18.5
 :_template-generated: 2025-09-12
 :_mod-docs-content-type: ASSEMBLY
+// JTBD job: configure-mta-instance-and-apps
+// Statement: When I use the MTA UI, I want to configure the MTA instance, credentials, and repositories so I can analyze and manage applications.
+// Persona: Admin
+
 
 ifdef::context[:parent-context-of-configuring-repositories: {context}]
 
-ifndef::context[]
-[id="configuring-repositories"]
-endif::[]
-ifdef::context[]
-[id="configuring-repositories_{context}"]
+iConfigure instance, environment, credentials, repos Manage applications and assessmentssitories_{context}"]
 endif::[]
 = Configuring repositories
 
 :context: configuring-repositories
+
+[role="_abstract"]
+Configure Git, Subversion, and Maven repositories for the {ProductFullName} instance environment.
 
 You can configure the following repository types for the {ProductFullName} instance environment: 			
 

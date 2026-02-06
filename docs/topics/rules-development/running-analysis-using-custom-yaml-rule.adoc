@@ -4,7 +4,8 @@
 
 :_mod-docs-content-type: PROCEDURE
 [id="running-analysis-using-custom-yaml-rule_{context}"]
-= Running an analysis using a custom YAML rule 
+= Running an analysis using a custom YAML rule
+
 //change this procedure to use a ruleset
 
 [role="_abstract"]

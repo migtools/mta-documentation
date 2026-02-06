@@ -7,6 +7,10 @@
 [id="mta-default-questionnaire_{context}"]
 = The default assessment questionnaire
 
+
+[role="_abstract"]
+Use the default MTA assessment questionnaire to evaluate applications.
+
 *Legacy Pathfinder* is the default {ProductName} ({ProductShortName}) questionnaire. Pathfinder is a questionnaire-based tool that you can use to evaluate the suitability of applications for modernization in containers on an enterprise Kubernetes platform. 
 
 Through interaction with the default questionnaire and the review process, the system is enriched with application knowledge exposed through the collection of assessment reports.

@@ -2,8 +2,7 @@
 [id="installing-vscode-extension_{context}"]
 = Installing the {ProductShortName} extension for Visual Studio Code
 
-[role="_abstract"]
-You can use the {ProductFullName} Visual Studio (VS) Code plugin to perform a standard application analysis. You can also enable Red Hat Developer Lightspeed for the {ProductName} to use Generative AI (GenAI) capabilities to fix code issues before migrating to target technologies. Note that Developer Lightspeed for {ProductShortName} is enabled by default. For more information, see link:{mta-URL}/configuring_and_using_red_hat_developer_lightspeed_for_mta/index[Configuring and using Developer Lightspeed for {ProductShortName}].
+[role="_abstract"]You can use the {ProductFullName} Visual Studio (VS) Code plugin to perform a standard application analysis. You can also enable Red Hat Developer Lightspeed for the {ProductName} to use Generative AI (GenAI) capabilities to fix code issues before migrating to target technologies. Note that…
 
 .Prerequisites 
 
