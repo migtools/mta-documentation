@@ -19,7 +19,7 @@ endif::[]
 You can resolve issues by doing one of the following:
 
 * Using a _Quick Fix_ to fix a code snippet that has a hint
-* Editing the code of a file that appears in a classification
+* Editing the code of a file that is displayed in a classification
 
 include::topics/mta-intellij-plugin/proc_quick-fix.adoc[leveloffset=+1]
 

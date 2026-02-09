@@ -23,13 +23,14 @@ include::assemblies/cli-guide/assembly_analyzing-applications-mta-cli.adoc[level
 
 include::assemblies/cli-guide/assembly_analyzing-nonjava-applications.adoc[leveloffset=+1]
 
+include::assemblies/cli-guide/assembly_analyzing-applications-using-profiles.adoc[leveloffset=+1]
+
 include::assemblies/cli-guide/assembly_reviewing-analysis-reports.adoc[leveloffset=+1]
 
 include::assemblies/cli-guide/assembly_performing-transformation.adoc[leveloffset=+1]
 
 include::assemblies/cli-guide/assembly_generating-assets.adoc[leveloffset=+1]
 
-// CLI known issues
 include::topics/mta-cli/cli-tool-known-issues.adoc[leveloffset=+1]
 
 include::assemblies/cli-guide/assembly_reference-material.adoc[leveloffset=+1]

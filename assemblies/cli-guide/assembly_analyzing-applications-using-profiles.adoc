@@ -1,0 +1,53 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+
+ifdef::context[:parent-context-of-analyzing-apps-profiles: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="analyzing-apps-profiles"]
+endif::[]
+ifdef::context[]
+[id="analyzing-apps-profiles_{context}"]
+endif::[]
+= Analyzing applications by using profiles from the {ProductShortName} Hub
+
+:context: analyzing-apps-profiles
+
+[role="_abstract"]
+As Migrators, you can use profiles to run an application analysis in the {ProductShortName} {CLIName}. Profiles have standardized analysis configuration, scope of an analysis,  and custom rules that you can reuse for mutiple analyses of a local application. 
+
+Before you run an analysis, you can use the {ProductShortName} {CLIName} to download the latest configuration through a secure or insecure connection to the Hub.
+
+The {ProductShortName} {CLIName} syncs with the Hub to download the following files:
+
+* Profiles in the `.konveyor/profiles` directory in your local application
+* Custom rules in the `.konveyor/profiles/_<profile-name>_/rules` directory 
+
+To perform an analysis that you run after syncing with the Hub, {ProductShortName} {CLIName} uses the downloaded profile and custom rule configurations.
+
+:FeatureName: Analysis Profile
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+:!FeatureName:
+
+include::topics/mta-cli/proc_analyzing-app-with-profile.adoc[leveloffset=+1]
+
+include::topics/mta-cli/ref_mta-cli-config-flags.adoc[leveloffset=+1]
+
+include::topics/mta-cli/ref_modify-application-profile.adoc[leveloffset=+1]
+
+[role="_additional_resources"]
+.Additional resources
+
+* xref:analyzing-applications-mta-cli_cli-guide[Analyzing Java applications with MTA command-line interface]
+* xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]
+
+ifdef::parent-context-of-analyzing-apps-profiles[:context: {parent-context-of-analyzing-apps-profiles}]
+ifndef::parent-context-of-analyzing-apps-profiles[:!context:]
