@@ -15,9 +15,21 @@ endif::[]
 :context: centralized-configurations
 
 [role="_abstract"]
-Centralized configuration management allows organizations to enforce standardized configurations across various components of {ProductFirstRef}. This feature allows Architects to create and manage configurations, for example, analysis profiles and custom rulesets. Migrators can use these configurations that are available as profiles to perform an application analysis and code resolutions before migrating to a target platform. 
+Centralized configuration management allows organizations to use standardized configurations across components of {ProductFirstRef} such as the web interface, CLI, and the Visual Studio Code IDE plugin. 
 
-The profile configurations are synced with the {ProductShortName} Hub. {ProductShortName} components such as {CLIName}  {WebName}, and the {PluginName} periodically sync with the Hub and pull the configuration profiles with the latest changes.
+This feature allows Architects to create, edit, and delete  custom migration targets and configurations, for example, analysis profiles and custom rulesets in the {ProductShortName} {WebName}. The analysis profiles contain the following details:
+
+* Analysis configuration
+.. mode of analysis (for example, `source code`)
+.. scope of an analysis (for example, application analysis that includes all dependencies, including known Open Source libraries)
+.. migration targets that can be targets shipped with {ProductShortName} or a custom migration target
+* Advanced confifuration
+.. custom rules
+.. rule labels to include or exclude rules for an analysis
+
+Migrators can use these profiles to perform an application analysis. 
+
+The profile configurations are synced with the {ProductShortName} Hub. {ProductShortName} components such as {CLIName}  {WebName}, and the {PluginName} periodically sync with the Hub and pull the analysis profiles that contain the latest updates to the configuration.
 
 
 :FeatureName: Analysis Profile
@@ -29,9 +41,6 @@ The profile configurations are synced with the {ProductShortName} Hub. {ProductS
 For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
 ====
 :!FeatureName:
-
-
-//which navigation options are not visible to the migrators but only to the architects?
 
 include::topics/mta-ui/proc_configuring-profile-for-an-application-analysis.adoc[leveloffset=+1]
 
