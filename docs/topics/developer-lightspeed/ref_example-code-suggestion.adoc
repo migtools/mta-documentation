@@ -67,4 +67,4 @@ You can review the code changes in the editor and accept or reject the changes. 
 +
 This round of analysis detects lint issues, compilation issues, or diagnostic issues that might have occurred when you accepted the suggested code change.
 +
-Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated scan iterations if you allow until the tool resolves all issues. 
+Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated scan iterations if you allow it, until the tool resolves all issues. 
