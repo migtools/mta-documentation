@@ -7,7 +7,7 @@
 = Configuring a Maven repository
 
 [role="_abstract"]
-To allow the {ProductFullName} access the data required for the migration tasks, configure Maven repositories in the user interface (UI). By configuring these repositories, you allow {ProductShortName} to access your source code to identify modernization paths and required steps for your modernization efforts.
+To allow the {ProductFullName} access to the data required for the migration tasks, configure Maven repositories in the user interface (UI). By configuring these repositories, you allow {ProductShortName} to access your source code to identify modernization paths and required steps for your modernization efforts.
 
 You can both configure a Maven repository and reduce its size in the *Repositories* view of the {ProductShortName} UI.
 
