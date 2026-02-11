@@ -84,7 +84,7 @@ You can use the {ProductFullName} to assess your applications' suitability for t
 |-
 
 |Thorntail
-|{icon-check} footnoteref:[note3,Requires JBoss Enterprise Application Platform expansion pack 2 (EAP XP 2)]
+|{icon-check} footnoteref:[note3,Requires JBoss EAP expansion pack 2 (JBoss EAP XP 2)]
 |-
 |-
 |-

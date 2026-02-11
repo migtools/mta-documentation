@@ -40,5 +40,5 @@ View the general guidelines the {ProductFullName} uses for effort level estimati
 
 |Unknown
 |13
-|The migration solution is not known and may need a complete rewrite.
+|The migration solution is not known and might need a complete rewrite.
 |====

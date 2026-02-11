@@ -3,17 +3,17 @@
 :_mod-docs-content-type: REFERENCE
 
 [id="openrewrite-command-options_{context}"]
-= The openrewrite command options
+= The OpenRewrite command options
 
 [role="_abstract"]
-The {ProductFullName} command-line interface (CLI) provides the `mta-cli transform openrewrite` command options to customize the transformation of your application source code. Check the following table to identify the available arguments for applying specific migration recipes and controlling the output of the transformation process.
+The {ProductFullName} command-line interface (CLI) provides the `mta-cli transform OpenRewrite` command options to customize the transformation of your application source code. Check the following table to identify the available arguments for applying specific migration recipes and controlling the output of the transformation process.
 
-.The mta-cli transform openrewrite command options
+.The mta-cli transform OpenRewrite command options
 [options="header"]
 |====
 |Option|Description
 |`--goal` (string)|A target goal. The default is `"dryRun"`.
-|`--help`|Display all `mta-cli transform openrewrite` command options. 
+|`--help`|Display all `mta-cli transform OpenRewrite` command options. 
 |`--input` (string)|A path to the application source code directory.
 |`--list-targets`|List all available OpenRewrite recipes.
 |`-maven-settings` (string)|A path to a custom Maven settings file.

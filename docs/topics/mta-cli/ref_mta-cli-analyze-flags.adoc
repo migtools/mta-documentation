@@ -13,10 +13,10 @@ You can customize the application analysis process with {ProductFullName} comman
 [options="header"]
 |====
 |Option|Description
-|`--analyze-known-libraries` (bool)|Analyze open-source libraries.
-|`--disable-maven-search`| Set `--disable-maven-search=true` to disable {ProductShortName} from relying on the Maven search index to determine if a dependency is publicly available, such as an open-source dependency, or internal to the Java binary application during analysis. 
+|`--analyze-known-libraries` (bool)|Analyze open source libraries.
+|`--disable-maven-search`| Set `--disable-maven-search=true` to disable {ProductShortName} from relying on the Maven search index to determine if a dependency is publicly available, such as an open source dependency, or internal to the Java binary application during analysis. 
  
-When you disable Maven search, {ProductShortName} at first tries to determine dependencies from the JAR file's POM file, if any. If this method does not succeed, {ProductShortName} goes through the directory structure to determine dependencies. This method may not produce a reliable dependency classification since the package structure can differ from what is expected by {ProductShortName}. You may see more number of incidents because some dependencies may be wrongly classified as internal.
+When you disable Maven search, {ProductShortName} at first tries to determine dependencies from the JAR file's POM file, if any. If this method does not succeed, {ProductShortName} goes through the directory structure to determine dependencies. This method might not produce a reliable dependency classification since the package structure can differ from what is expected by {ProductShortName}. You might see more number of incidents because some dependencies might be wrongly classified as internal.
 
 By default, `--disable-maven-search=false`. Therefore, {ProductShortName} uses the SHA digest of the JAR file to search the Maven search index. This setting generates more accurate dependencies but the drawback is that the Maven search index is frequently unavailable.
 |`--context-lines` (int)|The number of lines of source code to include in the output for each incident. The default is 100.
