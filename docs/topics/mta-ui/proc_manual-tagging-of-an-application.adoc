@@ -8,7 +8,7 @@
 [role="_abstract"]
 To categorize applications according to your needs, manually apply tags to applications in the {ProductFullName} user interface (UI).
 
-You can manually tag an application both before or after you run an application analysis.
+You can manually tag an application either before or after you run an application analysis.
 
 .Procedure
 
