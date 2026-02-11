@@ -26,4 +26,4 @@ where:
 
   `pattern` :: A regular expression pattern that is matched on the source code line when a match is found.
   `name` :: The name of the variable that can be used in templates.
-  `message` :: A template for a message using a custom variable.
+  `message` :: A template for a message by using a custom variable.
