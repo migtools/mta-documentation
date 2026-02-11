@@ -16,4 +16,4 @@ In {ProductFullName} {ProductVersion}, XML rules are removed and are no longer s
 
 
 The Eclipse IDE plugin is removed::
-The Eclipse IDE plugin for {ProductFullName}, which you could use to analyze the effort for migrating and modernizing your applications, is removed and is no longer supported. As an alternative, you can use the {ProductName} extension for Visual Studio Code (VS Code).
+The Eclipse IDE plugin for {ProductFullName}, which you could use to analyze the effort for migrating and modernizing your applications, is removed and is no longer supported. As an alternative, you can use the {ProductName} extension for Visual Studio Code.
