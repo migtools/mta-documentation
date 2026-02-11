@@ -7,7 +7,7 @@
 = Configuring and running an application analysis
 
 [role="_abstract"]
-To determine which specific lines in an application you must modify before migrating or modernizing the application, configure and run an application analysis for this application in the {ProductFullName} user interface (UI). 
+To determine which specific lines of code you must modify before migrating or modernizing, configure and run an application analysis in the {ProductFullName} user interface (UI).
 
 You can analyze more than one application at a time against more than one transformation target in the same analysis.
 

@@ -15,7 +15,7 @@ endif::[]
 :context: mta-custom-questionnaire
 
 [role="_abstract"]
-To determine the readiness of your portfolio for modernization, use a custom assessment questionnaires to provide the {ProductFullName} user interface (UI) with the details required for the migration process.
+To determine the readiness of your portfolio for modernization, use a custom assessment questionnaire to provide the {ProductFullName} user interface (UI) with the details required for the migration process.
 
 You can import the custom assessment questionnaire by using a custom YAML syntax to define the questionnaire. The YAML syntax supports the following features:
 

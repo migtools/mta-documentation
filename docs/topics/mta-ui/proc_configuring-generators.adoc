@@ -6,7 +6,7 @@
 = Configuring a generator
 
 [role="_abstract"]
-To get templates required to generate different asset manifests, configure generators that contain a repository with these templates
+To get templates required to generate different asset manifests, configure generators that contain a repository with these templates.
 
 .Prerequisites
 
@@ -31,7 +31,7 @@ On the *Generators* page, you can create, edit, and delete generators.
 ... Select the credentials to access your repository if it is private.
 .. Optional: Click *Values* and enter the new value for an attribute in the discovery manifest as a key-value pair.
 + 
-During asset generation, the generator overrides the value of the matching attribute in the discovery manifest with the value you enter. 
+During asset generation, the generator overrides the value of the matching attribute in the discovery manifest with the value you enter.
 .. Optional: Click *Parameters* to enter parameters and their default values as a key-value pair.
 +
 Parameter fields will require user inputs before the template generates the assets. 

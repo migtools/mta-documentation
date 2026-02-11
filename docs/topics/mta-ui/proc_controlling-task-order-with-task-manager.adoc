@@ -6,7 +6,7 @@
 = Controlling the order of task execution
 
 [role="_abstract"]
-To preempt a {ProductFullName} task you have scheduled for execution, control this task by using *Task Manager*.
+To preempt a {ProductFullName} task you have scheduled for execution, use *Task Manager* to control the task execution order.
 
 [NOTE]
 ====

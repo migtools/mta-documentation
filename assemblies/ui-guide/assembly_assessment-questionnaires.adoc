@@ -15,7 +15,7 @@ endif::[]
 :context: assessment-questionnaires
 
 [role="_abstract"]
-To determine the readiness of your portfolio for modernization, use assessment questionnaires to provide the {ProductFullName} user interface (UI) with the details required for the migration process. The {ProductFullName} uses either xref:mta-default-questionnaire_assessment-questionnaires[default] or xref:mta-custom-questionnaire_assessment-questionnaires[custom] assessment questionnaire 
+To determine the readiness of your portfolio for modernization, use assessment questionnaires to provide the {ProductFullName} user interface (UI) with the details required for the migration process. The {ProductFullName} uses either xref:mta-default-questionnaire_assessment-questionnaires[default] or xref:mta-custom-questionnaire_assessment-questionnaires[custom] assessment questionnaire.
 
 include::topics/mta-ui/con_mta-default-questionnaire.adoc[leveloffset=+1]
 

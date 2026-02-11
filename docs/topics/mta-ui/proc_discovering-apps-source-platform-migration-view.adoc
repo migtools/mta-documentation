@@ -5,8 +5,8 @@
 [id="discovering-apps-source-platform-migration-view_{context}"]
 = Discovering applications through source platform in the Migration view
 
-[role="_abstract"] 
-After you configured a source platform, discover and import one or more applications to the {ProductShortName} application inventory in the *Migration* view.
+[role="_abstract"]
+After you configure a source platform, discover and import one or more applications to the {ProductShortName} application inventory in the *Migration* view.
 
 .Prerequisites
 
@@ -42,7 +42,7 @@ For a CF instance, the application `names` field can contain globs. For example,
 . Click *Next* to review the configuration.
 
 . Click *Discover applications*.
-This action tiggers an application import task.
+This action triggers an application import task.
 
 . Close the *Discover applications* window.
 

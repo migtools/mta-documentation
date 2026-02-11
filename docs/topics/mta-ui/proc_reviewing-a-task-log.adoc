@@ -6,7 +6,7 @@
 = Reviewing a task log
 
 [role="_abstract"]
-To find details and logs of a particular {ProductFullName} task, access the *Task Manager* page. 
+To find details and logs of a particular {ProductFullName} task, access the *Task Manager* page.
 
 .Procedure
 

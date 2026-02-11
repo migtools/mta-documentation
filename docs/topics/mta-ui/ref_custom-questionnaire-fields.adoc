@@ -9,7 +9,7 @@
 [role="_abstract"]
 To correctly build a custom assessment questionnaire for the {ProductFullName} user interface (UI), view the following questionnaire fields. These definitions provide the necessary knowledge for configuring questions, answers, and weighting.
 
-Every custom questionnaire field marked as _required_ is mandatory. If you do not define such fields, the YAML syntax will not validate on upload. Each subsection of the field defines a new structure or object in YAML, for example:
+Every custom questionnaire field marked as _required_ is mandatory. If you do not define such fields, YAML validation will fail on upload. Each subsection of the field defines a new structure or object in YAML, for example:
 
 [source,yaml]
 ----

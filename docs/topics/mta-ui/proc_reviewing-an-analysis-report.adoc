@@ -7,7 +7,7 @@
 = Reviewing analysis details
 
 [role="_abstract"]
-To review analysis details, for example, analysis steps, access an activity log in the {ProductFullName} user interface (UI).
+To review analysis details, such as analysis steps, access the activity log in the {ProductFullName} user interface (UI).
 
 .Procedure
 

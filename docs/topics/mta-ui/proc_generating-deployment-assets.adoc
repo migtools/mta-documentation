@@ -6,7 +6,7 @@
 = Generating deployment assets
 
 [role="_abstract"] 
-To prepare your application for deployment to a container platform, generate deployment assets in the {ProductFullName} user-interface (UI).
+To prepare your application for deployment to a container platform, generate deployment assets in the {ProductFullName} user interface (UI).
 
 When you generate assets for an application, the generators render manifests for all the migration paths associated with the archetype of the application. 
 

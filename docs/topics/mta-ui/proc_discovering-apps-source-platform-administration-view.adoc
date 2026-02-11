@@ -5,10 +5,10 @@
 [id="discovering-apps-source-platform_{context}"]
 = Discovering applications through source platform in the Administration view
 
-[role="_abstract"] 
+[role="_abstract"]
 After you configured a source platform, discover and import one or more applications to the {ProductShortName} application inventory.
 
-You can filter application manifests in the CF clusters by organizations and spaces, and application names. 
+You can filter application manifests in the CF clusters by organizations and spaces, and application names.
 
 .Prerequisites
 
@@ -44,7 +44,8 @@ For a CF instance, the application `names` field can contain glob expressions (g
 . Click *Next* to review the configuration.
 
 . Click *Discover applications*.
-This action tiggers an application import task.
++
+This action triggers an application import task.
 
 . Close the *Discover applications* window.
 +

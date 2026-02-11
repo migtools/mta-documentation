@@ -8,7 +8,7 @@
 [role="_abstract"]
 To verify the scope and criteria of the assessments of applications with similar characteristics, review an archetype in the {ProductFullName} user interface (UI).
 
-The archetype is considered reviewed when it has been reviewed once even if multiple questionnaires have been marked as required. 
+An archetype is considered reviewed after completing the review process once, even if multiple questionnaires are marked as required.
 
 NOTE: If an application is associated with several archetypes, this application is considered reviewed when all associated archetypes have been reviewed. 	
 

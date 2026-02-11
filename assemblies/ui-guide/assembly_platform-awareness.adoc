@@ -18,7 +18,7 @@ endif::[]
 [role="_abstract"]
 To import all or selective applications directly from source platform instances, use platform awareness in {ProductFullName} user interface (UI). 
 
-You can associate applications to source platforms the following ways: 
+You can associate applications with source platforms in the following ways:
 
 * Manually configure source platforms for applications that are available in {ProductShortName} inventory.
 
@@ -27,7 +27,7 @@ In this case, the applications are connected with the source platform when they 
 
 In {ProductShortName} 8.0.0, Red Hat supports Cloud Foundry (CF) as the source platform. 
  
-After you import applications, you can retrieve platform and runtime configurations (also known as discovery). Discovery is the process of fetching configurations of the imported applications that are connected to their source platform instances. The retrieval or discovery generates the discovery manifest that contain application configurations. 
+After you import applications, you can retrieve platform and runtime configurations, also known as discovery. Discovery is the process of fetching configurations of the imported applications that are connected to their source platform instances.  The retrieval or discovery generates a discovery manifest that contains application configurations.
 
 You can later use the discovery manifest to generate the final set of assets required to deploy the applications in the target platform.
 

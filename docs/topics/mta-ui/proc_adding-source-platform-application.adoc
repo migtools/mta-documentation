@@ -6,7 +6,7 @@
 = Associating an application with a source platform
 
 [role="_abstract"] 
-Associate applications that you created in {ProductShortName} with their Cloud Foundry (CF) instances by configuring the application's coordinates in the source platform. 
+Associate applications that you created in {ProductShortName} with their Cloud Foundry (CF) instances by configuring the application's coordinates in the source platform.
 
 The specific coordinates vary depending on the source platform you select. For example, the coordinates for CF instances are *name* and *space*. 
 
@@ -40,7 +40,7 @@ The specific coordinates vary depending on the source platform you select. For e
 
 To verify that the coordinates you configured are saved in {ProductShortName}:
 
-. Click anywhere on the appication row to open the application details view.
+. Click anywhere on the application row to open the application details view.
 
 . Click the *Platform* tab to verify the source platform coordinates that you configured.
 

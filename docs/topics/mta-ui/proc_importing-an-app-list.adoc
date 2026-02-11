@@ -16,7 +16,7 @@ NOTE: Importing a list of applications does not overwrite any of the existing ap
 .Procedure
 
 . Download a CSV template for importing application lists: 	
-.. In the *Migration* view, click *Application inventory*. 			
+.. In the *Migration* view, click *Application Inventory*. 			
 .. Click the Options menu ({kebab}) to the right of *Review*. 					
 .. Click *Manage imports* to open the *Application imports* page. 			
 .. Click the Options menu ({kebab}) to the right of *Import*. 					

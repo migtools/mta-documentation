@@ -5,7 +5,7 @@
 [id="configuring-target-profiles_{context}"]
 = Configuring a target profile
 
-[role="_abstract"] 
+[role="_abstract"]
 Create and track the target profiles for a specific archetype in the {ProductFullName} user interface (UI).
 
 The target profile contains one or more generators. Each generator generates assets for different migration paths. 
