@@ -11,8 +11,6 @@ include::topics/templates/document-attributes.adoc[]
 [id="rules-development-guide"]
 = Configuring and using rules for an {ProductShortName} analysis
 
-[role="_abstract"]
-This guide describes how to create and configure custom YAML-based rules for {ProductShortName} analysis.
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
