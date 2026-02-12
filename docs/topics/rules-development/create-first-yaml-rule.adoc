@@ -13,7 +13,7 @@ In this example, you will create a rule to discover instances where an applicati
 
 .Procedure
 . Create a YAML file for the rule. In the following example, the rule is created in your `$HOME` directory.
-
++
 [options="nowrap",subs="attributes+"]
 ----
 $ mkdir /home/<USER>/rule.yaml
