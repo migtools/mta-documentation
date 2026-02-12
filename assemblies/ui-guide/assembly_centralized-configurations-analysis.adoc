@@ -15,9 +15,9 @@ endif::[]
 :context: centralized-configurations
 
 [role="_abstract"]
-Centralized configuration management allows organizations to use standardized configurations across components of {ProductFirstRef} such as the {WebName}, {CLIName}, and the Visual Studio Code {PluginName}. 
+Use standardized configurations across components of {ProductFirstRef} such as the {WebName}, {CLIName}, and the Visual Studio Code {PluginName} by using the centralized configuration management in {ProductFullName}.
 
-This feature allows Architects to create, edit, and delete  custom migration targets and configurations. For example, analysis profiles and custom rulesets in the {ProductShortName} {WebName}. The analysis profiles contain the following details:
+As an Architect, you can create, edit, and delete  custom migration targets and configurations. For example, analysis profiles and custom rulesets in the {ProductShortName} {WebName}. The analysis profiles contain the following details:
 
 * Analysis configuration
 .. Mode of analysis (for example, `source code`)
@@ -27,7 +27,7 @@ This feature allows Architects to create, edit, and delete  custom migration tar
 .. Custom rules
 .. Rule labels to include or exclude rules for an analysis
 
-Migrators can use these profiles to perform an application analysis. 
+As a Migrator, can use these profiles to perform an application analysis. 
 
 The {ProductShortName} Hub stores and syncs the profile configurations. {ProductShortName} components periodically sync with the Hub and pull the analysis profiles that contain the latest updates to the configuration.
 

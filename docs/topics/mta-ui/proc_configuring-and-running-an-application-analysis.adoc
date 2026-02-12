@@ -6,7 +6,8 @@
 [id="configuring-and-running-an-application-analysis_{context}"]
 = Configuring and running an application analysis manually
 
-A migrator can analyze more than one application at a time against more than one transformation target in the same analysis. 
+[role="_abstract"]
+A a migrator, can analyze more than one application at a time against more than one transformation target in the same analysis. 
 
 IMPORTANT: If you analyze an application that requires Maven credentials to access private repositories, you must assign these credentials in the Credentials section of the Administration view. Otherwise, there might be an impact on the quality of the analysis, identified issues, or the {ProductShortName} performance. For more information, see xref:configuring-credentials_configuring-mta-instance-environment[Configuring credentials].
 
@@ -30,7 +31,7 @@ Note also that the analysis output in the disconnected environment usually resul
 . Click *Analyze*.
 +
 // ![](/Tackle2/AppAssessAnalyze/AnalysisMode.png)
-. Select *Manual selection* in the *Mode* section for the analysis. You can complete the configuration for an analysis step-by-step with a unique configuration.
+. Select *Manual selection* in the *Mode* section for the analysis. You can provide a unique configuration for an analysis.
  
 . Click *Next* to go to the *Configure analysis* section. You can configure the analysis source, target platforms, and the scope of the dependency analysis. 
 . Select the *Analysis source* from the list:
@@ -81,7 +82,7 @@ IMPORTANT: Attaching custom rules is optional if you have already attached a mig
 +
 NOTE: Automatically attached tags are displayed only _after_ you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
 +
-NOTE: Analysis engines use standard rules for a comprehensive set of migration targets. However, if the target is not included, is a customized framework, or the application is written in a language that is not supported, for example, Ruby, you can add custom rules by skipping the target selection in the *Set target* tab. Upload custom rule files in the Custom Rules tab. Only custom rule files that are uploaded manually are validated.
+NOTE: Analysis engines use standard rules for a comprehensive set of migration targets. However, if the target is not included, is a customized framework, or the application is written in a language that is not supported, for example, Ruby, you can add custom rules by skipping the target selection in the *Set targets* tab. Upload custom rule files in the Custom Rules tab. Only custom rule files that are uploaded manually are validated.
 +
 * Enable enhanced analysis details.
 

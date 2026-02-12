@@ -7,7 +7,7 @@
 = Using a profile to run an application analysis 
 
 [role="_abstract"]
-A Migrator can use a pre-configured analysis profile to analyze an application for a target platform. 
+As a Migrator, you can use a pre-configured analysis profile to analyze an application for a target platform. 
 
 .Procedure
 

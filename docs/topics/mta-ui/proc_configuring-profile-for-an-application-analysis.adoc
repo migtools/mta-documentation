@@ -8,7 +8,7 @@
 
 
 [role="_abstract"]
-You can configure a profile that has the configuration needed to analyze an application for a specific migration target.
+Configure a profile that has the configuration needed to analyze an application for a specific migration target.
 
 .Procedure
 
