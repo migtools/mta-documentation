@@ -21,7 +21,7 @@ When your system is in a disconnected environment, but you have access to a Mave
 Note also that the analysis output in the disconnected environment usually results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
 ====
 
-NOTE: After creating an application instance on the *Application Inventory* page, the language discovery task starts, automatically pre-selecting the target filter option. However, you can choose a different language that you prefer.
+NOTE: After creating an application instance on the *Application Inventory* page, the language discovery task starts, automatically preselecting the target filter option. However, you can choose a different preferred language.
 
 
 .Procedure

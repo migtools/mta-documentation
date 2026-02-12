@@ -5,7 +5,7 @@
 [id="adding-source-platform-application_{context}"]
 = Associating an application with a source platform
 
-[role="_abstract"] 
+[role="_abstract"]
 Associate applications that you created in {ProductFullName} with their source platform instances, such as Cloud Foundry (CF), by configuring the application's coordinates.
 
 The specific coordinates vary depending on the source platform you select. For example, the coordinates for CF instances are *name* and *space*. 
@@ -19,11 +19,11 @@ The specific coordinates vary depending on the source platform you select. For e
 . In the {ProductShortName} user interface, select the *Migration* mode.
 . On the *Application Inventory* page, click the edit icon (image:icon_edit.png[]) in an application. The *Update application* dialog appears.
 . Enter the following information in the form:
-. Click *Source platform* and enter the following fields:
-.. *Source platform*: Select a source platform instance.
-.. *Source platform coordinates*: Configure the source platform coordinates in either way:
-... Enter the source platform coordinates in the fields. For example, *name* and *space* for a CF instance.
-... Enable the source platform coordinates to enter application coordinates in JSON. For example, a CF instance coordinates can be:
+.. Click *Source platform* and enter the following fields:
+... *Source platform*: Select a source platform instance.
+... *Source platform coordinates*: Configure the source platform coordinates in either way:
+.... Enter the source platform coordinates in the fields. For example, *name* and *space* for a CF instance.
+.... Enable the source platform coordinates to enter application coordinates in JSON. For example, a CF instance coordinates can be:
 +
 [source, json]
 ----
@@ -32,8 +32,8 @@ The specific coordinates vary depending on the source platform you select. For e
     "space": ["example-space"]
 }
 ----
-.. *name*: Type the name of the application.
-.. *space*: Configure the CF space in which the app is deployed in the source platform.
+... *name*: Type the name of the application.
+... *space*: Configure the CF space in which the app is deployed in the source platform.
 . Click *Save* and close the *Update application* dialog.
 
 .Verification

@@ -49,7 +49,7 @@ The higher risk level always takes precedence. For example, if the `yellow` thre
 
 * `name` (required, string): A name to be displayed for the section.
 * `order` (required, integer): An order of the question in the section.
-* `comment` (optional, string): A description the section.
+* `comment` (optional, string): A description of the section.
 * `questions` (required): A list of questions that belong to the section.
 ** `order` (required, integer): An order of the question in the section.
 ** `text` (required, string): A question to be asked.
@@ -68,7 +68,7 @@ The higher risk level always takes precedence. For example, if the `yellow` thre
 *** `mitigation` (optional, string): An explanation of the potential mitigation strategy for the risk implied by the answer.
 *** `applyTags` (optional): A list of tags to be automatically applied to the assessed application or archetype if this answer is selected.
 **** `category` (required, string): A category of the target tag.
-**** `tag` (required,string): A target tag.
+**** `tag` (required, string): A target tag.
 *** `autoAnswerFor` (optional, list): A list of tags that will lead to this answer being automatically selected when the application or archetype is assessed.
 **** `category` (required, string): A category of the target tag.
 **** `tag` (required, string): A target tag.

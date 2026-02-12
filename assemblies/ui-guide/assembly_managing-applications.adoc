@@ -15,7 +15,7 @@ endif::[]
 :context: managing-applications
 
 [role="_abstract"]
-To configure your portfolio for modernization and migration, prepare your applications for assessment and analysis in the {ProductFullName} user interface (UI).
+Configure your portfolio for modernization and migration by preparing your applications for assessment and analysis in the {ProductFullName} user interface (UI).
 
 You can use the {ProductShortName} UI to perform the following tasks: 	
 
