@@ -10,7 +10,7 @@ endif::[]
 ifdef::context[]
 [id="analyzing-applications_{context}"]
 endif::[]
-= Analyzing an application with MTA
+= Analyzing applications with {ProductShortName}
 
 :context: analyzing-applications
 

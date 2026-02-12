@@ -10,7 +10,7 @@ endif::[]
 ifdef::context[]
 [id="tagging-applications_{context}"]
 endif::[]
-= Tagging an application with {ProductShortName}
+= Tagging applications with {ProductShortName}
 
 :context: tagging-applications
 
