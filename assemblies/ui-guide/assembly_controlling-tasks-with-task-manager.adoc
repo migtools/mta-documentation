@@ -26,7 +26,7 @@ To get information about the {ProductFullName} tasks queued for execution, acces
 
 [WARNING]
 ====
-There are no multi-user access restrictions on resources. For example, an analyzer task created by a user can be canceled by any other user.
+Multi-user access restrictions are not enforced on resources. For example, an analyzer task created by a user can be canceled by any other user.
 ====
 
 include::topics/mta-ui/proc_displaying-mta-tasks.adoc[leveloffset=+1]

@@ -9,7 +9,7 @@
 [role="_abstract"]
 Estimate the risks and costs involved in preparing applications for modernization by performing an application assessment in the {ProductFullName} user interface (UI).
 
-The {ProductFullName} assesses applications according to a set of questions relevant to the application, such as dependencies. To assess the application, you can use the default xref:mta-default-questionnaire_assessment-questionnaires[Legacy Pathfinder] {ProductShortName} questionnaire or import your xref:mta-custom-questionnaire_assessment-questionnaires[custom] questionnaire.
+The {ProductFullName} assesses applications according to a set of questions relevant to the application, such as dependencies. To assess the application, you can use the default xref:mta-default-questionnaire_assessment-questionnaires[Legacy Pathfinder] {ProductShortName} questionnaire or import a xref:mta-custom-questionnaire_assessment-questionnaires[custom] questionnaire.
 
 IMPORTANT: You can assess only one application at a time.
 

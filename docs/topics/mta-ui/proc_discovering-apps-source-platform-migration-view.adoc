@@ -46,4 +46,4 @@ This action triggers an application import task.
 
 . Close the *Discover applications* window.
 
-. Optional: Click the application import task to check the status of the  task and to view the task details in YAML format.
+. Optional: Click the application import task to check the status of the task and to view the task details in YAML format.

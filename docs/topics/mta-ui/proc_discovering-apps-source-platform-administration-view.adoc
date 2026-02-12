@@ -6,7 +6,7 @@
 = Discovering applications through source platform in the Administration view
 
 [role="_abstract"]
-After you configured a source platform, discover and import one or more applications to the {ProductShortName} application inventory.
+After you configure a source platform, discover and import one or more applications to the {ProductShortName} application inventory.
 
 You can filter application manifests in the CF clusters by organizations and spaces, and application names.
 
