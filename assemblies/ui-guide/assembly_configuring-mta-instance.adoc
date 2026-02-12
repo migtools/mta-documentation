@@ -14,7 +14,11 @@ endif::[]
 
 :context: configuring-mta-instance
 
-If you are a project architect, you can configure the instance’s key parameters before migration. You can add and edit these parameters as needed. The following parameters define applications, individuals, teams, verticals, or areas within an organization affected or participating in the migration:
+
+[role="_abstract"]
+To adjust the {ProductFullName} to your needs, configure a {ProductShortName} instance. By configuring the instance, you ensure {ProductShortName} considers key parameters during the migration process and generates comprehensive modernization reports.
+
+If you are a project architect, you can configure the instance’s key parameters before migration. The following parameters define applications, individuals, teams, verticals, or areas within an organization affected or participating in the migration:
 
 * Stakeholders 					
 * Stakeholder groups 					
