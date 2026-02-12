@@ -56,7 +56,7 @@ Report created: _<output_report_directory>_/index.html
 .. Paste the path to the browser of your choice.
 
 +
-Alternatively, press *Ctrl* and click on the path to the report file.
+Alternatively, press *Ctrl* and click the path to the report file.
 
 [role="_additional-resources"]
 .Additional resources
