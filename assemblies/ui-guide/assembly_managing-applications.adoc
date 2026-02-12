@@ -10,7 +10,7 @@ endif::[]
 ifdef::context[]
 [id="managing-applications_{context}"]
 endif::[]
-= Managing applications with {MTA}
+= Managing applications with {ProductShortName}
 
 :context: managing-applications
 
