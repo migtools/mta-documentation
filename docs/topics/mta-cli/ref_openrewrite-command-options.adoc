@@ -13,7 +13,7 @@ The {ProductFullName} command-line interface (CLI) provides the `mta-cli transfo
 |====
 |Option|Description
 |`--goal` (string)|A target goal. The default is `"dryRun"`.
-|`--help`|Display all `mta-cli transform OpenRewrite` command options. 
+|`--help`|Display all `mta-cli transform openrewrite` command options. 
 |`--input` (string)|A path to the application source code directory.
 |`--list-targets`|List all available OpenRewrite recipes.
 |`-maven-settings` (string)|A path to a custom Maven settings file.
