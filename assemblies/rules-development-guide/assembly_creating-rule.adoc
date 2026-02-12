@@ -30,6 +30,7 @@ include::topics/rules-development/create-nodejs-custom-rule.adoc[leveloffset=+1]
 
 include::topics/rules-development/create-python-custom-rule.adoc[leveloffset=+1]
 
+include::topics/rules-development/create-csharp-custom-rule.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-creating-rule[:context: {parent-context-of-creating-rule}]
 ifndef::parent-context-of-creating-rule[:!context:]

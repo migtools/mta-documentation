@@ -1,0 +1,84 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="create-csharp-custom-rule_{context}"]
+= Creating a custom C# rule
+
+[role="_abstract"]
+You can create custom rules for `C#` applications based on the following example.
+
+You can use the following custom rule to check if {ProductShortName} triggers an incident when it detects the `WebMatrix.WebData.WebSecurity` class in the `nerd-dinner` example project.
+
+.Prerequisites
+
+* You installed `.NET` SDK 9.x or higher
+* You installed `ilspycmd` and `paket` for dependency analysis
+* You exported the dotnet tools path by using the `export PATH="$PATH:<path/to/.dotnet/tools"` command
+
+.Procedure
+. Create a `csharp-rule.yaml` file in your `Home` directory. 
+
+. Copy the following rule in the `csharp-rule.yaml` file:
++
+
+[source, yaml]
+----
+- category: mandatory
+  customVariables: []
+  description: WebMatrix.WebData.WebSecurity is not available in .NET Core
+  effort: 8
+  labels:
+  - konveyor.io/source=dotnet
+  - konveyor.io/target=dotnet-core
+  links:
+  - title: Introduction to Identity on ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity
+  - title: Migrate Authentication and Identity to ASP.NET Core
+    url: https://learn.microsoft.com/en-us/aspnet/core/migration/identity
+  message: |
+    WebMatrix.WebData.WebSecurity is not available in .NET Core and must be replaced with ASP.NET Core Identity.
+
+    Migration actions:
+    - Add Microsoft.AspNetCore.Identity.EntityFrameworkCore NuGet package
+    - Create ApplicationUser class inheriting from IdentityUser
+    - Update DbContext to inherit from IdentityDbContext<ApplicationUser>
+    - Replace WebSecurity.Login with SignInManager.PasswordSignInAsync
+    - Replace WebSecurity.Logout with SignInManager.SignOutAsync
+    - Replace WebSecurity.CreateUserAndAccount with UserManager.CreateAsync
+    - Replace WebSecurity.ChangePassword with UserManager.ChangePasswordAsync
+    - Configure Identity in Startup.ConfigureServices with AddIdentity or AddDefaultIdentity
+  ruleID: dotnet-core-websecurity-01
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: WebMatrix.WebData.WebSecurity
+----
+
+. Clone the `c-sharp-analyzer-provider` respository that has the application in the `test-data/nerd-dinner` path:
++
+
+[subs="+quotes"]
+----
+$ git clone https://github.com/konveyor/c-sharp-analyzer-provider.git
+----
+
+. Run the following command in the {ProductShortName} CLI:
++
+
+[source, terminal]
+----
+$ ./mta-cli analyze -i _path_to_nerd-dinner_ -o _path_to_report_ --overwrite --run-local=false --enable-default-rulesets=false --mode source-only --rules ~/csharp-rule.yaml 
+----
++
+
+[NOTE]
+====
+Add the `--overwrite` option if you want to use the same directory for the report when you run subsequent tests. {ProductShortName} overwrites the current report with the result of the latest analysis that you run.
+====
+
+. Open the static report at _path_to_report_ in your browser.
+
+. Navigate to the issues to verify the *`WebMatrix.WebData.WebSecurity` is not available in `.NET Core`* issue.
+

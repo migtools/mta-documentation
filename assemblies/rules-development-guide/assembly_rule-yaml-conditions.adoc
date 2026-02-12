@@ -25,16 +25,16 @@ Currently, {ProductShortName} supports the following providers:
 * Builtin
 * Java 
 * Go 
-* External providers (for `Python`, `Dotnet` and `Node.js` applications) initialized by the generic provider binary
+* External providers (for `Python`, `C#` and `Node.js` applications) initialized by the generic provider binary
 
 [NOTE]
 ====
 You can use the generic provider binary to create an external provider for any language that is compliant with link:https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/[LSP 3.17 specifications].
 ====
 
-.Using the provider capability in custom rules
+== Using the provider capability in custom rules
 
-In a rule, the when block is where the conditions for matching the rule are specified. Each provider offers a series of capabilities to do matching.. The search query in the rule condition can contain patterns, code locations, specific dependencies to be found, and so on, to evaluate the source code and dependencies. The provider sends the LSP server a request to check the search query against the application being analyzed. When the LSP server returns a match for the search in the source code, the analyzer triggers a violation.
+In a rule, the when block is where the conditions for matching the rule are specified. Each provider offers a series of capabilities to do matching. The search query in the rule condition can contain patterns, code locations, specific dependencies to be found, and so on, to evaluate the source code and dependencies. The provider sends the LSP server a request to check the search query against the application being analyzed. When the LSP server returns a match for the search in the source code, the analyzer triggers a violation.
 
 The syntax for the when block is as follows: contains one condition, but that condition can have multiple conditions nested under it.
 

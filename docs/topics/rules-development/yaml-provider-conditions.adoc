@@ -27,14 +27,15 @@ The analyzer currently supports the following `provider` conditions:
 * `go`
 * `nodejs`
 * `python`
-* `dotnet`
+* `csharp`
 
-:FeatureName: Dotnet provider
-
+:FeatureName: Csharp provider
 [IMPORTANT]
 ====
 [subs="attributes+"]
-{FeatureName} is a Developer Preview feature only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated SLA.
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
 ====
 :!FeatureName:
 
@@ -50,7 +51,7 @@ The analyzer currently supports the following `provider` conditions:
 
 | Providers that have rules already defined in the product
 a| 
-* `dotnet`
+* `csharp`
 * `java`
 
 |Providers that require custom rulesets for analysis
@@ -444,13 +445,75 @@ when:
       lowerbound: v4.2.0
 ----
 
-.3+|xref:yaml-dotnet-provider_rules-prov-cond[dotnet]
+.2+|xref:yaml-dotnet-provider_rules-prov-cond[csharp]
 .2+|referenced
 |pattern
 |Yes
-|Regular expression to match a reference in the source code. For example, `HttpNotFound`.
+|Regular expression to match a reference in the source code. For example, `System.Web.Mvc.*`.
 
-|namespace
+|location
 |Yes
-|Specify the namespace within which the search query must be run. For example, `System.Web.Mvc`.
+a|Specify one of the following for which the search query must be run. 
+
+ * Type reference including classes, interfaces and structure types (struct)
+
+ For example, 
+[subs="+quotes"]
+----
+when:
+  csharp.referenced:
+    location: CLASS
+    pattern: System.Web.Http.ApiController.*
+----
+ For example, 
+[subs="+quotes"]
+----
+when:
+  csharp.referenced:
+    location: ALL
+    pattern: "public struct *"
+----
+
+ * Method calls and definitions
+ 
+ For example, 
+[subs="+quotes"]
+----
+when:
+  csharp.referenced:
+    location: METHOD
+    pattern: "*.AppDomain.Unload"
+----
+
+ * Field usages and declaration
+
+ For example, 
+[subs="+quotes"]
+----
+when:
+  csharp.referenced:
+    location: FIELD
+    pattern: "public DateTime"
+----
+
+ * Namespace imports and usages
+
+ For example, 
+[subs="+quotes"]
+----
+when:
+  csharp.referenced:
+    location: ALL
+    pattern: "System.Windows.Forms"
+----
+
+ * `ALL` - You can also specify `ALL` as `location` to run a search query namespaces, structure types, and interfaces.
+
+ For example, 
+[subs="+quotes"]
+----
+when:
+  csharp.referenced:
+    location: ALL
+----
 |===
