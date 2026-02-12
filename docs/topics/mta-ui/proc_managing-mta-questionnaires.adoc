@@ -28,7 +28,7 @@ IMPORTANT: You cannot delete the *Legacy Pathfinder* default questionnaire.
 
 * Depending on your scenario, perform one of the following actions:
 
-** Display the quest the assessment questionnaire:
+** Display the assessment questionnaire:
 . In the *Administration* view, select *Assessment questionnaires*.
 . Click the Options menu ({kebab}).
 . Select *View* for the questionnaire you want to display.

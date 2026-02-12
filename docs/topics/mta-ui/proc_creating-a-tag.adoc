@@ -12,8 +12,8 @@ To categorize applications based on certain parameters, create tags in the {Prod
 
 You can create and configure tags in any order. However, the following is the most efficient order:
 
-. Create tag categories. 					
-. Create tags. 	
+. Create tag categories.
+. Create tags.
 
 .Procedure
 

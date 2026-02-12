@@ -42,6 +42,7 @@ For a CF instance, the application `names` field can contain globs. For example,
 . Click *Next* to review the configuration.
 
 . Click *Discover applications*.
++
 This action triggers an application import task.
 
 . Close the *Discover applications* window.

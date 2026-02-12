@@ -34,7 +34,7 @@ On the *Generators* page, you can create, edit, and delete generators.
 During asset generation, the generator overrides the value of the matching attribute in the discovery manifest with the value you enter.
 .. Optional: Click *Parameters* to enter parameters and their default values as a key-value pair.
 +
-Parameter fields will require user inputs before the template generates the assets. 
+Parameter fields require user input before the template can generate assets.
 +
 NOTE: During template instantiation, parameters take precedence over value and values take precedence over the configurations present in the discovery manifest.
 . Click *Save*.
