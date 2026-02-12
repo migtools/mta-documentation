@@ -7,11 +7,10 @@ include::topics/templates/document-attributes.adoc[]
 :imagesdir: topics/images
 :context: rules-development-guide
 :rules-development-guide:
-:_mod-content-type: ASSEMBLY
+:_mod-docs-content-type: ASSEMBLY
 [id="rules-development-guide"]
 = Configuring and using rules for an {ProductShortName} analysis
 
-[role="abstract"]
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
@@ -76,8 +75,8 @@ include::assemblies/rules-development-guide/assembly_rule-rulesets.adoc[leveloff
 
 //include::topics/rules-important-links.adoc[leveloffset=+1]
 
-* {ProductShortName} Jira issue tracker: {JiraWindupURL}
-* {ProductShortName} mailing list: windup-eng@redhat.com
+* link:{JiraWindupURL}[{ProductShortName} Jira issue tracker]
+* link:mailto:windup-eng@redhat.com[{ProductShortName} mailing list]
 
 // removing section subject to a later re-write
 // Review the Existing MTA XML Rules

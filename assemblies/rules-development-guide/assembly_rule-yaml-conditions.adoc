@@ -22,7 +22,7 @@ Additionally, {ProductShortName} provides a built-in provider with abilities suc
 
 Currently, {ProductShortName} supports the following providers:
 
-* Builtin
+* builtin
 * Java 
 * Go 
 * External providers (for `Python`, `Dotnet` and `Node.js` applications) initialized by the generic provider binary
