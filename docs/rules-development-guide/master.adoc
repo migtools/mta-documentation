@@ -7,7 +7,6 @@ include::topics/templates/document-attributes.adoc[]
 :imagesdir: topics/images
 :context: rules-development-guide
 :rules-development-guide:
-:_mod-content-type: ASSEMBLY
 :_mod-docs-content-type: ASSEMBLY
 [id="rules-development-guide"]
 = Configuring and using rules for an {ProductShortName} analysis
