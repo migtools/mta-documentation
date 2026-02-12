@@ -4,23 +4,25 @@
 
 :_mod-docs-content-type: REFERENCE
 [id="yaml-dotnet-provider_{context}"]
-= Dotnet provider
+= C# provider
 
 [role="_abstract"]
-The `dotnet` provider is an external provider used to analyze .NET and C# source code. Currently, the provider supports the `referenced` capability.
+The `C#` provider is an external provider used to analyze `.NET` and `C#` source code. Currently, the provider supports the `referenced` capability.
 
-.`referenced`
+The `C#` provider uses a gRPC interface to perform a semantic analysis of an application source code in the `source-only` mode. The provider parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the `C#` custom rule definition, the analyzer identifies violations in your code that you must resolve before the application migration. 
 
-By using the `referenced` capability, the provider finds references in the source code.
+`referenced`::
+
+The `C#` provider supports `referenced` capability in rules to define fields such as `pattern` and `location` based on which the provider searches the code for violations. 
 
 [source,yaml]
 ----
 when:
-  dotnet.referenced:
+  csharp.referenced:
     pattern: "<pattern>" 
-    namespace: "<namespace>" 
+    location: CLASS 
 ----
 where:
 
- `pattern` :: A regular expression pattern to match the desired reference. For example, `HttpNotFound`.
+ `pattern` :: A regular expression pattern to match the required reference. For example, `HttpNotFound`.
  `namespace` :: Specifies the namespace to search within. For example, `System.Web.Mvc`.

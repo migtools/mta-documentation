@@ -6,9 +6,12 @@
 [id="downloading-an-analysis-report_{context}"]
 = Downloading an analysis report
 
-An {ProductShortName} analysis report contains several sections, including a listing of the technologies used by the application, the dependencies of the application, and the lines of code that must be changed to successfully migrate or modernize the application.
+[role="_abstract"]
+To identify specific migration issues and dependencies, download an analysis report from the {ProductFullName} user interface (UI) and review it.
 
-For more information about the contents of an {ProductShortName} analysis report, see link:{ProductDocUserGuideURL}#reviewing-analysis-reports_cli-guide[Reviewing the reports].
+The {ProductShortName} analysis report contains several sections, including a listing of the technologies used by the application, the dependencies of the application, and the lines of code that must be changed to successfully migrate or modernize the application.
+
+For more information about the contents of an {ProductShortName} analysis report, see link:{mta-URL}/using_the_migration_toolkit_for_applications_command-line_interface/reviewing-analysis-reports_cli-guide[Reviewing an analysis report].
 
 For your convenience, you can download analysis reports. Note that by default this option is disabled.
 

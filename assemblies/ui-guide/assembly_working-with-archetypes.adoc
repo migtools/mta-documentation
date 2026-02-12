@@ -14,9 +14,10 @@ endif::[]
 
 :context: working-with-archetypes
 
-An *archetype* is a group of applications with common characteristics. You can use archetypes to assess multiple applications at once.
+[role="_abstract"]
+To assess multiple applications at once in the {ProductFullName} user interface (UI), use archetypes.
 
-Application archetypes are defined by criteria tags and the application taxonomy. Each archetype defines how the _assessment module_ assesses the application according to the characteristics defined in that archetype. If the tags of an application match the criteria tags of an archetype, the application is associated with the archetype.
+An *archetype* is a group of applications with common characteristics. Application archetypes are defined by criteria tags and the application taxonomy. Each archetype defines how the _assessment module_ assesses the application according to the characteristics defined in that archetype. If the tags of an application match the criteria tags of an archetype, the application is associated with the archetype.
 
 Creation of an archetype is defined by a series of *tags*, *stakeholders*, and *stakeholder groups*. The tags include the following types:
 
