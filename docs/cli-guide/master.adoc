@@ -3,8 +3,6 @@
 [id="cli-guide"]
 = Using the {ProductName} command-line interface
 
-Use the {ProductName} command-line interface to analyze applications, review reports, transform source code, and generate deployment assets for migration and modernization.
-
 include::topics/templates/document-attributes.adoc[]
 
 :toc:
