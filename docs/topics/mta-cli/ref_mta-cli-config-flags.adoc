@@ -1,0 +1,47 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-04-09
+
+:_mod-docs-content-type: REFERENCE
+
+[id="mta-cli-config-flags_{context}"]
+= The config command options
+
+[role="_abstract"]
+You can connect to the {ProductFullName} Hub and download profile bundles from the command-line interface (CLI) by using the `mta-cli config` command options. 
+
+.`mta-cli config` command options
+[options="header"]
+|====
+|Option|Flag|Description
+
+.2+|`config` 
+|
+|Connect to the {ProductShortName} Hub.
+
+|`--k`, `--insecure`
+|Skip TLS certificate verification.
+
+.2+|`list`
+|
+|Lists the profiles downloaded and stored locally in the application.
+
+|`--profile-dir`
+|Specify the path to the application in your system to find the path where {ProductShortName} downloaded the profile directory.
+
+|`login`
+|
+|Use the command to enter the `host` URL, `username`, and the `password`. 
++
+
+The `host` URL is the {ProductShortName} user interface URL. The username and password are the {ProductShortName} realm credentials.
+
+.2+|`sync`
+|
+|Sync and download the application profile currently stored in the {ProductShortName} Hub.
+
+|`--url`
+|Specify the URL of the application repository. 
+
+|====
+
+
