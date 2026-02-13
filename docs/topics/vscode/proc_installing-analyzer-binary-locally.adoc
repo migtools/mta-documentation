@@ -1,0 +1,37 @@
+:_mod-docs-content-type: PROCEDURE
+[id="installing-analyzer-rpc_{context}"]
+= Configuring and using the {ProductShortName} analyzer RPC binary in your system
+
+[role="_abstract"]
+The {ProductFullName} Visual Studio Code extension consists of an analyzer RPC binary that runs an analysis for `Java`, `Go`, `Python`, `Node.js` and `C#` or `.NET` applications. 
+
+When you install the {ProductShortName} Visual Studio Code extension, the extension downloads the analyzer RPC binary of the latest version from the Red Hat Developer portal. 
+
+In a restricted network environment where the extension cannot access the link to download the analyzer RPC binary, you can download the binary in your system and configure its path in the Visual Studio Code extension.
+
+.Prerequisites 
+
+* You installed the Java Development Kit (JDK). {ProductShortName} supports the following JDKs:
+
+** Oracle JDK 17 or later
+** Eclipse Temurin™ JDK 17 or later
+** OpenJDK 17 or later
+
+* You have 8 GB of RAM available.
+
+* For macOS installation, you have the value of `maxproc` set to `2048` or greater.
+
+.Procedure
+
+. Download the {ProductShortName} {ProductVersion} analyzer RPC from link:https://developers.redhat.com/content-gateway/rest/browse/pub/mta/[Red Hat Developer portal] in your system. 
+. Access the {ProductShortName} extension settings in either of the following ways:
+.. Click `Extensions > MTA Extension for VSCode > Settings`.
+.. Type `Preferences: Open User Settings (JSON)` in the Command Palette to open the `settings.json` file.
+. Configure the analyzer RPC binary path for the extension in one of the following ways:
+.. Enter the analyzer RPC binary path in the `Analyzer Path` field in the {ProductShortName} extension settings.
+.. Configure the path to the local analyzer RPC binary in the `mta-vscode-extension.analyzerPath`
+field in the `settings.json` file. 
+.. Type `{ProductShortName}: Override Analyzer Binary` in the Command Palette to select the analyzer binary in your system.
+. Reload the Visual Studio Code window by typing `Developer:Reload Window` in the Command Palette. 
+. Open the extension analysis view by typing `MTA: Open Analysis View` in the Command Palette.
+. Click *Start* to use the analyzer RPC binary to perform an analysis.
