@@ -14,6 +14,7 @@ endif::[]
 
 :context: mta-8-0
 
+[role="_abstract"]
 The Release Notes provide high-level coverage of the improvements and additions that have been implemented in {ProductFullName} 8.0.
 
 include::assembly_mta-8-0-1.adoc[leveloffset=+1]

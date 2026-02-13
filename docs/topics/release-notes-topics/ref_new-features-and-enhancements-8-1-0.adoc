@@ -1,0 +1,24 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-02-13
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-and-enhancements-8-1-0_{context}"]
+= New features and enhancements
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.1.0 provides the following major new features and enhancements.
+
+
+(Placeholder) Centralized Configuration Management
+
+
+
+
+(Placeholder) C# Analysis support in the hub
+
+
+
+
+(Placeholder) Support for LLM Proxying with MTA
+
+

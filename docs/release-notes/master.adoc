@@ -17,3 +17,4 @@ include::assemblies/release-notes/assembly_mta-8-0.adoc[leveloffset=+1]
 
 
 :!release-notes:
+ 

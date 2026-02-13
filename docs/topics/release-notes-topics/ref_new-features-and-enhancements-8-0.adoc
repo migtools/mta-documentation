@@ -6,7 +6,7 @@
 = New features and enhancements
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version {ProductVersion} provides the following major new features and enhancements.
+{ProductFirstRef} ({ProductShortName}) version 8.0.0 provides the following major new features and enhancements.
 
 {mta-dl-plugin} is available in the VS Code extension::
 
