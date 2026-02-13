@@ -21,6 +21,8 @@ include::topics/vscode/con_intro-to-vscode-for-mta.adoc[leveloffset=+1]
 
 include::topics/vscode/proc_installing-vscode-extension.adoc[leveloffset=+1]
 
+include::topics/vscode/proc_installing-analyzer-binary-locally.adoc[leveloffset=+1]
+
 include::topics/vscode/proc_configuring-lighstspeed-ide-settings.adoc[leveloffset=+1]
 
 include::topics/vscode/proc_configuring-profile-settings.adoc[leveloffset=+1]
