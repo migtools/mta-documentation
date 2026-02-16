@@ -10,11 +10,14 @@ endif::[]
 ifdef::context[]
 [id="managing-applications_{context}"]
 endif::[]
-= Managing applications with {MTA}
+= Managing applications with {ProductShortName}
 
 :context: managing-applications
 
-You can use the {ProductFullName} user interface (UI) to perform the following tasks to prepare your applications for the assessment and analysis: 	
+[role="_abstract"]
+Configure your portfolio for modernization and migration by preparing your applications for assessment and analysis in the {ProductFullName} user interface (UI).
+
+You can use the {ProductShortName} UI to perform the following tasks: 	
 
 * Add applications
 * Assign application credentials
