@@ -5,7 +5,15 @@
 [id="intro-to-mta-ui_{context}"]
 = Introduction to the {ProductName} user interface
 
-You can use the {ProductFullName} user interface (UI) to assess and analyze applications for risks and suitability for migration to hybrid cloud environments on Red Hat OpenShift. You can get insights about potential issues in the adoption process, at both the portfolio and application levels as you inventory, assess, analyze, and manage applications for faster migration to OpenShift.
+[role="_abstract"]
+You can manage your application migration projects by using the {ProductFullName} user interface (UI).
+
+You can use the {ProductShortName} UI to assess and analyze applications for risks and suitability for migration to hybrid cloud environments on Red Hat OpenShift. By using the UI, you can perform the following tasks:
+
+* Assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift.
+* Analyze the changes that you might need to apply to the code of an application to containerize this application. 
+
+
 
 [role="_additional-resources"]
 .Additional resources

@@ -7,8 +7,9 @@
 = The YAML template for the custom questionnaire
 
 [role="_abstract"]
+To correctly format your assessment data for use in the {ProductFullName} user interface (UI), use the following YAML template for custom questionnaires.
 
-You can use the following YAML template to build your custom questionnaire. You can download this template by clicking *Download YAML template* on the *Assessment questionnaires* page.
+You can download the YAML template by clicking *Download YAML template* on the *Assessment questionnaires* page.
 
 .The YAML template for the custom questionnaire
 [%collapsible]

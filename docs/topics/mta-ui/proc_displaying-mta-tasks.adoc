@@ -1,0 +1,16 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-01-14
+:_mod-docs-content-type: PROCEDURE
+
+[id="displaying-mta-tasks_{context}"]
+= Displaying {ProductShortName} tasks
+
+[role="_abstract"]
+To display information related to {ProductFullName} user interface tasks, access *Task Manager*.
+
+.Procedure
+
+* Depending on your scenario, display information about {ProductShortName} tasks either of the following ways:
+
+** To display active tasks, open the *Task Manager* drawer by clicking the notifications button.
+** To display all tasks, open the *Task Manager* page in the *Migration* view.

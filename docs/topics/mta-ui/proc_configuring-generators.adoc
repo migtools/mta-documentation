@@ -1,0 +1,41 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-generators_{context}"]
+= Configuring a generator
+
+[role="_abstract"]
+To get templates required to generate different asset manifests, configure generators that contain a repository with these templates.
+
+.Prerequisites
+
+* You installed {ProductShortName} 8.0.0 operator to access the web console.
+* You are an administrator with access to the *Administration* mode in the {ProductShortName} {WebName}.
+* As an administrator, you configured a source control credential for the template repository (if applicable).
+
+.Procedure
+
+. In the *Administration* view, click *Generators*.
++
+On the *Generators* page, you can create, edit, and delete generators.
+. Click *Create new generator*.
+. Configure the following fields:
+.. In the *Name* field in the opened dialog, enter a unique name for the generator.
+.. Select *Helm* as the generator.
+.. Click *Template repository* to expand the section.
+... Select a *Repository type* from *Git* or *Subversion*.
+... Optional: Enter the URL of your repository that contains the Helm templates.
+... Optional: Enter the *Branch* of your repository.
+... Optional: Enter the *Root path* of your repository.
+... Select the credentials to access your repository if it is private.
+.. Optional: Click *Values* and enter the new value for an attribute in the discovery manifest as a key-value pair.
++ 
+During asset generation, the generator overrides the value of the matching attribute in the discovery manifest with the value you enter.
+.. Optional: Click *Parameters* to enter parameters and their default values as a key-value pair.
++
+Parameter fields require user input before the template can generate assets.
++
+NOTE: During template instantiation, parameters take precedence over values, and values take precedence over the configurations present in the discovery manifest.
+. Click *Save*.
+You can click anywhere on the generator row to open the details view that shows the generator configuration details, parameters, and values.
