@@ -7,7 +7,9 @@
 = Configuring and running an application analysis manually
 
 [role="_abstract"]
-A a migrator, can analyze more than one application at a time against more than one transformation target in the same analysis. 
+To determine which specific lines of code you must modify before migrating or modernizing, configure and run an application analysis in the {ProductFullName} user interface (UI).
+
+You can analyze more than one application at a time against more than one transformation target in the same analysis.
 
 IMPORTANT: If you analyze an application that requires Maven credentials to access private repositories, you must assign these credentials in the Credentials section of the Administration view. Otherwise, there might be an impact on the quality of the analysis, identified issues, or the {ProductShortName} performance. For more information, see xref:configuring-credentials_configuring-mta-instance-environment[Configuring credentials].
 
@@ -18,6 +20,8 @@ When your system is in a disconnected environment, but you have access to a Mave
 
 Note also that the analysis output in the disconnected environment usually results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
 ====
+
+NOTE: After creating an application instance on the *Application Inventory* page, the language discovery task starts, automatically preselecting the target filter option. However, you can choose a different preferred language.
 
 
 .Procedure
@@ -100,5 +104,3 @@ NOTE: {ProductShortName} relies on Kubernetes scheduling capabilities to determi
 +
 Alternatively, hover over the application name to display the pop-over window.
 . When analysis is complete, to see its results, open the application drawer by clicking on the application name.
-
-NOTE: After creating an application instance on the Application Inventory page, the language discovery task starts, automatically pre-selecting the target filter option. However, you can choose a different language that you prefer.

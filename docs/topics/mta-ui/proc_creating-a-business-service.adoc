@@ -5,7 +5,8 @@
 [id="creating-a-business-service_{context}"]
 = Creating a business service
 
-The {ProductFullName} uses the business service attribute to specify the departments within the organization that use the application and that are affected by the migration.
+[role="_abstract"]
+To organize your application portfolio by function, create business services in the {ProductFullName} user interface (UI). By defining business services, you can specify the departments within the organization that use the application and that are affected by the migration.
 
 .Procedure
 

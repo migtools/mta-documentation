@@ -5,15 +5,17 @@
 [id="managing-mta-questionnaires_{context}"]
 = Managing assessment questionnaires
 
-[role="_abstract"]
-By using the {ProductShortName} user interface, you can perform the following actions on assessment questionnaires:
+[role="_abstract"] 
+To adjust the scope of your assessments, manage questionnaires in the {ProductFullName} user interface (UI). By importing, viewing, or deleting questionnaires, you control the criteria the {ProductShortName} UI uses to evaluate the suitability of your applications for modernization.
+
+By using the {ProductShortName} UI, you can perform the following actions on assessment questionnaires:
 
 * Display the questionnaire. You can also display the answer choices and their associated risk weight.
 * Export the questionnaire to the desired location on your system. 
 * Import the questionnaire from your system. 
 +
 WARNING: The name of the imported questionnaire must be unique.
-If the name, which is defined in the YAML syntax (`name:<name of questionnaire>`), is duplicated, the import will fail with the following error message: `UNIQUE constraint failed: Questionnaire.Name`.
+If the name, which is defined in the YAML syntax (`name: <name of questionnaire>`), is duplicated, the import will fail with the following error message: `UNIQUE constraint failed: Questionnaire.Name`.
 * Delete an assessment questionnaire.
 +
 WARNING: When you delete the questionnaire, its answers for all applications that use it in all archetypes are also deleted.
@@ -26,11 +28,11 @@ IMPORTANT: You cannot delete the *Legacy Pathfinder* default questionnaire.
 
 * Depending on your scenario, perform one of the following actions:
 
-** Display the quest the assessment questionnaire:
+** Display the assessment questionnaire:
 . In the *Administration* view, select *Assessment questionnaires*.
 . Click the Options menu ({kebab}).
 . Select *View* for the questionnaire you want to display.
-. Optional: Click the arrow to the left from the question to display the answer choices and their risk weight.
+. Optional: Click the arrow to the left of the question to display the answer choices and their risk weight.
 
 ** Export the assessment questionnaire:
 . In the *Administration* view, select *Assessment questionnaires*.
@@ -53,7 +55,7 @@ IMPORTANT: You cannot delete the *Legacy Pathfinder* default questionnaire.
 . Select the questionnaire you want to delete.
 . Click the Options menu ({kebab}).
 . Select *Delete*.
-. Confirm deleting by entering on the *Name* of the questionnaire.
+. Confirm deleting by entering the *Name* of the questionnaire.
 
 
 

@@ -6,7 +6,8 @@
 [id="configuring-proxy-settings_{context}"]
 = Configuring proxy settings
 
-You can configure HTTP and HTTPS proxy settings for the {ProductFullName} instance environment.
+[role="_abstract"]
+To enable the {ProductFullName} to access external network resources through a secured gateway, configure HTTP and HTTPS proxy settings in the user interface. Establishing these connection parameters ensures that your modernization projects can retrieve essential metadata and updates.
 
 .Procedure
 
