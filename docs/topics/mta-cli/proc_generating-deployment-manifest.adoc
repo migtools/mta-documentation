@@ -92,9 +92,9 @@ NOTE: You must configure the buildpacks in the Cloud Foundry application manifes
 +
 [subs="+quotes"]
 ----
-$ *mta-cli generate helm --chart-dir helm_sample \
---input _<path_to_discovery-manifest>_ \
---output-dir _<location_of_deployment_manifest>_ \*
+$ *mta-cli generate helm --chart-dir helm_sample
+--input _<path_to_discovery-manifest>_ 
+--output-dir _<location_of_deployment_manifest>_*
 ----
 
 . Verify the ConfigMap:
@@ -116,4 +116,3 @@ $ *cat files/konveyor/Dockerfile*
 .Additional resources
 
 * xref:discover-generate-command-options_generating-assets[The discover and generate command options]
-* link:https://github.com/konveyor/enhancements/tree/master/enhancements/assets-generation/cloud-foundry-application-discovery#app-level-configuration[CloudFoundry application schema fields for manifests]
