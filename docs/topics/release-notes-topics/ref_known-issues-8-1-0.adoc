@@ -1,0 +1,22 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-02-09
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-8-1-0_{context}"]
+= Known issues
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.1.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+
+//To be confirmed by SME (the comment is in the ticket)
+
+////
+{ProductShortName} UI does not trigger rules for dependencies for Gradle applications::
+When you run a `source+dependency` analysis for a Gradle application by using the {ProductFullName} user interface (UI), the tool does not trigger rules for dependencies. As a consequence, the analysis does not trigger issues on open source libraries 
+
+Note that this known issue does not affect the {ProductShortName} command-line interface (CLI).
+ 
+(link:https://issues.redhat.com/browse/MTA-6211[MTA-6211])
+////
+
+
