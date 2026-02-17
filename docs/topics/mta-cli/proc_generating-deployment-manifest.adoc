@@ -42,9 +42,9 @@ tree _<path_to_helm_chart>_
 └── values.yaml
 ----
 +
-You must save the Kubernetes `YAML` templates (for example, `ConfigMap` or `Deployment`) in the `templates` directory present in the root directory of the `Helm` chart. You must save text-based templates (for example, `Dockerfile`), in the _files/konveyor_ path in the `templates` directory.
+You must save the Kubernetes `YAML` templates (for example, `ConfigMap` or `Deployment`) in the `templates` directory present in the root directory of the `Helm` chart. You must save text-based templates (for example, `Dockerfile`) in the _files/konveyor_ path in the `templates` directory.
 +
-You generate the discovery manifest before generating the deployment manifest. In the deployment manifest, the values in the `values.yaml` file override the values in the discovery manifest. If the `values` file is empty, {ProductShortName} considers the discovery manifest configuration as input to generate the deployment manifest. 
+When you generate generate the deployment manifest after generating the discovery manifest, the values in the `values.yaml` file override the values in the discovery manifest. If the `values` file is empty, {ProductShortName} considers the discovery manifest configuration as input to generate the deployment manifest. 
 
 . Explore the discovery manifest configuration:
 +
@@ -109,7 +109,7 @@ $ *cat configmap.yaml*
 [subs="+quotes"]
 ----
 $ *cd _<location_of_deployment_manifest>_ \*
-$ *cat Dockerfile*
+$ *cat files/konveyor/Dockerfile*
 ----
 
 [role="_additional-resources"]
