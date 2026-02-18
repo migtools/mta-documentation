@@ -9,7 +9,7 @@
 [role="_abstract"]
 To prepare your application for deployment to a container platform, generate a deployment manifest by using the {ProductFullName} command-line interface (CLI). Generating the deployment manifest creates the necessary configuration files to define your application's resources, streamlining the transition to your target environment.
 
-You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (CF) application by using the `generate` command. Based on the Helm template that you provide, the command generates manifests, such as a ConfigMap, and non-Kubernetes manifests, such as a Dockerfile, for application deployment. 
+You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (CF) application by using the `generate` command. Based on the `Helm` template that you provide, the command generates manifests, such as a `ConfigMap`, and non-Kubernetes manifests, such as a `Dockerfile`, for application deployment. 
 
 .Prerequisites
 
@@ -24,7 +24,7 @@ You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (
 
 . Open the terminal application and navigate to the `<{ProductShortName}_HOME>/` directory.
 
-. Explore the  `helm_sample` chart directory:
+. Explore the root directory of the `Helm` chart:
 +
 [subs="+quotes"]
 ----
@@ -34,67 +34,26 @@ tree _<path_to_helm_chart>_
 [subs="+quotes"]
 ----
 ├── Chart.yaml
+├── files
+│   └── konveyor
+│       └── Dockerfile
 ├── templates
-│   ├── configmap.yaml
-│   └── files
-│       └── konveyor
-│           └── Dockerfile
+│   └── configmap.yaml
 └── values.yaml
-----
-+
-You must save the Kubernetes `YAML` templates (for example, `ConfigMap` or `Deployment`) in the `templates` directory present in the root directory of the `Helm` chart. You must save text-based templates (for example, `Dockerfile`) in the _files/konveyor_ path in the `templates` directory.
-+
-When you generate generate the deployment manifest after generating the discovery manifest, the values in the `values.yaml` file override the values in the discovery manifest. If the `values` file is empty, {ProductShortName} considers the discovery manifest configuration as input to generate the deployment manifest. 
 
-. Explore the discovery manifest configuration:
-+
-[subs="+quotes"]
-----
-cat _<path_to_discovery_manifest>_
 ----
 +
-[subs="+quotes"]
-----
-manifest:
-    name: my-app
-    labels:
-        sensitive: "true"
-    annotations:
-        contact: bob@example.com jane@example.com
-    env:
-        RACK_ENV: production
-        RAILS_ENV: production
-    routes:
-        - route: example.com
-          protocol: http2
-    processes:
-        - type: web
-          disk: 1024M
-          memory: 512M
-          healthCheck:
-            invocationTimeout: 1
-            interval: 30
-            type: port
-            timeout: 80
-          readinessCheck:
-            type: process
-          instances: 1
-          lifecycle: cnb
-    stack: cflinuxfs4
-    buildPacks:
-        - docker://my-registry-a.corp/nodejs
-        - docker://my-registry-b.corp/dynatrace
-----
+You must save the Kubernetes `YAML` templates (for example, `ConfigMap` or `Deployment`) in the `templates` directory present in the root directory of the `Helm` chart. You must save non-Kubernetes templates (for example, `Dockerfile`) in the _files/konveyor_ path in the `Helm` chart root directory.
 +
-NOTE: You must configure the buildpacks in the Cloud Foundry application manifest to include the buildpacks in the discovery and deployment assets.
-+
+NOTE: See xref:discover-values-deployment_generating-assets[The deployment manifest input values] for information on the values that {ProductShortName} takes as inputs to generate the deployment manifest.
+
 . Generate the deployment manifest as an output file:
 +
 [subs="+quotes"]
 ----
-$ *mta-cli generate helm --chart-dir helm_sample
---input _<path_to_discovery-manifest>_ 
---output-dir _<location_of_deployment_manifest>_*
+$ *mta-cli generate helm --chart-dir helm_sample \*
+*--input _<path_to_discovery-manifest>_ \*
+*--output-dir _<location_of_deployment_manifest>_*
 ----
 
 . Verify the ConfigMap:
