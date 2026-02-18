@@ -6,22 +6,22 @@
 = Generating code resolutions in the agent mode
 
 [role="_abstract"]
-In the agent mode, the {mta-dl-plugin} planning agent creates the context for an issue and picks a sub-agent that is most suited to resolve the issue. The sub-agent runs an automated scan to describe how the issue can be resolved and generates files with the updated resolutions in one stream. 
+In the agent mode, the {mta-dl-plugin} planning agent creates the context for an issue and picks a sub-agent that is most suited to resolve the issue. The sub-agent runs an automated scan to describe how to resolve the issue and generates files with the updated resolutions in one stream. 
 
-You can review the updated files and approve or reject the changes to the code. The agent runs another automated analysis to detect new issues in the code that may have occurred because of the accepted changes or diagnostic issues that your tool may generate following a previous analysis. If you allow the process to continue, {mta-dl-plugin} runs the stream again and generates a new file with the latest updates.
+You can review the updated files and approve or reject the changes to the code. The agent runs another automated analysis to detect new issues in the code that might have occurred because of the accepted changes or diagnostic issues that your tool might generate following a previous analysis. If you allow the process to continue, {mta-dl-plugin} runs the stream again and generates a new file with the latest updates.
 
 When using the agent mode, you can reject the changes or discontinue the stream but you cannot edit the updated files during the stream.
 
 .Prerequisites
 
-* You opened a Java project in your VS Code workspace.
+* You opened a Java project in your Visual Studio Code workspace.
 * You configured an analysis profile on the *{ProductShortName} Analysis View* page.
 
 .Procedure
 
 . Verify that agent mode is enabled in one of the following ways:
 +
-.. Type `Ctrl + Shift + P` in VS Code search (Linux/Windows system) and `Cmd + Shift + P` for Mac to go to the command palette. 
+.. Type `Ctrl + Shift + P` in Visual Studio Code search (Linux/Windows system) and `Cmd + Shift + P` for Mac to go to the command palette. 
 .. Enter `Preferences: Open User Settings (JSON)` to open the `settings.json` file.
 .. Ensure that `mta-vscode-extension.genai.agentMode` is set to `true`.
 +
