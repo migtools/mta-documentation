@@ -3,9 +3,10 @@
 = Running an application analysis by using a profile
 
 [role="_abstract"]
-You can run a static code analysis of an application by using a profile that is available in the {ProductShortName} Hub. When you connect to the Hub, {ProductShortName} downloads the analysis profiles and custom rules present in the Hub to `.konveyor/profiles` location in your hard disk. You can use the analysis profile that contains custom rules to perform analyses in your Visual Studio Code IDE environment.
+To run a static code analysis of an application, you can use a profile that is created and managed by your architect in the {ProductShortName} Hub. The centralized configuration management standardizes the analysis configuration and custom rules across projects to produce a consistent result. This allows the architect to create and manage the necessary profiles, thereby simplifying the lifecycle of analysis configurations and rules. Migrators can run analyses either by using local profile configuration or by using profiles from the Hub.
 
-When you connect to the Hub, the profile configuration options in your IDE instance are disabled.
+When you connect to the Hub from your Visual Studio Code instance, {ProductShortName} downloads the analysis profiles and custom rules present in the Hub to the `.konveyor/profiles` location in your hard disk. You can use the analysis profile that contains custom rules to perform analyses in your Visual Studio Code IDE environment. If you connect to the Hub, the profile configuration options in your IDE instance are disabled.
+
 
 :FeatureName: Analysis Profile
 [IMPORTANT]
