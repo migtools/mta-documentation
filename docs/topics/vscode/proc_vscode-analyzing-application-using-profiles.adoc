@@ -1,0 +1,46 @@
+:_mod-docs-content-type: PROCEDURE
+[id="analyzing-application-profiles_{context}"]
+= Running an application analysis by using a profile
+
+[role="_abstract"]
+You can run a static code analysis of an application by using a profile that is available in the {ProductShortName} Hub. When you connect to the Hub, {ProductShortName} downloads the analysis profiles and custom rules present in the Hub to `.konveyor/profiles` location in your hard disk. You can use the analysis profile that contains custom rules to perform analyses in your Visual Studio Code IDE environment.
+
+When you connect to the Hub, the profile configuration options in your IDE instance are disabled.
+
+:FeatureName: Analysis Profile
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+:!FeatureName:
+
+.Prerequisites
+
+* You opened a project written in one of the supported languages in your VS Code workspace.
+* An architect has configured an analysis profile in the Hub.
+
+.Procedure
+
+. Click the {mta-dl-plugin} extension and click *Open Analysis Panel*.
+
+. Click *Configure Hub Settings* in settings (image:settings-icon.png[]).
+
+. Configure the following settings on the *Hub Configuration* page:
+.. Enable *Hub*.
+.. Enter the {ProductShortName} user interface URL in the *Hub URL* field.
+.. Enable *Skip SSL certificate verification* if you want to connect to your Hub without verifying the local SSL certificate in the host. 
+.. Toggle *Enable authentication* on to log in to your Hub.
+.. Enter the username and password credentials of the {ProductShortName} user interface.
+.. Enable *Solution Server* to use the solution server to suggest resolutions for the issues in the source code.
+.. Enable *Profile Sync* to sync the profiles with the Hub. {ProductShortName} periodically downloads the latest version of the profiles from the Hub. {ProductShortName} does not update the profiles and rules if you do not sync the profiles with the Hub.
+
+. Select a profile from the list on the *{ProductShortName} Analysis View* page.
+. Click *Run Analysis*.
+
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/developer-lightspeed-guide/index[Configuring and using Developer Lightspeed for {ProductShortName}]
