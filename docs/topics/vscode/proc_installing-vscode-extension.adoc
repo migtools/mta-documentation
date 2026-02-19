@@ -5,7 +5,7 @@
 [role="_abstract"]
 You can use the {ProductFullName} Visual Studio Code plugin to perform a standard application analysis.  
 
-You can download the {ProductShortName} plugin version 8.1.0 as an extension pack that bundles the Core extension along with all the supported language-specific extension. You can use this extension even when you want to analyze a project in a specific programming language.
+You can download the {ProductShortName} plugin version 8.1.0 as an extension pack that bundles the Core extension along with all the supported language-specific extensions. You can use this extension even when you want to analyze a project in a specific programming language.
 
 Alternatively, you can also download the {ProductShortName} Core extension and one language-specific extension to analyze a project coded in the programming language supported by the extension.
 
