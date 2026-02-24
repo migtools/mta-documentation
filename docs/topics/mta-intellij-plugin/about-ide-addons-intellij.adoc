@@ -11,7 +11,7 @@
 [role="_abstract"]
 You can migrate and modernize applications by using the {ProductName} ({ProductShortName}) {AddonType} for {IDEName}.
 
-The {ProductShortName} {AddonType} analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.
+The {ProductShortName} {AddonType} analyzes your projects by using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.
 
 ifdef::vsc-extension-guide[]
 The {ProductShortName} extension is also compatible with Visual Studio Codespaces, the Microsoft cloud-hosted development environment.
