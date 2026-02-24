@@ -83,7 +83,7 @@ Generate deployment manifest with a `values.yaml` file::
 appName: my-app-production  # Overrides application name in the discovery manifest
   database:
     host: prod-postgres.company.com   # Overrides host value in the discovery manifest
-  redis:                             # Adds a new field in the values file
+  redis:                             # Adds a new field 
     url: redis://prod-redis:6379
 ----
 
