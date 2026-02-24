@@ -1,0 +1,55 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+[id="profile-application-analysis_{context}"]
+= Using a profile to run an application analysis 
+
+[role="_abstract"]
+As a Migrator, you can use a pre-configured analysis profile to analyze an application for a target platform. 
+
+.Procedure
+
+. In the *Migration* view, click *Application inventory*.
+. Select an application that you want to analyze.
++
+. Review the credentials assigned to the application.
+. Click *Analyze*.
+. In the *Mode* section, select *Use analysis profile*.
+. Select a pre-configured profile from the list for running an analysis. 
+. Click *Next* 
+. *Enable automated tagging*. Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.
++
+NOTE: {ProductShortName} displays automatically attached tags  only _after_ you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
++
+. *Enable enhanced analysis details*.  
++
+
+//need more information on the above option.
+. Click *Next*.
+. In *Review*, verify the analysis parameters.
+. Click *Run*.
++
+The analysis status is `Scheduled` as {ProductShortName} downloads the image for the container. When {ProductShortName} downloads the image, the status changes to `In-progress.`
++
+NOTE: Analysis takes minutes to hours to run depending on the size of the application and the capacity and resources of the cluster.
++
+NOTE: {ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.
+
+. Optional: To track the status of your active analysis task, open the *Task Manager* view by clicking the notifications button.
++
+Alternatively, hover over the application name to display the pop-over window.
+
+.Verification 
+
+To check the report after the analysis is complete: 
+
+. Open the application view by clicking on the application name.
+. Click the *Reports* tab to download the results in *HTML* or *YAML*. 
++
+
+[NOTE]
+====
+You can download the report if the {ProductShortName} Administrator has enabled the option to download reports after running an analysis on the *General configuration* page in the *Administration* view.
+====
