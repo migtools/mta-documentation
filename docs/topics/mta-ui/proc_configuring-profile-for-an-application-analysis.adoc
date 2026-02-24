@@ -8,7 +8,7 @@
 
 
 [role="_abstract"]
-Configure a profile that has the configuration needed to analyze an application for a specific migration target.
+As an architect, you can configure a profile that has the configuration needed to analyze an application for a specific migration target.
 
 .Procedure
 
