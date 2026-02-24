@@ -26,7 +26,7 @@ NOTE: You cannot delete an application if it is linked to a Jira ticket or is as
 
 . In the *Migration* view, click *Migration waves*.
 . Click the Options menu ({kebab}) to the right of the migration wave for which you want to create Jira issues and select *Export to Issue Manager*. The *Export to Issue Manager* window opens.
-. Select the Jira Cloud or Jira Server/Datacenter instance type.
+. Select the Jira Cloud or Jira Server/data center instance type.
 . Select the instance, project, and issue type from the lists.
 . Click *Export*. The status of the migration wave on the *Migration waves* page changes to `Issues Created`.
 . Optional: To see the status of each individual application of a migration wave, click the *Status* column.

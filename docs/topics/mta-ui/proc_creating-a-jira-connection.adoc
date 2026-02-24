@@ -27,9 +27,9 @@ Note that you cannot remove a Jira connection that you used for creating issues 
 +
 [NOTE]
 ====
-If you selected *Jira Cloud* as an instance type, only *Basic Auth* credentials are displayed in the list.
+If you selected *Jira Cloud* as an instance type, only *Basic authentication* credentials are displayed in the list.
 
-If you selected *Jira Server/Data center* as an instance type, both *Basic Auth* and *Token Bearer* credentials are displayed. 
+If you selected *Jira Server/Data center* as an instance type, both *Basic authentication* and *Token Bearer* credentials are displayed. 
 
 Choose the type that is appropriate for the particular configuration of your Jira server or data center.
 ====
