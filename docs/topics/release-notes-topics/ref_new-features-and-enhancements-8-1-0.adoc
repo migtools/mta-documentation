@@ -44,7 +44,7 @@ The {ProductFullName} Visual Studio Code extension consists of an analyzer RPC b
 
 +
 --
-You can download the {ProductShortName} version 8.1.0 Visual Studio Code extension as an extension pack that bundles the Core extension along with all the supported language-specific extensions. You can also use this extension when you want to analyze a project in a specific programming language. Alternatively, you can also download the {ProductShortName} Core extension with one language-specific extension to analyze a project coded in the programming language supported by the extension.
+You can download the {ProductShortName} version 8.1.0 Visual Studio Code extension as an extension pack that bundles the Core extension along with all the supported language-specific extensions. You can also use this extension when you want to analyze a project in a specific programming language. Alternatively, you can download the {ProductShortName} Core extension with one language-specific extension to analyze a project coded in the programming language supported by the extension.
 --
 
 

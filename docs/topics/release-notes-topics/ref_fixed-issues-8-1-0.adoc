@@ -6,4 +6,4 @@
 = Fixed issues
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version 8.1.0 provides the following fixed issues and other problems that have a significant impact.
+{ProductFirstRef} ({ProductShortName}) version 8.1.0 provides the following fixed issues that have a significant impact.
