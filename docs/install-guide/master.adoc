@@ -1,8 +1,12 @@
+pass:[<!-- vale AsciiDocDITA.AssemblyContents = NO -->]
 :mta:
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="installing-mta-title"]
 = Installing the {ProductName}
+
+[role="_abstract"]
+Use this guide to install the {ProductName} user interface (UI) and command-line interface (CLI) on Red Hat OpenShift or your local system. You need these components to assess and migrate applications.
 
 :toc:
 :toclevels: 4
@@ -25,7 +29,4 @@ include::assemblies/mta-install-title/assembly_installing-mta-ui.adoc[leveloffse
 include::assemblies/mta-install-title/assembly_installing-mta-cli.adoc[leveloffset=+1]
 
 include::topics/mta-cli/ref_contributing-to-mta-development.adoc[leveloffset=+1]
-
-
-
 :!installing-mta-title:
