@@ -9,14 +9,24 @@
 {ProductFirstRef} ({ProductShortName}) version 8.1.0 provides the following major new features and enhancements.
 
 
-(Placeholder) Centralized Configuration Management
+Use centralized configuration management across components to standardize analysis configuration and custom rules
+
+You can use the centralized configuration management to standardize analysis configurations and custom rules migration toolkit for application ({ProductShortName}) components such as the user interface, CLI, and the Visual Studio Code {ProductShortName} extension. Profiles contain analysis configuration that allows organizations to standardize configuration and simplify configuration management by adopting a platform engineering approach. The architect can create, update, and delete profiles and custom rules. Migrators can sync with the {ProductShortName} Hub to download available configuration bundles and use them to run an analysis in the web console, command line tool, and by using the Visual Studio Code plugin. 
+(link:https://issues.redhat.com/browse/MTA-6491[MTA-6491])
 
 
 
 
-(Placeholder) C# Analysis support in the hub
+Use C# Provider to analyze .NET and C# applications across {ProductShortName} components
 
+The csharp provider is an external provider used to analyze .NET and C# source code. The csharp provider uses a gRPC interface to parse using tree-sitter and uses stack graph for performing semantic analysis of your codebases to identify violations before you migrate your code. 
+The provider supports referenced capability in rules that are used to perform {ProductShortName} analysis. Configure fields such as pattern,location and file_path in the rules based on which the provider searches the code for type, classes, methods, and fields in the source code. You can use the C# provider to analyze .NET and C# application in the CLI, web console, and the {ProductShortName} Visual Studio Code extension.
+(link:https://issues.redhat.com/browse/MTA-6492[MTA-6492])
 
+Download the {ProductShortName} Visual Studio Code extension pack or the Core extension with language-specific extension
+
+The migration toolkit for applications ({ProductShortName}) Visual Studio Code extension consists of an analyzer RPC binary that runs an analysis for Java, Go, Python, Node.js, C#, and .NET applications. You can download the {ProductShortName} version 8.1.0 Visual Studio Code extension as an extension pack that bundles the Core extension along with all the supported language-specific extensions. You can use this extension even when you want to analyze a project in a specific programming language.
+Alternatively, you can also download the {ProductShortName} Core extension with one language-specific extension to analyze a project coded in the programming language supported by the extension.
 
 
 (Placeholder) Support for LLM Proxying with MTA
