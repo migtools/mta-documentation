@@ -27,7 +27,7 @@ Profiles contain analysis configuration that allows organizations to standardize
 
 C# provider for analyzing .NET and C# applications across {ProductShortName} components::
 You can use the external `csharp` provider to analyze .NET and C# source code in the {ProductFullName} command-line interface (CLI), user interface, and the {ProductShortName} Visual Studio Code extension. `csharp` uses a gRPC interface to parse using tree-sitter and uses stack graph to perform a semantic analysis of your codebases to identify violations before you migrate your code. 
-The `csharp` provider supports referenced capability in rules used to perform the {ProductShortName} analysis. Configure fields such as `pattern`, `location,` and `file_path` in the rules based on which the provider searches the code for type, classes, methods, and fields in the source code.
+The `csharp` provider supports referenced capability in rules used to perform the {ProductShortName} analysis. Configure fields such as `pattern`, `location`, and `file_path` in the rules based on which the provider searches the code for type, classes, methods, and fields in the source code.
 +
 (link:https://issues.redhat.com/browse/MTA-6492[MTA-6492])
 
