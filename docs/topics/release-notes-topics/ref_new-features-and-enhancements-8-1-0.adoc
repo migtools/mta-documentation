@@ -1,0 +1,75 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-02-13
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-and-enhancements-8-1-0_{context}"]
+= New features and enhancements
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.1.0 provides the following major new features and enhancements.
+
+
+Centralized configuration management across components for standardizing analysis configuration and custom rules::
+You can use the centralized configuration management to standardize analysis configurations and custom rules for the following {ProductFullName} components:
+
+* User interface (UI)
+* Command-line interface (CLI)
+* The Visual Studio Code {ProductShortName} extension.
+
++
+--
+Profiles contain analysis configuration that allows organizations to standardize configuration and simplify configuration management by adopting a platform engineering approach. The architect can create, update, and delete profiles and custom rules. Migrators can sync with the {ProductShortName} Hub to download available configuration bundles and use them to run an analysis in the UI, CLI, and by using the Visual Studio Code plugin.
+
+(link:https://issues.redhat.com/browse/MTA-6491[MTA-6491])
+--
+
+
+The {ProductShortName} Visual Studio Code extension pack and the Core extension with language-specific extension are available::
+The {ProductFullName} Visual Studio Code extension consists of an analyzer RPC binary that runs an analysis for the following applications:
+
+* Java
+* Go
+* Python
++
+:FeatureName: Analyzing applications written in Python
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+:!FeatureName:
+* Node.js
++
+:FeatureName: Analyzing applications written in Node.js
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+:!FeatureName:
+* C#
+* .NET
++
+:FeatureName: Analyzing applications written in .NET
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is Developer Preview software only. Developer Preview software is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview software for production or business-critical workloads. Developer Preview software provides early access to upcoming product software in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this software to test functionality and provide feedback during the development process. This software might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview software without an associated SLA.
+
+For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
+====
+:!FeatureName:
+
++
+--
+You can download the {ProductShortName} version 8.1.0 Visual Studio Code extension as an extension pack that bundles the Core extension along with all the supported language-specific extensions. You can also use this extension when you want to analyze a project in a specific programming language. Alternatively, you can download the {ProductShortName} Core extension with one language-specific extension to analyze a project coded in the programming language supported by the extension.
+--
+
+
+(Placeholder) Support for LLM Proxying with MTA
+
+

@@ -1,0 +1,17 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-02-26
+:_mod-docs-content-type: REFERENCE
+
+[id="tech-preview-8-1-0_{context}"]
+= Technology Preview features
+
+[role="_abstract"] 
+This section provides a list of all Technology Preview features available in {ProductFullName} ({ProductShortName}) 8.1.0.
+
+For information on Red Hat's scope of support for Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+
+
+C# provider for analyzing C# applications in `source-only` mode across {ProductShortName} components (Technology Preview)::
+You can use the external `csharp` provider to run an analysis in `source-only` mode for C# source code in the {ProductFullName} command-line interface (CLI), user interface, and the {ProductShortName} Visual Studio Code extension. `csharp` parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the `C#` rule definition, the analyzer identifies violations in your code that you must resolve before the application migration.
++
+(link:https://issues.redhat.com/browse/MTA-6492[MTA-6492])

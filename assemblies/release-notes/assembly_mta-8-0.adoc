@@ -1,0 +1,26 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-02-04
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-mta-8-0: {context}]
+
+ifndef::context[]
+[id="mta-8-0"]
+endif::[]
+ifdef::context[]
+[id="mta-8-0_{context}"]
+endif::[]
+= {ProductFirstRef} 8.0
+
+:context: mta-8-0
+
+[role="_abstract"]
+The Release Notes provide high-level coverage of the improvements and additions that have been implemented in {ProductFullName} 8.0.
+
+include::assembly_mta-8-0-1.adoc[leveloffset=+1]
+
+include::assembly_mta-8-0-0.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-mta-8-0[:context: {parent-context-of-mta-8-0}]
+ifndef::parent-context-of-mta-8-0[:!context:]
+

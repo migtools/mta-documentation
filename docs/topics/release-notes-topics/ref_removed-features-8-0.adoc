@@ -6,7 +6,7 @@
 = Removed features
 
 [role="_abstract"]
-This section provides a list of all features removed in {ProductFullName} {ProductVersion}. All removed features were deprecated in earlier releases and are no longer supported. 
+This section provides a list of all features removed in {ProductFullName} ({ProductShortName}) 8.0.0. All removed features were deprecated in earlier releases and are no longer supported. 
 
 
 XML rules are removed::
