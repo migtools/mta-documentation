@@ -21,7 +21,7 @@ An {ProductShortName} Architect can create custom rules. You can use custom rule
 
 A collection of one or more rules is called a ruleset. Creating rulesets provides a way of organizing multiple rules that analyze the source code for a specific target platform.
 
-You can use rules or rulesets as input arguments in an analysis. You can perform a rule-based analysis in the {ProductShortName} CLI, user interface, or by using one of the IDE plug-ins for {ProductShortName} (Visual Studio Code or IntelliJ).
+You can use rules or rulesets as input arguments in an analysis. You can perform a rule-based analysis in the {ProductShortName} CLI, user interface, or by using one of the IDE plugins for {ProductShortName} (Visual Studio Code or IntelliJ).
 
 The rules can be used by {mta-dl-plugin} to generate AI-assisted code resolutions. The issue description and metadata in rules are used by the {mta-dl-plugin} to form well-defined contexts. These contexts generate AI-assisted suggestions to resolve issues in the code that are identified through an analysis. See link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/configuring_and_using_red_hat_developer_lightspeed_for_mta/index[Configuring and Using Red Hat Developer Lightspeed for MTA] for more information.
 

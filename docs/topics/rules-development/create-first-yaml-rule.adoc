@@ -11,8 +11,9 @@ You can create and test your first {ProductShortName} YAML-based rule by complet
 
 In this example, you will create a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and to provide a link to the documentation that describes how to migrate the code.
 
+.Procedure
 . Create a YAML file for the rule. In the following example, the rule is created in your `$HOME` directory.
-
++
 [options="nowrap",subs="attributes+"]
 ----
 $ mkdir /home/<USER>/rule.yaml
