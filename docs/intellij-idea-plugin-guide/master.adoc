@@ -12,7 +12,6 @@
 [id="intellij-idea-plugin-guide"]
 = IntelliJ IDEA Plugin Guide
 
-Use the {ProductName} plugin for IntelliJ IDEA to analyze applications, find migration issues, and apply fixes from your IDE. This guide describes installation, run configuration, and resolving issues.
 
 include::topics/templates/document-attributes.adoc[]
 
