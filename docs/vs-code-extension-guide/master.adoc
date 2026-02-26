@@ -9,9 +9,6 @@
 :IDEName: Microsoft Visual Studio Code
 :mta:
 include::topics/templates/document-attributes.adoc[]
-pass:[<!-- vale AsciiDocDITA.AssemblyContents = NO -->]
-pass:[<!-- vale AsciiDocDITA.ShortDescription = NO -->]
-pass:[<!-- vale AsciiDocDITA.AuthorLine = NO -->]
 :_mod-docs-content-type: ASSEMBLY
 
 [id="configuring-using-vs-code-plugin"]
@@ -19,10 +16,6 @@ pass:[<!-- vale AsciiDocDITA.AuthorLine = NO -->]
 
 [role="_abstract"]
 This assembly lists the modules in this guide.
-
-pass:[<!-- vale AsciiDocDITA.AuthorLine = YES -->]
-pass:[<!-- vale AsciiDocDITA.ShortDescription = YES -->]
-pass:[<!-- vale AsciiDocDITA.AssemblyContents = YES -->]
 
 include::topics/vscode/con_intro-to-vscode-for-mta.adoc[leveloffset=+1]
  

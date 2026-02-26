@@ -19,9 +19,7 @@ when(condition)
 You can use the {ProductShortName} rules internally to perform the following tasks:
 
 * Extract files from archives
-pass:[<!-- vale RedHat.Spelling = NO -->]
 * Decompile files
-pass:[<!-- vale RedHat.Spelling = YES -->]
 * Scan and classify file types
 * Analyze XML and other file content
 * Analyze the application code
