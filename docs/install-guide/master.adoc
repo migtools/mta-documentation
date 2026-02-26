@@ -1,4 +1,3 @@
-pass:[<!-- vale AsciiDocDITA.AssemblyContents = NO -->]
 :mta:
 include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
