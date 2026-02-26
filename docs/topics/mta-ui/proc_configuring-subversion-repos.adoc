@@ -4,9 +4,10 @@
 
 :_mod-docs-content-type: PROCEDURE
 [id="configuring-subversion-repos_{context}"]
-= Configuring subversion repositories
+= Configuring Subversion repositories
 
-You can configure subversion repositories in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
+[role="_abstract"]
+To allow the {ProductFullName} to access the data required for the migration tasks, configure Subversion repositories in the user interface (UI). By configuring these repositories, you allow {ProductShortName} to access your source code to identify modernization paths and required steps for your modernization efforts.
 
 .Procedure
 

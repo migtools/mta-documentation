@@ -5,7 +5,10 @@
 [id="creating-a-stakeholder_{context}"]
 = Creating a stakeholder
 
-You can create and configure an instance in any order. However, the following is the most efficient order for creating stakeholders: 						
+[role="_abstract"]
+To identify the individuals responsible for specific applications, define stakeholders in the {ProductFullName} user interface (UI). Defining these roles ensures that migration assessments and questionnaires are directed to the correct subject matter experts for each application.
+
+You can create and configure stakeholders in any order. However, the following is the most efficient order: 						
 
 . Create Stakeholder groups. Note that by default, no stakeholder groups are defined.
 . Create Job functions.	The job function attribute classifies stakeholders and provides a list of default values that can be expanded. 							

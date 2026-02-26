@@ -5,8 +5,10 @@
 [id="defining-an-archetype_{context}"]
 = Creating an archetype
 
-[role="_abstract"]
-When you create an archetype, an application in the inventory is automatically associated with that archetype if this application has the tags that match the criteria tags of the archetype.
+[role="_abstract"] 
+To assess multiple applications with shared characteristics simultaneously, define an archetype in the {ProductFullName} user interface (UI).
+
+When you create the archetype, an application in the inventory is automatically associated with that archetype if this application has the tags that match the criteria tags of the archetype.
 
 .Procedure
 
