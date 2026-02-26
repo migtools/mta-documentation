@@ -7,9 +7,9 @@
 = Deploying an LLM as a service in an {ocp-name} AI cluster
 
 [role="_abstract"]
-The code suggestions from {mta-dl-full} differ based on the large language model (LLM) that you use. Therefore, you may want to use an LLM that caters to your specific requirements.
+The code suggestions from {mta-dl-full} differ based on the large language model (LLM) that you use. Therefore, you might want to use an LLM that caters to your specific requirements.
 
-{mta-dl-plugin} integrates with LLMs that are deployed as a scalable service on {ocp-name} AI clusters. These deployments provide you with granular control over resources such as compute, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) while enabling you to leverage LLMs to resolve code issues at a large scale.
+{mta-dl-plugin} integrates with LLMs that are deployed as a scalable service on {ocp-name} AI clusters. These deployments provide you with granular control over resources such as compute, cluster nodes, and auto-scaling graphics processing units (GPUs) while enabling you to use LLMs to resolve code issues at a large scale.
 
 An example workflow for configuring an LLM service on {ocp-name} AI broadly requires the following configurations:
 
@@ -30,4 +30,4 @@ An example workflow for configuring an LLM service on {ocp-name} AI broadly requ
 ** Configure an OpenAI API key
 ** Update the OpenAI API key and the base URL in `provider-settings.yaml`.
 
-See xref:llm-provider-settings_{context}[Configuring LLM provider settings] to configure the base URL and the LLM API key in the {mta-dl-plugin} VS Code extension.
+See xref:llm-provider-settings_{context}[Configuring LLM provider settings] to configure the base URL and the LLM API key in the {mta-dl-plugin} Visual Studio Code extension.

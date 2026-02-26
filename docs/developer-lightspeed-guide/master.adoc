@@ -4,6 +4,7 @@ include::topics/templates/document-attributes.adoc[]
 [id="mta-developer-lightspeed"]
 = Configuring and Using Red Hat Developer Lightspeed for MTA
 
+
 :toc:
 :toclevels: 4
 :numbered:

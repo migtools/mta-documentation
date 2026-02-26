@@ -7,7 +7,7 @@
 = Prerequisites
 
 [role="_abstract"]
-This section lists the prerequisites required to successfully use the generative AI features in the {mta-dl-plugin} Visual Studio (VS) Code extension.
+This section lists the prerequisites required to successfully use the generative AI features in the {mta-dl-plugin} Visual Studio Code extension.
 
 Before you install {mta-dl-plugin}, you must:
 
@@ -27,7 +27,7 @@ The {ProductShortName} Operator is mandatory if you plan to enable the Solution 
 * Create an API key for an LLM.
 +
 
-You must enter the provider value and model name in Tackle CR to enable generative AI configuration in the {ProductShortName} VS Code plugin. 
+You must enter the provider value and model name in the Tackle CR to enable generative AI configuration in the {ProductShortName} Visual Studio Code plugin. 
 +
 .Configurable large language models and providers
 |===
@@ -44,5 +44,5 @@ You must enter the provider value and model name in Tackle CR to enable generati
 
 [NOTE]
 ====
-The availability of public LLM models is maintained by the respective LLM provider.
+The availability of public LLM models is maintained by each LLM provider.
 ====
