@@ -5,8 +5,6 @@ include::topics/templates/document-attributes.adoc[]
 [id="installing-mta-title"]
 = Installing the {ProductName}
 
-[role="_abstract"]
-Use this guide to install the {ProductName} user interface (UI) and command-line interface (CLI) on Red Hat OpenShift or your local system. You need these components to assess and migrate applications.
 
 :toc:
 :toclevels: 4
