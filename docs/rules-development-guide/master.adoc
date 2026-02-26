@@ -3,13 +3,22 @@
 :numbered:
 :mta:
 include::topics/templates/document-attributes.adoc[]
-
+pass:[<!-- vale AsciiDocDITA.AssemblyContents = NO -->]
+pass:[<!-- vale AsciiDocDITA.ShortDescription = NO -->]
+pass:[<!-- vale AsciiDocDITA.AuthorLine = NO -->]
 :imagesdir: topics/images
 :context: rules-development-guide
 :rules-development-guide:
 :_mod-docs-content-type: ASSEMBLY
 [id="rules-development-guide"]
 = Configuring and using rules for an {ProductShortName} analysis
+
+[role="_abstract"]
+This assembly lists the modules in this guide.
+
+pass:[<!-- vale AsciiDocDITA.AuthorLine = YES -->]
+pass:[<!-- vale AsciiDocDITA.ShortDescription = YES -->]
+pass:[<!-- vale AsciiDocDITA.AssemblyContents = YES -->]
 
 
 //Inclusive language statement
@@ -71,9 +80,8 @@ include::assemblies/rules-development-guide/assembly_rule-rulesets.adoc[leveloff
 // removing section subject to a later re-write
 // For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
 
-== Additional resources
-
 //include::topics/rules-important-links.adoc[leveloffset=+1]
+== Additional resources
 
 * link:{JiraWindupURL}[{ProductShortName} Jira issue tracker]
 * link:mailto:windup-eng@redhat.com[{ProductShortName} mailing list]

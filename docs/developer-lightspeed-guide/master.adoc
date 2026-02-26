@@ -1,8 +1,20 @@
 :mta:
 include::topics/templates/document-attributes.adoc[]
+pass:[<!-- vale AsciiDocDITA.AssemblyContents = NO -->]
+pass:[<!-- vale AsciiDocDITA.ShortDescription = NO -->]
+pass:[<!-- vale AsciiDocDITA.AuthorLine = NO -->]
+pass:[<!-- vale RedHat.Spelling = NO -->]
 :_mod-docs-content-type: ASSEMBLY
 [id="mta-developer-lightspeed"]
 = Configuring and Using Red Hat Developer Lightspeed for MTA
+
+[role="_abstract"]
+This assembly lists the modules in this guide.
+
+pass:[<!-- vale RedHat.Spelling = YES -->]
+pass:[<!-- vale AsciiDocDITA.AuthorLine = YES -->]
+pass:[<!-- vale AsciiDocDITA.ShortDescription = YES -->]
+pass:[<!-- vale AsciiDocDITA.AssemblyContents = YES -->]
 
 :toc:
 :toclevels: 4

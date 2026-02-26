@@ -3,12 +3,22 @@
 :numbered:
 :mta:
 include::topics/templates/document-attributes.adoc[]
-
+pass:[<!-- vale AsciiDocDITA.AssemblyContents = NO -->]
+pass:[<!-- vale AsciiDocDITA.ShortDescription = NO -->]
+pass:[<!-- vale AsciiDocDITA.AuthorLine = NO -->]
 :context: user-interface-guide
 :user-interface-guide:
 :imagesdir: topics/images
 :_content-type: ASSEMBLY
+[id="web-console-guide"]
 = Configuring and managing the Migration Toolkit for Applications user interface
+
+[role="_abstract"]
+This assembly lists the modules in this guide.
+
+pass:[<!-- vale AsciiDocDITA.AuthorLine = YES -->]
+pass:[<!-- vale AsciiDocDITA.ShortDescription = YES -->]
+pass:[<!-- vale AsciiDocDITA.AssemblyContents = YES -->]
 
 include::topics/mta-ui/con_intro-to-mta-ui.adoc[leveloffset=+1]
 
