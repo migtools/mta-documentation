@@ -1,3 +1,5 @@
+pass:[<!-- vale off -->]
+// This file is an attribute-definitions include only, not a standalone DITA module.
 // ********************************
 // * Standard document attributes *
 // ********************************
