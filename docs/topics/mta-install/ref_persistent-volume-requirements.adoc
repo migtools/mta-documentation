@@ -9,9 +9,7 @@
 [role="_abstract"]
 To successfully deploy the {ProductFullName} Operator, you must create a persistent volume (PV) used by different {ProductShortName} components.
 
-pass:[<!-- vale RedHat.Spelling = NO -->]
 {ProductShortName} Operator requires two ReadWriteOnce (RWO) PVs. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator needs two additional ReadWriteMany (RWX) PVs used by Maven and the hub file storage.
-pass:[<!-- vale RedHat.Spelling = YES -->]
 
 .Required persistent volumes
 [cols="25%,25%,25%,25%", options="header"]

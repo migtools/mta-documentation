@@ -3,7 +3,6 @@
 :numbered:
 :mta:
 include::topics/templates/document-attributes.adoc[]
-
 :imagesdir: topics/images
 :context: rules-development-guide
 :rules-development-guide:
@@ -71,9 +70,8 @@ include::assemblies/rules-development-guide/assembly_rule-rulesets.adoc[leveloff
 // removing section subject to a later re-write
 // For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
 
-== Additional resources
-
 //include::topics/rules-important-links.adoc[leveloffset=+1]
+== Additional resources
 
 * link:{JiraWindupURL}[{ProductShortName} Jira issue tracker]
 * link:mailto:windup-eng@redhat.com[{ProductShortName} mailing list]

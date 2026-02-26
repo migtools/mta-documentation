@@ -3,11 +3,11 @@
 :numbered:
 :mta:
 include::topics/templates/document-attributes.adoc[]
-
 :context: user-interface-guide
 :user-interface-guide:
 :imagesdir: topics/images
 :_content-type: ASSEMBLY
+[id="web-console-guide"]
 = Configuring and managing the Migration Toolkit for Applications user interface
 
 include::topics/mta-ui/con_intro-to-mta-ui.adoc[leveloffset=+1]
