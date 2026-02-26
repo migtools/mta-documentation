@@ -6,14 +6,14 @@
 = Configuring the {ProductShortName} profile settings
 
 [role="_abstract"]
-You can use the Visual Studio (VS) Code plugin to run an analysis to discover issues in the code. 
+You can use the Visual Studio Code plugin to run an analysis to discover issues in the code. 
 
 To generate code changes by using the {ProductShortName} extension, you must configure a profile that contains all the necessary configurations, such as rules and source and target technologies. 
 
 .Prerequisites
 
-* You configured the VS Code IDE settings. For more information, see xref:configuring-lighstspeed-ide-settings_vsc-extension-guide[Configuring the {mta-dl-plugin} IDE settings].
-* You opened a Java project in your VS Code workspace.
+* You configured the Visual Studio Code IDE settings. For more information, see xref:configuring-lighstspeed-ide-settings_vsc-extension-guide[Configuring the {mta-dl-plugin} IDE settings].
+* You opened a Java project in your Visual Studio Code workspace.
 
 .Procedure
 
