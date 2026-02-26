@@ -10,7 +10,7 @@ The {ProductFullName} uses three roles, each corresponding to a persona. The rol
 
 A user can have more than one role. Each role must correspond to a specific persona:
 
-* The `tackle-admin` role corresponds to the Administrator persona. The administrator has all permissions that architects and migration specialists have. Administrators can also create application-wide configuration parameters that other users can consume but cannot change or view, for example, Git credentials or Maven `settings.xml` files.
+* The `tackle-admin` role corresponds to the Administrator persona. The administrator has all permissions that architects and migrators have. Administrators can also create application-wide configuration parameters that other users can consume but cannot change or view, for example, Git credentials or Maven `settings.xml` files.
 
 * The `tackle-architect` role corresponds to the Architect persona. An architect is a technical lead for the migration project. Architects can run assessments and can create and modify applications and information related to the applications. Architects cannot modify or delete sensitive information, but can consume such information. For example, architects can associate an existing set of credentials to the repository of a specific application. 	
 
