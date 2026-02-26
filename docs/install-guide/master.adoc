@@ -4,9 +4,6 @@ include::topics/templates/document-attributes.adoc[]
 [id="installing-mta-title"]
 = Installing the {ProductName}
 
-[role="_abstract"]
-This assembly lists the modules in this guide.
-
 
 :toc:
 :toclevels: 4

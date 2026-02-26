@@ -10,9 +10,6 @@ include::topics/templates/document-attributes.adoc[]
 [id="rules-development-guide"]
 = Configuring and using rules for an {ProductShortName} analysis
 
-[role="_abstract"]
-This assembly lists the modules in this guide.
-
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]

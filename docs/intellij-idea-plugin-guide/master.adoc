@@ -13,9 +13,6 @@ include::topics/templates/document-attributes.adoc[]
 [id="intellij-idea-plugin-guide"]
 = IntelliJ IDEA Plugin Guide
 
-[role="_abstract"]
-This assembly lists the modules in this guide.
-
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 

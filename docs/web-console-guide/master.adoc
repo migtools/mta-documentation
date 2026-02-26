@@ -10,9 +10,6 @@ include::topics/templates/document-attributes.adoc[]
 [id="web-console-guide"]
 = Configuring and managing the Migration Toolkit for Applications user interface
 
-[role="_abstract"]
-This assembly lists the modules in this guide.
-
 include::topics/mta-ui/con_intro-to-mta-ui.adoc[leveloffset=+1]
 
 include::assemblies/ui-guide/assembly_configuring-mta-instance-environment.adoc[leveloffset=+1]

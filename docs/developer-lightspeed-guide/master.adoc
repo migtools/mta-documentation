@@ -4,9 +4,6 @@ include::topics/templates/document-attributes.adoc[]
 [id="mta-developer-lightspeed"]
 = Configuring and Using Red Hat Developer Lightspeed for MTA
 
-[role="_abstract"]
-This assembly lists the modules in this guide.
-
 :toc:
 :toclevels: 4
 :numbered:
