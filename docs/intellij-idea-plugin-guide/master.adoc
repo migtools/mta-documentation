@@ -8,10 +8,12 @@
 :AddonType: plugin
 :IDEName: IntelliJ IDEA
 :mta:
-include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 [id="intellij-idea-plugin-guide"]
 = IntelliJ IDEA Plugin Guide
+
+
+include::topics/templates/document-attributes.adoc[]
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
