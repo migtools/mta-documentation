@@ -24,23 +24,45 @@ Profiles contain analysis configuration that allows organizations to standardize
 --
 
 
-
-C# provider for analyzing C# applications across {ProductShortName} components::
-You can use the external `csharp` provider to analyze C# source code in the {ProductFullName} command-line interface (CLI), user interface, and the {ProductShortName} Visual Studio Code extension. `csharp` uses a gRPC interface to parse using tree-sitter and uses stack graph to perform a semantic analysis of your codebases to identify violations before you migrate your code. 
-The `csharp` provider supports referenced capability in rules used to perform the {ProductShortName} analysis. Configure fields such as `pattern`, `location`, and `file_path` in the rules based on which the provider searches the code for type, classes, methods, and fields in the source code.
-+
-(link:https://issues.redhat.com/browse/MTA-6492[MTA-6492])
-
-
 The {ProductShortName} Visual Studio Code extension pack and the Core extension with language-specific extension are available::
 The {ProductFullName} Visual Studio Code extension consists of an analyzer RPC binary that runs an analysis for the following applications:
 
 * Java
 * Go
 * Python
++
+:FeatureName: Analyzing applications written in Python
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+:!FeatureName:
 * Node.js
++
+:FeatureName: Analyzing applications written in Node.js
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+:!FeatureName:
 * C#
 * .NET
++
+:FeatureName: Analyzing applications written in .NET
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is Developer Preview software only. Developer Preview software is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview software for production or business-critical workloads. Developer Preview software provides early access to upcoming product software in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this software to test functionality and provide feedback during the development process. This software might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview software without an associated SLA.
+
+For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
+====
+:!FeatureName:
 
 +
 --
