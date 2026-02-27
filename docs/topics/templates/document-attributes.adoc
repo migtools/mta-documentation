@@ -2,6 +2,7 @@
 // ********************************
 // * Standard document attributes *
 // ********************************
+:_mod-docs-content-type: attributes
 :toc:
 :toclevels: 3
 :numbered:
