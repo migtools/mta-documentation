@@ -6,13 +6,22 @@
 [id="assessing-an-application_{context}"]
 = Assessing an application
 
-You can estimate the risks and costs involved in preparing applications for containerization by performing application assessment. You can assess an application and display the currently saved assessments by using the Assessment module.
+[role="_abstract"]
+Estimate the risks and costs involved in preparing applications for modernization by performing an application assessment in the {ProductFullName} user interface (UI).
 
-The {ProductFullName} assesses applications according to a set of questions relevant to the application, such as dependencies.
-
-To assess the application, you can use the default xref:mta-default-questionnaire_assessment-questionnaires[Legacy Pathfinder] {ProductShortName} questionnaire or import your xref:mta-custom-questionnaire_assessment-questionnaires[custom] questionnaires.
+The {ProductFullName} assesses applications according to a set of questions relevant to the application, such as dependencies. To assess the application, you can use the default xref:mta-default-questionnaire_assessment-questionnaires[Legacy Pathfinder] {ProductShortName} questionnaire or import a xref:mta-custom-questionnaire_assessment-questionnaires[custom] questionnaire.
 
 IMPORTANT: You can assess only one application at a time.
+
+
+[NOTE]
+====
+During the assessment, you might encounter false positives in an application that cannot be fully resolved. This can happen because {ProductShortName} cannot discover the class that is being called. Therefore, {ProductShortName} cannot determine whether it is a valid match or not. You can use the following solution to resolve the issue:
+
+. Ensure that the maven settings can get all the dependencies.
+
+. Ensure the application can be fully compiled.
+====
 
 .Prerequisites
 
@@ -33,23 +42,6 @@ NOTE: You can also add *Stakeholder Groups* or *Stakeholders* in the *Controls* 
 . Answer each *Application assessment* question and click *Next*.
 . Click *Save* to review the assessment and proceed with the steps in xref:reviewing-an-application_assessing-applications[Reviewing an application].
 
-[NOTE]
-====
-If you are seeing false positives in an application that is not fully resolvable, then this is not entirely unexpected.
-
-
-The reason, is that {ProductShortName} cannot discover the class that is being called. Therefore, {ProductShortName} cannot determine whether it is a valid match or not.
-
-
-When this happens, {ProductShortName} defaults to exposing more information than less.
-
-
-In this situation, the following solutions are suggested:
-
-. Ensure that the maven settings can get all the dependencies.
-
-. Ensure the application can be fully compiled.
-====
  
 [role="_additional-resources"]
 .Additional resources

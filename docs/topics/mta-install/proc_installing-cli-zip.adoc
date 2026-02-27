@@ -15,7 +15,9 @@ You can install the {ProductShortName} CLI by using the downloadable `.zip` file
 
 * You logged in to `registry.redhat.io`. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
 +
-NOTE: This prerequisite is not applicable for the containerless mode. For more information, see link:{mta-URL}/using_the_mta_command-line_interface_to_analyze_applications/index#running-the-containerless-mta-cli_analyzing-applications-mta-cli[Analyzing an application in containerless mode].
+pass:[<!-- vale RedHat.Spelling = NO -->]
+NOTE: This prerequisite is not applicable for the containerless mode.
+pass:[<!-- vale RedHat.Spelling = YES -->] For more information, see link:{mta-URL}/using_the_mta_command-line_interface_to_analyze_applications/index#running-the-containerless-mta-cli_analyzing-applications-mta-cli[Analyzing an application in containerless mode].
 
 * You installed Java Development Kit (JDK) version 17 or later.
 * You set the `JAVA_HOME` environmental variable.
@@ -25,6 +27,7 @@ NOTE: This prerequisite is not applicable for the containerless mode. For more i
 
 . Navigate to the link:{DevDownloadPageURL}[{ProductShortName} download page] and download one of the following operating system-specific CLI files or the `src` file:
 +
+pass:[<!-- vale RedHat.CaseSensitiveTerms = NO -->]
 * {ProductShortNameLower}-{ProductVersion}-cli-linux-amd64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-linux-arm64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-darwin-amd64.zip
@@ -32,6 +35,7 @@ NOTE: This prerequisite is not applicable for the containerless mode. For more i
 * {ProductShortNameLower}-{ProductVersion}-cli-windows-amd64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-windows-arm64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-src.zip
+pass:[<!-- vale RedHat.CaseSensitiveTerms = YES -->]
 
 . Extract the `.zip` file to the `.kantra` directory inside your `$HOME` directory. The `.zip` file extracts the `mta-cli` binary, along with other required directories and files.
 

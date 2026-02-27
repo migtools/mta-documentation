@@ -1,3 +1,4 @@
+// This file is an attribute-definitions include only, not a standalone DITA module.
 // ********************************
 // * Standard document attributes *
 // ********************************
@@ -96,7 +97,8 @@ endif::[]
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
 :ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
 :ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
-:LinkAPI: https://github.com/windup/windup/blob/master/
+// GitHub link removed per Red Hat GitLinks policy; restore with approval if required.
+// :LinkAPI: https://github.com/windup/windup/blob/master/
 
 //Links to MTA and MTR Jira project pages:
 :JiraMTAURL: https://issues.redhat.com/projects/MTA

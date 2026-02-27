@@ -1,9 +1,12 @@
 // Module included in the following assemblies:
 //
 // * docs/web-console-guide/master.adoc
-:_mod-docs-content-type: REFERENCE
+:_mod-docs-content-type: CONCEPT
 [id="assessment-module-features_{context}"]
 = The Assessment module features
+
+[role="_abstract"]
+The assessment module in the {ProductFullName} user interface (UI) uses customizable questionnaires to evaluate the suitability of applications for modernization. Understanding these features allows you to identify migration risks, estimate effort, and prioritize applications within your portfolio.
 
 The {ProductFullName} *Assessment* module offers the following features for assessing and analyzing applications:
 

@@ -4,6 +4,7 @@ include::topics/templates/document-attributes.adoc[]
 [id="installing-mta-title"]
 = Installing the {ProductName}
 
+
 :toc:
 :toclevels: 4
 :numbered:
@@ -25,7 +26,4 @@ include::assemblies/mta-install-title/assembly_installing-mta-ui.adoc[leveloffse
 include::assemblies/mta-install-title/assembly_installing-mta-cli.adoc[leveloffset=+1]
 
 include::topics/mta-cli/ref_contributing-to-mta-development.adoc[leveloffset=+1]
-
-
-
 :!installing-mta-title:

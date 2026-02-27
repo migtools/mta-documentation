@@ -12,11 +12,11 @@ You can use a Quick Fix automatic code replacement to save time and ensure consi
 
 . In the left pane, click a hint that has an error indicator.
 +
-Any Quick Fixes are displayed as child folders with the Quick Fix icon (image:intellij-idea-info.png[Quickfix]) on their left side.
+Any Quick Fixes are displayed as child folders with the Quick Fix icon (image:intellij-idea-info.png[Quick Fix]) on their left side.
 . Right-click a Quick Fix and select *Preview Quick Fix*.
 +
 The current code and the suggested change are displayed in the *Preview Quick Fix* window.
 . To accept the suggested fix, click *Apply Quick Fix*.
 . Optional: Right-click the issue and select *Mark As Complete*.
 +
-A green check (image:intellij-idea-ok.png[Complete]) is displayed by the hint, replacing the error indicator.
+The Complete indicator (image:intellij-idea-ok.png[Complete], a green check mark) is displayed by the hint, replacing the error indicator.

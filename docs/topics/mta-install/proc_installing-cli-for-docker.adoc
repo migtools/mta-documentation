@@ -38,7 +38,7 @@ NOTE: You might need to reboot Windows for the change to take effect.
 
 . Install Docker Desktop on Windows.
 
-.. Run the installer by double-clicking the `Docker_Desktop_Installer.exe` file. 
+.. Run the installation program by double-clicking the `Docker_Desktop_Installer.exe` file. 
 +
 By default, Docker Desktop is installed to the `C:\Program Files\Docker\Docker` path.
 

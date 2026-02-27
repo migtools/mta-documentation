@@ -5,6 +5,9 @@
 [id="displaying-automated-tasks_{context}"]
 = Displaying automated tasks
 
+[role="_abstract"]
+To monitor the status of background processes, view automated tasks in the {ProductFullName} user interface (UI).
+
 After you add a new application to the *Application Inventory*, you can display the automated tasks created by adding the application:
 
 * The language discovery task identifies the programming languages in the application.

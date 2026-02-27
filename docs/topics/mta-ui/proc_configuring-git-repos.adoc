@@ -6,7 +6,8 @@
 [id="configuring-git-repos_{context}"]
 = Configuring Git repositories
 
-You can configure Git repositories in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
+[role="_abstract"]
+To allow {ProductFullName} to access the data required for migration tasks, configure Git repositories in the user interface (UI). By configuring these repositories, you enable {ProductShortName} to access your source code to identify modernization paths and required steps for your modernization efforts.
 
 .Procedure
 
