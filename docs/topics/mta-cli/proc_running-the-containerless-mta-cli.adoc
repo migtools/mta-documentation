@@ -36,7 +36,10 @@ NOTE: If you do not set `JVM_MAX_MEM`, the analysis might hang because Java migh
 ** You installed OpenJDK version 8.
 ** You set `$JAVA8_HOME` and it is pointing to the OpenJDK 8 home directory.
 ** Your project has a link:https://docs.gradle.org/current/userguide/gradle_wrapper.html[Gradle wrapper].
-NOTE: You can analyze Gradle projects that have Kotlin scripts for build files by using {ProductShortName} version 8.1.0. For example, `build.gradle.kts` and `settings.gradle.kts`.
++
+NOTE: You can analyze Gradle projects that have Kotlin scripts for build files by using {ProductShortName} version 8.1.0 and later. For example, `build.gradle.kts` and `settings.gradle.kts`.
+
+.Procedure
 
 . Optional: Display all `mta-cli analyze` command options:
 +
