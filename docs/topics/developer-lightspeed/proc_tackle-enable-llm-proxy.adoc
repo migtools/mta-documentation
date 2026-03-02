@@ -8,7 +8,7 @@
 [role="_abstract"]
 You must enable the large language model (LLM) proxy in the Tackle custom resource (CR) and deploy it in the Red Hat {ocp-name} project where you installed the {ProductShortName} Operator.
 
-The proxy authenticates to the LLM in the backend by using the OpenShift secret configured in the cluster. This helps the administrator to create, manage, and rotate the LLM key without sharing the key with many client endpoints (for example, {ProductShortName} IDE extension) in the organization. 
+The proxy authenticates to the LLM in the backend by using the LLM secret configured in the cluster. This helps the administrator to create, manage, and rotate the LLM key without sharing the key with many client endpoints (for example, {ProductShortName} IDE extension) in the organization. 
 
 The client endpoint authenticates to the proxy by using the Hub credentials (Keycloak JSON Web Token). The proxy authenticates the client by validating the JWT tokens. 
 

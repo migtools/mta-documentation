@@ -40,6 +40,8 @@ To use the Solution Server for code fix suggestions:
 
 To use the agent mode for code fix suggestions:
 
+* Create a secret for your LLM key in the Red Hat {ocp-name} cluster.
+
 * Enable the generative AI and the agent mode in the {ProductShortName} extension settings.
 
 * Configure the profile settings and activate the LLM provider in the `provider-settings.yaml` file. 
