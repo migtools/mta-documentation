@@ -25,9 +25,5 @@ You can also enable Red Hat Developer Lightspeed for the {ProductName} to use Ge
 
 .Procedure
 
-<<<<<<< HEAD
-* Install the {ProductShortName} {ProductVersion} Visual Studio (VS) Code plugin extension pack from the link:https://marketplace.visualstudio.com/items?itemName=konveyor.konveyor[VS Code marketplace]. 
-* Alternatively, install the {ProductShortName} 8.1.0 Core plugin along with the {ProductShortName} extension for a supported language from the link:https://marketplace.visualstudio.com/search?term=konveyor&target=VSCode&category=All%20categories&sortBy=Relevance[VS Code marketplace]
-=======
-* Install the {ProductShortName} {ProductVersion} Visual Studio Code plugin from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[Visual Studio Code marketplace]. 
->>>>>>> main
+* Install the {ProductShortName} {ProductVersion} Visual Studio (VS) Code plugin extension pack from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit%20for%20application&target=VSCode&category=All%20categories&sortBy=Relevance[VS Code marketplace]. 
+* Alternatively, install the {ProductShortName} 8.1.0 Core plugin along with the {ProductShortName} extension for a supported language from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit%20for%20application&target=VSCode&category=All%20categories&sortBy=Relevance[VS Code marketplace]
