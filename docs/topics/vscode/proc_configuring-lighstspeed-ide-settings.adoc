@@ -6,7 +6,7 @@
 = Configuring the IDE settings
 
 [role="_abstract"]
-{ProductShortName} settings apply to every analysis that you perform by using the Visual Studio (VS) Code extension. The extension settings have the following categories:
+{ProductShortName} settings apply to every analysis that you perform by using the Visual Studio Code extension. The extension settings have the following categories:
 
 * Analysis-related settings
 * Debugging and logging settings
@@ -21,13 +21,13 @@ Alternatively, open the setting by performing the following steps:
 
 .. Type `Ctrl + Shift + P` or `Cmd + Shift + P` on the search bar to open the Command Palette.
 .. Enter `Preferences: Open Settings (UI)`. 
-.. Open the settings page by clicing `Extensions` > `MTA`.
+.. Open the settings page by clicking `Extensions` > `MTA`.
 +
 . Configure the following settings:
 
 * Log level: Set the log level for the {ProductShortName} binary. The default log level is `debug`. The log level increases or decreases the verbosity of logs. 
 * Analyzer path: Specify an {ProductShortName} custom binary path. If you do not provide a path, {mta-dl-plugin} uses the default path to the binary.
-* Debug:Webview: Enable debug level logging for Webview message handling in VS Code.
+* Debug:Webview: Enable debug level logging for Webview message handling in Visual Studio Code.
 
 
 .Next steps
