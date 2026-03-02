@@ -1,37 +1,66 @@
 :_newdoc-version: 2.15.0
 :_template-generated: 2024-2-21
 
-:_mod-docs-content-type: CONCEPT
+:_mod-docs-content-type: REFERENCE
 
 [id="how-to-use-developer-lightspeed_{context}"]
 = How to use {mta-dl-plugin}
 
 [role="_abstract"]
-You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application. {mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context that is shared with a large language model (LLM). The LLM suggests code resolutions based on the issue description, context, and previous examples of code changes to resolve issues. 
-
-To make code changes by using the LLM, you must enable the generative AI option, along with either the Solution Server or the Agent AI. The configurations that you complete before you request code fixes depend on how you prefer to request code resolutions.
+You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application.
 
 [NOTE]
 ====
-If you make any change after enabling the generative AI settings in the extension, you must restart the extension for the change to take effect.
+If you make any change in configuration after enabling the generative AI settings in the extension, you must restart the extension for the change to take effect.
 ====
 
-To use the Solution Server for code fix suggestions:
+The configuration workflow that you complete to use {mta-dl-plugin} depends on the following factors:
 
-* Create a secret for your LLM key in the Red Hat {ocp-name} cluster.
+* Whether you prefer to connect the {ProductShortName} extension to the LLM by using the LLM proxy. 
+* Whether you want to use Agent AI for request resolutions without using LLM proxy.
 
-* Enable the Solution Server in the Tackle custom resource (CR).
+You can complete one of the following workflows:
 
-* Configure the LLM base URL and model in the Tackle CR.
+[id="agent-mode-workflow_{context}"]
+== Workflow to use the Agent AI mode without the LLM proxy
 
-* Enable the generative AI option in the {ProductShortName} extension settings.
+As an Administrator, you must:
 
-* Add the Solution Server configuration in the `settings.json` file.
+* Create a xref:tackle-llm-secret_getting-started[secret] for your LLM key in the Red Hat {ocp-name} cluster.
 
-* Configure the profile settings and activate the LLM provider in the `provider-settings.yaml` file. 
+* In the xref:tackle-enable-llm-proxy_getting-started[Tackle custom resource (CR)], configure the LLM provider and the LLM model.
 
-To use the agent mode for code fix suggestions:
+As a Migrator, you can complete the following workflow to use the Agent AI mode for code resolutions:
 
-* Enable the generative AI and the agent mode in the {ProductShortName} extension settings.
+* Enable the generative AI in the xref:configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide[{ProductShortName} extension settings] 
 
-* Configure the profile settings and activate the LLM provider in the `provider-settings.yaml` file. 
+* Configure a xref:configuring-developer-lightspeed-profile-settings_configuring-dev-lightspeed-ide[profile] for the analysis.
+
+* xref:llm-provider-settings_configuring-llm[Activate the LLM provider] in the `provider-settings.yaml` file. 
+
+* Enable the xref:running-agent-analysis_run-dev-lightspeed-analysis[Agent AI and run an analysis] to request code fix suggestion by using the Agent AI mode.
+
+[id="llm-proxy-workflow_{context}"]
+== Workflow to use the LLM through the proxy service
+
+You can allow client endpoints, for example the MTA Visual Studio Code extension, to use the proxy service to access the large language models (LLMs). The client uses Keycloak credentials to authenticate to the MTA Hub. To authenticate to the LLM, the client sends a JSON Web Token (JWT) issued by Keycloak to the proxy service. The proxy service validates the client's JWT against the Hub's Keycloak instance. 
+
+The proxy service completes a separate authentication process to access the LLM through an Administrator-controlled endpoint. The proxy service authenticates to the LLM by using the cluster secret that contains the LLM API key configured by the Administrator. Thus, the proxy service allows Administrators to create, manage, and rotate LLM API keys without the need to share the LLM key with multiple client endpoints.
+
+After you enable the LLM proxy, you can use either the Solution Server or Agent AI to generate code resolution requests in the IDE extension. To use the Solution Server, the Administrator must deploy it in the {ocp-name} cluster with the proxy service. You cannot use the Solution Server without the proxy service.  
+
+As an Administrator, you must complete the following workflow to enable the LLM proxy in the {ocp-name} cluster:
+
+* Create a xref:tackle-llm-secret_getting-started[secret] for your LLM key in the Red Hat {ocp-name} cluster.
+
+* In the xref:tackle-enable-llm-proxy_getting-started[Tackle custom resource (CR)], enable the LLM proxy service, enable the Solution Server if you want Migrators to use the Solution Server mode, and configure the LLM provider and the LLM model.
+
+As a Migrator, you can:
+
+* Enable the generative AI in the xref:configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide[{ProductShortName} extension settings].
+
+* If you want to use the Agent AI mode for code resolutions, enable the xref:running-agent-analysis_run-dev-lightspeed-analysis[Agent AI and run an analysis].
+
+* To use the Solution Server mode:
+.. Connect to the {ProductShortName} Hub and run an analysis by using a profile downloaded from the Hub. See link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/analyzing-application-profiles_configuring-using-vs-code-plugin[Running an application analysis by using a profile].
+.. Apply xref:apply-rag-resolution_run-dev-lightspeed-analysis[code resolutions suggested by the Solution Server].

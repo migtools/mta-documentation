@@ -10,6 +10,11 @@ Solution Server integrates with the {ProductShortName} Hub backend component to 
 
 To enable Solution Server and other AI configurations in the {mta-dl-full} VS Code extension, you must modify the Tackle custom resource (CR) with additional parameters.
 
+[NOTE]
+====
+To use the Solution Server, the Administrator must deploy it in the {ocp-name} cluster with the proxy service. You cannot use the Solution Server without the proxy service. See xref:tackle-enable-llm-proxy_getting-started[Enabling LLM proxy in the Tackle custom resource] for more information.
+====
+
 .Prerequisites
 
 //the hard link must be changed to the same topic in 8.0.0 that has the `{mta-dl-plugin}-database` req.
@@ -33,18 +38,17 @@ oc edit tackle
 +
 [source, yaml]
 ----
----
 kind: Tackle
 apiVersion: tackle.konveyor.io/v1alpha1
 metadata:
   name: mta
   namespace: openshift-mta
 spec:
+  kai_llm_proxy_enabled: true
   kai_solution_server_enabled: true
   kai_llm_provider: <provider-name> #For example, OpenAI.
   # optional, pick a suitable model for your provider
   kai_llm_model: <model-name>
-...
 ----
 +
 

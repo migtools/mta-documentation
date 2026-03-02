@@ -46,7 +46,7 @@ export OPENAI_API_BASE=<server-url>
 ----
 podman_mistral: &active
     provider: "ChatOpenAI"
-     environment:
+    environment:
       OPENAI_API_KEY: "unused value"
     args:
      model: "ibm-granite/granite-3.3-8b-instruct-GGUF"
