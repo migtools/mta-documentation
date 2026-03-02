@@ -54,6 +54,8 @@ include::topics/mta-cli/proc_performing-a-live-discovery.adoc[leveloffset=+1]
 
 include::topics/mta-cli/proc_concealing-sensitive-information.adoc[leveloffset=+1]
 
+include::topics/mta-cli/ref_discover-values-deployment-manifest.adoc[leveloffset=+1]
+
 include::topics/mta-cli/proc_generating-deployment-manifest.adoc[leveloffset=+1]
 
 include::topics/mta-cli/proc_assets-generation-example.adoc[leveloffset=+1]

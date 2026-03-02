@@ -1,0 +1,113 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+:_mod-docs-content-type: REFERENCE
+
+[id="discover-values-deployment_{context}"]
+= The deployment manifest input values
+
+[role="_abstract"]
+You can generate a deployment manifest from a discovery manifest with or without a `values.yaml` file. When you generate the deployment manifest from the discovery manifest, the values in the `values.yaml` file override the values in the discovery manifest. If the `values` file is empty or missing, {ProductShortName} uses the discovery manifest values as input to generate the deployment manifest. 
+
+* Consider the following discovery manifest as an example:
++
+[subs="+quotes"]
+----
+manifest:
+    appName: my-app
+    database:
+        enabled: true
+        host: postgres.example.com
+    labels:
+        sensitive: "true"
+    annotations:
+        contact: bob@example.com jane@example.com
+    env:
+        RACK_ENV: production
+        RAILS_ENV: production
+    routes:
+        - route: example.com
+          protocol: http2
+    processes:
+        - type: web
+          disk: 1024M
+          memory: 512M
+          healthCheck:
+            invocationTimeout: 1
+            interval: 30
+            type: port
+            timeout: 80
+          readinessCheck:
+            type: process
+          instances: 1
+          lifecycle: cnb
+    stack: cflinuxfs4
+    buildPacks:
+        - docker://my-registry-a.corp/nodejs
+        - docker://my-registry-b.corp/dynatrace
+----
++
+NOTE: You must configure the buildpacks in the Cloud Foundry application manifest to include the buildpacks in the discovery and deployment assets.
+
+Generate deployment manifest without a `values.yaml` file::
+
+
+* The following `Dockerfile` template is an example:
++
+[subs="+quotes"]
+----
+FROM node:18
+
+ENV APP_NAME={{ .Values.appName }}
+{{- if .Values.database.enabled }}
+ENV DATABASE_HOST={{ .Values.database.host }}
+{{- end }}
+----
++
+* You can generate the following deployment manifest based on the example `Dockerfile` template:
++
+[subs="+quotes"]
+----
+FROM node:18
+
+ENV APP_NAME=my-app
+ENV DATABASE_HOST=postgres.example.com
+----
+
+Generate deployment manifest with a `values.yaml` file::
+
+* The following `values.yaml` file is an example:
++
+[subs="+quotes"]
+----
+appName: my-app-production  # Overrides application name in the discovery manifest
+  database:
+    host: prod-postgres.company.com   # Overrides host value in the discovery manifest
+  redis:                             # Adds a new field 
+    url: redis://prod-redis:6379
+----
+
+* The following modified `Dockerfile` template is an example:
+[subs="+quotes"]
+----
+FROM node:18
+
+ENV APP_NAME={{ .Values.appName }}
+{{- if .Values.database.enabled }}
+ENV DATABASE_HOST={{ .Values.database.host }}
+{{- end }}
+{{- if .Values.redis }}
+ENV REDIS_URL={{ .Values.redis.url }}
+{{- end }}
+----
+NOTE: The example discovery manifest has no changes.
+
+* By using the above templates, {ProductShortName} {CLIName} renders the following `Dockerfile` when you generate deployment assets:
+[subs="+quotes"]
+----
+FROM node:18
+
+  ENV APP_NAME=my-app-production
+  ENV DATABASE_HOST=prod-postgres.company.com
+  ENV REDIS_URL=redis://prod-redis:6379
+----

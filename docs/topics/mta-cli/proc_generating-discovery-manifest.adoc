@@ -38,3 +38,4 @@ $ *mta-cli discover cloud-foundry --input _<path_to_input>_ --output-dir _<path_
 .Additional resources
 
 * xref:discover-generate-command-options_generating-assets[The discover and generate command options]
+* link:https://github.com/konveyor/enhancements/tree/master/enhancements/assets-generation/cloud-foundry-application-discovery#app-level-configuration[CloudFoundry application schema fields for manifests]
