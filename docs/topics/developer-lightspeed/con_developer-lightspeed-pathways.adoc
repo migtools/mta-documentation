@@ -7,14 +7,19 @@
 = How to use {mta-dl-plugin}
 
 [role="_abstract"]
-You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application. {mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context that is shared with a large language model (LLM). The LLM suggests code resolutions based on the issue description, context, and previous examples of code changes to resolve issues. 
+You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application. 
 
-To make code changes by using the LLM, you must enable the generative AI option, along with either the Solution Server or the Agent AI. The configurations that you complete before you request code fixes depend on how you prefer to request code resolutions.
+To make code changes by using the LLM, you must enable the generative AI option in {ProductShortName} extension settings. Optionally, you can use an LLM proxy service if you want the {ProductShortName} Hub to access the LLM through an administrator-controlled endpoint. See xref:tackle-enable-llm-proxy_getting-started[Enabling LLM proxy in the Tackle custom resource]  for more information.
+
+The configuration that you complete to use {mta-dl-plugin} depends on how you prefer to request code resolutions. You can complete one of the following workflow depending on if you want to use the Solution Server or the Agent AI. 
 
 [NOTE]
 ====
 If you make any change after enabling the generative AI settings in the extension, you must restart the extension for the change to take effect.
 ====
+
+[id="solution-server-workflow_{context}"]
+== Workflow to use the solution server
 
 To use the Solution Server for code fix suggestions:
 
@@ -29,6 +34,9 @@ To use the Solution Server for code fix suggestions:
 * Add the Solution Server configuration in the `settings.json` file.
 
 * Configure the profile settings and activate the LLM provider in the `provider-settings.yaml` file. 
+
+[id="agent-mode-workflow_{context}"]
+== Workflow to use the agent mode
 
 To use the agent mode for code fix suggestions:
 
