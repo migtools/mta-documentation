@@ -47,8 +47,6 @@ For more information about the support scope of Red Hat Technology Preview featu
 
 |===
 
-include::proc_tackle-llm-secret.adoc[leveloffset=+1]
-
 include::proc_tackle-enable-dev-lightspeed.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-solution-server-configurations[:context: {parent-context-of-solution-server-configurations}]
