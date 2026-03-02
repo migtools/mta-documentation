@@ -1,0 +1,76 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+:_mod-docs-content-type: REFERENCE
+
+[id="modifying-app-profile_{context}"]
+= A sample profile configuration
+
+[role="_abstract"]
+After Migrators download the analysis profile from the Hub, they can modify the configuration before running an analysis. 
+
+When you sync the profile, the {ProductShortName} {CLIName} overrides the modified configuration by downloading the latest configuration from the Hub to your local application.
+
+[source, yaml]
+----
+id: 1
+createUser: admin
+createTime: 2025-11-12T23:57:35
+name: Profile-1
+mode:
+  withDeps: true
+scope:
+  withKnownLibs: true
+  packages:
+    included:
+    - one
+    - two
+    excluded:
+    - three
+    - four
+rules:
+  targets:
+  - id: 1
+    name: Application server migration 
+  - id: 2
+    name: Containerization
+  labels:
+    included:
+    - konveyor.io/target=spring6
+    - konveyor.io/source=springboot
+    - konveyor.io/target=quarkus
+    excluded:
+    - C
+    - D
+  files:
+  - id: 400
+    name: ""
+  repository:
+    kind: git
+    url: <url>
+    branch: ""
+    tag: ""
+    path: default/generated
+----
+where
+
+`id` :: specified the unique identifier of the analysis profile.
+
+`createUser` :: specifies the user who created the analysis profile in the Hub.
+
+`createTime` :: specifies the date and time when the user created the profile.
+
+`name` :: specifies the name of the analysis profile.
+
+`withDeps` :: specifies if {ProductShortName} includes dependencies in the analysis as a boolean value.
+
+`withKnownLibs` :: specifies if {ProductShortName} includes known open-source libraries in the analysis.
+
+`packages` :: specifies the packages that are included and excluded in the analysis.
+
+`targets` :: specifies a unique id and name of each migration target in the analysis profile.
+
+`labels` :: specifies the labels that filters rules that are applied and excluded in the analysis.
+
+`files` :: specifies the unique identifier and name of a custom rule in a file. {ProductShortName} {CLIName} uses the file directly in an analysis.
+
+`repository` :: specifies details of external ruleset repository. For example, `kind` (`Git` or `Subversion`), `URL`, `branch`, `tag`, and `path` within the repository to the rulesets.

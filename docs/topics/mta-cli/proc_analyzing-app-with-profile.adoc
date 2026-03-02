@@ -1,0 +1,77 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+:_mod-docs-content-type: PROCEDURE
+
+[id="analyzing-app-with-profile_{context}"]
+= Analyzing an application by using a profile
+
+[role="_abstract"]
+Migrators can use profiles and custom rules downloaded from the {ProductShortName} Hub to run one or more analyses. If you want to run an analysis without using the downloaded profile configuration, you must delete the `.konveyor` directory within your application where {ProductShortName} downloaded the profiles and rules.
+
+.Prerequisites
+
+* Your administrator installed {ProductShortName} and the `tackle` operator in your cluster.
+* The architect configured an analysis profile with required custom rules in the {ProductShortName} {WebName}. 
+* The architect added the analysis profile in the application's target profile in the {ProductShortName} {WebName}. 
+* The application you want to sync is available in your local system.
+
+.Procedure
+
+. Log in to the {ProductShortName} Hub with the following command.
++
+[subs="+quotes"]
+----
+$ mta-cli config login 
+----
++
+. Enter the `Host`, `Username`, and `Password` to connect to the Hub.
++
+
+[subs="+quotes"]
+----
+$ mta-cli config login 
+Host: https://mta-namespace.apps.cluster.example.com/hub
+Username: _<my_user_name>_
+Password: _<my_password>_
+----
++
+[NOTE]
+====
+* The `Host` is the `tackle` URL of {ProductShortName} deployed in your cluster that exposes the `hub` endpoint.
+* The `Username` and `Password` are the `keycloak` credentials that you use to log in to {ProductShortName} in your cluster.
+====
++
+. Sync the application with its remote repository and  download the profile and custom rules files from the Hub.
++
+[subs="+quotes"]
+....
+$ mta-cli config sync --url https://github.com/<my-app-repository> --application-path _<path/to/my-app>_ --insecure
+....
++
+[NOTE]
+====
+{ProductShortName} downloads the profile and custom rule files in the `.konveyor/profiles/` path in your local application.
+====
++
+. Check the path where {ProductShortName} downloaded the configuration:
++
+[subs="+quotes"]
+----
+$ mta-cli config list --profile-dir _<path/to/my_app>_
+----
+. Run an analysis by using the downloaded profile configuration.
++
+[subs="+quotes"]
+----
+$ mta-cli analyze -i _<path/to/my_app>_ -o _<path/to/my_app_report>_ --overwrite --mode source-only
+----
++
+[TIP]
+====
+For Java applications, you can use the `full` mode while running an analysis. For non-Java applications, the analysis mode must be `source-only`. 
+====
+
+[role="_additional_resources"]
+.Additional resources
+
+* xref:mta-cli-config-flags_analyzing-apps-profiles[The config command options]
