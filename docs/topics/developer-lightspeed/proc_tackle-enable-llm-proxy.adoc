@@ -23,11 +23,11 @@ The client endpoint authenticates to the proxy by using the Hub credentials (Key
 
 . Log in to the Red Hat {ocp-name} cluster and switch to the `openshift-mta` project.
 +
-. Edit the Tackle CR settings in the `tackle_hub.yml` file with the following command:
+. Create the Tackle CR in the `tackle_hub.yaml` file with the following command:
 +
 [source, terminal]
 ----
-oc edit tackle
+vi tackle
 ----
 
 . Enable `kai_llm_proxy_enabled` in the Tackle CR.
@@ -44,6 +44,8 @@ spec:
   kai_llm_proxy_enabled: true
 ---
 ----
+
+. Save the Tackle CR configuration.
 
 . Apply the Tackle CR by in the `openshift-mta` project using the following command.
 +

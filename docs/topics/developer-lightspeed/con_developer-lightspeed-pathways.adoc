@@ -11,7 +11,7 @@ You can opt to use {mta-dl-full} features to request a code fix suggestion after
 
 To make code changes by using the LLM, you must enable the generative AI option in {ProductShortName} extension settings. Optionally, you can use an LLM proxy service if you want the {ProductShortName} Hub to access the LLM through an administrator-controlled endpoint. See xref:tackle-enable-llm-proxy_getting-started[Enabling LLM proxy in the Tackle custom resource]  for more information.
 
-The configuration that you complete to use {mta-dl-plugin} depends on how you prefer to request code resolutions. You can complete one of the following workflow depending on if you want to use the Solution Server or the Agent AI. 
+The configuration that you complete to use {mta-dl-plugin} depends on how you prefer to request code resolutions. You can complete one of the following workflows depending on if you want to use the Solution Server or the Agent AI. 
 
 [NOTE]
 ====
