@@ -31,9 +31,9 @@ include::con_installation.adoc[leveloffset=+1]
 
 include::con_developer-lightspeed-pathways.adoc[leveloffset=+1]
 
-include::proc_tackle-enable-llm-proxy.adoc[leveloffset=+1]
-
 include::proc_tackle-llm-secret.adoc[leveloffset=+1]
+
+include::proc_tackle-enable-llm-proxy.adoc[leveloffset=+1]
 
 include::ref_example-code-suggestion.adoc[leveloffset=+1]
 

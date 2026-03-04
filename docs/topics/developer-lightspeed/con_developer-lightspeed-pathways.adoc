@@ -7,21 +7,26 @@
 = How to use {mta-dl-plugin}
 
 [role="_abstract"]
-You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application. 
+You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application.
 
-To make code changes by using the LLM, you must enable the generative AI option in {ProductShortName} extension settings. Optionally, you can use an LLM proxy service if you want the {ProductShortName} Hub to access the LLM through an administrator-controlled endpoint. See xref:tackle-enable-llm-proxy_getting-started[Enabling LLM proxy in the Tackle custom resource]  for more information.
-
-The configuration that you complete to use {mta-dl-plugin} depends on how you prefer to request code resolutions. You can complete one of the following workflows depending on if you want to use the Solution Server or the Agent AI. 
+To make code changes by using the LLM, you must enable the generative AI option in {ProductShortName} extension settings. 
 
 [NOTE]
 ====
-If you make any change after enabling the generative AI settings in the extension, you must restart the extension for the change to take effect.
+If you make any change in configuration after enabling the generative AI settings in the extension, you must restart the extension for the change to take effect.
 ====
+
+The configuration workflow that you complete to use {mta-dl-plugin} depends on:
+
+* How you prefer to connect the {mta-dl-plugin} extension to the LLM 
+* If you want to use Retrieval Augmented Generation (RAG) or Agent AI for request resolutions. 
+
+You can complete one of the following workflows. 
 
 [id="solution-server-workflow_{context}"]
 == Workflow to use the solution server
 
-To use the Solution Server for code fix suggestions:
+Solution server is an optional component. As a migrator, complete the following workflow to use the Solution Server for code resolutions:
 
 * Create a secret for your LLM key in the Red Hat {ocp-name} cluster.
 
@@ -38,10 +43,25 @@ To use the Solution Server for code fix suggestions:
 [id="agent-mode-workflow_{context}"]
 == Workflow to use the agent mode
 
-To use the agent mode for code fix suggestions:
+As a migrator, complete the following workflow to use the agent mode for code resolutions:
 
 * Create a secret for your LLM key in the Red Hat {ocp-name} cluster.
 
 * Enable the generative AI and the agent mode in the {ProductShortName} extension settings.
 
 * Configure the profile settings and activate the LLM provider in the `provider-settings.yaml` file. 
+
+[id="llm-proxy-workflow_{context}"]
+== Workflow to use the LLM proxy
+
+The LLM proxy service authenticates the {ProductShortName} Visual Studio Code extension (clients) by using the Hub credentials. The proxy service completes a separate authentication process to access the LLM through an administrator-controlled endpoint. See xref:tackle-enable-llm-proxy_getting-started[Enabling LLM proxy in the Tackle custom resource]  for more information.
+
+As an administrator, complete the following workflow to configure the LLM proxy to connect to the LLM:
+
+* Create a secret for your LLM key in the Red Hat {ocp-name} cluster.
+
+* Enable the LLM proxy service in the Tackle custom resource (CR).
+
+* Configure the LLM provider and model in the Tackle CR.
++
+NOTE: If you want to use the Solution Server, you must also enable solution server in the Tackle CR.

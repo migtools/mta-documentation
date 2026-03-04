@@ -42,6 +42,9 @@ metadata:
   namespace: openshift-mta
 spec:
   kai_llm_proxy_enabled: true
+  kai_llm_provider: <provider-name> #For example, OpenAI.
+  # optional, pick a suitable model for your provider
+  kai_llm_model: <model-name>
 ---
 ----
 
