@@ -13,7 +13,7 @@ The `csharp` provider uses a gRPC interface to perform a semantic analysis of an
 
 `referenced`::
 
-The `csharp` provider supports `referenced` capability in rules to define fields such as `pattern`and `location` based on which the provider searches the code for violations. 
+The `csharp` provider supports `referenced` capability in rules to define fields such as `pattern` and `location` based on which the provider searches the code for violations. 
 
 [source,yaml]
 ----

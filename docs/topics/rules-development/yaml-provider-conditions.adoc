@@ -103,7 +103,7 @@ when:
 |Search XML files using xpath queries.
 
 
-|`json`
+|json
 a|Search JSON files using `jsonpath` queries.
 For example,
 [source, yaml]
@@ -166,7 +166,7 @@ when:
 ----
 
 |`csharp`
-|references
+|referenced
 a|Find references to a pattern.
 For example, 
 [source,yaml]
@@ -464,7 +464,7 @@ when:
 
 |location
 |Yes
-a|Specify one of the following for which the search query must be run. 
+a|Specify one of the following for which {ProductShortName} runs a search query. 
 
  * Type reference including classes, interfaces and structure types (struct)
 
@@ -518,13 +518,5 @@ when:
     pattern: "System.Windows.Forms"
 ----
 
- * `ALL` - You can also specify `ALL` as `location` to run a search query namespaces, structure types, and interfaces.
-
- For example, 
-[subs="+quotes"]
-----
-when:
-  csharp.referenced:
-    location: ALL
-----
+ * `ALL` - You can also specify `ALL` as `location` to run a search query on any location in the code, including namespaces, structure types, and interfaces.
 |===
