@@ -16,10 +16,10 @@ To make code changes by using the LLM, you must enable the generative AI option 
 If you make any change in configuration after enabling the generative AI settings in the extension, you must restart the extension for the change to take effect.
 ====
 
-The configuration workflow that you complete to use {mta-dl-plugin} depends on:
+The configuration workflow that you complete to use {mta-dl-plugin} depends on the following factors:
 
-* How you prefer to connect the {mta-dl-plugin} extension to the LLM 
-* If you want to use Retrieval Augmented Generation (RAG) or Agent AI for request resolutions. 
+* How you prefer to connect the {mta-dl-plugin} extension to the LLM
+* Whether you want to use Retrieval Augmented Generation (RAG) or Agent AI for request resolutions 
 
 You can complete one of the following workflows. 
 
