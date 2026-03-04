@@ -26,7 +26,7 @@ You can complete one of the following workflows.
 [id="solution-server-workflow_{context}"]
 == Workflow to use the solution server
 
-Solution server is an optional component. As a migrator, complete the following workflow to use the Solution Server for code resolutions:
+Solution Server is an optional component. As a migrator, complete the following workflow to use the Solution Server for code resolutions:
 
 * Create a secret for your LLM key in the Red Hat {ocp-name} cluster.
 
