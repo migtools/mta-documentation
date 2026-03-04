@@ -5,7 +5,10 @@
 [id="assessing-an-archetype_{context}"]
 = Assessing an archetype
 
-An archetype is considered assessed when all required questionnaires have been answered.
+[role="_abstract"]
+To estimate the modernization effort for groups of applications with similar characteristics, assess an archetype in the {ProductFullName} user interface (UI).
+
+The archetype is considered assessed when all required questionnaires have been answered.
 
 NOTE: If an application is associated with several archetypes, this application is considered assessed when all associated archetypes have been assessed. 
 

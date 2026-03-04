@@ -14,7 +14,9 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 
 * 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
 * Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.13-4.15.
-* 2 RWO persistent volumes (PVs) used by different components. For more information, see link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements].
+pass:[<!-- vale RedHat.Spelling = NO -->]
+* 2 RWO persistent volumes (PVs) used by different components.
+pass:[<!-- vale RedHat.Spelling = YES -->] For more information, see link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements].
 * You are logged in as a user with `cluster-admin` permissions.
 
 

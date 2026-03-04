@@ -10,19 +10,10 @@ This section provides a list of all features removed in {ProductFullName} {Produ
 
 
 XML rules are removed::
-
 In {ProductFullName} {ProductVersion}, XML rules are removed and are no longer supported both in the {ProductShortName} user interface (UI) and command-line interface (CLI).
 +
-
 (link:https://issues.redhat.com/browse/MTA-5357[MTA-5357])
 
 
 The Eclipse IDE plugin is removed::
-
 The Eclipse IDE plugin for {ProductFullName}, which you could use to analyze the effort for migrating and modernizing your applications, is removed and is no longer supported. As an alternative, you can use the {ProductName} extension for Visual Studio Code (VS Code).
-
-////
-NOT YET CONFIRMED
-
-* IntelliJ deprecation in MTA 7 and removal in MAT 8
-////
