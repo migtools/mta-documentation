@@ -23,8 +23,9 @@ Additionally, {ProductShortName} provides a built-in provider with abilities suc
 Currently, {ProductShortName} supports the following providers:
 
 * Builtin
-* Java  
-* External providers (for `Python`, `Csharp`,`Go`, and `Node.js` applications) 
+* Java 
+* Csharp
+* External providers (for `Python`, `Go`, and `Node.js` applications) initialized by the generic provider binary
 
 [NOTE]
 ====
