@@ -6,7 +6,7 @@
 = Analyzing an application by using a profile
 
 [role="_abstract"]
-Migrators can use profiles and custom rules downloaded from the {ProductShortName} Hub to run one or more analyses. If you want to run an analysis without using the downloaded profile configuration, you must delete the `.konveyor` directory within your application where {ProductShortName} downloaded the profiles and rules.
+Migrators can use analysis profiles and custom rules downloaded from the {ProductShortName} Hub to run one or more analyses. You can override the value of a field in the analysis profile by entering an alternative value for the field in the analysis command. If you want to run an analysis without using the downloaded profile, delete the `.konveyor` directory within your application where {ProductShortName} downloaded the profiles and rules.
 
 .Prerequisites
 
@@ -69,6 +69,16 @@ $ mta-cli analyze -i _<path/to/my_app>_ -o _<path/to/my_app_report>_ --overwrite
 [TIP]
 ====
 For Java applications, you can use the `full` mode while running an analysis. For non-Java applications, the analysis mode must be `source-only`. 
+====
++
+[NOTE]
+====
+The following command overrides the values of `target` in the analysis profile with `quarkus`.
+
+[subs="+quotes"]
+----
+mta-cli analyze -i _<path/to/my_app>_ -o _<path/to/my_app_report>_ --overwrite --target quarkus --mode source-only
+----
 ====
 
 [role="_additional_resources"]
