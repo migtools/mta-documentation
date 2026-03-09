@@ -19,7 +19,7 @@ By using ready-made custom migration targets, you can avoid configuring custom r
 
 .Procedure
 
-. In the *Administration* view, click *Custom migration targets*.
+. In the *Migration* view, click *Custom migration targets*.
 . Click *Create new*.
 . Enter the name and description of the target.
 . Click the *Provider* drop-down menu and choose the language provider.
