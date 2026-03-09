@@ -26,15 +26,9 @@ The *Target profiles for <archetype-name>* appears.
 . Select specific generators and click the right arrow to move the generator from the *Available generators* list to the *Chosen generators* list.
 . (Optional) Select an analysis profile for the application from the list. You can download this profile configuration from the {ProductShortName} {CLIName} only if you select the profile from this list.
 . Click *Create*.
-
-<<<<<<< HEAD:docs/topics/web-console/proc_configuring-target-profiles.adoc
-You can click on the archetype row to open the archetype detail view where the target profiles for the archetype are listed.
-
+. You can click on the archetype row to open the archetype detail view where the target profiles for the archetype are listed.
++
 [NOTE]
 ====
 If you delete a target profile, {ProductShortName} also automatically deletes the analysis profile associated with the target profile.
 ====
-=======
-+
-You can click on the archetype row to open the archetype detail view where the target profiles for the archetype are listed.
->>>>>>> 2a7a567 ([DITA] Vale DITA fixes and short descriptions for the UI title (#289)):docs/topics/mta-ui/proc_configuring-target-profiles.adoc
