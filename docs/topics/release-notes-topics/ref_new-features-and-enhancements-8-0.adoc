@@ -48,7 +48,7 @@ You can use the discovery manifest to generate assets in the web console to depl
 {ProductShortName} CLI supports running a live discovery in a remote CF instance::
 With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.
 +
-For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
+For more information, see link:{mta-URL}/using_the_migration_toolkit_for_applications_command-line_interface/index#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
 +
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 
@@ -61,7 +61,7 @@ You can conceal sensitive information, for example, services and Docker credenti
 
 +
 --
-For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/cli_guide/generating-assets_cli-guide#concealing-sensitive-information_generating-assets[Concealing sensitive information in a discovery manifest].
+For more information, see link:{mta-URL}/using_the_migration_toolkit_for_applications_command-line_interface/index#concealing-sensitive-information_generating-assets[Concealing sensitive information in a discovery manifest].
 
 (link:https://issues.redhat.com/browse/MTA-4847[MTA-4847])
 --
@@ -93,6 +93,6 @@ Before this update, you could only assign credentials to an application manually
 +
 IMPORTANT: You can only set Maven or source control credentials as default credentials. You can only define one default set of credentials per credential type.
 +
-For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/user_interface_guide/index#setting-default-credentials_managing-applications-mta-ui[Setting default credentials].
+For more information, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index#setting-default-credentials_managing-applications[Setting default credentials].
 +
 (link:https://issues.redhat.com/browse/MTA-5254[MTA-5254])
