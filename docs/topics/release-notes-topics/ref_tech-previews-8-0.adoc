@@ -10,15 +10,15 @@ This section provides a list of all Technology Preview features available in {Pr
 
 For information on Red Hat's scope of support for Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]. 	
 
-Support for the Solution Server in Developer Lightspeed (Technology Preview)::
-Solution Server is a component that allows Developer Lightspeed for {ProductShortName} to build a collective memory of code changes from all analysis performed in an organization. This capability is a Technology Preview feature. The Solution Server works with the LLM to improve the pattern of resolutions from solved examples for future analysis. 
+Support for the Solution Server in Red Hat Developer Lightspeed (Technology Preview)::
+Solution Server is a component that allows Red Hat Developer Lightspeed for {ProductShortName} to build a collective memory of code changes from all analysis performed in an organization. This capability is a Technology Preview feature. The Solution Server works with the LLM to improve the pattern of resolutions from solved examples for future analysis. 
 +
 The Solution Server has the following benefits:
 
 ** Contextual Hints: It surfaces examples of past migration solutions, including successful user modifications and accepted fixes, offering actionable hints for difficult or previously unsolved migration problems.
 
-** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of Developer Lightspeed for {ProductShortName} successfully resolving a given migration issue or incident.
+** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of Red Hat Developer Lightspeed for {ProductShortName} successfully resolving a given migration issue or incident.
 
 
-Support for Agentic AI in Developer Lightspeed (Technology Preview)::
-In the agent mode (Agentic AI), Developer Lightspeed for {ProductShortName} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues. This capability is a Technology Preview feature.
+Support for Agentic AI in Red Hat Developer Lightspeed (Technology Preview)::
+In the agent mode (Agentic AI), Red Hat Developer Lightspeed for {ProductShortName} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Red Hat Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues. This capability is a Technology Preview feature.

@@ -8,13 +8,13 @@
 [role="_abstract"]
 {ProductFirstRef} ({ProductShortName}) version {ProductVersion} provides the following major new features and enhancements.
 
-{mta-dl-plugin} is available in the VS Code extension::
-You can opt to use {mta-dl-plugin} features in the VS Code extension. With the Developer Lightspeed feature, you can use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application.
+{mta-dl-plugin} is available in the Visual Studio Code extension::
+You can opt to use {mta-dl-plugin} features in the Visual Studio Code extension. With the Red Hat Developer Lightspeed feature, you can use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application.
 +
 --
 The {mta-dl-plugin} core features are the following:
 
-* RAG solution: The {mta-dl-plugin} uses Retrieval Augmented Generation (RAG) for context-based resolutions of issues in code. Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code.
+* RAG solution: The {mta-dl-plugin} uses Retrieval Augmented Generation (RAG) for context-based resolutions of issues in code. Red Hat Developer Lightspeed improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code.
 +
 The context is a combination of the source code, the issue description, and solved examples. Solved examples contain code changes you accepted for other migrations, code you manually modified, and a pattern of resolution for an issue that you can use in the future.
 
@@ -26,7 +26,7 @@ The Solution Server delivers two primary benefits to users:
 
 ** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully resolving a given migration issue or incident.
 
-* Agentic AI (Technology Preview): In the agent mode, {mta-dl-plugin} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
+* Agentic AI (Technology Preview): In the agent mode, {mta-dl-plugin} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Red Hat Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
 NOTE: To obtain support for features in {mta-dl-plugin}, you need an active Red Hat Advanced Developer Suite (RHADS) subscription.
 
 
@@ -72,8 +72,8 @@ Analysis insights contain information about the technologies used in the applica
 (link:https://issues.redhat.com/browse/MTA-5420[MTA-5420])
 
 
-A new VS Code IDE plug-in for application analysis::
-With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-in that has the following features:
+A new Visual Studio Code IDE plugin for application analysis::
+With this enhancement, you can use a new Visual Studio Code IDE plugin that has the following features:
 
 * Standard application analysis and issue detection
 * Generative AI (GenAI) feature:
