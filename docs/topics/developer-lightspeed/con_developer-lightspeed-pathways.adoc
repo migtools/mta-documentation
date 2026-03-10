@@ -76,5 +76,6 @@ As an administrator, complete the following workflow to enable the LLM proxy in 
 If you want to use the Solution Server, you must also enable solution server in the Tackle CR.
 ====
 
-As a migrator, you can follow the procedure in xref:analyzing-application-profiles_configuring-using-vs-code-plugin[Running an application analysis by using a profile] to run an analysis by connecting with the Hub through the LLM proxy.
+As a migrator, you can follow the procedure in 
+link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/analyzing-application-profiles_configuring-using-vs-code-plugin[Running an application analysis by using a profile] to run an analysis by connecting with the Hub through the LLM proxy.
 
