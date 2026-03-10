@@ -45,7 +45,7 @@ You need a Keycloak realm and the Solution Server URL to connect {mta-dl-plugin}
 
 [NOTE]
 ====
-When you enable Solution Server authentication for the first time, you must enter the `username` and `password` in the VS Code search bar.
+When you enable Solution Server authentication for the first time, you must enter the `username` and `password` in the Visual Studio Code search bar.
 ====
 +
 
