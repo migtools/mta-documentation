@@ -10,7 +10,7 @@ You must enable the large language model (LLM) proxy in the Tackle custom resour
 
 The proxy authenticates to the LLM in the backend by using the LLM secret configured in the cluster. This helps the administrator to create, manage, and rotate the LLM key without sharing the key with many client endpoints, for example, {ProductShortName} IDE extension, in the organization. 
 
-The client endpoint authenticates to the proxy by using the Hub credentials (Keycloak JSON Web Token). The proxy authenticates the client by validating the JWT tokens. 
+The client uses Keycloak credentials to authenticate to the {ProductShortName} Hub. To validate the client's request to access the LLM, the proxy service validates the JSON Web Token (JWT) issued by Keycloak against the Hub's Keycloak instance. 
 
 .Prerequisites
 
