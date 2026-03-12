@@ -465,7 +465,6 @@ when:
 a|Specify one of the following for which {ProductShortName} runs a search query:
 
  * Type reference including classes, interfaces and structure types (struct). For example: 
- +
 
   [subs="+quotes"]
   ----
@@ -474,7 +473,6 @@ a|Specify one of the following for which {ProductShortName} runs a search query:
       location: CLASS
       pattern: System.Web.Http.ApiController.*
   ----
-  For example,
 
   [subs="+quotes"]
   ----
