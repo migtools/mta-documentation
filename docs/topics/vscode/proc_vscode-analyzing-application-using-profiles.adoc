@@ -20,7 +20,7 @@ For more information about the support scope of Red Hat Technology Preview featu
 
 .Prerequisites
 
-* You opened a project written in one of the supported languages in your Visual Studio Code workspace. {ProductShortName} can analyze source code written in `Java`, `C#`, `.NET`, `Node.js`, and `Python`.
+* You opened a project written in one of the supported languages in your Visual Studio Code workspace. {ProductShortName} can analyze source code written in `Java`, `C#`, `.NET`, `Go`, and `Javascript`.
 * An architect has configured an analysis profile in the Hub.
 
 .Procedure
