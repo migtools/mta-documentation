@@ -16,7 +16,7 @@ The following language-specific {ProductShortName} Visual Studio Code extensions
 * `C#` to analyze `C#` and `.NET` applications
 * `Go`
 
-:FeatureName: `extension pack`, `C#`, `Javascript`, and `Go` extensions
+:FeatureName: `Extension pack`, `C#`, `Javascript`, and `Go` extensions
 
 [subs="attributes+"]
 {FeatureName} are Developer Preview features only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated SLA.
