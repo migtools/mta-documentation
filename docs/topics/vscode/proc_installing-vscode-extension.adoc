@@ -7,7 +7,21 @@ You can use the {ProductFullName} Visual Studio Code plugin to perform a standar
 
 You can download the {ProductShortName} plugin version 8.1.0 as an extension pack that bundles the Core extension along with all the supported language-specific extensions. You can use this extension even when you want to analyze a project in a specific programming language.
 
-Alternatively, you can also download the {ProductShortName} Core extension and one language-specific extension to analyze a project coded in the programming language supported by the extension.
+Alternatively, you can also download the {ProductShortName} `Core` extension and one language-specific extension to analyze a project coded in the programming language supported by the extension.
+
+The following language-specific {ProductShortName} Visual Studio Code extensions are available in the Visual Studio Code Marketplace:
+
+* `Java`
+* `Javascript` to analyze `javascript` and `node.js` applications
+* `C#` to analyze `C#` and `.NET` applications
+* `Go`
+
+:FeatureName: `extension pack`, `C#`, `Javascript`, and `Go` extensions
+
+[subs="attributes+"]
+{FeatureName} are Developer Preview features only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated SLA.
+
+:!FeatureName:
 
 You can also enable Red Hat Developer Lightspeed for the {ProductName} to use Generative AI (GenAI) capabilities to fix code issues before migrating to target technologies. Note that Developer Lightspeed for {ProductShortName} is enabled by default. For more information, see link:{mta-URL}/configuring_and_using_red_hat_developer_lightspeed_for_mta/index[Configuring and using Developer Lightspeed for {ProductShortName}].
 
