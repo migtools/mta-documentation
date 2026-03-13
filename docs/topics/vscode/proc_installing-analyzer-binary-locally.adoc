@@ -3,7 +3,7 @@
 = Configuring and using the {ProductShortName} analyzer RPC binary in your system
 
 [role="_abstract"]
-The {ProductFullName} Visual Studio Code extension consists of an analyzer RPC binary that runs an analysis for `Java`, `Go`, `Python`, `Node.js` and `C#` or `.NET` applications. 
+The {ProductFullName} Visual Studio Code extension consists of an analyzer RPC binary that runs an analysis. 
 
 When you install the {ProductShortName} Visual Studio Code extension, the extension downloads the analyzer RPC binary of the latest version from the Red Hat Developer portal. 
 
