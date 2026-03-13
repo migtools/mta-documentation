@@ -24,7 +24,5 @@ when:
 ----
 where:
 
-* `pattern` :: A regular expression pattern to match the needed reference. For example, `System.Web.Http.ApiController.*`
-* `location` :: Specifies the location in the source code to search the pattern. For example, `CLASS`.
-+
-NOTE: You can also specify `location` as `METHOD`, `FIELD`, or `ALL`. When the `location` is `ALL`, the `C#` provider runs a search query for namespaces, structure types, and interfaces.
+ `pattern` :: A regular expression pattern to match the required reference. For example, `HttpNotFound`.
+ `namespace` :: Specifies the namespace to search within. For example, `System.Web.Mvc`.
