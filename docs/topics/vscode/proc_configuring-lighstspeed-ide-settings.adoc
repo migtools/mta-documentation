@@ -21,7 +21,7 @@ Alternatively, open the setting by performing the following steps:
 
 .. Type `Ctrl + Shift + P` or `Cmd + Shift + P` on the search bar to open the Command Palette.
 .. Enter `Preferences: Open Settings (UI)`. 
-.. Open the settings page by clicing `Extensions` > `MTA`.
+.. Open the settings page by clicking `Extensions` > `MTA`.
 +
 . Configure the following settings:
 
