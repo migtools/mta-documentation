@@ -17,5 +17,4 @@ You can use the {ProductShortName} UI to assess and analyze applications for ris
 
 [role="_additional-resources"]
 .Additional resources
-* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/installing-mta-title/index[Installing the {ProductName}]
-
+* link:{mta-URL}/installing_the_migration_toolkit_for_applications/index[Installing the {ProductName}]
