@@ -16,10 +16,11 @@ endif::[]
 
 [role="_abstract"]
 This Release Notes section provides high-level coverage of the improvements and additions that have been implemented in {ProductFullName} 8.1.
-
+ 
 include::topics/release-notes-topics/ref_new-features-and-enhancements-8-1-0.adoc[leveloffset=+1]
 
-include::topics/release-notes-topics/ref_tech-preview-8-1-0.adoc[leveloffset=+1]
+include::topics/release-notes-topics/ref_dev-preview-8-1-0.adoc[leveloffset=+1]
+//include::topics/release-notes-topics/ref_tech-preview-8-1-0.adoc[leveloffset=+1]
 
 include::topics/release-notes-topics/ref_known-issues-8-1-0.adoc[leveloffset=+1]
 

@@ -20,7 +20,7 @@ You can use the centralized configuration management to standardize analysis con
 --
 Profiles contain analysis configuration that allows organizations to standardize configuration and simplify configuration management by adopting a platform engineering approach. The architect can create, update, and delete profiles and custom rules. Migrators can sync with the {ProductShortName} Hub to download available configuration bundles and use them to run an analysis in the UI, CLI, and by using the Visual Studio Code plugin.
 
-(link:https://issues.redhat.com/browse/MTA-6491[MTA-6491])
+(link:https://redhat.atlassian.net/browse/MTA-6491[MTA-6491])
 --
 
 
