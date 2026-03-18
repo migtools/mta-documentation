@@ -13,7 +13,7 @@ The {ProductFullName} includes many features that simplify upgrades with multipl
 * *Application inventory and assessment modules* to help organizations assess applications' suitability for deployment in containers, including flagging potential risks for migration strategies.	
 * *Integration with source code and binary repositories* to automate the applications' retrieval for analysis, along with proxy integration, including HTTP and HTTPS proxy configuration managed in the user interface. 					
 * *Improved analysis capabilities* with different analysis modes, including source and dependency modes. These modes parse repositories to gather dependencies and add these dependencies to the overall scope of the analysis. You can also use a simplified user experience to configure the analysis scope, including open source libraries. 		
-* *Enhanced Role-Based Access Control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-build-of-keycloak[Red Hat build of Keycloak] to define the following personas:
+* *Enhanced role-based access control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-build-of-keycloak[Red Hat build of Keycloak] to define the following personas:
 ** Administrator
 ** Architect
 ** Migrator
