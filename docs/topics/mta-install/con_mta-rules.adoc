@@ -19,7 +19,9 @@ when(condition)
 You can use the {ProductShortName} rules internally to perform the following tasks:
 
 * Extract files from archives
+pass:[<!-- vale RedHat.Spelling = NO -->]
 * Decompile files
+pass:[<!-- vale RedHat.Spelling = YES -->]
 * Scan and classify file types
 * Analyze XML and other file content
 * Analyze the application code
@@ -31,7 +33,5 @@ You can use the {ProductShortName} rules internally to perform the following tas
 ====
 You can create your own custom analyzer rules. You can use custom rules to identify the use of custom libraries or other components that the provided standard migration rules might not cover.
 
-For instructions on how to write custom rules, see link:{mta-URL}/rules_development_guide/index[Rules Development Guide].
+For instructions on how to write custom rules, see link:{mta-URL}/configuring_and_using_rules_for_an_mta_analysis/index[Configuring and using rules for an MTA analysis].
 ====
-
-
