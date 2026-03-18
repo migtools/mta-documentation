@@ -6,9 +6,9 @@
 = Creating a source platform in {ProductShortName} {WebName}
 
 [role="_abstract"]
-Create a source platform instance to retrieve platform and runtime configurations for one or more applications. 
+To retrieve platform and runtime configurations for one or more applications, create a source platform instance in the {ProductFullName} user interface (UI).
 
-An {ProductShortName} administrator can configure one or more source platform instances in the {ProductShortName} user interface. 
+An {ProductShortName} administrator can configure one or more source platform instances in the {ProductShortName} UI. 
 
 .Prerequisites
 * The {ProductShortName} administrator created a *Source Control* credential of the source platform such as Cloud Foundry (CF) in the *Administration* mode.

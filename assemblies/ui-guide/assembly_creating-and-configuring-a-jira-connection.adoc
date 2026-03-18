@@ -14,7 +14,8 @@ endif::[]
 
 :context: creating-and-configuring-a-jira-connection
 
-You can track application migrations by creating a Jira issue for each migration within the {ProductFullName} user interface (UI).
+[role="_abstract"]
+To track application migrations, create and configure a Jira issue for each migration within the {ProductFullName} user interface (UI).
 
 include::topics/mta-ui/proc_configuring-jira-credentials.adoc[leveloffset=+1]
 

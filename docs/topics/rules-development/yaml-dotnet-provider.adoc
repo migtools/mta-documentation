@@ -22,5 +22,5 @@ when:
 ----
 where:
 
- `pattern` :: A regular expression pattern to match the desired reference. For example, `HttpNotFound`.
+ `pattern` :: A regular expression pattern to match the required reference. For example, `HttpNotFound`.
  `namespace` :: Specifies the namespace to search within. For example, `System.Web.Mvc`.
