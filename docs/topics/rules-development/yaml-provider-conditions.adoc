@@ -27,9 +27,9 @@ The analyzer currently supports the following `provider` conditions:
 * `go`
 * `nodejs`
 * `python`
-* `csharp`
+* `C#`
 
-:FeatureName: Csharp, Python, and Nodejs providers
+:FeatureName: C#, Python, and Nodejs providers
 [IMPORTANT]
 ====
 [subs="attributes+"]
@@ -49,7 +49,6 @@ The analyzer currently supports the following `provider` conditions:
 
 | Providers that have rules already defined in the product
 a| 
-* `csharp`
 * `java`
 
 |Providers that require custom rulesets for analysis
@@ -57,6 +56,7 @@ a|
 * `go`
 * `python`
 * `nodejs`
+* `C#`
 |===
 
 //Some providers have *dependency_ capability*. The dependency_capability means that the provider generates a list of dependencies for a given application.
@@ -163,7 +163,7 @@ when:
     <fields>
 ----
 
-|`csharp`
+|`C#`
 |referenced
 a|Find references to a pattern.
 For example, 
@@ -454,7 +454,7 @@ when:
       lowerbound: v4.2.0
 ----
 
-.2+|xref:yaml-dotnet-provider_rules-prov-cond[csharp]
+.2+|xref:yaml-dotnet-provider_rules-prov-cond[C#]
 .2+|referenced
 |pattern
 |Yes
