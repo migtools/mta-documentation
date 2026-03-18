@@ -11,7 +11,24 @@ This section provides a list of all Developer Preview features available in {Pro
 For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
  
 
-C# provider for analyzing C# applications in `source-only` mode across {ProductShortName} components (Technology Preview)::
+C# provider for analyzing C# applications in `source-only` mode across {ProductShortName} components (Developer Preview)::
 You can use the external `csharp` provider to run an analysis in `source-only` mode for C# source code in the {ProductFullName} command-line interface (CLI), user interface, and the {ProductShortName} Visual Studio Code extension. `csharp` parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the `C#` rule definition, the analyzer identifies violations in your code that you must resolve before the application migration.
 +
 (link:https://redhat.atlassian.net/browse/MTA-6492[MTA-6492])
+
+
+The {ProductShortName} Visual Studio Code extension pack and the Core extension with language-specific extension (Developer Preview)::
+The {ProductFullName} Visual Studio Code extension consists of an analyzer RPC binary that runs an analysis for the following extensions:
+
+* Core (supported)
+* Java
+* C#
+* Javascript
+* Go
+
++
+--
+You can download the {ProductShortName} version 8.1.0 Visual Studio Code extension as an extension pack that bundles the Core extension along with all the supported language-specific extensions. You can also use this extension when you want to analyze a project in a specific programming language. Alternatively, you can download the {ProductShortName} Core extension with one language-specific extension to analyze a project coded in the programming language supported by the extension.
+
+(link:TODO[TODO])
+--
