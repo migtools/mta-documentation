@@ -7,7 +7,7 @@
 = Generating deployment manifests from discovery manifest and values.yaml
 
 [role="_abstract"]
-You can generate deployment manifests from a discovery manifest with a `values.yaml` file. When you generate the deployment manifest from the discovery manifest, the values in the `values.yaml` file override the values in the discovery manifest. If the `values` file is empty or missing, {ProductShortName} uses the discovery manifest values as input to generate the deployment manifest. 
+You can generate deployment manifests from a discovery manifest with a `values.yaml` file. When you generate the deployment manifests from the discovery manifest, the values in the `values.yaml` file override the values in the discovery manifest. If the `values` file is empty or missing, {ProductShortName} uses the discovery manifest values as input to generate the deployment manifests. 
 
 You must save the Kubernetes `YAML` templates, for example, `ConfigMap` or `Deployment`, in the `templates` directory present in the root directory of the `Helm` chart. You must save non-Kubernetes templates, for example, `Dockerfile`, in the `files/konveyor` path in the `Helm` chart root directory.
 

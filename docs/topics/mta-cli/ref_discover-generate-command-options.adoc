@@ -85,13 +85,13 @@ a|Display details for different command arguments.
 
 .6+a|`generate helm`
 a|
-a|Generate a deployment manifest by using the Helm template.
+a|Generate deployment manifests by using the Helm template.
 
 a|`--chart-dir`
 a|Specify a directory that contains the Helm chart.
 
 a|`--input`
-a|Specify a location of the _<discovery-manifest-name>_.yaml file to generate the deployment manifest.
+a|Specify a location of the _<discovery-manifest-name>_.yaml file to generate the deployment manifests.
 
 a|`--non-k8s-only`
 a|Generate only non-Kubernetes templates, such as a Dockerfile.  
