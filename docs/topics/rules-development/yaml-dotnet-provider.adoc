@@ -7,7 +7,7 @@
 = C# provider
 
 [role="_abstract"]
-The `C#` provider is an external provider used to analyze `.NET` and `C#` source code. Currently, the provider supports the `referenced` capability.
+The `C#` provider is an external provider used to analyze `.NET Core` and `C#` source code. Currently, the provider supports the `referenced` capability.
 
 The `C#` provider uses a gRPC interface to perform a semantic analysis of an application source code in the `source-only` mode. The provider parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the `C#` custom rule definition, the analyzer identifies violations in your code that you must resolve before the application migration. 
 
