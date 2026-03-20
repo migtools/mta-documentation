@@ -19,14 +19,15 @@ If your `Dockerfile` template refers to environment variables defined in the  va
 
 .Procedure
 
-* Consider the following `values.yaml` file that has the application name, a database host, and a `Redis` database URL:
+. Consider the following `values.yaml` file that has the application name, a database host, and a `Redis` database URL:
 +
+
 [source, terminal]
 ----
 $ *cat _<path_to_values.yaml>_*
 ----
 +
-+
+
 [source, yaml]
 ----
 manifest:
@@ -38,16 +39,19 @@ manifest:
     url: redis://prod-redis:6379
 ----
 +
-NOTE: The discovery manifest does not contain the value.yaml fields.
 
-* Consider the following `Dockerfile` template that has environment variables defined in the values file:
+NOTE: The discovery manifest does not contain the fields in the values file.
+
+. Consider the following `Dockerfile` template that has environment variables defined in the values file:
 +
+
 [source, terminal]
 ----
 $ *cat _<path_to_dockerfile_template>_*
 ----
 +
-[subs="+quotes"]
+
+[source, yaml]
 ----
 FROM node:18
 
@@ -59,8 +63,9 @@ ENV DATABASE_HOST={{ .Values.manifest.database.host }}
 ENV REDIS_URL={{ .Values.manifest.redis.url }}
 {{- end }}
 ----
-. Generate deployment assets, for example, a Dockerfile, that has the variables defined in your values file and the variable that the `--set` flag overrides:
+. Generate deployment assets, for example, a Dockerfile, that has the variables defined in your values file:
 +
+
 [source, terminal]
 ----
 $ *mta-cli generate helm --chart-dir _<path_to_helm_chart>_* \
@@ -70,10 +75,12 @@ $ *mta-cli generate helm --chart-dir _<path_to_helm_chart>_* \
   *--output-dir _<location_of_deployment_manifests>_*
 ----
 +
+
 [NOTE]
 ====
-* If you specify a value for a variable by using the `--set` flag in the `generate` command, the `--set` flag value overrides the variables defined in the values file. 
-* When you generate the deployment manifests from the discovery manifest, the values that you define in the values file override the values in the discovery manifest. If the values file is empty or missing, {ProductShortName} uses the discovery manifest values as input to generate the deployment manifests. 
+* If you specify a value for a variable by using the `--set` flag in the `generate` command, the `--set` flag value overrides the variable defined in the values file. If you do not use a values file, the `--set` flag overrides the value defined in the discovery manifest.
+* When you generate the deployment manifests from the discovery manifest with only a values file, the values in the values file override the values in the discovery manifest. 
+* If the values file is empty or missing and if you do not use the `--set` flag, {ProductShortName} uses the discovery manifest values as the input to generate the deployment manifests. 
 ====
 
 .Verification
@@ -97,4 +104,3 @@ ENV REDIS_URL=redis://prod-redis:6379
 [id="_additional-resources"]
 .Additional resources
 * link:https://helm.sh/docs/chart_template_guide/values_files/[Specificity for values file]
-a
