@@ -20,10 +20,8 @@ As an architect, you can configure a profile that has the configuration needed t
 
 . Click *Next* to go to the *Configure analysis* section. You can configure the analysis source, target platforms, and the scope of the dependency analysis. 
 . Select the *Analysis source* from the list:
-* Binary
 * Source code
 * Source code and dependencies
-* Upload a local binary. This option only appears if you are analyzing a single application. If you chose this option, you must *Upload a local binary*. Either drag a file into the area provided or click *Upload* and select the file to upload.
 . Click *Next*.
 . Select one or more target options in *Set targets* for the analysis:
 

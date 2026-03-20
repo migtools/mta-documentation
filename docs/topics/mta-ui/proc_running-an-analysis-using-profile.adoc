@@ -18,12 +18,6 @@ As a Migrator, you can use a pre-configured analysis profile to analyze an appli
 . Click *Analyze*.
 . In the *Mode* section, select *Use analysis profile*.
 . Select a pre-configured profile from the list for running an analysis. 
-+
-[NOTE]
-====
-If the architect deletes a target profile, {ProductShortName} also automatically deletes the analysis profile associated with the target profile.
-====
-
 . Click *Next* 
 . *Enable automated tagging*. Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.
 +

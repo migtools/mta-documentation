@@ -27,8 +27,3 @@ The *Target profiles for <archetype-name>* appears.
 . (Optional) Select an analysis profile for the application from the list. You can download this profile configuration from the {ProductShortName} {CLIName} only if you select the profile from this list.
 . Click *Create*.
 . You can click on the archetype row to open the archetype detail view where the target profiles for the archetype are listed.
-+
-[NOTE]
-====
-If you delete a target profile, {ProductShortName} also automatically deletes the analysis profile associated with the target profile.
-====
