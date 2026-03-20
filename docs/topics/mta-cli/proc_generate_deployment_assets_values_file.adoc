@@ -7,56 +7,19 @@
 = Generating deployment manifests from discovery manifest and values.yaml
 
 [role="_abstract"]
-You can generate deployment manifests from a discovery manifest with a `values.yaml` file. When you generate the deployment manifests from the discovery manifest, the values in the `values.yaml` file override the values in the discovery manifest. If the `values` file is empty or missing, {ProductShortName} uses the discovery manifest values as input to generate the deployment manifests. 
+You can generate deployment manifests from a discovery manifest with the default `values.yaml` or a user-defined values file. 
 
-You must save the Kubernetes `YAML` templates, for example, `ConfigMap` or `Deployment`, in the `templates` directory present in the root directory of the `Helm` chart. You must save non-Kubernetes templates, for example, `Dockerfile`, in the `files/konveyor` path in the `Helm` chart root directory.
+You must save the Kubernetes `YAML` templates, for example, `ConfigMap` or `Deployment`, in the `templates` directory present in the root directory of the `Helm` chart. You must save non-Kubernetes templates, for example, `Dockerfile`, in the `files/konveyor` path in the `Helm` chart root directory. You must save the `values.yaml` file at the root directory of the `Helm` chart.
 
-* Show the content of the discovery manifest:
-+
-[source, terminal]
-----
-$ *cat _<path_to_discovery_manifest>_*
-----
-+
-[source, yaml]
-----
-manifest:
-    appName: my-app
-    database:
-        enabled: true
-        host: postgres.example.com
-    labels:
-        sensitive: "true"
-    annotations:
-        contact: bob@example.com jane@example.com
-    env:
-        RACK_ENV: production
-        RAILS_ENV: production
-    routes:
-        - route: example.com
-          protocol: http2
-    processes:
-        - type: web
-          disk: 1024M
-          memory: 512M
-          healthCheck:
-            invocationTimeout: 1
-            interval: 30
-            type: port
-            timeout: 80
-          readinessCheck:
-            type: process
-          instances: 1
-          lifecycle: cnb
-    stack: cflinuxfs4
-    buildPacks:
-        - docker://my-registry-a.corp/nodejs
-        - docker://my-registry-b.corp/dynatrace
-----
-+
-NOTE: You must configure the buildpacks in the Cloud Foundry application manifest to include the buildpacks in the discovery and deployment assets.
+If your `Dockerfile` template refers to environment variables defined in the  values file, you must pass the file as a parameter while running the `generate` command. 
 
-* Display `values.yaml` file that has database host and URL:
+.Prerequisites
+
+* You installed `Helm` CLI in your system.
+
+.Procedure
+
+* Consider the following `values.yaml` file that has the application name, a database host, and a `Redis` database URL:
 +
 [source, terminal]
 ----
@@ -66,8 +29,10 @@ $ *cat _<path_to_values.yaml>_*
 +
 [source, yaml]
 ----
-appName: my-app-production  # Overrides application name 
+manifest:
+  name: my-app  # Overrides application name 
   database:
+    enabled: "true"
     host: prod-postgres.company.com   # Overrides host value 
   redis:                             # Adds a new field 
     url: redis://prod-redis:6379
@@ -75,7 +40,7 @@ appName: my-app-production  # Overrides application name
 +
 NOTE: The discovery manifest does not contain the value.yaml fields.
 
-* Display the content of the `Dockerfile` template :
+* Consider the following `Dockerfile` template that has environment variables defined in the values file:
 +
 [source, terminal]
 ----
@@ -86,26 +51,34 @@ $ *cat _<path_to_dockerfile_template>_*
 ----
 FROM node:18
 
-ENV APP_NAME={{ .Values.appName }}
-{{- if .Values.database.enabled }}
-ENV DATABASE_HOST={{ .Values.database.host }}
+ENV APP_NAME={{ .Values.manifest.name }}
+{{- if .Values.manifest.database.enabled }}
+ENV DATABASE_HOST={{ .Values.manifest.database.host }}
 {{- end }}
-{{- if .Values.redis }}
-ENV REDIS_URL={{ .Values.redis.url }}
+{{- if .Values.manifest.redis }}
+ENV REDIS_URL={{ .Values.manifest.redis.url }}
 {{- end }}
 ----
-. Generate the deployment assets by using the following command:
+. Generate deployment assets, for example, a Dockerfile, that has the variables defined in your values file and the variable that the `--set` flag overrides:
 +
 [source, terminal]
 ----
-$ *mta-cli generate helm --chart-dir helm_sample* \
-  *--input <path_to_discovery-manifest>* \
-  *--output-dir <location_of_deployment_manifest>*
+$ *mta-cli generate helm --chart-dir _<path_to_helm_chart>_* \
+  *--input _<path_to_discovery-manifest>_* \
+  *--input _<path_to_values_file>_* \
+  *--set manifest.name=my-new-app* \
+  *--output-dir _<location_of_deployment_manifests>_*
 ----
++
+[NOTE]
+====
+* If you specify a value for a variable by using the `--set` flag in the `generate` command, the `--set` flag value overrides the variables defined in the values file. 
+* When you generate the deployment manifests from the discovery manifest, the values that you define in the values file override the values in the discovery manifest. If the values file is empty or missing, {ProductShortName} uses the discovery manifest values as input to generate the deployment manifests. 
+====
 
 .Verification
 
-* Verify that the rendered `Dockerfile` has the fields from the `values.yaml` file:
+* Verify that the rendered `Dockerfile` has the fields from the `values.yaml` file and the new application name set :
 +
 [source, terminal]
 ----
@@ -116,7 +89,12 @@ $ *cat _<path_to_dockerfile>_*
 ----
 FROM node:18
 
-  ENV APP_NAME=my-app-production
-  ENV DATABASE_HOST=prod-postgres.company.com
-  ENV REDIS_URL=redis://prod-redis:6379
+ENV APP_NAME=my-new-app
+ENV DATABASE_HOST=prod-postgres.company.com
+ENV REDIS_URL=redis://prod-redis:6379
 ----
+
+[id="_additional-resources"]
+.Additional resources
+* link:https://helm.sh/docs/chart_template_guide/values_files/[Specificity for values file]
+a
