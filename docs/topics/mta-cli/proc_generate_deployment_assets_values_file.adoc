@@ -1,0 +1,106 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+:_mod-docs-content-type: PROCEDURE
+
+[id="discover-values-deployment_{context}"]
+= Generating deployment manifests from discovery manifest and values.yaml
+
+[role="_abstract"]
+You can generate deployment manifests from a discovery manifest with the default `values.yaml` or a user-defined values file. 
+
+You must save the Kubernetes `YAML` templates, for example, `ConfigMap` or `Deployment`, in the `templates` directory present in the root directory of the `Helm` chart. You must save non-Kubernetes templates, for example, `Dockerfile`, in the `files/konveyor` path in the `Helm` chart root directory. You must save the `values.yaml` file at the root directory of the `Helm` chart.
+
+If your `Dockerfile` template refers to environment variables defined in the  values file, you must pass the file as a parameter while running the `generate` command. 
+
+.Prerequisites
+
+* You installed `Helm` CLI in your system.
+
+.Procedure
+
+. Consider the following `values.yaml` file that has the application name, a database host, and a `Redis` database URL:
++
+
+[source, terminal]
+----
+$ *cat _<path_to_values.yaml>_*
+----
++
+
+[source, yaml]
+----
+manifest:
+  name: my-app  # Overrides application name 
+  database:
+    enabled: "true"
+    host: prod-postgres.company.com   # Overrides host value 
+  redis:                             # Adds a new field 
+    url: redis://prod-redis:6379
+----
++
+
+NOTE: The discovery manifest does not contain the fields in the values file.
+
+. Consider the following `Dockerfile` template that has environment variables defined in the values file:
++
+
+[source, terminal]
+----
+$ *cat _<path_to_dockerfile_template>_*
+----
++
+
+[source, yaml]
+----
+FROM node:18
+
+ENV APP_NAME={{ .Values.manifest.name }}
+{{- if .Values.manifest.database.enabled }}
+ENV DATABASE_HOST={{ .Values.manifest.database.host }}
+{{- end }}
+{{- if .Values.manifest.redis }}
+ENV REDIS_URL={{ .Values.manifest.redis.url }}
+{{- end }}
+----
+. Generate deployment assets, for example, a Dockerfile, that has the variables defined in your values file:
++
+
+[source, terminal]
+----
+$ *mta-cli generate helm --chart-dir _<path_to_helm_chart>_* \
+  *--input _<path_to_discovery-manifest>_* \
+  *--input _<path_to_values_file>_* \
+  *--set manifest.name=my-new-app* \
+  *--output-dir _<location_of_deployment_manifests>_*
+----
++
+
+[NOTE]
+====
+* If you specify a value for a variable by using the `--set` flag in the `generate` command, the `--set` flag value overrides the variable defined in the values file. If you do not use a values file, the `--set` flag overrides the value defined in the discovery manifest.
+* When you generate the deployment manifests from the discovery manifest with only a values file, the values in the values file override the values in the discovery manifest. 
+* If the values file is empty or missing and if you do not use the `--set` flag, {ProductShortName} uses the discovery manifest values as the input to generate the deployment manifests. 
+====
+
+.Verification
+
+* Verify that the rendered `Dockerfile` has the fields from the `values.yaml` file and the new application name set :
++
+[source, terminal]
+----
+$ *cat _<path_to_dockerfile>_*
+----
++
+[source, yaml]
+----
+FROM node:18
+
+ENV APP_NAME=my-new-app
+ENV DATABASE_HOST=prod-postgres.company.com
+ENV REDIS_URL=redis://prod-redis:6379
+----
+
+[id="_additional-resources"]
+.Additional resources
+* link:https://helm.sh/docs/chart_template_guide/values_files/[Specificity for values file]
