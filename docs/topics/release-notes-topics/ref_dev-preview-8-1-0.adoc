@@ -14,6 +14,8 @@ For more information about the support scope of Red{nbsp}Hat Developer Preview s
 C# provider for analyzing C# applications in `source-only` mode across {ProductShortName} components (Developer Preview)::
 You can use the external `csharp` provider to run an analysis in `source-only` mode for C# source code in the {ProductFullName} command-line interface (CLI), user interface, and the {ProductShortName} Visual Studio Code extension. `csharp` parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the `C#` rule definition, the analyzer identifies violations in your code that you must resolve before the application migration.
 +
+IMPORTANT: Analyzing C# applications is fully supported in the {ProductShortName} UI.
++
 (link:https://redhat.atlassian.net/browse/MTA-6492[MTA-6492])
 
 
