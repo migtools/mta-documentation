@@ -24,7 +24,7 @@ If your `Dockerfile` template refers to environment variables defined in the  va
 
 [source, terminal]
 ----
-$ *cat _<path_to_values.yaml>_*
+*cat _<path_to_values.yaml>_*
 ----
 +
 
