@@ -75,12 +75,8 @@ endif::[]
 // ****************
 // * Doc metadata *
 // ****************
-
-:OpenShiftProductNumber: 4.18
-
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rule Development Guide
-
 :ocp-full: Red Hat OpenShift Container Platform
 :ocp-short: OpenShift Container Platform
 :ocp-name: OpenShift
