@@ -29,7 +29,7 @@ The analyzer currently supports the following `provider` conditions:
 * `python`
 * `C#`
 
-:FeatureName: C#, Python, and Nodejs providers
+:FeatureName: csharp, python, and nodejs providers
 [IMPORTANT]
 ====
 [subs="attributes+"]
