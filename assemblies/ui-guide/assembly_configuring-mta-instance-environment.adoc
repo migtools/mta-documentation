@@ -14,7 +14,10 @@ endif::[]
 
 :context: configuring-mta-instance-environment
 
-You can configure the {ProductFullName} instance environment by setting up the following parameters: 		
+[role="_abstract"]
+To adjust migration projects to specific requirements, configure the {ProductFullName} instance environment.
+
+You can configure the {ProductShortName} instance environment by setting up the following parameters: 		
 
 * General	 				
 * Credentials					

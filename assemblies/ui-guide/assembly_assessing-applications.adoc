@@ -10,11 +10,12 @@ endif::[]
 ifdef::context[]
 [id="assessing-applications_{context}"]
 endif::[]
-= Assessing applications with the MTA
+= Assessing applications with {ProductShortName}
 
 :context: assessing-applications
 
-You can use the {ProductFullName} user interface (UI) to assess applications. When assessing applications, {ProductShortName} estimates the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. You can use the results of an assessment for discussions between stakeholders to determine whether applications are suitable for containerization.
+[role="_abstract"]
+Estimate the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors, by assessing applications with the {ProductFullName} user interface (UI). You can use the results of an assessment for discussions between stakeholders to determine whether applications are suitable for containerization.
 
 
 include::topics/mta-ui/con_assessment-module-features.adoc[leveloffset=+1]
