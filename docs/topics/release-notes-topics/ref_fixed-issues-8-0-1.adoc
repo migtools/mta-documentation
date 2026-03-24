@@ -9,7 +9,7 @@
 {ProductFirstRef} ({ProductShortName}) version 8.0.1 provides the following fixed issues and other problems that have a significant impact. 
 
 In {ProductShortName} 8.0.1 the performance of Java binary analysis has significantly improved.
-Before this change, when you analyzed Java binary applications, {ProductShortName} incorrectly classified some open-source dependencies as internal dependencies, it was then decompiled and analyzed, that caused the analysis to take longer to complete. Now, the location of the Maven index file is passed to the Java provider to determine if an embedded dependency is open-source or internal. This fix resolved the two following issues:
+Before this change, when you analyzed Java binary applications, {ProductShortName} incorrectly classified some open source dependencies as internal dependencies, it was then decompiled and analyzed, that caused the analysis to take longer to complete. Now, the location of the Maven index file is passed to the Java provider to determine if an embedded dependency is open source or internal. This fix resolved the two following issues:
 
 Binary application analysis latency is reduced in {ProductShortName}::
 When you analyzed a binary, the performance degraded because {ProductShortName} relied on Maven search. With this release, this issue is fixed by introducing the pre-generated Maven index that does not require connecting to an external index.
@@ -17,7 +17,7 @@ When you analyzed a binary, the performance degraded because {ProductShortName} 
 (link:https://issues.redhat.com/browse/MTA-6231[MTA-6231])
 
 Analysis of binary applications classify open source dependencies accurately::
-When you analyzed Java binary applications, {ProductShortName} incorrectly classified some open-source dependencies as internal dependencies. With this version, this issue is fixed. This leads to {ProductShortName} classifying embedded open source dependencies correctly after a source+dependency binary analysis. 
+When you analyzed Java binary applications, {ProductShortName} incorrectly classified some open source dependencies as internal dependencies. With this version, this issue is fixed. This leads to {ProductShortName} classifying embedded open source dependencies correctly after a source+dependency binary analysis. 
 +
 (link:https://issues.redhat.com/browse/MTA-6357[MTA-6357])
 
@@ -43,11 +43,11 @@ Before this update, an {ProductShortName} Architect could not discover or import
 (link:https://issues.redhat.com/browse/MTA-6120[MTA-6120])
 
 Concurrent usage of {mta-dl-plugin} for code resolution at scale no longer causes race conditions::
-Concurrent usage of the Solution Server through the {mta-dl-plugin} Visual Studio (VS) Code plugin for code resolution at scale caused race conditions for duplicate incidents. With this release, this issue is fixed. The plugin generates resolutions for the incidents identified when many users use it concurrently. 
+Concurrent usage of the Solution Server through the {mta-dl-plugin} Visual Studio Code plugin for code resolution at scale caused race conditions for duplicate incidents. With this release, this issue is fixed. The plugin generates resolutions for the incidents identified when many users use it concurrently. 
 +
 (link:https://issues.redhat.com/browse/MTA-6230[MTA-6230])
 
-{ProductShortName} rules for Java use FQN to match annotations in source code:: 
+{ProductShortName} rules for Java use FQNs to match annotations in source code:: 
 Before this update, the annotation rules for Java applications did not use Fully Qualified Names (FQNs) to match with the annotation location in rules. As a result, the rule triggered incorrect matches or false positives for issues. For example, a rule that looked for the `javax.enterprise.inject.Produces` incorrectly matched with occurrences of `javax.ws.rs.Produces`. With this release, this issue is fixed.
 +
 (link:https://issues.redhat.com/browse/MTA-6195[MTA-6195])
