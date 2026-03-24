@@ -23,10 +23,11 @@ The {ProductShortName} Visual Studio Code extension pack and the Core extension 
 The {ProductFullName} Visual Studio Code extension consists of an analyzer RPC binary that runs an analysis for the following extensions:
 
 * Core (supported)
-* Java
 * C#
+* Java
 * Javascript
 * Go
+* Extension pack
 
 +
 --

@@ -10,7 +10,7 @@
 
 
 Creating Source Control credentials no longer fails when the password exceeds the character limit::
-Before this update, you could not create Source Control credentials in the {ProductShortName} user interface (UI) if you entered a user credential password that exceeded 120-character limit. With this update, the limit for maximum length for user credentials is removed. As a result, you can create Source Control credentials with longer passwords.
+Before this update, you could not create Source Control credentials in the {ProductShortName} user interface (UI) if you entered a user credential password that exceeded the 120-character limit. With this update, the limit for maximum length for user credentials is removed. As a result, you can create Source Control credentials with longer passwords.
 +
 (link:https://redhat.atlassian.net/browse/MTA-6598[MTA-6598])
 
