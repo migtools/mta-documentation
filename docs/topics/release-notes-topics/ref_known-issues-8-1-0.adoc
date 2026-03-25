@@ -1,0 +1,20 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-02-09
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-8-1-0_{context}"]
+= Known issues
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.1.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+
+
+{ProductShortName} UI does not trigger a violation for open source dependencies in Gradle applications::
+{ProductShortName} user interface (UI) does not trigger a violation for open source libraries when you run a `source+dependency` analysis of a Gradle application. As a result, the analysis report does not list incidents for open source dependencies.
+
+To work around this problem, analyze Gradle applications by using the {ProductShortName} command-line interface (CLI).
+ 
+(link:https://redhat.atlassian.net/browse/MTA-6211[MTA-6211])
+
+
+
