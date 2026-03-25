@@ -6,7 +6,7 @@
 = New features and enhancements
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version {ProductVersion} provides the following major new features and enhancements.
+{ProductFirstRef} ({ProductShortName}) version 8.0.0 provides the following major new features and enhancements.
 
 {mta-dl-plugin} is available in the VS Code extension::
 You can opt to use {mta-dl-plugin} features in the VS Code extension. With the Developer Lightspeed feature, you can use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application.
@@ -72,8 +72,8 @@ Analysis insights contain information about the technologies used in the applica
 (link:https://issues.redhat.com/browse/MTA-5420[MTA-5420])
 
 
-A new VS Code IDE plug-in for application analysis::
-With this enhancement, you can use a new Visual Studio Code (VS Code) IDE plug-in that has the following features:
+A new Visual Studio Code IDE plugin for application analysis::
+With this enhancement, you can use a new Visual Studio Code IDE plugin that has the following features:
 
 * Standard application analysis and issue detection
 * Generative AI (GenAI) feature:

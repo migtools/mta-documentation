@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-02-13
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-and-enhancements-8-1-0_{context}"]
+= New features and enhancements
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.1.0 provides the following major new features and enhancements.
+
+
+Centralized configuration management across components for standardizing analysis configuration and custom rules::
+You can use the centralized configuration management to standardize analysis configurations and custom rules for the following {ProductFullName} components:
+
+* User interface (UI)
+* Command-line interface (CLI)
+* The Visual Studio Code {ProductShortName} extension.
+
++
+--
+Profiles contain analysis configuration that allows organizations to standardize configuration and simplify configuration management by adopting a platform engineering approach. The architect can create, update, and delete profiles and custom rules. Migrators can sync with the {ProductShortName} Hub to download available configuration bundles and use them to run an analysis in the UI, CLI, and by using the Visual Studio Code plugin.
+
+(link:https://redhat.atlassian.net/browse/MTA-6491[MTA-6491])
+--
+
+{ProductShortName} supports proxy service to connect with the LLM::
+You can allow client endpoints, for example the {ProductShortName} Visual Studio Code extension, to use the proxy service to access the large language models (LLMs). The client uses Keycloak credentials to authenticate to the {ProductShortName} Hub. To authenticate to the LLM, the client sends a JSON Web Token (JWT) issued by  Keycloak to the proxy service. The proxy service validates the client's JWT against the Hub's Keycloak instance. In a separate process, the proxy service authenticates to the LLM by using the cluster secret that contains the LLM API key configured by the administrator. Thus, the proxy service allows administrators to create, manage, and rotate LLM API keys without the need to share the LLM key with multiple client endpoints. 
+
+
