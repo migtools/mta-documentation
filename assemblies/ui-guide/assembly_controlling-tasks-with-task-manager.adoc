@@ -33,9 +33,6 @@ include::topics/mta-ui/proc_displaying-mta-tasks.adoc[leveloffset=+1]
 
 include::topics/mta-ui/proc_reviewing-a-task-log.adoc[leveloffset=+1]
 
-include::topics/mta-ui/proc_controlling-task-order-with-task-manager.adoc[leveloffset=+1]
-
-
 ifdef::parent-context-of-controlling-tasks-with-task-manager[:context: {parent-context-of-controlling-tasks-with-task-manager}]
 ifndef::parent-context-of-controlling-tasks-with-task-manager[:!context:]
 

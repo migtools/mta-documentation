@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-02-13
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-1-0_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.1.0 provides the following fixed issues that have a significant impact.
+
+
+Creating Source Control credentials no longer fails when the password exceeds the character limit::
+Before this update, you could not create Source Control credentials in the {ProductShortName} user interface (UI) if you entered a user credential password that exceeded the 120-character limit. With this update, the limit for maximum length for user credentials is removed. As a result, you can create Source Control credentials with longer passwords.
++
+(link:https://redhat.atlassian.net/browse/MTA-6598[MTA-6598])
+
+
+
+
+Non-UTF-8 source files display correctly in a static report::
+Before this update, after you ran the source code analysis by using the {ProductShortName} command-line interface (CLI), non-UTF-8 encoded source files appeared distorted in a static report, causing readability issues. With this update, the browser correctly displays non-UTF-8 encoded source files in the static report.
++
+(link:https://redhat.atlassian.net/browse/MTA-5932[MTA-5932])
+
+
+{ProductShortName} CLI correctly processes Cloud Foundry applications with service bindings::
+Before this update, the discovery process for Cloud Foundry (CF) applications with service bindings by using live connection failed in the {ProductFullName} command-line interface (CLI). {ProductShortName} CLI did not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information for services, for example, `cf bind-service _<application_name>_ postgres01`. With this update, {ProductShortName} CLI no longer fails to complete the discovery of CF applications with service bindings.
++
+(link:https://redhat.atlassian.net/browse/MTA-6424[MTA-6424]) 
