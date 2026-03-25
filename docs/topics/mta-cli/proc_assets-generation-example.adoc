@@ -67,7 +67,7 @@ buildPacks:
 instances: 1
 ----
 
-. Generate the deployment manifest in the `newDir` directory by using the `discover.yaml` file:
+. Generate the deployment manifests in the `newDir` directory by using the `discover.yaml` file:
 +
 [subs="+quotes"]
 ----

@@ -25,7 +25,6 @@ You can run the live discovery for a remote CF instance by using the `mta-cli di
 
 IMPORTANT: You must enter at least one Cloud Foundry organization by using the `--orgs` option to perform live discovery.
 
-
 .Prerequisites
 * You have permission to remotely connect to the CF instance.
 
