@@ -11,10 +11,11 @@
 
 {ProductShortName} UI does not trigger a violation for open source dependencies in Gradle applications::
 {ProductShortName} user interface (UI) does not trigger a violation for open source libraries when you run a `source+dependency` analysis of a Gradle application. As a result, the analysis report does not list incidents for open source dependencies.
-
++
+--
 To work around this problem, analyze Gradle applications by using the {ProductShortName} command-line interface (CLI).
  
 (link:https://redhat.atlassian.net/browse/MTA-6211[MTA-6211])
-
+--
 
 
