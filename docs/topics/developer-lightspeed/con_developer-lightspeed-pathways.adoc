@@ -62,5 +62,5 @@ As a Migrator, you can:
 * If you want to use the Agent AI mode for code resolutions, enable the xref:running-agent-analysis_run-dev-lightspeed-analysis[Agent AI and run an analysis].
 
 * To use the Solution Server mode:
-.. Connect to the {ProductShortName} Hub and run an analysis by using a profile downloaded from the Hub. See link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/analyzing-application-profiles_configuring-using-vs-code-plugin[Running an application analysis by using a profile].
+.. Connect to the {ProductShortName} Hub and run an analysis by using a profile downloaded from the Hub. See link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index#analyzing-application-profiles_vsc-extension-guide[Running an application analysis by using a profile]. 
 .. Apply xref:apply-rag-resolution_run-dev-lightspeed-analysis[code resolutions suggested by the Solution Server].
