@@ -23,7 +23,7 @@ As a Migrator, you can use a pre-configured analysis profile to analyze an appli
 +
 NOTE: {ProductShortName} displays automatically attached tags  only _after_ you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
 +
-. *Enable enhanced analysis details*.  
+. *Enable enhanced analysis details*. If you enable this option, {ProductShortName} uploads the logs and output of commands that you run to the Hub as the output streams. The information logged includes the analyzer raw report.
 +
 
 //need more information on the above option.

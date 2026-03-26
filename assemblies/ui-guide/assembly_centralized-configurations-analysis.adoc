@@ -10,7 +10,7 @@ endif::[]
 ifdef::context[]
 [id="centralized-configurations_{context}"]
 endif::[]
-= Analyzing an application with centralized profiles
+= Analyzing an application with analysis profiles
 
 :context: centralized-configurations
 
@@ -29,7 +29,7 @@ As an Architect, you can create, edit, and delete  custom migration targets and 
 
 As a Migrator, you can use these profiles to perform an application analysis. 
 
-The {ProductShortName} Hub stores and syncs the profile configurations. {ProductShortName} components periodically sync with the Hub and pull the analysis profiles that contain the latest updates to the configuration.
+The {ProductShortName} Hub stores the profile configurations. {ProductShortName} components periodically sync with the Hub and pull the analysis profiles that contain the latest updates to the configuration.
 
 
 :FeatureName: Analysis Profile
