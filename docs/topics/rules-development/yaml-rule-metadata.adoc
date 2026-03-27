@@ -31,7 +31,7 @@ where:
 * `ruleID` is a unique ID for the rule. It must be unique within the ruleset.
 * `labels` is a list of string labels associated with the rule.
 * `effort` is an integer value that indicates the level of effort needed to resolve this issue.
-* `category` is severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`.
+* `category` is the severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`.
 
 
 [role="_additional-resources"]
