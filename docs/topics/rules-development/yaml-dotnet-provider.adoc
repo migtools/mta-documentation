@@ -14,7 +14,7 @@ The `C#` provider uses a gRPC interface to perform a semantic analysis of an app
 `referenced`::
 
 The `C#` provider supports `referenced` capability in rules to define fields such as `pattern` and `location` based on which the provider searches the code for violations. 
-
++
 [source,yaml]
 ----
 when:
@@ -22,7 +22,8 @@ when:
     pattern: "<pattern>" 
     location: CLASS 
 ----
++
 where:
 
- `pattern` :: A regular expression pattern to match the required reference. For example, `HttpNotFound`.
- `namespace` :: Specifies the namespace to search within. For example, `System.Web.Mvc`.
+* `pattern` is a regular expression pattern to match the required reference. For example, `HttpNotFound`.
+* `namespace` specifies the namespace to search within, for example, `System.Web.Mvc`.

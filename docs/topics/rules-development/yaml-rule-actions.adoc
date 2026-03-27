@@ -7,19 +7,15 @@
 = Types of rule actions
 
 [role="_abstract"]
-Rules can include the following types of actions:
+Rules can include the `message` and `tag` types of actions.
 
-* message
-* tag
 
-Each rule includes either one of them or both of them.
+Each rule includes either `message` or `tag` action of them or both of them.
 
 [id="message-actions"]
-.Message actions
-
+Message actions::
 When a message action matches the rule, it creates an issue. The custom data that providers export can be used in the message.
-
-
++
 [source,yaml]
 ----
 - ruleID: test-rule
@@ -27,14 +23,14 @@ When a message action matches the rule, it creates an issue. The custom data tha
     <CONDITION>
   message: Test rule matched. Please resolve this migration issue.
 ----
-
++
 Optionally, a message can include hyperlinks to external URLs that provide relevant information about the issue or a quick fix.
-
++
 [source,yaml]
 ----
 links:
   - url: "konveyor.io"
     title: "Short title for the link"
 ----
-
++
 A message can also be a template to include information about the match interpolated through custom variables on the rule.

@@ -11,7 +11,7 @@ The Language Server used by the Java provider is Eclipse's JDTLS. Internally, th
 
 In the `pattern` element of a `java.referenced` condition, you can search through application code by using these utilities. For more details, see link:https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2Fsearch%2FSearchPattern.html&anchor=createPattern[Class SearchPattern], which  contains all the information for building these patterns for `createPattern(String, int, int, int)`.
 
-.Examples
+Review the following examples of condition patterns:
 
 * Search for any class under the `javax.xml` package, occurring in any
 location:
