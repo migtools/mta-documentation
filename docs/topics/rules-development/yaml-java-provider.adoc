@@ -37,8 +37,6 @@ where:
       - name: url
         value: "http://www.example.com"
 ----
-+
-See xref:java-conditions-capabilities[Java condition and capabilities] for a detailed explanation on `java.referenced` capabilities.
 
 `dependency`::
 The Java provider has `dependency` capability. The `dependency` capability enables the provider to generate a list of dependencies for a given application.
@@ -68,3 +66,7 @@ You can use the `dependency` capability to check if a Java application has Fabri
 ====
 When you use the `java` provider for an analysis, the analysis results have lower precision for projects that cannot be built. For example, when {ProductShortName} is unable to build a `Maven` project, it falls back to parsing the `pom` file to get the list of dependencies.
 ====
+
+[role="_additional-resources"]
+.Additional resources
+* xref:java-conditions-capabilities[Java condition and capabilities]
