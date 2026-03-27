@@ -1,0 +1,880 @@
+================================================================================
+MTA DOCUMENTATION VALE ISSUES REPORT
+Based on CQA 2.1 Content Quality Assessment Guidelines
+================================================================================
+
+SUMMARY
+----------------------------------------
+Total issues found:     533
+Automatically fixed:    184
+Need manual review:     314
+Files affected:         132
+
+ISSUES BY TYPE
+----------------------------------------
+   200  RedHat.Spelling
+    95  RedHat.TermsWarnings
+    86  RedHat.CaseSensitiveTerms
+    50  AsciiDocDITA.ShortDescription
+    18  AsciiDocDITA.BlockTitle
+    14  RedHat.Hyphens
+    12  RedHat.DoNotUseTerms
+    10  RedHat.TermsErrors
+     7  AsciiDocDITA.ContentType
+     6  RedHat.Using
+     6  AsciiDocDITA.DocumentTitle
+     5  RedHat.GitLinks
+     5  AsciiDocDITA.TaskStep
+     4  RedHat.ConsciousLanguage
+     4  RedHat.SmartQuotes
+     3  RedHat.HeadingPunctuation
+     3  RedHat.Slash
+     2  RedHat.EmDash
+     2  AsciiDocDITA.TaskContents
+     1  RedHat.Spacing
+
+AUTOMATIC FIXES APPLIED
+----------------------------------------
+  docs/topics/about-ide-addons.adoc:15
+    RedHat.Using
+    'projects using' -> '$1 by using'
+  docs/topics/cli-args.adoc:205
+    RedHat.TermsWarnings
+    'like' -> 'such as'
+  docs/topics/cli-args.adoc:150
+    RedHat.Hyphens
+    'recreate' -> 're-create'
+  docs/topics/cli-args.adoc:68
+    RedHat.TermsErrors
+    'comes with' -> 'includes'
+  docs/topics/cli-args.adoc:39
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/cli-args.adoc:34
+    RedHat.Hyphens
+    'non-interactive' -> 'noninteractive'
+  docs/topics/cli-args.adoc:31
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/developer-lightspeed/assembly_configuring-dev-lightspeed-ide.adoc:14
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/developer-lightspeed/assembly_configuring_llm.adoc:20
+    RedHat.CaseSensitiveTerms
+    'Podman desktop' -> 'Podman Desktop'
+  docs/topics/developer-lightspeed/assembly_solution-server-configurations.adoc:18
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/con_developer-lightspeed-logs.adoc:38
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/con_developer-lightspeed-logs.adoc:18
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/con_installation.adoc:12
+    RedHat.Hyphens
+    'plug-in' -> 'plugin'
+  docs/topics/developer-lightspeed/con_installation.adoc:12
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/con_installation.adoc:10
+    RedHat.Hyphens
+    'plug-in' -> 'plugin'
+  docs/topics/developer-lightspeed/con_installation.adoc:10
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc:70
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc:62
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc:49
+    RedHat.TermsWarnings
+    'leverage' -> 'use'
+  docs/topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc:32
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc:17
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc:10
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/con_llm-service-openshift-ai.adoc:33
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/con_llm-service-openshift-ai.adoc:12
+    RedHat.TermsWarnings
+    'leverage' -> 'use'
+  docs/topics/developer-lightspeed/con_llm-service-openshift-ai.adoc:10
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/developer-lightspeed/con_prerequisites.adoc:30
+    RedHat.CaseSensitiveTerms
+    'VS Code' -> 'Visual Studio Code'
+  docs/topics/developer-lightspeed/con_prerequisites.adoc:10
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/proc_apply-rag-resolution.adoc:15
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings.adoc:56
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings.adoc:48
+    RedHat.CaseSensitiveTerms
+    'url' -> 'URL'
+  docs/topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings.adoc:9
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings.adoc:9
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/proc_configuring-developer-profile-settings.adoc:49
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/developer-lightspeed/proc_configuring-developer-profile-settings.adoc:16
+    RedHat.CaseSensitiveTerms
+    'VS Code' -> 'Visual Studio Code'
+  docs/topics/developer-lightspeed/proc_configuring-developer-profile-settings.adoc:11
+    RedHat.Using
+    'changes using' -> '$1 by using'
+  docs/topics/developer-lightspeed/proc_configuring-developer-profile-settings.adoc:9
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/proc_configuring-llm-podman-desktop.adoc:9
+    RedHat.Hyphens
+    'open-source' -> 'open source'
+  docs/topics/developer-lightspeed/proc_configuring-solution-server-settings-file.adoc:48
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/proc_running-agent-analysis.adoc:24
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/proc_running-agent-analysis.adoc:17
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/proc_running-agent-analysis.adoc:11
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/developer-lightspeed/proc_running-agent-analysis.adoc:11
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/developer-lightspeed/proc_running-rag-analysis.adoc:13
+    RedHat.CaseSensitiveTerms
+    'VS Code' -> 'Visual Studio Code'
+  docs/topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed.adoc:11
+    RedHat.CaseSensitiveTerms
+    'VS Code' -> 'Visual Studio Code'
+  docs/topics/developer-lightspeed/ref_example-code-suggestion.adoc:68
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/developer-lightspeed/ref_example-code-suggestion.adoc:19
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/ref_example-code-suggestion.adoc:13
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/ref_llm-provider-configurations.adoc:46
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/developer-lightspeed/ref_llm-provider-configurations.adoc:20
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/developer-lightspeed/ref_llm-provider-configurations.adoc:16
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/developer-lightspeed/ref_llm-provider-configurations.adoc:14
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/mta-about-home-var.adoc:12
+    RedHat.CaseSensitiveTerms
+    'OS' -> 'Operating system'
+  docs/topics/mta-cli/proc_accessing-analysis-report.adoc:23
+    RedHat.TermsWarnings
+    'click on' -> 'click'
+  docs/topics/mta-cli/proc_analyzing-single-app-with-mta-cli.adoc:59
+    RedHat.TermsWarnings
+    'click on' -> 'click'
+  docs/topics/mta-cli/proc_generating-deployment-manifest.adoc:10
+    RedHat.TermsWarnings
+    'transition' -> 'make the transition'
+  docs/topics/mta-cli/proc_reviewing-analysis-issues-and-incidents.adoc:18
+    RedHat.TermsWarnings
+    'click on' -> 'click'
+  docs/topics/mta-cli/proc_reviewing-analysis-issues-and-incidents.adoc:17
+    RedHat.TermsWarnings
+    'Click on' -> 'Click'
+  docs/topics/mta-cli/proc_running-the-containerless-mta-cli.adoc:9
+    RedHat.TermsWarnings
+    'execute' -> 'run'
+  docs/topics/mta-cli/proc_running-the-containerless-mta-cli.adoc:9
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/mta-cli/ref_effort-level-estimation.adoc:43
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/mta-cli/ref_mta-cli-analyze-flags.adoc:19
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/mta-cli/ref_mta-cli-analyze-flags.adoc:19
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/mta-cli/ref_mta-cli-analyze-flags.adoc:19
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/mta-cli/ref_mta-cli-analyze-flags.adoc:17
+    RedHat.Hyphens
+    'open-source' -> 'open source'
+  docs/topics/mta-cli/ref_mta-cli-analyze-flags.adoc:16
+    RedHat.Hyphens
+    'open-source' -> 'open source'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:154
+    RedHat.CaseSensitiveTerms
+    'JBoss' -> 'JBoss EAP'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:153
+    RedHat.CaseSensitiveTerms
+    'JBoss' -> 'JBoss EAP'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:152
+    RedHat.CaseSensitiveTerms
+    'JBoss' -> 'JBoss EAP'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:151
+    RedHat.CaseSensitiveTerms
+    'JBoss' -> 'JBoss EAP'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:150
+    RedHat.CaseSensitiveTerms
+    'JBoss' -> 'JBoss EAP'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:127
+    RedHat.CaseSensitiveTerms
+    'Ignite' -> 'Fuse Online'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:92
+    RedHat.CaseSensitiveTerms
+    'Bean' -> 'Bean'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:52
+    RedHat.CaseSensitiveTerms
+    'Bean' -> 'Bean'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:35
+    RedHat.CaseSensitiveTerms
+    'Ignite' -> 'Fuse Online'
+  docs/topics/mta-cli/ref_mta-tech-tags.adoc:16
+    RedHat.CaseSensitiveTerms
+    'ActiveMQ' -> 'Built-in messaging'
+  docs/topics/mta-cli/ref_openrewrite-command-options.adoc:11
+    RedHat.CaseSensitiveTerms
+    'openrewrite' -> 'OpenRewrite'
+  docs/topics/mta-cli/ref_openrewrite-command-options.adoc:6
+    RedHat.CaseSensitiveTerms
+    'openrewrite' -> 'OpenRewrite'
+  docs/topics/mta-cli/ref_supported-migration-paths.adoc:87
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/mta-install/con_mta-features.adoc:16
+    RedHat.CaseSensitiveTerms
+    'Role-Based Access Control' -> 'Role-based access control'
+  docs/topics/mta-install/con_roles-personas-users-permissions.adoc:9
+    RedHat.Hyphens
+    'pre-defined' -> 'predefined'
+  docs/topics/mta-install/proc_installing-cli-for-docker.adoc:41
+    RedHat.TermsErrors
+    'the installer' -> 'installation program'
+  docs/topics/mta-install/proc_installing-cli-zip.adoc:28
+    RedHat.CaseSensitiveTerms
+    'linux' -> 'Linux'
+  docs/topics/mta-intellij-plugin/about-ide-addons-intellij.adoc:14
+    RedHat.Using
+    'projects using' -> '$1 by using'
+  docs/topics/mta-intellij-plugin/what-is-the-toolkit.adoc:45
+    RedHat.TermsWarnings
+    'I' -> 'You'
+  docs/topics/mta-intellij-plugin/what-is-the-toolkit.adoc:33
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/mta-ui/proc_adding-applications.adoc:54
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/mta-ui/proc_adding-applications.adoc:38
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/mta-ui/proc_adding-applications.adoc:36
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/mta-ui/proc_adding-applications.adoc:36
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/mta-ui/proc_adding-applications.adoc:35
+    RedHat.TermsWarnings
+    'may' -> 'might'
+  docs/topics/mta-ui/proc_adding-applications.adoc:33
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/mta-ui/proc_adding-applications.adoc:31
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/mta-ui/proc_assessing-an-application.adoc:27
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/mta-ui/proc_assessing-an-application.adoc:24
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/mta-ui/proc_assessing-an-archetype.adoc:21
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/mta-ui/proc_configuring-and-running-an-application-analysis.adoc:87
+    RedHat.TermsWarnings
+    'execute' -> 'run'
+  docs/topics/mta-ui/proc_configuring-and-running-an-application-analysis.adoc:69
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/mta-ui/proc_configuring-and-running-an-application-analysis.adoc:38
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/mta-ui/proc_configuring-jira-credentials.adoc:41
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/mta-ui/proc_configuring-jira-credentials.adoc:34
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/mta-ui/proc_configuring-jira-credentials.adoc:25
+    RedHat.CaseSensitiveTerms
+    'Basic Auth' -> 'Basic HTTP authentication'
+  docs/topics/mta-ui/proc_configuring-jira-credentials.adoc:23
+    RedHat.TermsErrors
+    'Basic Auth' -> 'Basic HTTP authentication'
+  docs/topics/mta-ui/proc_configuring-jira-credentials.adoc:12
+    RedHat.CaseSensitiveTerms
+    'Basic auth' -> 'Basic HTTP authentication'
+  docs/topics/mta-ui/proc_configuring-jira-credentials.adoc:11
+    RedHat.CaseSensitiveTerms
+    'Basic auth' -> 'Basic HTTP authentication'
+  docs/topics/mta-ui/proc_configuring-subversion-repos.adoc:15
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/mta-ui/proc_configuring-subversion-repos.adoc:13
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/mta-ui/proc_creating-a-jira-connection.adoc:39
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/mta-ui/proc_creating-a-jira-connection.adoc:31
+    RedHat.CaseSensitiveTerms
+    'Basic Auth' -> 'Basic HTTP authentication'
+  docs/topics/mta-ui/proc_creating-a-jira-connection.adoc:29
+    RedHat.TermsErrors
+    'Basic Auth' -> 'Basic HTTP authentication'
+  docs/topics/mta-ui/proc_creating-application-tags.adoc:28
+    RedHat.SmartQuotes
+    '’' -> '''
+  docs/topics/mta-ui/proc_creating-application-tags.adoc:27
+    RedHat.SmartQuotes
+    '’' -> '''
+  docs/topics/mta-ui/proc_creating-application-tags.adoc:21
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/mta-ui/proc_creating-custom-migration-targets.adoc:34
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/mta-ui/proc_creating-custom-migration-targets.adoc:29
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/mta-ui/proc_creating-jira-issues-for-migration-wave.adoc:26
+    RedHat.TermsErrors
+    'Datacenter' -> 'Data center'
+  docs/topics/mta-ui/proc_creating-migration-waves.adoc:21
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/mta-ui/proc_displaying-automated-tasks.adoc:21
+    RedHat.SmartQuotes
+    '’' -> '''
+  docs/topics/mta-ui/proc_displaying-automated-tasks.adoc:21
+    RedHat.TermsWarnings
+    'Click on' -> 'Click'
+  docs/topics/mta-ui/proc_displaying-automated-tasks.adoc:13
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/mta-ui/proc_downloading-an-analysis-report.adoc:20
+    RedHat.TermsWarnings
+    'Click on' -> 'Click'
+  docs/topics/mta-ui/proc_importing-an-app-list.adoc:26
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/mta-ui/proc_managing-mta-questionnaires.adoc:49
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/mta-ui/proc_managing-mta-questionnaires.adoc:37
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/mta-ui/proc_managing-mta-questionnaires.adoc:12
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/mta-ui/proc_manual-tagging-of-an-application.adoc:14
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/mta-ui/proc_reviewing-a-task-log.adoc:16
+    RedHat.TermsWarnings
+    'click on' -> 'click'
+  docs/topics/mta-ui/proc_reviewing-an-analysis-report.adoc:14
+    RedHat.TermsWarnings
+    'Click on' -> 'Click'
+  docs/topics/mta-ui/proc_reviewing-an-archetype.adoc:29
+    RedHat.SmartQuotes
+    '’' -> '''
+  docs/topics/mta-ui/proc_reviewing-an-archetype.adoc:21
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/release-notes-topics/ref_fixed-issues-8-0-1.adoc:58
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/release-notes-topics/ref_fixed-issues-8-0-1.adoc:23
+    RedHat.Hyphens
+    'open-source' -> 'open source'
+  docs/topics/release-notes-topics/ref_fixed-issues-8-0-1.adoc:12
+    RedHat.Hyphens
+    'open-source' -> 'open source'
+  docs/topics/release-notes-topics/ref_fixed-issues-8-0-1.adoc:12
+    RedHat.Hyphens
+    'open-source' -> 'open source'
+  docs/topics/release-notes-topics/ref_known-issues-8-0.adoc:56
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_known-issues-8-0.adoc:54
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_known-issues-8-0.adoc:45
+    RedHat.Using
+    'annotations using' -> '$1 by using'
+  docs/topics/release-notes-topics/ref_known-issues-8-0.adoc:34
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc:84
+    RedHat.Hyphens
+    'plug-in' -> 'plugin'
+  docs/topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc:84
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc:82
+    RedHat.Hyphens
+    'plug-in' -> 'plugin'
+  docs/topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc:82
+    RedHat.CaseSensitiveTerms
+    'VS Code' -> 'Visual Studio Code'
+  docs/topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc:30
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc:18
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc:13
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc:13
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/release-notes-topics/ref_new-features-and-enhancements-8-0.adoc:11
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/release-notes-topics/ref_removed-features-8-0.adoc:22
+    RedHat.CaseSensitiveTerms
+    'VS Code' -> 'Visual Studio Code'
+  docs/topics/release-notes-topics/ref_tech-previews-8-0.adoc:27
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_tech-previews-8-0.adoc:27
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_tech-previews-8-0.adoc:25
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_tech-previews-8-0.adoc:22
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_tech-previews-8-0.adoc:15
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/release-notes-topics/ref_tech-previews-8-0.adoc:13
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/rules-development/about-rules.adoc:24
+    RedHat.Hyphens
+    'plug-ins' -> 'plugins'
+  docs/topics/rules-development/mta-about-home-var.adoc:12
+    RedHat.CaseSensitiveTerms
+    'OS' -> 'Operating system'
+  docs/topics/rules-development/yaml-builtin-provider.adoc:7
+    RedHat.TermsErrors
+    'Builtin' -> 'Built-in'
+  docs/topics/rules-development/yaml-custom-variables.adoc:29
+    RedHat.Using
+    'message using' -> '$1 by using'
+  docs/topics/rules-development/yaml-dotnet-provider.adoc:25
+    RedHat.TermsWarnings
+    'desired' -> 'needed'
+  docs/topics/rules-development/yaml-java-provider.adoc:33
+    RedHat.CaseSensitiveTerms
+    'url' -> 'URL'
+  docs/topics/rules-development/yaml-java-provider.adoc:33
+    RedHat.Using
+    'code using' -> '$1 by using'
+  docs/topics/vscode/proc_configuring-lighstspeed-ide-settings.adoc:30
+    RedHat.CaseSensitiveTerms
+    'VS Code' -> 'Visual Studio Code'
+  docs/topics/vscode/proc_configuring-lighstspeed-ide-settings.adoc:9
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/vscode/proc_configuring-profile-settings.adoc:16
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/vscode/proc_configuring-profile-settings.adoc:15
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/vscode/proc_configuring-profile-settings.adoc:9
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/vscode/proc_installing-vscode-extension.adoc:22
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/vscode/proc_installing-vscode-extension.adoc:6
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/vscode/proc_installing-vscode-extension.adoc:6
+    RedHat.CaseSensitiveTerms
+    'Lightspeed' -> 'Red Hat Ansible Lightspeed'
+  docs/topics/vscode/proc_installing-vscode-extension.adoc:6
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/vscode/proc_vscode-analyzing-application.adoc:10
+    RedHat.TermsWarnings
+    'VS' -> 'Compared to'
+  docs/topics/web-console/assembly_asset-generation-ui.adoc:31
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/web-console/assembly_asset-generation-ui.adoc:31
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/web-console/assembly_asset-generation-ui.adoc:27
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/web-console/assembly_asset-generation-ui.adoc:27
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/web-console/assembly_asset-generation-ui.adoc:27
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/web-console/assembly_asset-generation-ui.adoc:27
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/web-console/assembly_asset-generation-ui.adoc:27
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/web-console/assembly_asset-generation-ui.adoc:23
+    RedHat.CaseSensitiveTerms
+    'EAP' -> 'JBoss EAP'
+  docs/topics/web-console/proc_adding-source-platform-application.adoc:20
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/web-console/proc_configuring-asset-repository.adoc:18
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/web-console/proc_configuring-generators.adoc:29
+    RedHat.CaseSensitiveTerms
+    'Subversion' -> 'Sub-version'
+  docs/topics/web-console/proc_configuring-target-profiles.adoc:26
+    RedHat.TermsWarnings
+    'click on' -> 'click'
+  docs/topics/web-console/proc_configuring-target-profiles.adoc:19
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+  docs/topics/web-console/proc_creating-source-platform.adoc:20
+    RedHat.TermsWarnings
+    'appears' -> 'is displayed'
+
+ISSUES REQUIRING MANUAL REVIEW
+----------------------------------------
+
+  AsciiDocDITA.BlockTitle (18 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/rules-development/yaml-builtin-provider.adoc:77
+      Match: '.`hasTags`'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    docs/topics/rules-development/yaml-builtin-provider.adoc:63
+      Match: '.`json`'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    docs/topics/rules-development/yaml-builtin-provider.adoc:41
+      Match: '.`xml`'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    docs/topics/rules-development/yaml-builtin-provider.adoc:29
+      Match: '.`filecontent`'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    docs/topics/rules-development/yaml-builtin-provider.adoc:18
+      Match: '.`file`'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    docs/topics/rules-development/yaml-condition-patterns.adoc:14
+      Match: '.Examples'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    docs/topics/rules-development/yaml-dotnet-provider.adoc:12
+      Match: '.`referenced`'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    docs/topics/rules-development/yaml-go-provider.adoc:22
+      Match: '.`dependency`'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    docs/topics/rules-development/yaml-go-provider.adoc:12
+      Match: '.`referenced`'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    docs/topics/rules-development/yaml-java-provider.adoc:47
+      Match: '.`dependency`'
+      Message: Block titles can only be assigned to examples, figures, and tables in DITA.
+    ... and 8 more
+
+  AsciiDocDITA.ContentType (7 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/available-openrewrite-recipes.adoc:1
+      Match: ''
+      Message: The '_mod-docs-content-type' attribute definition is missing.
+    docs/topics/developer-preview-feature.adoc:1
+      Match: ''
+      Message: The '_mod-docs-content-type' attribute definition is missing.
+    docs/topics/rules-development/developer-preview-admonition.adoc:1
+      Match: ''
+      Message: The '_mod-docs-content-type' attribute definition is missing.
+    docs/topics/rules-development/technology-preview.adoc:1
+      Match: ''
+      Message: The '_mod-docs-content-type' attribute definition is missing.
+    docs/topics/templates/developer-preview.adoc:1
+      Match: ''
+      Message: The '_mod-docs-content-type' attribute definition is missing.
+    docs/topics/templates/document-attributes.adoc:1
+      Match: ''
+      Message: The '_mod-docs-content-type' attribute definition is missing.
+    docs/topics/templates/technology-preview-admonition.adoc:1
+      Match: ''
+      Message: The '_mod-docs-content-type' attribute definition is missing.
+
+  AsciiDocDITA.DocumentTitle (6 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/developer-preview-feature.adoc:1
+      Match: ''
+      Message: The document title (a level 0 heading) is missing.
+    docs/topics/rules-development/developer-preview-admonition.adoc:1
+      Match: ''
+      Message: The document title (a level 0 heading) is missing.
+    docs/topics/rules-development/technology-preview.adoc:1
+      Match: ''
+      Message: The document title (a level 0 heading) is missing.
+    docs/topics/templates/developer-preview.adoc:1
+      Match: ''
+      Message: The document title (a level 0 heading) is missing.
+    docs/topics/templates/document-attributes.adoc:1
+      Match: ''
+      Message: The document title (a level 0 heading) is missing.
+    docs/topics/templates/technology-preview-admonition.adoc:1
+      Match: ''
+      Message: The document title (a level 0 heading) is missing.
+
+  AsciiDocDITA.ShortDescription (50 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/about-home-var.adoc:7
+      Match: '= Use of `<{ProductShortName}_HOME>` in this guide'
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    docs/topics/available-openrewrite-recipes.adoc:7
+      Match: '= Available OpenRewrite recipes'
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    docs/topics/cli-args.adoc:7
+      Match: '= About {ProductShortName} command-line arguments'
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    docs/topics/developer-preview-feature.adoc:1
+      Match: ''
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    docs/topics/fork-ruleset-repo.adoc:7
+      Match: '= Forking and cloning the {ProductName} XML rules'
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    docs/topics/important-links.adoc:8
+      Match: '= {ProductName} development resources'
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    docs/topics/mta-ui/con_assessment-module-features.adoc:6
+      Match: '= The Assessment module features'
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    docs/topics/mta-ui/con_intro-to-mta-ui.adoc:6
+      Match: '= Introduction to the {ProductName} user interface'
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    docs/topics/mta-ui/con_mta-default-questionnaire.adoc:8
+      Match: '= The default assessment questionnaire'
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    docs/topics/mta-ui/proc_accessing-analysis-insights.adoc:6
+      Match: '= Accessing analysis insights'
+      Message: Assign [role="_abstract"] to a paragraph to use it as <shortdesc> in DITA.
+    ... and 40 more
+
+  AsciiDocDITA.TaskContents (2 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/fork-ruleset-repo.adoc:1
+      Match: ''
+      Message: The '.Procedure' block title is missing.
+    docs/topics/rules-development/create-first-yaml-rule.adoc:1
+      Match: ''
+      Message: The '.Procedure' block title is missing.
+
+  AsciiDocDITA.TaskStep (5 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/mta-ui/proc_accessing-unmatched-rules.adoc:17
+      Match: 'When you run an analysis:'
+      Message: Content other than a single list cannot be mapped to DITA tasks.
+    docs/topics/mta-ui/proc_assessing-an-application.adoc:36
+      Match: '[NOTE]'
+      Message: Content other than a single list cannot be mapped to DITA tasks.
+    docs/topics/mta-ui/proc_configuring-and-running-an-application-analysis.adoc:98
+      Match: 'NOTE: After creating an application instance on the Application Inventory page, the language discovery task starts, automatically pre-selecting the target filter option. However, you can choose a different language that you prefer.'
+      Message: Content other than a single list cannot be mapped to DITA tasks.
+    docs/topics/web-console/proc_configuring-target-profiles.adoc:26
+      Match: 'You can click on the archetype row to open the archetype detail view where the target profiles for the archetype are listed.'
+      Message: Content other than a single list cannot be mapped to DITA tasks.
+    docs/topics/web-console/proc_generating-deployment-assets.adoc:28
+      Match: 'You can view the generated assets in the asset respository that you configured.'
+      Message: Content other than a single list cannot be mapped to DITA tasks.
+
+  RedHat.DoNotUseTerms (12 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/developer-lightspeed/con_prerequisites.adoc:47
+      Match: 'respective'
+      Message: Do not use "respective" or "respectively". Rewrite to avoid using these words.
+    docs/topics/mta-intellij-plugin/proc_edit-code-file.adoc:17
+      Match: 'green'
+      Message: Do not use colors to describe something unless it is also described non-visually, for example, with the name of the item.
+    docs/topics/mta-intellij-plugin/proc_quick-fix.adoc:22
+      Match: 'green'
+      Message: Do not use colors to describe something unless it is also described non-visually, for example, with the name of the item.
+    docs/topics/mta-ui/ref_custom-questionnaire-fields.adoc:63
+      Match: 'green'
+      Message: Do not use colors to describe something unless it is also described non-visually, for example, with the name of the item.
+    docs/topics/mta-ui/ref_custom-questionnaire-fields.adoc:63
+      Match: 'yellow'
+      Message: Do not use colors to describe something unless it is also described non-visually, for example, with the name of the item.
+    docs/topics/mta-ui/ref_custom-questionnaire-fields.adoc:63
+      Match: 'red'
+      Message: Do not use colors to describe something unless it is also described non-visually, for example, with the name of the item.
+    docs/topics/mta-ui/ref_custom-questionnaire-fields.adoc:43
+      Match: 'green'
+      Message: Do not use colors to describe something unless it is also described non-visually, for example, with the name of the item.
+    docs/topics/mta-ui/ref_custom-questionnaire-fields.adoc:42
+      Match: 'yellow'
+      Message: Do not use colors to describe something unless it is also described non-visually, for example, with the name of the item.
+    docs/topics/mta-ui/ref_custom-questionnaire-fields.adoc:41
+      Match: 'red'
+      Message: Do not use colors to describe something unless it is also described non-visually, for example, with the name of the item.
+    docs/topics/mta-ui/ref_custom-questionnaire-fields.adoc:37
+      Match: 'red'
+      Message: Do not use colors to describe something unless it is also described non-visually, for example, with the name of the item.
+    ... and 2 more
+
+  RedHat.EmDash (2 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/developer-lightspeed/assembly_solution-server-configurations.adoc:22
+      Match: '—'
+      Message: Do not use em dashes. Use punctuation marks such as commas, parentheses, or colons instead.
+    docs/topics/developer-lightspeed/assembly_solution-server-configurations.adoc:22
+      Match: '—'
+      Message: Do not use em dashes. Use punctuation marks such as commas, parentheses, or colons instead.
+
+  RedHat.GitLinks (5 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/fork-ruleset-repo.adoc:30
+      Match: 'https://github.com'
+      Message: Do not include a link to https://github.com unless it is explicitly approved.
+    docs/topics/fork-ruleset-repo.adoc:18
+      Match: 'https://github.com'
+      Message: Do not include a link to https://github.com unless it is explicitly approved.
+    docs/topics/fork-ruleset-repo.adoc:13
+      Match: 'https://github.com'
+      Message: Do not include a link to https://github.com unless it is explicitly approved.
+    docs/topics/fork-ruleset-repo.adoc:13
+      Match: 'https://github.com'
+      Message: Do not include a link to https://github.com unless it is explicitly approved.
+    docs/topics/templates/document-attributes.adoc:99
+      Match: 'https://github.com'
+      Message: Do not include a link to https://github.com unless it is explicitly approved.
+
+  RedHat.HeadingPunctuation (3 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/mta-intellij-plugin/what-is-the-toolkit.adoc:45
+      Match: '?'
+      Message: Do not use end punctuation in headings.
+    docs/topics/mta-intellij-plugin/what-is-the-toolkit.adoc:38
+      Match: '?'
+      Message: Do not use end punctuation in headings.
+    docs/topics/mta-intellij-plugin/what-is-the-toolkit.adoc:19
+      Match: '?'
+      Message: Do not use end punctuation in headings.
+
+  RedHat.Slash (3 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/mta-ui/proc_creating-a-jira-connection.adoc:31
+      Match: 'Server/Data'
+      Message: Use either 'or' or 'and' in 'Server/Data'
+    docs/topics/release-notes-topics/ref_known-issues-8-0.adoc:37
+      Match: 'Start/Stop'
+      Message: Use either 'or' or 'and' in 'Start/Stop'
+    docs/topics/rules-development/yaml-java-provider.adoc:50
+      Match: 'external/open'
+      Message: Use either 'or' or 'and' in 'external/open'
+
+  RedHat.Spacing (1 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/cli-args.adoc:81
+      Match: 'it.  In'
+      Message: Keep one space between words in 'it.  In'.
+
+  RedHat.Spelling (200 issues)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    docs/topics/about-rules.adoc:23
+      Match: 'Decompile'
+      Message: Verify the word 'Decompile'. It is not in the American English spelling dictionary used by Vale.
+    docs/topics/available-openrewrite-recipes.adoc:15
+      Match: 'activeRecipes'
+      Message: Verify the word 'activeRecipes'. It is not in the American English spelling dictionary used by Vale.
+    docs/topics/cli-args.adoc:81
+      Match: 'sourceMode'
+      Message: Verify the word 'sourceMode'. It is not in the American English spelling dictionary used by Vale.
+    docs/topics/cli-args.adoc:25
+      Match: 'decompilation'
+      Message: Verify the word 'decompilation'. It is not in the American English spelling dictionary used by Vale.
+    docs/topics/developer-lightspeed/assembly_configuring_llm.adoc:30
+      Match: 'Ollama'
+      Message: Verify the word 'Ollama'. It is not in the American English spelling dictionary used by Vale.
+    docs/topics/developer-lightspeed/assembly_configuring_llm.adoc:20
+      Match: 'Ollama'
+      Message: Verify the word 'Ollama'. It is not in the American English spelling dictionary used by Vale.
+    docs/topics/developer-lightspeed/assembly_solution-server-configurations.adoc:46
+      Match: 'Ollama'
+      Message: Verify the word 'Ollama'. It is not in the American English spelling dictionary used by Vale.
+    docs/topics/developer-lightspeed/con_developer-lightspeed-logs.adoc:38
+      Match: 'webview'
+      Message: Verify the word 'webview'. It is not in the American English spelling dictionary used by Vale.
+    docs/topics/developer-lightspeed/con_developer-lightspeed-logs.adoc:38
+      Match: 'webview'
+      Message: Verify the word 'webview'. It is not in the American English spelling dictionary used by Vale.
+    docs/topics/developer-lightspeed/con_developer-lightspeed-logs.adoc:38
+      Match: 'webview'
+      Message: Verify the word 'webview'. It is not in the American English spelling dictionary used by Vale.
+    ... and 190 more
+
+================================================================================
+CQA 2.1 COMPLIANCE NOTES
+================================================================================
+
+The following pre-migration requirements from CQA 2.1 are checked by Vale:
+
+1. AsciiDocDITA checks (asciidoctor-dita-vale tool):
+   - ShortDescription: Modules need [role="_abstract"] for DITA shortdesc
+   - ContentType: Files need :_mod-docs-content-type: attribute
+   - DocumentTitle: Files need a level 0 heading (= Title)
+   - TaskContents: Procedure modules need .Procedure block title
+
+2. RedHat style checks:
+   - ConsciousLanguage: Replace master/slave, blacklist/whitelist
+   - TermsErrors/TermsWarnings: Use correct terminology
+   - Spelling: Verify technical terms
+   - Hyphens: Correct hyphenation
+   - Spacing: No double spaces
+   - CaseSensitiveTerms: Use correct case for terms
+
+Note: write-good checks (Passive, TooWordy, Weasel) are disabled as they
+are too noisy for technical documentation and require manual judgment.
