@@ -32,6 +32,6 @@ when:
 +
 where:
 
-* `name`: The name of the dependency to search for.
-* `upperbound`: Upper bound on the version of the dependency.
-* `lowerbound`: Lower bound on the version of the dependency.
+* `name` is a name of the dependency to search for.
+* `upperbound` is an upper bound on the version of the dependency.
+* `lowerbound` is a lower bound on the version of the dependency.

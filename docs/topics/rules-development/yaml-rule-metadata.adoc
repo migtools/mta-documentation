@@ -40,5 +40,5 @@ where:
 Optional. Delete if not used.
 Provide a bulleted list of links and display text relevant to the assembly. These links can include `link:` and `xref:` macros. Do not include additional text.
 ////
-* xref:yaml-rule-labels_rule-yaml-metadata[Labels]
+* xref:yaml-rule-labels_rule-yaml-metadata[Rule labels]
 * xref:yaml-rule-categories_rule-yaml-metadata[Rule categories]

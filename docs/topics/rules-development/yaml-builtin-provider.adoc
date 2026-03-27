@@ -34,7 +34,6 @@ when:
 ----
 
 
-* `xml`
 `xml`::
 The `xml` capability enables the provider to query XPath expressions on a list of provided XML files. This capability takes 2 input parameters, `xpath` and `filepaths`.
 +

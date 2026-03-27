@@ -20,6 +20,7 @@ In {ProductShortName} 7.0, you can import and export assessment questionnaires. 
 * Application auto-tagging based on answers: You can define tags to be applied to applications or archetypes if a certain answer was provided.
 * Automated answers from tags in applications or archetypes.
 
++
 NOTE: You can customize and save the default questionnaire.
 
 Multiple assessment questionnaires::
