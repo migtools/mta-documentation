@@ -52,7 +52,7 @@ when:
 +
 where:
 
-* `xpath` must be a valid XPath expression.
+* `xpath` is a valid XPath expression.
 * `filepaths` is a list of files to apply the XPath query to.
 * `namespaces` define namespaces and assign them to variables. You can use the variable in the `xpath`.
 
