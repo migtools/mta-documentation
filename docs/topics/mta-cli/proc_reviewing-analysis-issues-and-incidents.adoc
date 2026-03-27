@@ -6,7 +6,7 @@
 = Reviewing the analysis issues and incidents
 
 [role="_abstract"]
-To identify specific code segments that require modification, review the issues and incidents provided in the {ProductFullName} command-lie interface analysis report. You can use these details to locate migration blockers within your source code and prioritize remediation tasks based on severity.
+To identify specific code segments that require modification, review the issues and incidents provided in the {ProductFullName} command-line interface analysis report. You can use these details to locate migration blockers within your source code and prioritize remediation tasks based on severity.
 
 Each issue contains a list of files where a rule matched one or more times. These files include all the incidents within the issue. Each incident contains a detailed explanation of the issue and how to fix this issue.
 
@@ -14,8 +14,8 @@ Each issue contains a list of files where a rule matched one or more times. Thes
 
 . Open the analysis report. For more information, see xref:accessing-analysis-report_reviewing-analysis-reports[Accessing an analysis report].
 . Click *Issues*.
-. Click on the issue you want to check.
-. Under the *File* tab, click on a file to display an incident or incidents that triggered the issue.
+. Click the issue you want to check.
+. Under the *File* tab, click a file to display an incident or incidents that triggered the issue.
 . Display the incident message by hovering over the line that triggered the incident, for example:
 +
 [subs="+quotes"]

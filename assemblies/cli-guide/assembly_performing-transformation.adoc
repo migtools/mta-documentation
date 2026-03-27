@@ -19,8 +19,10 @@ endif::[]
 [role="_abstract"]
 To accelerate your application modernization, use the {ProductFullName} command-line interface (CLI) to transform your source code. The transformation process applies predefined migration rules to your codebase, reducing the manual effort required to update Java libraries or frameworks.
 
-IMPORTANT: Performing transformation requires the container runtime to be configured. 
- 
+[IMPORTANT]
+====
+Performing transformation requires the container runtime to be configured.
+====
 
 include::topics/mta-cli/proc_transforming-application-source-code.adoc[leveloffset=+1]
 
