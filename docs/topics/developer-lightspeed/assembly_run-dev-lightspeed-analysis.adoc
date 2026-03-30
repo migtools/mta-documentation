@@ -27,8 +27,6 @@ When you request code fix suggestions, {mta-dl-plugin} performs the following ta
 
 If you apply all the resolutions, {mta-dl-plugin} applies the changes and triggers another analysis to check if there are more issues. Subsequent analysis reports fewer issues and incidents.
 
-include::proc_running-rag-analysis.adoc[leveloffset=+1]
-
 include::proc_apply-rag-resolution.adoc[leveloffset=+1]
 
 include::proc_running-agent-analysis.adoc[leveloffset=+1]
