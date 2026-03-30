@@ -19,12 +19,20 @@ By using ready-made custom migration targets, you can avoid configuring custom r
 
 .Procedure
 
-. In the *Administration* view, click *Custom migration targets*.
+. In the *Migration* view, click *Custom migration targets*.
 . Click *Create new*.
 . Enter the name and description of the target.
-. Click the *Provider* drop-down menu and choose the language provider.
+. Click the *Provider* list and choose the language provider.
 +
-IMPORTANT: Support for the Python and Node.js language providers is available as a Technology Preview only.
+:FeatureName: Support for the Python and Node.js
+IMPORTANT 
+====
+{FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red{nbsp}Hat production service level agreements (SLAs) and might not be functionally complete. Red{nbsp}Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red{nbsp}Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+:!FeatureName:
+
 . In the *Image* section, upload an image file for the target's icon. The file can be in either the PNG or JPEG format, up to 1 MB. If you do not upload any file, a default icon is used.
 . In the *Custom rules* section, select either *Upload manually* or *Retrieve from a repository*:
 ** If you selected *Upload manually*, upload or drag and drop the required rule files from your local drive.
@@ -34,4 +42,4 @@ IMPORTANT: Support for the Python and Node.js language providers is available as
 ... If the repository requires credentials, enter these credentials in the *Associated credentials* field.
 . Click *Create*.
 +
-The new migration target appears on the *Custom migration targets* page. It can now be used by non-admin users in the *Migration* view.
+{ProductShortName} {WebName} displays the new migration target on the *Custom migration targets* page. Non-admin users can now use the target in the *Migration* view.
