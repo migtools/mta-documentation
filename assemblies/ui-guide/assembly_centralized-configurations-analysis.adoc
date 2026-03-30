@@ -15,7 +15,7 @@ endif::[]
 :context: centralized-configurations
 
 [role="_abstract"]
-Use standardized configurations across components of {ProductFirstRef} such as the {WebName}, {CLIName}, and the Visual Studio Code {PluginName} by using the centralized configuration management in {ProductFullName}.
+Standardize configurations across {ProductFirstRef} components, such as the {WebName}, {CLIName}, and the Visual Studio Code {PluginName}, by using the centralized configuration management in {ProductFullName}.
 
 As an Architect, you can create, edit, and delete custom migration targets and configurations, such as analysis profiles and custom rulesets, in the {ProductShortName} {WebName}. The analysis profiles contain the following details:
 
