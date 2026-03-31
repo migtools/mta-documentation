@@ -17,7 +17,7 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 pass:[<!-- vale RedHat.Spelling = NO -->]
 * You created two RWO persistent volumes (PVs) used by different components.
 pass:[<!-- vale RedHat.Spelling = YES -->]
-* You are logged in as a user with `cluster-admin` permissions.
+* You logged in as a user with `cluster-admin` permissions.
 
 
 .Procedure
