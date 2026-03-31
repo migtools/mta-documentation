@@ -4,7 +4,7 @@
 :_mod-docs-content-type: REFERENCE
 
 [id="how-to-use-developer-lightspeed_{context}"]
-= How to use {mta-dl-plugin}
+= {mta-dl-plugin} workflows
 
 [role="_abstract"]
 You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application.

@@ -9,7 +9,7 @@
 :context: intro-to-the-developer-lightspeed
 
 [role="_abstract"]
-Starting from 8.0.0, {ProductFullName} integrates with large language models (LLM) through the {mta-dl-full} component in the Visual Studio (VS) Code extension. You can use {mta-dl-plugin} to apply LLM-driven code changes to resolve issues found through static code analysis of Java applications.
+Starting from 8.0.0, {ProductFullName} integrates with large language models (LLM) through the {mta-dl-full} component in the Visual Studio Code extension. You can use {mta-dl-plugin} to apply LLM-driven code changes to resolve issues found through static code analysis of Java applications.
 
 [id="use-case-ai-code-fix_{context}"]
 == Use case for AI-driven code fixes
@@ -21,7 +21,7 @@ The static code analysis describes the issues in your code that must be resolved
 Migrators do duplicate work by resolving issues that are repeated across applications in different migration waves.
 
 [id="how-developerlightspped-works_{context}"]
-== How does {mta-dl-plugin} work
+== Red{nbsp}Hat Developer Lightspeed for {ProductShortName} overview
 
 {mta-dl-plugin} works by collecting and storing the changes in the code for a large collection of applications, finding context to generate prompts for the LLM of your choice, and by generating code resolutions produced by the LLM to address specific issues.
 

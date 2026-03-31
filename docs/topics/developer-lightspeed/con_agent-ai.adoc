@@ -5,7 +5,7 @@
 :_content-type: CONCEPT
 [id="agent-ai_{context}"]
 
-= What is the Agent AI
+= About the Agent AI
 :context: agent-ai
 
 [role=_abstract]
