@@ -5,7 +5,7 @@
 :_content-type: CONCEPT
 [id="solution-server_{context}"]
 
-= What is the Solution Server 
+= About the Solution Server
 :context: solution-server
 
 [role=_abstract]
