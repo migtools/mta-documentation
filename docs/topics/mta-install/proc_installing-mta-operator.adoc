@@ -13,7 +13,7 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 .Prerequisites
 
 * Your environment has 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
-* Any cloud services or self-hosted editions of Red Hat OpenShift on versions 4.13-4.15.
+* Your environment uses Red Hat OpenShift (cloud service or self-hosted), version 4.13–4.15.
 pass:[<!-- vale RedHat.Spelling = NO -->]
 * You created two RWO persistent volumes (PVs) used by different components.
 pass:[<!-- vale RedHat.Spelling = YES -->]
