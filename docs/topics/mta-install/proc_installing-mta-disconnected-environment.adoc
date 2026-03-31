@@ -12,7 +12,7 @@ When your system is in a disconnected environment, you can install the {ProductS
 
 IMPORTANT: The following procedure applies only to container mode.
 
-NOTE: The analysis output in the disconnected environment usually results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
+NOTE: The analysis output in the disconnected environment results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
 
 .Prerequisites
 
