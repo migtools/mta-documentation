@@ -33,4 +33,4 @@ endif::rules-development-guide[]
 
 [role="_additional-resources"]
 .Additional resources
-* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/configuring_and_using_red_hat_developer_lightspeed_for_mta/index[Configuring and Using Red Hat Developer Lightspeed for MTA]
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/configuring_and_using_red_hat_developer_lightspeed_for_mta/index[Configuring and using Red Hat Developer Lightspeed for MTA]
