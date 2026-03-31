@@ -30,7 +30,7 @@ https://_<web_console_address>_/auth/admin
 
 [role="_additional-resources"]
 .Additional resources
-* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0[Red Hat Build of Keycloak]
+* link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0[Red Hat build of Keycloak]
 * link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#ldap[Configuring LDAP and Active Directory in RHBK]
 * link:https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts[Red Hat Build of Keycloak features and concepts ]
 
