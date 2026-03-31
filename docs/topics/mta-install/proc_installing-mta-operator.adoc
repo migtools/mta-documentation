@@ -12,11 +12,11 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 
 .Prerequisites
 
-* 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
-* Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.13-4.15.
+* Your environment has 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
+* Any cloud services or self-hosted editions of Red Hat OpenShift on versions 4.13-4.15.
 pass:[<!-- vale RedHat.Spelling = NO -->]
-* 2 RWO persistent volumes (PVs) used by different components.
-pass:[<!-- vale RedHat.Spelling = YES -->] For more information, see link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements].
+* You created two RWO persistent volumes (PVs) used by different components.
+pass:[<!-- vale RedHat.Spelling = YES -->]
 * You are logged in as a user with `cluster-admin` permissions.
 
 
@@ -32,7 +32,7 @@ pass:[<!-- vale RedHat.Spelling = YES -->] For more information, see link:{mta-U
 +
 A window for creating CR settings opens automatically after the installation of the {ProductShortName} Operator is complete. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.
 +
-Alternatively, to work directly with the YAML file, click the *YAML* view and review the CR settings listed in the `spec` section of the YAML file. For more details about commonly used CR settings, see xref:custom-resource-settings_installing-mta-ui[Custom resource settings].
+Alternatively, to work directly with the YAML file, click the *YAML* view and review the CR settings listed in the `spec` section of the YAML file.
 +
 The `spec` section of the YAML file can have the following configuration:
 +
@@ -64,5 +64,7 @@ spec:
 [role="_additional-resources"]
 .Additional resources
 * link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles]
+* link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements]
+* xref:custom-resource-settings_installing-mta-ui[Custom resource settings]
 
 

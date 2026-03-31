@@ -28,6 +28,7 @@ pass:[<!-- vale RedHat.Spelling = YES -->] For more information, see link:{mta-U
 . Navigate to the link:{DevDownloadPageURL}[{ProductShortName} download page] and download one of the following operating system-specific CLI files or the `src` file:
 +
 pass:[<!-- vale RedHat.CaseSensitiveTerms = NO -->]
+
 * {ProductShortNameLower}-{ProductVersion}-cli-linux-amd64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-linux-arm64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-darwin-amd64.zip
@@ -35,6 +36,7 @@ pass:[<!-- vale RedHat.CaseSensitiveTerms = NO -->]
 * {ProductShortNameLower}-{ProductVersion}-cli-windows-amd64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-windows-arm64.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-src.zip
+
 pass:[<!-- vale RedHat.CaseSensitiveTerms = YES -->]
 
 . Extract the `.zip` file to the `.kantra` directory inside your `$HOME` directory. The `.zip` file extracts the `mta-cli` binary, along with other required directories and files.
