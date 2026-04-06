@@ -49,4 +49,4 @@ You must configure either target or source technologies before running an analys
 |Configure generative AI|This option opens the `provider-settings.yaml` file that contains API keys and other parameters for all supported LLMs. By default, {mta-dl-plugin} is configured to use OpenAI LLM. To change the model, update the anchor `&active` to the desired block. Modify this file with the required arguments, such as the model and API key, to complete the setup.
 |====
 
-See for xref:llm-provider-settings_configuring-llm[Configuring LLM provider settings] to complete the LLM provider configuration.
+See xref:llm-provider-settings_configuring-llm[Configuring LLM provider settings] to complete the LLM provider configuration.

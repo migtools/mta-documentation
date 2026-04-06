@@ -46,4 +46,4 @@ The *Resolution Details* tab opens, where you can view the automated analysis th
 . Open *Source Control* to access the updated file.
 +
 . In the *Resolution Details* view, accept the proposal from {mta-dl-plugin} to make further changes. 
-The stream of analysis repeats, after which you can review and accept change. {mta-dl-plugin} creates the file with the code changes, and the stream continues until you reject the proposal for further analysis.
+The stream of analysis repeats, after which you can review and accept the changes. {mta-dl-plugin} creates the file with the code changes, and the stream continues until you reject the proposal for further analysis.

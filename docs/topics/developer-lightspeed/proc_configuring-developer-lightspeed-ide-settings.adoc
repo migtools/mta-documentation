@@ -8,7 +8,7 @@
 [role="_abstract"]
 After you install the {ProductShortName} extension in Visual Studio (VS) Code, you must provide your large language model (LLM) credentials to activate {mta-dl-plugin} settings in Visual Studio (VS) Code. 
 
-{mta-dl-plugin} settings are applied to all AI-assisted analysis that you perform by using the {ProductShortName} extension. The extension settings can be broadly categorized into debugging and logging, {mta-dl-plugin} settings, analysis related settings, and Solution Server settings.
+{mta-dl-plugin} settings are applied to all AI-assisted analysis that you perform by using the {ProductShortName} extension. The extension settings can be broadly categorized into debugging and logging, {mta-dl-plugin} settings, analysis settings, and Solution Server settings.
 
 .Prerequisites
 
