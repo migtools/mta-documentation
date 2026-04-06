@@ -34,7 +34,7 @@ IMPORTANT: You must configure target or source technologies before running an an
 
 .Verification
 
-* After you completed the profile configuration, close the `Get Ready to Analyze` pane and run an application analysis. 
+* After completing the profile configuration, close the `Get Ready to Analyze` pane and run an application analysis. 
 
 
 .Next steps

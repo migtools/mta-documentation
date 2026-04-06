@@ -29,7 +29,7 @@ For more information about the support scope of Red Hat Technology Preview featu
 
 . Click the {mta-dl-plugin} extension and click *Open Analysis Panel*.
 
-. In settings (image:settings-icon.png[settings-icon]), click *Configure Hub Settings* .
+. In settings (image:settings-icon.png[settings-icon]), click *Configure Hub Settings*.
 
 . Configure the following settings on the *Hub Configuration* page:
 .. Enable *Hub*.
