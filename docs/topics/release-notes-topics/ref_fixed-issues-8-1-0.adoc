@@ -24,6 +24,6 @@ Before this update, after you ran the source code analysis by using the {Product
 
 
 {ProductShortName} CLI correctly processes Cloud Foundry applications with service bindings::
-Before this update, the discovery process for Cloud Foundry (CF) applications with service bindings by using live connection failed in the {ProductFullName} command-line interface (CLI). {ProductShortName} CLI did not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information for services, for example, `cf bind-service _<application_name>_ postgres01`. With this update, {ProductShortName} CLI no longer fails to complete the discovery of CF applications with service bindings.
+Before this update, the discovery process for Cloud Foundry (CF) applications with service bindings by using live connection failed in the {ProductFullName} command-line interface (CLI). {ProductShortName} CLI did not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information for services (for example, `cf bind-service _<application_name>_ postgres01`). With this update, {ProductShortName} CLI no longer fails to complete the discovery of CF applications with service bindings.
 +
 (link:https://redhat.atlassian.net/browse/MTA-6424[MTA-6424]) 

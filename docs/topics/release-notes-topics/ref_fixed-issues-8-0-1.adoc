@@ -8,7 +8,7 @@
 [role="_abstract"]
 {ProductFirstRef} ({ProductShortName}) version 8.0.1 provides the following fixed issues and other problems that have a significant impact. 
 
-In {ProductShortName} 8.0.1 the performance of Java binary analysis has significantly improved.
+In {ProductShortName} 8.0.1, the performance of Java binary analysis has significantly improved::
 Before this change, when you analyzed Java binary applications, {ProductShortName} incorrectly classified some open-source dependencies as internal dependencies, it was then decompiled and analyzed, that caused the analysis to take longer to complete. Now, the location of the Maven index file is passed to the Java provider to determine if an embedded dependency is open-source or internal. This fix resolved the two following issues:
 
 Binary application analysis latency is reduced in {ProductShortName}::
@@ -16,7 +16,7 @@ When you analyzed a binary, the performance degraded because {ProductShortName} 
 +
 (link:https://issues.redhat.com/browse/MTA-6231[MTA-6231])
 
-Analysis of binary applications classify open source dependencies accurately::
+Analysis of binary applications classifies open source dependencies accurately::
 When you analyzed Java binary applications, {ProductShortName} incorrectly classified some open-source dependencies as internal dependencies. With this version, this issue is fixed. This leads to {ProductShortName} classifying embedded open source dependencies correctly after a source+dependency binary analysis. 
 +
 (link:https://issues.redhat.com/browse/MTA-6357[MTA-6357])
@@ -27,7 +27,7 @@ When you imported applications from Cloud Foundry (CF), {ProductShortName} did n
 (link:https://issues.redhat.com/browse/MTA-6271[MTA-6271])
 
 {ProductShortName} {CLIName} correctly processes Cloud Foundry applications with service binding::
-The discovery process of Cloud Foundry (CF) applications with service bindings by using live connection failed in {ProductShortName} {CLIName}. The {ProductShortName} {CLIName} did not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information for an array of services. For example, `cf bind-service _<application_name>_ postgres01`. With this version, this issue is fixed. As a result, {ProductShortName} {CLIName} successfully completes the discovery of CF applications with service bindings. 
+The discovery process of Cloud Foundry (CF) applications with service bindings by using live connection failed in {ProductShortName} {CLIName}. The {ProductShortName} {CLIName} did not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information for an array of services, for example, `cf bind-service _<application_name>_ postgres01`. With this version, this issue is fixed. As a result, {ProductShortName} {CLIName} successfully completes the discovery of CF applications with service bindings. 
 +
 (link:https://issues.redhat.com/browse/MTA-6399[MTA-6399])
 
@@ -53,7 +53,7 @@ Before this update, the annotation rules for Java applications did not use Fully
 (link:https://issues.redhat.com/browse/MTA-6195[MTA-6195])
 
 {ProductShortName} triggers rules to match import statements with wildcard in Java applications analysis::
-{ProductShortName} did not trigger rule to match import statements that contain a wildcard when analyzing a Java application. Consequently, specific incidents were not detected in the report after the analysis. With this release, this issue is fixed. 
+{ProductShortName} did not trigger rules to match import statements that contain a wildcard when analyzing a Java application. Consequently, specific incidents were not detected in the report after the analysis. With this release, this issue is fixed. 
 +
 (link:https://issues.redhat.com/browse/MTA-4027[MTA-4027])
 
