@@ -1,10 +1,10 @@
 <title>Release Notes</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Release Notes for migration toolkit for applications 8.0</subtitle>
+<subtitle>Release Notes for migration toolkit for applications {DocInfoProductNumber}</subtitle>
 <abstract>
     <para>
-        The Release Notes provide high-level coverage of the improvements and additions that have been implemented in migration toolkit for applications 8.0 and document known issues, notable fixed issues, Technology Previews, and other details in MTA 8.0.
+        Review the new features, enhancements, fixed issues, and known issues in Migration Toolkit for Applications (MTA) 8.0 and 8.1 to plan and manage your application updates. You can also explore available Technology Preview features and other release details.
     </para>
 </abstract>
 <authorgroup>
