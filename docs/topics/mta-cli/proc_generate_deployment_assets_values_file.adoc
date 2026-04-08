@@ -25,7 +25,7 @@ To use the `helm` templates to generate assets, save the Kubernetes `YAML` templ
 manifest:
   name: my-app   
   database:
-    enabled: "true"
+    enabled: true
     host: prod-postgres.company.com    
   redis:                              
     url: redis://prod-redis:6379
@@ -37,7 +37,7 @@ NOTE: In this example, the discovery manifest does not contain the fields in the
 . Consider the following `Dockerfile` template that has environment variables defined in the values file:
 +
 
-[source, yaml]
+[source, dockerfile]
 ----
 FROM node:18
 
