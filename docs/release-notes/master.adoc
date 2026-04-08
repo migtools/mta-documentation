@@ -11,10 +11,10 @@ include::topics/templates/document-attributes.adoc[]
 = Release Notes
 
 
-include::assemblies/release-notes/assembly_mta-8-1-0.adoc[leveloffset=+1]
+include::assemblies/release-notes/assembly_mta-8-1.adoc[leveloffset=+1]
 
 include::assemblies/release-notes/assembly_mta-8-0.adoc[leveloffset=+1]
 
-
+ 
 :!release-notes:
  
