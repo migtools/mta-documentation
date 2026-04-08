@@ -24,8 +24,8 @@ By using ready-made custom migration targets, you can avoid configuring custom r
 . Enter the name and description of the target.
 . Click the *Provider* list and choose the language provider.
 +
-:FeatureName: Support for the Python and Node.js
-IMPORTANT 
+:FeatureName: Support for Python and Node.js
+[IMPORTANT] 
 ====
 {FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red{nbsp}Hat production service level agreements (SLAs) and might not be functionally complete. Red{nbsp}Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
 
