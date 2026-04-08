@@ -20,7 +20,7 @@ NOTE: This prerequisite is not applicable for the containerless mode.
 pass:[<!-- vale RedHat.Spelling = YES -->] For more information, see link:{mta-URL}/using_the_migration_toolkit_for_applications_command-line_interface/analyzing-applications-mta-cli_cli-guide#running-the-containerless-mta-cli_analyzing-applications-mta-cli[Analyzing an application in containerless mode].
 
 * You installed Java Development Kit (JDK) version 17 or later.
-* You set the `JAVA_HOME` environmental variable.
+* You set the `JAVA_HOME` environment variable.
 * You installed Maven version 3.9.9 or later and added the Maven binary to the `$PATH` variable.
 
 .Procedure
