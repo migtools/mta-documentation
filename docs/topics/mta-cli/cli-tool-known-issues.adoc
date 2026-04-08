@@ -4,7 +4,7 @@
 
 :_mod-docs-content-type: REFERENCE
 [id="cli-known-issues_{context}"]
-= {ProductShortName} {CLINameTitle} known issues
+= The {ProductShortName} {CLINameTitle} known issues
 
 [role="_abstract"]
 Review the known issues for the {ProductFullName} command-line interface (CLI) to identify existing problems and apply workarounds.
@@ -21,7 +21,7 @@ However, when running any container image based on Red Hat Enterprise Linux 9 (R
 Fatal glibc error: CPU does not support x86-64-v2
 ----
 
-This error is caused because Red Hat Enterprise Linux 9 or Universal Base Image 9 container images must be run on a CPU architecture that supports `x86-64-v2`.
+This error occurs because Red Hat Enterprise Linux 9 or Universal Base Image 9 container images must be run on a CPU architecture that supports `x86-64-v2`.
 
 For more details, see link:https://access.redhat.com/solutions/7057314[Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2"].
 

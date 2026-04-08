@@ -53,7 +53,7 @@ rules:
 ----
 where
 
-`id` :: specified the unique identifier of the analysis profile.
+`id` :: specifies the unique identifier of the analysis profile.
 
 `createUser` :: specifies the user who created the analysis profile in the Hub.
 
@@ -71,6 +71,6 @@ where
 
 `labels` :: specifies the labels that filters rules that are applied and excluded in the analysis.
 
-`files` :: specifies the unique identifier and name of a custom rule in a file. {ProductShortName} {CLIName} uses the file directly in an analysis.
+`files` :: specifies the unique identifier and name of a custom rule in a file. The {ProductShortName} {CLIName} uses the file directly in an analysis.
 
 `repository` :: specifies details of external ruleset repository. For example, `kind` (`Git` or `Subversion`), `URL`, `branch`, `tag`, and `path` within the repository to the rulesets.
