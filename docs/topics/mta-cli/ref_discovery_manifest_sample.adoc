@@ -47,5 +47,5 @@ manifest:
 
 [NOTE]
 ====
-You must configure the `buildpacks` in the Cloud Foundry application manifest to include the `buildpacks` in the discovery and deployment assets.
+You must configure the `buildPacks` in the Cloud Foundry application manifest to include the `buildPacks` in the discovery and deployment assets.
 ====
