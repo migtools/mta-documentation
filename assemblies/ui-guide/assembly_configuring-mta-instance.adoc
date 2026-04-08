@@ -16,7 +16,7 @@ endif::[]
 
 
 [role="_abstract"]
-To adjust the {ProductFullName} to your needs, configure a {ProductShortName} instance. By configuring the instance, you ensure {ProductShortName} considers key parameters during the migration process and generates comprehensive modernization reports.
+To adjust the {ProductFullName} to your needs, configure an {ProductShortName} instance. By configuring the instance, you ensure {ProductShortName} considers key parameters during the migration process and generates comprehensive modernization reports.
 
 If you are a project architect, you can configure the instance’s key parameters before migration. The following parameters define applications, individuals, teams, verticals, or areas within an organization affected or participating in the migration:
 
