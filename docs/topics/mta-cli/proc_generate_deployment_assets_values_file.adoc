@@ -7,7 +7,7 @@
 = Generating deployment manifests from a discovery manifest and values.yaml
 
 [role="_abstract"]
-When you generate deployment manifests from the discovery manifest, you can merge the configuration specified in the `values.yaml`. You can also override discrete values by using the `--set` flag when you run the `generate` command. 
+When you run the `generate helm` command, you provide a `Helm` chart by using `--chart-dir`. The `values.yaml` in that chart is used to capture keys that are not present in the discovery manifest. You can also override specific values by using the `--set` flag when you run the `generate` command. 
 
 To use the `helm` templates to generate assets, save the Kubernetes `YAML` templates, for example, `ConfigMap` or `Deployment`, in the `templates` directory present in the root directory of the `Helm` chart. You must save non-Kubernetes templates, for example, `Dockerfile`, in the `files/konveyor` path in the `Helm` chart root directory and save the `values.yaml` file at the root directory of the `Helm` chart.
 
