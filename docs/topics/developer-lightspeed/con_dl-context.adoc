@@ -18,7 +18,7 @@ The context is a combination of the source code, the issue description, and solv
 +
 * Solved examples constitute code changes from other migrations and a pattern of resolution for an issue that can be used in future. A solved example is created when a Migrator accepts a resolution in a previous analysis that results in updated code or an unfamiliar issue in a legacy application that the Migrator manually fixed. Solved examples are stored in the Solution Server. 
 +
-More instances of solved examples for an issue enhances the context and improve the success metrics of rules that trigger the issue. A higher success metrics of an issue refers to the higher confidence level associated with the accepted resolutions for that issue in previous analyses.
+More instances of solved examples for an issue enhance the context and improve the success metrics of rules that trigger the issue. Higher the success metrics of an issue, greater the confidence level associated with the accepted resolutions for that issue in previous analyses.
 
 * (Optional) If you enable the Solution Server, it extracts a pattern of resolution, called the migration hint, that can be used by the LLM to generate a more accurate fix suggestion in a future analysis.
 +

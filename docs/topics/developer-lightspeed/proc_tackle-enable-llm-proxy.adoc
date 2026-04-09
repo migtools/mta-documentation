@@ -54,7 +54,7 @@ spec:
 
 . Save the Tackle CR configuration.
 
-. Apply the Tackle CR by in the `openshift-mta` project:
+. Apply the Tackle CR in the `openshift-mta` project:
 +
 [source, terminal]
 ----
