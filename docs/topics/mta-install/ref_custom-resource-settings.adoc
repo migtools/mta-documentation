@@ -25,7 +25,7 @@ The following are the most commonly used CR settings that you can find in the `s
 |`keycloak_database_data_volume_size`|1 GB|A size requested for the Keycloak database volume.
 |`pathfinder_database_data_volume_size`|1 GB|A size requested for the Pathfinder database volume.
 |`rwx_supported`|True|A flag that indicates whether the cluster storage supports RWX mode.
-|`rwo_storage_class`|NA|A storage class requested for the Tackle RW0 volumes.
+|`rwo_storage_class`|NA|A storage class requested for the Tackle RWO volumes.
 |`rhsso_external_access`|False|A flag that indicates whether a dedicated route is created to access the {ProductShortName} managed RHSSO instance.
 |`analyzer_container_limits_cpu`|1|A maximum number of CPUs the pod is allowed to use.
 |`analyzer_container_limits_memory`|4 GB|Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors. 	
