@@ -33,9 +33,9 @@ In the above example, the output of the `builtin.file` condition is saved as `po
 [...]
 ----
 
-The variables of `builtin.file` can then be used in the `builtin.xml` condition, by writing `from` and then using link:https://mustache.github.io/mustache.5.html[mustache templates] in the `provider_ condition` block.
+The variables of `builtin.file` can then be used in the `builtin.xml` condition, by writing `from` and then using link:https://mustache.github.io/mustache.5.html[Mustache templates] in the `provider_ condition` block.
 
-This is how this particular condition knows how to use the variable set to the name `poms`.
+This is how the condition knows how to use the variable set to the name `poms`.
 
 [source,yaml]
 ----
@@ -44,7 +44,7 @@ This is how this particular condition knows how to use the variable set to the n
 [...]
 ----
 
-Then you can use the variables by setting them as mustached templates in
+Then you can use the variables by setting them as Mustache templates in
 any of the inputs to the _provider_ condition.
 
 [source,yaml]

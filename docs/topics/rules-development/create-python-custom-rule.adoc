@@ -11,7 +11,7 @@ You must create custom rules to analyze `Python` applications by using {ProductS
 
 The following example uses two custom rules: 
 
-* The first rule checks if `bad_method` is specified 
+* The first rule checks if `bad_method` is specified. 
 * The second rule checks if `hello_world` is specified in `file_a.py` in your project.
 
 .Procedure
