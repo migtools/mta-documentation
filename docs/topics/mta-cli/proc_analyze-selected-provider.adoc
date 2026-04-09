@@ -13,7 +13,7 @@ You can select a language provider to analyze from the list of supported provide
 
 .Prerequisites
 
-* You have the latest version of {ProductShortName} CLI installed on your system. 
+* You have the latest version of the {ProductShortName} CLI installed on your system. 
 
 
 .Procedure

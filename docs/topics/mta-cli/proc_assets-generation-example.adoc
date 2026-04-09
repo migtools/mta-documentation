@@ -21,7 +21,7 @@ Assume that the `cf-nodejs-app.yaml` is located in the same directory as the {Pr
 
 .Prerequisites
 
-* You installed {ProductShortName} {CLIName} 7.3.0.
+* You installed the {ProductShortName} {CLIName} 7.3.0.
 * You have a CF application manifest as a YAML file. 
 * You created a Helm template with the required configurations for the {ocp} deployment. 
 
