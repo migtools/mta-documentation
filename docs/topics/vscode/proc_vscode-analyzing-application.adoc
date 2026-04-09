@@ -3,7 +3,7 @@
 = Running an application analysis
 
 [role="_abstract"]
-You can run a static code analysis of an application with or without enabling the Generative AI (GenAI) features. The RPC (Remote Procedure Call) server runs the analysis to detect all issues in the code for one or more target technologies which you want to migrate the application to.
+You can run a static code analysis of an application with or without enabling the Generative AI (GenAI) features. The Remote Procedure Call (RPC) server runs the analysis to detect all issues in the code for one or more target technologies to which you want to migrate the application to.
 
 .Prerequisites
 
