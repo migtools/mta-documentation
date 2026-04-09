@@ -53,7 +53,7 @@ does not match
  UnavailableException exception2 = new UnavailableException(s, str);
 ----
 
-In addition, search patterns that do not contain Fully Qualified Names (FQN) do not match. For example:
+In addition, search patterns that do not contain Fully Qualified Names (FQNs) do not match. For example:
 
 [source, yaml]
 ----
