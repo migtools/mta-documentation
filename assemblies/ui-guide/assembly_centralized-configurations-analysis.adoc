@@ -10,7 +10,7 @@ endif::[]
 ifdef::context[]
 [id="centralized-configurations_{context}"]
 endif::[]
-= Analyze an application with analysis profiles
+= Analyzing applications with analysis profiles
 
 :context: centralized-configurations
 
