@@ -19,7 +19,7 @@ when:
     - <condition2>
 ----
 
-.Example
+For example:
 
 [source,yaml]
 ----

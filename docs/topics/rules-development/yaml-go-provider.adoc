@@ -9,7 +9,7 @@
 [role="_abstract"]
 The `go` provider analyzes `Go` source code. This provider's capabilities are `referenced` and `dependency`.
 
-.`referenced`
+== `referenced`
 
 By using the `referenced` capability, the provider finds references in the source code.
 
@@ -19,7 +19,7 @@ when:
   go.referenced: "<regex_to_find_reference>"
 ----
 
-.`dependency`
+== `dependency`
 
 By using the `dependency` capability, the provider finds dependencies for a `Go` application.
 

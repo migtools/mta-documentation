@@ -31,66 +31,11 @@ include::assemblies/rules-development-guide/assembly_creating-rule.adoc[leveloff
 
 include::assemblies/rules-development-guide/assembly_rule-rulesets.adoc[leveloffset=+1]
 
-// removing section subject to a later re-write
-// Testing XML Rules
-// include::topics/testing-rules.adoc[leveloffset=+1]
 
-// removing section subject to a later re-write
-// Manually Test the XML Rule
-// include::topics/manually-test-rules.adoc[leveloffset=+2]
-
-// removing section subject to a later re-write
-// Test the Rules Using JUnit
-// include::topics/rules-testing-junit.adoc[leveloffset=+2]
-
-// removing section subject to a later re-write
-// About the validation report
-// include::topics/validation-report.adoc[leveloffset=+2]
-
-// removing section subject to a later re-write
-// creating a Validation Report
-// include::topics/validation-report-understanding.adoc[leveloffset=+3]
-
-// removing section subject to a later re-write
-// Reported Errors when Running the Validation Report
-// include::topics/validation-report-errors.adoc[leveloffset=+3]
-
-// removing section subject to a later re-write
-// Overriding Rules
-// include::topics/overriding-rules.adoc[leveloffset=+1]
-
-// removing section subject to a later re-write
-// Using Custom Rule Categories
-// include::topics/rule-categories.adoc[leveloffset=+1]
-//[appendix]
-//== Reference material
-
-// Rule Story Points
-//include::topics/about-story-points.adoc[leveloffset=+2]
-
-// removing section subject to a later re-write
-// For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
-
-== Additional resources
-
-//include::topics/rules-important-links.adoc[leveloffset=+1]
+[id="_additional-resources"]
+.Additional resources
 
 * link:{JiraWindupURL}[{ProductShortName} Jira issue tracker]
 * link:mailto:windup-eng@redhat.com[{ProductShortName} mailing list]
-
-// removing section subject to a later re-write
-// Review the Existing MTA XML Rules
-// include::topics/review-existing-rules.adoc[leveloffset=+3]
-
-// removing section subject to a later re-write
-// Fork and Clone the Ruleset GitHub Project
-// include::topics/fork-ruleset-repo.adoc[leveloffset=+3]
-
-// Important Links
-
-// **********************************
-// * Appendix: Revision Information *
-// **********************************
-//include::topics/templates/revision-info.adoc[]
 
 :!rules-development-guide:

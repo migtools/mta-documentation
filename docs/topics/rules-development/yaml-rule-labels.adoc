@@ -11,7 +11,7 @@ Labels are `key=val` pairs specified in rules to filter the rule by the label. D
 
 For dependencies, a provider adds the labels to the dependencies when retrieving them. Labels on a ruleset are automatically inherited by all the rules that belong to it.
 
-.Label format
+Label format::
 
 Labels are specified under the `labels` field as a list of strings in `key=val` format as follows:
 
@@ -57,7 +57,7 @@ The analyzer defines some labels that have special meaning as follows:
 
 * `konveyor.io/include`: Overrides filter behavior for a rule irrespective of the label selector used. The value can either be `always` or `never`. If you specify `always`, the analyzer always filters-in this rule, while for `never`, the analyzer excludes this rule.
 
-.Label selector
+Label selector::
 
 The analyzer CLI takes the `--label-selector` field as an option. It is a string expression that supports logical `AND`, `OR`, and `NOT` operations. You can use it to filter-in or filter-out rules by their labels.
 
@@ -100,7 +100,7 @@ labels:
 - konveyor.io/language=java
 ----
 
-.Dependency label selector
+Dependency label selector::
 
 The analyzer CLI accepts the `--dep-label-selector` option, which allows filtering-in or filtering-out incidents generated from a dependency by their labels.
 

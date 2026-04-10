@@ -15,7 +15,7 @@ The `builtin` provider is an internal provider that can analyze various files an
 * `json`
 * `hasTags`
 
-.`file`
+== `file`
 
 By using the `file` capability, the provider searches for files in the source code that match a given pattern.
 
@@ -26,7 +26,7 @@ when:
     pattern: "<regular_expression_to_match_filenames>"
 ----
 
-.`filecontent`
+== `filecontent`
 
 By using the `filecontent` capability, the provider searches for content that matches a given pattern.
 
@@ -38,7 +38,7 @@ when:
     pattern: "<regular_expression_to_match_content_in_the_matching_files>"
 ----
 
-.`xml`
+== `xml`
 
 The `xml` capability enables the provider to query XPath expressions on a list of provided XML files. This capability takes 2 input parameters, `xpath` and `filepaths`.
 
@@ -60,7 +60,7 @@ where:
  `filepaths` :: is a list of files to apply the XPath query to.
  `namespaces` :: define namespaces and assign them to variables. You can use the variable in the `xpath`.
 
-.`json`
+== `json`
 
 By using the `json` capability, the provider queries XPath expressions on a list of provided JSON files. Currently, `json` only takes XPath as input and performs the search on all JSON files in the codebase.
 
@@ -74,7 +74,7 @@ where:
 
  `xpath` :: must be a valid XPath expression.
 
-.`hasTags`
+== `hasTags`
 
 By using the `hasTags` capability, the provider queries application tags. It queries the internal data structure to check whether the application has the given tags.
 
