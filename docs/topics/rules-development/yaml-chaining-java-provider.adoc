@@ -7,7 +7,7 @@
 = Chaining in the Java provider
 
 [role="_abstract"]
-In the `java` provider, the `Filepaths` variable must be in upper case, for example:
+In the `java` provider, the `Filepaths` variable must be capitalized, for example:
 
 [source,yaml]
 ----

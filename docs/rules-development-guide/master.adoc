@@ -33,7 +33,7 @@ include::assemblies/rules-development-guide/assembly_rule-rulesets.adoc[leveloff
 
 
 [id="_additional-resources"]
-.Additional resources
+== Additional resources
 
 * link:{JiraWindupURL}[{ProductShortName} Jira issue tracker]
 * link:mailto:windup-eng@redhat.com[{ProductShortName} mailing list]
