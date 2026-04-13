@@ -25,9 +25,16 @@ labels:
 effort: 1 
 category: mandatory 
 ----
+
 where:
 
- *ruleID* :: This is a unique ID for the rule. It must be unique within the ruleset.
- *labels* :: A list of string labels associated with the rule. (See xref:yaml-rule-labels_rule-yaml-metadata[Labels]).
- *effort* :: Effort is an integer value that indicates the level of effort needed to resolve this issue.
- *category* :: Category describes the severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`. For more details, see xref:yaml-rule-categories_rule-yaml-metadata[Rule categories].
+* `ruleID` is a unique ID for the rule. It must be unique within the ruleset.
+* `labels` is a list of string labels associated with the rule.
+* `effort` is an integer value that indicates the level of effort needed to resolve this issue.
+* `category` is the severity of the issue for migration. Values can be one of `mandatory`, `potential` or `optional`.
+
+
+[role="_additional-resources"]
+.Additional resources
+* xref:yaml-rule-labels_rule-yaml-metadata[Rule labels]
+* xref:yaml-rule-categories_rule-yaml-metadata[Rule categories]

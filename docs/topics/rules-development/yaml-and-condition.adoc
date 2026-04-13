@@ -7,9 +7,7 @@
 = AND condition
 
 [role="_abstract"]
-The `and` condition performs a logical AND operation on the results of an array of conditions.
-
-The `and` condition matches when _all_ of its child conditions match, for example:
+The `and` condition performs a logical AND operation on the results of an array of conditions. The condition matches when _all_ of its child conditions match, for example:
 
 [source,yaml]
 ----
@@ -19,7 +17,7 @@ when:
     - <condition2>
 ----
 
-.Example
+For example:
 
 [source,yaml]
 ----

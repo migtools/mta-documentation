@@ -9,20 +9,18 @@
 [role="_abstract"]
 The `go` provider analyzes `Go` source code. This provider's capabilities are `referenced` and `dependency`.
 
-.`referenced`
-
+`referenced`::
 By using the `referenced` capability, the provider finds references in the source code.
-
++
 [source,yaml]
 ----
 when:
   go.referenced: "<regex_to_find_reference>"
 ----
 
-.`dependency`
-
+`dependency`::
 By using the `dependency` capability, the provider finds dependencies for a `Go` application.
-
++
 [source,yaml]
 ----
 when:
@@ -31,11 +29,9 @@ when:
     upperbound: "<version_string>" 
     lowerbound: "<version_string>" 
 ----
++
 where:
 
- `name` ::
- Name of the dependency to search for.
-
- `upperbound` :: Upper bound on the version of the dependency.
-
- `lowerbound` :: Lower bound on the version of the dependency.
+* `name` is a name of the dependency to search for.
+* `upperbound` is an upper bound on the version of the dependency.
+* `lowerbound` is a lower bound on the version of the dependency.

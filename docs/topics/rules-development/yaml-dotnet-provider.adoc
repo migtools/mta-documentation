@@ -11,10 +11,10 @@ The `C#` provider is an external provider used to analyze `.NET Core` and `C#` s
 
 The `C#` provider uses a gRPC interface to perform a semantic analysis of an application source code in the `source-only` mode. The provider parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the `C#` custom rule definition, the analyzer identifies violations in your code that you must resolve before the application migration. 
 
-`referenced`::
+== `referenced`
 
 The `C#` provider supports `referenced` capability in rules to define fields such as `pattern` and `location` based on which the provider searches the code for violations. 
-
++
 [source,yaml]
 ----
 when:
@@ -22,7 +22,8 @@ when:
     pattern: "<pattern>" 
     location: CLASS 
 ----
++
 where:
 
- `pattern` :: A regular expression pattern to match the required reference. For example, `HttpNotFound`.
- `namespace` :: Specifies the namespace to search within. For example, `System.Web.Mvc`.
+* `pattern` is a regular expression pattern to match the required reference, for example, `HttpNotFound`.
+* `namespace` is a namespace to search within, for example, `System.Web.Mvc`.

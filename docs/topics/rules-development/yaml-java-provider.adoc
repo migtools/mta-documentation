@@ -11,13 +11,9 @@ The `java` provider analyzes Java source code.
 
 This provider has the following capabilities:
 
-* `referenced`
-* `dependency`
-
-.`referenced`
-
-By using the `referenced` capability, the provider finds references in the source code. This capability takes three input parameters: `pattern`, `location`, and `annotated`.
-
+`referenced`::
+By using the `referenced` capability, the provider finds references in the source code. This capability takes three input parameters: `pattern`, `location`, and `annotated`:
++
 [source,terminal]
 ----
 when:
@@ -26,13 +22,13 @@ when:
     location: "<location>" 
     annotated: "<annotated>" 
 ----
++
 where:
 
- `pattern` :: A regular expression pattern to match.
- `location` :: Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
- `annotated` :: Checks for specific annotations and their elements, such as name and value, in the Java code by using a query. For example, the following query matches the `Bean` (URL = “http://www.example.com”) annotation in the method.
-
-
+* `pattern` is a regular expression pattern to match.
+* `location` is the exact location where the pattern needs to be matched, for example, `IMPORT`.
+* `annotated` checks for specific annotations and their elements, such as name and value, in the Java code by using a query. For example, the following query matches the `Bean` (URL = “http://www.example.com”) annotation in the method.
++
 [source,yaml]
 ----
  annotated:
@@ -42,14 +38,12 @@ where:
         value: "http://www.example.com"
 ----
 
-See xref:java-conditions-capabilities[Java condition and capabilities] for a detailed explanation on `java.referenced` capabilities.
-
-.`dependency`
-
+`dependency`::
 The Java provider has `dependency` capability. The `dependency` capability enables the provider to generate a list of dependencies for a given application.
++
 You can use a `dependency` condition to query this list and check whether a certain dependency, with a version range, exists for the application. The dependency can be internal or external or open source.
 For example, to check if a Java application has a certain dependency, you create a `java.dependency` condition:
-
++
 [source, yaml]
 ----
 when:
@@ -58,17 +52,21 @@ when:
     upperbound: 4.12.2
     lowerbound: 4.4.0
 ----
-
++
 You can use the `dependency` capability to check if a Java application has Fabric8 Kubernetes client of version 5.0.100 or lower:
-
++
 [source, yaml]
 ----
 - java.dependency:
     name: io.fabric8.kubernetes-client
     lowerbound: 5.0.100
 ----
-
++
 [NOTE]
 ====
 When you use the `java` provider for an analysis, the analysis results have lower precision for projects that cannot be built. For example, when {ProductShortName} is unable to build a `Maven` project, it falls back to parsing the `pom` file to get the list of dependencies.
 ====
+
+[role="_additional-resources"]
+.Additional resources
+* xref:java-conditions-capabilities[Java condition and capabilities]

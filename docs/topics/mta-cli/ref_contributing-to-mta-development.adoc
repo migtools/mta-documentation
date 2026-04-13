@@ -22,7 +22,7 @@ You can help with any of the following items:
 ** Write a {ProductName} rule to identify or automate a migration process.
 ** Create a test for the new rule.
 +
-For more information, see link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_].
+For more information, see link:{mta-URL}/configuring_and_using_rules_for_an_mta_analysis/index[Configuring and using rules for an MTA analysis].
 * Contribute to the project source code:
 ** Create a core rule.
 ** Improve {ProductShortName} performance or efficiency.

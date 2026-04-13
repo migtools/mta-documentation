@@ -33,16 +33,14 @@ The {ProductName} ({ProductShortName}) is an extensible and customizable rule-ba
 * Migrating JBoss EAP Java applications to Azure
 * Migrating Spring Boot Java applications to Azure
 
-For more information about use cases and migration paths, see the link:https://developers.redhat.com/products/{LC_PSN}/use-cases[{ProductShortName} for developers] web page.
-
 == How does the {ProductName} simplify migration
 
 The {ProductName} looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.
 
 {ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.
 
-ifndef::getting-started-guide[]
-== How do you learn more
 
-See the link:{ProductDocIntroToMTAGuideURL}[Introduction to the {DocInfoProductName}] to learn more about the features, supported configurations, system requirements, and available tools in the {ProductName}.
-endif::getting-started-guide[]
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://developers.redhat.com/products/{LC_PSN}/use-cases[{ProductShortName} for developers]
