@@ -3,7 +3,7 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="tackle-enable-llm-proxy_{context}"]
-= Enabling LLM proxy in the Tackle custom resource
+= Configuring the Tackle custom resource
 
 [role="_abstract"]
 To use the LLM proxy service, you must enable the proxy in the Tackle custom resource (CR) and deploy it in the Red Hat {ocp-name} project where you installed the {ProductShortName} Operator.
