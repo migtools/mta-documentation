@@ -1,16 +1,15 @@
 :mta:
-include::topics/templates/document-attributes.adoc[]
-:_mod-docs-content-type: ASSEMBLY
-[id="installing-mta-title"]
-= Installing the {ProductName}
-
-
 :toc:
 :toclevels: 4
 :numbered:
 :imagesdir: topics/images
 :context: installing-mta-title
 :installing-mta-title:
+include::topics/templates/document-attributes.adoc[]
+
+[id="installing-mta-title"]
+= Installing the {ProductName}
+
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[leveloffset=+1]
