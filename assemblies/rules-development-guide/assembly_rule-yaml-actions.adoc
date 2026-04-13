@@ -20,8 +20,9 @@ You can use rule actions to generate information about the source code. The rule
 
 Rules can include the following types of actions:
 
-* `Message`: use message action to display an informative message in the static report that contains the violation triggered by the rule. See xref:yaml-message-actions_rule-yaml-actions[Message action] for more information.
-* `Tag`: use tags to categorize parts of the source code. For example, Backend=Java, where Backend is the key and Java is the value. See xref:yaml-tag-actions_rule-yaml-actions[Tag actions] for more information.
+* `Message`: use message action to display an informative message in the static report that contains the violation triggered by the rule.
+* `Tag`: use tags to categorize parts of the source code. For example, Backend=Java, where Backend is the key and Java is the value.
+
 Each rule includes either one of them or both of them. 
 
 include::topics/rules-development/yaml-tag-actions.adoc[leveloffset=+1]
