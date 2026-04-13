@@ -15,6 +15,7 @@ when(condition)
  message(message)
  tag(tags)
 ----
+
 .Procedure
 
 . Create a file containing the basic syntax for YAML rules as follows:

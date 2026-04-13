@@ -36,8 +36,4 @@ $ mta-cli analyze --input=<application_to_analyze> --output=<output_dir> --rules
 * To use multiple rule files, place them in a directory and add a `ruleset.yaml` file. Then the directory is treated as a _ruleset_, and you can pass it as input to the `--rules` option.
 +
 
-NOTE: If you want to use the `--target` or `--source` option in the CLI, the engine will only select rules that match the label for that target. Therefore, make sure that you have added target or source labels on your rules.
-
-[role="_additional-resources"]
-.Additional resources
-* xref:reserved-label_rule-yaml-metadata[Reserved labels]
+Note that if you want to use the `--target` or `--source` option in the CLI, the analyzer will only select rules that match the label for that target. Therefore, make sure that you have added target or source labels in your rules. See xref:reserved-label_rule-yaml-metadata[Reserved labels] for more details.

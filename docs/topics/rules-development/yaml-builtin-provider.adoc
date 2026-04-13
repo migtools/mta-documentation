@@ -21,7 +21,6 @@ when:
     pattern: "<regular_expression_to_match_filenames>"
 ----
 
-
 `filecontent`::
 By using the `filecontent` capability, the provider searches for content that matches a given pattern.
 +
@@ -32,7 +31,6 @@ when:
     filePattern: "<regular_expression_to_match_filenames_to_scope_search>"
     pattern: "<regular_expression_to_match_content_in_the_matching_files>"
 ----
-
 
 `xml`::
 The `xml` capability enables the provider to query XPath expressions on a list of provided XML files. This capability takes 2 input parameters, `xpath` and `filepaths`.
