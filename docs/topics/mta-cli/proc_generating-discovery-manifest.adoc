@@ -14,7 +14,7 @@ You can generate the discovery manifest for the Cloud Foundry (CF) application b
 .Prerequisites
 
 * You have Cloud Foundry (v3) as a source platform.
-* You installed {ProductShortName} {CLIName} version 7.3.0 or later.
+* You installed the {ProductShortName} {CLIName} version 7.3.0 or later.
 
 .Procedure
 

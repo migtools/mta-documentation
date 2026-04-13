@@ -16,7 +16,7 @@ endif::[]
 :context: platform-awareness
 
 [role="_abstract"]
-To import all or selective applications directly from source platform instances, use platform awareness in {ProductFullName} user interface (UI). 
+To import all or selected applications directly from source platform instances, use platform awareness in {ProductFullName} user interface (UI). 
 
 You can associate applications with source platforms in the following ways:
 

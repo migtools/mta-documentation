@@ -36,7 +36,8 @@ However, if you want to analyze applications in languages other than Java or, fo
 ====
 The analysis output in the disconnected environment usually results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
 ====
-////
+
+The {ProductShortName} CLI supports running source code and binary analysis by using the `analyzer-lsp` tool. This tool evaluates rules by using language providers.
 
 include::topics/mta-cli/proc_analyzing-single-app-with-mta-cli.adoc[leveloffset=+1]
  

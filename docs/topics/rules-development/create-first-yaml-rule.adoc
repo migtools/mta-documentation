@@ -129,7 +129,7 @@ The rule is now complete and looks similar to the following:
     title: Create or Modify Files That Control Class Loading in JBoss EAP 6
 ----
 
-. Point the CLI to the rule file you created :
+. Point the CLI to the rule file you created:
 +
 [options="nowrap",subs="attributes+"]
 ----

@@ -3,7 +3,7 @@
 <productnumber>{DocInfoProductNumber}</productnumber>
 <subtitle>Using the {ProductName} extension for Visual Studio Code to identify and resolve migration issues</subtitle>
 <abstract>
-    <para>You can use the {ProductName} extension for Visual Studio Code to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. You can analyze your applications and identify and resolve issues to prepare these applications for a successful migration.</para>
+    <para>You can use the {ProductName} extension for Visual Studio Code to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. You can analyze your applications to identify and resolve issues to prepare these applications for a successful migration.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>

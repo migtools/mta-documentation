@@ -23,7 +23,7 @@ In a restricted network environment where the {ProductShortName} extension canno
 
 .Procedure
 
-. Download the {ProductShortName} {ProductVersion} analyzer RPC from link:https://developers.redhat.com/content-gateway/rest/browse/pub/mta/[Red Hat Developer portal] to your system. 
+. Download the {ProductShortName} {ProductVersion} analyzer RPC from the link:https://developers.redhat.com/content-gateway/rest/browse/pub/mta/[Red Hat Developer portal] to your system. 
 . Access the {ProductShortName} extension settings in either of the following ways:
 .. Click `Extensions > MTA Extension for VSCode > Settings`.
 .. Type `Preferences: Open User Settings (JSON)` in the Command Palette to open the `settings.json` file.

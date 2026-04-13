@@ -16,7 +16,7 @@ endif::[]
 :context: analyzing-apps-profiles
 
 [role="_abstract"]
-As Migrators, you can use profiles to run an application analysis in the {ProductShortName} {CLIName}. Profiles have standardized analysis configuration, scope of an analysis,  and custom rules that you can reuse for mutiple analyses of a local application. 
+As a Migrator, you can use profiles to run an application analysis in the {ProductShortName} {CLIName}. Profiles have standardized analysis configuration, scope of an analysis,  and custom rules that you can reuse for multiple analyses of a local application. 
 
 Before you run an analysis, you can use the {ProductShortName} {CLIName} to download the latest configuration through a secure or insecure connection to the Hub.
 
@@ -25,7 +25,7 @@ The {ProductShortName} {CLIName} syncs with the Hub to download the following fi
 * Profiles in the `.konveyor/profiles` directory in your local application
 * Custom rules in the `.konveyor/profiles/_<profile-name>_/rules` directory 
 
-To perform an analysis that you run after syncing with the Hub, {ProductShortName} {CLIName} uses the downloaded profile and custom rule configurations.
+To perform an analysis that you run after syncing with the Hub, the {ProductShortName} {CLIName} uses the downloaded profile and custom rule configurations.
 
 :FeatureName: Analysis Profile
 [IMPORTANT]

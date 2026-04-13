@@ -15,7 +15,7 @@ You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (
 
 * You have Cloud Foundry (v3) as a source platform.
 * You have {ocp-short} as a target platform. 
-* You installed {ProductShortName} {CLIName} version 7.3.0.
+* You installed the {ProductShortName} {CLIName} version 7.3.0.
 * You generated a discovery manifest.
 * You created a Helm template with the required configuration for the {ocp} deployment. 
 

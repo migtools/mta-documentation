@@ -27,7 +27,7 @@ The analyzer currently supports the following `provider` conditions:
 * `go`
 * `nodejs`
 * `python`
-* `C#`
+* `csharp`
 
 :FeatureName: csharp, python, and nodejs providers
 [IMPORTANT]
@@ -56,7 +56,7 @@ a|
 * `go`
 * `python`
 * `nodejs`
-* `C#`
+* `csharp`
 |===
 
 //Some providers have *dependency_ capability*. The dependency_capability means that the provider generates a list of dependencies for a given application.
@@ -163,7 +163,7 @@ when:
     <fields>
 ----
 
-|`C#`
+|`csharp`
 |referenced
 a|Find references to a pattern.
 For example, 
@@ -454,7 +454,7 @@ when:
       lowerbound: v4.2.0
 ----
 
-.2+|xref:yaml-dotnet-provider_rules-prov-cond[C#]
+.2+|xref:yaml-dotnet-provider_rules-prov-cond[Csharp]
 .2+|referenced
 |pattern
 |Yes

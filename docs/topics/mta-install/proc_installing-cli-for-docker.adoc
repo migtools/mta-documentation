@@ -68,7 +68,7 @@ PS C:\Users\<user_name>> *Expand-Archive `
    -DestinationPath "C:\Users\<user_name>\MTA"*
 ----
 
-. Ensure that Docker is running Windows containers the `OS/Arch` is set to `windows/amd64`:
+. Ensure that Docker is running Windows containers and that the `OS/Arch` is set to `windows/amd64`:
 +
 [subs="+quotes"]
 ----
