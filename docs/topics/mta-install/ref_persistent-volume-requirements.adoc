@@ -41,7 +41,7 @@ pass:[<!-- vale RedHat.Spelling = YES -->]
 |RWX
 |Maven m2 cache required if the `rwx_supported` configuration option is set to `true`.
 
-|`kai-db` database
+|`kai-db`
 |`5Gi`
 |RWO
 |{mta-dl-plugin} database required to run an AI-assisted code resolution.
