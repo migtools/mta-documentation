@@ -17,7 +17,6 @@ This provider has the following capabilities:
 == `referenced`
 
 By using the `referenced` capability, the provider finds references in the source code. This capability takes three input parameters: `pattern`, `location`, and `annotated`.
-+
 
 [source,terminal]
 ----
@@ -27,13 +26,10 @@ when:
     location: "<location>" 
     annotated: "<annotated>" 
 ----
-+
 where:
-+
  `pattern` :: A regular expression pattern to match.
  `location` :: Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
  `annotated` :: Checks for specific annotations and their elements, such as name and value, in the Java code by using a query. For example, the following query matches the `Bean` (URL = “http://www.example.com”) annotation in the method.
-+
 
 [source,yaml]
 ----
@@ -43,7 +39,6 @@ where:
       - name: url
         value: "http://www.example.com"
 ----
-+
 
 See xref:java-conditions-capabilities[Java condition and capabilities] for a detailed explanation on `java.referenced` capabilities.
 

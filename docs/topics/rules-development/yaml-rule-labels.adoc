@@ -47,7 +47,7 @@ labels:
 ----
 
 [id="reserved-label_{context}"]
-.Reserved labels
+== Reserved labels
 
 The analyzer defines some labels that have special meaning as follows:
 
@@ -87,7 +87,7 @@ _Examples:_
 +
 `--label-selector="(key1=val1 || key2=val2) && !val3"`
 
-.Dependency labels
+== Dependency labels
 
 The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as its programming language and whether the dependency is open source or internal.
 
