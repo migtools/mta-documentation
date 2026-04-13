@@ -34,7 +34,7 @@ vi tackle
 ----
 
 . Complete one of the following Tackle configurations:
-.. Enable LLM proxy and the Solution Server in the Tackle CR:
+.. Enable LLM proxy and optionally the Solution Server in the Tackle CR:
 +
 [source, yaml]
 ----
@@ -53,7 +53,7 @@ spec:
   kai_llm_baseurl: "https://<serving-name>-<data-science-project-name>.apps.mta-ai.example.com/v1"
 ---
 ----
-.. Enter the LLM configurations in the Tackle CR to use the LLM without the proxy service:
+.. Enter the LLM configurations in the Tackle CR without the proxy service:
 +
 [source, yaml]
 ----
