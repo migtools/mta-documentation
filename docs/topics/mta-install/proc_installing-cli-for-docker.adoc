@@ -14,7 +14,7 @@ To install the {ProductShortName} CLI for use with Docker on Windows, you must c
 
 * You have a host with 64-bit Windows 11, version 21H2 or later.
 
-* You downloaded the Docker Desktop for Windows installation program. For more details, see link:https://docs.docker.com/desktop/install/windows-install/[Install Docker Desktop on Windows].
+* You downloaded the Docker Desktop for Windows installation program.
 
 .Procedure
 
@@ -117,3 +117,6 @@ PS C:\Users\<user_name>> *$env:DOTNET_PROVIDER_IMG="quay.io/konveyor/dotnet-exte
 PS C:\Users\<user_name>> *$env:RUNNER_IMG="quay.io/konveyor/kantra:v0.5.0"*
 ----
 
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.docker.com/desktop/install/windows-install/[Install Docker Desktop on Windows]
