@@ -57,7 +57,7 @@ ENV REDIS_URL={{ .Values.manifest.redis.url }}
 [subs="+quotes"]
 ----
 $ *mta-cli generate helm --chart-dir _<path_to_helm_chart>_* \
-  *--input _<path_to_discovery-manifest>_* \
+  *--input _<path_to_discovery_manifest>_* \
   *--set manifest.name=my-new-app* \
   *--output-dir _<location_of_deployment_manifests>_*
 ----
