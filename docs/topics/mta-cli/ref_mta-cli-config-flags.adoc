@@ -31,7 +31,6 @@ You can connect to the {ProductFullName} Hub and download profile bundles from t
 |`login`
 |
 |Use the command to enter the `host` URL, `username`, and the `password`. 
-+
 
 The `host` URL is the {ProductShortName} user interface URL. The username and password are the {ProductShortName} realm credentials.
 
