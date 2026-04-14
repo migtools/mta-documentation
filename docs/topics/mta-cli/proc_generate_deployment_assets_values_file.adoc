@@ -71,7 +71,7 @@ The variable priority hierarchy for generating deployment manifests is as follow
 
 * **Priority 1: The `--set` command flag**: Any value specified with this flag has the highest priority and overrides variables defined in either the `values.yaml` file or the discovery manifest.
 * **Priority 2: The discovery manifest**: If you do not use the `--set` flag, the discovery manifest configuration is used as the primary input for generation.
-* **Priority 3: The `values.yaml` file**: If this file is not empty, it provides the input values; however, if a key exists in both the discovery manifest and the `values.yaml` file, the value from the discovery manifest takes precedence.
+* **Priority 3: The `values.yaml` file**: If this file is not empty, it provides the input values. However, if a key exists in both the discovery manifest and the `values.yaml` file, the value from the discovery manifest takes precedence.
 
 .Verification
 
