@@ -4,17 +4,17 @@
 
 :_mod-docs-content-type: REFERENCE
 [id="yaml-dotnet-provider_{context}"]
-= C# provider
+= Csharp provider
 
 [role="_abstract"]
-The `C#` provider is an external provider used to analyze `.NET Core` and `C#` source code. Currently, the provider supports the `referenced` capability.
+The `csharp` provider is an external provider used to analyze `.NET Core` and `C#` source code. Currently, the provider supports the `referenced` capability.
 
-The `C#` provider uses a gRPC interface to perform a semantic analysis of an application source code in the `source-only` mode. The provider parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the `C#` custom rule definition, the analyzer identifies violations in your code that you must resolve before the application migration. 
+The `csharp` provider uses a gRPC interface to perform a semantic analysis of an application source code in the `source-only` mode. The provider parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the custom rule definition, the analyzer identifies violations in your code that you must resolve before the application migration. 
 
 == `referenced`
 
-The `C#` provider supports `referenced` capability in rules to define fields such as `pattern` and `location` based on which the provider searches the code for violations. 
-+
+The `csharp` provider supports the `referenced` capability in rules to define fields such as `pattern` and `location`. The provider uses these patterns to search the source code for violations. 
+
 [source,yaml]
 ----
 when:
@@ -22,7 +22,6 @@ when:
     pattern: "<pattern>" 
     location: CLASS 
 ----
-+
 where:
 
 * `pattern` is a regular expression pattern to match the required reference, for example, `HttpNotFound`.
