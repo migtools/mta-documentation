@@ -1,0 +1,18 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-04-15
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-1-1_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.1.1 provides the following fixed issues that have a significant impact.
+
+//placeholder for MTA-6774
+
+(link:https://redhat.atlassian.net/browse/MTA-6774[MTA-6774])
+
+
+//placeholder for MTA-6788
+
+(link:https://redhat.atlassian.net/browse/MTA-6788[MTA-6788])

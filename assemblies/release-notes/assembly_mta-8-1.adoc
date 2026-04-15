@@ -23,4 +23,3 @@ include::assembly_mta-8-1-0.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-mta-8-1-0[:context: {parent-context-of-mta-8-1-0}]
 ifndef::parent-context-of-mta-8-1-0[:!context:]
-
