@@ -1,19 +1,14 @@
 :mta:
-include::topics/templates/document-attributes.adoc[]
-:_mod-docs-content-type: ASSEMBLY
-[id="cli-guide"]
-= Using the {ProductName} command-line interface
- 
 :toc:
 :toclevels: 4
 :numbered:
 :imagesdir: topics/images
 :context: cli-guide
 :cli-guide:
+include::topics/templates/document-attributes.adoc[]
 
-//Inclusive language statement
-include::topics/making-open-source-more-inclusive.adoc[]
-
+[id="cli-guide"]
+= Using the {ProductName} command-line interface
 
 include::topics/mta-cli/con_intro-to-the-cli.adoc[leveloffset=+1]
 
