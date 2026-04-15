@@ -2,7 +2,7 @@
 //
 // * docs/cli-guide/master.adoc
 
-:_content-type: REFERENCE
+:_mod-docs-content-type: REFERENCE
 [id="mta-tech-tags_{context}"]
 = Supported technology tags
 
