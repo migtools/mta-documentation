@@ -16,7 +16,7 @@ endif::[]
 :context: analyzing-apps-profiles
 
 [role="_abstract"]
-As a Migrator, you can use profiles to run an application analysis in the {ProductShortName} {CLIName}. Profiles have standardized analysis configuration, scope of an analysis,  and custom rules that you can reuse for multiple analyses of a local application. 
+As a Migrator, you can use profiles to run an application analysis in the {ProductShortName} {CLIName}. Profiles have standardized analysis configuration, scope of an analysis,  and custom rules that you can reuse for multiple analyses of a local application.
 
 Before you run an analysis, you can use the {ProductShortName} {CLIName} to download the latest configuration through a secure or insecure connection to the Hub.
 
