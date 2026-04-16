@@ -3,7 +3,7 @@
 // * Standard document attributes *
 // ********************************
 :toc:
-:toclevels: 3
+:toclevels: 4
 :numbered:
 :imagesdir: topics/images
 :topicsdir: topics
