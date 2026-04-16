@@ -43,7 +43,7 @@ Before this update, an {ProductShortName} Architect could not discover or import
 (link:https://issues.redhat.com/browse/MTA-6120[MTA-6120])
 
 Concurrent usage of {mta-dl-plugin} for code resolution at scale no longer causes race conditions::
-Concurrent usage of the Solution Server through the {mta-dl-plugin} Visual Studio (VS) Code plugin for code resolution at scale caused race conditions for duplicate incidents. With this release, this issue is fixed. The plugin generates resolutions for the incidents identified when many users use it concurrently. 
+Concurrent usage of the Solution Server through the {mta-dl-plugin} Visual Studio Code plugin for code resolution at scale caused race conditions for duplicate incidents. With this release, this issue is fixed. The plugin generates resolutions for the incidents identified when many users use it concurrently. 
 +
 (link:https://issues.redhat.com/browse/MTA-6230[MTA-6230])
 

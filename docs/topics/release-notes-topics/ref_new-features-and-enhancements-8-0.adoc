@@ -8,8 +8,8 @@
 [role="_abstract"]
 {ProductFirstRef} ({ProductShortName}) version 8.0.0 provides the following major new features and enhancements.
 
-{mta-dl-plugin} is available in the VS Code extension::
-You can opt to use {mta-dl-plugin} features in the VS Code extension. With the Developer Lightspeed feature, you can use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application.
+{mta-dl-plugin} is available in the Visual Studio Code extension::
+You can opt to use {mta-dl-plugin} features in the Visual Studio Code extension. With the Developer Lightspeed feature, you can use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application.
 +
 --
 The {mta-dl-plugin} core features are the following:
