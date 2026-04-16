@@ -8,7 +8,7 @@
 [role="_abstract"]
 Solution Server integrates with the {ProductShortName} Hub backend component to use the database and volumes necessary to store and retrieve the solved examples.
 
-To enable Solution Server and other AI configurations in the {mta-dl-full} VS Code extension, you must modify the Tackle custom resource (CR) with additional parameters.
+To enable Solution Server and other AI configurations in the {mta-dl-full} Visual Studio Code extension, you must modify the Tackle custom resource (CR) with additional parameters.
 
 [NOTE]
 ====

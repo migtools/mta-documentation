@@ -14,14 +14,14 @@ When using the agent mode, you can reject the changes or discontinue the stream 
 
 .Prerequisites
 
-* You opened a Java project in your VS Code workspace.
+* You opened a Java project in your Visual Studio Code workspace.
 * You configured an analysis profile on the *{ProductShortName} Analysis View* page.
 
 .Procedure
 
 . Verify that agent mode is enabled in one of the following ways:
 +
-.. Type `Ctrl + Shift + P` in VS Code search (Linux/Windows system) and `Cmd + Shift + P` for Mac to go to the command palette. 
+.. Type `Ctrl + Shift + P` in Visual Studio Code search (Linux/Windows system) and `Cmd + Shift + P` for Mac to go to the command palette. 
 .. Enter `Preferences: Open User Settings (JSON)` to open the `settings.json` file.
 .. Ensure that `mta-vscode-extension.genai.agentMode` is set to `true`.
 +

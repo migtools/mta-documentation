@@ -15,7 +15,7 @@ The Solution Server augments previous patterns of how source code changed to res
 
 The Solution Server delivers two primary benefits to users:
 
-* *Contextual Hints*: It surfaces examples of past migration solutions — including successful user modifications and accepted fixes — offering actionable hints for difficult or previously unsolved migration problems.
+* *Contextual Hints*: It surfaces examples of past migration solutions, including successful user modifications and accepted fixes, offering actionable hints for difficult or previously unsolved migration problems.
 * *Migration Success Metrics*: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully migrating a given code segment.
 
 When you use the Solution Server, you can view a diff of the updated portions of the code and the original source code to do a manual review. In a manual review of the suggested AI resolutions, you can accept, reject, or edit the suggested code changes. 

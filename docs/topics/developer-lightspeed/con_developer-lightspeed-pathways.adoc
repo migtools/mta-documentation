@@ -43,7 +43,7 @@ As a Migrator, you can complete the following workflow to use the Agent AI mode 
 [id="llm-proxy-workflow_{context}"]
 == Workflow to use the LLM through the proxy service
 
-You can allow client endpoints, for example, the MTA Visual Studio Code extension, to use the proxy service to access the large language models (LLMs). The client uses Keycloak credentials to authenticate to the MTA Hub. To authenticate to the LLM, the client sends a JSON Web Token (JWT) issued by Keycloak to the proxy service. The proxy service validates the client's JWT against the Hub's Keycloak instance. 
+You can allow client endpoints, for example, the {ProductShortName} Visual Studio Code extension, to use the proxy service to access the large language models (LLMs). The client uses Keycloak credentials to authenticate to the {ProductShortName} Hub. To authenticate to the LLM, the client sends a JSON Web Token (JWT) issued by Keycloak to the proxy service. The proxy service validates the client's JWT against the Hub's Keycloak instance. 
 
 The proxy service completes a separate authentication process to access the LLM through an Administrator-controlled endpoint. The proxy service authenticates to the LLM by using the cluster secret that contains the LLM API key configured by the Administrator. Thus, the proxy service allows Administrators to create, manage, and rotate LLM API keys without the need to share the LLM key with multiple client endpoints.
 
