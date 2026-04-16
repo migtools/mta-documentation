@@ -10,7 +10,7 @@ To analyze applications in environments where a container engine is not availabl
 
 [IMPORTANT]
 ====
-Containerless CLI is a default mode. To enable container runtime usage for the analysis of Java applications, you must set the `--run-local` flag to `false`:
+Containerless CLI is the default mode. To enable container runtime usage for the analysis of Java applications, you must set the `--run-local` flag to `false`:
 
 ----
 --run-local=false

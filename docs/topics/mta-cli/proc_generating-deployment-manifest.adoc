@@ -44,11 +44,6 @@ $ *mta-cli cd _<location_of_deployment_manifest>_*
 ----
 $ *cat configmap.yaml*
 ----
-+
-[subs="+quotes"]
-----
-$ *cat Dockerfile*
-----
 
 . Verify the Dockerfile:
 +
