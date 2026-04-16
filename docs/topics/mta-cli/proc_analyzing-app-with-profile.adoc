@@ -45,7 +45,7 @@ Password: _<my_password>_
 +
 [subs="+quotes, macros"]
 ....
-$ *mta-cli config sync --url \https://github.com/_<my-app-repository>_ --application-path _<path_to_my_app>_ --insecure*
+$ *mta-cli config sync --url \https://github.com/_<my_app_repository>_ --application-path _<path_to_my_app>_ --insecure*
 ....
 +
 [NOTE]
