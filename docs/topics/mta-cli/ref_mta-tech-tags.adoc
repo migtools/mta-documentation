@@ -149,7 +149,7 @@ View the {ProductFullName} technology tags supported by the {ProductShortName} c
 * JBehave
 * JBoss Cache
 * JBoss EJB XML
-* JBoss logging
+* JBoss Logging
 * JBoss Transactions
 * JBoss Web XML
 * JBossMQ Client

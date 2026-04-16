@@ -46,7 +46,7 @@ rules:
     name: ""
   repository:
     kind: git
-    url: <url>
+    url: URL
     branch: ""
     tag: ""
     path: default/generated

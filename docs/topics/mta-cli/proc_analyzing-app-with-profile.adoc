@@ -43,9 +43,9 @@ Password: _<my_password>_
 
 . Sync the application with its remote repository and download the profile and custom rules files from the Hub.
 +
-[subs="+quotes"]
+[subs="+quotes, macros"]
 ....
-$ *mta-cli config sync --url https://github.com/_<my-app-repository>_ --application-path _<path_to_my_app>_ --insecure*
+$ *mta-cli config sync --url \https://github.com/_<my-app-repository>_ --application-path _<path_to_my_app>_ --insecure*
 ....
 +
 [NOTE]
