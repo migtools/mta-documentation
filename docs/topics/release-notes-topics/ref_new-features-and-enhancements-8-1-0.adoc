@@ -6,7 +6,7 @@
 = New features and enhancements
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version 8.1.0 provides the following major new features and enhancements.
+Review the following major new features and enhancements in {ProductFirstRef} ({ProductShortName}) version 8.1.0.
 
 
 Centralized configuration management across components for standardizing analysis configuration and custom rules::

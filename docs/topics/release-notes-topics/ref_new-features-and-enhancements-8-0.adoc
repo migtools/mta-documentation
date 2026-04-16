@@ -6,10 +6,10 @@
 = New features and enhancements
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version 8.0.0 provides the following major new features and enhancements.
+Review the following major new features and enhancements in {ProductFirstRef} ({ProductShortName}) 8.0.0.
 
-{mta-dl-plugin} is available in the VS Code extension::
-You can opt to use {mta-dl-plugin} features in the VS Code extension. With the Developer Lightspeed feature, you can use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application.
+{mta-dl-plugin} is available in the Visual Studio Code extension::
+You can opt to use {mta-dl-plugin} features in the Visual Studio Code extension. With the Developer Lightspeed feature, you can use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application.
 +
 --
 The {mta-dl-plugin} core features are the following:
@@ -24,9 +24,9 @@ The Solution Server delivers two primary benefits to users:
 
 * Contextual Hints: It surfaces examples of past migration solutions, including successful user modifications and accepted fixes, offering actionable hints for difficult or previously unsolved migration problems.
 
-** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully resolving a given migration issue or incident.
+** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. Integrated Development Environments (IDEs) or automation tools can use these metrics to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully resolving a given migration issue or incident.
 
-* Agentic AI (Technology Preview): In the agent mode, {mta-dl-plugin} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
+* Agentic AI (Technology Preview): In the agent mode, {mta-dl-plugin} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that the accepted solution might introduce and fixes those issues.
 NOTE: To obtain support for features in {mta-dl-plugin}, you need an active Red Hat Advanced Developer Suite (RHADS) subscription.
 
 
@@ -34,7 +34,7 @@ NOTE: To obtain support for features in {mta-dl-plugin}, you need an active Red 
 --
 
 {ProductShortName} supports platform awareness to import applications from source platform instances::
-You can use platform awareness to discover applications from a source platform and import them into the {ProductShortName} application inventory. {ProductShortName} discovers the applications by their coordinates in the source platform where they are deployed. With platform awareness, you can use the platform and runtime configurations of applications to create a discovery manifest that can be used to generate other deployment assets. In {ProductShortName} 8.0.0, you can discover applications deployed in the Cloud Foundry platform.
+You can use platform awareness to discover applications from a source platform and import them into the {ProductShortName} application inventory. {ProductShortName} discovers the applications by their coordinates on the source platform where you deployed them. With platform awareness, you can use the platform and runtime configurations of applications to create a discovery manifest to generate other deployment assets. In {ProductShortName} 8.0.0, you can discover applications deployed in the Cloud Foundry platform.
 +
 (link:https://issues.redhat.com/browse/MTA-4846[MTA-4846])
 
@@ -46,7 +46,7 @@ You can use the discovery manifest to generate assets in the web console to depl
 
 
 {ProductShortName} CLI supports running a live discovery in a remote CF instance::
-With this update, you can perform a live discovery if you want to determine what is deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.
+With this update, you can perform a live discovery if you want to determine applications that you deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.
 +
 For more information, see link:{mta-URL}/using_the_migration_toolkit_for_applications_command-line_interface/index#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
 +
@@ -67,13 +67,13 @@ For more information, see link:{mta-URL}/using_the_migration_toolkit_for_applica
 --
 
 Analysis insights are available in the {ProductShortName} UI::
-Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, insights were only available in the analysis output and a static report after you ran an application analysis. With this enhancement, you can access analysis insights also from the {ProductFullName} user interface (UI).
+Analysis insights contain information about the technologies used in the application and their usage in the code. Before this update, you could only view insights in the analysis output and a static report after running an application analysis. With this enhancement, you can access analysis insights also from the {ProductFullName} user interface (UI).
 +
 (link:https://issues.redhat.com/browse/MTA-5420[MTA-5420])
 
 
 A new Visual Studio Code IDE plugin for application analysis::
-With this enhancement, you can use a new Visual Studio Code IDE plugin that has the following features:
+With this enhancement, you can use a new Visual Studio Code Integrated Development Environment (IDE) plugin that has the following features:
 
 * Standard application analysis and issue detection
 * Generative AI (GenAI) feature:
@@ -82,16 +82,16 @@ With this enhancement, you can use a new Visual Studio Code IDE plugin that has 
 
 +
 --
-NOTE: You must restart your server after changing the Gen AI settings for the change to take effect.
+NOTE: You must restart your server after changing the GenAI settings for the change to take effect.
 
 (link:https://issues.redhat.com/browse/MTA-5360[MTA-5360])
 --
 
 
-Setting default credentials is supported in the {ProductShortName} UI::
-Before this update, you could only assign credentials to an application manually once you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications, each of these applications requiring credentials for language and technology discovery tasks. With this update, instead of manually defining credentials, you can define credentials that will be used by default for an application that does not have any credentials assigned to it.
+{ProductShortName} UI supports setting default credentials::
+Before this update, you could only assign credentials to an application manually after you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications,with each application requiring credentials for language and technology discovery tasks. With this update, instead of manually defining credentials, you can define default credentials for any application that does not yet have credentials.
 +
-IMPORTANT: You can only set Maven or source control credentials as default credentials. You can only define one default set of credentials per credential type.
+IMPORTANT: You can only set Maven or source control credentials as default credentials. You can define only one default set of credentials per credential type.
 +
 For more information, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index#setting-default-credentials_managing-applications[Setting default credentials].
 +
