@@ -17,7 +17,8 @@ IMPORTANT: You must create a configuration file for your unsupported language pr
 
 * You created a configuration file for your unsupported language provider, for example:
 +
-....
+[source,yaml]
+----
 [
 {
 "name": "java",
@@ -32,7 +33,7 @@ IMPORTANT: You must create a configuration file for your unsupported language pr
 }]
 }
 ]
-....
+----
 
 .Procedure
 

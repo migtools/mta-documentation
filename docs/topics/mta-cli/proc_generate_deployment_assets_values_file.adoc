@@ -67,6 +67,7 @@ where:
 `_<path_to_helm_chart>_`:: Specifies the directory containing the Helm chart. 
 `_<path_to_discovery_manifest>_`:: Specifies the location of the discovery manifest file. 
 `_<location_of_deployment_manifests>_`:: Specifies the output directory for the generated manifests. 
+
 +
 The variable priority hierarchy for generating deployment manifests is as follows:
 

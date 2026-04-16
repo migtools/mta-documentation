@@ -21,54 +21,55 @@ Migrators can use analysis profiles and custom rules downloaded from the {Produc
 +
 [subs="+quotes"]
 ----
-$ mta-cli config login 
+$ *mta-cli config login* 
 ----
-+
+
 . Enter the `Host`, `Username`, and `Password` to connect to the Hub.
 +
-
 [subs="+quotes"]
 ----
-$ mta-cli config login 
+$ *mta-cli config login*
+----
++
+[subs="+quotes"]
+----
 Host: https://mta-namespace.apps.cluster.example.com/hub
 Username: _<my_user_name>_
 Password: _<my_password>_
 ----
-+
-[NOTE]
-====
+
 * The `Host` is the `tackle` URL of {ProductShortName} deployed in your cluster that exposes the `hub` endpoint.
 * The `Username` and `Password` are the `keycloak` credentials that you use to log in to {ProductShortName} in your cluster.
-====
-+
-. Sync the application with its remote repository and  download the profile and custom rules files from the Hub.
+
+. Sync the application with its remote repository and download the profile and custom rules files from the Hub.
 +
 [subs="+quotes"]
 ....
-$ mta-cli config sync --url https://github.com/<my-app-repository> --application-path _<path/to/my-app>_ --insecure
+$ *mta-cli config sync --url https://github.com/_<my-app-repository>_ --application-path _<path_to_my_app>_ --insecure*
 ....
 +
 [NOTE]
 ====
 {ProductShortName} downloads the profile and custom rule files in the `.konveyor/profiles/` path in your local application.
 ====
-+
+
 . Check the path where {ProductShortName} downloaded the configuration:
 +
 [subs="+quotes"]
 ----
-$ mta-cli config list --profile-dir _<path/to/my_app>_
+$ *mta-cli config list --profile-dir _<path_to_my_app>_*
 ----
+
 . Run an analysis by using the downloaded profile configuration.
 +
 [subs="+quotes"]
 ----
-$ mta-cli analyze -i _<path/to/my_app>_ -o _<path/to/my_app_report>_ --overwrite --mode source-only
+$ *mta-cli analyze -i _<path_to_my_app>_ -o _<path_to_my_app_report>_ --overwrite --mode source-only*
 ----
 +
 [TIP]
 ====
-For Java applications, you can use the `full` mode while running an analysis. For non-Java applications, the analysis mode must be `source-only`. 
+For Java applications, use the `full` mode while running an analysis. For non-Java applications, the analysis mode must be `source-only`. 
 ====
 +
 [NOTE]
@@ -77,7 +78,7 @@ The following command overrides the values of `target` in the analysis profile w
 
 [subs="+quotes"]
 ----
-mta-cli analyze -i _<path/to/my_app>_ -o _<path/to/my_app_report>_ --overwrite --target quarkus --mode source-only
+$ *mta-cli analyze -i _<path_to_my_app>_ -o _<path_to_my_app_report>_ --overwrite --target quarkus --mode source-only*
 ----
 ====
 

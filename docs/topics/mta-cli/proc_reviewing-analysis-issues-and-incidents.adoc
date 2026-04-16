@@ -12,7 +12,7 @@ Each issue contains a list of files where a rule matched one or more times. Thes
 
 .Procedure
 
-. Open the analysis report. For more information, see xref:accessing-analysis-report_reviewing-analysis-reports[Accessing an analysis report].
+. Open the analysis report.
 . Click *Issues*.
 . Click on the issue you want to check.
 . Under the *File* tab, click on a file to display an incident or incidents that triggered the issue.
@@ -46,4 +46,6 @@ Use the Quarkus Maven plugin adding the following sections to the pom.xml file:
 </build>
 ....
 
-
+[role="_additional-resources"]
+.Additional resources
+* xref:accessing-analysis-report_reviewing-analysis-reports[Accessing an analysis report]
