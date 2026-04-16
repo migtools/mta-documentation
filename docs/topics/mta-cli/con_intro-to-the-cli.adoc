@@ -2,7 +2,7 @@
 //
 // * docs/cli-guide/master.adoc
 
-:_content-type: CONCEPT
+:_mod-docs-content-type: CONCEPT
 [id="intro-to-the-cli_{context}"]
 = Introduction to the {ProductShortName} command-line interface
 

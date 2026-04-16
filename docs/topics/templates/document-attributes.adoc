@@ -3,11 +3,12 @@
 // * Standard document attributes *
 // ********************************
 :toc:
-:toclevels: 3
+:toclevels: 4
 :numbered:
 :imagesdir: topics/images
 :topicsdir: topics
 
+:_mod-docs-content-type: ATTRIBUTES
 // *****************
 // * Product names *
 // *****************

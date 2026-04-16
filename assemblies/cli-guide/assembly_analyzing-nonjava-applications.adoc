@@ -22,7 +22,6 @@ You can perform the analysis in either of the following ways:
 
 * Select a supported language provider to run the analysis for. 	
 * Overwrite the existing supported language provider with your own unsupported language provider, and then run the analysis on it.
- 
 
 IMPORTANT: Analyzing applications written in languages other than Java is only possible in container mode. You can use the containerless CLI only for Java applications.
 

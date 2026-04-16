@@ -6,7 +6,7 @@
 = A sample profile configuration
 
 [role="_abstract"]
-After Migrators download the analysis profile from the Hub, they can modify the configuration before running an analysis. 
+After Migrators download the analysis profile from the Hub, they can modify the configuration before running an analysis.
 
 When you sync the profile, the {ProductShortName} {CLIName} overrides the modified configuration by downloading the latest configuration from the Hub to your local application.
 
