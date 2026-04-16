@@ -14,7 +14,6 @@ You can use the following discovery manifest template as a reference to make sur
 You must configure the `buildPacks` in the Cloud Foundry application manifest to include the `buildPacks` in the discovery and deployment assets.
 ====
 
-[subs="+quotes"]
 ----
 manifest:
     appName: my-app
