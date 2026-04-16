@@ -6,16 +6,16 @@
 = Fixed issues
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version 8.0.0 provides the following fixed issues and other problems that have a significant impact. 
+Review the following fixed issues that have a significant impact in {ProductFirstRef} ({ProductShortName}) version 8.0.0. 
 
-The default `values.yaml` file is merged with the discover `values.yaml` file when generating a deployment manifest::
-Before this update, when you generated a deployment manifest by using the Helm template, the default values in the`values.yaml` file, packaged with the Helm chart, were ignored. Consequently, only the values from the `values.yaml` file created after running the `mta-cli discover` command were used. With this update, the default `values.yaml` file is merged with the discover `values.yaml` file.
+{ProductShortName} merges the default `values.yaml` file with the discover `values.yaml` file when generating a deployment manifest::
+Before this update, when you generated a deployment manifest by using the Helm template, {ProductShortName} ignored the default values in the `values.yaml` file packaged with the Helm chart. As a result, {ProductShortName} used only the values from the `values.yaml` file created after running the `mta-cli discover` command. With this update, {ProductShortName} merges the default `values.yaml` file with the discover `values.yaml` file.
 +
 (link:https://issues.redhat.com/browse/MTA-5793[MTA-5793])
 
 
 {ProductShortName} CLI no longer fails to detect dependencies for Gradle projects::
-Before this update, when you ran an application analysis for Gradle projects in containerless mode, {ProductFullName} command-line interface (CLI) did not detect Gradle dependencies. As a consequence, the analysis report did not list the dependencies and displayed an error message in the analysis logs instead. With this update, the issue is fixed. As a result, {ProductShortName} CLI detects Gradle dependencies after the analysis is complete.
+Before this update, when you ran an application analysis for Gradle projects in containerless mode, {ProductFullName} command-line interface (CLI) did not detect Gradle dependencies. As a result, the analysis report did not list the dependencies and displayed an error message in the analysis logs instead. With this update, the issue is fixed. As a result, {ProductShortName} CLI detects Gradle dependencies after the analysis is complete.
 +
 (link:https://issues.redhat.com/browse/MTA-4033[MTA-4033])
 
@@ -27,7 +27,7 @@ Before this update, when you analyzed an application built with Gradle in `Sourc
 
 
 The discovery manifest lists all defined web processes in the application::
-Before this update, the `mta-cli discover` command only moved an application-level process with the process type explicitly defined to the `processes` block in the discovery manifest. Consequently, the discovery manifest did not list implicit application-level processes in the `processes` block. This resulted in the violation of the recommended clarity and proper configuration practices, especially if multiple process types were planned. With this update, `mta-cli discover` moves both implicit and explicit application-level process types to the `processes` block in the discovery manifest.
+Before this update, the `mta-cli discover` command only moved an application-level process with the process type explicitly defined to the `processes` block in the discovery manifest. As a result, the discovery manifest did not list implicit application-level processes in the `processes` block. This resulted in the violation of the recommended clarity and proper configuration practices, especially if Cloud Foundry application manifest includes multiple process types. With this update, `mta-cli discover` moves both implicit and explicit application-level process types to the `processes` block in the discovery manifest.
 +
 (link:https://issues.redhat.com/browse/MTA-6030[MTA-6030])
 
