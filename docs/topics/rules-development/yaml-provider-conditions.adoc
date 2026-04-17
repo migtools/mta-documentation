@@ -98,7 +98,7 @@ when:
 
 .5+|`builtin`
 |`xml`
-|Search XML files using xpath queries.
+|Search XML files using XPath queries.
 
 
 |`json`
