@@ -4,12 +4,21 @@
 
 :_mod-docs-content-type: PROCEDURE
 [id="generating-deployment-manifest_{context}"]
-= Generating a deployment manifest 
+= Generating a deployment manifest by using a discovery manifest
 
 [role="_abstract"]
-To prepare your application for deployment to a container platform, generate a deployment manifest by using the {ProductFullName} command-line interface (CLI). Generating the deployment manifest creates the necessary configuration files to define your application's resources, streamlining the transition to your target environment.
+To prepare your application for deployment to a container platform, generate a deployment manifest by using a discovery manifest with the {ProductFullName} command-line interface (CLI). Generating the deployment manifest creates the necessary configuration files to define your application's resources, streamlining the transition to your target environment.
 
-You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (CF) application by using the `generate` command. Based on the Helm template that you provide, the command generates manifests, such as a ConfigMap, and non-Kubernetes manifests, such as a Dockerfile, for application deployment. 
+You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (CF) application by using the `generate` command. Based on the Helm template that you provide, the command generates manifests, such as a ConfigMap, and non-Kubernetes manifests, such as a Dockerfile, for application deployment.
+
+Note that you can generate application assets by using only source code, without generating a discovery manifest first. If the discovery manifest is unavailable, the generator uses the following implicit data from the application profile for opinionated asset generation:
+
+* *Application metadata:* Information such as the application name, version, and unique identifiers.
+* *Application archetypes:* Standardized templates or structures identified during the initial analysis.
+* *Identified application tags:* Logic must be applied based on the tags found during analysis. For example:
+** For Quarkus, configure specific environment variables for native-mode deployments.
+** For Spring Boot, apply standard Spring framework configurations and dependencies to the generated manifests.
+
 
 .Prerequisites
 
@@ -24,7 +33,7 @@ You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (
 
 . Open the terminal application and navigate to the `<{ProductShortName}_HOME>/` directory.
 
-. Generate the deployment manifest as an output file:
+. Generate the deployment manifest as an output file from the discovery manifest:
 +
 [subs="+quotes"]
 ----
