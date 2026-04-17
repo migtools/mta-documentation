@@ -37,15 +37,23 @@ $ *mta-cli generate helm --chart-dir helm_sample \
 +
 [subs="+quotes"]
 ----
-$ *mta-cli cd _<location_of_deployment_manifest>_ \*
-$ *cat configmap.yaml*
-$ *cat Dockerfile*
+$ *mta-cli cd _<location_of_deployment_manifest>_*
 ----
++
+[subs="+quotes"]
+----
+$ *cat configmap.yaml*
+----
+
 . Verify the Dockerfile:
 +
 [subs="+quotes"]
 ----
-$ *mta-cli cd _<location_of_deployment_manifest>_ \*
+$ *mta-cli cd _<location_of_deployment_manifest>_*
+----
++
+[subs="+quotes"]
+----
 $ *cat Dockerfile*
 ----
 

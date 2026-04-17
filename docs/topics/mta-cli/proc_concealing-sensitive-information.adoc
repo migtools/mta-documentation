@@ -23,6 +23,10 @@ NOTE: If you do not specify the `--conceal-sensitive-data` option, the option is
 [subs="+quotes"]
 ....
 $ *cat _<manifest_name>_.yaml*
+....
++
+[subs="+quotes"]
+....
 name: _<manifest_name>_
 disk_quota: 512M
 memory: 500M
@@ -47,6 +51,10 @@ $ *mta-cli discover cloud-foundry --conceal-sensitive-data=true --input _<path_t
 [subs="+quotes,macros"]
 ....
 $ *tree _<path_to_discovery_manifest>_*
+....
++
+[subs="+quotes"]
+....
 _<path_to_discovery_manifest>_
 ├── discover_manifestpass:[_]_<app-name>_.yaml
 ├── secretspass:[_]_<discovery_manifest_name>_.yaml
@@ -59,6 +67,10 @@ _<path_to_discovery_manifest>_
 [subs="+quotes"]
 ....
 $ *cat _<discovery_manifest_name>_.yaml*
+....
++
+[subs="+quotes"]
+....
 name: _<discovery_manifest_name>_
 timeout: 10
 docker:
@@ -77,6 +89,10 @@ The sensitive data was replaced with a UUID (Universally Unique Identifier).
 [subs="+quotes,macros"]
 ....
 $ *cat secretspass:[_]_<discovery_manifest_name>_.yaml*
+....
++
+[subs="+quotes"]
+....
 f0e9ea9e-1913-446f-8483-da9301373eef: docker-registry-user
 ....
 +
