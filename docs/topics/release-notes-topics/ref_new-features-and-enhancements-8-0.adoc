@@ -24,7 +24,7 @@ The Solution Server delivers two primary benefits to users:
 
 * Contextual Hints: It surfaces examples of past migration solutions, including successful user modifications and accepted fixes, offering actionable hints for difficult or previously unsolved migration problems.
 
-** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by IDEs or automation tools to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully resolving a given migration issue or incident.
+** Migration Success Metrics: It exposes detailed success metrics for each migration rule, derived from real-world usage data. These metrics can be used by Integrated Development Environments (IDEs) or automation tools to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully resolving a given migration issue or incident.
 
 * Agentic AI (Technology Preview): In the agent mode, {mta-dl-plugin} makes iterative resolutions to issues in code. If you accept the suggested resolutions, Developer Lightspeed scans the code for diagnostic or linting issues that can be created due to the accepted solution and fixes those issues.
 NOTE: To obtain support for features in {mta-dl-plugin}, you need an active Red Hat Advanced Developer Suite (RHADS) subscription.

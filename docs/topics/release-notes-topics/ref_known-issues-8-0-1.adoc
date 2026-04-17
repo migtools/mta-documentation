@@ -25,7 +25,7 @@ To work around this problem, analyze Gradle applications by using the {ProductSh
 
 
 {ProductShortName} UI fails to process applications with service bindings::
-When you use the {ProductFullName} user interface (UI) to run an application discovery for a deployed Cloud Foundry (CF) application with a service binding, {ProductShortName} UI does not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information. Consequently, the discovery fails.
+When you use the {ProductFullName} user interface (UI) to run an application discovery for a deployed Cloud Foundry (CF) application with a service binding, {ProductShortName} UI does not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information. As a result, the discovery fails.
 +
 To work around this problem, run the application discovery by using the {ProductShortName} command-line interface (CLI).
 +
