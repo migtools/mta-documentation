@@ -30,10 +30,10 @@ For example, the migration path for an EAP 6 application is EAP 8 and the target
 +
 For example, if you want to create assets to migrate an EAP 6 application as an OpenJDK 21 application _and_ as an EAP 8 application in {ocp-short} (target platform), you can achieve this through a target profile that has two generators, one for each migration path.
 
-* Application - The application includes the discovery manifest, tags, and the asset repository. 
+* Application - The application includes tags, the asset repository, and, optionally, the discovery manifest. If the discovery manifest is unavailable, the generator uses implicit data from the application profile.
 +
 //provide the retrieve configuration link after publishing the doc
-The configuration retrieval process generates a discovery manifest that contains the platform and runtime configurations of an application deployed in the source platform (CF) instances. During asset generation, the discovery manifest is parsed by generator templates that produce the final assets for deployment. 
+If you want to use the discovery manifest, the configuration retrieval process generates this manifest. The manifest contains the platform and runtime configurations of an application deployed in the source platform (CF) instances. During asset generation, the discovery manifest is parsed by generator templates that produce the final assets for deployment. 
 +
 The application also contains tags that you must configure as criteria tags in an Archetype.  
 +
