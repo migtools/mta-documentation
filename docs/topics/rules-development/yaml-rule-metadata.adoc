@@ -8,20 +8,27 @@
 = Rule metadata structure
 
 [role="_abstract"]
-Rule metadata contains a unique rule ID, labels, effort, and category.
+Rule metadata contains a unique rule ID, labels, effort, and category so that the analyzer can select the rules for an analysis and compute the total effort to resolve the issues detected in the source code.
 
-[source,yaml]
+You can use rule metadata to:
+
+* Estimate the total migration effort. 
+* Prioritize issues for resolution based on the effort.
+* Evaluate if a resolution is mandatory through rule category before migrating the applications to the target technologies or platforms.
+* Define labels that {ProductShortName} uses to filter rules for an analysis.
+
+[source,yaml, subs="+quotes"]
 ----
-ruleID: "unique_id" 
+ruleID: "_<unique_id>_" 
 labels: 
   # key=value pair
-  - "label1=val1"
+  - "label1=_<val1>_"
   # valid label with value omitted
   - "label2"
   # valid label with empty value
   - "label3="
   # subdomain prefixed key
-  - "konveyor.io/label1=val1"
+  - "konveyor.io/label1=_<val1>_"
 effort: 1 
 category: mandatory 
 ----

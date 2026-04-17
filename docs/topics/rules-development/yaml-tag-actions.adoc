@@ -7,29 +7,29 @@
 = Tag actions
 
 [role="_abstract"]
-A tag action instructs the analyzer to generate one or more tags for the application when a match is found. Each string in the `tag` field can be a comma-separated list of tags. Optionally, you can assign categories to tags.
+A tag action instructs the analyzer to generate one or more tags for the application when it finds a match. Each string in the `tag` field can be a comma-separated list of tags. Optionally, you can assign categories to tags.
 
-[source,yaml]
+[source,yaml, subs="+quotes"]
 ----
 tag:
-  - "tag1,tag2,tag3"
-  - "Category=tag4,tag5"
+  - "_<tag1>_,_<tag2>_,_<tag3>_"
+  - "Category=_<tag4>_,_<tag5>_"
 ----
 
 _Example_
 
-[source,yaml]
+[source,yaml, subs="+quotes"]
 ----
 - ruleID: test-rule
   when:
-    <CONDITION>
+    _<CONDITION>_
   tag:
   - Language=Golang
   - Env=production
   - Source Code
 ----
 
-A tag can be a string or a `key=val` pair, where the key is treated as a tag category in {ProductShortName}. Any rule that has a tag action is referred to as a “tagging rule” in this document.
+A tag can be a string or a `key=val` pair, where {ProductShortName} treats the key as a tag category. You can consider any rule that has a tag action as a “tagging rule” in this document.
 
 [NOTE]
 ====

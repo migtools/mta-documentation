@@ -11,7 +11,6 @@ include::topics/templates/document-attributes.adoc[]
 [id="rules-development-guide"]
 = Configuring and using rules for an {ProductShortName} analysis
 
-
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
@@ -30,7 +29,6 @@ include::assemblies/rules-development-guide/assembly_rule-yaml-actions.adoc[leve
 include::assemblies/rules-development-guide/assembly_creating-rule.adoc[leveloffset=+1]
 
 include::assemblies/rules-development-guide/assembly_rule-rulesets.adoc[leveloffset=+1]
-
 
 [id="_additional-resources"]
 == Additional resources

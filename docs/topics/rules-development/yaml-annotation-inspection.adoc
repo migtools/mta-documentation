@@ -7,7 +7,9 @@
 = Annotation inspection
 
 [role="_abstract"]
-You can add a query to match against specific annotations and their elements, for example:
+You can use the `annotated` field in the rule condition to match against specific `Java` annotations and their elements in the source code.
+
+The following example matches against a specific annotation and its elements:
 
 [source,yaml]
 ----
@@ -63,6 +65,7 @@ when:
         - name: url
           value: "http://www.example.com"
 ----
+
 [NOTE]
 ====
 The only element specified with a `pattern` is the annotation itself.

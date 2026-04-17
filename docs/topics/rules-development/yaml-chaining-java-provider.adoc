@@ -7,7 +7,9 @@
 = Chaining in the Java provider
 
 [role="_abstract"]
-In the `java` provider, the `Filepaths` variable must be capitalized, for example:
+When you use the `filepaths` variable in a Java rule chained condition, the rule writer must capitalize the variable. 
+
+For example:
 
 [source,yaml]
 ----

@@ -9,7 +9,7 @@
 [role="_abstract"]
 Rules instruct the analyzer to take the specified actions when the given conditions match. In {ProductShortName}, a rule file contains one or more rules.
 
-Rules are written in YAML. They consist of:
+You can write rules in YAML. They consist of:
 
 * metadata
 * conditions
@@ -17,17 +17,31 @@ Rules are written in YAML. They consist of:
 
 {ProductShortName} analyzer rules have the following pattern:
 
-[source, yaml]
+[source, yaml, subs="+quotes"]
 ----
-ruleID:
-labels:
-category:
-effort:
+ruleID: _<Rule_id>_
+category: mandatory
+effort: _<Effort_number>_
 description:
+   _<Description title>_
+   _<Description text>_
+labels:
+  - konveyor.io/source=_<Source_tech>_
+  - konveyor.io/target=_<Target_tech>_
+links:
+ - url: _<Hyperlink>_
+   title: _<Hyperlink_title>_
 when:
  <condition(s)>
 message: "message"
 tag: 
- - tag_1, tag_2, tag_3
- - key_1="value_1, value_2"
+ - _<tag_1>_, _<tag_2>_, _<tag_3>_
+ - key_1="_<value_1>_, _<value_2>_"
 ----
+where:
+
+`ruleID` :: A unique id for the rule within the ruleset
+`category` :: Severity level of an issue that the rule triggers can be `severe`, `mandatory`, or `optional`. 
+`effort` :: An integer value that represents the level of effort needed to fix the issue.
+`description` :: A short sentence or a title that summarizes the issue.
+`labels` :: A key-value pair of source and target technology. You can also add filter in the label to always include or exclude this rule during an analysis.

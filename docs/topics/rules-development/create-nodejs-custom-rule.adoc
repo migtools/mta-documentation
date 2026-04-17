@@ -55,8 +55,10 @@ $ ./mta-cli analyze -i ~/test-nodejs/ -o \
 
 [NOTE]
 ====
-Add the `--overwrite` option if you want to use the same directory for the report when you run subsequent tests. {ProductShortName} overwrites the current report with the result of the latest analysis that you run.
+Add the `--overwrite` option if you want to use the same directory for the report when you run more tests. {ProductShortName} overwrites the current report with the result of the latest analysis that you run.
 ====
+
+.Verification
 
 . Open the static report at `~/test-nodejs/report/static-report/index.html` in your browser.
 

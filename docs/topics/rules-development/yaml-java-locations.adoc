@@ -8,10 +8,17 @@
 = Java locations
 
 [role="_abstract"]
-The `java` provider allows scoping the search down to certain source code locations.
+By using the fields in the `referenced` capability that Java provider supports, you can enable the provider to scope the search down to certain source code locations.
 
-* *IMPORT*: IMPORT allows for searches on class imports. It can either
-be used with Fully Qualified Names (FQNs) or an asterisk to allow for wider matches:
+You can use the `java.referenced` capability in the `when` condition of the `Java` rules to search for the following fields:
+
+* Locations such as the classes, methods, packages and so on
+* Annotations
+* Patterns
+
+.Example
+....
+*IMPORT*: IMPORT allows for searches on class imports. You can use it either with Fully Qualified Names (FQNs) or an asterisk to allow for wider matches:
 
 [source,yaml]
 ----
@@ -54,13 +61,14 @@ public class Test {
   private org.apache.lucene.search.Query query;
 }
 ----
+....
 
 .Supported Java locations
 [cols="3,3,6"]
 |===
 |Location |Description |Rule condition example
 
-|TYPE|Matches against all types, including classes, interfaces, enums, and annotation types that appear anywhere.
+|`TYPE`|Matches against all types, including classes, interfaces, `enums`, and annotation types that appear anywhere.
 a|The following example looks for occurrences of `java.util.List`.
 [source, yaml]
 ----
@@ -69,7 +77,7 @@ a|The following example looks for occurrences of `java.util.List`.
    location: TYPE
    pattern: java.util.List
 ---- 
-|ANNOTATION|Matches against annotations.
+|`ANNOTATION`|Matches against annotations.
 a|The following example matches the `@org.framework.Bean(url = "http://www.example.com")` annotation in the source code.
 [source, yaml]
 ----
@@ -82,7 +90,7 @@ when:
         - name: url
           value: "http://www.example.com"
 ----
-|IMPLEMENTS_TYPE|Matches against any type implementing the given type.
+|`IMPLEMENTS_TYPE`|Matches against any type implementing the given type.
 a|The following example looks for a class that implements `java.util.ArrayList`.
 [source, yaml]
 ----
@@ -91,7 +99,7 @@ a|The following example looks for a class that implements `java.util.ArrayList`.
    location: IMPLEMENTS_TYPE
    pattern: java.util.ArrayList
 ----
-|RETURN_TYPE|Matches against a type being returned by a method.
+|`RETURN_TYPE`|Matches against a type that a method returns.
 a|The following example searches for `@PersistenceContext` annotation for injecting data sources and `@Produces` annotation on the `EntityManager`. These annotations are not required when you target migrating the source code to `Quarkus`.
 [source, yaml]
 ----
@@ -102,8 +110,8 @@ when:
       annotated:
         pattern: javax.enterprise.inject.Produces
 ----
-|VARIABLE_DECLARATION|Matches against a type being declared as a variable
-a|The following example searches for `QueueConnectionFactory` that was used to obtain a connection to JMS queues appearing as a variable declaration. Replace the string `QueueConnectionFactory` with `ConnectionFactory`.
+|`VARIABLE_DECLARATION`|Matches against a type declared as a variable
+a|The following example searches for `QueueConnectionFactory` appearing as a variable declaration. Replace the string `QueueConnectionFactory` with `ConnectionFactory`.
 [source, yaml]
 ----
 when:
@@ -111,10 +119,9 @@ when:
       location: VARIABLE_DECLARATION
       pattern: javax.jms.QueueConnectionFactory
 ----
-|FIELD|Matches against a type appearing in a field
-declaration. It can be coupled with an annotation match happening on the field. See
-xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection]
-a|The following example searches if `QueueConnectionFactory` appears in a field declaration and is used to obtain connection to JMS queues. Replace the string `QueueConnectionFactory` with `ConnectionFactory`.
+|`FIELD`|Matches against a type appearing in a field
+declaration. It can be coupled with an annotation match happening on the field. See Annotation inspection.
+a|The following example searches if `QueueConnectionFactory` appears in a field declaration. Replace the string `QueueConnectionFactory` with `ConnectionFactory`.
 [source, yaml]
 ----
 when:
@@ -122,9 +129,7 @@ when:
       location: FIELD_DECLARATION
       pattern: javax.jms.QueueConnectionFactory
 ----
-|METHOD|Matches against a given method declaration. It can be coupled
-with an annotation match. See
-xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection]
+|`METHOD`|Matches against a given method declaration. You can couple it with an annotation match. See Annotation inspection.
 a|The following example finds declarations of methods named `method` that accept `java.lang.String` and return `org.konveyor.ExtendedString`.
 
 [source, yaml]
@@ -134,7 +139,7 @@ when:
    location: METHOD
    pattern: 'method(java.lang.String) org.konveyor.ExtendedString' 
 ----
-|METHOD_CALL|Matches against the method call in the source code.
+|`METHOD_CALL`|Matches against the method call in the source code.
 a|The following example matches the `getConnection` method call of the `java.sql.DriverManager` class with three parameters of type `String`.
 [source, yaml]
 ----
@@ -143,7 +148,7 @@ when:
     location: METHOD_CALL
     pattern: java.sql.DriverManager.getConnection(java.lang.String, java.lang.String, java.lang.String)
 ----
-|CLASS (declaration)|Matches against a given method declaration. Can be coupled with an annotation match. See xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection].
+|`CLASS` (declaration)|Matches against a given class declaration. You can couple it with an annotation match. See Annotation inspection.
 a|The following example locates all classes under the `javax.xml` package occurring in all locations of the source code.
 [source, yaml]
 ----
@@ -151,7 +156,7 @@ when:
  java.referenced:
   pattern: javax.xml.*
 ----
-|CONSTRUCTOR_CALL|Matches against constructor calls in the source code.
+|`CONSTRUCTOR_CALL`|Matches against constructor calls in the source code.
 a|The following example matches the `FileOutputStream` constructor call that takes a String and a boolean value as input parameters.
 [source, yaml]
 ----
@@ -160,7 +165,7 @@ when:
     location: CONSTRUCTOR_CALL
     pattern: java.io.FileOutputStream(java.lang.String, boolean)
 ----
-|IMPORT|Matches against class imports. You can use it with FQNs or an asterisk (*) to allow for wider matches.
+|`IMPORT`|Matches against class imports. You can use it with FQNs or an asterisk (*) to allow for wider matches.
 a|The following example matches with the imports of `org.apache.lucene.search` package and subpackages in the source code.
 [source, yaml]
 ----
@@ -169,7 +174,7 @@ when:
    pattern: org.apache.lucene.search.*
    location: IMPORT
 ----
-|PACKAGE|Matches on any usage of a package, be it in an import or used as part of a fully qualified name in the code.
+|`PACKAGE`|Matches on any usage of a package, be it in an import or used as part of a fully qualified name in the code.
 a|The following example matches all occurrences of `org.jboss` package and its subpackages in the source code.
 [source, yaml]
 ----
@@ -178,7 +183,7 @@ when:
     location: PACKAGE
     pattern: org.jboss.*
 ----
-|INHERITANCE|Matches against a class inheriting from a given type.
+|`INHERITANCE`|Matches against a class inheriting from a given type.
 a|The following example searches for interfaces that extend the `org.jboss.system.ServiceMBeanSupport` class. 
 
 [source, yaml]
@@ -189,3 +194,7 @@ a|The following example searches for interfaces that extend the `org.jboss.syste
     location: INHERITANCE
 ----
 |===
+
+[role="_additional-resources"]
+.Additional resources
+* xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection]

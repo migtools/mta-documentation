@@ -2,17 +2,15 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_mod-docs-content-type: REFERENCE
+:_mod-docs-content-type: CONCEPT
 [id="yaml-java-provider_{context}"]
 = Java provider
 
 [role="_abstract"]
-The `java` provider analyzes Java source code.
-
-This provider has the following capabilities:
+The `java` provider offers `referenced` and `dependency` capabilities to analyze Java source code. 
 
 `referenced`::
-By using the `referenced` capability, the provider finds references in the source code. This capability takes three input parameters: `pattern`, `location`, and `annotated`:
+The `referenced` capability takes three input parameters: `pattern`, `location`, and `annotated`:
 +
 [source,terminal]
 ----
@@ -26,7 +24,7 @@ when:
 where:
 
 * `pattern` is a regular expression pattern to match.
-* `location` is the exact location where the pattern needs to be matched, for example, `IMPORT`.
+* `location` is the exact source code location where {ProductShortName} matches the pattern, for example, `IMPORT`.
 * `annotated` checks for specific annotations and their elements, such as name and value, in the Java code by using a query. For example, the following query matches the `Bean` (URL = “http://www.example.com”) annotation in the method.
 +
 [source,yaml]
@@ -41,7 +39,7 @@ where:
 `dependency`::
 The Java provider has `dependency` capability. The `dependency` capability enables the provider to generate a list of dependencies for a given application.
 +
-You can use a `dependency` condition to query this list and check whether a certain dependency, with a version range, exists for the application. The dependency can be internal or external or open source.
+You can use a `dependency` condition to query this list and check whether a certain dependency, with a version range, exists for the application. The dependency can be internal and external or open source.
 For example, to check if a Java application has a certain dependency, you create a `java.dependency` condition:
 +
 [source, yaml]
@@ -69,4 +67,4 @@ When you use the `java` provider for an analysis, the analysis results have lowe
 
 [role="_additional-resources"]
 .Additional resources
-* xref:java-conditions-capabilities[Java condition and capabilities]
+* xref:java-conditions-capabilities_rules-development-guide[Java condition and capabilities]
