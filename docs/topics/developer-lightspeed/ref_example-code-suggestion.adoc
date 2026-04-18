@@ -10,19 +10,19 @@ This example will walk you through generating code fixes for a Java application 
 
 .Procedure
 
-. Open the `my-Java` project in Visual Studio (VS) Code.
+. Open the `my-Java` project in Visual Studio Code.
 
-. Download the {mta-dl-full} extension from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[VS Code marketplace].
+. Download the {mta-dl-full} extension from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[Visual Studio Code marketplace].
 
 . Type `Ctrl+Shift+P` (Windows and Linux systems) or `Cmd+Shift+P` (Mac systems).
 
-. Type `Preferences: Open Settings (UI)` in the Command Palette to open the VS Code settings and select `Extensions > {ProductShortName}`.
+. Type `Preferences: Open Settings (UI)` in the Command Palette to open the Visual Studio Code settings and select `Extensions > {ProductShortName}`.
 
 . Select `Gen AI:Agent Mode`.
 
 . In the {mta-dl-plugin} extension, click `Open Analysis View`.
 
-. Type `MTA: Manage Analysis Profile` in the Command Palette and configure the following fields:
+. Type `{ProductShortName}: Manage Analysis Profile` in the Command Palette and configure the following fields:
 
 ** *Profile Name*: Type a profile name
 
@@ -30,7 +30,7 @@ This example will walk you through generating code fixes for a Java application 
 
 ** *Custom Rules*: Select custom rules if you want to include them while running the analysis. By default, {mta-dl-plugin} enables *Use Default Rules* for `quarkus`.
 
-. Type `MTA: Open the Gen AI model provider configuration file` in the Command Palette to configure the following in the `provider-settings` file:
+. Type `{ProductShortName}: Open the Gen AI model provider configuration file` in the Command Palette to configure the following in the `provider-settings` file:
 +
 [source, yaml]
 ----
@@ -57,7 +57,7 @@ You must change the `provider-setting` configuration if you plan to use a differ
 +
 {ProductShortName} identifies the issues in the code.
 
-. Click the solutions icon (image:solutions-icon-new.png[]) in an issue to request suggestions to resolve the issue.
+. Click the solutions icon (image:solutions-icon-new.png[Click solutions icon]) in an issue to request suggestions to resolve the issue.
 +
 {mta-dl-plugin} streams the issue description, a preview of the code changes that resolve the issue, and the file(s) in which the changes are to be made.
 +

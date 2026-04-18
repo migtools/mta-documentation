@@ -6,14 +6,14 @@
 = Configuring the {mta-dl-plugin} profile settings
 
 [role="_abstract"]
-You can use the Visual Studio (VS) Code plugin to run an analysis to discover issues in the code. You can optionally enable {mta-dl-full} to get AI-assisted code suggestions.
+You can use the Visual Studio Code plugin to run an analysis to discover issues in the code. You can optionally enable {mta-dl-full} to get AI-assisted code suggestions.
 
 To generate code changes using {mta-dl-plugin}, you must configure a profile that contains all the necessary configurations, such as source and target technologies and the API key to connect to your chosen large language model (LLM).
 
 .Prerequisites
 
 * You completed the Solution Server configurations in Tackle custom resource if you opt to use the Solution Server.
-* You opened a Java project in your VS Code workspace.
+* You opened a Java project in your Visual Studio Code workspace.
 
 .Procedure
 
