@@ -14,7 +14,7 @@ You can use a custom rule to check if {ProductShortName} triggers an incident wh
 .Prerequisites
 
 * You installed the `ilspycmd` and `paket` dependencies.
-* You installed the `dotnet tools` and exported the `dotnet tools` path by using the `export PATH="$PATH:<path/to/.dotnet/tools"` command.
+* You installed the `dotnet tools` and exported the `dotnet tools` path by using the `export PATH="$PATH:_<path_to_.dotnet_tools>_"` command.
 
 .Procedure
 . Create a `csharp-rule.yaml` file in your `Home` directory. 
@@ -62,7 +62,7 @@ You can use a custom rule to check if {ProductShortName} triggers an incident wh
 
 [source, terminal]
 ----
-$ ./mta-cli analyze -i _path_to_C#_app_ -o _path_to_report_ --overwrite --run-local=false --enable-default-rulesets=false --mode source-only --rules ~/csharp-rule.yaml 
+$ ./mta-cli analyze -i _<path_to_C#_app>_ -o _<path_to_report>_ --overwrite --run-local=false --enable-default-rulesets=false --mode source-only --rules ~/csharp-rule.yaml 
 ----
 +
 
@@ -71,7 +71,7 @@ $ ./mta-cli analyze -i _path_to_C#_app_ -o _path_to_report_ --overwrite --run-lo
 Add the `--overwrite` option if you want to use the same directory for the report when you run subsequent tests. {ProductShortName} overwrites the current report with the result of the latest analysis that you ran.
 ====
 
-. Open the static report at _path_to_report_ in your browser.
+. Open the static report at _<path_to_report>_ in your browser.
 
 . Navigate to the issues to verify the *`WebMatrix.WebData.WebSecurity` is not available in `.NET Core`* issue.
 

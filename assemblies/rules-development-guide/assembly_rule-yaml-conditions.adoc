@@ -16,7 +16,7 @@ endif::[]
 :context: rules-prov-cond
 
 [role="_abstract"]
-The providers are the modular components in charge of analyzing a given language. The external providers, except `C#`, are able to analyze code by leveraging the Language Server Protocol (LSP). Through the LSP, all code analysis is abstracted away from the analysis engine and left to the specific LSP server to run the search query defined in the rule on the source code. 
+The providers are the modular components in charge of analyzing a given language. The external providers, except `C#`, are able to analyze code by leveraging the Language Server Protocol (LSP). Through the LSP, all code analysis is abstracted away from the analysis engine and left to the specific LSP server. The LSP server runs the search query that you defined in the rule, on the source code. 
 
 Additionally, {ProductShortName} provides a built-in provider with abilities such as XML parsing, running regular expressions on files, and so on.
 

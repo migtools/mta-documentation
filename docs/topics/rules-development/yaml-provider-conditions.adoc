@@ -33,7 +33,7 @@ The analyzer currently supports the following providers:
 [IMPORTANT]
 ====
 [subs="attributes+"]
-{FeatureName} are Developer Preview features only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated SLA.
+{FeatureName} are Developer Preview features only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated Service Level Agreement (SLA).
 ====
 :!FeatureName:
 
@@ -133,7 +133,7 @@ when:
 ----
 
 |`hasTags`
-a|Check whether a tag is created for the application using a tagging rule.
+a|Check whether you created a tag for the application using a tagging rule.
 For example,
 [source, yaml]
 ----
@@ -193,7 +193,7 @@ when:
 Depending on the _provider_ and the _capability_, there will be different `<fields>` in the condition.
 ====
 
-The following table summarizes available providers, their capabilities and all of their fields:
+The following table summarizes available providers, their capabilities and their fields:
 
 .Summary of providers, their capabilities, and their fields
 [width="100%",cols="10%,10%,10%,10%,60%",options="header",]
