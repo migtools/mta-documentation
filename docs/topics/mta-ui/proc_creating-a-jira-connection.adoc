@@ -37,7 +37,7 @@ Choose the type that is appropriate for the particular configuration of your Jir
 . By default, a connection cannot be established with a server with an invalid certificate. To override this restriction, enable the *Enable insecure communication* switch.
 . Click *Create*.
 +
-The new connection instance appears on the *Jira configuration* page.
+The new connection instance is displayed on the *Jira configuration* page.
 
 .Verification
 

@@ -45,7 +45,7 @@ The YAML syntax supports including or excluding questions based on tags existing
   questions:
     - order: 4
       text: Are you currently using any form of container orchestration?
-      explanation: Determine if the application utilizes container orchestration tools like Kubernetes, Docker Swarm, etc.
+      explanation: Determine if the application utilizes container orchestration tools such as Kubernetes or Docker Swarm.
       excludeFor:
         - category: Deployment
           tag: Serverless

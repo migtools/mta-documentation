@@ -17,7 +17,7 @@ The specific coordinates vary depending on the source platform you select. For e
 .Procedure
 
 . In the {ProductShortName} user interface, select the *Migration* mode.
-. On the *Application Inventory* page, click the edit icon (image:icon_edit.png[]) in an application. The *Update application* dialog appears.
+. On the *Application Inventory* page, click the edit icon (image:icon_edit.png[]) in an application. The *Update application* dialog is displayed.
 . Enter the following information in the form:
 .. Click *Source platform* and enter the following fields:
 ... *Source platform*: Select a source platform instance.

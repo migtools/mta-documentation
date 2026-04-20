@@ -568,7 +568,7 @@ sections:
             rationale: ''
             mitigation: ''
           - order: 2
-            text: TCP/IP, with host name or IP address encapsulated in the payload
+            text: TCP/IP, with hostname or IP address encapsulated in the payload
             risk: red
             rationale: ''
             mitigation: ''
@@ -964,7 +964,7 @@ sections:
           - order: 2
             text: >-
               Configuration files are stored externally (example: in a database)
-              and accessed using specific environment keys (examples: host name,
+              and accessed using specific environment keys (examples: hostname,
               IP address)
             risk: red
             rationale: ''
