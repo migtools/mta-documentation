@@ -9,7 +9,7 @@
 {ProductFirstRef} ({ProductShortName}) version 8.0.1 provides the following fixed issues and other problems that have a significant impact. 
 
 Improved the performance of Java binary analysis::
-Before this change, when you analyzed Java binary applications, {ProductShortName} incorrectly classified some open source dependencies as internal dependencies, it was then decompiled and analyzed, that caused the analysis to take longer to complete. With this update, the location of the Maven index file is passed to the Java provider to determine if an embedded dependency is open source or internal. This fix resolved the two following issues:
+Before this change, when you analyzed Java binary applications, {ProductShortName} incorrectly classified some open source dependencies as internal dependencies. {ProductShortName} then decompiled and analyzed the dependencies that caused the analysis to take longer to complete. With this update, {ProductShortName} passes the location of the Maven index file to the Java provider to determine if an embedded dependency is open source or internal. This fix resolved the two following issues:
 
 Binary application analysis latency is reduced in {ProductShortName}::
 When you analyzed a binary, the performance degraded because {ProductShortName} relied on Maven search. With this release, this issue is fixed by introducing the pre-generated Maven index that does not require connecting to an external index.
@@ -21,7 +21,7 @@ When you analyzed Java binary applications, {ProductShortName} incorrectly class
 +
 (link:https://issues.redhat.com/browse/MTA-6357[MTA-6357])
 
-{ProductShortName} enables you to target an organization when importing applications from Cloud Foundry::
+You can specify target an organization when importing applications from Cloud Foundry::
 When you imported applications from Cloud Foundry (CF), {ProductShortName} did not have a provision for you to mention the CF organizations. With this release, this issue is fixed. You can configure one or more organizations, spaces, and applications for the discovery process. The spaces can belong to different organizations and the applications can belong to different spaces. You must specify at least one organization for application discovery. 
 +
 (link:https://issues.redhat.com/browse/MTA-6271[MTA-6271])
@@ -31,7 +31,7 @@ The discovery process of Cloud Foundry (CF) applications with service bindings b
 +
 (link:https://issues.redhat.com/browse/MTA-6399[MTA-6399])
 
-Cloud Foundry applications imported in {ProductShortName} are tagged automatically::
+{ProductShortName} automatically tags imported Cloud Foundry applications::
 When you imported applications in {ProductShortName} from a Cloud Foundry (CF) instance, the applications did not contain the `Cloud Foundry` tag. The tag links an application to an archetype. The archetype has a generator that produces the deployment assets for a migration path. With this release, this issue is fixed. You no longer have to manually add the `Cloud Foundry` tag in the imported application.
 +
 (link:https://issues.redhat.com/browse/MTA-6282[MTA-6282])
@@ -53,12 +53,12 @@ Before this update, the annotation rules for Java applications did not use Fully
 (link:https://issues.redhat.com/browse/MTA-6195[MTA-6195])
 
 {ProductShortName} triggers rules to match import statements with wildcard in Java applications analysis::
-{ProductShortName} did not trigger rules to match import statements that contain a wildcard when analyzing a Java application. As a result, specific incidents were not detected in the report after the analysis. With this release, this issue is fixed. 
+{ProductShortName} did not trigger rules to match import statements that contain a wildcard when analyzing a Java application. As a result, {ProductShortName} did not detect specific incidents in the report after the analysis. With this release, this issue is fixed. 
 +
 (link:https://issues.redhat.com/browse/MTA-4027[MTA-4027])
 
-{ProductShortName} {WebName} enables you to edit secure SVN application without an error::
-When you disabled the `Allow insecure connection` for an application stored in the SVN repository and edited the application, the {WebName} displayed a blank page some times with the `TypeError` `cannot read properties of undefined (reading 'kind')`. With this version, this issue is fixed. You can edit secure SVN applications in the {ProductShortName} {WebName}.
+Edit secure SVN application without an error in {ProductShortName} {WebName}::
+When you disabled the `Allow insecure connection` for an application stored in the Subversion (SVN) repository and edited the application, the {WebName} displayed a blank page some times with the `TypeError` `cannot read properties of undefined (reading 'kind')`. With this version, this issue is fixed. You can edit secure SVN applications in the {ProductShortName} {WebName}.
 +
 (link:https://issues.redhat.com/browse/MTA-6263[MTA-6263])
 
@@ -78,6 +78,6 @@ Before this update, you could not proceed to the final step after filling in the
 (link:https://issues.redhat.com/browse/MTA-6143[MTA-6143])
 
 {ProductShortName} web console detects custom rules when many are uploaded at a time::
-When you uploaded more than one custom rule at a time in the {ProductShortName} web console, the rules were not detected. With this version, this issue is fixed. You can upload one or more custom rules at once.
+When you uploaded more than one custom rule at a time in the web console, {ProductShortName} did not detect the rules. With this version, this issue is fixed. You can upload one or more custom rules at once.
 +
 (link:https://issues.redhat.com/browse/MTA-6029[MTA-6029])
