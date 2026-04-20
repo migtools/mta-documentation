@@ -143,7 +143,7 @@ when:
     location: METHOD_CALL
     pattern: java.sql.DriverManager.getConnection(java.lang.String, java.lang.String, java.lang.String)
 ----
-|`CLASS` (declaration)|Matches against a given method declaration. You can couple it with an annotation match. See xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection].
+|`CLASS` (declaration)|Matches against a given class declaration. You can couple it with an annotation match. See xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection].
 a|The following example locates all classes under the `javax.xml` package occurring in all locations of the source code.
 [source, yaml]
 ----

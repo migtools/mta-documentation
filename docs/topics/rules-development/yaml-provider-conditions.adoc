@@ -102,7 +102,7 @@ when:
 
 
 |`json`
-a|Search JSON files using `jsonpath` queries.
+a|Search JSON files using JSONPath queries.
 For example,
 [source, yaml]
 ----
