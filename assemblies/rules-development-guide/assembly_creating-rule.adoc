@@ -16,7 +16,7 @@ endif::[]
 :context: creating-rule
 
 [role="_abstract"]
-You can refer to example rules that describe how to create a YAML rule. This assumes that you already have MTA installed. See the MTA CLI Guide for installation instructions.
+You can refer to example rules that describe how to create a YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {CLIName} Guide for installation instructions.
 
 //This section describes how to create a {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.//
 

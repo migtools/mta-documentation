@@ -7,12 +7,10 @@
 = Hyperlinks
 
 [role="_abstract"]
-Hyperlinks can be provided along with a `message` or `tag` action to provide relevant information about the issue that has been discovered:
+As a rule author, you can configure external hyperlinks along with a `message` or `tag` action. Hyperlinks provide relevant documentation that helps you to resolve the issue that {ProductShortName} discovered:
 
 [source,yaml]
 ----
-# links point to external hyperlinks
-# rule authors are expected to provide
 # relevant hyperlinks for quick fixes, docs, and so on.
 links:
   - url: "konveyor.io"

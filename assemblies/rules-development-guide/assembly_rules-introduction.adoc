@@ -22,7 +22,7 @@ include::topics/rules-development/about-rules.adoc[leveloffset=+1]
 
 include::topics/rules-development/yaml-rule-structure-syntax.adoc[leveloffset=+1]
 
-ifdef::parent-context-of-getting-started[:context: {parent-context-of-rules-introduction}]
-ifndef::parent-context-of-getting-started[:!context:]
+ifdef::parent-context-of-rules-introduction[:context: {parent-context-of-rules-introduction}]
+ifndef::parent-context-of-rules-introduction[:!context:]
 
 :!rules-introduction:

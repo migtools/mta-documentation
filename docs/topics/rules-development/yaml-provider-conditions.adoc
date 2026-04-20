@@ -20,7 +20,7 @@ when:
     <input_fields>
 ----
 
-The analyzer currently supports the following `provider` conditions:
+The analyzer currently supports the following providers:
 
 * `builtin`
 * `java`
@@ -33,7 +33,7 @@ The analyzer currently supports the following `provider` conditions:
 [IMPORTANT]
 ====
 [subs="attributes+"]
-{FeatureName} are Developer Preview features only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated SLA.
+{FeatureName} are Developer Preview features only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated Service Level Agreement (SLA).
 ====
 :!FeatureName:
 
@@ -76,7 +76,7 @@ capabilities:
 |Provider Name |Capabilities |Description
 
 .2+|`java`
-|referenced
+|`referenced`
 a|Find references of a pattern with an optional code location for detailed searches. 
 For example, 
 [source,yaml]
@@ -85,7 +85,7 @@ when:
   java.referenced:
     <fields>
 ----
-|dependency
+|`dependency`
 a|Check whether the application has a given dependency.
 For example, 
 
@@ -97,12 +97,12 @@ when:
 ----
 
 .5+|`builtin`
-|xml
-|Search XML files using xpath queries.
+|`xml`
+|Search XML files using XPath queries.
 
 
-|json
-a|Search JSON files using `jsonpath` queries.
+|`json`
+a|Search JSON files using JSONPath queries.
 For example,
 [source, yaml]
 ----
@@ -111,7 +111,7 @@ when:
     <fields> 
 ----
 
-|filecontent
+|`filecontent`
 a|Search content in regular files using regular expression patterns.
 For example,
 [source, yaml]
@@ -122,7 +122,7 @@ when:
 ----
 
 
-|file
+|`file`
 a|Find files with names matching a given pattern.
 For example,
 [source, yaml]
@@ -132,8 +132,8 @@ when:
     <fields> 
 ----
 
-|hasTags
-a|Check whether a tag is created for the application using a tagging rule.
+|`hasTags`
+a|Check whether you created a tag for the application using a tagging rule.
 For example,
 [source, yaml]
 ----
@@ -143,7 +143,7 @@ when:
 ----
 
 .2+|`go`
-|referenced
+|`referenced`
 a|Find references to a pattern.
 For example, 
 [source,yaml]
@@ -153,7 +153,7 @@ when:
     <fields>
 ----
 
-|dependency
+|`dependency`
 a|Check whether the application has a given dependency.
 For example, 
 [source,yaml]
@@ -164,7 +164,7 @@ when:
 ----
 
 |`csharp`
-|referenced
+|`referenced`
 a|Find references to a pattern.
 For example, 
 [source,yaml]
@@ -193,16 +193,16 @@ when:
 Depending on the _provider_ and the _capability_, there will be different `<fields>` in the condition.
 ====
 
-The following table summarizes available providers, their capabilities and all of their fields:
+The following table summarizes available providers, their capabilities and their fields:
 
 .Summary of providers, their capabilities, and their fields
 [width="100%",cols="10%,10%,10%,10%,60%",options="header",]
 |===
 |Provider |Capability |Fields |Required |Description
 
-.7+|xref:yaml-java-provider_rules-prov-cond[java]
-.3+|referenced
-|pattern
+.7+|xref:yaml-java-provider_rules-prov-cond[`java`]
+.3+|`referenced`
+|`pattern`
 |Yes
 a|Regular expression pattern.
 For example,
@@ -214,7 +214,7 @@ when:
     pattern: org.jboss.*
 ----
 
-|location
+|`location`
 |No
 a|Source code location. See xref:yaml-java-locations_java-conditions-capabilities[Java locations].
 For example,
@@ -226,7 +226,7 @@ when:
     location: IMPORT
 ----
 
-|annotated
+|`annotated`
 |No
 a|Additional query to inspect annotations. See xref:yaml-annotation-inspection_java-conditions-capabilities[Annotation inspection].
 For example,
@@ -238,8 +238,8 @@ when:
     pattern: javax.ejb.Singleton
 ----
 
-.4+|dependency
-|name
+.4+|`dependency`
+|`name`
 |Yes
 a|Name of the dependency.
 For example,
@@ -250,11 +250,11 @@ when:
     name: junit.junit
 ----
 
-|nameregex
+|`nameregex`
 |No
 |Regular expression pattern to match the name.
 
-|upperbound
+|`upperbound`
 |No
 a|Match versions lower than or equal to.
 For example,
@@ -266,7 +266,7 @@ when:
     upperbound: 4.12.2
 ----
 
-|lowerbound
+|`lowerbound`
 |No
 a|Match versions greater than or equal to.
 For example,
@@ -279,11 +279,11 @@ when:
     lowerbound: 4.4.0
 ----
 
-.9+|xref:yaml-builtin-provider_rules-prov-cond[builtin]
-.3+|xml
-|xpath
+.9+|xref:yaml-builtin-provider_rules-prov-cond[`builtin`]
+.3+|`xml`
+|`xpath`
 |Yes
-a|Xpath query
+a|an XPath query
 [source, yaml]
 ----
 when:
@@ -291,7 +291,7 @@ when:
     xpath: "//dependencies/dependency"
 ----
 
-|namespaces
+|`namespaces`
 |No
 a|A map to scope down query to namespaces.
 [source, yaml]
@@ -305,7 +305,7 @@ when:
     xpath: /b:beans
 ----
 
-|filepaths
+|`filepaths`
 |No
 a|Optional list of files to scope down search.
 [source, yaml]
@@ -322,10 +322,10 @@ when:
       ignore: true
 ----
 
-.2+|json
-|xpath
+.2+|`json`
+|`xpath`
 |Yes
-a|Xpath query
+a|an XPath query
 For example,
 [source, yaml]
 ----
@@ -335,7 +335,7 @@ when:
         xpath: //inclusionTestNode
 ----
 
-|filepaths
+|`filepaths`
 |No
 a|Optional list of files to scope down search.
 For example,
@@ -348,8 +348,8 @@ when:
         filepaths: "{{incTest.filepaths}}"
 ----
 
-.2+|filecontent
-|pattern
+.2+|`filecontent`
+|`pattern`
 |Yes
 a|Regular expression pattern to match in content.
 For example,
@@ -361,7 +361,7 @@ when:
     pattern: "import.*React"
 ----
 
-|filePattern
+|`filePattern`
 |No
 a|Only search in files with names matching this pattern.
 For example,
@@ -374,8 +374,8 @@ when:
     filePattern: "\\.tsx$"
 ----
 
-|file 
-|pattern
+|`file` 
+|`pattern`
 |Yes
 a|Find files with names matching this pattern.
 For example,
@@ -386,7 +386,7 @@ when:
       pattern: "*.go"
 ----
 
-|hasTags
+|`hasTags`
 |
 |
 a|This is an inline list of string tags. See xref:yaml-tag-actions_rule-yaml-actions[Tag action]
@@ -401,9 +401,9 @@ when:
      - Kubernetes
 ----
 
-.5+|xref:yaml-go-provider_rules-prov-cond[go]
-|referenced
-|pattern
+.5+|xref:yaml-go-provider_rules-prov-cond[`go`]
+|`referenced`
+|`pattern`
 |Yes
 a|Regular expression pattern.
 For example,
@@ -414,8 +414,8 @@ when:
     pattern: "v1beta1.CustomResourceDefinition"
 ----
 
-.4+|dependency
-|name
+.4+|`dependency`
+|`name`
 |Yes
 a|Name of the dependency.
 For example,
@@ -426,11 +426,11 @@ when:
       name: sigs.k8s.io/structured-merge-diff/v4
 ----
 
-|nameregex
+|`nameregex`
 |No
 |Regular expression pattern to match the name.
 
-|upperbound
+|`upperbound`
 |No
 a|Match versions lower than or equal to.
 For example,
@@ -442,7 +442,7 @@ when:
       upperbound: v4.2.2
 ----
 
-|lowerbound
+|`lowerbound`
 |No
 a|Match versions greater than or equal to.
 For example,
@@ -454,13 +454,13 @@ when:
       lowerbound: v4.2.0
 ----
 
-.2+|xref:yaml-dotnet-provider_rules-prov-cond[Csharp]
-.2+|referenced
-|pattern
+.2+|xref:yaml-dotnet-provider_rules-prov-cond[`csharp`]
+.2+|`referenced`
+|`pattern`
 |Yes
 |Regular expression to match a reference in the source code. For example, `System.Web.Mvc.*`.
 
-|location
+|`location`
 |Yes
 a|Specify one of the following for which {ProductShortName} runs a search query:
 
