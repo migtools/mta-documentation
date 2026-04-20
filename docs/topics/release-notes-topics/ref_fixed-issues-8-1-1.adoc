@@ -1,0 +1,21 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-04-15
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-1-1_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.1.1 provides the following fixed issues that have a significant impact.
+
+The Application discovery manifest in the {ProductShortName} UI displays YAML-formatted content::
+Before this update, the Application discovery manifest in the {ProductFullName} user interface (UI) did not display YAML-formatted content. As a consequence, you could only see raw JSON data that included all database record metadata instead of formatted YAML. With this release, the Application discovery manifest includes only YAML-formatted content fields.
++
+(link:https://redhat.atlassian.net/browse/MTA-6774[MTA-6774])
+
+
+The {ProductShortName} UI generates assets for applications without a discovery manifest::
+Before this update, you could not generate assets for applications without an associated discovery manifest by using the {ProductFullName} user interface (UI). As a consequence, you could not generate assets for applications with only source code that had not been discovered in a source platform. With this update, {ProductShortName} supports generating assets for applications without a discovery manifest. As a result, you can use the {ProductShortName} UI to generate these assets, which enhances deployment flexibility.
++
+(link:https://redhat.atlassian.net/browse/MTA-6788[MTA-6788])
+
