@@ -15,7 +15,7 @@ Before this update, the Application discovery manifest in the {ProductFullName} 
 
 
 The {ProductShortName} UI generates assets for applications without a discovery manifest::
-Before this update, you could not generate assets for applications without an associated discovery manifest by using the {ProductFullName} user interface (UI). As a consequence, you could not generate assets for applications with only source code that had not been discovered in a source platform. With this update, {ProductShortName} supports generating assets for applications without a discovery manifest. As a result, you can use the {ProductShortName} UI to generate these assets, which enhances deployment flexibility.
+Before this update, the {ProductFullName} user interface (UI) did not allow you to generate assets for applications without an associated discovery manifest. As a consequence, you could not generate assets for applications with only source code that had not been discovered in a source platform. With this update, {ProductShortName} supports generating assets for applications without a discovery manifest. As a result, you can use the {ProductShortName} UI to generate these assets, which enhances deployment flexibility.
 +
 (link:https://redhat.atlassian.net/browse/MTA-6788[MTA-6788])
 
