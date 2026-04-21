@@ -7,7 +7,7 @@
 = Debugging {mta-dl-plugin}
 
 [role="_abstract"]
-{mta-dl-full} generates logs to debug issues specific to the extension host and the {ProductShortName} analysis and RPC server. You can also configure the log level for the {mta-dl-plugin} in the extension settings. The default log level is *debug*.
+{mta-dl-full} generates logs to debug issues specific to the extension host and the {ProductShortName} analysis and Remote Procedure Call (RPC) server. You can also configure the log level for the {mta-dl-plugin} in the extension settings. The default log level is *debug*.
 
 Extension logs are stored as `extension.log` with automatic rotation. The maximum size of the log file is 10 MB and three files are retained. Analyzer RPC logs are stored as `analyzer.log` without rotation.
 
@@ -31,7 +31,7 @@ The archival feature helps you to save the following information:
 
 You can access the logs in the following ways:
 
-* *Log file*: Type `Developer: Open Extension Logs Folder` and open the `redhat.mta-vscode-extension` directory that contains the extension log and the analyzer log.
+* *Log file*: Type `Developer: Open Extension Logs Folder` and open the `redhat.mta-vscode-extension` directory that has the extension log and the analyzer log.
 
 * *Output panel*: Select `{mta-dl-plugin}` from the drop-down menu.
 

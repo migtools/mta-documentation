@@ -16,7 +16,7 @@ Starting from 8.0.0, {ProductFullName} integrates with large language models (LL
 
 {ProductFirstRef} performs the static code analysis for a specified target technology to which you want to migrate your applications. Red Hat provides 2400+ analysis rules in {ProductShortName} for various Java technologies and you can extend the ruleset for custom frameworks or new technologies by creating custom rules.
 
-The static code analysis describes the issues in your code that must be resolved. As you perform analysis for a large portfolio of applications, the issue description and the rule definition that may contain additional information form a large corpus of data that contains repetitive patterns of problem definitions and  solutions.
+The static code analysis describes the issues in your code that must be resolved. As you perform analysis for a large portfolio of applications, the issue description and the rule definition that may contain additional information form a large corpus of data that has repetitive patterns of problem definitions and  solutions.
 
 Migrators do duplicate work by resolving issues that are repeated across applications in different migration waves.
 
@@ -25,9 +25,9 @@ Migrators do duplicate work by resolving issues that are repeated across applica
 
 {mta-dl-plugin} works by collecting and storing the changes in the code for a large collection of applications, finding context to generate prompts for the LLM of your choice, and by generating code resolutions produced by the LLM to address specific issues.
 
-{mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context for a large language model (LLM). The LLM suggests code resolutions based on the issue description, context, and previous examples of code changes to resolve issues. 
+{mta-dl-plugin} augments the manual changes made to code throughout your organization in different migration waves and creates a context for a large language model (LLM). The LLM suggests code resolutions based on the issue description, context, and earlier examples of code changes to resolve issues. 
 
-{mta-dl-plugin} uses Retrieval Augmented Generation for context-based resolutions of issues in code. By using RAG, {mta-dl-plugin} improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code. The context allows the LLM to "reason" and generate suggestions for issues detected in the code. This mechanism helps to overcome the limited context size in LLMs that prevents them from analyzing the entire source code of an application.
+{mta-dl-plugin} uses Retrieval Augmented Generation (RAG) for context-based resolutions of issues in code. By using RAG, {mta-dl-plugin} improves the context shared with the LLM to generate more accurate suggestions to fix the issue in the code. The context allows the LLM to "reason" and generate suggestions for issues detected in the code. This mechanism helps to overcome the limited context size in LLMs that prevents them from analyzing the entire source code of an application.
 
 //You can consider using the demo mode for running {mta-dl-plugin} when you need to perform analysis but have a limited network connection for {mta-dl-plugin} to sync with the LLM. The demo mode stores the input data as a hash and past LLM calls in a cache. The cache is stored in a chosen location in the your file system for later use. The hash of the inputs is used to determine which LLM call must be used in the demo mode. After you enable the demo mode and configure the path to your cached LLM calls in the {mta-dl-plugin} settings, you can rerun an analysis for the same set of files using the responses to a previous LLM call.
 

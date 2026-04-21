@@ -51,7 +51,7 @@ models:
 You must change the `provider-setting` configuration if you plan to use a different LLM provider.
 ====
 
-. On the `{ProductShortName}: Open Analysis View` page, click *Start* to start the {ProductShortName} RPC server.
+. On the `{ProductShortName}: Open Analysis View` page, click *Start* to start the {ProductShortName} Remote Procedure Call (RPC) server.
 
 . Select the profile you configured and click *Run Analysis* to scan the Java application.
 +

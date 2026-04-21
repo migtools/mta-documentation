@@ -23,7 +23,7 @@ You can review the code updates and edit the suggested code resolutions before a
 .. *Files*: lists all the files in your project for which the analysis identified issues that must be resolved. 
 .. *Issues*: lists all issues across different files in your project.
 . Use the *Category* drop down to filter issues based on how crucial the fix is for the target migration. You can filter mandatory, potential, and optional issues. 
-. Click *Has Success Rate* to check how many times the same issue resolution was accepted in previous analysis.
+. Click *Has Success Rate* to check how many times the same issue resolution was accepted in an earlier analysis.
 . Click the solution tool to trigger automated updates to your code. If you applied any category filter, code updates are made for all incidents, specific files, or specific issues based on the filter.
 {mta-dl-plugin} generates new files with the updated code.
 . Review and (optionally) edit the code.
