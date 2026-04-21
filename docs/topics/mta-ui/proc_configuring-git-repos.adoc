@@ -7,10 +7,9 @@
 = Configuring Git repositories
 
 [role="_abstract"]
-To allow {ProductFullName} to access the data required for migration tasks, configure Git repositories in the user interface (UI). By configuring these repositories, you enable {ProductShortName} to access your source code to identify modernization paths and required steps for your modernization efforts.
+To allow {ProductFullName} to access the data required for migration tasks, configure *Git* repositories in the user interface (UI). By configuring these repositories, you enable {ProductShortName} to access your source code to identify modernization paths and required steps for your modernization efforts.
 
 .Procedure
 
 . In *Administration* view, click *Repositories* and then click *Git*.
-// ![](/Tackle2/Views/GitConfig.png)
 . Enable the *Consume insecure Git repositories* switch.

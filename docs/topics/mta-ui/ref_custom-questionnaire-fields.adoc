@@ -7,7 +7,7 @@
 = The custom questionnaire fields
 
 [role="_abstract"]
-To correctly build a custom assessment questionnaire for the {ProductFullName} user interface (UI), view the following questionnaire fields. These definitions provide the necessary knowledge for configuring questions, answers, and weighting.
+You can build a custom assessment questionnaire in the {ProductFullName} user interface (UI) by configuring specific fields. These field definitions help you configure questions, answers, and weighting.
 
 Every custom questionnaire field marked as _required_ is mandatory. If you do not define such fields, YAML validation will fail on upload. Each subsection of the field defines a new structure or object in YAML, for example:
 
@@ -30,46 +30,45 @@ thresholds:
 |Questionnaire field|Description
 |`name` (required, string) |The name of the questionnaire. This field must be unique for the entire {ProductShortName} instance.
 |`description` (optional, string)|A short description of the questionnaire.
-|`thresholds` (required) a|The definition of a threshold for each risk category of the application or archetype that is considered to be affected by that risk level. The threshold values can be the following:
+|`thresholds` (required) a|The definition of a threshold for each application or archetype risk category that the risk level affects. Valid threshold values include the following:
 
-* `red` (required, unsigned integer): Numeric percentage, for example, `30` for `30%`, of red answers that the questionnaire can have until the risk level is considered red.
-* `yellow` (required, unsigned integer): Numeric percentage, for example, `30` for `30%`, of yellow answers that the questionnaire can have until the risk level is considered yellow.
-* `unknown` (required, unsigned integer): Numeric percentage, for example, `30` for `30%`, of unknown answers that the questionnaire can have until the risk level is considered
-unknown.
+* `red` (required, unsigned integer): The numeric percentage of red answers allowed in the questionnaire before the {ProductShortName} marks the risk level as red, for example, `30` for `30%`.
+* `yellow` (required, unsigned integer): The numeric percentage of yellow answers allowed in the questionnaire before the {ProductShortName} marks the risk level as yellow, for example, `30` for `30%`.
+* `unknown` (required, unsigned integer): The numeric percentage of unknown answers allowed in the questionnaire before the {ProductShortName} marks the risk level as unknown.
 
-The higher risk level always takes precedence. For example, if the `yellow` threshold is set to 30% and `red` to 5%, and the answers for the application or archetype are set to have 35% `yellow` and 6% `red`, the risk level for the application or archetype is red.
+The higher risk level always takes precedence. For example, if you set the `yellow` threshold to 30% and `red` to 5%, and set the answers for the application or archetype to have 35% `yellow` and 6% `red`, the risk level for the application or archetype is red.
 
-|`riskMessages` (required) a| Messages to be displayed in reports for each risk category. The _risk_messages_ map is defined by the following fields:
+|`riskMessages` (required) a| The messages that reports display for each risk category. The following fields define the risk messages map:
 
-* `red` (required, string): A message to be displayed in reports for the red risk level.
-* `yellow` (required, string): A message to be displayed in reports for the yellow risk level.
-* `green` (required, string): A message to be displayed in reports for the green risk level.
-* `unknown` (required, string): A message to be displayed in reports for the unknown risk level.
+* `red` (required, string): A message that reports display for the red risk level.
+* `yellow` (required, string): A message that reports display for the yellow risk level.
+* `green` (required, string): A message that reports display for the green risk level.
+* `unknown` (required, string): A message that reports display for the unknown risk level.
 |`sections` (required) a|A list of sections that the questionnaire must include.
 
-* `name` (required, string): A name to be displayed for the section.
+* `name` (required, string): A name of the section.
 * `order` (required, integer): An order of the question in the section.
 * `comment` (optional, string): A description of the section.
 * `questions` (required): A list of questions that belong to the section.
 ** `order` (required, integer): An order of the question in the section.
-** `text` (required, string): A question to be asked.
+** `text` (required, string): A question to include in the questionnaire.
 ** `explanation` (optional, string): An additional explanation for the question.
-** `includeFor` (optional): A list that defines if a question must be displayed if any of the tags included in this list is present in the target application or archetype.
+** `includeFor` (optional): A list that defines whether the {ProductShortName} displays the question if the application or archetype contains any of the listed tags.
 *** `category` (required, string): A category of the target tag.
 *** `tag` (required, string): A target tag.
-** `excludeFor` (optional): A list that defines if a question must be skipped if any of the tags included in the list is present in the target application or archetype.
+** `excludeFor` (optional): A list that defines whether the {ProductShortName} skips the question if the application or archetype contains any of the listed tags.
 *** `category` (required, string): A category of the target tag.
 *** `tag` (required, string): A target tag.
 ** `answers` (required): A list of answers for the given question.
 *** `order` (required, integer): An order of the question in the section.
 *** `text` (required, string): An answer for the question.
 *** `risk` (required): An implied risk level (red, yellow, green, or unknown) of the current answer. 
-*** `rationale` (optional, string): A justification for the answer that is being considered a risk.
+*** `rationale` (optional, string): A justification for the answer considered a risk.
 *** `mitigation` (optional, string): An explanation of the potential mitigation strategy for the risk implied by the answer.
-*** `applyTags` (optional): A list of tags to be automatically applied to the assessed application or archetype if this answer is selected.
+*** `applyTags` (optional): A list of tags that the {ProductShortName} automatically applies to the assessed application or archetype if this answer is selected.
 **** `category` (required, string): A category of the target tag.
 **** `tag` (required, string): A target tag.
-*** `autoAnswerFor` (optional, list): A list of tags that will lead to this answer being automatically selected when the application or archetype is assessed.
+*** `autoAnswerFor` (optional, list): A list of tags that prompt the {ProductShortName} to automatically select this answer when it assesses the application or archetype:
 **** `category` (required, string): A category of the target tag.
 **** `tag` (required, string): A target tag.
 |====

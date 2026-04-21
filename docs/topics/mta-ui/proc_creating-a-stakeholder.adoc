@@ -8,39 +8,39 @@
 [role="_abstract"]
 To identify the individuals responsible for specific applications, define stakeholders in the {ProductFullName} user interface (UI). Defining these roles ensures that migration assessments and questionnaires are directed to the correct subject matter experts for each application.
 
-You can create and configure stakeholders in any order. However, the following is the most efficient order: 						
+You can create and configure stakeholders in any order. However, the following is the most efficient order:
 
-. Create Stakeholder groups. Note that by default, no stakeholder groups are defined.
-. Create Job functions.	The job function attribute classifies stakeholders and provides a list of default values that can be expanded. 							
-. Create Stakeholders. 
+. Create stakeholder groups. Note that by default, no stakeholder groups are defined.
+. Create job functions. The job function attribute classifies stakeholders and provides a list of default values that can be expanded.
+. Create stakeholders.
 
 
 .Procedure
 
 . Create a stakeholder group:
-.. In the *Migration* view, click *Controls*. 						
-.. Click *Stakeholder groups*. 						
-.. Click *Create new*. 						
-.. Enter the following information: 						
-* Name 								
-* Description 								
-* Member(s) 								
+.. In the *Migration* view, click *Controls*.
+.. Click *Stakeholder groups*.
+.. Click *Create new*.
+.. Enter the following information:
+* Name
+* Description
+* Member(s)
 .. Click *Create*.
 
 . Create a new job function:
-.. In the *Migration* view, click *Controls*. 						
-.. Click *Job functions*. 						
-.. Click *Create new*. 						
-.. In the *Name* text box, enter a job function title. 
-.. Click *Create*. 					
+.. In the *Migration* view, click *Controls*.
+.. Click *Job functions*.
+.. Click *Create new*.
+.. In the *Name* text box, enter a job function title.
+.. Click *Create*.
 
 . Create a new stakeholder:
-.. In the *Migration* view, click *Controls*. 						
-.. Click *Stakeholders*. 						
-.. Click *Create new*. 						
-.. Enter the following information: 						
-* Email 								
-* Name 								
-* Job function. Note that you can create custom functions .			
-* Stakeholder group 								
-.. Click *Create*. 	
+.. In the *Migration* view, click *Controls*.
+.. Click *Stakeholders*.
+.. Click *Create new*.
+.. Enter the following information:
+* Email
+* Name
+* Job function. Note that you can create custom functions.
+* Stakeholder group
+.. Click *Create*.

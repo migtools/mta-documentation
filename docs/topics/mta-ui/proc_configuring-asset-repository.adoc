@@ -13,7 +13,7 @@ When you configure the asset repository for an application, you can also associa
 .Procedure
 
 . In the *Migration* view, click *Applications*.
-. Click the edit icon (image:icon_edit.png[]) to update an imported application.
+. Click the edit icon (image:icon_edit.png[edit icon]) to update an imported application.
 . In the *Update application* dialog, click *Asset repository* and configure the following details:
 .. Select the *Asset repository type* from *Git* or *Subversion*.
 .. Enter the asset repository URL in the *Asset repository* field.

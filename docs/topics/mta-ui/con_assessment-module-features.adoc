@@ -6,15 +6,18 @@
 = The Assessment module features
 
 [role="_abstract"]
-The assessment module in the {ProductFullName} user interface (UI) uses customizable questionnaires to evaluate the suitability of applications for modernization. Understanding these features allows you to identify migration risks, estimate effort, and prioritize applications within your portfolio.
+You can use the assessment module in the {ProductFullName} user interface (UI) to evaluate the suitability of applications for modernization. These evaluations help you identify migration risks, estimate modernization effort, and prioritize applications in your portfolio.
 
 The {ProductFullName} *Assessment* module offers the following features for assessing and analyzing applications:
 
 Assessment hub::
 The *Assessment* hub integrates with the *Application inventory*.
 
+Assessment questionnaires::
+The *Assessment* module supports assessment questionnaires relevant to one or more applications.
+
 Enhanced assessment questionnaire capabilities::
-In {ProductShortName} 7.0, you can import and export assessment questionnaires. You can also design custom questionnaires with a downloadable template by using the YAML syntax, which includes the following features:
+You can import and export assessment questionnaires. You can also design custom questionnaires with a downloadable template by using the YAML syntax, which includes the following features:
 
 * Conditional questions: You can include or exclude questions based on the application or archetype if a certain tag is present on this application or archetype.
 * Application auto-tagging based on answers: You can define tags to be applied to applications or archetypes if a certain answer was provided.
@@ -23,11 +26,8 @@ In {ProductShortName} 7.0, you can import and export assessment questionnaires. 
 +
 NOTE: You can customize and save the default questionnaire.
 
-Multiple assessment questionnaires::
-The *Assessment* module supports multiple questionnaires, relevant to one or more applications.
-
 Archetypes::
-You can group applications with similar characteristics into archetypes. This allows you to assess multiple applications at once. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes.
+You can use archetypes to assess a group applications with similar characteristics. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes.
 
 
 [role="_additional-resources"]

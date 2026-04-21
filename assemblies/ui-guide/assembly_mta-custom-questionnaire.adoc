@@ -45,7 +45,7 @@ The YAML syntax supports including or excluding questions based on tags existing
   questions:
     - order: 4
       text: Are you currently using any form of container orchestration?
-      explanation: Determine if the application utilizes container orchestration tools like Kubernetes, Docker Swarm, etc.
+      explanation: Determine if the application utilizes container orchestration tools such as Kubernetes or Docker Swarm.
       excludeFor:
         - category: Deployment
           tag: Serverless
@@ -55,7 +55,7 @@ The YAML syntax supports including or excluding questions based on tags existing
 ----
 
 Automated answers based on tags present on the assessed application or archetype::
-Automated answers are selected based on the tags existing on the application or archetype. For example, if an application or archetype has the `Runtime/Quarkus` tag, the `Quarkus` answer is automatically selected, and if an application or archetype has the `Runtime/Spring Boot` tag, the `Spring Boot` answer is automatically selected:
+The {ProductShortName} selects automated answers based on the tags that exist on the application or archetype. For example, if an application or archetype has the `Runtime/Quarkus` tag, the {ProductShortName} automatically selects the `Quarkus` answer. Similarly, if an application or archetype has the `Runtime/Spring Boot` tag, the {ProductShortName} automatically selects the `Spring Boot` answer:
 +
 [source,yaml]
 ----
@@ -80,14 +80,14 @@ Automated answers are selected based on the tags existing on the application or 
 
 
 Automatic tagging of applications based on answers::
-During the assessment, tags are automatically applied to the application or archetype based on the answer if this answer is selected. Note that the tags are transitive. Therefore, the tags are removed if the assessment is discarded. Each tag is defined by the following elements:
+During the assessment, the {ProductShortName} automatically applies tags to the application or archetype based on the answer if this answer is selected. Because these tags are transitive, the {ProductShortName} removes them if you discard the assessment. The following elements define each tag:
 +
 --
 * *category*: Category of the target tag (`String`).
 * *tag*: Definition for the target tag as (`String`).
 --
 +
-For example, if the selected answer is `Quarkus`, the `Runtime/Quarkus` tag is applied to the assessed application or archetype. If the selected answer is `Spring Boot`, the `Runtime/Spring Boot` tag is applied to the assessed application or archetype:
+For example, if the selected answer is `Quarkus`, the {ProductShortName} applies the `Runtime/Quarkus` tag to the assessed application or archetype. If the selected answer is `Spring Boot`, the {ProductShortName} applies the `Runtime/Spring Boot` tag to the assessed application or archetype:
 +
 [source,yaml]
 ----

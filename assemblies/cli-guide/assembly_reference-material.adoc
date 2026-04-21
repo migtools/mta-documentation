@@ -31,7 +31,7 @@ include::assembly_rule-story-points.adoc[leveloffset=+1]
 
 [role="_additional-resources"]
 == Additional resources
-* link:{mta-URL}/rules_development_guide/index[Rules Development Guide]
+* link:{mta-URL}/html-single/configuring_and_using_rules_for_an_mta_analysis/index[Configuring and using rules for an MTA analysis]
 
 ifdef::parent-context-of-reference-material[:context: {parent-context-of-reference-material}]
 ifndef::parent-context-of-reference-material[:!context:]
