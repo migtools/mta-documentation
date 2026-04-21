@@ -9,7 +9,7 @@
 [role="_abstract"]
 The code suggestions from {mta-dl-full} differ based on the large language model (LLM) that you use. Therefore, you may want to use an LLM that caters to your specific requirements.
 
-{mta-dl-plugin} integrates with LLMs that are deployed as a scalable service on {ocp-name} AI clusters. These deployments give you granular control over resources such as compute, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) while enabling you to use LLMs to resolve code issues at a large scale.
+{mta-dl-plugin} integrates with LLMs that you deployed as a scalable service on {ocp-name} AI clusters. These deployments give you granular control over resources such as compute, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) while enabling you to use LLMs to resolve code issues at a large scale.
 
 An example workflow for configuring an LLM service on {ocp-name} AI broadly requires the following configurations:
 

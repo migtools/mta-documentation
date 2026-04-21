@@ -12,17 +12,17 @@
 
 The context is a combination of the source code, the issue description, and solved examples: 
 
-* Description of issues detected by {ProductShortName} when you run a static code analysis for a given set of target technologies.
+* Description of issues that {ProductShortName} detects when you run a static code analysis for a given set of target technologies.
 
 * (Optional) The default and custom rules may contain additional information that you include which can help {mta-dl-plugin} to define the context.
 +
-* Solved examples constitute code changes from other migrations and a pattern of resolution for an issue that can be used in future. A solved example is created when a Migrator accepts a resolution in an earlier analysis that results in updated code or an unfamiliar issue in a legacy application that the Migrator manually fixed. Solved examples are stored in the Solution Server. 
+* Solved examples constitute code changes from other migrations and a pattern of resolution for an issue to use in future. {mta-dl-plugin} creates a solved example when a Migrator accepts a resolution in an earlier analysis that results in updated code or an unfamiliar issue in a legacy application that the Migrator manually fixed. The Solution Server stores solved examples. 
 +
 More instances of solved examples for an issue enhance the context and improve the success metrics of rules that trigger the issue. Higher the success metrics of an issue, greater the confidence level associated with the accepted resolutions for that issue in earlier analyses.
 
-* (Optional) If you enable the Solution Server, it extracts a pattern of resolution, called the migration hint, that can be used by the LLM to generate a more accurate fix suggestion in a future analysis.
+* (Optional) If you enable the Solution Server, it extracts a pattern of resolution, called the migration hint, that the LLM can use to generate a more accurate fix suggestion in a future analysis.
 +
-The improvement in the quality of migration hints results in more accurate code resolutions. Accurate code resolutions from the LLM result in the user accepting an update to the code. The updated code is stored in the Solution Server to generate a better migration hint in future.
+The improvement in the quality of migration hints results in more accurate code resolutions. Accurate code resolutions from the LLM result in the user accepting an update to the code. The Solution Server stores the updated code to generate a better migration hint in future.
 +
 This cyclical improvement of resolution pattern from the Solution Server and improved migration hints lead to more reliable code changes as you migrate applications in different migration waves.
 

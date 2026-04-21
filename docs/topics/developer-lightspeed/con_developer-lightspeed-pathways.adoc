@@ -43,9 +43,9 @@ As a Migrator, you can complete the following workflow to use the Agent AI mode 
 [id="llm-proxy-workflow_{context}"]
 == Workflow to use the LLM through the proxy service
 
-You can allow client endpoints, for example, the {ProductShortName} Visual Studio Code extension, to use the proxy service to access the large language models (LLMs). The client uses Keycloak credentials to authenticate to the {ProductShortName} Hub. To authenticate to the LLM, the client sends a JSON Web Token (JWT) issued by Keycloak to the proxy service. The proxy service validates the client's JWT against the Hub's Keycloak instance. 
+You can allow client endpoints, for example, the {ProductShortName} Visual Studio Code extension, to use the proxy service to access the large language models (LLMs). The client uses Keycloak credentials to authenticate to the {ProductShortName} Hub. To authenticate to the LLM, the client sends a JSON Web Token (JWT) that Keycloak issues to the proxy service. The proxy service validates the client's JWT against the Hub's Keycloak instance. 
 
-The proxy service completes a separate authentication process to access the LLM through an Administrator-controlled endpoint. The proxy service authenticates to the LLM by using the cluster secret that has the LLM API key configured by the Administrator. Thus, the proxy service allows Administrators to create, manage, and rotate LLM API keys without the need to share the LLM key with multiple client endpoints.
+The proxy service completes a separate authentication process to access the LLM through an Administrator-controlled endpoint. The proxy service authenticates to the LLM by using the cluster secret that has the LLM API key that the Administrator configured. Thus, the proxy service allows Administrators to create, manage, and rotate LLM API keys without the need to share the LLM key with multiple client endpoints.
 
 After you enable the LLM proxy, you can use either the Solution Server or Agent AI to generate code resolution requests in the Integrated Development Environment (IDE) extension. To use the Solution Server, the Administrator must deploy it in the {ocp-name} cluster with the proxy service. You cannot use the Solution Server without the proxy service.  
 
@@ -63,4 +63,4 @@ As a Migrator, you can:
 
 * To use the Solution Server mode:
 .. Connect to the {ProductShortName} Hub and run an analysis by using a profile downloaded from the Hub. See link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index#analyzing-application-profiles_vsc-extension-guide[Running an application analysis by using a profile]. 
-.. Apply xref:apply-rag-resolution_run-dev-lightspeed-analysis[code resolutions suggested by the Solution Server].
+.. Apply xref:apply-rag-resolution_run-dev-lightspeed-analysis[code resolutions that the Solution Server suggests].

@@ -6,7 +6,7 @@
 = Generating code fix suggestions 
 
 [role="_abstract"]
-This example will walk you through generating code fixes for a Java application that must be migrated to the target technology `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
+This example will walk you through generating code fixes for a Java application you want to migrate to the target technology `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
 
 .Procedure
 
@@ -59,12 +59,12 @@ You must change the `provider-setting` configuration if you plan to use a differ
 
 . Click the solutions icon (image:solutions-icon-new.png[Click solutions icon]) in an issue to request suggestions to resolve the issue.
 +
-{mta-dl-plugin} streams the issue description, a preview of the code changes that resolve the issue, and the file(s) in which the changes are to be made.
+{mta-dl-plugin} streams the issue description, a preview of the code changes in files that resolve the issue.
 +
 You can review the code changes in the editor and accept or reject the changes. If you accept the changes, {mta-dl-plugin} creates a new file with the accepted code changes.
 +
 . Click *Continue* to allow {mta-dl-plugin} to run a follow-up analysis. 
 +
-This round of analysis detects lint issues, compilation issues, or diagnostic issues that may have occurred when you accepted the suggested code change.
+This round of analysis detects lint issues, compilation issues, or diagnostic issues that can occur when you accepted the suggested code change.
 +
-Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated iterations of scan if you allow until all issues are resolved. 
+Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated iterations of scan if you allow until it resolves all issues. 
