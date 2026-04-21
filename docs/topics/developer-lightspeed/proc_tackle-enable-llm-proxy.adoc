@@ -28,9 +28,9 @@ To use the Solution Server, the Administrator must enable it in the Tackle CR al
 +
 . Create the Tackle CR in the `tackle_hub.yaml` file:
 +
-[source, terminal]
+[subs="+quotes"]
 ----
-**vi tackle**
+*vi tackle*
 ----
 
 . Enable `kai_llm_proxy_enabled` in the Tackle CR:
@@ -56,18 +56,18 @@ spec:
 
 . Apply the Tackle CR in the `openshift-mta` project:
 +
-[source, terminal]
+[subs="+quotes"]
 ----
- $ **oc apply -f tackle_hub.yaml**
+ $ *oc apply -f tackle_hub.yaml*
 ----
 
 .Verification
 
 . Enter the following command to verify the {mta-dl-plugin} resources deployed for Solution Server.
 +
-[source, terminal]
+[subs="+quotes"]
 ----
-**oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'**
+*oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'*
 ----
 +
 
