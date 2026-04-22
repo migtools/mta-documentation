@@ -96,6 +96,7 @@ when:
 +
 
 `message` :: Helpful message explaining the migration issue. The message is generated in the report when the rule matches. For example:
++
 
 [source, yaml]
 ----
@@ -105,6 +106,7 @@ message: The class-loading element is no longer valid in the jboss-web.xml file.
   `labels` :: List of string labels for the rule.
   `effort` :: Number of expected story points to resolve this issue.
   `links` :: One or more hyperlinks pointing to documentation around the migration issues that you find.
++
 
 [options="nowrap",subs="attributes+"]
 ----
