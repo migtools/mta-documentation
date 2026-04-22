@@ -14,13 +14,15 @@ endif::[]
 :context: java-conditions-capabilities
 
 [role="_abstract"]
-The `java.referenced` capability in the when condition for Java rules can define search queries for the following fields in the source code:
+An Architect can create custom rules to search for problematic patterns in the `Java` source code when preparing an application for migration to a target  platform.  
+
+You can use the `java.referenced` capability in the `when` condition of the `Java` rules to search for the following fields:
 
 * Locations - such as the classes, methods, packages and so on
 * Annotations
 * Patterns
 
-You can refer to this section for a detailed explanation on the Locations, Annotations, and Patterns.
+See the following sections for a detailed explanation on the Locations, Annotations, and Patterns.
 
 include::topics/rules-development/yaml-java-locations.adoc[leveloffset=+1]
 
