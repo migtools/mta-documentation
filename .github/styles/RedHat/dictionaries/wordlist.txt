@@ -203,6 +203,7 @@ Emulex
 Endevor
 Entra
 enum
+enums
 Equinix
 Esprima
 Etherchannel
@@ -641,6 +642,7 @@ Rockhopper
 Rollup
 Rubygem
 Rubygems
+ruleset
 rulesets
 SA
 SAs
