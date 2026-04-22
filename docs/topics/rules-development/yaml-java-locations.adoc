@@ -60,7 +60,7 @@ public class Test {
 |===
 |Location |Description |Rule condition example
 
-|`TYPE`|Matches against all types, including classes, interfaces, enums, and annotation types that appear anywhere.
+|`TYPE`|Matches against all types, including classes, interfaces, `enums`, and annotation types that appear anywhere.
 a|The following example looks for occurrences of `java.util.List`.
 [source, yaml]
 ----
