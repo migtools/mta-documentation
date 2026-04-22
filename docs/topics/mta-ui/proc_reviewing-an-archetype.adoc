@@ -8,9 +8,9 @@
 [role="_abstract"]
 To verify the scope and criteria of the assessments of applications with similar characteristics, review an archetype in the {ProductFullName} user interface (UI).
 
-An archetype is considered reviewed after completing the review process once, even if multiple questionnaires are marked as required.
+The {ProductShortName} marks an archetype as reviewed after you complete the review process once, even if multiple questionnaires are necessary.
 
-NOTE: If an application is associated with several archetypes, this application is considered reviewed when all associated archetypes have been reviewed. 	
+NOTE: If you associate an application with several archetypes, the {ProductShortName} marks the application as reviewed only after you review all of its associated archetypes.
 
 .Prerequisites
 
@@ -21,14 +21,14 @@ NOTE: If an application is associated with several archetypes, this application 
 . Open the {ProductShortName} web console.
 . Select the *Migration* view and click *Archetype*.
 . Click the *Options* menu ({kebab}) and select *Review* from the drop-down menu.
-. From the list of available questionnaires, click *Take* to select the desired assessment questionnaire.
+. From the list of available questionnaires, select the desired assessment questionnaire by clicking *Take*.
 . In the *Assessment* menu, answer the required questions.
-. Select *Save and Review*. You will automatically be redirected to the *Review* tab.
+. Select *Save and Review*. The system automatically redirects you to the *Review* tab.
 . Enter the following information:
 
-** *Proposed Action*: Proposed action required to complete the migration or modernization of the archetype. 
+** *Proposed Action*: A proposed action required to complete the migration or modernization of the archetype. 
 ** *Effort estimate*: The level of effort required to perform the modernization or migration of the selected archetype.
 ** *Business criticality*: The level of criticality of the application to the business. 
-** *Work Priority*: The archetype’s priority.
+** *Work Priority*: The archetype's priority.
 
 . Click *Submit review*. 

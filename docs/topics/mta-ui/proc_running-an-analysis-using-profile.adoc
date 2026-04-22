@@ -13,29 +13,27 @@ As a Migrator, you can use a pre-configured analysis profile to analyze an appli
 
 . In the *Migration* view, click *Application inventory*.
 . Select an application that you want to analyze.
-+
 . Review the credentials assigned to the application.
 . Click *Analyze*.
 . In the *Mode* section, select *Use analysis profile*.
 . Select a pre-configured profile from the list to run an analysis. 
 . Click *Next* 
-. *Enable automated tagging*. Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.
+. *Enable automated tagging*. Select the checkbox to automatically attach tags to the application.
 +
-NOTE: {ProductShortName} displays automatically attached tags  only _after_ you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
-+
-. *Enable enhanced analysis details*. If you enable this option, {ProductShortName} uploads the logs and output of commands that you run to the Hub as the output streams. The information logged includes the analyzer raw report.
-+
+NOTE: {ProductShortName} displays automatically attached tags only after you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
+
+. *Enable enhanced analysis details*. If you enable this option, {ProductShortName} uploads the logs and output of commands that you run to the Hub as the output streams. The information includes the analyzer raw report.
 
 //need more information on the above option.
 . Click *Next*.
 . In *Review*, verify the analysis parameters.
 . Click *Run*.
 +
-The analysis status is `Scheduled` as {ProductShortName} downloads the image for the container. When {ProductShortName} downloads the image, the status changes to `In-progress.`
+The analysis status is `Scheduled` while {ProductShortName} downloads the container image. After the download completes, the status changes to `In-progress`.
 +
-NOTE: Analysis takes minutes to hours to run depending on the size of the application and the capacity and resources of the cluster.
+The analysis takes minutes to hours depending on the size of the application and the capacity and resources of the cluster.
 +
-NOTE: {ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.
+NOTE: The {ProductShortName} uses Kubernetes scheduling capabilities to determine how many analyzer instances to create based on cluster capacity. By default, if you select multiple applications for analysis, the {ProductShortName} provisions only one analyzer at a time. With additional cluster capacity, the{ProductShortName} can execute more analysis processes in parallel.
 
 . Optional: To track the status of your active analysis task, open the *Task Manager* view by clicking the notifications button.
 +
@@ -43,13 +41,12 @@ Alternatively, hover over the application name to display the pop-over window.
 
 .Verification 
 
-To check the report after the analysis is complete: 
+* Check the report after the analysis is complete: 
 
 . Open the application view by clicking on the application name.
-. Click the *Reports* tab to download the results in *HTML* or *YAML*. 
+. Click the *Reports* tab to download the results in the HTML or YAML format. 
 +
-
 [NOTE]
 ====
-You can download the report if the {ProductShortName} Administrator has enabled the option to download reports after running an analysis on the *General configuration* page in the *Administration* view.
+You can download the report after running an analysis if the {ProductShortName} Administrator enables the download option on the *General configuration* page in the *Administration* view.
 ====

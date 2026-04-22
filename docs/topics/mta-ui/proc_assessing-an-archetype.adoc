@@ -8,9 +8,9 @@
 [role="_abstract"]
 To estimate the modernization effort for groups of applications with similar characteristics, assess an archetype in the {ProductFullName} user interface (UI).
 
-The archetype is considered assessed when all required questionnaires have been answered.
+The {ProductShortName} marks an archetype as assessed after ypu answer all required questionnaires.
 
-NOTE: If an application is associated with several archetypes, this application is considered assessed when all associated archetypes have been assessed. 
+NOTE: If you associate an application with several archetypes, the {ProductShortName} marks the application as assessed only after you assess all of its associated archetypes.
 
 .Prerequisites
 

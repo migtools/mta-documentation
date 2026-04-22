@@ -12,5 +12,4 @@ To allow {ProductFullName} to access the data required for migration tasks, conf
 .Procedure
 
 . In *Administration* view, click *Repositories* and then click *Git*.
-// ![](/Tackle2/Views/GitConfig.png)
 . Enable the *Consume insecure Git repositories* switch.

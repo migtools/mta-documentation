@@ -11,14 +11,14 @@ To determine which specific lines of code you must modify before migrating or mo
 
 You can analyze more than one application at a time against more than one transformation target in the same analysis.
 
-IMPORTANT: If you analyze an application that requires Maven credentials to access private repositories, you must assign these credentials in the Credentials section of the Administration view. Otherwise, there might be an impact on the quality of the analysis, identified issues, or the {ProductShortName} performance. For more information, see xref:configuring-credentials_configuring-mta-instance-environment[Configuring credentials].
+IMPORTANT: If you analyze an application that requires Maven credentials to access private repositories, you must assign these credentials in the Credentials section of the *Administration* view. Otherwise, there might be an impact on the quality of the analysis, identified issues, or the {ProductShortName} performance. For more information, see xref:configuring-credentials_configuring-mta-instance-environment[Configuring credentials].
 
 
 [IMPORTANT]
 ====
-When your system is in a disconnected environment, but you have access to a Maven proxy, the application analysis runs without failure. However, if you do not have access to the Maven proxy, Maven cannot build the application because it cannot access the required dependencies.	
+When your system is in a disconnected environment, but you have access to a Maven proxy, the application analysis runs without failure. However, if you do not have access to the Maven proxy, Maven is unable to build the application because it cannot access the required dependencies.	
 
-Note also that the analysis output in the disconnected environment usually results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
+Note that the analysis output in the disconnected environment usually results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
 ====
 
 NOTE: After creating an application instance on the *Application Inventory* page, the language discovery task starts, automatically preselecting the target filter option. However, you can choose a different preferred language.
@@ -28,19 +28,13 @@ NOTE: After creating an application instance on the *Application Inventory* page
 
 . In the *Migration* view, click *Application inventory*.
 . Select an application that you want to analyze.
-+
-// ![](/Tackle2/AppAssessAnalyze/SelectManageCred.png)
-
 . Review the credentials assigned to the application.
 . Click *Analyze*.
-+
-// ![](/Tackle2/AppAssessAnalyze/AnalysisMode.png)
-
 . Select the *Analysis mode* from the list:
-* Binary
-* Source code
-* Source code and dependencies
-* Upload a local binary. This option only is displayed if you are analyzing a single application. If you chose this option, you are prompted to *Upload a local binary*. Either drag a file into the area provided or click *Upload* and select the file to upload.
+* *Binary*
+* *Source code*
+* *Source code and dependencies*
+* Upload a local binary. This option is available if you are analyzing a single application. If you choose this option, drag a file into the *Upload a local binary* area, or click *Upload* to select a file.
 . Click *Next*.
 . Select one or more target options for the analysis:
 
@@ -50,7 +44,7 @@ NOTE: After creating an application instance on the *Application Inventory* page
 * Containerization
 * Quarkus
 * OracleJDK to OpenJDK
-* OpenJDK. Use this option to upgrade to either of the following JDK versions:
+* Open Java Development Kit (OpenJDK). Use this option to upgrade to either of the following JDK versions:
 ** OpenJDK 11
 ** OpenJDK 17
 ** OpenJDK 21
@@ -65,13 +59,13 @@ NOTE: After creating an application instance on the *Application Inventory* page
 
 * Application and internal dependencies only.
 * Application and all dependencies, including known Open Source libraries.
-* Select the list of packages to be analyzed manually. If you choose this option, type the file name and click *Add*.
-* Exclude packages. If you choose this option, type the name of the package and click *Add*.
+* Select the list of packages for the manual analysis. If you choose this option, type the file name and click *Add*.
+* Exclude packages. If you choose this option, type the package name and click *Add*.
 
 . Click *Next*.
-. In *Advanced*, you can attach additional custom rules to the analysis by selecting the *Manual* or *Repository* mode:
-** In the *Manual* mode, click *Add Rules*. Drag the relevant files or select the files from their directory and click *Add*.
-** In the *Repository* mode, you can add rule files from a Git or Subversion repository.
+. In *Advanced*, attach additional custom rules to the analysis by selecting *Manual* or *Repository* mode:
+** In *Manual* mode, click *Add Rules*. Drag the relevant files or select the files from their directory and click *Add*.
+** In *Repository* mode, add rule files from a *Git* or *Subversion* repository.
 +
 IMPORTANT: Attaching custom rules is optional if you have already attached a migration target to the analysis. If you have not attached any migration target, you must attach rules.
 
@@ -81,19 +75,19 @@ IMPORTANT: Attaching custom rules is optional if you have already attached a mig
 * Excluded rules tags. Rules with these tags are not processed. Add or delete as required.
 * Enable automated tagging. Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.
 +
-NOTE: Automatically attached tags are displayed only _after_ you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
+NOTE: The {ProductShortName} displays automatically attached tags only after you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
 +
-NOTE: Analysis engines use standard rules for a comprehensive set of migration targets. However, if the target is not included, is a customized framework, or the application is written in a language that is not supported, for example, Ruby, you can add custom rules by skipping the target selection in the Set Target tab and uploading custom rule files in the Custom Rules tab. Only custom rule files that are uploaded manually are validated.
+NOTE: Analysis engines use standard rules for a comprehensive set of migration targets. If your target is missing, uses a customized framework, or uses an unsupported language such as Ruby, you can add custom rules. To add custom rules, skip the target selection on the *Set Target* tab and upload custom rule files on the *Custom Rules* tab. The {ProductShortName} validates only the custom rule files that you manually upload.
 
 . Click *Next*.
 . In *Review*, verify the analysis parameters.
 . Click *Run*.
 +
-The analysis status is `Scheduled` as {ProductShortName} downloads the image for the container to execute. When the image is downloaded, the status changes to `In-progress.`
+The analysis status is `Scheduled` while the {ProductShortName} downloads the container image. After the download completes, the status changes to `In-progress`.
 +
-NOTE: Analysis takes minutes to hours to run depending on the size of the application and the capacity and resources of the cluster.
+Analysis takes minutes to hours to run depending on the size of the application and the capacity and resources of the cluster.
 +
-NOTE: {ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.
+NOTE: The {ProductShortName} uses Kubernetes scheduling capabilities to determine how many analyzer instances to create based on cluster capacity. By default, if you select multiple applications for analysis, the {ProductShortName} provisions only one analyzer at a time. With additional cluster capacity, the {ProductShortName} can execute more analysis processes in parallel.
 
 . Optional: To track the status of your active analysis task, open the *Task Manager* drawer by clicking the notifications button.
 +

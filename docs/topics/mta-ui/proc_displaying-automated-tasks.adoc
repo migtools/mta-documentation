@@ -21,5 +21,5 @@ NOTE: You can add additional tags manually. When MTA analyzes the application, i
 
 . In the *Application Inventory*, hover over the application name to display the automated tasks.
 . Display the application tags:
-.. Click the application’s row entry. A side pane opens. 	
+.. Click the application's row entry. A side pane opens. 	
 .. Click the *Tags* tab. The tags attached to the application are displayed. 	

@@ -45,7 +45,6 @@ NOTE: Before creating an application, set up business services, check tags and t
 NOTE: If you enter any value in either the Branch or Root path fields, the Source repository field becomes mandatory.
 
 . Optional: Click *Binary* and enter the following fields:
-// ![](/Tackle2/AddingApps/NewAppBinary.png)
 * *Group*: The Maven group for the application artifact.
 * *Artifact*: The Maven artifact for the application.
 * *Version*: A software version of the application.

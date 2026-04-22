@@ -19,9 +19,9 @@ To allow the {ProductFullName} access to the data required for the migration tas
 
 You can configure the following repository types for the {ProductFullName} instance environment: 			
 
-* Git 					
-* Subversion 					
-* Maven 	
+* *Git* 					
+* *Subversion* 					
+* *Maven* 	
 
 include::topics/mta-ui/proc_configuring-git-repos.adoc[leveloffset=+1]
 

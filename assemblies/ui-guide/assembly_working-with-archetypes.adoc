@@ -17,17 +17,17 @@ endif::[]
 [role="_abstract"]
 To assess multiple applications at once in the {ProductFullName} user interface (UI), use archetypes.
 
-An *archetype* is a group of applications with common characteristics. Application archetypes are defined by criteria tags and the application taxonomy. Each archetype defines how the _assessment module_ assesses the application according to the characteristics defined in that archetype. If the tags of an application match the criteria tags of an archetype, the application is associated with the archetype.
+An archetype is a group of applications with common characteristics. Criteria tags and the application taxonomy define application archetypes. Each archetype defines how the assessment module assesses the application based on archetype's characteristics. If an application's tags match an archetype's criteria tags, the system associates the application with that archetype.
 
-Creation of an archetype is defined by a series of *tags*, *stakeholders*, and *stakeholder groups*. The tags include the following types:
+Tags, stakeholders, and stakeholder groups define an archetype. The tags include the following types:
 
-* *Criteria tags* are tags that the archetype requires to include an application as a member.
+* Criteria tags: Tags that the archetype requires to include an application as a member.
 +
-NOTE: An application must have all of the archetype's criteria tags to be a member. For example, if the application _a_ only has tag _a_, but the archetype _a_ criteria tags include tags _a_ AND _b_, the application _a_ will not be a member of the archetype _a_.
+NOTE: An application must have all of the archetype's criteria tags to be a member. For example, if the application _a_ only has tag _a_, but the archetype _a_ criteria tags include tags _a_ and _b_, the application _a_ will not be a member of the archetype _a_.
 
-* *Archetype tags* are tags that are applied to the archetype entity.
+* Archetype tags: Tags applied to the archetype entity.
 
-NOTE: All applications associated with the archetype inherit the _assessment_ and _review_ from the archetype groups to which these applications belong. This is the default setting. You can override inheritance for the application by completing an individual assessment and review.
+NOTE: All applications associated with the archetype inherit the assessment and review from the archetype groups to which these applications belong. This is the default setting. You can override inheritance for the application by completing an individual assessment and review.
 
 include::topics/mta-ui/proc_defining-an-archetype.adoc[leveloffset=+1]
 

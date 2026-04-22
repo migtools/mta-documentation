@@ -12,5 +12,4 @@ To allow the {ProductFullName} to access the data required for the migration tas
 .Procedure
 
 . In *Administration* view, click *Repositories* and then click *Subversion*.
-// ![](/Tackle2/Views/SubsConfig.png)
 . Enable the *Consume insecure Subversion repositories* switch.
