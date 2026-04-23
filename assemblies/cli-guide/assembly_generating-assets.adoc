@@ -49,7 +49,6 @@ Generating deployment assets has the following benefits:
 * Generating deployment manifests by using familiar template engines, for example, Helm, that are widely used for Kubernetes deployments.
 * Adhering to Kubernetes best practices when preparing the deployment manifest by using Helm templates.
 
- 
 
 include::topics/mta-cli/proc_generating-discovery-manifest.adoc[leveloffset=+1]
 
