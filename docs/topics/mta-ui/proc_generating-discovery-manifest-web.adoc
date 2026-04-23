@@ -33,7 +33,7 @@ You can retrieve configuration for one or more applications at a time.
 ... Click *Retrieve Configurations*.
 
 * Retrieve configurations for multiple applications:
-... Select the target applications or click the Select all option (image:select.png[]).
+... Select the target applications or click the *Select all* option.
 ... Click the Options menu near *Analyze* at the top and click *Retrieve Configurations*.
 +
 . You can review the read-only configurations in the *Retrieve Configurations* dialog and click *Retrieve*.
