@@ -22,7 +22,7 @@ You can use the {ProductShortName} UI to perform the following tasks:
 * Add applications
 * Assign application credentials
 * Import a list of applications
-* Download a CSV template for importing application lists
+* Download a comma-separated values (CSV) file template for importing application lists
 * Create application migration waves
 * Create Jira issues for migration waves
 
