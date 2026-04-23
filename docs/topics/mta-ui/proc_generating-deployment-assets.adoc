@@ -10,13 +10,13 @@ To prepare your application for deployment to a container platform, generate dep
 
 When you generate assets for an application, the generators render manifests for all the migration paths associated with the archetype of the application.
 
-Note that you can generate application assets by using only source code, without generating a discovery manifest first. If the discovery manifest is unavailable, the generator uses the following implicit data from the application profile for opinionated asset generation:
+You can generate application assets by using only source code, without generating a discovery manifest first. If a discovery manifest is unavailable, the generator uses the following implicit data from the application profile for opinionated asset generation:
 
 * *Application metadata:* Information such as the application name, version, and unique identifiers.
 * *Application archetypes:* Standardized templates or structures identified during the initial analysis.
-* *Identified application tags:* Logic must be applied based on the tags found during analysis. For example:
-** For Quarkus, configure specific environment variables for native-mode deployments.
-** For Spring Boot, apply standard Spring framework configurations and dependencies to the generated manifests.
+* *Identified application tags:* The generator applies logic based on the tags found during analysis. For example:
+** For Quarkus, it configures specific environment variables for native-mode deployments.
+** For Spring Boot, it applies standard Spring framework configurations and dependencies to the generated manifests.
 
 .Prerequisites
 
