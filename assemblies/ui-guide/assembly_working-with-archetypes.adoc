@@ -17,9 +17,9 @@ endif::[]
 [role="_abstract"]
 To assess multiple applications at once in the {ProductFullName} user interface (UI), use archetypes.
 
-An archetype is a group of applications with common characteristics. Criteria tags and the application taxonomy define application archetypes. Each archetype defines how the assessment module assesses the application based on the archetype's characteristics. If an application's tags match an archetype's criteria tags, the system associates the application with that archetype.
+An archetype is a group of applications with common characteristics. Tags and the application taxonomy define application archetypes. Each archetype defines how the assessment module assesses the application based on the archetype's characteristics. If an application's tags match an archetype's criteria tags, the system associates the application with that archetype.
 
-Tags, stakeholders, and stakeholder groups define an archetype. The tags include the following types:
+The tags include the following types:
 
 * Criteria tags: Tags that the archetype requires to include an application as a member.
 +

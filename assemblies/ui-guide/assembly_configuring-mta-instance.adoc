@@ -20,11 +20,11 @@ To use the {ProductFullName} for migration assessment and analysis, configure an
 
 If you are a project architect, you can configure the instance's key parameters before migration. The following parameters define applications, individuals, teams, verticals, or areas within an organization affected or participating in the migration:
 
-* Stakeholders 					
-* Stakeholder groups 					
-* Job functions 					
-* Business services 					
-* Tag categories 					
+* Stakeholders
+* Stakeholder groups
+* Job functions
+* Business services
+* Tag categories
 * Tags 	
 
 include::topics/mta-ui/proc_creating-a-stakeholder.adoc[leveloffset=+1]

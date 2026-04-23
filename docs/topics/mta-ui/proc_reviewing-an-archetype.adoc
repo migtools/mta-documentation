@@ -14,7 +14,7 @@ NOTE: If you associate an application with several archetypes, the {ProductShort
 
 .Prerequisites
 
-* You are logged in to an {ProductShortName} server. 	
+* You are logged in to an {ProductShortName} server.
 
 .Procedure
 
@@ -26,9 +26,9 @@ NOTE: If you associate an application with several archetypes, the {ProductShort
 . Select *Save and Review*. The system automatically redirects you to the *Review* tab.
 . Enter the following information:
 
-** *Proposed Action*: A proposed action required to complete the migration or modernization of the archetype. 
+** *Proposed Action*: A proposed action required to complete the migration or modernization of the archetype.
 ** *Effort estimate*: The level of effort required to perform the modernization or migration of the selected archetype.
-** *Business criticality*: The level of criticality of the application to the business. 
+** *Business criticality*: The level of criticality of the application to the business.
 ** *Work Priority*: The archetype's priority.
 
-. Click *Submit review*. 
+. Click *Submit review*.

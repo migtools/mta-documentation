@@ -22,10 +22,10 @@ You cannot remove a Jira connection used to create issues for a migration wave i
 . In the *New instance* window, enter the following information:
 * Name of the instance
 * URL of the web interface of your Jira account
-* Select either the *Jira Cloud* or *Jira Server/Data center* instance type from the list:
-** If you select *Jira Cloud* as the instance type, the list displays only *Basic Auth* credentials.
-** If you select *Jira Server/Data center* as an instance type, the list displays both *Basic Auth* and *Token Bearer* credentials.
-* Select credentials from the list.
+* Select either the *Jira Cloud* or *Jira Server/Data center* instance type.
+* Select credentials from the list:
+** If you selected *Jira Cloud* as the instance type, the list displays only *Basic Auth* credentials.
+** If you selected *Jira Server/Data center* as an instance type, the list displays both *Basic Auth* and *Token Bearer* credentials.
 . By default, you cannot establish a connection with a server that has an invalid certificate. To override this restriction, enable the *Enable insecure communication* switch.
 . Click *Create*.
 

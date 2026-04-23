@@ -55,7 +55,7 @@ The YAML syntax supports including or excluding questions based on tags existing
 ----
 
 Automated answers based on tags present on the assessed application or archetype::
-The {ProductShortName} selects automated answers based on the tags existing on the application or archetype. For example, if an application or archetype has the `Runtime/Quarkus` tag, the {ProductShortName} automatically selects the `Quarkus` answer, and if an application or archetype has the `Runtime/Spring Boot` tag, the {ProductShortName} automatically selects the `Spring Boot` answer:
+The {ProductShortName} selects automated answers based on the tags that exist on the application or archetype. For example, if an application or archetype has the `Runtime/Quarkus` tag, the {ProductShortName} automatically selects the `Quarkus` answer. Similarly, if an application or archetype has the `Runtime/Spring Boot` tag, the {ProductShortName} automatically selects the `Spring Boot` answer:
 +
 [source,yaml]
 ----
@@ -80,7 +80,7 @@ The {ProductShortName} selects automated answers based on the tags existing on t
 
 
 Automatic tagging of applications based on answers::
-During the assessment, the {ProductShortName} automatically applies tags to the application or archetype based on the answer if this answer is selected.  Because these tags are transitive, the {ProductShortName} removes them if you discard the assessment. The following elements define each tag:
+During the assessment, the {ProductShortName} automatically applies tags to the application or archetype based on the answer if this answer is selected. Because these tags are transitive, the {ProductShortName} removes them if you discard the assessment. The following elements define each tag:
 +
 --
 * *category*: Category of the target tag (`String`).

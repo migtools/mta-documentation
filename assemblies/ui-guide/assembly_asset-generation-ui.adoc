@@ -20,17 +20,23 @@ To create different assets (manifests) required to deploy applications from Clou
 
 To generate assets, familiarize yourself with the following entities:
 
-* Archetypes: An archetype contains criteria tags that identify technologies, such as JBoss EAP 6. You can use archetypes to classify applications by their common technologies. For asset generation, you plan migration paths by archetype because you configure the other asset generation entities, such as target profiles that contain the generators, directly within the archetype.
-
-* Generators: A generator uses a templating engine, such as Helm, and a set of templates as its input configuration. When you run an asset generation process, the generator parses the application discovery manifest and uses templates defined for your target platform and migration path to create deployment assets.
+Archetypes::
+An archetype contains criteria tags that identify technologies, such as JBoss EAP 6.
 +
-For example, if you migrate a JBoss EAP 6 application to JBoss EAP 8 on Kubernetes, the generator parses the application's discovery manifest to create the required deployment assets.
+You can use archetypes to classify applications by their common technologies. For asset generation, you plan migration paths by archetype because you configure the other asset generation entities, such as target profiles that contain the generators, directly within the archetype.
 
-* Target profiles: A target profile represents your target migration platform and contains a sequence of generators. 
+Generators::
+A generator uses a templating engine, such as Helm, and a set of templates as its input configuration.
++
+When you run an asset generation process, the generator parses the application discovery manifest and uses templates defined for your target platform and migration path to create deployment assets. For example, if you migrate a JBoss EAP 6 application to JBoss EAP 8 on Kubernetes, the generator parses the application's discovery manifest to create the required deployment assets.
+
+Target profiles::
+A target profile represents your target migration platform and contains a sequence of generators. 
 +
 You can use the target profile to run multiple generators simultaneously, where each generator creates assets for a specific migration path. For example, to migrate a JBoss EAP 6 application to both OpenJDK 21 and JBoss EAP 8 on {ocp-short}, you can use a target profile with two generators, one for each migration path.
 
-* Applications: An application includes the discovery manifest, tags, and the asset repository. 
+Applications::
+An application includes the discovery manifest, tags, and the asset repository. 
 +
 //provide the retrieve configuration link after publishing the doc
 The configuration retrieval process generates a discovery manifest that contains the platform and runtime configurations of an application deployed in the source platform (CF) instances. During asset generation, generator templates parse the discovery manifest to create the final deployment assets.

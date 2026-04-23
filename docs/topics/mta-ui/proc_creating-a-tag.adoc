@@ -18,20 +18,20 @@ You can create and configure tags in any order. However, the following is the mo
 .Procedure
 
 . Create a tag category:
-.. In the *Migration* view, click *Controls*. 						
-.. Click *Tags*. 						
-.. Click *Create tag category*. 						
-.. Enter the following information: 						
-* Name 								
-* Rank: The order in which the tags appear on the applications. 	
-* Color 								
-.. Click *Create*. 			
+.. In the *Migration* view, click *Controls*.
+.. Click *Tags*.
+.. Click *Create tag category*.
+.. Enter the following information:
+* Name
+* Rank: The order in which the tags appear on the applications.
+* Color
+.. Click *Create*.
 
 . Create a tag:
-.. In the *Migration* view, click *Controls*. 				
-.. Click *Tags*. 							
-.. Click *Create tag*. 							
-.. Enter the following information: 							
-* Name 									
-* Tag category 									
-.. Click *Create*. 
+.. In the *Migration* view, click *Controls*.
+.. Click *Tags*.
+.. Click *Create tag*.
+.. Enter the following information:
+* Name
+* Tag category
+.. Click *Create*.
