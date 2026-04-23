@@ -17,7 +17,7 @@ An {ProductShortName} administrator can configure one or more source platform in
 
 . In the {ProductShortName} user interface, select the *Administration* working mode.
 . Click *Source platform* in the left menu bar to go to the *Source platforms* page.
-. Click *Create new platform*. The *Create new platform* dialog is displayed.
+. Click *Create new platform*.
 . In the form, enter the following information:
 .. *Name*: A unique name for the source platform (CF) instance.
 .. *Type*: Select source platform from the drop down menu. For example, *Cloud Foundry*.

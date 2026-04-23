@@ -34,7 +34,7 @@ thresholds:
 
 * `red` (required, unsigned integer): The numeric percentage of red answers allowed in the questionnaire before the {ProductShortName} marks the risk level as red, for example, `30` for `30%`.
 * `yellow` (required, unsigned integer): The numeric percentage of yellow answers allowed in the questionnaire before the {ProductShortName} marks the risk level as yellow, for example, `30` for `30%`.
-* `unknown` (required, unsigned integer): The numeric of unknown answers allowed in the questionnaire before the {ProductShortName} marks the risk level as unknown.
+* `unknown` (required, unsigned integer): The numeric percentage of unknown answers allowed in the questionnaire before the {ProductShortName} marks the risk level as unknown.
 
 The higher risk level always takes precedence. For example, if you set the `yellow` threshold to 30% and `red` to 5%, and set the answers for the application or archetype to have 35% `yellow` and 6% `red`, the risk level for the application or archetype is red.
 
@@ -46,7 +46,7 @@ The higher risk level always takes precedence. For example, if you set the `yell
 * `unknown` (required, string): A message that reports display for the unknown risk level.
 |`sections` (required) a|A list of sections that the questionnaire must include.
 
-* `name` (required, string): A name of the the section.
+* `name` (required, string): A name of the section.
 * `order` (required, integer): An order of the question in the section.
 * `comment` (optional, string): A description of the section.
 * `questions` (required): A list of questions that belong to the section.

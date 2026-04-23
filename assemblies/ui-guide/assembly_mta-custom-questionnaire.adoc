@@ -22,7 +22,7 @@ You can import the custom assessment questionnaire by using a custom YAML syntax
 Conditional questions::
 The YAML syntax supports including or excluding questions based on tags existing on the application or archetype, for example:
 
-* If the application or archetype has the `Language/Java` tag, the {ProductShortName} includes the `What is the main JAVA framework used in your application?` question in the questionnaire.
+* If the application or archetype has the `Language/Java` tag, the `What is the main JAVA framework used in your application?` question is included in the questionnaire:
 +
 [source,yaml]
 ----
@@ -37,7 +37,7 @@ The YAML syntax supports including or excluding questions based on tags existing
 ...
 ----
 
-* If the application or archetype has the `Deployment/Serverless` and `Architecture/Monolith` tag, the {ProductShortName} excludes the `Are you currently using any form of container orchestration?` question from the questionnaire:
+* If the application or archetype has the `Deployment/Serverless` and `Architecture/Monolith` tag, the `Are you currently using any form of container orchestration?` question is excluded from the questionnaire:
 +
 [source,yaml]
 ----
@@ -80,7 +80,7 @@ The {ProductShortName} selects automated answers based on the tags existing on t
 
 
 Automatic tagging of applications based on answers::
-If the {ProductShortName} selects this answer during an assessment, it automatically applies tags to the application or archetype. Because these tags are transitive, the {ProductShortName} removes them if you discard the assessment. The following elements define each tag:
+During the assessment, the {ProductShortName} automatically applies tags to the application or archetype based on the answer if this answer is selected.  Because these tags are transitive, the {ProductShortName} removes them if you discard the assessment. The following elements define each tag:
 +
 --
 * *category*: Category of the target tag (`String`).

@@ -12,7 +12,7 @@ To review analysis details, such as analysis steps, access the activity log in t
 .Procedure
 
 . In the *Migration* view, click *Application inventory*.
-. Click the application row to open the application drawer. 
+. Click the application row to open the application drawer.
 . Click the *Reports* tab.
 . Click *View analysis details* for the activity log of the analysis.
 . Optional: For issues and dependencies found during the analysis, click the *Details* tab in the application drawer and click *Issues* or *Dependencies*.

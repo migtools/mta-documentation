@@ -34,4 +34,4 @@ You cannot remove a Jira connection used to create issues for a migration wave i
 * On the *Jira configuration* page, ensure that you established and authorized the connection:
 
 ** If the *Connection* column displays *Connected*, you have successfully established and authorized the Jira connection.					
-** If the *Connection* column displays *Not connected*, click the status to check the reason of the error. 
+** If the *Connection* column displays *Not connected*, click the status to check the reason for the error. 

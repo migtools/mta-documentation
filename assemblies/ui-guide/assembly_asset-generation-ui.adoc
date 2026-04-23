@@ -28,9 +28,7 @@ For example, if you migrate a JBoss EAP 6 application to JBoss EAP 8 on Kubernet
 
 * Target profiles: A target profile represents your target migration platform and contains a sequence of generators. 
 +
-You can use the target profile to run multiple generators simultaneously, where each generator creates assets for a specific migration path. Thus, you can generate assets for multiple migration paths and target platforms at the same time for a specific archetype.
-+
-For example, to migrate a JBoss EAP 6 application to both OpenJDK 21 and JBoss EAP 8 on {ocp-short}, you can use a target profile with two generators, one for each migration path.
+You can use the target profile to run multiple generators simultaneously, where each generator creates assets for a specific migration path. For example, to migrate a JBoss EAP 6 application to both OpenJDK 21 and JBoss EAP 8 on {ocp-short}, you can use a target profile with two generators, one for each migration path.
 
 * Applications: An application includes the discovery manifest, tags, and the asset repository. 
 +

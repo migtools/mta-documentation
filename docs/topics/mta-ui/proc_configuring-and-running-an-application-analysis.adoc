@@ -11,7 +11,7 @@ To determine which specific lines of code you must modify before migrating or mo
 
 You can analyze more than one application at a time against more than one transformation target in the same analysis.
 
-IMPORTANT: If you analyze an application that requires Maven credentials to access private repositories, you must assign these credentials in the Credentials section of the *Administration* view. Otherwise, there might be an impact on the quality of the analysis, identified issues, or the {ProductShortName} performance. For more information, see xref:configuring-credentials_configuring-mta-instance-environment[Configuring credentials].
+IMPORTANT: If you analyze an application that requires Maven credentials to access private repositories, you must assign these credentials in the *Credentials* section of the *Administration* view. Otherwise, there might be an impact on the quality of the analysis, identified issues, or the {ProductShortName} performance. For more information, see xref:configuring-credentials_configuring-mta-instance-environment[Configuring credentials].
 
 
 [IMPORTANT]
@@ -34,7 +34,7 @@ NOTE: After creating an application instance on the *Application Inventory* page
 * *Binary*
 * *Source code*
 * *Source code and dependencies*
-* Upload a local binary. This option is available if you are analyzing a single application. If you choose this option, drag a file into the *Upload a local binary* area, or click *Upload* to select a file.
+* *Upload a local binary*. This option is available if you are analyzing a single application. If you choose this option, drag a file into the *Upload a local binary* area, or click *Upload* to select a file.
 . Click *Next*.
 . Select one or more target options for the analysis:
 

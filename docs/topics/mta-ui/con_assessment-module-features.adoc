@@ -14,7 +14,7 @@ Assessment hub::
 The *Assessment* hub integrates with the *Application inventory*.
 
 Assessment questionnaires::
-The *Assessment* module supports assessment questionnaires, relevant to one or more applications.
+The *Assessment* module supports assessment questionnaires relevant to one or more applications.
 
 Enhanced assessment questionnaire capabilities::
 You can import and export assessment questionnaires. You can also design custom questionnaires with a downloadable template by using the YAML syntax, which includes the following features:
@@ -27,7 +27,7 @@ You can import and export assessment questionnaires. You can also design custom 
 NOTE: You can customize and save the default questionnaire.
 
 Archetypes::
-You can group applications with similar characteristics into archetypes. Use archetypes to assess several applications at once. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes.
+You can use archetypes to assess a group applications with similar characteristics. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes.
 
 
 [role="_additional-resources"]

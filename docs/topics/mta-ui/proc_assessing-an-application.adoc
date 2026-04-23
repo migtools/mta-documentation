@@ -30,7 +30,7 @@ During the assessment, you might encounter false positives in an application tha
 .Procedure
 
 . In the {ProductShortName} user interface, select the *Migration* view.
-. Click *Application inventory* in the left menu bar. A list of the available applications is displayed in the main pane.
+. Click *Application inventory* in the left menu bar.
 . Select the application you want to assess.
 . Click the *Options* menu ({kebab}) at the right end of the row and select *Assess* from the drop-down menu.
 . From the list of available questionnaires, click *Take* for the desired questionnaire.

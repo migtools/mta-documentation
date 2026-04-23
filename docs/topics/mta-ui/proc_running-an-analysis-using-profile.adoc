@@ -20,7 +20,7 @@ As a Migrator, you can use a pre-configured analysis profile to analyze an appli
 . Click *Next* 
 . *Enable automated tagging*. Select the checkbox to automatically attach tags to the application.
 +
-NOTE: {ProductShortName} displays automatically attached tags only after you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
+NOTE: The {ProductShortName} displays automatically attached tags only after you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
 
 . *Enable enhanced analysis details*. If you enable this option, {ProductShortName} uploads the logs and output of commands that you run to the Hub as the output streams. The information includes the analyzer raw report.
 
@@ -33,7 +33,7 @@ The analysis status is `Scheduled` while {ProductShortName} downloads the contai
 +
 The analysis takes minutes to hours depending on the size of the application and the capacity and resources of the cluster.
 +
-NOTE: The {ProductShortName} uses Kubernetes scheduling capabilities to determine how many analyzer instances to create based on cluster capacity. By default, if you select multiple applications for analysis, the {ProductShortName} provisions only one analyzer at a time. With additional cluster capacity, the{ProductShortName} can execute more analysis processes in parallel.
+NOTE: The {ProductShortName} uses Kubernetes scheduling capabilities to determine how many analyzer instances to create based on cluster capacity. By default, if you select multiple applications for analysis, the {ProductShortName} provisions only one analyzer at a time. With additional cluster capacity, the {ProductShortName} can execute more analysis processes in parallel.
 
 . Optional: To track the status of your active analysis task, open the *Task Manager* view by clicking the notifications button.
 +
