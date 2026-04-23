@@ -69,4 +69,4 @@ When you use the `java` provider for an analysis, the analysis results have lowe
 
 [role="_additional-resources"]
 .Additional resources
-* xref:java-conditions-capabilities[Java condition and capabilities]
+* xref:java-conditions-capabilities_rules-development-guide[Java condition and capabilities]

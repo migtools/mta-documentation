@@ -24,7 +24,7 @@ when:
     ignore: true
 ----
 
-In the above example, the output of the `builtin.file` condition is saved as `poms`:
+In the earlier example, the output of the `builtin.file` condition is saved as `poms`:
 
 [source,yaml]
 ----

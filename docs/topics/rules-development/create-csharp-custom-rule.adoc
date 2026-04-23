@@ -7,14 +7,14 @@
 = Creating a custom C# rule
 
 [role="_abstract"]
-You can create custom rules to analyze `C#` applications by using the {ProductShortName} CLI, user interface, or IDE extension. The following example shows how to run a CLI analysis for a C# application.
+You can create custom rules to analyze `C#` applications by using the {ProductShortName} CLI, user interface, or IDE extension. The following example shows how to run a CLI analysis for a `C#` application.
 
 You can use a custom rule to check if {ProductShortName} triggers an incident when it detects the `WebMatrix.WebData.WebSecurity` class in a `C#` example project.
 
 .Prerequisites
 
 * You installed the `ilspycmd` and `paket` dependencies.
-* You installed the `dotnet tools` and exported the `dotnet tools` path by using the `export PATH="$PATH:<path/to/.dotnet/tools"` command.
+* You installed the `dotnet tools` and exported the `dotnet tools` path by using the `export PATH="$PATH:__<path_to_.dotnet_tools>__"` command.
 
 .Procedure
 . Create a `csharp-rule.yaml` file in your `Home` directory. 
@@ -55,14 +55,14 @@ You can use a custom rule to check if {ProductShortName} triggers an incident wh
       pattern: WebMatrix.WebData.WebSecurity
 ----
 
-. Open a C# project that has the `WebMatrix.WebData.WebSecurity` class.
+. Open a `C#` project that has the `WebMatrix.WebData.WebSecurity` class.
 
 . Run an analysis with the following command in the {ProductShortName} CLI:
 +
 
-[source, terminal]
+[subs="+quotes"]
 ----
-$ ./mta-cli analyze -i _path_to_C#_app_ -o _path_to_report_ --overwrite --run-local=false --enable-default-rulesets=false --mode source-only --rules ~/csharp-rule.yaml 
+$ *./mta-cli analyze -i _<path_to_C#_app>_ -o _<path_to_report>_* *--overwrite --run-local=false --enable-default-rulesets=false --mode* *source-only --rules ~/csharp-rule.yaml*
 ----
 +
 
@@ -71,7 +71,7 @@ $ ./mta-cli analyze -i _path_to_C#_app_ -o _path_to_report_ --overwrite --run-lo
 Add the `--overwrite` option if you want to use the same directory for the report when you run subsequent tests. {ProductShortName} overwrites the current report with the result of the latest analysis that you ran.
 ====
 
-. Open the static report at _path_to_report_ in your browser.
+. Open the static report at _<path_to_report>_ in your browser.
 
 . Navigate to the issues to verify the *`WebMatrix.WebData.WebSecurity` is not available in `.NET Core`* issue.
 
