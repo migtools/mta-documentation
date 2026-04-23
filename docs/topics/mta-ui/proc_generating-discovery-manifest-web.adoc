@@ -8,7 +8,12 @@
 [role="_abstract"] 
 To validate your application inventory before performing a full analysis, generate a discovery manifest in the {ProductFullName} user interface (UI).
 
-To generate discovery manifest, you must retrieve the application configuration from the Cloud Foundry (CF) source platform instance. {ProductShortName} generates a discovery manifest that has the application configuration, which you can later use to generate assets (deployment manifests).
+To generate a discovery manifest, you must retrieve the application configuration from the Cloud Foundry (CF) source platform instance. {ProductShortName} generates a discovery manifest that contains the application configuration, which you can later use to generate assets (deployment manifests).
+
+[NOTE]
+====
+As an Architect, you can generate application assets by using only source code, without generating a discovery manifest first. If a discovery manifest is unavailable, the generator uses implicit data from the application profile for opinionated asset generation.
+====
 
 You can retrieve configuration for one or more applications at a time.
 

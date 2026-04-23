@@ -36,10 +36,10 @@ A target profile represents your target migration platform and contains a sequen
 You can use the target profile to run multiple generators simultaneously, where each generator creates assets for a specific migration path. For example, to migrate a JBoss EAP 6 application to both OpenJDK 21 and JBoss EAP 8 on {ocp-short}, you can use a target profile with two generators, one for each migration path.
 
 Applications::
-An application includes the discovery manifest, tags, and the asset repository. 
+An application includes tags, the asset repository, and, optionally, the discovery manifest. If the discovery manifest is unavailable, the generator uses implicit data from the application profile.
 +
 //provide the retrieve configuration link after publishing the doc
-The configuration retrieval process generates a discovery manifest that contains the platform and runtime configurations of an application deployed in the source platform (CF) instances. During asset generation, generator templates parse the discovery manifest to create the final deployment assets.
+If you want to use the discovery manifest, the configuration retrieval process generates this manifest. The manifest contains the platform and runtime configurations of an application deployed in the source platform (CF) instances. During asset generation, generator templates parse the discovery manifest to create the final deployment assets.
 +
 The application also contains tags that you must configure as criteria tags in an archetype.  
 +
