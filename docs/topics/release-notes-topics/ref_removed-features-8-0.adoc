@@ -6,14 +6,13 @@
 = Removed features
 
 [role="_abstract"]
-This section provides a list of all features removed in {ProductFullName} 8.0.0. All removed features were deprecated in earlier releases and are no longer supported. 
+Review all features removed in {ProductFullName} 8.0.0. All removed features were deprecated in earlier releases and are no longer supported. 
 
-
-XML rules are removed::
-In {ProductFullName} {ProductVersion}, XML rules are removed and are no longer supported both in the {ProductShortName} user interface (UI) and command-line interface (CLI).
+{ProductShortName} removes support for XML rules::
+In {ProductFullName} {ProductVersion}, {ProductShortName} removes XML rules and no longer supports them in the {ProductShortName} user interface (UI) and command-line interface (CLI).
 +
 (link:https://issues.redhat.com/browse/MTA-5357[MTA-5357])
 
 
-The Eclipse IDE plugin is removed::
-The Eclipse IDE plugin for {ProductFullName}, which you could use to analyze the effort for migrating and modernizing your applications, is removed and is no longer supported. As an alternative, you can use the {ProductName} extension for Visual Studio Code (VS Code).
+{ProductShortName} removes support for the Eclipse IDE plugin::
+{ProductShortName} removes the Eclipse Integrated Development Environment (IDE) plugin for {ProductFullName} to analyze the effort for migrating and modernizing your applications and no longer supports it. As an alternative, you can use the {ProductName} extension for Visual Studio Code.

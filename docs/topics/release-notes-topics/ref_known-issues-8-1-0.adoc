@@ -6,7 +6,7 @@
 = Known issues
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version 8.1.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+Review the following newly identified and previously known issues in {ProductFirstRef} ({ProductShortName}) version 8.1.0. All future release notes list a known issue until resolved, at which point it appears as a fixed issue.
 
 
 {ProductShortName} UI does not trigger a violation for open source dependencies in Gradle applications::
