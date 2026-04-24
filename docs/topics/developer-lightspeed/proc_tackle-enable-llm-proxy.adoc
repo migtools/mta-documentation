@@ -8,7 +8,7 @@
 [role="_abstract"]
 To use the LLM proxy service, you must enable the proxy in the Tackle custom resource (CR) and deploy it in the Red Hat {ocp-name} project where you installed the {ProductShortName} Operator.
 
-The proxy authenticates to the LLM in the backend by using the LLM secret configured in the cluster. This helps the Administrator to create, manage, and rotate the LLM key without sharing the key with many client endpoints, for example, {ProductShortName} IDE extension, in the organization. 
+The proxy authenticates to the LLM in the backend by using the LLM secret that you configured in the cluster. This helps the Administrator to create, manage, and rotate the LLM key without sharing the key with many client endpoints, for example, {ProductShortName} Integrated Development Environment (IDE) extension, in the organization. 
 
 [NOTE]
 ====
@@ -17,7 +17,7 @@ To use the Solution Server, the Administrator must enable it in the Tackle CR al
 
 .Prerequisites
 
-* You deployed an additional `RWO` volume for  the `{mta-dl-plugin}-database` if you want to use {mta-dl-plugin}. See link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements] for more information.
+* You deployed an additional ReadWriteOnce (`RWO`) volume for  the `{mta-dl-plugin}-database` if you want to use {mta-dl-plugin}. See link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements] for more information.
 
 * You installed the {ProductShortName} Operator v8.1.0 or later.
 
@@ -28,9 +28,9 @@ To use the Solution Server, the Administrator must enable it in the Tackle CR al
 +
 . Create the Tackle CR in the `tackle_hub.yaml` file:
 +
-[source, terminal]
+[subs="+quotes"]
 ----
-vi tackle
+*vi tackle*
 ----
 
 . Enable `kai_llm_proxy_enabled` in the Tackle CR:
@@ -56,23 +56,23 @@ spec:
 
 . Apply the Tackle CR in the `openshift-mta` project:
 +
-[source, terminal]
+[subs="+quotes"]
 ----
- $ oc apply -f tackle_hub.yaml
+ $ *oc apply -f tackle_hub.yaml*
 ----
 
 .Verification
 
 . Enter the following command to verify the {mta-dl-plugin} resources deployed for Solution Server.
 +
-[source, terminal]
+[subs="+quotes"]
 ----
-oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'
+*oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'*
 ----
 +
 
 [NOTE]
 ====
-When you enable Solution Server, the Solution Server API endpoint is served through the {ProductShortName} Hub. You need not complete any further task, such as creating a route for the Solution Server API.
+When you enable Solution Server, the {ProductShortName} Hub serves the Solution Server API endpoint. You need not complete any further task, such as creating a route for the Solution Server API.
 ====
 

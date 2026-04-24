@@ -6,14 +6,14 @@
 = Configuring the {mta-dl-plugin} profile settings
 
 [role="_abstract"]
-You can use the Visual Studio (VS) Code plugin to run an analysis to discover issues in the code. You can optionally enable {mta-dl-full} to get AI-assisted code suggestions.
+You can use the Visual Studio Code plugin to run an analysis to discover issues in the code. You can optionally enable {mta-dl-full} to get AI-assisted code suggestions.
 
-To generate code changes using {mta-dl-plugin}, you must configure a profile that contains all the necessary configurations, such as source and target technologies and the API key to connect to your chosen large language model (LLM).
+To generate code changes using {mta-dl-plugin}, you must configure a profile that has all the necessary configurations, such as source and target technologies and the API key to connect to your chosen large language model (LLM).
 
 .Prerequisites
 
 * You completed the Solution Server configurations in Tackle custom resource if you opt to use the Solution Server.
-* You opened a Java project in your VS Code workspace.
+* You opened a Java project in your Visual Studio Code workspace.
 
 .Procedure
 
@@ -37,7 +37,7 @@ After you complete the profile configuration, close the `Get Ready to Analyze` p
 |Select profile|Create a profile that you can reuse for multiple analyses. The profile name is part of the context provided to the LLM for analysis.
 |Configure label selector|A label selector filters rules for analysis based on the source or target technology.
 
-Specify one or more target or source technologies (for example, cloud-readiness). {mta-dl-plugin} uses this configuration to determine the rules that are applied to a project during analysis.
+Specify one or more target or source technologies (for example, cloud-readiness). {mta-dl-plugin} uses this configuration to determine the rules to apply to a project during analysis.
 
 If you mentioned a new target or a source technology in your custom rule, you can type that name to create and add the new item to the list.
 
@@ -46,7 +46,7 @@ If you mentioned a new target or a source technology in your custom rule, you ca
 You must configure either target or source technologies before running an analysis.
 ====
 |Set rules|Enable default rules and select your custom rule that you want {ProductShortName} to use for an analysis. You can use the custom rules in addition to the default rules.
-|Configure generative AI|This option opens the `provider-settings.yaml` file that contains API keys and other parameters for all supported LLMs. By default, {mta-dl-plugin} is configured to use OpenAI LLM. To change the model, update the anchor `&active` to the desired block. Modify this file with the required arguments, such as the model and API key, to complete the setup.
+|Configure generative AI|This option opens the `provider-settings.yaml` file that has API keys and other parameters for all supported LLMs. By default, {mta-dl-plugin} uses OpenAI LLM. To change the model, update the anchor `&active` to the desired block. Modify this file with the required arguments, such as the model and API key, to complete the setup.
 |====
 
 See xref:llm-provider-settings_configuring-llm[Configuring LLM provider settings] to complete the LLM provider configuration.

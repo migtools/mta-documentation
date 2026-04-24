@@ -22,7 +22,7 @@ When you run an analysis, {ProductShortName} displays the issues in the *Analysi
 
 When you request code fix suggestions, {mta-dl-plugin} performs the following tasks:
 
-* Streams LLM messages that describe the issue description, resolution, and the file in which the updates are applied.
+* Streams LLM messages that describe the issue description, resolution, and the file in which {mta-dl-plugin} applies the updates.
 * Generates new files in the *Resolutions* pane. These files have the updates to the code to resolve the issues detected in the current analysis. You can review the changes, apply, or revert the updates.
 
 If you apply all the resolutions, {mta-dl-plugin} applies the changes and triggers another analysis to check if there are more issues. Subsequent analysis reports fewer issues and incidents.
