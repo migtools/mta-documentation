@@ -10,11 +10,11 @@ To organize your application portfolio by function, create business services in 
 
 .Procedure
 
-. In the *Migration* view, click *Controls*. 						
-. Click *Business services*. 						
-. Click *Create new*. 						
-. Enter the following information: 						
-* Name 								
-* Description 								
-* Owner 								
-. Click *Create*. 		
+. In the *Migration* view, click *Controls*.
+. Click *Business services*.
+. Click *Create new*.
+. Enter the following information:
+* Name
+* Description
+* Owner
+. Click *Create*.

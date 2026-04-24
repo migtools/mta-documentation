@@ -7,10 +7,9 @@
 = Configuring Subversion repositories
 
 [role="_abstract"]
-To allow the {ProductFullName} to access the data required for the migration tasks, configure Subversion repositories in the user interface (UI). By configuring these repositories, you allow {ProductShortName} to access your source code to identify modernization paths and required steps for your modernization efforts.
+To allow the {ProductFullName} to access the data required for the migration tasks, configure *Subversion* repositories in the user interface (UI). By configuring these repositories, you allow {ProductShortName} to access your source code to identify modernization paths and required steps for your modernization efforts.
 
 .Procedure
 
 . In *Administration* view, click *Repositories* and then click *Subversion*.
-// ![](/Tackle2/Views/SubsConfig.png)
 . Enable the *Consume insecure Subversion repositories* switch.

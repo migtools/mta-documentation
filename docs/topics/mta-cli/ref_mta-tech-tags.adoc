@@ -2,7 +2,7 @@
 //
 // * docs/cli-guide/master.adoc
 
-:_content-type: REFERENCE
+:_mod-docs-content-type: REFERENCE
 [id="mta-tech-tags_{context}"]
 = Supported technology tags
 
@@ -149,7 +149,7 @@ View the {ProductFullName} technology tags supported by the {ProductShortName} c
 * JBehave
 * JBoss Cache
 * JBoss EJB XML
-* JBoss logging
+* JBoss Logging
 * JBoss Transactions
 * JBoss Web XML
 * JBossMQ Client

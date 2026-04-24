@@ -8,7 +8,7 @@
 [role="_abstract"]
 To categorize applications based on certain parameters, create tags in the {ProductFullName} user interface (UI).
 
-{ProductFirstRef} uses tags in multiple categories and provides a list of default values. However, you can create your own tag category and a new tag that is not in the default list.
+{ProductFirstRef} uses tags in different categories and provides a list of default values. However, you can create your own tag category and a new tag that is not in the default list.
 
 You can create and configure tags in any order. However, the following is the most efficient order:
 
@@ -18,20 +18,20 @@ You can create and configure tags in any order. However, the following is the mo
 .Procedure
 
 . Create a tag category:
-.. In the *Migration* view, click *Controls*. 						
-.. Click *Tags*. 						
-.. Click *Create tag category*. 						
-.. Enter the following information: 						
-* Name 								
-* Rank: The order in which the tags appear on the applications. 	
-* Color 								
-.. Click *Create*. 			
+.. In the *Migration* view, click *Controls*.
+.. Click *Tags*.
+.. Click *Create tag category*.
+.. Enter the following information:
+* Name
+* Rank: The order in which the tags appear on the applications.
+* Color
+.. Click *Create*.
 
 . Create a tag:
-.. In the *Migration* view, click *Controls*. 				
-.. Click *Tags*. 							
-.. Click *Create tag*. 							
-.. Enter the following information: 							
-* Name 									
-* Tag category 									
-.. Click *Create*. 
+.. In the *Migration* view, click *Controls*.
+.. Click *Tags*.
+.. Click *Create tag*.
+.. Enter the following information:
+* Name
+* Tag category
+.. Click *Create*.

@@ -4,7 +4,7 @@
 // * docs/maven-guide/master.adoc
 // * docs/rules-development-guide/master.adoc
 
-:_content-type: REFERENCE
+:_mod-docs-content-type: REFERENCE
 [id="effort-level-estimation_{context}"]
 = Guidelines for the level of effort estimation
 

@@ -7,12 +7,12 @@
 = Generating deployment manifests from a discovery manifest and values.yaml
 
 [role="_abstract"]
-Use a Helm chart and a `values.yaml` file to generate deployment manifests that include configuration keys missing from a discovery manifest. This process allows you to capture additional metadata or use the `--set` flag to override values and customize your generated assets.
+Use a Helm chart and a `values.yaml` file to generate deployment manifests that include configuration keys in addition to the discovery manifest. You can capture additional metadata or use the `--set` flag to override values and customize your generated assets.
 
 .Prerequisites
 
 * You installed the `Helm` command-line interface (CLI).
-* To use Helm templates to generate assets, you saved your files in the Helm chart root directory as follows:
+* You saved your files in the Helm chart root directory as follows:
 ** You saved Kubernetes YAML templates, for example, `ConfigMap` or `Deployment`, in the `templates` directory.
 ** You saved non-Kubernetes templates, for example, `Dockerfile`, in the `files/konveyor` path.
 ** You saved the `values.yaml` file in the root directory.
@@ -64,15 +64,14 @@ $ *mta-cli generate helm --chart-dir _<path_to_helm_chart>_* \
 +
 where:
 
-`_<path_to_helm_chart>_`:: Specifies the directory containing the Helm chart. 
-`_<path_to_discovery_manifest>_`:: Specifies the location of the discovery manifest file. 
 `_<location_of_deployment_manifests>_`:: Specifies the output directory for the generated manifests. 
-+
-The variable priority hierarchy for generating deployment manifests is as follows:
 
-* **Priority 1: The `--set` command flag**: Any value specified with this flag has the highest priority and overrides variables defined in either the `values.yaml` file or the discovery manifest.
-* **Priority 2: The discovery manifest**: If you do not use the `--set` flag, the discovery manifest configuration is used as the primary input for generation.
-* **Priority 3: The `values.yaml` file**: If this file is not empty, it provides the input values. However, if a key exists in both the discovery manifest and the `values.yaml` file, the value from the discovery manifest takes precedence.
++
+The variable priority for generating deployment manifests is as follows:
+
+* **Priority 1 - The `--set` command flag**: Any value specified with this flag has the highest priority and overrides variables defined in either the `values.yaml` file or the discovery manifest.
+* **Priority 2 - The discovery manifest**: If you do not use the `--set` flag, the discovery manifest configuration is used as the primary input for asset generation.
+* **Priority 3 - The `values.yaml` file**: If this file is not empty, the generated assets include the input values from this file. However, if a key exists in both the discovery manifest and the `values.yaml` file, the value from the discovery manifest takes precedence.
 
 .Verification
 
