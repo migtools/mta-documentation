@@ -37,3 +37,4 @@ filters:
   # I/O (slash breaks hunspell affix parsing)
   - 'I/O'
   - '\brulesets?\b'
+  - '\enums?\b'
