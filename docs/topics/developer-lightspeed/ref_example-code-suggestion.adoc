@@ -6,7 +6,7 @@
 = Generating code fix suggestions 
 
 [role="_abstract"]
-This example will walk you through generating code fixes for a Java application you want to migrate to the target technology `quarkus`. To generate resolutions for issues in the code, we use the Agentic AI mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
+Review this example to generate code fixes for a Java application you want to migrate to the target technology `quarkus`. To stream code changes that resolve issues in the code, use the Agent mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
 
 .Procedure
 
@@ -57,7 +57,7 @@ You must change the `provider-setting` configuration if you plan to use a differ
 +
 {ProductShortName} identifies the issues in the code.
 
-. Click the solutions icon (image:solutions-icon-new.png[Click solutions icon]) in an issue to request suggestions to resolve the issue.
+. Click the solutions icon (image:solutions-icon-new.png["Click solutions icon"]) in an issue to request suggestions to resolve the issue.
 +
 {mta-dl-plugin} streams the issue description, a preview of the code changes in files that resolve the issue.
 +

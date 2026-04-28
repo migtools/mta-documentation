@@ -7,7 +7,7 @@
 = Prerequisites
 
 [role="_abstract"]
-This section lists the prerequisites required to successfully use the generative AI features in the {mta-dl-plugin} Visual Studio Code extension.
+Review the prerequisites required to successfully use the generative AI features in the {mta-dl-plugin} Visual Studio Code extension.
 
 Before you install {mta-dl-plugin}, you must:
 
@@ -44,5 +44,5 @@ You must enter the provider value and model name in Tackle CR to enable generati
 
 [NOTE]
 ====
-The respective LLM provider maintains the availability of public LLM models.
+The LLM provider maintains the availability of public LLM models.
 ====

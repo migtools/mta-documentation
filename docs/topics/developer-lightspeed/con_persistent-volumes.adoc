@@ -9,4 +9,8 @@
 [role="_abstract"]
 The Solution Server component requires a backend database to store code changes from earlier analyses.
 
-If you plan to enable Solution Server, you must create a `5Gi` ReadWriteOnce (`RWO`) persistent volume for the {mta-dl-plugin} database. See link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements] for more information.
+If you plan to enable Solution Server, you must create a `5Gi` ReadWriteOnce (`RWO`) persistent volume for the {mta-dl-plugin} database. 
+
+[id="_additional-resources"]
+.Additional resources
+* link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements] 

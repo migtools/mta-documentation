@@ -63,11 +63,11 @@ spec:
 
 .Verification
 
-. Enter the following command to verify the {mta-dl-plugin} resources deployed for Solution Server.
+* Enter the following command to verify the {mta-dl-plugin} resources deployed for Solution Server.
 +
 [subs="+quotes"]
 ----
-*oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'*
+$ *oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'*
 ----
 +
 

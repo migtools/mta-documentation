@@ -29,8 +29,6 @@ Migrators do duplicate work by resolving issues that repeat across applications 
 
 {mta-dl-plugin} uses Retrieval Augmented Generation (RAG) for context-based resolutions of issues in code. By using RAG, {mta-dl-plugin} improves the context that it shares with the LLM to generate more accurate suggestions to fix the issue in the code. The context allows the LLM to "reason" and generate suggestions for issues that it detects in the code. This mechanism helps to overcome the limited context size in LLMs that prevents them from analyzing the entire source code of an application.
 
-//You can consider using the demo mode for running {mta-dl-plugin} when you need to perform analysis but have a limited network connection for {mta-dl-plugin} to sync with the LLM. The demo mode stores the input data as a hash and past LLM calls in a cache. The cache is stored in a chosen location in the your file system for later use. The hash of the inputs is used to determine which LLM call must be used in the demo mode. After you enable the demo mode and configure the path to your cached LLM calls in the {mta-dl-plugin} settings, you can rerun an analysis for the same set of files using the responses to a previous LLM call.
-
 :FeatureName: Developer Lightspeed for {ProductShortName}
 
 [IMPORTANT]
