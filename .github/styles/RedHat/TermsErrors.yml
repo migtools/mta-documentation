@@ -2,14 +2,15 @@
 extends: substitution
 ignorecase: true
 level: error
-link: https://redhat-documentation.github.io/vale-at-red-hat/docs/main/reference-guide/termserrors/
+link: https://redhat-documentation.github.io/vale-at-red-hat/reference-guide.html#terms-errors
 message: "Use '%s' rather than '%s'."
 action:
   name: replace
 # swap maps tokens in form of bad: good
 swap:
-  "(?<!-)healthcheck|health-check": health check
+  "(?<!IdM |-)healthcheck|health-check": health check
   "(?<!-)pm": PM
+  "(?<!-|.|{)env": environment
   "(?<!-|I )am": AM
   "(?<!.)io": I/O
   '(?<!as well )\bas per\b': according to|as|as in
@@ -19,8 +20,8 @@ swap:
   "(?<!Mozilla )Thunderbird": Mozilla Thunderbird
   "(?<!pseudo-)ops": operations
   "(?<!self-)hosted engine|hosted-engine": self-hosted engine
-  "bare metal( clusters?| compute| configuration| controls?| environments?| equipment| events?| hardware| hosts?| infrastructure| installations?| installers?| instances?| machines?| media| nodes?| provisioning| servers?| workers?| networks?)": bare-metal$1
-  "bare-metal(?! clusters?| compute| configuration| controls?| environments?| equipment| events?| hardware| hosts?| infrastructure| installations?| installers?| instances?| machines?| media| nodes?| provisioning| servers?| workers?)": bare metal
+  "bare metal( clusters?| compute| configuration| controls?| environments?| equipment| events?| hardware| hosts?| infrastructure| installations?| installers?| instances?| machines?| media| nodes?| provisioning| servers?| systems?| workers?| networks?)": bare-metal$1
+  "bare-metal(?! clusters?| compute| configuration| controls?| environments?| equipment| events?| hardware| hosts?| infrastructure| installations?| installers?| instances?| machines?| media| nodes?| provisioning| servers?| systems?| workers?)": bare metal
   "[bB]asic [aA]uth": Basic HTTP authentication|Basic authentication
   "a lot(?: of)?": many|much
   "best of breed|best-of-breed": best in class
@@ -29,6 +30,7 @@ swap:
   "down(?:-)?level": earlier|previous|not at the latest level
   "IPI": installer-provisioned infrastructure
   "pop-up (?:blocker|killer)": software to block pop-up ad windows
+  "[rR]ama[lL]lama": RamaLama
   "re(?:-)?occur": recur
   "sanity test|sanity check": test|evaluate|validate|verify
   "single quote mark|single quote(?! mark)": single quotation mark
@@ -83,12 +85,11 @@ swap:
   blink: flash
   blue screen of death: stop error
   boot diskette: boot disk
-  bootloader: boot loader
+  "(?<!GRand Unified |GRUB )bootloader": boot loader
   breadcrumbing: breadcrumb trail
   break point: breakpoint
   bring up: start|power on|open|turn on
   bufferpool: buffer pool
-  builtin|built in: built-in
   busmaster: bus master
   busses: buses
   byte code: bytecode
@@ -162,7 +163,6 @@ swap:
   demilitarized zone: DMZ
   demon: daemon
   demount: dismount|unmount
-  deployment configuration: deployment
   depress: press|type
   deregister: unregister
   descendent: descendant
@@ -185,8 +185,6 @@ swap:
   emphasise: emphasize
   end user: user
   end-user interface: graphical interface|interface
-  enum: data enumeration
-  env: environment
   EUI: graphical user interface|interface
   evangelist: influencer|advocate|ambassador
   fatal: unrecoverable
@@ -194,7 +192,6 @@ swap:
   finalise: finalize
   fire up: start
   fixed disk drive: hard disk drive
-  flavor: version|method
   focussed: focused
   forward compatible: compatible with later versions
   freezes: hangs|stops responding
@@ -233,7 +230,6 @@ swap:
   joblog: job log
   jobstream: job stream
   judgement: judgment
-  '(?<!-)\bk8s\b(?!-)': Kubernetes
   keep in mind: remember
   kernelspace: kernel-space
   kick off: start
@@ -338,7 +334,6 @@ swap:
   recognise: recognize
   Red Hat Java: Red Hat build of OpenJDK
   Red Hat OpenJDK|RHOJDK|Red Hat Open Java Development Kit: Red Hat build of OpenJDK
-  regex: regular expression
   requestor: requester
   right now: now
   right-hand: right
@@ -390,7 +385,6 @@ swap:
   syncpoint: sync point
   sysprep tool|sysprep process|sysprep function: sysprep
   system engineer: systems engineer
-  tablespace: table space
   TCP/IP network: Internet Protocol network|IP network
   teleprocessing line: telecommunication line|transmission line
   testcase: test case
@@ -438,10 +432,10 @@ swap:
   useable: usable
   utilize: use
   vanilla: uncustomized
-  versus: compared to
   virtual diskette drive: virtual floppy drive
   virtual diskette(?! drive): virtual floppy disk
   virtual DOS machine: DOS session
+  vs: versus|compared to
   virtual hard disk: virtual hard drive
   virtual-equals-real: nonpageable
   virtual-equals-virtual: pageable
