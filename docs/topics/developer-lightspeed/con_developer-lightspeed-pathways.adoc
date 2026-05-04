@@ -7,7 +7,8 @@
 = {mta-dl-plugin} workflows
 
 [role="_abstract"]
-You can opt to use {mta-dl-full} features to request a code fix suggestion after running a static code analysis of an application.
+You can configure the {mta-dl-plugin} extension to use centralized configuration and the large language model (LLM) through an LLM proxy. 
+Alternatively, you can configure the extension to use the LLM provider settings in your Visual Studio Code environment for code resolution suggestions.
 
 [NOTE]
 ====
@@ -26,19 +27,19 @@ You can complete one of the following workflows:
 
 As an Administrator, you must:
 
-* Create a xref:tackle-llm-secret_getting-started[secret] for your LLM key in the Red Hat {ocp-name} cluster.
+* Create a tackle secret for your LLM key in the Red Hat {ocp-name} cluster.
 
-* In the xref:tackle-enable-llm-proxy_getting-started[Tackle custom resource (CR)], configure the LLM provider and the LLM model.
+* Configure the Tackle custom resource (CR) to enable the LLM provider and the LLM model in the Tackle custom resource (CR). 
 
 As a Migrator, you can complete the following workflow to use the Agent AI mode for code resolutions:
 
-* Enable the generative AI in the xref:configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide[{ProductShortName} extension settings] 
+* Enable the generative AI in the {ProductShortName} extension settings.
 
-* Configure a xref:configuring-developer-lightspeed-profile-settings_configuring-dev-lightspeed-ide[profile] for the analysis.
+* Configure a profile for the analysis.
 
-* xref:llm-provider-settings_configuring-llm[Activate the LLM provider] in the `provider-settings.yaml` file. 
+* Activate the LLM provider in the `provider-settings.yaml` file. 
 
-* Enable the xref:running-agent-analysis_run-dev-lightspeed-analysis[Agent AI and run an analysis] to request code fix suggestion by using the Agent AI mode.
+* Enable the Agent AI and run an analysis to request code fix suggestion by using the Agent AI mode.
 
 [id="llm-proxy-workflow_{context}"]
 == Workflow to use the LLM through the proxy service
@@ -51,16 +52,36 @@ After you enable the LLM proxy, you can use either the Solution Server or Agent 
 
 As an Administrator, you must complete the following workflow to enable the LLM proxy in the {ocp-name} cluster:
 
-* Create a xref:tackle-llm-secret_getting-started[secret] for your LLM key in the Red Hat {ocp-name} cluster.
+* Create a tackle secret cluster.
 
-* In the xref:tackle-enable-llm-proxy_getting-started[Tackle custom resource (CR)], enable the LLM proxy service, enable the Solution Server if you want Migrators to use the Solution Server mode, and configure the LLM provider and the LLM model.
+* Configure the Tackle custom resource (CR) to enable the LLM proxy service, enable the Solution Server if you want Migrators to use the Solution Server mode, and configure the LLM provider and the LLM model.
 
 As a Migrator, you can:
 
-* Enable the generative AI in the xref:configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide[{ProductShortName} extension settings].
+* Enable the generative AI in the {ProductShortName} extension settings.
 
-* If you want to use the Agent AI mode for code resolutions, enable the xref:running-agent-analysis_run-dev-lightspeed-analysis[Agent AI and run an analysis].
+* If you want to use the Agent AI mode for code resolutions, enable the Agent AI and run an analysis.
 
 * To use the Solution Server mode:
-.. Connect to the {ProductShortName} Hub and run an analysis by using a profile downloaded from the Hub. See link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index#analyzing-application-profiles_vsc-extension-guide[Running an application analysis by using a profile]. 
-.. Apply xref:apply-rag-resolution_run-dev-lightspeed-analysis[code resolutions that the Solution Server suggests].
+.. Connect to the {ProductShortName} Hub and run an analysis by using a profile downloaded from the Hub. See Running an application analysis by using a profile. 
+.. Apply code resolutions that the Solution Server suggests.
+
+.Additional resources
+
+* xref:tackle-llm-secret_getting-started[Create a tackle secret in the cluster] 
+
+* xref:tackle-enable-llm-proxy_getting-started[Configure the Tackle custom resource (CR)]
+
+* xref:configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide[Enable generative AI in the {ProductShortName} extension settings] 
+
+* xref:configuring-developer-lightspeed-profile-settings_configuring-dev-lightspeed-ide[Configure a profile]
+
+* xref:llm-provider-settings_configuring-llm[Activate the LLM provider] 
+
+* xref:running-agent-analysis_run-dev-lightspeed-analysis[Enable Agent AI and run an analysis]
+
+* xref:configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide[{ProductShortName} extension settings]
+
+* link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index#analyzing-application-profiles_vsc-extension-guide[Running an application analysis by using a profile]
+
+* xref:apply-rag-resolution_run-dev-lightspeed-analysis[code resolutions that the Solution Server suggests]

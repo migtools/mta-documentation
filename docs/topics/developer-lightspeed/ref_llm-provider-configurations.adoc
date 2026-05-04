@@ -87,7 +87,7 @@ AmazonBedrock: &active
 
 [NOTE]
 ====
-You can use the link:https://aws.amazon.com/cli/[AWS CLI] to verify that you have command line access to AWS services before you proceed with the `provider-settings` configurations.
+You can use the AWS CLI to verify that you have command line access to AWS services before you proceed with the `provider-settings` configurations.
 ====
 
 
@@ -114,3 +114,7 @@ models:
       model: "granite-code:8b-instruct"
       baseUrl: "127.0.0.1:11434" # example URL
 ----
+
+.Additional resources
+
+* link:https://aws.amazon.com/cli/[AWS CLI]

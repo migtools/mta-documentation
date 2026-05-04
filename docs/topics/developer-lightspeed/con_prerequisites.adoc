@@ -7,7 +7,7 @@
 = Prerequisites
 
 [role="_abstract"]
-Review the prerequisites required to successfully use the generative AI features in the {mta-dl-plugin} Visual Studio Code extension.
+You can use the prerequisites required to successfully use the generative AI features in the {mta-dl-plugin} Visual Studio Code extension.
 
 Before you install {mta-dl-plugin}, you must:
 

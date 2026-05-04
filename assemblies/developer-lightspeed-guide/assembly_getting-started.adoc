@@ -16,7 +16,7 @@ endif::[]
 :context: getting-started
 
 [role="_abstract"]
-Review information for prerequisites, persistent volume requirements, installation, and workflows that help you to decide how you want to use the {mta-dl-full}.
+You can view prerequisites, persistent volume requirements, installation, and workflows that help you to decide how you want to use the {mta-dl-full}.
 
 [NOTE]
 ====

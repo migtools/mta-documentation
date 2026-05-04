@@ -6,7 +6,7 @@
 = Generating code fix suggestions 
 
 [role="_abstract"]
-Review this example to generate code fixes for a Java application you want to migrate to the target technology `quarkus`. To stream code changes that resolve issues in the code, use the Agent mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
+Generate code fixes for a Java application you want to migrate to the target technology `quarkus`. To stream code changes that resolve issues in the code, use the Agent mode and the `my-model` as the large language model (LLM) that you deployed in {ocp-name} AI.
 
 .Procedure
 

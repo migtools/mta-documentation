@@ -9,7 +9,7 @@
 :context: intro-to-the-developer-lightspeed
 
 [role="_abstract"]
-Starting from 8.0.0, {ProductFullName} integrates with large language models (LLM) through the {mta-dl-full} component in the Visual Studio Code extension. You can use {mta-dl-plugin} to apply LLM-driven code changes to resolve issues that static code analysis identifies in Java applications.
+Starting from 8.0.0, {ProductFullName} integrates with large language models (LLM) through the {mta-dl-full} plugin in the Visual Studio Code extension. You can use {mta-dl-plugin} to apply LLM-assisted code changes to resolve issues that static code analysis identifies in Java applications.
 
 [id="use-case-ai-code-fix_{context}"]
 == Use case for AI-driven code fixes
@@ -35,9 +35,9 @@ Migrators do duplicate work by resolving issues that repeat across applications 
 ====
 [subs="attributes+"]
 {FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
-
-For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
 ====
 :!FeatureName:
 
+.Additional resources
+* link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]
 :!intro-to-the-developer-lightspeed:

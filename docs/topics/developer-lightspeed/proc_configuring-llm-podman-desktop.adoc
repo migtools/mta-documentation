@@ -12,7 +12,7 @@ The code fix suggestions that a model generates depend on the model's capabiliti
 
 .Prerequisites
 
-* You installed link:https://podman-desktop.io/docs/installation[Podman Desktop] in your system.
+* You installed Podman Desktop in your system.
 
 * You completed initial configurations in {mta-dl-plugin} required for the analysis.
 
@@ -58,3 +58,7 @@ podman_mistral: &active
 ====
 The Podman Desktop service endpoint does not need a password but the OpenAI library expects the `OPENAI_API_KEY` to be set. In this case, the value of the `OPENAI_API_KEY` variable does not matter.
 ====
+
+.Additional resources
+
+* link:https://podman-desktop.io/docs/installation[Podman Desktop] 
