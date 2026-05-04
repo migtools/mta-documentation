@@ -6,35 +6,32 @@
 = Generating code resolutions in the agent mode
 
 [role="_abstract"]
-In the agent mode, the {mta-dl-plugin} planning agent creates the context for an issue and picks a sub-agent that is most suited to resolve the issue. The sub-agent runs an automated scan to describe how the issue can be resolved and generates files with the updated resolutions in one stream. 
+As a Migrator, you can use the agent mode to run an automated analysis that streams the code resolutions that the agent can apply to your source code. When using the agent mode, you can reject the changes or stop the stream but you cannot edit the updated files during the stream.
 
-You can review the updated files and approve or reject the changes to the code. The agent runs another automated analysis to detect new issues in the code that may have occurred because of the accepted changes or diagnostic issues that your tool may generate following a previous analysis. If you allow the process to continue, {mta-dl-plugin} runs the stream again and generates a new file with the latest updates.
-
-When using the agent mode, you can reject the changes or discontinue the stream but you cannot edit the updated files during the stream.
+The agent detects new issues in the code that may have occurred because of the earlier accepted changes or diagnostic issues that your tool may generate following an earlier analysis. If you allow the process to continue, {mta-dl-plugin} runs the stream again and generates a new file with the latest updates.
 
 .Prerequisites
 
-* You opened a Java project in your VS Code workspace.
+* You opened a Java project in your Visual Studio Code workspace.
 * You configured an analysis profile on the *{ProductShortName} Analysis View* page.
 
 .Procedure
 
-. Verify that agent mode is enabled in one of the following ways:
+. Enable the agent mode in one of the following ways:
 +
-.. Type `Ctrl + Shift + P` in VS Code search (Linux/Windows system) and `Cmd + Shift + P` for Mac to go to the command palette. 
-.. Enter `Preferences: Open User Settings (JSON)` to open the `settings.json` file.
-.. Ensure that `mta-vscode-extension.genai.agentMode` is set to `true`.
+.. Open the *MTA Analysis View* page.
+.. Enable the *Agent Mode* on.
 +
 OR
 +
-.. Go to *Extensions > {mta-dl-plugin} > settings*
-.. Click the *Agent Mode* option to enable the server. 
+.. Go to *Extensions > {ProductShortName}-core > GenAI: Agent Mode*
+.. Select the *Agent Mode* checkbox. 
 +
 . Click the {mta-dl-plugin} extension and click *Open {ProductShortName} Analysis View*.
 +
 . Select a profile for the analysis.
 +
-. Click *Start* to start the {ProductShortName} RPC server.
+. Click *Start* to start the {ProductShortName} Remote Procedure Call (RPC) server.
 +
 . Click *Run Analysis* on the *{ProductShortName} Analysis View* page.
 The *Resolution Details* tab opens, where you can view the automated analysis that makes changes in applicable files.

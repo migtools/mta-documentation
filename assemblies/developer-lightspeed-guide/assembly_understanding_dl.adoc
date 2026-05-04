@@ -18,15 +18,15 @@ endif::[]
 [role="_abstract"]
 Understand the {mta-dl-full} extension features, use cases, configurations, and the benefits of using the extension with a large language model (LLM) to generate AI-assisted code resolutions when you want to refactor large codebases.
 
-include::con_intro-to-developer-lightspeed.adoc[leveloffset=+1]
+include::topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc[leveloffset=+1]
 
-include::con_dl-context.adoc[leveloffset=+1]
+include::topics/developer-lightspeed/con_dl-context.adoc[leveloffset=+1]
 
-include::con_solution_server.adoc[leveloffset=+1]
+include::topics/developer-lightspeed/con_solution_server.adoc[leveloffset=+1]
 
-include::con_agent-ai.adoc[leveloffset=+1]
+include::topics/developer-lightspeed/con_agent-ai.adoc[leveloffset=+1]
 
-include::ref_dl-benefits.adoc[leveloffset=+1]
+include::topics/developer-lightspeed/ref_dl-benefits.adoc[leveloffset=+1]
 
 
 ifdef::parent-context-of-understanding-dl[:context: {parent-context-of-understanding-dl}]
