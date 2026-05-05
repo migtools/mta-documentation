@@ -18,11 +18,8 @@ endif::[]
 Review the {ProductShortName} 8.0.1 section for enhancement, fixed issues, and known issues.
 
 include::topics/release-notes-topics/ref_new-features-and-enhancements-8-0-1.adoc[leveloffset=+1]
-
 include::topics/release-notes-topics/ref_known-issues-8-0-1.adoc[leveloffset=+1]
-
 include::topics/release-notes-topics/ref_fixed-issues-8-0-1.adoc[leveloffset=+1]
-
 
 ifdef::parent-context-of-mta-8-0-1[:context: {parent-context-of-mta-8-0-1}]
 ifndef::parent-context-of-mta-8-0-1[:!context:]
