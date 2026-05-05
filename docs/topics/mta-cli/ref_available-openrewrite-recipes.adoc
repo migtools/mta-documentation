@@ -13,7 +13,7 @@ The {ProductFullName} command-line interface (CLI) provides `OpenRewrite` recipe
 [options="header"]
 |====
 |Migration path|Purpose|The `rewrite.config` file location|Active recipes
-|Java EE to Jakarta EE|Replace import of `javax` packages with equivalent `jakarta` packages. 
+|Java EE to Jakarta EE|Replace import of `javax` packages with equivalent `jakarta` packages.
 
 Replace `javax` artifacts, declared within `pom.xml` files, with the `jakarta` equivalents.|`_<MTA_HOME>_/rules/openrewrite/jakarta \ /javax/imports/rewrite.yml`|`org.jboss.windup.JavaxToJakarta`
 |Java EE to Jakarta EE |Rename bootstrapping files.|`_<MTA_HOME>_/rules/openrewrite/jakarta \ /javax/bootstrapping/rewrite.yml`|`org.jboss.windup.jakarta.javax. \ BootstrappingFiles`

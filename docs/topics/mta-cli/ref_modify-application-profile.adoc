@@ -6,7 +6,7 @@
 = A sample profile configuration
 
 [role="_abstract"]
-After Migrators download the analysis profile from the Hub, they can modify the configuration before running an analysis. 
+After Migrators download the analysis profile from the Hub, they can modify the configuration before running an analysis.
 
 When you sync the profile, the {ProductShortName} {CLIName} overrides the modified configuration by downloading the latest configuration from the Hub to your local application.
 
@@ -46,31 +46,31 @@ rules:
     name: ""
   repository:
     kind: git
-    url: <url>
+    url: URL
     branch: ""
     tag: ""
     path: default/generated
 ----
 where
 
-`id` :: specifies the unique identifier of the analysis profile.
+`id`:: Specifies the unique identifier of the analysis profile.
 
-`createUser` :: specifies the user who created the analysis profile in the Hub.
+`createUser`:: Specifies the user who created the analysis profile in the Hub.
 
-`createTime` :: specifies the date and time when the user created the profile.
+`createTime`:: Specifies the date and time when the user created the profile.
 
-`name` :: specifies the name of the analysis profile.
+`name`:: Specifies the name of the analysis profile.
 
-`withDeps` :: specifies if {ProductShortName} includes dependencies in the analysis as a boolean value.
+`withDeps`:: Specifies if {ProductShortName} includes dependencies in the analysis as a boolean value.
 
-`withKnownLibs` :: specifies if {ProductShortName} includes known open-source libraries in the analysis.
+`withKnownLibs`:: Specifies if {ProductShortName} includes known open-source libraries in the analysis.
 
-`packages` :: specifies the packages that are included and excluded in the analysis.
+`packages`:: Specifies the packages that are included and excluded in the analysis.
 
-`targets` :: specifies a unique id and name of each migration target in the analysis profile.
+`targets`:: Specifies a unique id and name of each migration target in the analysis profile.
 
-`labels` :: specifies the labels that filters rules that are applied and excluded in the analysis.
+`labels`:: Specifies the labels that filters rules that are applied and excluded in the analysis.
 
-`files` :: specifies the unique identifier and name of a custom rule in a file. The {ProductShortName} {CLIName} uses the file directly in an analysis.
+`files`:: Specifies the unique identifier and name of a custom rule in a file. The {ProductShortName} {CLIName} uses the file directly in an analysis.
 
-`repository` :: specifies details of external ruleset repository. For example, `kind` (`Git` or `Subversion`), `URL`, `branch`, `tag`, and `path` within the repository to the rulesets.
+`repository`:: Specifies details of external ruleset repository. For example, `kind` (`Git` or `Subversion`), `URL`, `branch`, `tag`, and `path` within the repository to the rulesets.

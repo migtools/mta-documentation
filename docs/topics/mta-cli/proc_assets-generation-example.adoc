@@ -34,6 +34,10 @@ Assume that the `cf-nodejs-app.yaml` is located in the same directory as the {Pr
 [subs="+quotes"]
 ----
 $ *cat cf-nodejs-app.yaml*
+----
++
+[subs="+quotes"]
+----
 name: cf-nodejs
 lifecycle: cnb
 buildpacks:
@@ -58,6 +62,10 @@ $ *mta-cli discover cloud-foundry \
 [subs="+quotes"]
 ----
 $ *cat discover.yaml*
+----
++
+[subs="+quotes"]
+----
 name: cf-nodejs
 randomRoute: true
 timeout: 60
@@ -81,6 +89,10 @@ $ *mta-cli generate helm \
 [subs="+quotes"]
 ----
 $ *cat ./newDir/Dockerfile*
+----
++
+[subs="+quotes"]
+----
 FROM busybox:latest
 
 RUN echo "Hello cf-nodejs!"
@@ -91,6 +103,10 @@ RUN echo "Hello cf-nodejs!"
 [subs="+quotes"]
 ----
 $ *cat ./newDir/configmap.yaml*
+----
++
+[subs="+quotes"]
+----
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -120,6 +136,10 @@ $ *mta-cli generate helm \
 [subs="+quotes"]
 ----
 $ *cat ./newDir/configmap.yaml*
+----
++
+[subs="+quotes"]
+----
 apiVersion: v1
 kind: ConfigMap
 metadata:
