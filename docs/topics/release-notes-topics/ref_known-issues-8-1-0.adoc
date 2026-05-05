@@ -15,7 +15,7 @@ Review the following newly identified and previously known issues in {ProductFir
 --
 To work around this problem, analyze Gradle applications by using the {ProductShortName} command-line interface (CLI).
  
-(link:https://redhat.atlassian.net/browse/MTA-6211[MTA-6211])
+link:https://redhat.atlassian.net/browse/MTA-6211[MTA-6211]
 --
 
 

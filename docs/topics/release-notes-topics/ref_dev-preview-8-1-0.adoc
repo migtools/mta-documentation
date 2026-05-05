@@ -16,7 +16,7 @@ You can use the external `csharp` provider to run an analysis in `source-only` m
 +
 IMPORTANT: Analyzing C# applications is fully supported in the {ProductShortName} UI.
 +
-(link:https://redhat.atlassian.net/browse/MTA-6492[MTA-6492])
+link:https://redhat.atlassian.net/browse/MTA-6492[MTA-6492]
 
 
 The {ProductShortName} Visual Studio Code extension pack and the Core extension with language-specific extension (Developer Preview)::

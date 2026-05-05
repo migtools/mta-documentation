@@ -12,4 +12,4 @@ Review the following major new features and enhancements in {ProductFirstRef} ({
 {ProductShortName} supports pre-generated Maven index to reduce binary application analysis latency::
 Before this update, the analysis performance for Java binaries degraded because {ProductShortName} relied on Maven search to analyze `Java` binary applications. With this enhancement, {ProductShortName} has pre-generated bundled Maven index that does not require connecting to an external index through a network connection. As a result, {ProductShortName} performs fast, low-memory look-ups of Maven artifacts by using local Maven Search and you can analyze Java binaries in disconnected environments.
 +
-(link:https://issues.redhat.com/browse/MTA-6231[MTA-6231])
+link:https://issues.redhat.com/browse/MTA-6231[MTA-6231]

@@ -11,7 +11,7 @@ Review all features removed in {ProductFullName} 8.0.0. All removed features wer
 {ProductShortName} removes support for XML rules::
 In {ProductFullName} {ProductVersion}, {ProductShortName} removes XML rules and no longer supports them in the {ProductShortName} user interface (UI) and command-line interface (CLI).
 +
-(link:https://issues.redhat.com/browse/MTA-5357[MTA-5357])
+link:https://issues.redhat.com/browse/MTA-5357[MTA-5357]
 
 
 {ProductShortName} removes support for the Eclipse IDE plugin::
