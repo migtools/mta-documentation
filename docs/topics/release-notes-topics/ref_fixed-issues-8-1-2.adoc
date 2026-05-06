@@ -1,0 +1,17 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-05-06
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-1-2_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.1.2 provides the following fixed issues that have a significant impact.
+
+////
+placeholder for MTA-6898
+
++
+(link:https://redhat.atlassian.net/browse/MTA-6898[MTA-6898])
+
+////
