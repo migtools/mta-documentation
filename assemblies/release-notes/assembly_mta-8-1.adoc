@@ -17,6 +17,8 @@ endif::[]
 [role="_abstract"]
 This Release Notes section provides high-level coverage of the improvements and additions that have been implemented in {ProductFullName} 8.1.
 
+include::assembly_mta-8-1-2.adoc[leveloffset=+1]
+
 include::assembly_mta-8-1-1.adoc[leveloffset=+1]
 
 include::assembly_mta-8-1-0.adoc[leveloffset=+1]
