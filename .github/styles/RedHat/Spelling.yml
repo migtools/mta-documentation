@@ -36,5 +36,3 @@ filters:
   - '\w+\.\w+'
   # I/O (slash breaks hunspell affix parsing)
   - 'I/O'
-  - '\brulesets?\b'
-  - '\benums?\b'

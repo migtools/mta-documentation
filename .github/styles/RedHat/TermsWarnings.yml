@@ -2,7 +2,7 @@
 extends: substitution
 ignorecase: true
 level: warning
-link: https://redhat-documentation.github.io/vale-at-red-hat/docs/main/reference-guide/termswarnings/
+link: https://redhat-documentation.github.io/vale-at-red-hat/reference-guide.html#terms-warnings
 message: "Consider using '%s' rather than '%s' unless updating existing content that uses the term."
 action:
   name: replace
@@ -16,7 +16,6 @@ swap:
   '(?<!\/)etc(?!\/)': and so on
   '\b(?:eg)': for example
   '\b(?:ie)': that is
-  'I(?!/O)': you
   'is updatable|are updatable': can be updated|can be changed
   "(?<!the |the Red Hat )Hybrid Cloud Console|(?<!the )Red Hat Hybrid Cloud Console|(?<!the |Red Hat |Hybrid )Cloud Console|the Cloud Console": the Red Hat Hybrid Cloud Console|the Hybrid Cloud Console
   all caps: uppercase
@@ -42,6 +41,7 @@ swap:
   execute: run|issue|start|enter
   find out: discover
   hamburger|kebab menu|kebab|vertical ellipsis: more options icon|options icon
+  hashbang: shebang|interpreter directive
   he|she: you
   host name: hostname
   illegal: invalid|not allowed|incorrect

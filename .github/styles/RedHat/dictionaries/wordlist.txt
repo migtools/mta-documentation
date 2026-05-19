@@ -86,7 +86,6 @@ Btrfs
 Bugzilla
 Buildpack
 Buildpacks
-builtin
 Bundler
 Bz
 Bzes
@@ -202,8 +201,6 @@ Emacs
 Emulex
 Endevor
 Entra
-enum
-enums
 Equinix
 Esprima
 Etherchannel
@@ -642,8 +639,6 @@ Rockhopper
 Rollup
 Rubygem
 Rubygems
-ruleset
-rulesets
 SA
 SAs
 SCC
