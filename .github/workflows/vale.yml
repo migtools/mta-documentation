@@ -14,15 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: read
-      checks: read
+      checks: write        # Changed to write so Reviewdog can create check runs
       contents: read
-      pull-requests: read
+      pull-requests: write # Changed to write so Reviewdog can post comments on the PR
     steps:
       - uses: actions/checkout@v4
+      
       - name: Install Asciidoctor
         run: sudo apt-get install -y asciidoctor
+        
       - uses: errata-ai/vale-action@reviewdog
         with:
+          sync: true # <--- ADDED: Dynamically runs 'vale sync' on-the-fly before linting starts
           filter_mode: diff_context
           vale_flags: "--no-exit --minAlertLevel=error --glob=*.adoc"
           reporter: github-pr-review
