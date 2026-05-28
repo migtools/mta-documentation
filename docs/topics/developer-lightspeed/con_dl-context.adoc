@@ -2,7 +2,7 @@
 //
 // * docs/cli-guide/master.adoc
 
-:_content-type: CONCEPT
+:_mod-docs-content-type: CONCEPT
 [id="dl-context_{context}"]
 
 [role=_abstract]
@@ -10,13 +10,13 @@
 
 :context: dl-context
 
-The context is a combination of the source code, the issue description, and solved examples: 
+The context is a combination of the source code, the issue description, and solved examples:
 
 * Description of issues detected by {ProductShortName} when you run a static code analysis for a given set of target technologies.
 
 * (Optional) The default and custom rules may contain additional information that you include which can help {mta-dl-plugin} to define the context.
 +
-* Solved examples constitute code changes from other migrations and a pattern of resolution for an issue that can be used in future. A solved example is created when a Migrator accepts a resolution in a previous analysis that results in updated code or an unfamiliar issue in a legacy application that the Migrator manually fixed. Solved examples are stored in the Solution Server. 
+* Solved examples constitute code changes from other migrations and a pattern of resolution for an issue that can be used in future. A solved example is created when a Migrator accepts a resolution in a previous analysis that results in updated code or an unfamiliar issue in a legacy application that the Migrator manually fixed. Solved examples are stored in the Solution Server.
 +
 More instances of solved examples for an issue enhance the context and improve the success metrics of rules that trigger the issue. Higher the success metrics of an issue, greater the confidence level associated with the accepted resolutions for that issue in previous analyses.
 
