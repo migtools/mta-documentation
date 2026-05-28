@@ -2,7 +2,7 @@
 //
 // * docs/cli-guide/master.adoc
 
-:_content-type: REFERENCE
+:_mod-docs-content-type: REFERENCE
 
 [id="benefits-using-developer-lightspeed_{context}"]
 = Benefits of using {mta-dl-plugin}
@@ -10,7 +10,7 @@
 :context: dl-benefits
 
 [role=_abstract]
-{mta-dl-full} offers options to use large language models of your choice, LLM configuration control, and a platform engineering approach to standardize AI-assisted refactoring efforts for large codebases in your organization.  
+{mta-dl-full} offers options to use large language models of your choice, LLM configuration control, and a platform engineering approach to standardize AI-assisted refactoring efforts for large codebases in your organization.
 
 * *Model agnostic* - {mta-dl-plugin} follows a "Bring Your Own Model" approach, allowing your organization to use a preferred LLM.
 * *Iterative refinement* - {mta-dl-plugin} can include an agent that iterates through the source code to run a series of automated analyses that resolves both the code base and diagnostic issues.

@@ -2,7 +2,7 @@
 //
 // * docs/getting-started-guide/master.adoc
 
-:_content-type: CONCEPT
+:_mod-docs-content-type: CONCEPT
 [id="method-discover_{context}"]
 = Discover phase
 
