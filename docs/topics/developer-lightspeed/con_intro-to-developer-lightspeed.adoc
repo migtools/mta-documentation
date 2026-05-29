@@ -38,10 +38,7 @@ Migrators do duplicate work by resolving issues that repeat across applications 
 ====
 :!FeatureName:
 
-<<<<<<< HEAD
 .Additional resources
 * link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]
 :!intro-to-the-developer-lightspeed:
-=======
-:!intro-to-the-developer-lightspeed:
->>>>>>> 1a8b1d6 (Updating files using the deprecated :_content-type: attribute, updated to :_mod-docs-content-type: (#368))
+
