@@ -41,4 +41,3 @@ Migrators do duplicate work by resolving issues that repeat across applications 
 .Additional resources
 * link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]
 :!intro-to-the-developer-lightspeed:
-
