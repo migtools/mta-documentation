@@ -17,7 +17,7 @@ To use the Solution Server, the Administrator must enable it in the Tackle CR al
 
 .Prerequisites
 
-* You deployed an additional ReadWriteOnce (`RWO`) volume for  the `{mta-dl-plugin}-database` if you want to use {mta-dl-plugin}. See link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements] for more information.
+* You deployed an additional ReadWriteOnce (`RWO`) volume for  the `{mta-dl-plugin}-database` if you want to use {mta-dl-plugin}. See Persistent volume requirements for more information.
 
 * You installed the {ProductShortName} Operator v8.1.0 or later.
 
@@ -76,3 +76,7 @@ $ *oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'*
 When you enable Solution Server, the {ProductShortName} Hub serves the Solution Server API endpoint. You need not complete any further task, such as creating a route for the Solution Server API.
 ====
 
+[role="_additional-resources"]
+.Additional resources
+
+* link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements] 

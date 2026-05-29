@@ -12,7 +12,7 @@ Generate code fixes for a Java application you want to migrate to the target tec
 
 . Open the `my-Java` project in Visual Studio Code.
 
-. Download the {mta-dl-full} extension from the link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[Visual Studio Code marketplace].
+. Download the {mta-dl-full} extension from the Visual Studio Code marketplace.
 
 . Type `Ctrl+Shift+P` (Windows and Linux systems) or `Cmd+Shift+P` (Mac systems).
 
@@ -68,3 +68,8 @@ You can review the code changes in the editor and accept or reject the changes. 
 This round of analysis detects lint issues, compilation issues, or diagnostic issues that can occur when you accepted the suggested code change.
 +
 Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated iterations of scan if you allow until it resolves all issues. 
+
+[role="_additional-resources"]
+.Additional resources
+
+* link:https://marketplace.visualstudio.com/search?term=migration%20toolkit&target=VSCode&category=All%20categories&sortBy=Relevance[Visual Studio Code marketplace]

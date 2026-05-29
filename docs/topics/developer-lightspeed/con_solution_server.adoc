@@ -43,4 +43,5 @@ When you use the Solution Server, you can view a diff of the updated portions of
 
 .Additional resources
 * link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]
+
 :!solution-server:

@@ -84,4 +84,4 @@ As a Migrator, you can:
 
 * link:{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index#analyzing-application-profiles_vsc-extension-guide[Running an application analysis by using a profile]
 
-* xref:apply-rag-resolution_run-dev-lightspeed-analysis[code resolutions that the Solution Server suggests]
+* xref:apply-rag-resolution_run-dev-lightspeed-analysis[Code resolutions that the Solution Server suggests]
