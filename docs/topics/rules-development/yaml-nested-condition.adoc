@@ -7,7 +7,7 @@
 = Nested conditions
 
 [role="_abstract"]
-Conditions can also be nested within other conditions.
+As an Architect, you can create nested conditions in a rule to make the analyzer evaluate different levels of conditions. You can combine the logical `and` and `or` conditions in a nested condition.
 
 [source,yaml]
 ----

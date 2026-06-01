@@ -7,14 +7,14 @@
 = Message action
 
 [role="_abstract"]
-A message action is used to generate an issue with the specified message when a rule condition matches the source code, for example:
+{ProductFirstRef} uses a message action to generate an issue with the specified message when a rule condition matches the source code. 
 
-[source,yaml]
+[source,yaml, subs="+quotes"]
 ----
 - ruleID: test-rule
   message: Test rule matched. Please resolve this migration issue.
   when:
-    <CONDITION>
+    _<CONDITION>_
 ----
 
 Optionally, a message can include hyperlinks to external URLs that provide relevant information about the issue or a quick fix.
@@ -26,10 +26,9 @@ links:
     title: "Short title for the link"
 ----
 
-You can also create a template message to include information about the match that has been interpolated through xref:yaml-custom-variables_logical-chaining-custom-variables[custom variables] in the rule.
-// link link:#custom-variables[Custom Variables]):
+You can also create a template message to include information about the match by using custom variables in the rule.
 
-[source,yaml]
+[source,yaml, subs="+quotes"]
 ----
 - ruleID: lang-ref-004
    customVariables:
@@ -37,5 +36,8 @@ You can also create a template message to include information about the match th
       name: VariableName
     message: "Found generic call - {{ VariableName }}"
   when:
-    <CONDITION>
+    _<CONDITION>_
 ----
+
+.Additional resources
+* xref:yaml-custom-variables_logical-chaining-custom-variables[Custom variables] 

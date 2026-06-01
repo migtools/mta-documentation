@@ -1,0 +1,15 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="rule-condition-complexity_{context}"]
+= Rule condition complexity
+
+[role="_abstract"]
+You can create complex rules to combine conditions, use the output of one rule as an input to another, and chain conditions.
+
+* Logical conditions inform the provider how to handle more than one condition in a when block. The analyzer provides the logical conditions, `and` and `or`, that you can use to combine results of many conditions.
+* Condition chaining uses the output of one condition as the input in another condition of the when block. Assign the output to a variable in one condition and reuse it in other conditions in the when block.
+* Nested conditions create conditions that depend on the evaluation of other conditions.
+* Custom variables capture specific information from the code. You can use the custom variable in the message displayed for the code if it contains a violation defined by the rule.

@@ -2,13 +2,14 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_mod-docs-content-type: REFERENCE
+:_mod-docs-content-type: CONCEPT
 [id="yaml-chaining-condition-variables_{context}"]
 = Chaining condition variables
 
 [role="_abstract"]
-You can use the output of one condition as the input for filtering another one in the `and` and `or` conditions. This is called *condition chaining*.
+You can use condition chaining, where the pattern of one condition becomes the template variable for filtering in another condition. Use condition chaining to scope down the search query to look for a pattern in a subset of files. 
 
+For example, you can search for one or more `pom.xml` files and find dependencies in those subset of `pom` files and not any other file in your project. You can use logical `and` and `or` for chaining conditions. 
 
 [source,yaml]
 ----
@@ -24,7 +25,7 @@ when:
     ignore: true
 ----
 
-In the above example, the output of the `builtin.file` condition is saved as `poms`:
+In the earlier example, {ProductShortName} saves the output of the `builtin.file` condition in `poms`:
 
 [source,yaml]
 ----
@@ -33,7 +34,7 @@ In the above example, the output of the `builtin.file` condition is saved as `po
 [...]
 ----
 
-The variables of `builtin.file` can then be used in the `builtin.xml` condition, by writing `from` and then using link:https://mustache.github.io/mustache.5.html[Mustache templates] in the `provider_ condition` block.
+You can use the variables of `builtin.file` in the `builtin.xml` condition, by writing `from` and then using Mustache templates in the `provider_ condition` block.
 
 This is how the condition knows how to use the variable set to the name `poms`.
 
@@ -58,7 +59,7 @@ any of the inputs to the _provider_ condition.
 ====
 If you only want to use the values of a condition as a chain, you can set `ignore: true`.
 
-This will tell the engine not to use this condition to determine whether the rule has been violated or not:
+This will tell the engine not to use this condition to find a rule violation:
 
 [source,yaml]
 ----
@@ -67,3 +68,7 @@ This will tell the engine not to use this condition to determine whether the rul
 [...]
 ----
 ====
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://mustache.github.io/mustache.5.html[Mustache templates] 

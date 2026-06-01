@@ -7,7 +7,9 @@
 = Custom variables
 
 [role="_abstract"]
-Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed template messages in a rule's action (see xref:yaml-message-actions_rule-yaml-actions[Message actions]). They can be added to a rule in the `customVariables` field:
+You can create custom variables in provider conditions. You can use custom variables to capture relevant information from a line in the source code that violates the rule. {ProductShortName} interpolates the values of these variables with the piece of data in the source code. You can add variables to a rule in the `customVariables` field.
+
+You can use the custom variable values to generate detailed template messages in a rule's action (see Message actions). 
 
 [source,yaml]
 ----
@@ -24,6 +26,10 @@ Provider conditions can have associated custom variables. You can use custom var
 ----
 where:
 
-  `pattern` :: A regular expression pattern that is matched on the source code line when a match is found.
+  `pattern` :: A regular expression pattern that {ProductShortName} uses to find a match on the source code line.
   `name` :: The name of the variable that can be used in templates.
   `message` :: A template for a message by using a custom variable.
+
+[role="_additional-resources"]
+.Additional resources
+* xref:yaml-message-actions_rule-yaml-actions[Message actions]

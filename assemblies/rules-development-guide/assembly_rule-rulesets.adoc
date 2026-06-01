@@ -18,10 +18,6 @@ endif::[]
 [role="_abstract"]
 A set of rules forms a ruleset. {ProductShortName} does not require every rule file to belong to a ruleset, but you can use rulesets to group multiple rules that achieve a common goal and to pass the rules to the rules engine.
 
-To use multiple rule files, you can either:
-
-* Place the rule files in a directory and add a ruleset.yaml file. {ProductShortName} treats the directory as a ruleset, and you can pass the directory path as input to the `--rules` option.
-* Specify multiple rules files by using the `--rules` option when you run an analysis.
 
 include::topics/rules-development/yaml-rulesets.adoc[leveloffset=+1]
 

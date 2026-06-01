@@ -62,8 +62,10 @@ _<path-to-go-rule-001.yml>_
 
 [NOTE]
 ====
-Add the `--overwrite` option if you want to use the same directory for the report when you run subsequent tests. {ProductShortName} overwrites the current report with the result of the latest analysis that you run.
+Add the `--overwrite` option if you want to use the same directory for the report when you run more tests. {ProductShortName} overwrites the current report with the result of the latest analysis that you run.
 ====
+
+.Verification
 
 . Open the static report at `/home/<USER>/output/static-report/` in your browser.
 

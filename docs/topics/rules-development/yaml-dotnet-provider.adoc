@@ -2,18 +2,18 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_mod-docs-content-type: REFERENCE
+:_mod-docs-content-type: CONCEPT
 [id="yaml-dotnet-provider_{context}"]
-= Csharp provider
+= C# provider
 
 [role="_abstract"]
-The `csharp` provider is an external provider used to analyze `.NET Core` and `C#` source code. Currently, the provider supports the `referenced` capability.
+The `C#` provider can analyze `.NET` and `C#` application source code by using the `referenced` capability. The `C#` provider uses a gRPC interface to perform a semantic analysis of an application source code in the `source-only` mode. 
 
-The `csharp` provider uses a gRPC interface to perform a semantic analysis of an application source code in the `source-only` mode. The provider parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the custom rule definition, the analyzer identifies violations in your code that you must resolve before the application migration. 
+The provider parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the custom rule definition, the analyzer identifies violations in the source code that Migrators must resolve before the application migration. 
 
-== `referenced`
+`referenced`::
 
-The `csharp` provider supports the `referenced` capability in rules to define fields such as `pattern` and `location`. The provider uses these patterns to search the source code for violations. 
+The `C#` provider supports the `referenced` capability in rules to define fields such as `pattern` and `location`. The provider uses these patterns to search the source code for violations. 
 
 [source,yaml]
 ----

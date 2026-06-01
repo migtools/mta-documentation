@@ -1,0 +1,26 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-03-27
+:_mod-docs-content-type: CONCEPT
+
+[id="external-providers_{context}"]
+= Provider capabilities in custom rules
+
+[role="_abstract"]
+The external providers, except `C#`, use the Language Server Protocol (LSP) server to perform an analysis. The provider forms a search query and sends it to the LSP server to check against the application. When the LSP server returns a match for the search in the source code, the analyzer triggers a violation. 
+
+Currently, {ProductShortName} supports the following providers:
+
+* `builtin`
+* `Java` 
+* `C#`
+* External providers (for `Python`, `Go`, and `Node.js` applications) initialized by the generic provider binary
+
+[NOTE]
+====
+You can use the generic provider binary to create an external provider for any language that is compliant with LSP specifications.
+====
+
+.Additional resources
+
+* link:https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/[LSP 3.17 specifications]
+

@@ -19,7 +19,7 @@ ifdef::mta[]
 :ProductShortName: MTA
 :ProductShortNameLower: mta
 :ProductFullName: migration toolkit for applications (MTA)
-:ProductFirstRef: Migration toolkit for applications
+:ProductFirstRef: Migration toolkit for applications (MTA)
 :LC_PSN: mta
 :mta-cli: mta-cli
 :DocInfoProductNameURL: migration_toolkit_for_applications

@@ -2,14 +2,24 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_mod-docs-content-type: REFERENCE
+:_mod-docs-content-type: PROCEDURE
 [id="yaml-rulesets_{context}"]
 = Creating and using a custom ruleset
 
 [role="_abstract"]
-You can create a ruleset by placing one or more custom rules in a directory and creating a `ruleset.yaml` file at the directory root. When you perform an analysis, you pass this directory as input to the {ProductShortName} {CLIName} by using the `--rules` option. All rules in this directory are treated as a part of the ruleset defined by the `ruleset.yaml` file.
+You can create a ruleset by placing one or more custom rules in a directory and creating a `ruleset.yaml` file at the directory root. All rules in this directory become a part of the ruleset.
 
-The `ruleset.yaml` file stores the metadata of the ruleset. You can group multiple similar custom rules and create a ruleset for them. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, {ProductShortName} treats all the files in the directory as belonging to the ruleset defined in the `ruleset.yaml` file.
+You can include multiple rules in a ruleset as follows:
+
+* Place the rule files in a directory and add a ruleset.yaml file. {ProductShortName} treats the directory as a ruleset, and you can pass the directory path as input to the `--rules` option.
+* Specify multiple rules files by using the `--rules` option when you run an analysis.
+
+To use a custom ruleset in an analysis:
+
+. Create a _<custom_rule_directory>_ where you save the ruleset and rules files.
+
+. Create a `ruleset.yaml` file in the _<custom_rule_directory>_:
++
 
 [source,yaml]
 ----
@@ -18,22 +28,27 @@ description: "Description of the ruleset"
 labels: 
   - key=val
 ----
++
 where:
 
-  `name` :: The name must be unique within the provided rulesets.
-  `labels` :: Ruleset labels are inherited by all rules that belong to the ruleset.
+ `name`:: The name must be unique among the provided rulesets.
+  
+ `labels`:: A key-value pair that identifies the source or target technology. Rules that belong to the ruleset inherit the ruleset labels.
 
-To perform any application analysis, enter:
-
-[source,terminal]
-----
-$ mta-cli analyze --input=<application_to_analyze> --output=<output_dir> --rules=<custom_rule_dir> --enable-default-rulesets=false
-----
-
-*  Replace `<application_to_analyze>` with the name of your application.
-*  Replace `<output_dir>` with the directory of your choice.
-*  Replace `<custom_rule_dir>` with the custom rule file.
-* To use multiple rule files, place them in a directory and add a `ruleset.yaml` file. Then the directory is treated as a _ruleset_, and you can pass it as input to the `--rules` option.
+. Pass the ruleset directory as the input in the `--rules` option:
 +
 
-Note that if you want to use the `--target` or `--source` option in the CLI, the analyzer will only select rules that match the label for that target. Therefore, make sure that you have added target or source labels in your rules. See xref:reserved-label_rule-yaml-metadata[Reserved labels] for more details.
+[source,terminal, subs="+quotes"]
+----
+$ mta-cli analyze --input=_<application_to_analyze>_ --output=_<output_dir>_ --rules=_<custom_rule_directory>_ --enable-default-rulesets=false
+----
+
+*  Replace _<application_to_analyze>_ with the name of your application.
+*  Replace _<output_dir>_ with the directory of your choice.
+*  Replace _<custom_rule_directory>_ with the path to the custom rule directory.
++
+
+Note that if you want to use the `--target` or `--source` option in the CLI, the analyzer will only select rules that match the label for that target. Therefore, you must add reserved labels in your rules.  
+
+.Additional resources
+* xref:reserved-label_rule-yaml-metadata[Reserved labels]

@@ -7,24 +7,39 @@
 = Creating a YAML rule
 
 [role="_abstract"]
-You can create and test your first {ProductShortName} YAML-based rule by completing the following procedure. This assumes that you have already installed {ProductShortName}. See link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI] in the _{UserCLIBookName}_ for installation instructions.
+You can create a YAML-based rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and to provide a link to the documentation that describes how to migrate the code. 
 
-In this example, you will create a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and to provide a link to the documentation that describes how to migrate the code.
+
+.Prerequisites
+
+* You installed {ProductShortName}. See Installing and running the CLI.
 
 .Procedure
-. Create a YAML file for the rule. In the following example, the rule is created in your `$HOME` directory.
+. Create a YAML file for the rule. In the following example, the rule is available in the `$HOME` directory.
 +
 [options="nowrap",subs="attributes+"]
 ----
 $ mkdir /home/<USER>/rule.yaml
 ----
 
-. Create `jboss-web.xml` and `pom.xml` files in a directory:
+. Create a `data` directory:
 +
 [options="nowrap",subs="attributes+"]
 ----
 mkdir /home/<USER>/data/
+----
+
+. Create a `jboss-web.xml` file in the `data` directory:
++
+[options="nowrap",subs="attributes+"]
+----
 touch /home/<USER>/data/jboss-web.xml
+----
+
+. Create a `pom.xml` file in the `data` directory:
++
+[options="nowrap",subs="attributes+"]
+----
 touch /home/<USER>/data/pom.xml
 ----
 
@@ -69,15 +84,16 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 +
 [options="nowrap",subs="attributes+"]
 ----
-- ruleID: <UNIQUE_RULE_ID> 
-  description: <DESCRIPTION> 
+- ruleID: jboss5-web-class-loading
+  description: Find class loading element in JBoss XML file.
   when:
-    <CONDITION(S)> 
-  message: <MESSAGE> 
-  labels: <LABELS> 
-  effort: <EFFORT> 
+    builtin.xml:
+      xpath: /jboss-web/class-loading
+  message: The class-loading element is no longer valid in the jboss-web.xml file.
+  effort: 3
   links:
-  - <LINKS>
+  - url: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6
+    title: Create or Modify Files That Control Class Loading in JBoss EAP 6
 ----
 +
 where:
@@ -95,7 +111,8 @@ when:
 ----
 +
 
-`message` :: Helpful message explaining the migration issue. The message is generated in the report when the rule matches. For example:
+`message` :: Helpful message explaining the migration issue. {ProductShortName} includes the message in the report when the rule matches. For example:
++
 
 [source, yaml]
 ----
@@ -105,6 +122,7 @@ message: The class-loading element is no longer valid in the jboss-web.xml file.
   `labels` :: List of string labels for the rule.
   `effort` :: Number of expected story points to resolve this issue.
   `links` :: One or more hyperlinks pointing to documentation around the migration issues that you find.
++
 
 [options="nowrap",subs="attributes+"]
 ----
@@ -112,22 +130,14 @@ message: The class-loading element is no longer valid in the jboss-web.xml file.
     - url: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6
   title: Create or Modify Files That Control Class Loading in JBoss EAP 6
 ----
++
 
-The rule is now complete and looks similar to the following:
+The rule is now complete.
 
-[options="nowrap",subs="attributes+"]
-----
-- ruleID: jboss5-web-class-loading
-  description: Find class loading element in JBoss XML file.
-  when:
-    builtin.xml:
-      xpath: /jboss-web/class-loading
-  message: The class-loading element is no longer valid in the jboss-web.xml file.
-  effort: 3
-  links:
-  - url: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6
-    title: Create or Modify Files That Control Class Loading in JBoss EAP 6
-----
+
+.Verification
+
+To verify that the rule works:
 
 . Point the CLI to the rule file you created:
 +
@@ -136,33 +146,28 @@ The rule is now complete and looks similar to the following:
 –rules /home/<USER>/rules.yaml
 ----
 
-. To test the rule, point the input to the test data you created and pass the rule using the rules option in MTA CLI:
+. Pass the rule by using the rules option in MTA CLI:
 +
 [options="nowrap",subs="attributes+"]
 ----
 mta-cli analyze --input /home/<USER>/data/ --output /home/<USER>/output/ --rules /home/<USER>/rules.yaml
 ----
 
-. Review the report to be sure that it provides the expected results.
-+
-
-Once the analysis is complete, the command outputs the path to the HTML report:
+. Open `/home/<USER_NAME>/output/static-report/index.html` in a web browser.
 +
 [options="nowrap",subs="attributes+"]
 ----
 INFO[0066] Static report created. Access it at this URL:  URL="file:/home/<USER>/output/static-report/index.html"
 ----
 +
-Open `/home/<USER_NAME>/output/static-report/index.html` in a web browser.
 . Navigate to the *Issues* tab in the left menu.
-. Verify that the rule is executed:
-.. In the *Issues* table, type `JBoss XML` in the search bar.
-.. Verify that the issue with the title `Find class loading element in JBoss XML file` is present in the table.
+. In the *Issues* table, type `JBoss XML` in the search bar.
+. Verify that the issue with the title `Find class loading element in JBoss XML file` is present in the table.
 . Click the *jboss-web.xml* link to open the affected file.
 
-
-
-
+[role="_additional-resources"]
+.Additional resources
+* link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI]
 
 
 

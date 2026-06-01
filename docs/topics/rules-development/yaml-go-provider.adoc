@@ -7,7 +7,7 @@
 = Go provider
 
 [role="_abstract"]
-The `go` provider analyzes `Go` source code. This provider's capabilities are `referenced` and `dependency`.
+The `go` provider offers `referenced` and `dependency` capabilities to analyze `Go` source code.
 
 `referenced`::
 By using the `referenced` capability, the provider finds references in the source code.
