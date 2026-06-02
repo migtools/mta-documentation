@@ -7,21 +7,21 @@
 = Debugging {mta-dl-plugin}
 
 [role="_abstract"]
-{mta-dl-full} generates logs to debug issues specific to the extension host and the {ProductShortName} analysis and RPC server. You can also configure the log level for the {mta-dl-plugin} in the extension settings. The default log level is *debug*.
+{mta-dl-full} generates logs to debug issues specific to the extension host and the {ProductShortName} analysis and Remote Procedure Call (RPC) server. You can also configure the log level for the {mta-dl-plugin} in the extension settings. The default log level is *debug*.
 
-Extension logs are stored as `extension.log` with automatic rotation. The maximum size of the log file is 10 MB and three files are retained. Analyzer RPC logs are stored as `analyzer.log` without rotation.
+{mta-dl-plugin} stores extension logs as `extension.log` with automatic rotation. The maximum size of the log file is 10 MB and {mta-dl-plugin} retains three files. {mta-dl-plugin} stores analyzer RPC logs as `analyzer.log` without rotation.
 
 [id="dev-lightspeed-archive-logs_{context}"]
 
 == Archiving the logs
 
-To archive the logs as a zip file, type `{ProductShortName}: Generate Debug Archive` in the VS Code Command Palette and select the information type that must be archived as a log file. 
+To archive the logs as a zip file, type `{ProductShortName}: Generate Debug Archive` in the Visual Studio Code Command Palette and select the information type to archive as a log file. 
 
 The archive command allows capturing all relevant log files in a zip archive at the specified location in your project. By default, you can access the archived logs in the .vscode directory of your project.
 
 The archival feature helps you to save the following information:
 
-* Large language model (LLM) provider configuration: Fields from the provider settings that can be included in the archive. All fields are redacted for security reasons by default. Ensure that you do not expose any secrets.
+* Large language model (LLM) provider configuration: Fields from the provider settings that you can include in the archive. {mta-dl-plugin} redacts all fields for security reasons by default. Ensure that you do not expose any secrets.
 * LLM model arguments
 * LLM traces: If you enabled tracing LLM interactions, you can choose to include LLM traces in the logs.
 
@@ -31,8 +31,8 @@ The archival feature helps you to save the following information:
 
 You can access the logs in the following ways:
 
-* *Log file*: Type `Developer: Open Extension Logs Folder` and open the `redhat.mta-vscode-extension` directory that contains the extension log and the analyzer log.
+* *Log file*: Type `Developer: Open Extension Logs Folder` and open the `redhat.mta-vscode-extension` directory that has the extension log and the analyzer log.
 
 * *Output panel*: Select `{mta-dl-plugin}` from the drop-down menu.
 
-* *Webview logs*: You can also inspect webview content by using the webview logs. To access the webview logs, type `Open Webview Developer Tools` in the VS Code Command Palette.
+* *Webview logs*: You can also inspect webview content by using the webview logs. To access the webview logs, type `Open Webview Developer Tools` in the Visual Studio Code Command Palette.

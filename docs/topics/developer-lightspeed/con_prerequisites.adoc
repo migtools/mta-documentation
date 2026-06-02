@@ -7,7 +7,7 @@
 = Prerequisites
 
 [role="_abstract"]
-This section lists the prerequisites required to successfully use the generative AI features in the {mta-dl-plugin} Visual Studio (VS) Code extension.
+You can use the prerequisites required to successfully use the generative AI features in the {mta-dl-plugin} Visual Studio Code extension.
 
 Before you install {mta-dl-plugin}, you must:
 
@@ -22,18 +22,18 @@ Before you install {mta-dl-plugin}, you must:
 * Install the {ProductShortName} Operator 8.0.0
 +
 
-The {ProductShortName} Operator is mandatory if you plan to enable the Solution Server that works with the large language model (LLM) for generating code changes. It enables you to log in to the `openshift-mta` project where you must enable the Solution Server in the Tackle custom resources (CR).
+The {ProductShortName} Operator is mandatory if you plan to enable the Solution Server that works with the large language model (LLM) for generating code changes. Use the Operator to log in to the `openshift-mta` project where you must enable the Solution Server in the Tackle custom resources (CR).
 
 * Create an API key for an LLM.
 +
 
-You must enter the provider value and model name in Tackle CR to enable generative AI configuration in the {ProductShortName} VS Code plugin. 
+You must enter the provider value and model name in Tackle CR to enable generative AI configuration in the {ProductShortName} Visual Studio Code plugin. 
 +
 .Configurable large language models and providers
 |===
 | LLM Provider (Tackle CR value) | Large language model examples for Tackle CR configuration
 
-| {ocp-name} AI platform| Models deployed in an {ocp-name} AI cluster that can be accessed by using Open AI-compatible API.
+| {ocp-name} AI platform| Models that you deploy in an {ocp-name} AI cluster and access by using Open AI-compatible API.
 | Open AI (`openai`) | `gpt-4`, `gpt-4o`, `gpt-4o-mini`, `gpt-3.5-turbo` 
 | Azure OpenAI (`azure_openai`) | `gpt-4`, `gpt-35-turbo` 
 | Amazon Bedrock (`bedrock`) | `anthropic.claude-3-5-sonnet-20241022-v2:0`, `meta.llama3-1-70b-instruct-v1:0` 
@@ -44,5 +44,5 @@ You must enter the provider value and model name in Tackle CR to enable generati
 
 [NOTE]
 ====
-The availability of public LLM models is maintained by the respective LLM provider.
+The LLM provider maintains the availability of public LLM models.
 ====
