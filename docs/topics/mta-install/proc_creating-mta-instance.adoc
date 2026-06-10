@@ -13,7 +13,7 @@ To use the {ProductShortName} UI for assessing and analyzing your applications, 
 .Prerequisites
 
 * You installed the {ProductShortName} Operator on your system. For more information, see xref:installing-mta-operator_installing-mta-ui[Installing the {ProductShortName} Operator].
-* You environment has 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
+* Your environment has 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
 * Your environment uses Red Hat OpenShift (cloud service or self-hosted), version 4.13–4.15.
 * You logged in as a user with `cluster-admin` permissions.
 

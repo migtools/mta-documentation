@@ -525,7 +525,7 @@ sections:
             mitigation: ''
           - order: 2
             text: >-
-              Application fails when a soutbound dependency is unavailable and
+              Application fails when a southbound dependency is unavailable and
               does not recover automatically
             risk: red
             rationale: ''
@@ -902,7 +902,7 @@ sections:
       - order: 1
         text: How is the application tested?
         explanation: >-
-          Is the application is tested? Is it easy to test (example: automated
+          Is the application tested? Is it easy to test (example: automated
           testing)? Is it tested in production?
         answers:
           - order: 0
