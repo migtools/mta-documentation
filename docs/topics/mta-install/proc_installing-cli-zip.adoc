@@ -43,7 +43,7 @@ pass:[<!-- vale RedHat.Spelling = YES -->]
 . Move the `mta-cli` binary to your `$PATH` variable.
 
 +
-NOTE: You can place the `mta-cli` binary in any folder that included in the `$PATH` variable. You can also add a folder that contains `mta-cli` to `$PATH`. This way, you do not need to specify a full path when using the CLI.
+NOTE: You can place the `mta-cli` binary in any folder that is included in the `$PATH` variable. You can also add a folder that contains `mta-cli` to `$PATH`. This way, you do not need to specify a full path when using the CLI.
 
 
 [role="_additional-resources"]

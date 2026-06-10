@@ -27,7 +27,7 @@ You can import and export assessment questionnaires. You can also design custom 
 NOTE: You can customize and save the default questionnaire.
 
 Archetypes::
-You can use archetypes to assess a group applications with similar characteristics. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes.
+You can use archetypes to assess a group of applications with similar characteristics. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes.
 
 
 [role="_additional-resources"]
