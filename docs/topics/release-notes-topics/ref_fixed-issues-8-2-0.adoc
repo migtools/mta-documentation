@@ -1,0 +1,9 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-06-12
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-2-0_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+Review issues that have been fixed in {ProductFirstRef} ({ProductShortName}) version 8.2.0.

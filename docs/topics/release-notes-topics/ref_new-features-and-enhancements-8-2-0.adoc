@@ -1,0 +1,24 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-06-12
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-and-enhancements-8-2-0_{context}"]
+= New features and enhancements
+
+[role="_abstract"]
+Review new features and enhancements in {ProductFirstRef} ({ProductShortName}) 8.2.0.
+
+
+// main mta-ops RN placeholder (decide whether we need individual big feature RNs mentioned below or just a general one)
+
+
+
+// MTA-6885 (multi-stage pipeline)
+
+
+
+// MTA-6886 (cluster-level dependencies)
+
+
+
+// MTA-6887 (validation)
