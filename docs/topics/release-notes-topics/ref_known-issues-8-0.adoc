@@ -6,7 +6,7 @@
 = Known issues
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version 8.0.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+Review the following newly identified and previously known issues in {ProductFirstRef} ({ProductShortName}) version 8.0.0. All future release notes list a known issue until resolved, at which point it appears as a fixed issue.
 
 
 Application analysis with {ProductShortName} CLI might fail with the "invalid header line" error::
@@ -23,7 +23,7 @@ To work around this problem, clean up metadata and cache:
 . Clear the Maven cache.
 
 +
-(link:https://issues.redhat.com/browse/MTA-6125[MTA-6125])
+link:https://issues.redhat.com/browse/MTA-6125[MTA-6125]
 
 
 
@@ -32,7 +32,7 @@ When you use Developer Lightspeed for {ProductShortName}, the analysis results d
 +
 To work around this problem, restart the analyzer process by clicking the *Start/Stop* button after making a configuration change.
 +
-(link:https://issues.redhat.com/browse/MTA-6129[MTA-6129])
+link:https://issues.redhat.com/browse/MTA-6129[MTA-6129]
 
 
 `ANNOTATION` location rules do not match on FQNs::
@@ -40,7 +40,7 @@ The `ANNOTATION` search location does not properly use Fully Qualified Names (FQ
 +
 No known workaround exists.
 +
-(link:https://issues.redhat.com/browse/MTA-6195[MTA-6195])
+link:https://issues.redhat.com/browse/MTA-6195[MTA-6195]
 
 
 Developer Lightspeed for {ProductShortName} database throws a connection error::
@@ -50,4 +50,4 @@ The Solution Server throws a connection error when concurrent connections increa
 oc -n openshift-mta exec deploy/kai-db – psql -U postgres -d postgres -c "ALTER ROLE kai SET idle_session_timeout = '1min'; ALTER ROLE kai SET idle_in_transaction_session_timeout = '1min';" 
 ----
 +
-(link:https://issues.redhat.com/browse/MTA-6204[MTA-6204])
+link:https://issues.redhat.com/browse/MTA-6204[MTA-6204]
