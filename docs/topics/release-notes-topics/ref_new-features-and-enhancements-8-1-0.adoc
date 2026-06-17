@@ -6,7 +6,7 @@
 = New features and enhancements
 
 [role="_abstract"]
-Review new features and enhancements in {ProductFirstRef} ({ProductShortName}) version 8.1.0.
+Review new features and enhancements in {ProductFullName} version 8.1.0.
 
 
 Centralized configuration management across components for standardizing analysis configuration and custom rules::

@@ -6,7 +6,7 @@
 = New features and enhancements
 
 [role="_abstract"]
-Review new features and enhancements in {ProductFirstRef} ({ProductShortName}) 8.0.1.
+Review new features and enhancements in {ProductFullName} 8.0.1.
 
 
 {ProductShortName} supports pre-generated Maven index to reduce binary application analysis latency::

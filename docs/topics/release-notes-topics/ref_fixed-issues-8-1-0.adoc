@@ -6,7 +6,7 @@
 = Fixed issues
 
 [role="_abstract"]
-Review issues that have been fixed in {ProductFirstRef} ({ProductShortName}) version 8.1.0.
+Review issues that have been fixed in {ProductFullName} version 8.1.0.
 
 
 Creating Source Control credentials no longer fails when the password exceeds the character limit::

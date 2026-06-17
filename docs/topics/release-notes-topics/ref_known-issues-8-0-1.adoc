@@ -6,7 +6,7 @@
 = Known issues
 
 [role="_abstract"]
- Understand how newly identified and previously known issues might affect your use of {ProductFirstRef} ({ProductShortName}) version 8.0.1, and how to work around them.
+Understand how newly identified and previously known issues might affect your use of {ProductFullName} version 8.0.1, and how to work around them.
 
 A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue. 
 
