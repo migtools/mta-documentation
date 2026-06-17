@@ -15,4 +15,4 @@ link:https://issues.redhat.com/browse/MTA-5357[MTA-5357]
 
 
 {ProductShortName} removes support for the Eclipse IDE plugin::
-{ProductShortName} removes the Eclipse Integrated Development Environment (IDE) plugin for {ProductFullName} to analyze the effort for migrating and modernizing your applications and no longer supports it. As an alternative, you can use the {ProductName} extension for Visual Studio Code.
+{ProductShortName} removes the Eclipse Integrated Development Environment (IDE) plugin for {ProductFullName} and no longer supports it. You could use this plugin to analyze the effort for migrating and modernizing your applications. As an alternative, you can use the {ProductName} extension for Visual Studio Code.

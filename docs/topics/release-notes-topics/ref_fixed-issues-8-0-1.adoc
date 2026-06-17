@@ -6,7 +6,7 @@
 = Fixed issues
 
 [role="_abstract"]
-Review the following fixed issues that have a significant impact in {ProductFirstRef} ({ProductShortName}) version 8.0.1.  
+Review issues that have been fixed in {ProductFirstRef} ({ProductShortName}) version 8.0.1.  
 
 Improved the performance of Java binary analysis::
 Before this change, when you analyzed Java binary applications, {ProductShortName} incorrectly classified some open source dependencies as internal dependencies. {ProductShortName} then decompiled and analyzed the dependencies that caused the analysis to take longer to complete. With this update, {ProductShortName} passes the location of the Maven index file to the Java provider to determine if an embedded dependency is open source or internal. This fix resolved the following issue:
@@ -48,7 +48,7 @@ Before this update, the annotation rules for Java applications did not use Fully
 link:https://issues.redhat.com/browse/MTA-6195[MTA-6195]
 
 {ProductShortName} triggers rules to match import statements with wildcard in Java applications analysis::
-{ProductShortName} did not trigger rules to match import statements that contain a wildcard when analyzing a Java application. As a result, {ProductShortName} did not detect specific incidents in the report after the analysis. With this release, this issue is fixed. 
+{ProductShortName} did not trigger rules to match import statements that contain a wildcard when analyzing a Java application. Consequently, {ProductShortName} did not detect specific incidents in the report after the analysis. With this release, this issue is fixed. 
 +
 link:https://issues.redhat.com/browse/MTA-4027[MTA-4027]
 
@@ -72,7 +72,7 @@ Before this update, you could not proceed to the final step after filling in the
 +
 link:https://issues.redhat.com/browse/MTA-6143[MTA-6143]
 
-{ProductShortName} web console detects custom rules when you upload many rules at a time::
+{ProductShortName} web console detects custom rules when you upload multiple rules at once::
 When you uploaded more than one custom rule at a time in the web console, {ProductShortName} did not detect the rules. With this version, you can upload one or more custom rules at once.
 +
 link:https://issues.redhat.com/browse/MTA-6029[MTA-6029]

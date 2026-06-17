@@ -6,7 +6,7 @@
 = New features and enhancements
 
 [role="_abstract"]
-Review the following major new features and enhancements in {ProductFirstRef} ({ProductShortName}) 8.0.0.
+Review new features and enhancements in {ProductFirstRef} ({ProductShortName}) 8.0.0.
 
 {mta-dl-plugin} is available in the Visual Studio Code extension::
 You can opt to use {mta-dl-plugin} features in the Visual Studio Code extension. With the Developer Lightspeed feature, you can use a large language model (LLM) of your choice to request code changes for resolving the issues found through a static code analysis of your Java application.
@@ -46,7 +46,7 @@ link:https://issues.redhat.com/browse/MTA-4847[MTA-4847]
 
 
 {ProductShortName} CLI supports running a live discovery in a remote CF instance::
-With this update, you can perform a live discovery to determine applications that you deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.
+With this update, you can perform a live discovery to determine applications deployed in a certain Cloud Foundry (CF) cluster. For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.
 +
 For more information, see link:{mta-URL}/using_the_migration_toolkit_for_applications_command-line_interface/index#performing-a-live-discovery_generating-assets[Performing a live discovery in a remote CF instance].
 +
@@ -89,7 +89,7 @@ link:https://issues.redhat.com/browse/MTA-5360[MTA-5360]
 
 
 {ProductShortName} UI supports setting default credentials::
-Before this update, you could only assign credentials to an application manually after you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications,with each application requiring credentials for language and technology discovery tasks. With this update, instead of manually defining credentials, you can define default credentials for any application that does not yet have credentials.
+Before this update, you could only assign credentials to an application manually after you added or imported this application to the {ProductFullName} user interface (UI). However, you might need to import a large set of applications, with each application requiring credentials for language and technology discovery tasks. With this update, instead of manually defining credentials, you can define default credentials for any application that does not have credentials.
 +
 IMPORTANT: You can only set Maven or source control credentials as default credentials. You can define only one default set of credentials per credential type.
 +

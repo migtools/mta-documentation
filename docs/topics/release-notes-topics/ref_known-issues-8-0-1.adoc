@@ -6,7 +6,9 @@
 = Known issues
 
 [role="_abstract"]
-Review the following newly identified and previously known issues in {ProductFirstRef} ({ProductShortName}) version 8.0.1. All future release notes list a known issue until resolved, at which point it appears as a fixed issue.
+ Understand how newly identified and previously known issues might affect your use of {ProductFirstRef} ({ProductShortName}) version 8.0.1, and how to work around them.
+
+A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue. 
 
 
 {ProductShortName} assessment form malfunctions when you use it with a custom questionnaire::
@@ -25,7 +27,7 @@ link:https://issues.redhat.com/browse/MTA-6211[MTA-6211]
 
 
 {ProductShortName} UI fails to process applications with service bindings::
-When you use the {ProductFullName} user interface (UI) to run an application discovery for a deployed Cloud Foundry (CF) application with a service binding, {ProductShortName} UI does not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information. As a result, the discovery fails.
+When you use the {ProductFullName} user interface (UI) to run an application discovery for a deployed Cloud Foundry (CF) application with a service binding, {ProductShortName} UI does not parse the `VCAP_SERVICES` environment variables correctly to handle service binding information. As a consequence, the discovery fails.
 +
 To work around this problem, run the application discovery by using the {ProductShortName} command-line interface (CLI).
 +
