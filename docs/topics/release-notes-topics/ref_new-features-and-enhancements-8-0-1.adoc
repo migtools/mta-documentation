@@ -1,0 +1,15 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-08-07
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-and-enhancements-8-0-1_{context}"]
+= New features and enhancements
+
+[role="_abstract"]
+Review new features and enhancements in {ProductFullName} 8.0.1.
+
+
+{ProductShortName} supports pre-generated Maven index to reduce binary application analysis latency::
+Before this update, the analysis performance for Java binaries degraded because {ProductShortName} relied on Maven search to analyze `Java` binary applications. With this enhancement, {ProductShortName} has a pre-generated bundled Maven index that does not require connecting to an external index through a network connection. As a result, {ProductShortName} performs fast, low-memory look-ups of Maven artifacts by using local Maven Search and you can analyze Java binaries in disconnected environments.
++
+link:https://issues.redhat.com/browse/MTA-6231[MTA-6231]
