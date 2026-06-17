@@ -57,7 +57,7 @@ Before this update, editing an application stored in a Subversion (SVN) reposito
 link:https://issues.redhat.com/browse/MTA-6263[MTA-6263]
 
 {ProductShortName} no longer fails language and tech discovery for Java application in SVN repositories::
-Before this update, for a Java application source code stored in an Subversion (SVN) repository, {ProductShortName} produced an error when trying to checkout the repository by using the SVN credential. As a consequence, the language and tech discovery of the application failed. With this update, you can analyze an application stored in SVN repository without any error.
+Before this update, for a Java application source code stored in a Subversion (SVN) repository, {ProductShortName} produced an error when trying to checkout the repository by using the SVN credential. As a consequence, the language and tech discovery of the application failed. With this update, you can analyze an application stored in SVN repository without any error.
 +
 link:https://issues.redhat.com/browse/MTA-6141[MTA-6141]
 
