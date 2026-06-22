@@ -53,7 +53,7 @@ As an Administrator, you must complete the following workflow to enable the LLM 
 
 * Create a xref:tackle-llm-secret_getting-started[secret] for your LLM key in the Red Hat {ocp-name} cluster.
 
-* In the xref:tackle-enable-llm-proxy_getting-started[Tackle custom resource (CR)], enable the LLM proxy service, enable the Solution Server if you want Migrators to use the Solution Server mode, and configure the LLM provider and the LLM model.
+* In the xref:tackle-enable-llm-proxy_getting-started[Tackle custom resource (CR)], enable the LLM proxy service, enable the Solution Server if you want Migrators to use the Solution Server mode, and configure the LLM provider, the LLM model, and the LLM base URL.
 
 As a Migrator, you can:
 
