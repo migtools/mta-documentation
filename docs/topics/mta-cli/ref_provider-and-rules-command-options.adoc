@@ -1,0 +1,42 @@
+// Module included in the following assemblies:
+//
+// * assemblies/cli-guide/assembly_about-the-command-line-tool.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="provider-and-rules-command-options_{context}"]
+= The provider and rules command options
+
+[role="_abstract"]
+You can list providers by using the `mta-cli provider` command and specify a provider during runtime when you analyze a non-Java application. Run the `mta-cli rules` command to list the available source and target technologies for migration and to test rules.
+
+.The provider and rules commands and options
+[cols="1,1,2,2",options="header"]
+|===
+|Command
+|Subcommands and options
+|Description
+|Command syntax 
+
+|`mta-cli provider`
+|`list`
+|List available and supported providers
+|*mta-cli provider list*
+
+.3+|`mta-cli rules`
+|`list-sources`
+|List rules for available migration sources
+|*mta-cli rules list-sources*
+
+|`list-targets`
+|List rules for available migration targets
+|*mta-cli rules list-targets*
+
+|`test`
+|Validate a default or a custom rule or a ruleset against a sample application code. The CLI shows test result status, pass or fail, for all rules in a ruleset.
+a|*mta-cli rules test _<path_to_test_rules>_*
+
+where:
+
+* _<path_to_test_rules>_:: Specifies the system path to the rules you want to test.
+
+|===

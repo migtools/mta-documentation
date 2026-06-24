@@ -22,7 +22,7 @@ You can select a language provider to analyze from the list of supported provide
 +
 [subs="+quotes"]
 ....
-$ *mta-cli analyze --list-providers*
+$ *mta-cli provider list*
 ....
 
 . Run the application analysis for the selected language provider: 
