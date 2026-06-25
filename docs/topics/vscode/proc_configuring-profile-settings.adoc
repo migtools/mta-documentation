@@ -14,6 +14,7 @@ To generate code changes by using the {ProductShortName} extension, you must con
 
 * You configured the Visual Studio Code IDE settings. For more information, see xref:configuring-lighstspeed-ide-settings_vsc-extension-guide[Configuring the {mta-dl-plugin} IDE settings].
 * You opened a Java project in your Visual Studio Code workspace.
+* 
 
 .Procedure
 
