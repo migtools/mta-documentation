@@ -1,6 +1,6 @@
 :_mod-docs-content-type: PROCEDURE
 [id="analyzing-application-profiles_{context}"]
-= Running an application analysis by using a profile
+= Running an application analysis by using a Hub profile
 
 [role="_abstract"]
 To run a static code analysis of an application, you can use a profile that is created and managed by your architect in the {ProductFullName} Hub. 
