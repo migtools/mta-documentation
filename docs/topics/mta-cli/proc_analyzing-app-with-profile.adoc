@@ -13,6 +13,7 @@ Migrators can use analysis profiles and custom rules downloaded from the {Produc
 * Your Administrator installed {ProductShortName} and the `tackle` operator in your cluster.
 * The Architect configured an analysis profile with required custom rules in the {ProductShortName} {WebName}. 
 * The Architect added the analysis profile in the application's target profile in the {ProductShortName} {WebName}. 
+* In the {ProductShortName} {WebName}, the application has a tag that matches with an archetype tag.
 * The application you want to sync is available in your local system.
 
 .Procedure
