@@ -1,0 +1,40 @@
+// Module included in the following assemblies:
+//
+// * assemblies/cli-guide/assembly_about-the-command-line-tool.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="cli-command-structure_{context}"]
+= CLI command structure
+
+[role="_abstract"]
+To simplify your understanding of capabilities in the {ProductFullName}  command-line interface (CLI) and to better classify tasks you can do, the subcommands and options are reclassified under the main commands.
+
+A command performs a specific task to prepare applications for migration. You can explore two new commands for providers and rules related tasks.
+
+You can use the following commands in the {ProductShortName} CLI:
+
+`mta-cli analyze`::
+Contains options to specify runtime settings for the analysis type or mode, single or multiple input applications, dependencies, rules, source or target technologies, proxy URL, a local or a containerized run, and the analysis output.
+
+`mta-cli rules`::
+Contains subcommands to list source and target technologies and test rules available for analyzing the source and target technologies. You can test default and custom rulesets.
+
+`mta-cli provider`::
+Contains subcommands to list the language-specific providers. Providers work with language server protocol (LSP) servers to parse the application source code to find specific problem patterns that you defined in the rules.
+
+`mta-cli openrewrite`::
+Contains subcommands with options to use OpenRewrite recipes to transform your codebase by updating Java libraries and framework for a target technology.
+
+`mta-cli config`::
+Contains subcommands to log in to the {ProductShortName} Hub by using a secure or an insecure connection to sync, download, and manage a reusable analysis configuration file called profile in your local system.
+
+`mta-cli discover`::
+Contains a subcommand with options to generate a local YAML manifest from application manifests in the Cloud Foundry (CF) source platform. You can filter CF applications by organization, space, and a specific application name. You can also redact sensitive information such as username and secret in the discovery manifest.
+
+`mta-cli generate`::
+Contains a subcommand with options to generate Kubernetes and non-Kubernetes deployment manifests by using Helm templates and value overrides.
+
+[IMPORTANT]
+====
+The `config`, `discover`, and `generate` commands feature no modifications to their associated flags and options.
+====
