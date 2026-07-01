@@ -19,6 +19,8 @@ Review new features, enhancements, Technology Preview features, removed features
 
 include::topics/release-notes-topics/ref_new-features-and-enhancements-8-2-0.adoc[leveloffset=+1]
 
+include::topics/release-notes-topics/ref_known-issues-8-2-0.adoc[leveloffset=+1]
+
 include::topics/release-notes-topics/ref_fixed-issues-8-2-0.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-mta-8-2-0[:context: {parent-context-of-mta-8-2-0}]

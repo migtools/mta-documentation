@@ -1,0 +1,13 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-01
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-8-2-0_{context}"]
+= Known issues
+
+[role="_abstract"]
+{ProductFirstRef} ({ProductShortName}) version 8.2.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+
+// placeholder for https://redhat.atlassian.net/browse/MTA-7103
+// SME inputs: When running kubectl apply, if the namespace and its resources already exist on the target cluster, they will be silently overwritten. Since this is an issue with kubectl apply, it falls outside the scope of Crane.
+
