@@ -13,7 +13,7 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 .Prerequisites
 
 * Your environment has 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
-* Your environment uses Red Hat OpenShift (cloud service or self-hosted), version 4.13–4.15.
+* Your environment uses Red Hat OpenShift (cloud service or self-hosted), version 4.21–4.22.
 pass:[<!-- vale RedHat.Spelling = NO -->]
 * You created two RWO persistent volumes (PVs) used by different components.
 pass:[<!-- vale RedHat.Spelling = YES -->]
@@ -66,5 +66,3 @@ spec:
 * link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles]
 * link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements]
 * xref:custom-resource-settings_installing-mta-ui[Custom resource settings]
-
-
