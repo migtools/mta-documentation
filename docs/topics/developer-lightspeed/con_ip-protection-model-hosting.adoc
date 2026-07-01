@@ -1,0 +1,47 @@
+// Module included in the following assemblies:
+//
+// * docs/developer-lightspeed-guide/master.adoc
+
+:_template-generated: 2026-06-29
+
+:_mod-docs-content-type: CONCEPT
+
+[id="ip-protection-model-hosting_{context}"]
+= Data privacy, intellectual property protection, and model hosting considerations
+
+[role="_abstract"]
+Configuring a large language model (LLM) provider for {mta-dl-full} requires an understanding of code transmission to the model and the implications for your organization's intellectual property (IP) and data privacy policies.
+
+[id="ip-protection-risk-disclosure_{context}"]
+== {mta-dl-plugin} code transmission to the LLM
+
+To generate accurate migration suggestions, {mta-dl-plugin} constructs a contextual prompt that includes relevant code snippets from the application that you are analyzing. These snippets are transmitted intact to the configured LLM provider. {mta-dl-plugin} does not perform automatic sanitization or redaction of source code before the code is included in a prompt, because altering the code syntax reduces the accuracy of the migration recommendations.
+
+[WARNING]
+====
+When you configure {mta-dl-plugin} to use a public, SaaS-based LLM endpoint (such as a public OpenAI service or a shared Azure OpenAI deployment), {mta-dl-plugin} transmits your source code snippets to that third-party provider for processing. If your codebase contains proprietary algorithms, trade secrets, regulated data, or other sensitive intellectual property, this transmission might expose that information outside your organization's security boundary. This exposure might conflict with your intellectual property protection policies, contractual obligations, or regulatory requirements.
+====
+
+[id="ip-protection-mitigation_{context}"]
+== Recommended mitigation: Self-managed model hosting
+
+Organizations with strict intellectual property (IP) protection requirements, regulatory constraints, or air-gapped network environments should deploy a self-managed LLM instance and configure {mta-dl-plugin} to route all queries to that private endpoint. This approach ensures that source code snippets never leave your controlled infrastructure.
+
+Red{nbsp}Hat supports the following on-site and self-managed AI platforms for this purpose:
+
+* *{ocp-name} AI*: Deploy and serve LLMs as an inference service within your {ocp-name} cluster. This keeps all model traffic on your internal network. For more information, see link:https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed[Red{nbsp}Hat OpenShift AI documentation].
+
+* *Red{nbsp}Hat Enterprise Linux AI (RHEL AI)*: Run a self-contained, production-ready AI infrastructure on RHEL to serve models locally or within your private data center. For more information, see link:https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai[Red{nbsp}Hat Enterprise Linux AI documentation].
+
+You can configure {mta-dl-plugin} to use the OpenAI-compatible API endpoint that both platforms expose without any additional plugin changes.
+
+[id="ip-protection-config-pointers_{context}"]
+== Configuring {mta-dl-plugin} to use a private endpoint
+
+After you deploy a self-managed model, override the default LLM provider URL in {mta-dl-plugin} to point to your private inference endpoint:
+
+* *Standalone mode*: Configure the custom endpoint URL in the VS Code extension settings for {mta-dl-plugin}.
+
+* *Centralized configuration management mode*: Set the provider endpoint URL in the central configuration administered through the {ProductShortName} hub.
+
+Ensure that you securely store any authentication credentials that your self-managed endpoint requires (such as API keys or bearer tokens) and do not commit them to source control.
