@@ -10,7 +10,7 @@ endif::[]
 ifdef::context[]
 [id="mta-8-2-0_{context}"]
 endif::[]
-= mta 8.2.0
+= {ProductFirstRef} 8.2
 
 :context: mta-8-2-0
 
