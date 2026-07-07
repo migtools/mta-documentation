@@ -41,12 +41,6 @@ include::assembly_validating-target-cluster-compatibility.adoc[leveloffset=+1]
 include::assembly_deploying-the-migrated-workloads.adoc[leveloffset=+1]
 
 
-[role="_additional-resources"]
-== Additional resources
-
-* link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide]
-* xref:some-module_{context}[]
-
 ifdef::parent-context-of-migrating-stateless-workloads[:context: {parent-context-of-migrating-stateless-workloads}]
 ifndef::parent-context-of-migrating-stateless-workloads[:!context:]
 

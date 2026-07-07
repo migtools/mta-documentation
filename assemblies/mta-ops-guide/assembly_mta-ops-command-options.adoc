@@ -10,7 +10,7 @@ endif::[]
 ifdef::context[]
 [id="mta-ops-command-options_{context}"]
 endif::[]
-[appendix,id="changes-to-packages"]
+[appendix,id="mta-ops-command-options"]
 = The mta-ops command options
 
 :context: mta-ops-command-options
