@@ -10,4 +10,4 @@ When you prepare your local workstation, understand the standalone nature of the
 
 The `mta-ops` command-line interface (CLI) is a standalone tool that operates independently of the standard migration toolkit for applications (MTA) CLI (`mta-cli`). You do not need to install the standard MTA CLI to use the `mta-ops` pipeline.
 
-You can install the tool by downloading the pre-compiled binary directly from the Red Hat Developer portal.
+You can install the tool by downloading the pre-compiled `mta-ops` archive from the Red Hat Developer portal, then extracting the binary.
