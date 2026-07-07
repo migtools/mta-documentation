@@ -1,0 +1,48 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="multi-stage-transformation-pipeline_{context}"]
+= Multi-stage transformation pipeline
+
+[role="_abstract"]
+Understand how the multi-stage transformation pipeline produces Kustomize-native output. This allows you to accurately trace modifications.
+
+The `mta-ops transform` command processes exported manifests through sequential plugin stages. The pipeline produces a standard Kustomize layout.
+
+.Example output directory structure
+====
+[subs="+quotes"]
+----
+transform/
+├── 10_KubernetesPlugin/
+│   ├── input/
+│   ├── output/
+│   ├── patches/
+│   └── kustomization.yaml
+├── 15_OpenShiftPlugin/
+│   ├── input/
+│   ├── output/
+│   ├── patches/
+│   └── kustomization.yaml
+└── 50_CustomModifications/
+    ├── input/
+    ├── output/
+    ├── patches/
+    └── kustomization.yaml
+----
+====
+
+The directory structure uses the following components:
+
+* *Isolated stage directories*: Each plugin processes within a dedicated, numbered directory. This isolation ensures you can trace which tool caused a specific modification.
++
+NOTE: You can append manual transformation stages to the pipeline to apply declarative patches directly to your application.
+
+* *Input and output folders*: The pipeline merges the working state into the main directories. These folders show the exact manifest state before and after execution.
+
+* *Patches directory*: This directory contains the generated overlays. The files use predictable, deterministic naming conventions and sorting.
+
+* *Kustomization file*: The `kustomization.yaml` file acts as the standard entry point. You can manually edit this file in custom stages to apply declarative overrides.
+
+Plugin stages safely regenerate upon execution. However, custom stages require manual forced overwrites to protect your edits.

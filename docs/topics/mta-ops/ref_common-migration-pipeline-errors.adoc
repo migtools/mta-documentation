@@ -1,0 +1,37 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: REFERENCE
+
+[id="common-migration-pipeline-errors_{context}"]
+= Common migration pipeline errors
+
+[role="_abstract"]
+When you encounter pipeline failures, review the common errors tables. This helps you diagnose issues and resume your migration work.
+
+.Export and transform errors
+[cols="20%,30%,50%",options="header"]
+|===
+| Error message | Cause | Solution
+
+| `Forbidden`
+| Missing role-based access control (RBAC) permissions for a resource.
+| Review the `failures/` directory. Use role impersonation flags.
+
+| `Patch evaluation error`
+| A custom stage contains malformed YAML or missing parent objects.
+| Isolate the stage using `--stage`. Rerun with `--force`.
+|===
+
+.Apply and validate errors
+[cols="20%,30%,50%",options="header"]
+|===
+| Error message | Cause | Solution
+
+| `Dependency order failure`
+| Resources applied from a directory executed out of order.
+| Run `apply` with the `--ordered` flag.
+
+| `Unknown resource type`
+| A required Custom Resource Definition (CRD) is missing.
+| Install the required Operator on the target cluster.
+|===

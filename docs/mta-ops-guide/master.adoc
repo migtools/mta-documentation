@@ -1,0 +1,31 @@
+:mta:
+:toc:
+:toclevels: 3
+:numbered:
+:imagesdir: topics/images
+:context: mta-ops-title
+:mta-ops-title:
+include::topics/templates/document-attributes.adoc[]
+
+[id="installing-mta-title"]
+= Migrating stateless workloads by using the mta-ops CLI
+
+
+//Introduction to mta-ops
+include::topics/mta-ops/con_introduction-to-the-mta-ops-cli.adoc[leveloffset=+1]
+
+//mta-ops pipeline
+include::assemblies/mta-ops-guide/assembly_supported-migration-paths-and-api-compatibility.adoc[leveloffset=+1]
+
+include::assemblies/mta-ops-guide/assembly_installing-the-mta-ops-cli.adoc[leveloffset=+1]
+
+include::assemblies/mta-ops-guide/assembly_migrating-stateless-workloads.adoc[leveloffset=+1]
+
+include::assemblies/mta-ops-guide/assembly_troubleshooting-the-mta-ops-pipeline.adoc[leveloffset=+1]
+
+//Appendix:
+include::assemblies/mta-ops-guide/assembly_mta-ops-command-options.adoc[leveloffset=+1]
+
+include::topics/mta-ops/ref_developer-and-architecture-guides.adoc[leveloffset=+1]
+
+:!mta-ops-title:

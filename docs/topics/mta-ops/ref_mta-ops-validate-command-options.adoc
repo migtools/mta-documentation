@@ -1,0 +1,22 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: REFERENCE
+
+[id="mta-ops-validate-command-options_{context}"]
+= The mta-ops validate command options
+
+[role="_abstract"]
+When you check target cluster application programming interface (API) compatibility, review the available command flags. This helps you configure your live or offline validation run.
+
+.`mta-ops` validate flags
+[cols="30%,20%,50%",options="header"]
+|===
+| Option | Shorthand | Description
+| `--input-dir` | `-i` | The directory path containing the final rendered manifests to validate.
+| `--context` | | The local kubeconfig context of the target cluster.
+| `--kubeconfig` | | The path to the kubeconfig file for the target cluster.
+| `--api-resources` | | The path to a captured API surface JSON file for offline validation.
+| `--validate-dir` | | The directory path to save validation reports and failure artifacts.
+| `--output` | `-o` | The format of the generated report file. Valid options are json or yaml.
+| `--overwrite` | | Overwrite of the validation directory if it already exists.
+|===

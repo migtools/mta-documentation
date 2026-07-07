@@ -1,0 +1,20 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="enabling-verbose-logging-for-mta-ops_{context}"]
+= Enabling verbose logging for mta-ops
+
+[role="_abstract"]
+When you investigate pipeline failures, extract detailed diagnostic output by appending the verbose logging flag to your command.
+
+.Procedure
+* Append the `--debug` flag to any `mta-ops` command. For example, to debug a validation failure, enter:
++
+[subs="+quotes"]
+----
+$ *mta-ops validate --context _<target_cluster_context>_ -i output --debug*
+----
+
+.Verification
+* Verify that your terminal output includes expanded diagnostic information and debug-level messages.
