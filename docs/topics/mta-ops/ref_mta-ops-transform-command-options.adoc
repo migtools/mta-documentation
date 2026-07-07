@@ -16,7 +16,7 @@ When you process exported manifests, review the available command flags. This he
 | `--transform-dir` | `-t` | The directory path to create the isolated transform stages.
 | `--stage` | | A specific custom or built-in stage directory name to run.
 | `--force` | | A flag to overwrite modified custom stage directories. This is mandatory for re-running custom stages.
-| `--skip-plugin`s | | A comma-separated list of built-in plugins to skip, such as OpenShiftPlugin.
+| `--skip-plugins` | | A comma-separated list of built-in plugins to skip, such as OpenShiftPlugin.
 | `--optional-flags` | | Additional arguments or parameters passed to the transformation plugins.
 | `--instructions-file` | | A path to a declarative YAML file to steer the transformation execution rules.
 |===

@@ -15,7 +15,7 @@ endif::[]
 :context: generating-final-deployable-manifests
 
 [role="_abstract"]
-To render the final YAML from the transform pipeline, generate the manifests. The mta-ops apply command produces local deployable files without modifying clusters.
+To render the final YAML from the transform pipeline, generate the manifests. The `mta-ops apply` command produces local deployable files without modifying clusters.
 
 include::topics/mta-ops/con_local-manifest-generation.adoc[leveloffset=+1]
 

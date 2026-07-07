@@ -3,7 +3,7 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="executing-a-stateless-migration-quickstart_{context}"]
-= Executing a stateless migration quickstart
+= Executing a stateless migration quick start
 
 [role="_abstract"]
 To quickly test the tool, run a basic stateless migration scenario for a single application. This end-to-end pipeline demonstrates the default workflow.

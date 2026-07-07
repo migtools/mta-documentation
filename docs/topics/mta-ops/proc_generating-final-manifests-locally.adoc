@@ -6,7 +6,7 @@
 = Generating final manifests locally
 
 [role="_abstract"]
-To produce clean YAML files, generate your final manifests. You use the mta-ops apply command to render the Kustomize output locally.
+To produce clean YAML files, generate your final manifests. You use the `mta-ops apply` command to render the Kustomize output locally.
 
 .Prerequisites
 * You have successfully exported and transformed your workload manifests.

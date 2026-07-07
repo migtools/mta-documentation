@@ -21,7 +21,7 @@ To verify application programming interface (API) compatibility before deploymen
 $ *mta-ops validate --context _<target_cluster_context>_ -i output*
 ----
 +
-[source,yaml]
+[source,json]
 ----
 {
   "mode": "live",

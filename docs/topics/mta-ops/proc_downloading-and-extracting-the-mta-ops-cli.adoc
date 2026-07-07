@@ -6,7 +6,7 @@
 = Downloading and extracting the mta-ops CLI
 
 [role="_abstract"]
-To configure your migration environment, download and extract the pre-compiled `mta-ops` binary.
+To configure your migration environment, download and extract the pre-compiled `mta-ops` archive.
 
 .Prerequisites
 * You have a compatible local operating system.

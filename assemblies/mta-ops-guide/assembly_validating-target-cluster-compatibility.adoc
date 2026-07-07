@@ -23,7 +23,7 @@ include::topics/mta-ops/proc_validating-workload-manifests-against-a-live-cluste
 
 == Next steps
 
-* Deploy the migrated workflows.
+* Deploy the migrated workloads.
 
 [role="_additional-resources"]
 == Additional resources

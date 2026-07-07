@@ -12,5 +12,5 @@ When you want to extend the `mta-ops` command-line interface (CLI) or understand
 The `mta-ops` repository contains comprehensive documentation for developers:
 
 * `CONTRIBUTING.md`: Located at the root of the repository, detailing the GitHub integration and contributor onboarding workflow.
-* Development guides (`docs/development/`): Contains dedicated documents for local environment setup, unit and E2E testing conventions, and end-to-end pipeline architecture.
+* Development guides (`docs/development/`): Contains dedicated documents for local environment setup, unit and end-to-end (E2E) testing conventions, and end-to-end pipeline architecture.
 * Plugin development: Comprehensive instructions on creating custom transformation plugins using Go or Bash.

@@ -18,7 +18,7 @@ The migration pipeline consists of the following stages in a strict order:
 * The validation stage is an optional but recommended step that checks target cluster application programming interface (API) compatibility.
 * The deployment stage applies the workloads to the destination cluster.
 
-All operations output directly to your local disk. The pipeline does not modify the source or target clusters automatically.
+The export, transformation, application, and validation stages output directly to your local disk. The deployment stage applies workloads to the target cluster.
 
 The tool migrates stateless workloads and their associated cluster-scoped dependencies. These dependencies include role-based access controls (RBAC), Custom Resource Definitions (CRDs), and SecurityContextConstraints (SCCs).
 
