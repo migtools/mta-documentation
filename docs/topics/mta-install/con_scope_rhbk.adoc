@@ -1,0 +1,48 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: CONCEPT
+
+[id="scope-rhbk_{context}"]
+= Dynamic scope expansion in RHBK
+
+[role="_abstract"]
+You can create roles that the {ProductFullName} Hub OpenID Connect (OIDC) provider supports in your RHBK instance. The Hub dynamically expands the RHBK roles to apply necessary permissions for the role.
+
+You can define the following roles in RHBK:
+
+* `role.admin`
+* `role.architect`
+* `role.migrator`
+* `role.project-manager`
+
+== Manual scope management
+
+Although dynamic scope expansion is the preferred method to assign scopes, you can manually manage individual {ProductFullName} scopes in Red Hat build of Keycloak (RHBK) and assign the them to roles. During authorization, {ProductShortName} grants the necessary permissions to the Keycloak user.
+
+For example, Keycloak administrators can perform create, read, update, and delete tasks for users, tokens, and roles in {ProductShortName} only if the administrator role has the following scopes:
+
+* users:get
+* users:post
+* users:put
+* users:delete
+* roles:get
+* roles:post
+* roles:put
+* roles:delete
+* tokens:get
+* tokens:post
+* tokens:delete
+* scopes:get
+
+You can assign the following scopes to non-administrator user roles in Keycloak:
+
+* users:get
+* users:put
+* users:delete
+* roles:get
+* tokens:get
+* tokens:post
+* tokens:delete
+* scopes:get
+
+If the access token request specifies specific scopes, the {ProductShortName} Hub additionally assigns permissions based on the scope reference.

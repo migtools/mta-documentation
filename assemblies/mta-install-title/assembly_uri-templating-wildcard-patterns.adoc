@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-uri-templating-wildcard-patterns: {context}]
+
+ifndef::context[]
+[id="uri-templating-wildcard-patterns"]
+endif::[]
+ifdef::context[]
+[id="uri-templating-wildcard-patterns_{context}"]
+endif::[]
+= URI templating and wildcard patterns
+
+:context: uri-templating-wildcard-patterns
+
+[role="_abstract"]
+To enable portable configuration, the Hub OpenID Connect (OIDC) provider resolves template variables and wildcard patterns with the expected OIDC issuer in the client configuration at runtime.
+
+include::topics/mta-install/ref_uri-template-variables.adoc[leveloffset=+1]
+
+include::topics/mta-install/ref_uri-wildcard-patterns.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-uri-templating-wildcard-patterns[:context: {parent-context-of-uri-templating-wildcard-patterns}]
+ifndef::parent-context-of-uri-templating-wildcard-patterns[:!context:]

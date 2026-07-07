@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: PROCEDURE
+
+[id="generate-api-key-web-console_{context}"]
+= Generate API key from the web console
+
+[role="_abstract"]
+As an administrator, you can generate application programming interface (API) keys in the {ProductFirstRef} web console. An API key inherits permissions from the authenticated user's roles. 
+
+The API key has a maximum lifespan limit of 10 years. You can optionally configure the lifespan period when you create a token.
+
+.Prerequisites
+
+* You installed {ProductShortName} {ProductVersion} in a Red{nbsp}Hat OpenShift cluster.
+* You are an {ProductShortName} Administrator.
+
+.Procedure
+
+. Log in to the {ProductShortName} application.
+. In the *Administration* mode, go to *User Management*.
+. Click *Tokens*.
+. Click *Create API Key*.
+. Optional: Enter the lifespan of the token.
+. Click *Create*.
+. Copy the displayed token.
++
+You can use the API key for the {mta-dl-full} agent.

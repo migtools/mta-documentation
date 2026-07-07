@@ -1,0 +1,98 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: PROCEDURE
+
+[id="create-custom-resource-ldap-federation_{context}"]
+= Create a custom resource for LDAP or AD federation
+
+[role="_abstract"]
+To enable the Hub OpenID Connect (OIDC) provider to federate authentication to an LDAP or an Active Directory (AD) server, create an `LdapProvider` custom resource (CR) and a secret for the LDAP service account.
+
+.Prerequisites
+
+* You have installed the {ProductShortName} {ProductVersion} in a Red{nbsp}Hat OpenShift cluster.
+* You have `admin` access to the cluster.
+* You have configured an LDAP service account with read-only permissions.
+
+.Procedure
+
+. Create an `ldap-secret.yaml` file:
++
+[source,yaml]
+----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ldap-service-account
+  namespace: openshift-mta
+type: Opaque
+stringData:
+  password: "<service-account-password>"
+----
+
+. Apply the `ldap-secret` file in the cluster:
++
+[subs="+quotes"]
+----
+$ *oc apply -f ldap-secret.yaml*
+----
+
+. Create an `ldap.yaml` file for the custom resource (CR):
++
+[source,yaml]
+----
+apiVersion: tackle.konveyor.io/v1alpha1
+kind: LdapProvider
+metadata:
+  name: corporate-ldap
+  namespace: openshift-mta
+spec:
+  name: "Corporate LDAP"
+  kind: "ActiveDirectory"
+  url: "ldaps://ldap.example.com:636"
+  baseDN: "dc=example,dc=com"
+  bindDN: "cn=service,dc=example,dc=com"
+  password:
+    name: ldap-service-account
+    namespace: openshift-mta
+  userFilter: "(sAMAccountName=${login})"
+  groupFilter: "(&(objectClass=group)(member=${dn}))"
+  hasMemberOf: true
+  roleMappings:
+    - and:
+        - Developers
+      roles:
+        - architect
+    - any:
+        - "**Administrator**"
+      roles:
+        - admin
+----
++
+* `kind`:: Server type is "ACTIVEDIRECTORY", "AD", or blank for other LDAP implementations such as OpenLDAP.
+* `url`:: Specifies the LDAP server URL.
+* `baseDN`:: Specifies the  base distinguished name (DN) to narrow the scope for LDAP searches.
+* `bindDN`:: Specifies the unique identifier of the service account that is used to authenticate against the LDAP directory.
+* `password`:: Refers to the secret that contains the service account password.
+* `userFilter`:: Specifies the user search filter. The default value for the user filter in AD is `(sAMAccountName=%s)`, and `(uid=%s)` for other LDAP implementations, when you do not configure a value in the CR.
++
+To override the default, configure `userFilter: "(sAMAccountName=${login})"` for AD or `userFilter: "(uid=${uid})"` for other LDAP implementations.
+* `groupFilter`:: Specifies the group search filter. The default value for the group filter in AD is `groupFilter: "(&(objectClass=group)(member=%s))"`, and `(&(objectClass=*)(member=%s))` for other LDAP implementations, when you do not configure a group in the CR.
++
+To override the default, configure `groupFilter: "(&(objectClass=group)(member=${dn}))"` for distinguished name. You can replace `{dn}` with `{uid}` for a unique identifier or `{cn}` for a common name.
+* `hasMemberOf`:: Specifies whether to use the `memberOf` attribute for group membership in AD.
+* `roleMappings`:: Specifies the mapping of LDAP groups to the Hub roles. The {ProductShortName} roles can be a list of default or custom roles. When you use global patterns to match the LDAP roles, you must use the `doublestar` pattern or a double asterisk (`**`) to match the complete role name.
+
+. Apply the LDAP CR in the cluster:
++
+[subs="+quotes"]
+----
+$ *oc apply -f ldap.yaml*
+----
+
+. Restart the Hub to load the new client and the secret:
++
+[subs="+quotes"]
+----
+$ *oc rollout restart deployment/tackle-hub -n openshift-mta*
+----

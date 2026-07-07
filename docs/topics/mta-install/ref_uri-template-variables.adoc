@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: REFERENCE
+
+[id="uri-template-variables_{context}"]
+= URI template variables
+
+[role="_abstract"]
+The {ProductFullName} Hub OpenID Connect (OIDC) provider dynamically resolves the uniform resource identifier (URI) in deployment environments such as local development (`localhost`), Red{nbsp}Hat OpenShift custom routes, and custom domains. 
+
+To prevent entering hard-coded redirect URIs for an {ProductShortName} client deployed in different environments, you can use template variables. In the authorization workflow, the Hub OIDC provider substitutes the template variables at runtime with values from the incoming HTTP request sent by the OIDC Issuer.
+
+You can use the following template variables in the URIs:
+
+* `${issuer}`: Replaced with the complete issuer URL.
+* `${issuer.host}`: Replaced with host and the port.
+* `${issuer.port}`: Replaces only the port.
+* `${issuer.path}`: Replaces only the path.
+* `${issuer.proto}`: Replaces with the issuer scheme.
+
+For example,
+
+* `"${issuer}/callback"` becomes `https://hub.example.com:8080/oidc/callback`
+* `"http://${issuer.host}/auth"` becomes `http://hub.example.com:8080/auth`
+* `"http://localhost:${issuer.port}/done"` becomes `http://localhost:8080/done`

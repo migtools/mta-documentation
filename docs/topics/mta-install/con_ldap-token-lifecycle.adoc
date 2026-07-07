@@ -1,0 +1,13 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: CONCEPT
+
+[id="ldap-token-lifecycle_{context}"]
+= LDAP token lifecycle
+
+[role="_abstract"]
+The {ProductFirstRef} Hub manages token lifecycle for Lightweight Directory Access Protocol (LDAP)-based authentication to account for changes in membership, user permission, and user account status.
+
+A user authenticated by LDAP receives an access token that has a default lifespan of 5 minutes. When the access token expires, the authentication server checks for a cached LDAP identity. If the LDAP identity is cached and not expired, the Hub OpenID Connect (OIDC) provider issues a new token with the cached scopes for the user. If the LDAP identity expires or is not cached, the Hub OIDC provider reauthenticates the user by connecting to the Directory Server (DS).
+
+To issue or refresh an access token, the {ProductFullName} Hub connects to the DS by using the stored password, queries the LDAP groups again, maps the LDAP groups to {ProductShortName} roles, and updates the user identity with an expiration time. The user need not manually reauthenticate to start the token refresh process. 

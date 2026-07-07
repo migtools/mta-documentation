@@ -21,8 +21,6 @@ To create {ProductShortName} instances, you must install the {ProductShortName} 
 	
 include::topics/mta-install/ref_persistent-volume-requirements.adoc[leveloffset=+1]
 
-include::assembly_red-hat-build-of-keycloak.adoc[leveloffset=+1]
-
 include::topics/mta-install/proc_installing-mta-operator.adoc[leveloffset=+1]
 
 include::topics/mta-install/proc_creating-mta-instance.adoc[leveloffset=+1]

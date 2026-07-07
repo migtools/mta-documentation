@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: PROCEDURE
+
+[id="create-custom-role-assign-permissions_{context}"]
+= Create a custom role and assign permissions
+
+[role="_abstract"]
+To enforce fine-grained role-based access control (RBAC) permissions for users to perform specific tasks, create custom roles and assign specific permissions in the {ProductFullName} web console. Users can access features based on the permissions that you assign to them.
+
+[NOTE] 
+====
+You cannot alter or delete the default roles and permissions scoped to them.
+====
+
+.Prerequisites
+
+* You are an {ProductShortName} Administrator user.
+* You have installed {ProductShortName} 8.2 or later.
+
+.Procedure
+
+. Log in to the {ProductShortName} web console.
+. In the *Administration* mode, go to *User Management*.
+. Click *Roles*.
+. Click the number of permissions scoped to the `admin` role to explore the resources and scoped permissions.
+. On the *Roles* page, click *Create*.
+. In the *Name* field, enter a unique name for the new role.
+. Type the name of a resource to see the list of permissions.
+. Add one or more permissions by using one of the following methods:
+* From the *Permissions* list, select a permission and click the *Add selected* icon.
+* Click the *Add all* icon to select all the permissions for that resource.
+. Click *Create*.

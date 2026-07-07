@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: PROCEDURE
+
+[id="add-users-assign-roles-web-console_{context}"]
+= Add users and assign roles in the web console
+
+[role="_abstract"]
+As an administrator, you can manage users and assign one or more roles to them for local authentication and authorization. When you assign roles to a user, they receive all the unique permissions that are associated with the roles.
+
+.Prerequisites
+
+* You are an {ProductShortName} administrator.
+* The cluster administrator has installed {ProductShortName} {ProductVersion}.
+
+.Procedure
+
+. Log in to the {ProductShortName} web console.
+. In the *Administration* mode, click *User Management*.
+. Click *Users*.
+. On the *Create user* page, enter the following information:
+* Enter the username in the *Login* field.
+* Enter the name of the user.
+* Enter the email address of the user.
+* Enter a new password in the *Password* field.
+* Enter the same password in the *Confirm Password* field.
+* Select one or more roles from the *Roles* list.
+. Click *Create*.

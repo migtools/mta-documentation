@@ -1,0 +1,43 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: REFERENCE
+
+[id="uri-wildcard-patterns_{context}"]
+= URI wildcard patterns
+
+[role="_abstract"]
+After template variable substitution, the Hub OpenID Connect (OIDC) provider matches the wildcard patterns in the uniform resource identifier (URI) configuration against the requested URI. The provider uses the `/` character as a path separator to match the URI segment by segment.
+
+.Wildcard pattern behavior
+[cols="1,2,2,2,2",options="header"]
+|====
+|Wildcard
+|Behavior
+|Example Pattern
+|Matched URI
+|Unmatched URI
+
+|`*`
+|Matches any characters except `/` within one path segment
+|`\https://*/callback`
+|`\https://app.example.com/callback`
+|`\https://app.example.com/auth/callback`
+
+|`**`
+|Matches zero or more complete path segments. For example, matches across segments separated by `/` in URI.
+|`\https://**/callback`
+|`\https://app.example.com/auth/v1/callback`
+|`\https://different.com/`
+
+|`{a,b}`
+|Brace expansion - matches either `a` or `b`
+|`\https://host{,*}/**`
+|Matches URIs with or without port and with or without path
+|N/A
+|====
+
+For example,
+
+* `https://\*.example.com/**` to match a specific domain, any subdomain, and any path.
+* `\http://localhost:*/**` to match localhost, any port, and any path.
+* `${issuer.proto}://${issuer.host}{,*}/**` to match the same scheme and host as the OIDC issuer, any port, and any path. You can use this pattern for the {ProductShortName} web console.

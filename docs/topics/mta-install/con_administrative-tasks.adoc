@@ -1,0 +1,35 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: CONCEPT
+
+[id="administrative-tasks_{context}"]
+= Administrative tasks
+
+[role="_abstract"]
+As an administrator, you can configure user authentication and manage users, roles, and tokens to customize your environment.
+
+You can use one of the following authentication flows with the {ProductShortName} Hub OpenID Connect (OIDC):
+
+Local authentication and authorization::
+You can add users and link roles to them in the {ProductShortName} application without any extra configuration.
+
+Lightweight Directory Access Protocol (LDAP)-backed authentication::
+Configure an `LdapProvider` custom resource (CR) to integrate LDAP users. Optionally, configure and deploy secrets in your Red Hat OpenShift cluster for a secure connection with the LDAP client.
+
+Federated authentication to Identity Providers (IdPs)::
+Configure the `IdentityProvider` CR to federate authentication to an IdP such as Google, Okta, Keycloak, or Microsoft Entra ID (formerly, Azure Active Directory). Optionally, configure and deploy secrets in your Red Hat OpenShift cluster for a secure connection with the IdP client.
+
+To migrate Keycloak that you implemented in earlier versions after an {ProductShortName} {ProductVersion} upgrade, see Keycloak migration.
+
+[id="optional-configuration_{context}"]
+== Optional configurations
+
+You can complete the following optional configure tasks:
+
+* Configure authentication and token variables in the Tackle custom resource (CR).
+* Create custom roles.
+* Create and revoke application programming interface (API) keys.
+
+["role=_additional-resources"]
+.Additional resources
+* xref:red-hat-build-of-keycloak_installing-mta-title[Keycloak migration]

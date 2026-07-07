@@ -1,0 +1,21 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: PROCEDURE
+
+[id="revoke-api-key-admin_{context}"]
+= Revoke API keys as an administrator
+
+[role="_abstract"]
+As an administrator, you can revoke an application programming interface (API) key before its lifespan period in the migration toolkit for application (MTA) web console.
+
+.Prerequisites
+
+You installed {ProductShortName} {ProductVersion} in a Red{nbsp}Hat OpenShift cluster.
+
+.Procedure
+
+. Log in to the {ProductShortName} web console.
+. In the *Administration* mode, click *User Management*.
+. Click *Tokens*.
+. On the *Tokens* page, click the options icon.
+. Click *Revoke*.

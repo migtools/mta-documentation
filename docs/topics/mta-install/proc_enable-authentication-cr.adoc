@@ -1,0 +1,67 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: PROCEDURE
+
+[id="enable-authentication-cr_{context}"]
+= Enable authentication in Tackle custom resource
+
+[role="_abstract"]
+As an administrator, you can configure authentication fields and the token lifespan in the Tackle custom resource (CR). If you do not configure these fields, the {ProductFullName} Hub applies default values.
+
+.Prerequisites
+
+* You deployed a Red Hat OpenShift cluster.
+* You installed {ProductShortName} {ProductVersion} in the cluster.
+
+.Procedure
+
+. Edit the tackle CR:
++
+[subs="+quotes"]
+----
+$ *oc edit tackle*
+----
+
+. Switch to the edit mode in the terminal text editor:
++
+[subs="+quotes"]
+----
+*i*
+----
+
+. Optionally, configure the authentication fields:
++
+[source,yaml]
+----
+spec:
+  feature_auth_required:true
+  idp_primary:true
+  hub_oidc_token_lifespan:300
+  hub_oidc_refresh_token_lifespan:172800
+  hub_apikey_lifespan:87600
+  hub_auth_cache_lifespan:5
+  hub_ldap_auth_lifespan:5
+  hub_oidc_key_rotation:90
+----
++
+* `feature_auth_required`:: Specifies whether to enforce authentication to the Hub API and the web console. By default, the value is `true`.
+* `idp_primary`:: Specifies whether {ProductShortName} Hub automatically redirects authentication to the auto-discovered Keycloak identity provider in upgraded deployments. When this value is `true` in other deployments, the Hub redirects to the IdP automatically. 
++
+When `false`, users can authenticate on the {ProductShortName} login page. If you configured an identity provider (IdP), then users can authenticate by using the IdP button on the login page.
+* `hub_oidc_token_lifespan`:: Specifies the OAuth access token lifespan. The default value is 300 seconds.
+* `hub_oidc_refresh_token_lifespan`:: Specifies the OAuth refresh token lifespan. The default value is 172800 seconds (2 days).
+* `hub_apikey_lifespan`:: Specifies the OAuth API key lifespan. The default value is 87600 hours.
+* `hub_auth_cache_lifespan`:: Specifies the OAuth authentication cache lifespan. The default lifespan is 5 minutes.
+* `hub_ldap_auth_lifespan`:: Specifies the LDAP authentication lifespan. The default lifespan is 5 minutes.
+* `hub_oidc_key_rotation`:: Specifies the OIDC key rotation interval. The default value is 90 days.
+
+. Save the changes and exit the text editor to apply the changes:
++
+[subs="+quotes"]
+----
+*:wq!*
+----
+
+[role="_additional-resources"]
+.Additional resources
+* xref:authentication-fields-tackle-cr_installing-mta-title[Authentication fields in the Tackle CR]

@@ -1,0 +1,27 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-managing-access-tokens-api-keys: {context}]
+
+ifndef::context[]
+[id="managing-access-tokens-api-keys"]
+endif::[]
+ifdef::context[]
+[id="managing-access-tokens-api-keys_{context}"]
+endif::[]
+= Token management
+
+:context: managing-access-tokens-api-keys
+
+[role="_abstract"]
+As an administrator, you can manage access tokens and application programming interface (API) keys in the {ProductFirstRef} web console. To enhance security for task-authentication, the {ProductShortName} Hub generates task personal access tokens with task-scoped permissions.
+
+include::topics/mta-install/proc_generate-api-key-web-console.adoc[leveloffset=+1]
+
+include::topics/mta-install/proc_revoke-api-key-admin.adoc[leveloffset=+1]
+
+include::topics/mta-install/proc_revoke-api-key-migrator.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-managing-access-tokens-api-keys[:context: {parent-context-of-managing-access-tokens-api-keys}]
+ifndef::parent-context-of-managing-access-tokens-api-keys[:!context:]
