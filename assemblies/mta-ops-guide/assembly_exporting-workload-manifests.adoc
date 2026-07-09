@@ -21,9 +21,6 @@ include::topics/mta-ops/con_workload-manifest-export.adoc[leveloffset=+1]
 
 include::topics/mta-ops/proc_exporting-manifests-from-the-source-cluster.adoc[leveloffset=+1]
 
-== Next steps
-
-* Transform workload manifests.
 
 [role="_additional-resources"]
 == Additional resources

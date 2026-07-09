@@ -27,9 +27,6 @@ include::topics/mta-ops/proc_transforming-manifests-with-an-instructions-file.ad
 
 include::topics/mta-ops/proc_adding-a-custom-transformation-stage.adoc[leveloffset=+1]
 
-== Next steps
-
-* Generate final deployment manifests.
 
 [role="_additional-resources"]
 == Additional resources

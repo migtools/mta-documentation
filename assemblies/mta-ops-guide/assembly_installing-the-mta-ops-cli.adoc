@@ -21,9 +21,6 @@ include::topics/mta-ops/con_mta-ops-cli-standalone-architecture.adoc[leveloffset
 
 include::topics/mta-ops/proc_downloading-and-extracting-the-mta-ops-cli.adoc[leveloffset=+1]
 
-== Next steps
-
-* Migrate stateless workloads.
 
 
 ifdef::parent-context-of-installing-the-mta-ops-cli[:context: {parent-context-of-installing-the-mta-ops-cli}]
