@@ -21,10 +21,6 @@ include::topics/mta-ops/con_manifest-compatibility-validation.adoc[leveloffset=+
 
 include::topics/mta-ops/proc_validating-workload-manifests-against-a-live-cluster.adoc[leveloffset=+1]
 
-== Next steps
-
-* Deploy the migrated workloads.
-
 [role="_additional-resources"]
 == Additional resources
 

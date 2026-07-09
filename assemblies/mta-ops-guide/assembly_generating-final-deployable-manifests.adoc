@@ -23,7 +23,6 @@ include::topics/mta-ops/proc_generating-final-manifests-locally.adoc[leveloffset
 
 include::topics/mta-ops/proc_generating-ordered-manifests-locally.adoc[leveloffset=+1]
 
-
 [role="_additional-resources"]
 == Additional resources
 

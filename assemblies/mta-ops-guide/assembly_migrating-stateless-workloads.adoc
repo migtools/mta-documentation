@@ -25,7 +25,6 @@ A complete migration pipeline includes the following stages in a strict order:
 * Validate (optional): Check target cluster application programming interface (API) compatibility.
 * Deploy: Apply the workloads to the destination.
 
-
 include::topics/mta-ops/proc_executing-a-stateless-migration-quickstart.adoc[leveloffset=+1]
 
 include::assembly_configuring-cluster-access-for-migration.adoc[leveloffset=+1]
@@ -39,7 +38,6 @@ include::assembly_generating-final-deployable-manifests.adoc[leveloffset=+1]
 include::assembly_validating-target-cluster-compatibility.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-migrated-workloads.adoc[leveloffset=+1]
-
 
 ifdef::parent-context-of-migrating-stateless-workloads[:context: {parent-context-of-migrating-stateless-workloads}]
 ifndef::parent-context-of-migrating-stateless-workloads[:!context:]
