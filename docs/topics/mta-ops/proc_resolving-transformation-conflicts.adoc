@@ -16,11 +16,11 @@ To fix malformed Kustomize patches, isolate your transformation stages. You can 
 . Identify the specific numbered stage directory where the failure occurred.
 . Compare the contents of the `input/` directory against the `output/` directory for that stage.
 . If the failure occurred in a custom stage, modify your `kustomization.yaml` file to correct the syntax error.
-. Rerun only the isolated custom stage by using the `--stage` and `--force` flags:
+. Rerun the isolated custom stage:
 +
 [subs="+quotes"]
 ----
-$ *mta-ops transform -e export -t transform --stage _<stage_directory>_ --force*
+$ *mta-ops transform _<custom_stage_directory>_ -e export -t transform --force*
 ----
 
 .Verification

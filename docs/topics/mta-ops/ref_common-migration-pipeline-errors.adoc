@@ -14,12 +14,12 @@ When you encounter pipeline failures, review the common errors tables. This help
 | Error message | Cause | Solution
 
 | `Forbidden`
-| Missing role-based access control (RBAC) permissions for a resource.
-| Review the `failures/` directory. Use role impersonation flags.
+| You lack role-based access control (RBAC) permissions to export a resource.
+| Inspect the `failures/` directory for skipped dependencies. Use role impersonation flags such as `--as` and `--as-group`.
 
 | `Patch evaluation error`
 | A custom stage contains malformed YAML or missing parent objects.
-| Isolate the stage using `--stage`. Rerun with `--force`.
+| Isolate the stage by passing the directory name as a positional argument. Rerun the command with the `--force` flag.
 |===
 
 .Apply and validate errors
@@ -28,8 +28,8 @@ When you encounter pipeline failures, review the common errors tables. This help
 | Error message | Cause | Solution
 
 | `Dependency order failure`
-| Resources applied from a directory executed out of order.
-| Run `apply` with the `--ordered` flag.
+| The deployment command executed manifest files out of their required dependency order.
+| Rerun the `mta-ops apply` command with the `--ordered` flag.
 
 | `Unknown resource type`
 | A required custom resource definition (CRD) is missing.

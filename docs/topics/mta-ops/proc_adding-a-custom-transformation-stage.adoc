@@ -34,7 +34,7 @@ commonLabels:
 +
 [subs="+quotes"]
 ----
-$ *mta-ops transform -e export -t transform --stage 50_CustomModifications --force*
+$ *mta-ops transform _<custom_stage_directory>_ -e export -t transform --force*
 ----
 +
 The `--force` flag is mandatory to safely overwrite your modified custom stage directory.
