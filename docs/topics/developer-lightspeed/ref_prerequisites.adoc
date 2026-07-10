@@ -15,7 +15,7 @@ Your local workstation must meet the following criteria:
 * You have installed the Java Development Kit (JDK) 17 or later.
 * You have installed Maven 3.9.9 or later.
 * You have installed Git and added it to your `$PATH` variable.
-* You have installed the Language Support for Java&trade; by Red{nbsp}Hat extension.
+* You have installed the Language Support for Java(TM) by Red{nbsp}Hat extension.
 * You have installed {ProductShortName} Visual Studio Code extension. This extension is the primary user interface for triggering contextual code fixes. You must install this extension from the Marketplace or through VSIX.
 
 Your Red{nbsp}Hat OpenShift cluster must meet the following criteria:
