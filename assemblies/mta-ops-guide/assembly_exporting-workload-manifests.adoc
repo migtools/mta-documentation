@@ -28,4 +28,3 @@ include::topics/mta-ops/proc_exporting-manifests-from-the-source-cluster.adoc[le
 
 ifdef::parent-context-of-exporting-workload-manifests[:context: {parent-context-of-exporting-workload-manifests}]
 ifndef::parent-context-of-exporting-workload-manifests[:!context:]
-

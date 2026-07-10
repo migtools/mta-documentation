@@ -34,4 +34,3 @@ include::topics/mta-ops/proc_adding-a-custom-transformation-stage.adoc[leveloffs
 
 ifdef::parent-context-of-transforming-workload-manifests-by-using-a-multi-stage-pipeline[:context: {parent-context-of-transforming-workload-manifests-by-using-a-multi-stage-pipeline}]
 ifndef::parent-context-of-transforming-workload-manifests-by-using-a-multi-stage-pipeline[:!context:]
-

@@ -15,7 +15,7 @@ endif::[]
 :context: migrating-stateless-workloads
 
 [role="_abstract"]
-Migrate your Red Hat OpenShift workloads from a source cluster to a new cluster by using the `mta-ops` pipeline. Extract, clean up, and validate stateless applications before deployment.
+Migrate your Red{nbsp}Hat OpenShift workloads from a source cluster to a new cluster by using the `mta-ops` pipeline. Extract, clean up, and validate stateless applications before deployment.
 
 A complete migration pipeline includes the following stages in a strict order:
 
@@ -41,4 +41,3 @@ include::assembly_deploying-the-migrated-workloads.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-migrating-stateless-workloads[:context: {parent-context-of-migrating-stateless-workloads}]
 ifndef::parent-context-of-migrating-stateless-workloads[:!context:]
-

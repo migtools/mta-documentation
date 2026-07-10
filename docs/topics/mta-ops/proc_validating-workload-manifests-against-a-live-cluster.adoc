@@ -6,14 +6,14 @@
 = Validating workload manifests against a live cluster
 
 [role="_abstract"]
-To verify application programming interface (API) compatibility before deployment, validate your transformed manifests against a live target Red Hat OpenShift cluster.
+To verify application programming interface (API) compatibility before deployment, validate your transformed manifests against a live target Red{nbsp}Hat OpenShift cluster.
 
 .Prerequisites
 * You have generated the final manifests.
-* You have active access to the target Red Hat OpenShift cluster.
+* You have active access to the target Red{nbsp}Hat OpenShift cluster.
 
 .Procedure
-. Set your CLI context to the target Red Hat OpenShift cluster.
+. Set your CLI context to the target Red{nbsp}Hat OpenShift cluster.
 . Validate the transformed manifests:
 +
 [subs="+quotes"]

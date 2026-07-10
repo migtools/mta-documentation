@@ -10,7 +10,7 @@ To capture your application’s deployment configuration, export the manifests t
 
 .Prerequisites
 * You have installed the `mta-ops` CLI on your system.
-* You have active `kubeconfig` access to the source Red Hat OpenShift cluster.
+* You have active `kubeconfig` access to the source Red{nbsp}Hat OpenShift cluster.
 * Optional: You have `cluster-admin` privileges to export all cluster-scoped dependencies.
 +
 WARNING: If you lack `cluster-admin` privileges, the export process generates warnings and extracts only the resources you have permission to access.

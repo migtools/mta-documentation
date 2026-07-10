@@ -3,7 +3,7 @@
 :_mod-docs-content-type: CONCEPT
 
 [id="mta-ops-pipeline-troubleshooting_{context}"]
-= The mta-ops pipeline troubleshooting
+= mta-ops pipeline troubleshooting
 
 [role="_abstract"]
 Understand how the `mta-ops` CLI isolates failures to help you quickly identify migration blockers.

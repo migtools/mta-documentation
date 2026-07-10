@@ -32,6 +32,6 @@ When you encounter pipeline failures, review the common errors tables. This help
 | Run `apply` with the `--ordered` flag.
 
 | `Unknown resource type`
-| A required Custom Resource Definition (CRD) is missing.
+| A required custom resource definition (CRD) is missing.
 | Install the required Operator on the target cluster.
 |===

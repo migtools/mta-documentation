@@ -3,7 +3,7 @@
 :_mod-docs-content-type: REFERENCE
 
 [id="mta-ops-validate-command-options_{context}"]
-= The mta-ops validate command options
+= mta-ops validate command options
 
 [role="_abstract"]
 When you check target cluster application programming interface (API) compatibility, review the available command flags. This helps you configure your live or offline validation run.

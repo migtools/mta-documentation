@@ -6,7 +6,7 @@
 = Resolving validation failures
 
 [role="_abstract"]
-To fix incompatibilities with your target cluster, review your validation artifacts. You must resolve missing Custom Resource Definitions (CRDs) manually.
+To fix incompatibilities with your target cluster, review your validation artifacts. You must resolve missing custom resource definitions (CRDs) manually.
 
 .Prerequisites
 * You ran the `mta-ops validate` command and received a `FAILED` result.

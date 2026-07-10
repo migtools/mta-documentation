@@ -28,4 +28,3 @@ include::topics/mta-ops/proc_validating-workload-manifests-against-a-live-cluste
 
 ifdef::parent-context-of-validating-target-cluster-compatibility[:context: {parent-context-of-validating-target-cluster-compatibility}]
 ifndef::parent-context-of-validating-target-cluster-compatibility[:!context:]
-

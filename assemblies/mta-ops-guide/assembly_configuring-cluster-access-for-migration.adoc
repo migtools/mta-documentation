@@ -23,4 +23,3 @@ include::topics/mta-ops/proc_configuring-source-and-target-cluster-contexts.adoc
 
 ifdef::parent-context-of-configuring-cluster-access-for-migration[:context: {parent-context-of-configuring-cluster-access-for-migration}]
 ifndef::parent-context-of-configuring-cluster-access-for-migration[:!context:]
-

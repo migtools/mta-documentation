@@ -13,7 +13,7 @@ When you lack `cluster-admin` privileges, deploy your workloads as a non-adminis
 * You generated your manifests using the `--skip-cluster-scoped` flag during the `apply` stage.
 
 .Procedure
-* Deploy the workloads by using the Red Hat OpenShift CLI:
+* Deploy the workloads by using the Red{nbsp}Hat OpenShift CLI:
 +
 [subs="+quotes"]
 ----

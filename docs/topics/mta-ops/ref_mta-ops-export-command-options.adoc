@@ -3,7 +3,7 @@
 :_mod-docs-content-type: REFERENCE
 
 [id="mta-ops-export-command-options_{context}"]
-= The mta-ops export command options
+= mta-ops export command options
 
 [role="_abstract"]
 When you capture a source cluster snapshot, review the available command flags. This helps you customize the extraction process.

@@ -25,4 +25,3 @@ include::topics/mta-ops/proc_deploying-workloads-to-the-target-cluster-as-a-non-
 
 ifdef::parent-context-of-deploying-the-migrated-workloads[:context: {parent-context-of-deploying-the-migrated-workloads}]
 ifndef::parent-context-of-deploying-the-migrated-workloads[:!context:]
-

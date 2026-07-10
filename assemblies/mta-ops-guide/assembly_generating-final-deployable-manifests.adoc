@@ -30,4 +30,3 @@ include::topics/mta-ops/proc_generating-ordered-manifests-locally.adoc[leveloffs
 
 ifdef::parent-context-of-generating-final-deployable-manifests[:context: {parent-context-of-generating-final-deployable-manifests}]
 ifndef::parent-context-of-generating-final-deployable-manifests[:!context:]
-
