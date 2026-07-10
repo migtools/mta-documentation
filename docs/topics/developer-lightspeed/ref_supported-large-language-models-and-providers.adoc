@@ -6,9 +6,7 @@
 = Supported large language models and providers
 
 [role="_abstract"]
-You can review the supported large language models (LLMs) and providers to ensure an accurate system configuration.
-
-The following table lists the LLM providers and example models. You can configure these in the Tackle custom resource (CR).
+To ensure an accurate system configuration, review the supported large language models (LLMs) and providers that you can configure in the Tackle custom resource (CR).
 
 [NOTE]
 ====
