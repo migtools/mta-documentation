@@ -6,7 +6,7 @@
 = Supported large language models and providers
 
 [role="_abstract"]
-Reviewing the supported large language models (LLMs) and providers ensures an accurate system configuration. {mta-dl-full} ({ProductShortName}) supports several options.
+You can review the supported large language models (LLMs) and providers to ensure an accurate system configuration.
 
 The following table lists the LLM providers and example models. You can configure these in the Tackle custom resource (CR).
 
