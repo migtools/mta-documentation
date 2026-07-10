@@ -34,6 +34,8 @@ You can also run OpenAI API-compatible LLMs deployed as:
 * A service in your {ocp-name} AI cluster
 * Locally in the Podman AI Lab in your system.
 
+include::ref_supported-large-language-models-and-providers.adoc[leveloffset=+1]
+
 include::con_ip-protection-model-hosting.adoc[leveloffset=+1]
 
 include::con_llm-service-openshift-ai.adoc[leveloffset=+1]

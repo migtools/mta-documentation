@@ -1,0 +1,35 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: REFERENCE
+
+[id="prerequisites_{context}"]
+= Prerequisites
+
+[role="_abstract"]
+Verification of system, storage, and software requirements prevents installation failures. This ensures a successful deployment of {mta-dl-full} ({ProductShortName}).
+
+Your local workstation must meet the following criteria:
+
+* 8 GB of available random access memory (RAM).
+* Java Development Kit (JDK) 17 or later.
+* Maven 3.9.9 or later.
+* Git installed and added to your `$PATH` variable.
+* Language Support for Java(TM) by Red{nbsp}Hat extension installed.
+* {ProductShortName} Visual Studio Code extension: This extension is the primary user interface for triggering contextual code fixes. The extension must be installed from the Marketplace or via VSIX.
+
+Your Red{nbsp}Hat OpenShift cluster must meet the following criteria:
+
+* The {ProductShortName} Operator is required. For instructions, see link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-mta-operator_installing-mta-ui[Installing the {ProductShortName} Operator]. The Operator is the primary requirement for the following configurations:
+
+** Solution Server: The Operator manages the deployment, configuration, and lifecycle of the Solution Server. The Operator enables the `spec.lightspeed` section within the Tackle custom resource (CR).
+** Large language model (LLM) application programming interface (API) key: This required secret authenticates the Solution Server with the LLM provider. The API key must be configured as a cluster secret. This ensures secure communication for the Tackle CR.
+
+* A persistent volume (PV) is required. If the Solution Server backend database is enabled, a dedicated PV is mandatory: 
+
+** The PV must have a minimum size of 10 GB. 
+* The storage infrastructure must support ReadWriteOnce (RWO) or ReadWriteMany (RWX) access modes.
+
+[role="_additional-resources"]
+.Additional resources
+* xref:supported-large-language-models-and-providers_configuring-llm[Supported large language models and providers].
