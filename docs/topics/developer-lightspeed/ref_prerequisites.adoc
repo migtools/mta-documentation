@@ -34,4 +34,4 @@ The Operator is the primary requirement for the following subsequent configurati
 
 [role="_additional-resources"]
 .Additional resources
-* xref:supported-large-language-models-and-providers_configuring-llm[Supported large language models and providers].
+* xref:supported-large-language-models-and-providers_configuring-llm[Supported large language models and providers]
