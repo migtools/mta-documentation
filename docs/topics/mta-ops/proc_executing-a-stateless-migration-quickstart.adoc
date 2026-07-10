@@ -16,7 +16,7 @@ To quickly test the tool, run a basic stateless migration scenario for a single 
 +
 [subs="+quotes"]
 ----
-$ *mta-ops export --context <source_context> -n _<namespace>_ -e export --overwrite*
+$ *mta-ops export --context _<source_context>_ -n _<namespace>_ -e export --overwrite*
 ----
 
 . Clean the exported manifests by using the default transformation pipeline:

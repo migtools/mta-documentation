@@ -23,4 +23,4 @@ $ *oc apply -f output/output.yaml*
 . Optional: Commit the `output/` directory to your repository to use a GitOps deployment workflow.
 
 .Verification
-Verify the rollout, service endpoints, and application health on the target cluster.
+* Verify the rollout, service endpoints, and application health on the target cluster.

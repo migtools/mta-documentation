@@ -6,7 +6,7 @@
 = Exporting manifests from the source cluster
 
 [role="_abstract"]
-To capture your application’s deployment configuration, export the manifests to a local directory. You can use role impersonation if you lack direct access.
+To capture your application’s deployment configuration, export the manifests to a local directory. You can use role impersonation if you do not have direct access.
 
 .Prerequisites
 * You have installed the `mta-ops` CLI on your system.

@@ -10,7 +10,7 @@ When you plan application migrations, understand the supported paths to create a
 
 The current `mta-ops` version supports migration paths strictly from Red{nbsp}Hat OpenShift 4.x to 4.x.
 
-The `mta-ops` command-line interface supports only stateless application migrations. Stateful migration is planned for future releases.
+The current version of the `mta-ops` command-line interface supports only stateless application migrations.
 
 You cannot transfer persistent volume claims (PVCs) or underlying volume data.
 

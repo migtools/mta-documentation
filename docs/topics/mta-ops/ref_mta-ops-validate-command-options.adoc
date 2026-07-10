@@ -17,6 +17,6 @@ When you check target cluster application programming interface (API) compatibil
 | `--kubeconfig` | | The path to the kubeconfig file for the target cluster.
 | `--api-resources` | | The path to a captured API surface JSON file for offline validation.
 | `--validate-dir` | | The directory path to save validation reports and failure artifacts.
-| `--output` | `-o` | The format of the generated report file. Valid options are json or yaml.
+| `--output` | `-o` | The format of the generated report file. Valid options are `json` or `yaml`.
 | `--overwrite` | | Overwrite of the validation directory if it already exists.
 |===

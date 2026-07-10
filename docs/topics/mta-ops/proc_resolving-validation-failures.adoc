@@ -16,7 +16,7 @@ To fix incompatibilities with your target cluster, review your validation artifa
 . Open the `failures/` subdirectory.
 . Inspect the generated YAML files. The file names indicate the specific group, version, and kind (GVK) that failed compatibility checks.
 ** If a resource failed because a CRD is missing on the target cluster, install the required Operator on the target cluster.
-** If a resource failed because an API version is deprecated, create a custom transformation stage to rewrite the apiVersion field.
+** If a resource failed because an API version is deprecated, create a custom transformation stage to rewrite the `apiVersion` field.
 . Rerun the `mta-ops validate` command.
 
 .Verification

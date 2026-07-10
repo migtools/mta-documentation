@@ -12,7 +12,7 @@ The export process is read-only and does not affect running applications. The `m
 
 The tool does not require a Personal Access Token (PAT). It authenticates directly to the clusters by using your local `kubeconfig` file.
 
-If you lack cluster-level permissions, the command logs a warning. It records inaccessible resources in a dedicated `failures/` directory.
+If you do not have cluster-level permissions, the command logs a warning. It records inaccessible resources in a dedicated `failures/` directory.
 
 To identify skipped cluster-scoped resources during a partial export, you must inspect the `failures/` directory. The tool generates a YAML artifact for each inaccessible resource. These files contain the raw application programming interface (API) error.
 
