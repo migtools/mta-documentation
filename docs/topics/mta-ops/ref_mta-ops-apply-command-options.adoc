@@ -14,7 +14,6 @@ When you render your final YAML, review the available command flags. This helps 
 | Option | Shorthand | Description
 | `--transform-dir` | `-t` | The directory path containing the completed transform stages.
 | `--output-dir` | `-o` | The directory path to write the final deployable manifests.
-| `--export-dir` | `-e` | The path where exported resources are saved. This is not used by the apply command.
 | `--kustomize-args` | | Additional arguments for the embedded Kustomize engine.
 | `--skip-cluster-scoped` | | A flag to exclude cluster-scoped resources from the output.
 | `--ordered` | | Prefixes the generated resource filenames with 3-digit order numbers to ensure correct dependency ordering.
