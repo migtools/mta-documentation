@@ -1,0 +1,37 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: REFERENCE
+
+[id="prerequisites_{context}"]
+= Prerequisites
+
+[role="_abstract"]
+To ensure a successful deployment and prevent installation failures, verify that your environment meets the system, storage, and software requirements for {mta-dl-full} ({ProductShortName}).
+
+Your local workstation must meet the following criteria:
+
+* You have 8 GB of available RAM on your local workstation.
+* You have installed the Java Development Kit (JDK) 17 or later.
+* You have installed Maven 3.9.9 or later.
+* You have installed Git and added it to your `$PATH` variable.
+* You have installed the Language Support for Java(TM) by Red{nbsp}Hat extension.
+* You have installed the {ProductShortName} Visual Studio Code extension. This extension is the primary user interface for triggering contextual code fixes. You must install this extension from the Marketplace or through VSIX.
+
+Your Red{nbsp}Hat OpenShift cluster must meet the following criteria:
+
+* You have installed the {ProductShortName} Operator. For instructions, see link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-mta-operator_installing-mta-ui[Installing the {ProductShortName} Operator].
++
+The Operator is the primary requirement for the following configurations:
+
+** Solution Server: The Operator manages the deployment, configuration, and lifecycle of the Solution Server. It enables the `spec.lightspeed` section within the Tackle custom resource (CR).
+** Large language model (LLM) application programming interface (API) key: You must configure the API key as a cluster secret to securely authenticate the Solution Server with the LLM provider.
+
+* You have provisioned a persistent volume (PV). A dedicated PV is mandatory if the Solution Server backend database is enabled:
+
+** The PV must have a minimum size of 10 GiB.
+** The storage infrastructure must support `readwriteonce` (RWO) or `readwritemany` (RWX) access modes.
+
+[role="_additional-resources"]
+.Additional resources
+* xref:supported-large-language-models-and-providers_configuring-llm[Supported large language models and providers]

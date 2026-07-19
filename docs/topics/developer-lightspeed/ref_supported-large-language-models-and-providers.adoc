@@ -1,0 +1,26 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-10
+:_mod-docs-content-type: REFERENCE
+
+[id="supported-large-language-models-and-providers_{context}"]
+= Supported large language models and providers
+
+[role="_abstract"]
+To ensure an accurate system configuration, review the supported large language models (LLMs) and providers that you can configure in the Tackle custom resource (CR).
+
+[NOTE]
+====
+The availability of public LLM models is maintained by the respective LLM provider.
+====
+
+.Configurable large language models and providers
+|===
+| LLM Provider (Tackle CR value) | Large language model examples for Tackle CR configuration
+
+| OpenShift AI platform | Models deployed in an OpenShift AI cluster that can be accessed by using an OpenAI-compatible API.
+| OpenAI (`openai`) | gpt-4, gpt-4o, gpt-4o-mini, gpt-3.5-turbo
+| Azure OpenAI (`azure_openai`) | gpt-4, gpt-35-turbo
+| Amazon Bedrock (`bedrock`) | anthropic.claude-3-5-sonnet-20241022-v2:0, meta.llama3-1-70b-instruct-v1:0
+| Google Gemini (`google`) | gemini-2.0-flash-exp, gemini-1.5-pro
+| Ollama (`ollama`) | llama3.1, codellama, mistral
+|===
