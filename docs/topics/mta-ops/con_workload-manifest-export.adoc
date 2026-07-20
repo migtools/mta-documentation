@@ -16,4 +16,7 @@ If you do not have cluster-level permissions, the command logs a warning. It rec
 
 To identify skipped cluster-scoped resources during a partial export, you must inspect the `failures/` directory. The tool generates a YAML artifact for each inaccessible resource. These files contain the raw application programming interface (API) error.
 
-The `export` command exits with a non-zero status code only if all requested resource types return a `Forbidden` error.
+The `export` command exits with a non-zero status code under one of the following conditions:
+
+* All requested resource types return a `Forbidden` error.
+* A resource type returns a timeout error.

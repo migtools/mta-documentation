@@ -10,6 +10,6 @@ When you adapt complex applications, you can manage transformation plugins to co
 
 The `mta-ops` command-line interface (CLI) automatically discovers plugins from the `~/.local/share/crane/plugins/` default path. You can view available plugins by using the `list-plugins` subcommand. Custom plugins discovered on your file system can be arbitrary applications. In this version, `mta-ops` does not apply additional restrictions or sandboxing during plugin execution. Therefore, ensure that you trust these plugins.
 
-During the transform stage, you can use the `--skip-plugins` flag to omit specific plugins. You can use the `--optional-flags` parameter to pass additional arguments.
+During the transform stage, you can use the `--skip-plugins` flag to omit specific plugins.
 
 To drive the transformation behavior by using specific user-defined rules, you can append the `--instructions-file` flag. This supplies a declarative YAML file to the pipeline.
