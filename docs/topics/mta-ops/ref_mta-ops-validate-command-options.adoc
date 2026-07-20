@@ -15,8 +15,19 @@ When you check target cluster application programming interface (API) compatibil
 | `--input-dir` | `-i` | The directory path containing the final rendered manifests to validate.
 | `--context` | | The local kubeconfig context of the target cluster.
 | `--kubeconfig` | | The path to the kubeconfig file for the target cluster.
-| `--api-resources` | | The path to a captured API surface JSON file for offline validation.
+| `--api-resources` | a.| The path to a captured API surface JSON file for offline validation. This flag is mutually exclusive with the following live cluster flags:
+
+* `--context`
+* `--kubeconfig`
+* `--server`
+* `--token`
+* `--cluster`
+* `--user`
 | `--validate-dir` | | The directory path to save validation reports and failure artifacts.
 | `--output` | `-o` | The format of the generated report file. Valid options are `json` or `yaml`.
 | `--overwrite` | | Overwrite of the validation directory if it already exists.
+| `--server` | `-s` | The address and port of the Kubernetes API server for the target cluster.
+| `--token` | | Bearer token for authentication to the target cluster API server.
+| `--cluster` | | The name of the `kubeconfig` cluster to use.
+| `--user` | | The name of the `kubeconfig` user to use.
 |===
