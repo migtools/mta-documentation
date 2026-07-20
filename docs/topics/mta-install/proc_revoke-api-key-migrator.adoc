@@ -3,7 +3,7 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="revoke-api-key-migrator_{context}"]
-= Revoke API keys as an migrator
+= Revoke API keys as a migrator
 
 [role="_abstract"]
 As a migrator, you can revoke an application programming interface (API) key before its lifespan period in {ProductFirstRef} web console.

@@ -6,7 +6,7 @@
 = Authentication fields in the Tackle CR
 
 [role="_abstract"]
-As an administrator, you can configure the authentication fields in the Tackle custom resource (CR) to include permission and role changes in new tokens, apply stateless validation, and control staleness for sessions and tokens by 
+As an administrator, you can configure the authentication fields in the Tackle custom resource (CR) to include permission and role changes in new tokens, apply stateless validation, and control staleness for sessions and tokens. 
 
 * `JSON Web Token`:: The {ProductShortName} Hub generates JWTs as short-lived access tokens for API authentication. When the Hub issues a JWT token, it signs the token by using the Rivest-Shamir-Adleman (RSA) algorithm. The Hub also supports signing JWTs with the Hash-based Message Authentication Code (HMAC) algorithm for backward compatibility.
 +

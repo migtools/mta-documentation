@@ -14,7 +14,7 @@ A user can have more than one role. Each role must correspond to a specific pers
 
 * The `architect` role corresponds to the architect persona. An architect is a technical lead for the migration project. They can run assessments, create and modify applications and related information. They cannot modify or delete sensitive information, but can view it. For example, they can associate an existing set of credentials with a specific application repository.
 
-* The `migrator` role corresponds to the migrator persona. A migrator can analyze applications but cannot create, modify, or delete the them. 
+* The `migrator` role corresponds to the migrator persona. A migrator can analyze applications but cannot create, modify, or delete them. 
 
 * The `project-manager` role corresponds to the project manager persona. Project managers can create, read, update, and delete migration waves. They can also create {mta-dl-full} resources and adoption plans, and update business stakeholders included in a project. They have read-only access to other {ProductShortName} resources. 
 

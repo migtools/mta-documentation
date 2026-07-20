@@ -17,7 +17,7 @@ endif::[]
 [role="_abstract"]
 As an administrator, you can simplify security and regulatory compliance by implementing the {ProductFullName} Hub as an OpenID Connect (OIDC) broker to federate user authentication to an identity provider (IdP).
 
-You can integrate the following IdPs and managing roles and permissions in the {ProductShortName} web console for authorization:
+You can integrate the following IdPs and managing roles:
 
 * Keycloak 
 * Microsoft Entra ID (formerly, Azure Active Directory)
