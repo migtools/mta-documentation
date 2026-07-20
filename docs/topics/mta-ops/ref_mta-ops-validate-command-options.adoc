@@ -15,7 +15,7 @@ When you check target cluster application programming interface (API) compatibil
 | `--input-dir` | `-i` | The directory path containing the final rendered manifests to validate.
 | `--context` | | The local kubeconfig context of the target cluster.
 | `--kubeconfig` | | The path to the kubeconfig file for the target cluster.
-| `--api-resources` | a.| The path to a captured API surface JSON file for offline validation. This flag is mutually exclusive with the following live cluster flags:
+| `--api-resources` | a| The path to a captured API surface JSON file for offline validation. This flag is mutually exclusive with the following live cluster flags:
 
 * `--context`
 * `--kubeconfig`
