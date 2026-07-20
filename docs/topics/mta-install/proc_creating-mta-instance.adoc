@@ -25,8 +25,7 @@ To use the {ProductShortName} UI for assessing and analyzing your applications, 
 . Access the user interface from your browser by using the route provided by the `mta-ui` application within Red Hat OpenShift.
 . Log in to the user interface instance by using the default credentials:
 ** Username: `admin`
-** Password: `Passw0rd!`
-. When prompted, create a new password.
+** Password: `admin`
 
 
 [role="_additional-resources"]

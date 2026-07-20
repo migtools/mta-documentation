@@ -46,7 +46,7 @@ metadata:
 spec:
   hub_bucket_volume_size: "2.5Gi"
   maven_data_volume_size: "2.5Gi"
-  rwx_supported: "false"
+  rwx_supported: "true"
 ----
 . Verify that the MTA pods are running:
 .. In the *Administration* view, click *Workloads*.
