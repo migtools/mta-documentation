@@ -6,8 +6,8 @@
 = The mta-ops CLI standalone architecture
 
 [role="_abstract"]
-When you prepare your local workstation, understand the standalone nature of the `mta-ops` tool to avoid installation conflicts.
+When you prepare your local workstation, understand the standalone nature of the `mta-ops` CLI to avoid installation conflicts.
 
-The `mta-ops` command-line interface (CLI) is a standalone tool that operates independently of the standard migration toolkit for applications (MTA) CLI (`mta-cli`). You do not need to install the standard MTA CLI to use the `mta-ops` pipeline.
+The `mta-ops` CLI is a standalone tool that operates independently of the standard {ProductFullName} CLI (`mta-cli`). You do not need to install the standard {ProductShortName} CLI to use the `mta-ops` pipeline.
 
 You can install the tool by downloading the pre-compiled `mta-ops` archive from the Red{nbsp}Hat Developer portal, then extracting the binary.

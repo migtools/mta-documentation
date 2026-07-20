@@ -12,8 +12,8 @@ To configure your migration environment, download and extract the pre-compiled `
 * You have a compatible local operating system.
 
 .Procedure
-. Log in to the link:[https://developers.redhat.com/[Red{nbsp}Hat](https://developers.redhat.com/%5BRed%7Bnbsp%7DHat) Developer Portal].
-. Navigate to the link:https://developers.redhat.com/products/mta/download[Migration Toolkit for Applications downloads page].
+. Log in to the link:https://developers.redhat.com/[Red{nbsp}Hat Developer Portal].
+. Navigate to the link:https://developers.redhat.com/products/mta/download[migration toolkit for applications downloads page].
 . Download the `mta-ops` CLI `.zip` archive for your operating system.
 . Extract the downloaded `.zip` archive to a local directory.
 . Move the extracted `mta-ops` binary to a directory that is included in your `$PATH` environment variable. For example:

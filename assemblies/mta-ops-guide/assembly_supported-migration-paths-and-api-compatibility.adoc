@@ -15,7 +15,7 @@ endif::[]
 :context: supported-migration-paths-and-api-compatibility
 
 [role="_abstract"]
-Before you migrate workloads, review the supported migration paths and application programming interface (API) compatibility. The `mta-ops` CLI handles resources based on their scope and compatibility.
+Before you migrate workloads, review the supported migration paths and application programming interface (API) compatibility. The `mta-ops` command-line interface (CLI) handles resources based on their scope and compatibility.
 
 include::topics/mta-ops/con_stateless-migration-limitations.adoc[leveloffset=+1]
 
