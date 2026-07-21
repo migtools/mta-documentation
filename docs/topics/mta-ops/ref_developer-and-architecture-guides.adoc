@@ -1,0 +1,16 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: REFERENCE
+
+[id="developer-and-architecture-guides_{context}"]
+[appendix,id="developer-and-architecture-guides"]
+= Developer and architecture guides
+
+[role="_abstract"]
+When you want to extend the `mta-ops` command-line interface (CLI) or understand its internal mechanics, review the upstream developer guides. This helps you build custom plugins or contribute to the project.
+
+The `mta-ops` repository contains comprehensive documentation for developers:
+
+* `CONTRIBUTING.md`: Located at the root of the repository, detailing the GitHub integration and contributor onboarding workflow.
+* Development guides (`docs/development/`): Contains dedicated documents for local environment setup, unit and end-to-end (E2E) testing conventions, and end-to-end pipeline architecture.
+* Plugin development: Comprehensive instructions on creating custom transformation plugins using Go or Bash.

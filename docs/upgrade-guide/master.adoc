@@ -1,0 +1,24 @@
+:toc:
+:toclevels: 4
+:numbered:
+:mta:
+include::topics/templates/document-attributes.adoc[]
+
+:imagesdir: topics/images
+:context: upgrade-guide
+:upgrade-guide:
+:_mod-docs-content-type: ASSEMBLY
+[id="upgrade-guide"]
+= Upgrading to migration toolkit for applications {ProductVersion}
+
+include::topics/making-open-source-more-inclusive.adoc[]
+
+include::topics/mta-upgrade/con_intro-mta-upgrade.adoc[leveloffset=+1]
+
+include::topics/mta-upgrade/proc_upgrade_mta.adoc[leveloffset=+1]
+
+include::topics/mta-upgrade/con_keycloak_migration.adoc[leveloffset=+1]
+
+include::topics/mta-upgrade/con_cli-command-updates.adoc[leveloffset=+1]
+
+:!upgrade-guide:

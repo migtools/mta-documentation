@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-installing-the-mta-ops-cli: {context}]
+
+ifndef::context[]
+[id="installing-the-mta-ops-cli"]
+endif::[]
+ifdef::context[]
+[id="installing-the-mta-ops-cli_{context}"]
+endif::[]
+= Installing the mta-ops CLI
+
+:context: installing-the-mta-ops-cli
+
+[role="_abstract"]
+To begin migrating your workloads, you must install the `mta-ops` command-line interface (CLI) on your local machine.
+
+include::topics/mta-ops/con_mta-ops-cli-standalone-architecture.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_downloading-and-extracting-the-mta-ops-cli.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-installing-the-mta-ops-cli[:context: {parent-context-of-installing-the-mta-ops-cli}]
+ifndef::parent-context-of-installing-the-mta-ops-cli[:!context:]

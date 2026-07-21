@@ -1,0 +1,26 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="deploying-workloads-to-the-target-cluster-as-an-administrator_{context}"]
+= Deploying workloads to the target cluster as an administrator
+
+[role="_abstract"]
+To finalize your migration, deploy the validated workloads by applying the generated manifests to the target Red{nbsp}Hat OpenShift cluster.
+
+.Prerequisites
+* Optional: You have validated your workload manifests.
+* You have `cluster-admin` privileges on the target Red{nbsp}Hat OpenShift cluster.
+
+.Procedure
+. Deploy the workloads by using the Red{nbsp}Hat OpenShift CLI and applying the consolidated file:
++
+[subs="+quotes"]
+----
+$ *oc apply -f output/output.yaml*
+----
+
+. Optional: Commit the `output/` directory to your repository to use a GitOps deployment workflow.
+
+.Verification
+* Verify the rollout, service endpoints, and application health on the target cluster.

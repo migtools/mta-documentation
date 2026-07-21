@@ -1,0 +1,76 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: CONCEPT
+
+[id="cli-command-updates_{context}"]
+= Command-line updates
+
+[role="_abstract"]
+As an administrator, you must make necessary changes to your pipeline or scripts to include the updated {ProductFullName} command-line (CLI) commands and remove deprecated commands.
+
+== Deprecated CLI commands
+The following commands and options are deprecated:
+
+* List sources
++
+----
+$ mta-cli analyze --list-sources
+----
+
+* List targets
++
+----
+$ mta-cli analyze --list-targets
+----
+
+* List providers
++
+----
+$ mta-cli analyze --list-providers
+----
+
+* Test rulesets
++
+[subs="+quotes"]
+----
+$ mta-cli test _<path_to_ruleset>_
+----
+
+* Transform 
++
+----
+$ mta-cli transform openrewrite
+----
+
+== Updated CLI commands
+
+* List sources
++
+----
+$ mta-cli rules list-sources
+----
+
+* List targets
++
+----
+$ mta-cli rules list-targets
+----
+
+* List providers
++
+----
+$ mta-cli provider list
+----
+
+* Test rulesets
++
+[subs="+quotes"]
+----
+$ mta-cli rules test _<path_to_ruleset>_
+----
+
+* Transform 
++
+----
+$ mta-cli openrewrite
+----

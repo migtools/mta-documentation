@@ -56,10 +56,10 @@ ENV REDIS_URL={{ .Values.manifest.redis.url }}
 +
 [subs="+quotes"]
 ----
-$ *mta-cli generate helm --chart-dir _<path_to_helm_chart>_* \
-  *--input _<path_to_discovery_manifest>_* \
-  *--set manifest.name=my-new-app* \
-  *--output-dir _<location_of_deployment_manifests>_*
+$ mta-cli generate helm --chart-dir _<path_to_helm_chart>_ \
+  --input _<path_to_discovery_manifest>_ \
+  --set manifest.name=my-new-app \
+  --output-dir _<location_of_deployment_manifests>_
 ----
 +
 where:
@@ -79,7 +79,7 @@ The variable priority for generating deployment manifests is as follows:
 +
 [subs="+quotes"]
 ----
-$ *cat _<path_to_dockerfile>_*
+$ cat _<path_to_dockerfile>_
 ----
 +
 [source, yaml]

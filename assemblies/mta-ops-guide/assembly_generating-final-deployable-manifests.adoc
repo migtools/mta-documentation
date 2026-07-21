@@ -1,0 +1,32 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-generating-final-deployable-manifests: {context}]
+
+ifndef::context[]
+[id="generating-final-deployable-manifests"]
+endif::[]
+ifdef::context[]
+[id="generating-final-deployable-manifests_{context}"]
+endif::[]
+= Generating final deployable manifests
+
+:context: generating-final-deployable-manifests
+
+[role="_abstract"]
+To render the final YAML from the transform pipeline, generate the manifests. The `mta-ops apply` command produces local deployable files without modifying clusters.
+
+include::topics/mta-ops/con_local-manifest-generation.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_generating-final-manifests-locally.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_generating-ordered-manifests-locally.adoc[leveloffset=+1]
+
+[role="_additional-resources"]
+== Additional resources
+
+* xref:mta-ops-apply-command-options_mta-ops-command-options[The `mta-ops apply` command options]
+
+ifdef::parent-context-of-generating-final-deployable-manifests[:context: {parent-context-of-generating-final-deployable-manifests}]
+ifndef::parent-context-of-generating-final-deployable-manifests[:!context:]

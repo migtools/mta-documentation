@@ -1,0 +1,37 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: REFERENCE
+
+[id="common-migration-pipeline-errors_{context}"]
+= Common migration pipeline errors
+
+[role="_abstract"]
+When you encounter pipeline failures, review the common errors tables. This helps you diagnose issues and resume your migration work.
+
+.Export and transform errors
+[cols="20%,30%,50%",options="header"]
+|===
+| Error message | Cause | Solution
+
+| `Forbidden`
+| You lack role-based access control (RBAC) permissions to export a resource.
+| Inspect the `failures/` directory for skipped dependencies. Use role impersonation flags such as `--as` and `--as-group`.
+
+| `Patch evaluation error`
+| A custom stage contains malformed YAML or missing parent objects.
+| Isolate the stage by passing the directory name as a positional argument. Rerun the command with the `--force` flag.
+|===
+
+.Apply and validate errors
+[cols="20%,30%,50%",options="header"]
+|===
+| Error message | Cause | Solution
+
+| `Dependency order failure`
+| The deployment command executed manifest files out of their required dependency order.
+| Rerun the `mta-ops apply` command with the `--ordered` flag.
+
+| `Unknown resource type`
+| A required custom resource definition (CRD) is missing.
+| Install the required Operator on the target cluster.
+|===

@@ -1,0 +1,30 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-validating-target-cluster-compatibility: {context}]
+
+ifndef::context[]
+[id="validating-target-cluster-compatibility"]
+endif::[]
+ifdef::context[]
+[id="validating-target-cluster-compatibility_{context}"]
+endif::[]
+= Validating target cluster compatibility
+
+:context: validating-target-cluster-compatibility
+
+[role="_abstract"]
+To ensure your generated manifests are compatible with a target cluster, run the validation check. Validating target cluster compatibility is an optional step. Validate runs after the apply stage on the final output.
+
+include::topics/mta-ops/con_manifest-compatibility-validation.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_validating-workload-manifests-against-a-live-cluster.adoc[leveloffset=+1]
+
+[role="_additional-resources"]
+== Additional resources
+
+* xref:mta-ops-validate-command-options_mta-ops-command-options[The `mta-ops` validate command options]
+
+ifdef::parent-context-of-validating-target-cluster-compatibility[:context: {parent-context-of-validating-target-cluster-compatibility}]
+ifndef::parent-context-of-validating-target-cluster-compatibility[:!context:]

@@ -1,0 +1,51 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="executing-a-stateless-migration-quickstart_{context}"]
+= Executing a stateless migration quick start
+
+[role="_abstract"]
+To quickly test the tool, run a basic stateless migration scenario for a single application. This end-to-end pipeline demonstrates the default workflow.
+
+.Prerequisites
+* You have active contexts for your source and target clusters.
+
+.Procedure
+. Export the source application:
++
+[subs="+quotes"]
+----
+$ *mta-ops export --context _<source_context>_ -n _<namespace>_ -e export --overwrite*
+----
+
+. Clean the exported manifests by using the default transformation pipeline:
++
+[subs="+quotes"]
+----
+$ *mta-ops transform -e export -t transform*
+----
+. Render the deployable manifests locally:
++
+[subs="+quotes"]
+----
+$ *mta-ops apply -t transform -o output --overwrite*
+----
+
+. Optional: Validate the generated manifests against the target cluster:
++
+[subs="+quotes"]
+----
+$ *mta-ops validate --context _<target_context>_ -i output --overwrite*
+----
+
+. Deploy the application to the target cluster:
++
+[subs="+quotes"]
+----
+$ *oc apply -f output/output.yaml*
+----
+
+
+.Verification
+* Verify the application rollout on the target cluster.

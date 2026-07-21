@@ -1,0 +1,15 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="workload-deployment_{context}"]
+= Workload deployment
+
+[role="_abstract"]
+Understand the final step of the stateless workload migration pipeline and deploy the validated manifests to the target cluster.
+
+The `mta-ops` pipeline produces ready-to-use YAML artifacts on your local disk. It deliberately does not connect to the target cluster. This non-destructive architecture ensures that the target cluster remains untouched until manual deployment.
+
+Because the pipeline outputs standard Kubernetes manifests, it is fully GitOps-ready. You can commit the final YAML to a repository.
+
+Applying the consolidated `output.yaml` file resolves dependency ordering issues during deployment. Applying the entire directory can cause deployment failures if roles execute before role bindings.

@@ -1,0 +1,15 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="local-manifest-generation_{context}"]
+= Local manifest generation
+
+[role="_abstract"]
+Understand how the `mta-ops apply` command renders your transformed manifests locally. This ensures your final YAML is ready for deployment.
+
+The `mta-ops apply` command runs Kustomize on the final transform stage. It evaluates patches internally by using the embedded krusty application programming interface (API). This embedded rendering removes the runtime dependency on the `kubectl` or `oc` binaries.
+
+The command produces clean, deployable manifests on your local disk. It does not deploy resources to any cluster. The output includes individual resource files and a consolidated `output.yaml` file.
+
+The `mta-ops` tool orders resources in the consolidated file to satisfy cluster dependencies. For example, it places custom resource definitions (CRDs) before namespace-scoped resources. You can exclude cluster-scoped resources by appending the `--skip-cluster-scoped` flag. This supports split-responsibility workflows between administrators and non-administrators.

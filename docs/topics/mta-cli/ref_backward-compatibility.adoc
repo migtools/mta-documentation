@@ -1,0 +1,24 @@
+// Module included in the following assemblies:
+//
+// * assemblies/cli-guide/assembly_about-the-command-line-tool.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="backward-compatibility_{context}"]
+= Compatibility with deprecated commands
+
+[role="_abstract"]
+To ensure compatibility with the earlier versions, the {ProductFullName} CLI converts an unsupported commands and options to the equivalent supported commands.
+
+For example, if you enter:
+
+[subs="+quotes"]
+----
+$ mta-cli analyze --list-targets
+----
+
+The {ProductShortName} CLI processes the command as:
+
+[subs="+quotes"]
+----
+$ mta-cli rules list-targets
+----

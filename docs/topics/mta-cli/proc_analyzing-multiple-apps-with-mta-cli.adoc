@@ -31,21 +31,21 @@ For example, to analyze example applications `A`, `B`, and `C`, enter the follow
 +
 [subs="+quotes"]
 ....
-$ *mta-cli analyze --bulk --input _<path_to_input_A>_ --output _<path_to_output_ABC>_ --source _<source_A>_ --target _<target_A>_*
+$ mta-cli analyze --bulk --input _<path_to_input_A>_ --output _<path_to_output_ABC>_ --source _<source_A>_ --target _<target_A>_
 ....
 
 .. For input `B`, enter:
 +
 [subs="+quotes"]
 ....
-$ *mta-cli analyze --bulk --input _<path_to_input_B>_ --output _<path_to_output_ABC>_  --source _<source_B>_ --target _<target_B>_*
+$ mta-cli analyze --bulk --input _<path_to_input_B>_ --output _<path_to_output_ABC>_  --source _<source_B>_ --target _<target_B>_
 ....
 
 .. For input `C`, enter:
 +
 [subs="+quotes"]
 ....
-$ *mta-cli analyze --bulk --input _<path_to_input_C>_ --output _<path_to_output_ABC>_  --source _<source_C>_ --target _<target_C>_*
+$ mta-cli analyze --bulk --input _<path_to_input_C>_ --output _<path_to_output_ABC>_  --source _<source_C>_ --target _<target_C>_
 ....
 
 . Access the analysis report. {ProductShortName} generates a single report, listing all issues that must be resolved before the applications can be migrated.

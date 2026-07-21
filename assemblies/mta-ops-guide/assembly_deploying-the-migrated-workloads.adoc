@@ -1,0 +1,27 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-deploying-the-migrated-workloads: {context}]
+
+ifndef::context[]
+[id="deploying-the-migrated-workloads"]
+endif::[]
+ifdef::context[]
+[id="deploying-the-migrated-workloads_{context}"]
+endif::[]
+= Deploying the migrated workloads
+
+:context: deploying-the-migrated-workloads
+
+[role="_abstract"]
+After you generate and validate the final manifests, deploy them. Because the tool does not modify clusters, use standard deployment tools.
+
+include::topics/mta-ops/con_workload-deployment.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_deploying-workloads-to-the-target-cluster-as-an-administrator.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_deploying-workloads-to-the-target-cluster-as-a-non-administrator.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-deploying-the-migrated-workloads[:context: {parent-context-of-deploying-the-migrated-workloads}]
+ifndef::parent-context-of-deploying-the-migrated-workloads[:!context:]

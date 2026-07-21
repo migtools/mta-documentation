@@ -1,0 +1,41 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="configuring-source-and-target-cluster-contexts_{context}"]
+= Configuring source and target cluster contexts
+
+[role="_abstract"]
+To enable the `mta-ops` CLI to communicate with your environments, configure your local cluster contexts. You perform this by logging into both the source and target clusters.
+
+.Prerequisites
+* You have installed the Red{nbsp}Hat OpenShift CLI (`oc`).
+* You have credentials for both the source and target Red{nbsp}Hat OpenShift clusters.
+
+.Procedure
+. Log in to the source Red{nbsp}Hat OpenShift cluster:
++
+[subs="+quotes"]
+----
+$ *oc login _<source_cluster_url>_ -u _<username>_ -p _<password>_*
+----
+
+. Log in to the target Red{nbsp}Hat OpenShift cluster:
++
+[subs="+quotes"]
+----
+$ *oc login _<target_cluster_url>_ -u _<username>_ -p _<password>_*
+----
+
+. List your configured contexts to verify they are active:
++
+[subs="+quotes"]
+----
+$ *oc config get-contexts*
+----
+
+. Identify and record the names of the source and target contexts. You use these exact names with the `--context` flag in subsequent pipeline commands.
+
+
+.Verification
+* Verify that the command output displays both cluster contexts and that no authentication errors occurred.

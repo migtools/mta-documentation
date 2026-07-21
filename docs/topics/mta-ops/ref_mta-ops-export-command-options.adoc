@@ -1,0 +1,27 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: REFERENCE
+
+[id="mta-ops-export-command-options_{context}"]
+= mta-ops export command options
+
+[role="_abstract"]
+When you capture a source cluster snapshot, review the available command flags. This helps you customize the extraction process.
+
+.`mta-ops export` flags
+[cols="30%,20%,50%",options="header"]
+|===
+| Option | Shorthand | Description
+| `--context` | | The local kubeconfig context of the source cluster.
+| `--namespace` | `-n` | The target namespace to export workloads from.
+| `--export-dir` | `-e` | The directory path to save the exported resources.
+| `--label-selector` | `-l` | Selection of resources to export based on matching labels.
+| `--as` | | Username to impersonate for the export operation.
+| `--as-group` | | Group to impersonate for the export operation.
+| `--as-extras` | | Impersonation extras to use for the export request.
+| `--crd-skip-group` | | Omission of CRDs that match the specified API group.
+| `--crd-include-group` | | Inclusion of CRDs that match the specified API group.
+| `--qps` | | Queries per second allowed for the Kubernetes API connection.
+| `--burst` | | Allowed extra queries to accumulate for the API connection.
+|`--overwrite` | | Overwrite of the export directory if it already exists.
+|===

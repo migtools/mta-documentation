@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-06-24
+
+ifdef::context[:parent-context-of-about-the-command-line-tool: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="about-the-command-line-tool"]
+endif::[]
+ifdef::context[]
+[id="about-the-command-line-tool_{context}"]
+endif::[]
+= About the {ProductShortName} commands
+
+:context: about-the-command-line-tool
+
+[role="_abstract"]
+As a migrator, you can use a structured command model that consists of seven main commands to improve your experience and align with standard command-line interface (CLI) patterns.
+
+include::topics/mta-cli/con_cli-command-structure.adoc[leveloffset=+1]
+
+include::topics/mta-cli/ref_deprecated-commands-and-options.adoc[leveloffset=+1]
+
+include::topics/mta-cli/ref_backward-compatibility.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-about-the-command-line-tool[:context: {parent-context-of-about-the-command-line-tool}]
+ifndef::parent-context-of-about-the-command-line-tool[:!context:]

@@ -1,0 +1,26 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="generating-final-manifests-locally_{context}"]
+= Generating final manifests locally
+
+[role="_abstract"]
+To produce clean YAML files, generate your final manifests. You use the `mta-ops apply` command to render the Kustomize output locally.
+
+.Prerequisites
+* You have successfully exported and transformed your workload manifests.
+
+.Procedure
+. Generate the final manifests:
++
+[subs="+quotes"]
+----
+$ *mta-ops apply -t transform -o output*
+----
+
+. Review the generated `output/output.yaml` file on your local disk.
+Check the replicas, namespaces, images, labels, and role-based access control (RBAC) configurations.
+
+.Verification
+* Verify that the output directory contains the final YAML files and the namespace subdirectories.

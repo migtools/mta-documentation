@@ -1,0 +1,24 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="transforming-manifests-with-an-instructions-file_{context}"]
+= Transforming manifests with an instructions file
+
+[role="_abstract"]
+When you need specific rules during the cleanup process, use an instructions file. This declarative file controls the pipeline execution.
+
+.Prerequisites
+* You successfully exported your workload manifests.
+* You created a YAML instructions file containing your custom transformation rules.
+
+.Procedure
+* Transform the manifests by applying specific rules:
++
+[subs="+quotes"]
+----
+$ *mta-ops transform -e export -t transform --instructions-file _<path_to_file.yaml>_*
+----
+
+.Verification
+* Verify that the tool applied your specific rules to the generated stage directories.

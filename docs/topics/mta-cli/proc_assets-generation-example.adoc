@@ -33,7 +33,7 @@ Assume that the `cf-nodejs-app.yaml` is located in the same directory as the {Pr
 +
 [subs="+quotes"]
 ----
-$ *cat cf-nodejs-app.yaml*
+$ cat cf-nodejs-app.yaml
 ----
 +
 [subs="+quotes"]
@@ -52,16 +52,16 @@ random-route: true
 +
 [subs="+quotes"]
 ----
-$ *mta-cli discover cloud-foundry \
+$ mta-cli discover cloud-foundry \
 --input cf-nodejs-app.yaml \
---output discover.yaml \*
+--output discover.yaml \
 ----
 
 . Verify the content of the discover manifest:
 +
 [subs="+quotes"]
 ----
-$ *cat discover.yaml*
+$ cat discover.yaml
 ----
 +
 [subs="+quotes"]
@@ -79,16 +79,16 @@ instances: 1
 +
 [subs="+quotes"]
 ----
-$ *mta-cli generate helm \
+$ mta-cli generate helm \
 --chart-dir helm_sample \
---input discover.yaml --output-dir newDir*
+--input discover.yaml --output-dir newDir
 ----
 
 . Check the contents of the Dockerfile in the `newDir` directory:
 +
 [subs="+quotes"]
 ----
-$ *cat ./newDir/Dockerfile*
+$ cat ./newDir/Dockerfile
 ----
 +
 [subs="+quotes"]
@@ -102,7 +102,7 @@ RUN echo "Hello cf-nodejs!"
 +
 [subs="+quotes"]
 ----
-$ *cat ./newDir/configmap.yaml*
+$ cat ./newDir/configmap.yaml
 ----
 +
 [subs="+quotes"]
@@ -124,11 +124,11 @@ data:
 +
 [subs="+quotes"]
 ----
-$ *mta-cli generate helm \
+$ mta-cli generate helm \
 --chart-dir helm_sample \
 --input discover.yaml --set name="nodejs-app" \
 --set instances=2 \
---output-dir newDir \*
+--output-dir newDir \
 ----
 
 . Check the contents of the ConfigMap again:

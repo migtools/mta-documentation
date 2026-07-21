@@ -41,5 +41,5 @@ IMPORTANT: You must create a configuration file for your unsupported language pr
 +
 [subs="+quotes"]
 ....
-$ *mta-cli analyze --provider-override _<path_to_configuration_file>_ --output _<path_to_output>_ --rules _<path_to_custom_rules>_*
+$ mta-cli analyze --provider-override _<path_to_configuration_file>_ --output _<path_to_output>_ --rules _<path_to_custom_rules>_
 ....

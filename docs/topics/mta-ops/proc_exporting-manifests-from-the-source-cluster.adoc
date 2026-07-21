@@ -1,0 +1,39 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="exporting-manifests-from-the-source-cluster_{context}"]
+= Exporting manifests from the source cluster
+
+[role="_abstract"]
+To capture your application’s deployment configuration, export the manifests to a local directory. You can use role impersonation if you do not have direct access.
+
+.Prerequisites
+* You have installed the `mta-ops` CLI on your system.
+* You have active `kubeconfig` access to the source Red{nbsp}Hat OpenShift cluster.
+* Optional: You have `cluster-admin` privileges to export all cluster-scoped dependencies.
++
+WARNING: If you lack `cluster-admin` privileges, the export process generates warnings and extracts only the resources you have permission to access.
+
+
+.Procedure
+. Export manifests and cluster-level dependencies:
++
+[subs="+quotes"]
+----
+$ *mta-ops export --context _<source_context>_ -n _<namespace>_ -e export*
+----
+
+. Optional: To perform service account-based migrations by using role impersonation, append the `--as` and `--as-group` flags:
++
+[subs="+quotes"]
+----
+$ *mta-ops export --context _<source_context>_ -n _<namespace>_ -e export --as _<service_account_name>_ --as-group _<group_name>_*
+----
+
+. Review the generated YAML files in the `export/resources/_<namespace>_/` directory.
+
+
+.Verification
+. Verify that the output directory contains the exported manifests and the `_cluster/` subdirectory.
+. If you lack `cluster-admin` privileges, inspect the `failures/` directory to identify any skipped resources.

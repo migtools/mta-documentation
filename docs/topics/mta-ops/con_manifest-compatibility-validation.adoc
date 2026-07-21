@@ -1,0 +1,18 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="manifest-compatibility-validation_{context}"]
+= Manifest compatibility validation
+
+[role="_abstract"]
+Validation is a read-only optional check for your final workload manifests before their deployment on a target cluster. It prevents deployment failures by identifying API incompatibilities.
+
+You can use the `mta-ops validate` command to evaluate your generated manifests against the target Red{nbsp}Hat OpenShift cluster's application programming interface (API) surface. The command performs strict group, version, and kind (GVK) matching. The tool reads the API discovery information without modifying the cluster.
+
+The validation command generates a report identifying incompatible resources. It saves the detailed results to a specified validation directory. If incompatibilities are found, the tool logs the failing artifacts in a `failures/` subdirectory.
+
+The validation process supports the following modes:
+
+* *Live mode*: The `mta-ops` tool connects directly to the target cluster to read the current API surface.
+* *Offline mode*: The `mta-ops` tool reads a previously captured API surface file. This is useful for disconnected environments or automated pipelines.

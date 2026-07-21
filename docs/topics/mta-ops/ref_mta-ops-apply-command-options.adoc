@@ -1,0 +1,21 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: REFERENCE
+
+[id="mta-ops-apply-command-options_{context}"]
+= mta-ops apply command options
+
+[role="_abstract"]
+When you render your final YAML, review the available command flags. This helps you customize the output generation.
+
+.`mta-ops` apply flags
+[cols="30%,20%,50%",options="header"]
+|===
+| Option | Shorthand | Description
+| `--transform-dir` | `-t` | The directory path containing the completed transform stages.
+| `--output-dir` | `-o` | The directory path to write the final deployable manifests.
+| `--kustomize-args` | | Additional arguments for the embedded Kustomize engine.
+| `--skip-cluster-scoped` | | A flag to exclude cluster-scoped resources from the output.
+| `--ordered` | | Prefixes the generated resource filenames with 3-digit order numbers to ensure correct dependency ordering.
+| `--overwrite` | | Overwrite of the output directory if it already exists.
+|===

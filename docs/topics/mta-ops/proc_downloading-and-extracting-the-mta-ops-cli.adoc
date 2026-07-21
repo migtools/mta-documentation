@@ -1,0 +1,32 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="downloading-and-extracting-the-mta-ops-cli_{context}"]
+= Downloading and extracting the mta-ops CLI
+
+[role="_abstract"]
+To configure your migration environment, download and extract the pre-compiled `mta-ops` archive.
+
+.Prerequisites
+* You have a compatible local operating system.
+
+.Procedure
+. Log in to the link:https://developers.redhat.com/[Red{nbsp}Hat Developer Portal].
+. Navigate to the link:https://developers.redhat.com/products/mta/download[migration toolkit for applications downloads page].
+. Download the `mta-ops` CLI `.zip` archive for your operating system.
+. Extract the downloaded `.zip` archive to a local directory.
+. Move the extracted `mta-ops` binary to a directory that is included in your `$PATH` environment variable. For example:
++
+[subs="+quotes"]
+----
+$ *sudo mv mta-ops /usr/local/bin/*
+----
+
+.Verification
+* Verify the installation by checking the tool version:
++
+[subs="+quotes"]
+----
+$ *mta-ops version*
+----
