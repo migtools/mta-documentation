@@ -6,17 +6,17 @@
 = Analyzing an application in containerless mode
 
 [role="_abstract"]
-To analyze applications in environments where a container engine is not available or needed, you can run the {ProductFullName} command-line interface (CLI) in containerless mode. This way, you can run assessments directly on your local machine by using the provided shell script, bypassing the need for Podman or Docker.
+By default, the {ProductFullName} command-line interface (CLI) runs in containerless mode. In this mode, the CLI uses the provided shell script to run assessments directly on your local machine, and it does not require Podman or Docker.
 
-[IMPORTANT]
+[NOTE]
 ====
-Containerless CLI is the default mode. To enable container runtime usage for the analysis of Java applications, you must set the `--run-local` flag to `false`:
+Containerless mode is the default for Java application analysis. To use a container runtime instead, set the `--run-local` parameter to `false`:
 
 ----
 --run-local=false
 ----
 
-The analysis for other applications runs in the container mode automatically.
+For applications that are written in languages other than Java, the analysis automatically runs in container mode.
 ====
 
 .Prerequisites
@@ -59,6 +59,6 @@ NOTE: The `--overwrite` option overwrites the output folder if it exists.
 [role="_additional-resources"]
 .Additional resources
 
-* link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
+* xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
 * xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]
 * link:https://docs.gradle.org/current/userguide/gradle_wrapper.html[Gradle Wrapper]
