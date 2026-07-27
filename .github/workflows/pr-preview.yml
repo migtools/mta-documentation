@@ -16,28 +16,35 @@ on:
       - 'index.md'
       - '.github/workflows/pr-preview.yml'
 
-# Needed so the deploy job can push to gh-pages and post comments
 permissions:
   contents: write
   pull-requests: write
+
+# Serialize all gh-pages pushes across both workflows to prevent
+# non-fast-forward failures when two PRs deploy at the same time.
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
     name: Build & Deploy Preview
     runs-on: ubuntu-latest
+    # Skip fork PRs — GITHUB_TOKEN is read-only for forks and the push would fail.
+    if: github.event.pull_request.head.repo.full_name == github.repository
 
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
-          # Full history lets Jekyll see git metadata (last-modified dates etc.)
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true   # caches gems between runs automatically
+          bundler-cache: true
 
       - name: Install system dependencies
         run: sudo apt-get install -y asciidoctor
@@ -54,17 +61,13 @@ jobs:
       - name: Deploy preview to gh-pages
         env:
           PR_NUMBER: ${{ github.event.number }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Configure git identity for the push
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stash the build output before switching branches
           mkdir -p /tmp/pr-preview
           cp -r _site/. /tmp/pr-preview/
 
-          # Fetch or create the gh-pages branch without touching the working tree
           git fetch origin gh-pages 2>/dev/null || true
           if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
             git checkout -B gh-pages origin/gh-pages
@@ -76,20 +79,26 @@ jobs:
             git commit -m "chore: initialise gh-pages branch"
           fi
 
-          # Place the preview under a predictable subdirectory
           PREVIEW_DIR="pr-previews/${PR_NUMBER}"
           rm -rf "${PREVIEW_DIR}"
           mkdir -p "${PREVIEW_DIR}"
           cp -r /tmp/pr-preview/. "${PREVIEW_DIR}/"
 
-          # Commit and push only if there are changes
           git add "${PREVIEW_DIR}"
           if git diff --staged --quiet; then
             echo "No changes to deploy."
           else
             COMMIT_SHA="${{ github.event.pull_request.head.sha }}"
             git commit -m "preview: PR #${PR_NUMBER} @ ${COMMIT_SHA::7}"
-            git push origin gh-pages
+
+            # Retry push up to 3 times in case of a concurrent non-fast-forward
+            for attempt in 1 2 3; do
+              git fetch origin gh-pages
+              git rebase origin/gh-pages 2>/dev/null || { git rebase --abort; true; }
+              git push origin gh-pages && break
+              echo "Push attempt ${attempt} failed, retrying..."
+              sleep $((attempt * 5))
+            done
           fi
 
       - name: Post or update preview comment
@@ -123,7 +132,8 @@ jobs:
             const marker = '<!-- pr-preview-bot -->';
             const markedBody = marker + '\n' + body;
 
-            const { data: comments } = await github.rest.issues.listComments({
+            // Paginate to handle PRs with more than 30 comments
+            const comments = await github.paginate(github.rest.issues.listComments, {
               owner, repo, issue_number: prNumber,
             });
 

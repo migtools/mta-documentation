@@ -8,10 +8,17 @@ permissions:
   contents: write
   pull-requests: write
 
+# Use the same concurrency group as the deploy workflow so cleanup and
+# deploy pushes to gh-pages are always serialized.
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false
+
 jobs:
   cleanup:
     name: Remove Preview
     runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
 
     steps:
       - name: Checkout gh-pages branch
@@ -20,6 +27,7 @@ jobs:
           ref: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 1
+          persist-credentials: true
 
       - name: Delete preview directory
         env:
@@ -31,7 +39,14 @@ jobs:
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git rm -rf "${PREVIEW_DIR}"
             git commit -m "chore: remove preview for PR #${PR_NUMBER}"
-            git push origin gh-pages
+
+            for attempt in 1 2 3; do
+              git fetch origin gh-pages
+              git rebase origin/gh-pages 2>/dev/null || { git rebase --abort; true; }
+              git push origin gh-pages && break
+              echo "Push attempt ${attempt} failed, retrying..."
+              sleep $((attempt * 5))
+            done
           else
             echo "No preview directory found for PR #${PR_NUMBER}, nothing to do."
           fi
@@ -49,7 +64,8 @@ jobs:
 
             const marker = '<!-- pr-preview-bot -->';
 
-            const { data: comments } = await github.rest.issues.listComments({
+            // Paginate to handle PRs with more than 30 comments
+            const comments = await github.paginate(github.rest.issues.listComments, {
               owner, repo, issue_number: prNumber,
             });
 
