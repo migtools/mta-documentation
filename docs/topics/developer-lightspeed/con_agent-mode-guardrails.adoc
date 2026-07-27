@@ -22,7 +22,7 @@ When you run an analysis in agent mode, the {mta-dl-plugin} passes each code sug
 
 The extension invokes the standard build toolchain that is already configured for your project directly in your local workspace, such as the following toolchains:
 
-`Java projects`:: Apache Maven (`mvn compile`) or Gradle (`gradle compileJava`).
-`JavaScript and TypeScript projects`:: npm (`npm run build`) or Yarn (`yarn build`).
+* `Java projects`: Apache Maven (`mvn compile`) or Gradle (`gradle compileJava`).
+* `JavaScript and TypeScript projects`: npm (`npm run build`) or Yarn (`yarn build`).
 
 The dry run runs directly on the underlying file system of your local workspace without containerization or process isolation. If the dry run completes successfully, the {mta-dl-plugin} displays the verified suggestion for your approval before applying it to the workspace. If the dry run returns errors, the {mta-dl-plugin} attempts automatic correction.
