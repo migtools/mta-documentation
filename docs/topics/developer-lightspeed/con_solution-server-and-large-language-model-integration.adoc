@@ -1,0 +1,27 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-29
+:_mod-docs-content-type: CONCEPT
+
+[id="solution-server-and-large-language-model-integration_{context}"]
+= Solution Server and large language model integration
+
+[role="_abstract"]
+To build a shared organizational memory of code fixes, review how the Solution Server integrates with your large language model (LLM). This integration provides context-aware resolutions for complex migration issues.
+
+== Collaborative workflow
+
+The Solution Server is an independent backend component that builds a collective memory of your migration projects. Your editor extension communicates directly with the large language model (LLM) or routes requests through an LLM proxy. The Solution Server evaluates your accepted and rejected code changes to extract additional insights and resolution patterns. It feeds these insights back to the extension to enhance the prompt context for future LLM solution requests.
+
+{mta-dl-plugin} uses Retrieval Augmented Generation (RAG). RAG produces context-based resolutions for issues in your code. By using RAG, the extension improves the context shared with the LLM. 
+
+== Architecture flow
+
+The high-level data processing flow retrieves migration insights from the Solution Server. Solution Server generates insights based on previously seen solutions. An agent then uses these insights to request code suggestions directly from the large language model (LLM). This architecture centralizes interactions and protects your local environment.
+
+== Agent mode automation
+
+In agent mode, the editor extension autonomously generates code resolutions for multiple migration issues. This automation eliminates the need for manual interaction in your development environment for every single code fix. The agent plans, executes, and iteratively refines fixes by using relevant insights from the Solution Server.
+
+== Security and secrets
+
+The Solution Server manages secure authentication to the LLM by using cluster secrets. Application programming interface (API) credentials are routed through the LLM proxy. Credentials are never exposed in plain text to client workstations.
