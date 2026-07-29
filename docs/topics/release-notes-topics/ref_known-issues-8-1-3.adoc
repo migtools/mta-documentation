@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-01
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-8-1-3_{context}"]
+= Known issues
+
+[role="_abstract"]
+{ProductFirstRef} version 8.1.3 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+
+== {ProductFirstRef} Visual Studio Code extension
+
+{ProductShortName} extension renders incorrectly in Red{nbsp}Hat OpenShift Dev Spaces::
+
+The {ProductShortName} Visual Studio Code extension 8.1 renders inconsistently in the Red{nbsp}Hat OpenShift Dev Spaces dashboard open in the Firefox browser version 149.0. As a consequence, you are unable to perform tasks by using the extension.
++
+To workaround the problem, use the {ProductShortName} Visual Studio Code extension in Red{nbsp}Hat OpenShift Dev Spaces through the Chrome browser.
++
+link:https://redhat.atlassian.net/browse/MTA-6735[MTA-6735]
+
+Source code includes code resolution suggestions after you reject the suggestions::
+
+When you request a code resolution but reject the suggested resolutions in the review editor, {mta-dl-plugin} modifies the source code with the suggested changes. As a consequence, the source code state changes after you reject the suggestions but GitHub status does not show any state change for the file. 
++
+To workaround the problem, restore the original code file by re-opening the Visual Studio Code editor.
++
+link:https://redhat.atlassian.net/browse/MTA-6863[MTA-6863]
+

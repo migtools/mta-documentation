@@ -1,0 +1,18 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-05-06
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-1-3_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+Review issues that have been fixed in {ProductFullName} version 8.1.3.
+
+== {ProductFirstRef} Visual Studio Code extension
+
+You can run an analysis after restoring changes in a project from an earlier analysis::
+
+Before this update, the {ProductShortName} extension showed *resolution in progress* if you accepted resolutions for a project in an earlier analysis and then, restored the project files. As a consequence, you were unable to perform further analysis because the extension did not restore its state based on the current state of the project. With this update, the {ProductShortName} extension restores its state after running an analysis. As a result, you can accept changes suggested in an earlier analysis of a project and restore the project files, before running more analyses.
++
+(link:https://redhat.atlassian.net/browse/MTA-6862[MTA-6862])
+
