@@ -1,0 +1,42 @@
+// Module included in the following assemblies:
+//
+// * docs/developer-lightspeed-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+
+[id="disable-llm-proxy-web-console_{context}"]
+= Disable the LLM proxy by using the {ocp-short} web console
+
+[role="_abstract"]
+To disable the LLM proxy in centralized configuration mode, edit the Tackle custom resource (CR) in the {ocp-short} web console.
+
+.Prerequisites
+
+* You are logged in to the {ocp-short} web console with the `cluster-admin` role or an equivalent role that grants write access to the {ProductShortName} namespace.
+* You have identified the namespace where {ProductShortName} is installed, for example, `mta` or `openshift-mta`.
+
+.Procedure
+
+. In the {ocp-short} web console, switch to the *Administrator* perspective.
+. Click *Operators* > *Installed Operators*.
+. From the *Project* list, select the {ProductShortName} namespace, for example, `openshift-mta`.
+. Click *Migration Toolkit for Applications*.
+. Click the *Tackle* tab.
+. Click the name of your Tackle instance, for example, `mta`.
+. Click *Actions* > *Edit Tackle*.
+. In the YAML editor, find the `spec` section and set the `kai_llm_proxy_enabled` field to `false`:
++
+[source,yaml]
+----
+spec:
+  kai_llm_proxy_enabled: false
+----
+. Click *Save*.
++
+The Operator reconciles the change and terminates the proxy pod.
+
+.Verification
+
+. Click *Workloads* > *Pods*.
+. From the *Project* list, select the {ProductShortName} namespace.
+. Verify that no pod with `proxy` in the name has a `Running` status.

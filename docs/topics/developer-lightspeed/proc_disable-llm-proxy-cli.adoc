@@ -1,0 +1,62 @@
+// Module included in the following assemblies:
+//
+// * docs/developer-lightspeed-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+
+[id="disable-llm-proxy-cli_{context}"]
+= Disable the LLM proxy by using the CLI
+
+[role="_abstract"]
+To disable the LLM proxy for scripted incident response or when the {ocp-short} web console is unavailable, use the OpenShift CLI (`oc`).
+
+.Prerequisites
+
+* You have installed the OpenShift CLI (`oc`).
+* You are logged in to the cluster with the `cluster-admin` role.
+
+.Procedure
+
+. Patch the Tackle custom resource (CR) to disable the LLM proxy:
++
+[source,terminal,subs="+quotes"]
+----
+$ oc patch tackle __<tackle_instance_name>__ -n __<mta_namespace>__ \
+  --type=merge -p '{"spec":{"kai_llm_proxy_enabled":false}}'
+----
++
+where:
++
+`<tackle_instance_name>`:: Specifies the name of your Tackle instance.
+`<mta_namespace>`:: Specifies the name of the {ProductShortName} namespace.
++
+For example, to disable the LLM proxy for the `mta` instance in the `openshift-mta` namespace, enter:
++
+[source,terminal]
+----
+$ oc patch tackle mta -n openshift-mta \
+  --type=merge -p '{"spec":{"kai_llm_proxy_enabled":false}}'
+----
++
+[source,terminal]
+----
+tackle.tackle.konveyor.io/mta patched
+----
+
+.Verification
+
+. Verify that no proxy pods are running:
++
+[source,terminal,subs="+quotes"]
+----
+$ oc get pods -n __<mta_namespace>__ | grep proxy
+----
++
+where:
++
+`<mta_namespace>`:: Specifies the name of the {ProductShortName} namespace.
++
+[source,terminal]
+----
+No resources found in mta namespace.
+----

@@ -1,0 +1,25 @@
+// Module included in the following assemblies:
+//
+// * docs/developer-lightspeed-guide/master.adoc
+
+:_mod-docs-content-type: REFERENCE
+
+[id="llm-proxy-developer-impact_{context}"]
+= Expected behavior on developer workstations after proxy shutdown
+
+[role="_abstract"]
+Review the expected connection errors and behavior changes in the developer integrated development environment (IDE) to understand the impact of proxy shutdown.
+
+A proxy shutdown causes the following behavior changes:
+
+* In-progress large language model (LLM) requests from an IDE client receive an immediate `503 Service Unavailable` or `connection refused` error.
+* Developers cannot send further LLM requests until the proxy is re-enabled.
+* Standard IDE functionality, such as code editing, file navigation, and build tools, is not affected. Only the Developer Lightspeed AI assistant stops responding.
+* An error indicator appears in the Lightspeed panel of the IDE.
++
+The exact message depends on the IDE client, but it typically resembles the following:
++
+[source,text]
+----
+Error: Unable to connect to the LLM proxy service. Contact your administrator.
+----
