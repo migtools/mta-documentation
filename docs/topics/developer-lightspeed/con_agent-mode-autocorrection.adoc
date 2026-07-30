@@ -1,0 +1,15 @@
+// Module included in the following assemblies:
+//
+// * docs/topics/developer-lightspeed/assembly_understanding_dl.adoc
+
+:_mod-docs-content-type: CONCEPT
+
+[id="agent-mode-autocorrection_{context}"]
+= Autocorrection on compilation failure
+
+[role="_abstract"]
+To understand how the system handles compilation errors during an analysis, review the autocorrection mechanism. The {mta-dl-full} extension uses compiler diagnostic output to generate corrected suggestions instead of immediately displaying errors.
+
+When a compilation step fails, the `{mta-dl-plugin}` uses the diagnostic output as additional context. It generates a corrected suggestion from the `{mta-dl-full}` model. This retry loop runs up to two times for minor errors. Examples include a single unresolved import or a mismatched method argument type.
+
+If the retry limit is reached, agent mode marks the code as unverified. It also displays the original compiler output alongside the suggestion. The code requires manual resolution before the change is applied.
