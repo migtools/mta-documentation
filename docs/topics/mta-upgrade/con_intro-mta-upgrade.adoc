@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: CONCEPT
+
+[id="intro-mta-upgrade_{context}"]
+= About the {ProductName} upgrade
+
+[role="_abstract"]
+As an administrator, you can upgrade the {ProductFullName} to the {ProductVersion} version on your Red Hat {ocp-name} cluster. The {ProductShortName} Operator is released every four months. You can check the {ProductShortName} Operator release cadence for general availability, full support, and maintenance support lifecycle.
+
+You can upgrade {ProductShortName} in the following Red Hat OpenShift deployments:
+
+* Red Hat {ocp-name} Service on AWS (ROSA)
+* Azure Red Hat {ocp-name} (ARO)
+* {ocp-full}
+
+[id="update-strategy"]
+== Upgrade strategy
+
+When you install an earlier {ProductShortName} version from the software catalog in your cluster, you must choose the manual update strategy that needs you to manually approve the install plan for the MTA Operator. For the latest version, automatic update is selected as the default upgrade strategy. 
+
+The upgrade strategy is applied to all operators that you install in the namespace. If you want separate upgrade strategies for operators, you must install the operators in a different namespace.
+
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://access.redhat.com/labs/ocpouic/?operator=mta-operator&&upgrade_path=4.20%20to%204.21[{ProductShortName} Operator update checker]
+* link:https://access.redhat.com/support/policy/updates/openshift_operators[{ProductShortName} Operator support lifecycle]

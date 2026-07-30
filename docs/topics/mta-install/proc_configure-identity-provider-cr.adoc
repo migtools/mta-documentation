@@ -1,0 +1,69 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-identity-provider-cr_{context}"]
+= Configure an identity provider custom resource
+
+[role="_abstract"]
+To enable the {ProductFullName} Hub OpenID Connect (OIDC) provider to integrate with an identity provider (IdP), create an `IdentityProvider` custom resource (CR).
+
+.Prerequisites
+
+* You have installed the {ProductShortName} {ProductVersion} application in a Red{nbsp}Hat OpenShift cluster.
+* You have `admin` access to the cluster.
+* Optionally, you have created a secret for the IdP.
+
+.Procedure
+
+. Create an `_<my-idp>.yaml_` custom resource:
++
+[source,yaml]
+----
+apiVersion: tackle.konveyor.io/v1alpha1
+kind: IdentityProvider
+metadata:
+  name: corporate-sso
+  namespace: openshift-mta
+spec:
+  name: "Corporate SSO"
+  issuer: "https://idp.example.com/realms/tackle"
+  clientId: "my-client-id"
+  clientSecret:
+    name: idp-client-secret
+    namespace: openshift-mta
+  redirectURI: "https://hub.example.com/oidc/idp/callback"
+  primary: true
+  scopes:
+    - openid
+    - profile
+    - email
+----
++
+* `name`:: Specifies the display name for the IdP button in the UI.
+* `issuer`:: Specifies the IdP issuer URL for OIDC discovery. You can use template variables in the issuer field. For example, 
+`"${issuer.proto}://${issuer.host}/auth/realms/tackle"`.
+* `clientId`:: Specifies the OAuth client ID that is registered with the IdP.
+* `clientSecret`:: Specifies an optional Kubernetes secret for the {ProductShortName} Hub to securely connect to the IdP. Omit this configuration if you did not create a secret for the IdP.
+* `redirectURI`:: Specifies the callback uniform resource identifier (URI) to the {ProductShortName} Hub after the IdP authentication completes. You must add the `/oidc/idp/callback` path to the Hub URI. You can use template variables in the redirect URI field. For example, `"${issuer.proto}://${issuer.host}/oidc/idp/callback"`.
+* `primary`:: Specifies whether the IdP is the primary authentication method. When `true`, the Hub redirects users automatically to this IdP for authentication. If you configured the `idp_primary` field in the Tackle CR, the {ProductShortName} Hub resolves the configuration for this field from the Tackle CR value.
+* `scopes`:: Specifies the OAuth scopes that are used by an OpenID Connect client to request the access privileges for the access token.
+
+. Apply the ``_<my-idp>.yaml_` file in the cluster:
++
+[subs="+quotes"]
+----
+$ *oc apply -f `_<my-idp>.yaml_`*
+----
+
+. Restart the Hub to load the configuration:
++
+[subs="+quotes"]
+----
+$ *oc rollout restart deployment/tackle-hub -n openshift-mta*
+----
+
+[role="_additional-resources"]
+.Additional resources
+
+* xref:enable-authentication-cr_hub-oidc-authentication[Enable authentication in Tackle custom resource]

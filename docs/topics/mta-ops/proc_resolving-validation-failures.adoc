@@ -1,0 +1,23 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="resolving-validation-failures_{context}"]
+= Resolving validation failures
+
+[role="_abstract"]
+To fix incompatibilities with your target cluster, review your validation artifacts. You must resolve missing custom resource definitions (CRDs) manually.
+
+.Prerequisites
+* You ran the `mta-ops validate` command and received a `FAILED` result.
+
+.Procedure
+. Navigate to your specified validation output directory.
+. Open the `failures/` subdirectory.
+. Inspect the generated YAML files. The file names indicate the specific group, version, and kind (GVK) that failed compatibility checks.
+** If a resource failed because a CRD is missing on the target cluster, install the required Operator on the target cluster.
+** If a resource failed because an API version is deprecated, create a custom transformation stage to rewrite the `apiVersion` field.
+. Rerun the `mta-ops validate` command.
+
+.Verification
+* Verify that the `mta-ops validate` command returns a `PASSED` summary result.

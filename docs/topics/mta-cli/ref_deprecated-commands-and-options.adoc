@@ -1,0 +1,44 @@
+// Module included in the following assemblies:
+//
+// * assemblies/cli-guide/assembly_about-the-command-line-tool.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="deprecated-commands-and-options_{context}"]
+= Deprecated commands and options
+
+[role="_abstract"]
+You can use the `mta-cli provider` and `mta-cli rules` commands that have a set of subcommands that you previously used with the `analyze` commands. The `mta-cli test` and `mta-cli transform` commands are deprecated.
+
+To view the options and flags for any {ProductShortName} command, use the `--help` or the `-h` option.
+
+.Deprecated commands and their replacements
+[cols="1,1",options="header"]
+|===
+|Deprecated command
+|New command
+
+|$ mta-cli analyze --list-targets
+|$ mta-cli rules list-targets
+
+|$ mta-cli analyze --list-sources
+|$ mta-cli rules list-sources
+
+|$ mta-cli analyze --list-providers
+|$ mta-cli provider list
+
+a|$ mta-cli test <path_to_test_ruleset>
+
+where:
+
+`<path_to_test_ruleset>`:: Specifies the system path to the test ruleset.
+
+a|$ mta-cli rules test <path_to_test_ruleset>
+
+where:
+
+`<path_to_test_ruleset>`:: Specifies the system path to the test ruleset.
+
+|$ mta-cli transform
+|$ mta-cli openrewrite
+
+|===

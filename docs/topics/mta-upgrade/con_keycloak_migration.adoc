@@ -1,0 +1,38 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-12
+:_mod-docs-content-type: CONCEPT
+
+[id="keycloak-migration_{context}"]
+= Migrate Keycloak users
+
+[role="_abstract"]
+As a {ProductFirstRef} administrator, you can federate user authentication to your Keycloak instance and reduce configuration complexity when you upgrade to {ProductShortName} {ProductVersion}.
+
+When you upgrade to {ProductShortName} {ProductVersion}, the {ProductShortName} Operator finds the Red Hat build of Keycloak (RHBK) in the {ProductShortName} namespace if you deployed Keycloak in earlier versions.
+
+If RHBK is available, the {ProductShortName} Operator installs a Keycloak Operator and deploys an `IdentityProvider` custom resource (CR) for your Keycloak instance.
+
+In this case, the Keycloak Operator manages the RHBK instance and configures a dedicated realm with necessary roles and permissions. You can configure Keycloak as the primary authentication method in the {ProductShortName} Tackle CR for an automatic redirect to your instance for user authentication. If you do not configure Keycloak as the primary authentication method, you can click the *Sign-in with Keycloak* option on the Hub login page to redirect authentication.
+
+If you did not deploy an RHBK instance in the {ProductShortName} namespace before the upgrade, or if you install {ProductShortName} for the first time, the {ProductShortName} Operator does not deploy the Keycloak Operator, PostgreSQL database, and other RHBK resources. You no longer need to provision `1 GiB` for the Keycloak database volume in the {ProductShortName} namespace.
+
+In such cases, you can configure a Keycloak instance separately and integrate it as an identity provider (IdP) for user authentication in {ProductShortName}. The Hub OpenID Connect (OIDC) provider federates user authentication to the Keycloak provider.
+
+You can configure Keycloak as the OIDC provider by using the `IdentityProvider` CR and continue to manage users and roles in Keycloak.
+
+You can configure the existing Keycloak instance as an IdP for user authentication by complete the following tasks:
+
+* Configure the IdP by using the `IdentityProvider` CR.
+
+** Configure the Keycloak instance uniform resource identifier (URI) as the OIDC issuer in the CR.
+
+** Configure the Hub URL with the callback endpoint as the redirect URI.
+
+* Deploy the CR in the same namespace where you installed the {ProductShortName} application in your cluster.
+
+The {ProductShortName} Operator reconfigures the Hub to federate OIDC to your existing Keycloak instance.
+
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html/installing_the_migration_toolkit_for_applications/red-hat-build-of-keycloak_installing-mta-title[Red Hat build of Keycloak]

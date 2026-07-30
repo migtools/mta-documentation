@@ -449,7 +449,7 @@ when:
 |Regular expression to match a reference in the source code. For example, `System.Web.Mvc.*`.
 
 |`location`
-|Yes
+|No
 a|Specify one of the following for which {ProductShortName} runs a search query:
 
  * Type reference including classes, interfaces and structure types (struct). For example: 

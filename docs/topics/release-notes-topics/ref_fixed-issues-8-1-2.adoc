@@ -6,7 +6,7 @@
 = Fixed issues
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version 8.1.2 provides the following fixed issues that have a significant impact.
+Review issues that have been fixed in {ProductFullName} version 8.1.2.
 
 The C# analyzer accurately calculates code snippet boundaries::
 Before this update, when analyzing C# applications, the {ProductFullName} incorrectly calculated the boundaries for code snippets when rule violations occurred further down in a source file. As a consequence, the `codesnip` section in the analysis output cut off right before the violation, failing to display the actual line of code causing the issue. With this update, the C# analyzer provider properly calculates the code snippet boundaries to include the affected lines. As a result, the generated code snippets in the analysis output correctly display the exact violation line numbers and their full context.

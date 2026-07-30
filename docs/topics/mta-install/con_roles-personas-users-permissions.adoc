@@ -10,10 +10,13 @@ The {ProductFullName} uses three roles, each corresponding to a persona. The rol
 
 A user can have more than one role. Each role must correspond to a specific persona:
 
-* The `tackle-admin` role corresponds to the Administrator persona. The Administrator has all permissions that Architects and Migrators have. Administrators can also create application-wide configuration parameters that other users can consume but cannot change or view, for example, Git credentials or Maven `settings.xml` files.
+* The `admin` role corresponds to the administrator persona. Administrators have all the permissions of architects and migrators. They can also create application-wide configuration parameters that other users can consume but cannot change or view, such as Git credentials or Maven `settings.xml` files.
 
-* The `tackle-architect` role corresponds to the Architect persona. An Architect is a technical lead for the migration project. Architects can run assessments and can create and modify applications and information related to the applications. Architects cannot modify or delete sensitive information, but can consume such information. For example, architects can associate an existing set of credentials to the repository of a specific application.
+* The `architect` role corresponds to the architect persona. An architect is a technical lead for the migration project. They can run assessments, create and modify applications and related information. They cannot modify or delete sensitive information, but can view it. For example, they can associate an existing set of credentials with a specific application repository.
 
-* The `tackle-migrator` role corresponds to the Migrator persona. A Migrator can analyze applications. However, the Migrator cannot create, modify, or delete the applications. 
+* The `migrator` role corresponds to the migrator persona. A migrator can analyze applications but cannot create, modify, or delete them. 
 
-{ProductShortName} has two views, *Administration* and *Migration*. Only an Administrator can access the *Administration* view. Architects and Migrators cannot see or access the *Administration* view. Administrators can perform all actions supported by the *Migration* view. Architects and Migrators can see all elements of the *Migration* view. However, whether Architects and Migrators can perform actions in the *Migration* view depends on the permissions granted to their role.
+* The `project-manager` role corresponds to the project manager persona. Project managers can create, read, update, and delete migration waves. They can also create {mta-dl-full} resources and adoption plans, and update business stakeholders included in a project. They have read-only access to other {ProductShortName} resources. 
+
+
+{ProductShortName} has two views, *Administration*, and *Migration*. Only an Administrator can access the *Administration* view. Administrators can perform all actions in the *Migration* view. Architects and migrators can see all elements in the *Migration* view but their ability to perform actions in the view depends on their role permissions.

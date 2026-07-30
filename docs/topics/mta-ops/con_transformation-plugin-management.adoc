@@ -1,0 +1,15 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="transformation-plugin-management_{context}"]
+= Transformation plugin management
+
+[role="_abstract"]
+When you adapt complex applications, you can manage transformation plugins to control the pipeline. This ensures the tool cleans specific metadata and applies additional transformations, if needed.
+
+The `mta-ops` CLI automatically discovers plugins from the `~/.local/share/crane/plugins/` default path. You can view available plugins by using the `list-plugins` subcommand. Custom plugins discovered on your file system can be arbitrary applications. In this version, `mta-ops` does not apply additional restrictions or sandboxing during plugin execution. Therefore, ensure that you trust these plugins.
+
+During the transform stage, you can use the `--skip-plugins` flag to omit specific plugins.
+
+To drive the transformation behavior by using specific user-defined rules, you can append the `--instructions-file` flag. This supplies a declarative YAML file to the pipeline.

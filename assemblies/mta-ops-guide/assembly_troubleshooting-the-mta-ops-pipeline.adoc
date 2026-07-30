@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-troubleshooting-the-mta-ops-pipeline: {context}]
+
+ifndef::context[]
+[id="troubleshooting-the-mta-ops-pipeline"]
+endif::[]
+ifdef::context[]
+[id="troubleshooting-the-mta-ops-pipeline_{context}"]
+endif::[]
+= Troubleshooting the mta-ops pipeline
+
+:context: troubleshooting-the-mta-ops-pipeline
+
+[role="_abstract"]
+If a migration step fails, you can debug the pipeline to resolve errors. You can extract logs, review failures, and isolate transformations.
+
+include::topics/mta-ops/con_mta-ops-pipeline-troubleshooting.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_enabling-verbose-logging-for-mta-ops.adoc[leveloffset=+1]
+
+include::topics/mta-ops/ref_common-migration-pipeline-errors.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_resolving-validation-failures.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_resolving-transformation-conflicts.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-troubleshooting-the-mta-ops-pipeline[:context: {parent-context-of-troubleshooting-the-mta-ops-pipeline}]
+ifndef::parent-context-of-troubleshooting-the-mta-ops-pipeline[:!context:]
+

@@ -1,0 +1,14 @@
+// Assembly included in the following assemblies:
+//
+// * docs/developer-lightspeed-guide/master.adoc
+
+:_mod-docs-content-type: ASSEMBLY
+[id="reenable-llm-proxy_{context}"]
+= Re-enable the LLM proxy after an incident
+
+[role="_abstract"]
+Re-enable the proxy only after your security team confirms that the incident is resolved and the environment is safe.
+
+include::proc_reenable-proxy-using-web-console.adoc[leveloffset=+1]
+
+include::proc_reenable-proxy-using-cli.adoc[leveloffset=+1]

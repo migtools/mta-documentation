@@ -24,5 +24,22 @@ include::assemblies/mta-install-title/assembly_installing-mta-ui.adoc[leveloffse
 
 include::assemblies/mta-install-title/assembly_installing-mta-cli.adoc[leveloffset=+1]
 
+include::assemblies/mta-install-title/assembly_hub-oidc-authentication.adoc[leveloffset=+1]
+
+include::assemblies/mta-install-title/assembly_basic-authentication-local-users.adoc[leveloffset=+1]
+
+include::assemblies/mta-install-title/assembly_ldap-authentication.adoc[leveloffset=+1]
+
+include::assemblies/mta-install-title/assembly_red-hat-build-of-keycloak.adoc[leveloffset=+1]
+
+include::assemblies/mta-install-title/assembly_identity-provider-authentication.adoc[leveloffset=+1]
+
+include::assemblies/mta-install-title/assembly_managing-access-tokens-api-keys.adoc[leveloffset=+1]
+
+include::topics/mta-install/ref_authentication-fields-tackle-cr.adoc[leveloffset=+1]
+
+include::assemblies/mta-install-title/assembly_uri-templating-wildcard-patterns.adoc[leveloffset=+1]
+
 include::topics/mta-cli/ref_contributing-to-mta-development.adoc[leveloffset=+1]
+
 :!installing-mta-title:

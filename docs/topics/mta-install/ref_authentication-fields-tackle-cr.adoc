@@ -1,0 +1,72 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: REFERENCE
+
+[id="authentication-fields-tackle-cr_{context}"]
+= Authentication fields in the Tackle CR
+
+[role="_abstract"]
+As an administrator, you can configure the authentication fields in the Tackle custom resource (CR) to include permission and role changes in new tokens, apply stateless validation, and control staleness for sessions and tokens. 
+
+* `JSON Web Token`:: The {ProductShortName} Hub generates JWTs as short-lived access tokens for API authentication. When the Hub issues a JWT token, it signs the token by using the Rivest-Shamir-Adleman (RSA) algorithm. The Hub also supports signing JWTs with the Hash-based Message Authentication Code (HMAC) algorithm for backward compatibility.
++
+The JWT payload does not expose personally identifiable information (PII), such as a username or a password. The default lifespan is 5 minutes but you can configure a custom lifespan by using the `hub_oidc_token_lifespan` field. If you update a user's roles or permissions, the changes do not apply to their current active token. The new permissions take effect only after the current token expires and the Hub issues a new one, such as during a token refresh.
+
+* `Refresh tokens`:: After the current token expires, clients use the long-lived refresh tokens to request a new access token to refresh the session. The refresh token workflow does not require the user to reauthenticate manually.
++
+When a session for the Lightweight Directory Access Protocol (LDAP) or an identity provider (IdP) client expires, the refresh token workflow checks for changes in user permission scopes to include them when the {ProductShortName} Hub issues a new token.
++
+The default token lifespan is 172800 seconds (2 days). You can configure a custom lifespan by using the `hub_oidc_refresh_token_lifespan` field.
+
+* `API keys`:: The default maximum token lifespan is 10 years. You can configure the maximum permissible lifespan by using the `hub_apikey_lifespan` field. 
++
+To provide security against a cache miss or a direct database modification, a safety-net cache refresh ensures that the worst-case staleness for an API key is 5 minutes. You can configure the `hub_auth_cache_lifespan` field for the safety-net cache refresh period.
+
+.Authentication fields
+[cols="1,1,1,3",options="header"]
+|====
+|Field
+|Type
+|Default
+|Description
+
+|`feature_auth_required`
+|Boolean
+|true
+|Enable the flag to enforce authentication for the web console and the Hub API. To allow insecure access, set this flag to false.
+
+|`hub_auth_cache_lifespan`
+|Integer (minutes)
+|5
+|Specifies the cache refresh interval in minutes. The Hub periodically refreshes every cache lifespan interval as a secondary mechanism to control staleness for Basic authentication and personal access tokens.
+
+|`hub_ldap_auth_lifespan`
+|Integer (minutes)
+|5
+|Specifies LDAP identity cache duration to control LDAP query frequency.
+
+|`hub_oidc_token_lifespan`
+|Integer (seconds)
+|300
+|Specifies the OAuth access token lifespan in seconds. By default, the lifespan is 5 minutes.
+
+|`hub_oidc_refresh_token_lifespan`
+|Integer (seconds)
+|172800
+|Specifies the OAuth refresh token lifespan in seconds. By default, the refresh token lifespan is 2 days.
+
+|`hub_oidc_key_rotation`
+|Integer (days)
+|90
+|Specify key rotation interval in days.
+
+|`hub_apikey_lifespan`
+|Integer (hours)
+|87600
+|API key lifespan in hours. By default, the lifespan period is 10 years.
+
+|`idp_primary`
+|Boolean
+|true
+|By default, the field has the value `true` to mark an auto-discovered Identity Provider as the primary authentication method. {ProductShortName} automatically redirects users to the IdP for authentication.
+|====

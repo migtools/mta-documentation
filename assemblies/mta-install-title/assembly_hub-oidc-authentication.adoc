@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-hub-oidc-authentication: {context}]
+
+ifndef::context[]
+[id="hub-oidc-authentication"]
+endif::[]
+ifdef::context[]
+[id="hub-oidc-authentication_{context}"]
+endif::[]
+= Authentication and Authorization
+
+:context: hub-oidc-authentication
+
+[role="_abstract"]
+To authenticate users in the {ProductFullName}, you can use the Hub OpenID Connect (OIDC) provider to reduce infrastructure management or integrate {ProductShortName} with any OIDC provider.
+
+include::topics/mta-install/con_why-use-hub-oidc.adoc[leveloffset=+1]
+
+include::topics/mta-install/con_administrative-tasks.adoc[leveloffset=+1]
+
+include::topics/mta-install/proc_enable-authentication-cr.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-hub-oidc-authentication[:context: {parent-context-of-hub-oidc-authentication}]
+ifndef::parent-context-of-hub-oidc-authentication[:!context:]

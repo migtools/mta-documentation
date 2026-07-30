@@ -1,0 +1,48 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-06-12
+:_mod-docs-content-type: REFERENCE
+
+[id="new-features-and-enhancements-8-2-0_{context}"]
+= New features and enhancements
+
+[role="_abstract"]
+Review new features and enhancements in {ProductFullName} 8.2.0.
+
+The `mta-ops` command-line interface for stateless workload migrations::
++
+The `mta-ops` command-line interface (CLI) is a new standalone tool that migrates stateless Red{nbsp}Hat OpenShift workloads. It uses a multi-stage pipeline to locally export, transform, and render your application manifests. As a result, you can safely generate and validate manifests before using standard deployment tools.
++
+For more information, see link:{mta-URL}/migrating_stateless_workloads_by_using_the_mta-ops_cli/index[Migrating stateless workloads by using the mta-ops CLI].
+
+
+An OIDC-compliant Hub provider for authentication and authorization::
+
+The {ProductShortName} Hub implements an OpenID Connect (OIDC) standards-compliant provider that offers local user authentication and federation to other providers. You can use any of the following authentication methods: 
+
+* The Hub OIDC for basic local authentication to reduce infrastructure management and configuration. You do not require any additional configuration to use basic local authentication.
+* An LDAP-backed authentication by using a declarative YAML configuration file. 
+* An identity provider with {ProductShortName}. 
++
+You can integrate Google, Okta, Microsoft Entra ID, or a Keycloak instance you provision independently as an identity provider. If you deployed Keycloak in the {ProductShortName} namespace in earlier versions before an upgrade, {ProductShortName} automatically configures your instance as the identity provider. 
+
++
+For more information, see link:{mta-URL}/installing_the_migration_toolkit_for_applications/hub-oidc-authentication_installing-mta-title[Authentication and authorization].
+
++
+link:https://redhat.atlassian.net/browse/MTA-7399[MTA-7399]
+
+{ProductShortName} introduces new commands and reorganized subcommands::
+
+The {ProductShortName} command-line interface (CLI) introduces a reorganized command model to streamline major tasks you perform by using the CLI. You can use the main command and associated subcommands to complete specific tasks. 
++ 
+For more information, see link:{mta-URL}/using_the_migration_toolkit_for_applications_command-line_interface/about-the-command-line-tool_cli-guide[About the {ProductShortName} commands].
+
++
+link:https://redhat.atlassian.net/browse/MTA-7398[MTA-7398]
+
+C# provider uses the .NET Compiler Platform (Roslyn) analyzer for analyses::
+
+The C# provider uses the .NET Compiler Platform (Roslyn) analyzer to analyze C# applications. As a result, you do not need external tools to analyze project dependencies. The updated C# provider uses regular expressions for inheritence-aware symbol resolution. The symbol resolution improves application analysis by detecting references of the `using` directives, object creation, annotations, method invocations, and type declarations. The C# provider also handles dynamic member access and tracks value flow in the source code.
+
++
+link:https://redhat.atlassian.net/browse/MTA-7400[MTA-7400]

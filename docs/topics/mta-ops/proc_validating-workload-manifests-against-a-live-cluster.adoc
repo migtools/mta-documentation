@@ -1,0 +1,59 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="validating-workload-manifests-against-a-live-cluster_{context}"]
+= Validating workload manifests against a live cluster
+
+[role="_abstract"]
+To verify application programming interface (API) compatibility before deployment, validate your transformed manifests against a live target Red{nbsp}Hat OpenShift cluster.
+
+.Prerequisites
+* You have generated the final manifests.
+* You have active access to the target Red{nbsp}Hat OpenShift cluster.
+
+.Procedure
+. Set your CLI context to the target Red{nbsp}Hat OpenShift cluster.
+. Validate the transformed manifests:
++
+[subs="+quotes"]
+----
+$ *mta-ops validate --context _<target_cluster_context>_ -i output*
+----
++
+[source,json]
+----
+{
+  "mode": "live",
+  "clusterContext": "tgt-cluster",
+  "results": [
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "namespace": "target-namespace",
+      "resourcePlural": "deployments",
+      "status": "OK"
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Secret",
+      "namespace": "target-namespace",
+      "resourcePlural": "secrets",
+      "status": "OK"
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "namespace": "target-namespace",
+      "resourcePlural": "services",
+      "status": "OK"
+    }
+  ],
+  "totalScanned": 3,
+  "compatible": 3,
+  "incompatible": 0
+}
+----
+
+.Verification
+* Verify that the command returns a `PASSED` summary result.

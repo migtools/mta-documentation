@@ -34,26 +34,26 @@ IMPORTANT: You must enter at least one Cloud Foundry organization by using the `
 +
 [subs="+quotes"]
 ....
-$ *cf spaces*
+$ cf spaces
 ....
 +
 [subs="+quotes"]
 ....
-$ *cf apps*
+$ cf apps
 ....
 
 . Copy the CF configuration file to the directory of your choice:
 +
 [subs="+quotes"]
 ....
-$ *mkdir _<path_to_the_directory>_/.cf*
+$ mkdir _<path_to_the_directory>_/.cf
 ....
 
 . Run the live discovery in a remote CF instance:
 +
 [subs="+quotes"]
 ....
-$ *mta-cli discover cloud-foundry --use-live-connection --orgs=_<org_name>_ --spaces=_<space_name>_  --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_*
+$ mta-cli discover cloud-foundry --use-live-connection --orgs=_<org_name>_ --spaces=_<space_name>_  --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_
 ....
 +
 The command runs the discovery for all applications from each space in the specified organization.
@@ -62,5 +62,5 @@ If you want to run the discovery for a specific application, enter, for example:
 +
 [subs="+quotes"]
 ....
-$ *mta-cli discover cloud-foundry --use-live-connection --orgs=_<org_name>_  --spaces=_<space_name>_ --app-name=_<application_name>_ --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_* 
+$ mta-cli discover cloud-foundry --use-live-connection --orgs=_<org_name>_  --spaces=_<space_name>_ --app-name=_<application_name>_ --output-dir _<path_to_output_directory>_ --cf-config=_<path_to_CF_config_file>_
 ....

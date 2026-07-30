@@ -1,0 +1,17 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="resource-and-api-compatibility_{context}"]
+= Resource and API compatibility
+
+[role="_abstract"]
+When you prepare for deployment, understand how the pipeline handles application programming interface (API) versions to prevent deployment failures.
+
+The `mta-ops` tool operates in Red{nbsp}Hat OpenShift 4.x environments but does not enforce a strict minor version matrix. Instead, it relies on the validate stage to ensure API compatibility.
+
+The `mta-ops` command performs strict group, version, and kind (GVK) matching against the target cluster.
+
+Namespace-scoped resources are fully supported and extracted by default.
+
+Cluster-scoped resources are conditionally supported. The tool extracts custom resource definitions (CRDs), security context constraints (SCCs), and role-based access control (RBAC) objects if you have cluster-admin permissions. If you lack cluster-admin permissions, the tool safely skips them and logs a warning. `mta-ops` automatically skips operator-managed CRDs. This prevents creating orphaned resources on the target cluster.

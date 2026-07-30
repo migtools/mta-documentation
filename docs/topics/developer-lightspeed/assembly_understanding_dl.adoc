@@ -26,6 +26,14 @@ include::con_solution_server.adoc[leveloffset=+1]
 
 include::con_agent-ai.adoc[leveloffset=+1]
 
+include::con_agent-mode-guardrails.adoc[leveloffset=+1]
+
+include::ref_agent-mode-validation-checks.adoc[leveloffset=+1]
+
+include::con_agent-mode-autocorrection.adoc[leveloffset=+1]
+
+include::proc_enabling-agent-mode.adoc[leveloffset=+1]
+
 include::ref_dl-benefits.adoc[leveloffset=+1]
 
 

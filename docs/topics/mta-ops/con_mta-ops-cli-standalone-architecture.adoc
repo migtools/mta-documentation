@@ -1,0 +1,13 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="mta-ops-cli-standalone-architecture_{context}"]
+= The mta-ops CLI standalone architecture
+
+[role="_abstract"]
+When you prepare your local workstation, understand the standalone nature of the `mta-ops` CLI to avoid installation conflicts.
+
+The `mta-ops` CLI is a standalone tool that operates independently of the standard {ProductFullName} CLI (`mta-cli`). You do not need to install the standard {ProductShortName} CLI to use the `mta-ops` pipeline.
+
+You can install the tool by downloading the pre-compiled `mta-ops` archive from the Red{nbsp}Hat Developer portal, then extracting the binary.

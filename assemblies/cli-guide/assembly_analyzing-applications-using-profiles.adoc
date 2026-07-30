@@ -16,7 +16,7 @@ endif::[]
 :context: analyzing-apps-profiles
 
 [role="_abstract"]
-As a Migrator, you can use profiles to run an application analysis in the {ProductShortName} {CLIName}. Profiles have standardized analysis configuration, scope of an analysis,  and custom rules that you can reuse for multiple analyses of a local application.
+As a migrator, you can use profiles that have standardized analysis configuration to run an application analysis in the {ProductShortName} {CLIName}. 
 
 Before you run an analysis, you can use the {ProductShortName} {CLIName} to download the latest configuration through a secure or insecure connection to the Hub.
 
@@ -33,9 +33,11 @@ To perform an analysis that you run after syncing with the Hub, the {ProductShor
 [subs="attributes+"]
 {FeatureName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
 
-For more information about the support scope of Red Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+For more information about the support scope of Red Hat Technology Preview features, see Technology Preview Features Support Scope. 
 ====
 :!FeatureName:
+
+include::topics/mta-cli/proc_connect-to-hub.adoc[leveloffset=+1]
 
 include::topics/mta-cli/proc_analyzing-app-with-profile.adoc[leveloffset=+1]
 
@@ -48,6 +50,7 @@ include::topics/mta-cli/ref_modify-application-profile.adoc[leveloffset=+1]
 
 * xref:analyzing-applications-mta-cli_cli-guide[Analyzing Java applications with MTA command-line interface]
 * xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]
+* link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]
 
 ifdef::parent-context-of-analyzing-apps-profiles[:context: {parent-context-of-analyzing-apps-profiles}]
 ifndef::parent-context-of-analyzing-apps-profiles[:!context:]

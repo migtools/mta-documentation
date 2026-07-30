@@ -1,0 +1,45 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="adding-a-custom-transformation-stage_{context}"]
+= Adding a custom transformation stage
+
+[role="_abstract"]
+To adapt migrated resources to new environment standards, add a custom transformation stage. You can layer declarative patches directly on your application.
+
+.Prerequisites
+* You have exported and successfully transformed the workload manifests.
+
+.Procedure
+. Navigate to your generated `transform/` directory.
+. Create a new directory for your custom stage. Do not use the `Plugin` suffix in the name.
++
+[subs="+quotes"]
+----
+$ *mkdir 50_CustomModifications*
+----
+
+. Create a `kustomization.yaml` file inside your new custom stage directory.
+. Define your custom modifications in the `kustomization.yaml` file. For example, to override the target namespace and add migration labels, use the following code:
++
+[subs="+quotes"]
+----
+namespace: _<target_namespace>_
+commonLabels:
+  migration-run: _<migration_id>_
+----
+
+. Apply your custom stage:
++
+[subs="+quotes"]
+----
+$ *mta-ops transform _<custom_stage_directory>_ -e export -t transform --force*
+----
++
+The `--force` flag is mandatory to safely overwrite your modified custom stage directory.
+
+
+
+.Verification
+* Verify that the `output/` directory inside your custom stage contains the expected resource changes.

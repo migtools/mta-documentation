@@ -1,0 +1,24 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="deploying-workloads-to-the-target-cluster-as-a-non-administrator_{context}"]
+= Deploying workloads to the target cluster as a non-administrator
+
+[role="_abstract"]
+When you lack `cluster-admin` privileges, deploy your workloads as a non-administrator. This allows you to apply namespace-scoped resources safely.
+
+.Prerequisites
+* You have a `PASSED` validation report for your output directory.
+* You generated your manifests using the `--skip-cluster-scoped` flag during the `apply` stage.
+
+.Procedure
+* Deploy the workloads by using the Red{nbsp}Hat OpenShift CLI:
++
+[subs="+quotes"]
+----
+$ *oc apply -f output/output.yaml*
+----
+
+.Verification
+* Verify the rollout and application health on the target namespace.

@@ -1,0 +1,39 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-06-12
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-2-0_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+Review issues that have been fixed in {ProductFullName} version 8.2.0.
+
+== {ProductShortName} command-line interface 
+
+{ProductShortName} analysis generates a record when you use an HTTP or HTTPS proxy::
+
+Before this update, {ProductShortName} did not generate an analysis log when you used the `--http-proxy` or `--https-proxy` option in an {ProductShortName} CLI analysis. As a consequence, you could not verify if {ProductShortName} routed the analysis through the proxy. With this fix, you can verify proxy use because {ProductShortName} analysis records the use of a proxy.
++
+link:https://redhat.atlassian.net/browse/MTA-6553[MTA-6553]
+
+== {ProductShortName} web console
+
+// Please confirm if the following bug must be documented?
+{ProductShortName} discovers Maven applications that use self-signed certificates::
+
+Before this update, after you enabled the option to *Consume insecure artifact repositories* in the {ProductShortName} web console, {ProductShortName} discovery for Maven applications that use self-signed certificates failed. As a consequence, you could not generate deployment assets for the affected applications. With this fix, {ProductShortName} connects with Maven application repositories that use a self-signed certificate and completes application discovery.   
++
+link:https://redhat.atlassian.net/browse/MTA-7361[MTA-7361]
+
+// Please confirm if this a fixed issue?
+{ProductShortName} web console validates YAML custom rules::
+
+Before this update, the {ProductShortName} web console did not validate the custom YAML rules you upload for an analysis or in custom targets. As a consequence, if a rule contained invalid keys or syntax errors, you did not see an error message. With this fix, {ProductShortName} improves user experience by validating the custom rules you upload in the web console.
++
+link:https://redhat.atlassian.net/browse/MTA-6834[MTA-6834]
+
+{ProductShortName} triggers violation for open source dependencies in Gradle applications::
+
+Before this update, {ProductShortName} did not trigger violations for open source dependency libraries when analyzing Gradle applications. As a consequence, a `source+dependency` analysis generated fewer incidents in the static report. With this fix, {ProductShortName} includes violations on open source dependencies in the Gradle analysis results.
++
+link:https://redhat.atlassian.net/browse/MTA-6211[MTA-6211]

@@ -1,0 +1,22 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="workload-manifest-export_{context}"]
+= Workload manifest export
+
+[role="_abstract"]
+When you extract workloads, understanding the read-only export process helps you to capture the required resource manifests.
+
+The export process is read-only and does not affect running applications. The `mta-ops` CLI operates completely independently of the migration toolkit for applications Hub.
+
+The tool does not require a Personal Access Token (PAT). It authenticates directly to the clusters by using your local `kubeconfig` file.
+
+If you do not have cluster-level permissions, the command logs a warning. It records inaccessible resources in a dedicated `failures/` directory.
+
+To identify skipped cluster-scoped resources during a partial export, you must inspect the `failures/` directory. The tool generates a YAML artifact for each inaccessible resource. These files contain the raw application programming interface (API) error.
+
+The `export` command exits with a non-zero status code under one of the following conditions:
+
+* All requested resource types return a `Forbidden` error.
+* A resource type returns a timeout error.

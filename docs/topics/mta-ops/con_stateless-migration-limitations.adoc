@@ -1,0 +1,17 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="stateless-migration-limitations_{context}"]
+= Stateless migration limitations
+
+[role="_abstract"]
+When you plan application migrations, understand the supported paths to create a successful modernization strategy.
+
+The current `mta-ops` version supports migration paths strictly from Red{nbsp}Hat OpenShift 4.x to 4.x.
+
+The current version of the `mta-ops` CLI supports only stateless application migrations.
+
+You cannot transfer persistent volume claims (PVCs) or underlying volume data.
+
+The `mta-ops` pipeline supports cross-cluster migrations. It requires distinct source and target cluster contexts to validate and deploy resources successfully.

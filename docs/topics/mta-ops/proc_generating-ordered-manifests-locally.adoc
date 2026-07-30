@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="generating-ordered-manifests-locally_{context}"]
+= Generating ordered manifests locally
+
+[role="_abstract"]
+When you render your final YAML, you can generate ordered individual resource files. This ensures you apply resources in the correct dependency order.
+
+.Prerequisites
+* You have successfully exported and transformed your workload manifests.
+
+.Procedure
+. Generate the final manifests by appending the `--ordered` flag:
++
+[subs="+quotes"]
+----
+$ *mta-ops apply -t transform -o output --ordered*
+----
+
+. Review the generated files in the `output/resources/_<namespace>_/` directory. The `--ordered` flag prefixes the filenames with 3-digit order numbers.
+
+.Verification
+* Verify that the resource filenames begin with a 3-digit number.

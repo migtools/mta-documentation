@@ -43,14 +43,14 @@ NOTE: If you do not set `JVM_MAX_MEM`, the analysis might hang because Java migh
 +
 [subs="+quotes"]
 ....
-$ *mta-cli analyze --help*
+$ mta-cli analyze --help
 ....
 
 . Run the application analysis:
 +
 [subs="+quotes"]
 ....
-$ *mta-cli analyze --overwrite --input _<path_to_input>_  --output _<path_to_output>_ --target _<target_source>_*
+$ mta-cli analyze --overwrite --input _<path_to_input>_  --output _<path_to_output>_ --target _<target_source>_
 ....
 +
 NOTE: The `--overwrite` option overwrites the output folder if it exists.

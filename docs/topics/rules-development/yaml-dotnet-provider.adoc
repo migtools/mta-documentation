@@ -7,22 +7,46 @@
 = C# provider
 
 [role="_abstract"]
-The `C#` provider can analyze `.NET` and `C#` application source code by using the `referenced` capability. The `C#` provider uses a gRPC interface to perform a semantic analysis of an application source code in the `source-only` mode. 
+The C# provider can analyze .NET applications written in C# by using the `referenced` capability. The C# provider uses a gRPC remote procedure call interface to perform a semantic analysis of application source code in source-only mode. 
 
-The provider parses the source code by using tree-sitter and uses stack graph for the analysis to find references to types, methods, classes, and fields. Based on the custom rule definition, the analyzer identifies violations in the source code that Migrators must resolve before the application migration. 
+The C# provider runs a containerized analysis of different .NET projects such as software development kit (SDK)-style projects and the older .NET Framework applications. To build your SDK-style project, the C# provider searches for the `.sln` file first and if `.sln` is unavailable, then the C# provider uses the `.csproj` file to load the project. For .NET Framework applications, the provider performs an ad hoc compilation for targets net20, net35, net40, net45, net472, and so on. 
 
-`referenced`::
+To compile the project, the provider handles dependency resolution internally by using the bundled .NET SDK in {ProductFullName}. To resolve the dependencies, the C# provider needs internet access to run the `dotnet restore` command. The command downloads NuGet packages to resolve dependencies. In disconnected or airgapped environments, the provider can analyze .NET Framework projects that have the dependency dynamic linked libraries (DLLs) in the `packages/` or `lib/` directories on disk. 
 
-The `C#` provider supports the `referenced` capability in rules to define fields such as `pattern` and `location`. The provider uses these patterns to search the source code for violations. 
+The provider performs inheritance-aware symbol resolution to find the following references: 
 
-[source,yaml]
+* `using` directives
+* Object creation
+* Annotations or attributes
+* Inheritance or base type
+* Cast expressions
+* Method invocations
+* Type declarations
+* `is` expressions 
+* The `typeof` operator
+
+The C# provider handles dynamic member access by checking if an expression has a dynamic return type. The provider builds the fully qualified name of the property from the resolved part of the expression and the unresolved member names. The provider also tracks value flow through arguments, assignments, and return statements in the source code.
+The provider parses the source code for the analysis to find the following references: 
+
+* Types
+* Methods
+* Classes
+* Fields
+
+Based on the rule definition, the analyzer identifies violations in the source code that Migrators must resolve before the application migration. 
+
+The C# provider supports the `referenced` capability that you can use in rules to search for patterns in specific source code locations. 
+
+[subs="+quotes"]
 ----
 when:
   csharp.referenced:
-    pattern: "<pattern>" 
+    pattern: _<pattern>_ 
     location: CLASS 
 ----
 where:
 
-* `pattern` is a regular expression pattern to match the required reference, for example, `HttpNotFound`.
-* `namespace` is a namespace to search within, for example, `System.Web.Mvc`.
+`pattern`:: specifies a regular expression as value to match the fully qualified name of symbols. Escape the dot character in the regular expression of patterns such as `WebMatrix\.WebData\.WebSecurity`.
+
+`location`:: specifies a source code location where the provider searches for the pattern. The value is case-insensitive and can be a `CLASS`, `METHOD`, or `FIELD`. If you omit this configuration, the default value is `ALL`.
+ 

@@ -1,0 +1,27 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="resolving-transformation-conflicts_{context}"]
+= Resolving transformation conflicts
+
+[role="_abstract"]
+To fix malformed Kustomize patches, isolate your transformation stages. You can inspect the exact input and output of a specific plugin.
+
+.Prerequisites
+* You ran the `mta-ops transform` command and encountered a patch evaluation error.
+
+.Procedure
+. Navigate to your generated `transform/` directory.
+. Identify the specific numbered stage directory where the failure occurred.
+. Compare the contents of the `input/` directory against the `output/` directory for that stage.
+. If the failure occurred in a custom stage, modify your `kustomization.yaml` file to correct the syntax error.
+. Rerun the isolated custom stage:
++
+[subs="+quotes"]
+----
+$ *mta-ops transform _<custom_stage_directory>_ -e export -t transform --force*
+----
+
+.Verification
+* Verify that the isolated stage executes successfully and produces the expected YAML in the `output/` directory.

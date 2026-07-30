@@ -1,0 +1,39 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-03-17
+:_mod-docs-content-type: PROCEDURE
+
+[id="connect-cli-hub_{context}"]
+= Connecting the CLI to the {ProductShortName} hub
+
+[role="_abstract"]
+To use organization-standard configuration for analysis and rules, you must authenticate the command-line interface (CLI) to the {ProductFirstRef} Hub. 
+
+.Prerequisites
+
+* You have installed {ProductShortName} 8.2.0 in a Red{nbsp}Hat {ocp-name} cluster.
+
+.Procedure
+
+. Log in to the {ProductShortName} Hub:
++
+[subs="+quotes"]
+----
+$ mta-cli config login
+----
+
+. Enter the `Host` to connect to the Hub:
++
+[subs="+quotes"]
+----
+Host: \https://mta-namespace.apps.cluster.example.com/hub
+----
+
+* The `Host` value is the {ProductShortName} web console URL that exposes the `hub` endpoint.
+
+. Open the displayed OpenID Connect (OIDC) device authentication URL in your browser.
+
+. Log in by using the {ProductShortName} web console credentials.
+
+. Copy the user code displayed in the {ProductShortName} {CLIName}.
+
+. Enter the user code in the browser to authenticate the device.

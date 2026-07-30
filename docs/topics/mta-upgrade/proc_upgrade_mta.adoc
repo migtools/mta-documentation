@@ -1,0 +1,42 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-17
+:_mod-docs-content-type: PROCEDURE
+
+[id="upgrade-mta_{context}"]
+= Upgrade to {ProductName} {ProductVersion}
+
+[role="_abstract"]
+As an administrator, you can upgrade the {ProductFullName} from the *Installed Operators* page of the Red Hat {ocp-name} console. 
+
+.Prerequisites
+
+* You reviewed the release notes for new features, enhancements, and known issues.
+* You reviewed the persistent volume requirements. 
+* You backed up the data.
+
+.Procedure
+
+. On the Red Hat {ocp-name} cluster, click *Ecosystem > Installed Operators*.
+. Select your project from the *project* list where you installed {ProductShortName}.
+. Click the *Upgrade available* link in the *Status* column.
+. On the *Install Plan* page, click *Preview Install Plan* in the *details* tab. 
++
+The navigation switches to the *components* tab.
+. Check the resource list for the upgrade version.
+. Click *Approve* in the *Review Manual Install Plan* section of the *components* tab.
+
+.Verification
+
+. Navigate to the *Installed Operators* page.
+. The {ProductShortName} Operator status for the old version changes to *Replacing*.
+. The latest {ProductShortName} Operator installs with status *Succeeded*.
+. Verify the updated version number under the operator name.
++
+The old operator is automatically removed from the page.
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html/release_notes/index[Release notes]
+* link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html/installing_the_migration_toolkit_for_applications/installing-mta-ui_installing-mta-title#persistent-volume-requirements_installing-mta-ui[Persistent volume requirements]
+
+

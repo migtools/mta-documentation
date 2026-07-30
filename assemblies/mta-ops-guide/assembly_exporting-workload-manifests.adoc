@@ -1,0 +1,30 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-exporting-workload-manifests: {context}]
+
+ifndef::context[]
+[id="exporting-workload-manifests"]
+endif::[]
+ifdef::context[]
+[id="exporting-workload-manifests_{context}"]
+endif::[]
+= Exporting workload manifests
+
+:context: exporting-workload-manifests
+
+[role="_abstract"]
+When you plan a migration, capture a snapshot of your source cluster resources. This ensures you have the required manifests for local transformation.
+
+include::topics/mta-ops/con_workload-manifest-export.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_exporting-manifests-from-the-source-cluster.adoc[leveloffset=+1]
+
+[role="_additional-resources"]
+== Additional resources
+
+* xref:mta-ops-export-command-options_mta-ops-command-options[The `mta-ops export` command options]
+
+ifdef::parent-context-of-exporting-workload-manifests[:context: {parent-context-of-exporting-workload-manifests}]
+ifndef::parent-context-of-exporting-workload-manifests[:!context:]

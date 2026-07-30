@@ -23,9 +23,7 @@ The Getting started section contains information to walk you through the prerequ
 To get support for features in {mta-dl-plugin}, you require a Red Hat Advanced Developer Suite (RHADS) subscription.
 ====
 
-include::con_prerequisites.adoc[leveloffset=+1]
-
-include::con_persistent-volumes.adoc[leveloffset=+1]
+include::ref_prerequisites.adoc[leveloffset=+1]
 
 include::con_installation.adoc[leveloffset=+1]
 

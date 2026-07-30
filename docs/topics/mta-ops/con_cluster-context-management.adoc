@@ -1,0 +1,13 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="cluster-context-management_{context}"]
+= Cluster context management
+
+[role="_abstract"]
+Understand how the `mta-ops` CLI connects to your environments to ensure your migration commands route to the correct destinations.
+
+The `mta-ops` CLI operates entirely locally. It does not require a centralized web console or an intermediate authentication hub. The tool uses your local `kubeconfig` file to authenticate and communicate directly with clusters.
+
+Because the pipeline extracts data from one environment and validates against another environment, your `kubeconfig` file must contain active contexts for both clusters simultaneously. `mta-ops` uses the `--context` flag to route operations. This design securely uses your existing role-based access control (RBAC) permissions without requiring secondary credentials.

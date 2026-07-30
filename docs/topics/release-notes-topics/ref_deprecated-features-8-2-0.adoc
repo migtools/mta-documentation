@@ -1,0 +1,42 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-08-07
+:_mod-docs-content-type: REFERENCE
+
+[id="deprecated-features-8-2-0_{context}"]
+= Deprecated features
+
+[role="_abstract"]
+This section provides a list of all features deprecated in {ProductFullName} 8.2.0. 
+
+The following {ProductShortName} command-line interface (CLI) commands are deprecated:
+
+.Deprecated commands 
+[cols="1,1,1"]
+|====
+
+|Command
+|Feature or component
+|Alternative action
+
+|`$ mta-cli analyze --list-targets`
+|Analyze command option to list target technologies.
+|Use the `$ mta-cli rules list-targets` command.
+
+
+|`$ mta-cli analyze --list-sources`
+|Analyze command option to list source technologies.
+|Use the `$ mta-cli rules list-sources` command.
+
+|`$ mta-cli analyze --list-providers`
+|Analyze command option to list providers for application analysis.
+|Use the `$ mta-cli provider list` command.
+
+|`$ mta-cli test <path_to_test_ruleset>`
+|Test command to perform a dry run on default or custom ruleset.
+|Use the `$ mta-cli rules test <path_to_test_ruleset>` command.
+
+|`$ mta-cli transform`
+|Transform command to update Java libraries and frameworks in source code.
+|Use the `$  mta-cli openrewrite` command.
+
+|====

@@ -22,14 +22,14 @@ You can select a language provider to analyze from the list of supported provide
 +
 [subs="+quotes"]
 ....
-$ *mta-cli analyze --list-providers*
+$ mta-cli provider list
 ....
 
 . Run the application analysis for the selected language provider: 
 +
 [subs="+quotes"]
 ....
-$ *mta-cli analyze --input _<path_to_input>_ --output _<path_to_output>_ --provider _<language_provider>_ --rules _<path_to_custom_rules>_*
+$ mta-cli analyze --input _<path_to_input>_ --output _<path_to_output>_ --provider _<language_provider>_ --rules _<path_to_custom_rules>_
 ....
 +
 IMPORTANT: Note that if you do not set the `--provider` option, the analysis might fail because it detects unsupported providers. The analysis will complete without `--provider` only if all discovered providers are supported. 

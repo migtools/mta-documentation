@@ -1,0 +1,85 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-01
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-8-2-0_{context}"]
+= Known issues
+
+[role="_abstract"]
+{ProductFirstRef} version 8.2.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+
+== `mta-ops` command-line interface
+
+`kubectl apply` overwrites existing target resources without warning::
+When you deploy exported manifests with the `kubectl apply` command, existing resources in the target namespace are silently overwritten. This is standard `kubectl apply` behavior and not specific to the `mta-ops` command-line interface (CLI). As a consequence, you might accidentally overwrite existing workloads on the target cluster.
++
+To work around this problem, manually verify that the target namespace does not have conflicting resources before deployment.
++
+link:https://redhat.atlassian.net/browse/MTA-7103[MTA-7103]
+
+
+`mta-ops transform` does not accept the `--overwrite` flag::
+The `mta-ops transform` command does not currently support the `--overwrite` flag. If a custom stage directory already exists, the pipeline stops. As a consequence, you cannot automatically overwrite existing custom modifications during a pipeline re-run.
++
+To work around this problem, manually delete the existing transform or custom stage directory before you re-run the `mta-ops transform` command.
++
+link:https://redhat.atlassian.net/browse/MTA-7234[MTA-7234]
+
+== {ProductShortName} authentication
+
+Keycloak administrators logging in to {ProductShortName} cannot create a user::
+
+After authenticating to the {ProductShortName} web console as a Keycloak administrator, you cannot perform user management tasks because these tasks require new scopes for the user, role, and tokens resources in {ProductShortName}. A local user with `admin` role can create and manage users.
++
+To work around this problem, add the following scopes for administrator users in Keycloak:
+
+* `users:get`
+* `users:post`
+* `users:put`
+* `users:delete`
+* `roles:get`
+* `roles:post`
+* `roles:put`
+* `roles:delete`
+* `tokens:get`
+* `tokens:post`
+* `tokens:delete`
+* `scopes:get`
++
+link:https://redhat.atlassian.net/browse/MTA-7235[MTA-7235]
+
+
+{ProductShortName} does not automatically redirect to the external identity provider for authentication::
+
+After you configure an external identity provider (IdP) for authentication, {ProductShortName} does not automatically redirect to the IdP login page. As a consequence, you must click the *Sign in with _<identity_provider>_* option on the {ProductShortName} login page to access the IdP login page.
++
+To work around this problem, set the `idp_primary` field to `true` in the Tackle custom resource (CR). The {ProductShortName} Hub identifies the external IdP as the primary authentication method and automatically routes to its login page for authentication.
++
+link:https://redhat.atlassian.net/browse/MTA-7236[MTA-7236]
+
+
+== {ProductShortName} analysis 
+
+{ProductShortName} analysis does not match rule patterns when import statements have a wildcard::
+
+When you use a wildcard to import packages used by an annotation in your Java source code, an {ProductShortName} analysis does not trigger a violation for such annotations. As a consequence, you are unable to fix all occurrences of an annotation defined in a rule because {ProductShortName} triggered no incidents for some annotations. 
++
+No known workaround exists.
++
+link:https://redhat.atlassian.net/browse/MTA-6530[MTA-6530]
+
+{ProductShortName} web console completes tech discovery and analysis with errors::
+
+The {ProductShortName} web console completes tech discovery and analysis of certain projects with errors. As a consequence, the tech discovery does not generate all relevant tags and the analysis could miss triggering issues. 
++
+To work around this problem, ensure that you have a Gradle or a Maven build file at the root directory of your project.
++
+link:https://redhat.atlassian.net/browse/MTA-6140[MTA-6140]
+
+Custom rules do not trigger a violation in compiled binary application analysis::
+
+When you run an analysis by using a custom YAML rule for a compiled Java binary in the {ProductShortName} web console, {ProductShortName} does not trigger a violation.
++
+No known workaround exists.
++
+link:https://redhat.atlassian.net/browse/MTA-5199[MTA-5199]

@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-supported-migration-paths-and-api-compatibility: {context}]
+
+ifndef::context[]
+[id="supported-migration-paths-and-api-compatibility"]
+endif::[]
+ifdef::context[]
+[id="supported-migration-paths-and-api-compatibility_{context}"]
+endif::[]
+= Supported migration paths and API compatibility
+
+:context: supported-migration-paths-and-api-compatibility
+
+[role="_abstract"]
+Before you migrate workloads, review the supported migration paths and application programming interface (API) compatibility. The `mta-ops` command-line interface (CLI) handles resources based on their scope and compatibility.
+
+include::topics/mta-ops/con_stateless-migration-limitations.adoc[leveloffset=+1]
+
+include::topics/mta-ops/con_resource-and-api-compatibility.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-supported-migration-paths-and-api-compatibility[:context: {parent-context-of-supported-migration-paths-and-api-compatibility}]
+ifndef::parent-context-of-supported-migration-paths-and-api-compatibility[:!context:]

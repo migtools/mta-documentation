@@ -148,7 +148,7 @@ pass:[<!-- vale RedHat.Spelling = YES -->]
 
 
 
-..NET migration paths
+.NET migration paths
 
 [options="^,header"]
 |===

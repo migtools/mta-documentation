@@ -1,0 +1,15 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="mta-ops-pipeline-troubleshooting_{context}"]
+= mta-ops pipeline troubleshooting
+
+[role="_abstract"]
+Understand how the `mta-ops` CLI isolates failures to help you quickly identify migration blockers.
+
+Because the pipeline operates locally, troubleshooting does not require active target cluster intervention. The tool provides three primary diagnostic mechanisms:
+
+* *Global debug logging*: You can append a global debug flag to any command to print detailed diagnostic output to your terminal.
+* *Failure artifacts*: The `export` and `validate` commands isolate problematic resources into dedicated `failures/` subdirectories. This prevents a single incompatible resource from stopping the entire pipeline.
+* *Stage isolation*: The `transform` pipeline produces distinct `input/` and `output/` directories for each plugin stage. This allows you to pinpoint exactly where a resource modification failed.

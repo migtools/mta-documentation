@@ -1,0 +1,38 @@
+// Module included in the following assemblies:
+//
+// * assemblies/cli-guide/assembly_about-the-command-line-tool.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="cli-command-structure_{context}"]
+= CLI command structure
+
+[role="_abstract"]
+To help you understand the purpose of a command and to easily classify tasks, the {ProductFullName} command-line interface (CLI) organizes subcommands and options under main commands.
+
+You can use the following commands in the {ProductShortName} CLI:
+
+`mta-cli analyze`::
+Provides options to specify runtime settings for the analysis type or mode, single or one or more input applications, dependencies, rules, source or target technologies, proxy URL, a local or a containerized run, and the analysis output.
+
+`mta-cli rules`::
+Provides subcommands to list source and target technologies and to test rules that are available to analyze them. You can test default and custom rulesets.
+
+`mta-cli provider`::
+Provides subcommands to list the language-specific providers. Providers work with language server protocol (LSP) servers to parse the application source code and find specific problem patterns that you define in the rules.
+
+`mta-cli openrewrite`::
+Provides subcommands and options to use OpenRewrite recipes to transform your codebase by updating Java libraries and frameworks for a target technology.
+
+`mta-cli config`::
+Provides subcommands to log in to the {ProductShortName} Hub by using a secure or an insecure connection to sync, download, and manage a reusable analysis configuration file, called a profile, on your local system.
+
+`mta-cli discover`::
+Provides a subcommand and options to generate a local YAML manifest from application manifests in the Cloud Foundry (CF) source platform. You can filter CF applications by organization, space, and a specific application name. You can also redact sensitive information, such as usernames and secrets, in the discovery manifest.
+
+`mta-cli generate`::
+Provides a subcommand and options to generate Kubernetes and non-Kubernetes deployment manifests by using Helm templates and value overrides.
+
+[NOTE]
+====
+The options for `config`, `discover`, and `generate` commands are unchanged.
+====

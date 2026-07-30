@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-ldap-authentication: {context}]
+
+ifndef::context[]
+[id="ldap-authentication"]
+endif::[]
+ifdef::context[]
+[id="ldap-authentication_{context}"]
+endif::[]
+= LDAP authentication
+
+:context: ldap-authentication
+
+[role="_abstract"]
+You can manage users by organization hierarchy, apply centralized identity management, and scale role assignment by integrating the Hub OpenID Connect (OIDC) provider with Lightweight Directory Access Protocol (LDAP)-based authentication.
+
+include::topics/mta-install/con_ldap-token-lifecycle.adoc[leveloffset=+1]
+
+include::topics/mta-install/proc_create-custom-resource-ldap-federation.adoc[leveloffset=+1]
+
+include::topics/mta-install/ref_logic-operators-rule-semantics-ldap-mappings.adoc[leveloffset=+1]
+
+include::topics/mta-install/ref_openldap-active-directory-configurations.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-ldap-authentication[:context: {parent-context-of-ldap-authentication}]
+ifndef::parent-context-of-ldap-authentication[:!context:]

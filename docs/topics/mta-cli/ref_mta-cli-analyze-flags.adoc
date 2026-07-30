@@ -35,9 +35,6 @@ By default, `--disable-maven-search=false`. Therefore, {ProductShortName} uses t
 |`--json-output` (string)|Create analysis and dependence output as a JSON file.
 |`--label-selector` (string)|Run rules based on specified label selector expression.
 | `--list-languages` |List all languages in the source application. This flag is not supported for binary applications.
-| `--list-providers` |List available supported providers.
-|`--list-sources`|List rules for available migration sources.
-|`--list-targets`|List rules for available migration targets.
 |`--maven-settings` (string)|A path to the custom Maven settings file to use.
 |`--mode` (string) a|An analysis mode. Must be set to either of the following values:
 

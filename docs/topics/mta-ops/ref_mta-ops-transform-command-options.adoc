@@ -1,0 +1,20 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: REFERENCE
+
+[id="mta-ops-transform-command-options_{context}"]
+= mta-ops transform command options
+
+[role="_abstract"]
+When you process exported manifests, review the available command flags. This helps you control the Kustomize plugin stages.
+
+.`mta-ops transform` flags
+[cols="30%,20%,50%",options="header"]
+|===
+| Option | Shorthand | Description
+| `--export-dir` | `-e` | The directory path containing the exported resources to be processed.
+| `--transform-dir` | `-t` | The directory path to create the isolated transform stages.
+| `--force` | | A flag to overwrite modified custom stage directories. This is mandatory for re-running custom stages.
+| `--skip-plugins` | | A comma-separated list of built-in plugins to skip, such as OpenShiftPlugin.
+| `--instructions-file` | | A path to a declarative YAML file to steer the transformation execution rules.
+|===

@@ -1,0 +1,18 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: CONCEPT
+
+[id="why-use-hub-oidc_{context}"]
+= Why use the Hub OIDC
+
+[role="_abstract"]
+The {ProductFullName} Hub implements an OpenID Connect (OIDC) standards-compliant provider that offers local user authentication and federation to other providers.
+
+The {ProductShortName} Hub OIDC provider offers the following advantages:
+
+* An option to remove the Keycloak dependency for configuring users, roles, and permissions. Without Keycloak, you need not provision and manage extra infrastructure resources.
+* Simplified role-based access control (RBAC) deployment that allows you to manage users, default and custom roles, and permissions in the {ProductShortName} application.
+* An option to integrate Lightweight Directory Access Protocol (LDAP) or federate to another identity provider (IdP).
+* A permanent list of immutable permissions that map to specific application programming interface (API) resources and operations. This list ensures that authorization works consistently across deployments and simplifies security audits.
+* Tasks and add-on access to the {ProductShortName} APIs through personal access tokens (PATs) with fine-grained permissions.
+

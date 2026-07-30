@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-configuring-cluster-access-for-migration: {context}]
+
+ifndef::context[]
+[id="configuring-cluster-access-for-migration"]
+endif::[]
+ifdef::context[]
+[id="configuring-cluster-access-for-migration_{context}"]
+endif::[]
+= Configuring cluster access for migration
+
+:context: configuring-cluster-access-for-migration
+
+[role="_abstract"]
+Before you can migrate workloads, you must establish communication with your environments. To enable the access, you must use your local cluster contexts.
+
+include::topics/mta-ops/con_cluster-context-management.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_configuring-source-and-target-cluster-contexts.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-configuring-cluster-access-for-migration[:context: {parent-context-of-configuring-cluster-access-for-migration}]
+ifndef::parent-context-of-configuring-cluster-access-for-migration[:!context:]

@@ -6,7 +6,7 @@
 = Fixed issues
 
 [role="_abstract"]
-{ProductFirstRef} ({ProductShortName}) version 8.1.1 provides the following fixed issues that have a significant impact.
+Review issues that have been fixed in {ProductFullName} version 8.1.1.
 
 The Application discovery manifest in the {ProductShortName} UI displays YAML-formatted content::
 Before this update, the Application discovery manifest in the {ProductFullName} user interface (UI) did not display YAML-formatted content. As a consequence, you could only see raw JSON data that included all database record metadata instead of formatted YAML. With this release, the Application discovery manifest includes only YAML-formatted content fields.

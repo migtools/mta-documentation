@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-oidc-authentication-ide-extension_{context}"]
+= Configure OIDC authentication to connect to the Hub
+
+[role="_abstract"]
+To reuse a centrally managed user account for authentication, you can use identity provider (IdP) credentials to connect to the {ProductFullName} Hub. The Hub OpenID Connect (OIDC) provider acts as the OIDC broker that federates user authentication to the IdP.
+
+.Prerequisites
+
+* You installed the {ProductShortName} 8.2.0 extension.
+* You have the {ProductShortName} Hub URL.
+* The {ProductShortName} administrator configured the IdP as an OIDC client.
+
+.Procedure
+
+. Enter `Control +Shift +P` or `Cmd +Shift + P` to open the Command Palette.
+. Enter the `MTA: Konveyor Analysis View` command to open the MTA Analysis View page.
+. Click the settings icon and select *Configure Hub Settings*.
+. Enter the following configuration:
+* Toggle on *Enable connection to MTA Hub*.
+* Enter the web console application URL in the *Hub URL* field after removing the `/applications` path.
+* Enable *Skip SSL certificate verification* if you want to connect to the Hub by using an insecure connection.
+* Enable the authentication option.
+* Select *OIDC* as the authentication method.
+. Click *Save*.
+. Click *Sign In* in the Authentication box to be redirected to your browser.
+. Enter the IdP credentials to log in.
+. After you log in successfully, the Authentication box shows the status as Connected, your user and the status for LLM proxy, Solution Server, and Profile Sync.
+
+If you sign out and reconnect before the token expiry period, the {ProductShortName} Hub reauthenticates you automatically.

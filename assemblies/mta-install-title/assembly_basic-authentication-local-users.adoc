@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-basic-authentication-local-users: {context}]
+
+ifndef::context[]
+[id="basic-authentication-local-users"]
+endif::[]
+ifdef::context[]
+[id="basic-authentication-local-users_{context}"]
+endif::[]
+= Basic authentication for local users
+
+:context: basic-authentication-local-users
+
+[role="_abstract"]
+As an administrator, you can use a simple authentication workflow to manage users, roles, and role-based access control (RBAC) permissions in the {ProductShortName} inventory with no added infrastructure requirements.
+
+include::topics/mta-install/proc_add-users-assign-roles-web-console.adoc[leveloffset=+1]
+
+include::topics/mta-install/proc_change-password-web-console.adoc[leveloffset=+1]
+
+include::topics/mta-install/proc_create-custom-role-assign-permissions.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-basic-authentication-local-users[:context: {parent-context-of-basic-authentication-local-users}]
+ifndef::parent-context-of-basic-authentication-local-users[:!context:]

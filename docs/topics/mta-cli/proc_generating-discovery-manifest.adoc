@@ -24,14 +24,14 @@ You can generate the discovery manifest for the Cloud Foundry (CF) application b
 +
 [subs="+quotes"]
 ----
-$ *mta-cli discover --list-platforms*
+$ mta-cli discover --list-platforms
 ----
 
 . Generate the discovery manifest:
 +
 [subs="+quotes"]
 ----
-$ *mta-cli discover cloud-foundry --input _<path_to_input>_ --output-dir _<path_to_output-directory>_*
+$ mta-cli discover cloud-foundry --input _<path_to_input>_ --output-dir _<path_to_output-directory>_
 ----
 
 [role="_additional-resources"]

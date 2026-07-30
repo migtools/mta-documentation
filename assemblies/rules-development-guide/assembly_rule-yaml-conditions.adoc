@@ -20,8 +20,6 @@ Providers are the modular components that work with the analysis engine and the 
 
 include::topics/rules-development/con_external_providers.adoc[leveloffset=+1]
 
-include::topics/rules-development/con_provider-capability-in-custom-rules.adoc[leveloffset=+1]
-
 include::topics/rules-development/yaml-provider-conditions.adoc[leveloffset=+1]
 
 include::topics/rules-development/yaml-builtin-provider.adoc[leveloffset=+1]

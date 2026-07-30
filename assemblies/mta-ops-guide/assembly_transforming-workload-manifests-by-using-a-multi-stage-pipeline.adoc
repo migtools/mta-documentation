@@ -1,0 +1,36 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-transforming-workload-manifests-by-using-a-multi-stage-pipeline: {context}]
+
+ifndef::context[]
+[id="transforming-workload-manifests-by-using-a-multi-stage-pipeline"]
+endif::[]
+ifdef::context[]
+[id="transforming-workload-manifests-by-using-a-multi-stage-pipeline_{context}"]
+endif::[]
+= Transforming workload manifests by using a multi-stage pipeline
+
+:context: transforming-workload-manifests-by-using-a-multi-stage-pipeline
+
+[role="_abstract"]
+To clean the exported workload manifests and prevent conflicts on the target cluster, transform the manifests by using a multi-stage pipeline.
+
+include::topics/mta-ops/con_transformation-plugin-management.adoc[leveloffset=+1]
+
+include::topics/mta-ops/con_multi-stage-transformation-pipeline.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_executing-a-multi-stage-workload-transformation.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_transforming-manifests-with-an-instructions-file.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_adding-a-custom-transformation-stage.adoc[leveloffset=+1]
+
+[role="_additional-resources"]
+== Additional resources
+
+* xref:mta-ops-transform-command-options_mta-ops-command-options[The `mta-ops transform` command options]
+
+ifdef::parent-context-of-transforming-workload-manifests-by-using-a-multi-stage-pipeline[:context: {parent-context-of-transforming-workload-manifests-by-using-a-multi-stage-pipeline}]
+ifndef::parent-context-of-transforming-workload-manifests-by-using-a-multi-stage-pipeline[:!context:]

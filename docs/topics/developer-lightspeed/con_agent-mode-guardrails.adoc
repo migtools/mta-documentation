@@ -1,0 +1,28 @@
+// Module included in the following assemblies:
+//
+// * docs/topics/developer-lightspeed/assembly_understanding_dl.adoc
+
+:_mod-docs-content-type: CONCEPT
+
+[id="agent-mode-guardrails_{context}"]
+= Output verification and agent mode guardrails
+
+[role="_abstract"]
+To understand how the system ensures syntactically valid code, review the output verification mechanism. In agent mode, the {mta-dl-plugin} acts as a native compiler validation loop.
+
+The verification mechanism ensures that AI-generated code suggestions are syntactically valid and compatible with your classpath before they are written to disk.
+
+The verification mechanism provides a programmatic guardrail against common large language model (LLM) risks:
+
+* Hallucinated application programming interface (API) signatures
+* References to removed or deprecated methods
+* Syntactically broken output
+
+When you run an analysis in agent mode, the {mta-dl-plugin} passes each code suggestion through a local build dry run before applying it to your workspace. This process runs entirely on your developer workstation. No source code or build artifacts leave your local environment during verification.
+
+The extension invokes the standard build toolchain that is already configured for your project directly in your local workspace, such as the following toolchains:
+
+* `Java projects`: Apache Maven (`mvn compile`) or Gradle (`gradle compileJava`).
+* `JavaScript and TypeScript projects`: npm (`npm run build`) or Yarn (`yarn build`).
+
+The dry run runs directly on the underlying file system of your local workspace without containerization or process isolation. If the dry run completes successfully, the {mta-dl-plugin} displays the verified suggestion for your approval before applying it to the workspace. If the dry run returns errors, the {mta-dl-plugin} attempts automatic correction.

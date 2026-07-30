@@ -1,0 +1,32 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-identity-provider-authentication: {context}]
+
+ifndef::context[]
+[id="identity-provider-authentication"]
+endif::[]
+ifdef::context[]
+[id="identity-provider-authentication_{context}"]
+endif::[]
+= Identity provider authentication
+
+:context: identity-provider-authentication
+
+[role="_abstract"]
+As an administrator, you can simplify security and regulatory compliance by implementing the {ProductFullName} Hub as an OpenID Connect (OIDC) broker to federate user authentication to an identity provider (IdP).
+
+You can integrate the following IdPs and managing roles:
+
+* Keycloak 
+* Microsoft Entra ID (formerly, Azure Active Directory)
+* Google
+* Okta 
+
+include::topics/mta-install/proc_create-secret-idp-client.adoc[leveloffset=+1]
+
+include::topics/mta-install/proc_configure-identity-provider-cr.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-identity-provider-authentication[:context: {parent-context-of-identity-provider-authentication}]
+ifndef::parent-context-of-identity-provider-authentication[:!context:]

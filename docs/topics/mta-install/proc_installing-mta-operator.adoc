@@ -15,7 +15,7 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 * Your environment has 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
 * Your environment uses Red Hat OpenShift (cloud service or self-hosted), version 4.21–4.22.
 pass:[<!-- vale RedHat.Spelling = NO -->]
-* You created two RWO persistent volumes (PVs) used by different components.
+* You created one `ReadWriteOnce` (RWO) persistent volume (PV), an optional RWO PV for the Solution Server database, and two conditional `ReadWriteMany` (RWX) PVs.
 pass:[<!-- vale RedHat.Spelling = YES -->]
 * You logged in as a user with `cluster-admin` permissions.
 
@@ -46,7 +46,7 @@ metadata:
 spec:
   hub_bucket_volume_size: "2.5Gi"
   maven_data_volume_size: "2.5Gi"
-  rwx_supported: "false"
+  rwx_supported: "true"
 ----
 . Verify that the MTA pods are running:
 .. In the *Administration* view, click *Workloads*.

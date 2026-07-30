@@ -1,0 +1,24 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: PROCEDURE
+
+[id="executing-a-multi-stage-workload-transformation_{context}"]
+= Executing a multi-stage workload transformation
+
+[role="_abstract"]
+Transform your exported manifests to remove cluster-specific metadata. This prevents conflicts on the target Red{nbsp}Hat OpenShift cluster.
+
+.Prerequisites
+* You have exported the workload manifests from the source cluster to a local directory.
+
+.Procedure
+. Navigate to the directory containing your exported manifests.
+. Transform the manifests:
++
+[subs="+quotes"]
+----
+$ *mta-ops transform -e export -t transform*
+----
+
+.Verification
+* Verify that the generated stage directories contain the expected `kustomization.yaml` files and descriptive folders.

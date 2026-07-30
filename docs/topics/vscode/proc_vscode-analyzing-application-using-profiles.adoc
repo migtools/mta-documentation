@@ -1,6 +1,6 @@
 :_mod-docs-content-type: PROCEDURE
 [id="analyzing-application-profiles_{context}"]
-= Running an application analysis by using a profile
+= Running an application analysis by using a Hub profile
 
 [role="_abstract"]
 To run a static code analysis of an application, you can use a profile that is created and managed by your architect in the {ProductFullName} Hub. 
@@ -23,7 +23,11 @@ For more information about the support scope of Red Hat Technology Preview featu
 .Prerequisites
 
 * You opened a project written in one of the supported languages in your Visual Studio Code workspace. {ProductShortName} can analyze source code written in `Java`, `C#`, `.NET`, `Go`, and `JavaScript`.
-* An architect has configured an analysis profile in the Hub.
+* An architect has configured an analysis profile in the {ProductShortName} web console.
+* The repository URL of the local application matches an existing application in the {ProductShortName} web console.
+* The application has a tag that matches the criteria tag in an archetype.
+* The archetype has at least one target profile.
+* The architect selected the analysis profile in the target profile. 
 
 .Procedure
 
@@ -37,10 +41,12 @@ For more information about the support scope of Red Hat Technology Preview featu
 .. If you want to connect to your Hub without verifying the local SSL certificate in the host, enable *Skip SSL certificate verification*. 
 .. Log in to the Hub by enabling the *Enable authentication* switch.
 .. Enter the username and password credentials of the {ProductShortName} user interface.
-.. To use the Solution Server to suggest resolutions for the issues in the source code, enable *Solution Server* .
-.. To sync the profiles with the Hub, enable *Profile Sync*. {ProductShortName} periodically downloads the latest version of the profiles from the Hub. 
+.. To generate code resolutions for the issues in your source code by using the Solution Server, enable *Solution Server*.
 +
-{ProductShortName} does not update the profiles and rules if you do not sync the profiles with the Hub. When you enable the profile sync and the administrator has deployed LLM proxy in the cluster, {ProductShortName} uses the proxy service to connect to the LLM.
+When you enable the Solution Server and the administrator has deployed LLM proxy in the cluster, {ProductShortName} uses the proxy service to connect to the LLM.
+.. To synchronize the profiles with the Hub, enable *Profile Sync*. {ProductShortName} periodically downloads the latest version of the profiles from the Hub. 
++
+To update the profiles and rules, you must synchronize them profiles with the Hub. 
 
 . Select a profile from the list on the *{ProductShortName} Analysis View* page.
 . Click *Run Analysis*.

@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="introduction-to-the-mta-ops-cli_{context}"]
+= Introduction to the mta-ops CLI
+
+[role="_abstract"]
+As a platform engineer or a cluster administrator, you can use the `mta-ops` command-line interface (CLI) to safely extract, clean, and validate stateless applications before deployment.
+
+The `mta-ops` tool provides a non-destructive, repeatable, and GitOps-ready migration workflow for Red{nbsp}Hat OpenShift workloads.
+
+The migration pipeline consists of the following stages in a strict order:
+
+* The export stage captures a read-only snapshot of the source namespace.
+* The transformation stage cleans cluster-specific metadata and applies additional transformations, if needed.
+* The application stage renders final deployable manifests locally.
+* The validation stage is an optional but recommended step that checks target cluster application programming interface (API) compatibility.
+* The deployment stage applies the workloads to the destination cluster.
+
+The export, transformation, application, and validation stages output directly to your local disk. The deployment stage applies workloads to the target cluster.
+
+The tool migrates stateless workloads and their associated cluster-scoped dependencies. These dependencies include role-based access control (RBAC), custom resource definitions (CRDs), and security context constraints (SCCs).
+
+IMPORTANT: `mta-ops` does not support stateful migrations that involve the transfer of persistent volume claims (PVCs) and underlying data.
