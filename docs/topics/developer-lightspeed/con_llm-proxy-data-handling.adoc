@@ -1,0 +1,41 @@
+// Module included in the following assemblies:
+//
+// * docs/developer-lightspeed-guide/master.adoc
+
+:_mod-docs-content-type: CONCEPT
+
+[id="llm-proxy-data-handling_{context}"]
+= LLM proxy request and data handling
+
+[role="_abstract"]
+The large language model (LLM) proxy is built on llama-stack and runs as a dedicated pod within the {ProductShortName} namespace.
+
+The proxy provides the following controls:
+
+Credential isolation:: LLM provider application programming interface (API) keys are stored in a Kubernetes secret and never distributed to client applications. Only the proxy pod reads these credentials.
+
+JWT-based authentication:: When authentication is enabled, the proxy validates every incoming JSON web token (JWT) request against the Hub OpenID Connect (OIDC) provider by using its JWKS endpoint:
++
+[subs="+quotes"]
+----
+https://__<oidc_provider>__/realms/__<realm>__/protocol/openid-connect/certs
+----
++
+where:
++
+`<oidc_provider>`:: Specifies the name of the OIDC provider.
+`<realm>`:: Specifies the name of the realm.
++
+Requests that fail validation are rejected with a `401` or `403` response before they reach the LLM provider.
+
+Header redaction:: Authorization headers and other sensitive fields are redacted from proxy logs.
+
+Data persistence:: LLM interactions are stored in the llama-stack PostgreSQL database in the following tables:
++
+* `llm_proxy_inference_store`: Individual inference records.
+* `llm_proxy_conversations`: Conversation context records.
+
+[NOTE]
+====
+As of {ProductShortName} 8.2, OIDC user identity is terminated at the Hub and is not passed to or stored by the proxy.
+====

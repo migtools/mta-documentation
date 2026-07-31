@@ -1,0 +1,56 @@
+// Module included in the following assemblies:
+//
+// * docs/developer-lightspeed-guide/master.adoc
+
+:_mod-docs-content-type: PROCEDURE
+
+[id="llm-proxy-log-access_{context}"]
+= Access LLM proxy pod logs
+
+[role="_abstract"]
+To diagnose connectivity errors between the proxy and the large language model (LLM) provider, use the `oc logs` command. The proxy writes standard server output to stdout.
+
+Current proxy logs are unstructured uvicorn server output. Each entry contains the HTTP method, request path, and status code, or a Python exception traceback for error conditions. They do not contain structured per-transaction records or user identity information.
+
+.Prerequisites
+* You have installed the {ocp-short} {CLIName} (`oc`).
+* You are logged in to the cluster with the `cluster-admin` role or an equivalent role that grants read access to pods in the {ProductShortName} namespace.
+
+.Procedure
+
+. Identify the proxy pod name:
++
+[source,terminal,subs="+quotes"]
+----
+$ oc get pods -n __<mta_namespace>__ | grep proxy
+----
++
+where:
++
+`<mta_namespace>`:: Specifies the name of the {ProductShortName} namespace.
++
+The command returns output similar to the following example:
++
+[source,terminal]
+----
+mta-ui-mta-proxy-7d6f9b8c4-xk2pq   1/1   Running   0   2d
+----
+
+. Stream the current log output from the proxy pod:
++
+[source,terminal,subs="+quotes"]
+----
+$ oc logs -f __<proxy_pod_name>__ -n __<mta_namespace>__
+----
++
+where:
++
+`<proxy_pod_name>`:: Specifies the name of the proxy pod.
+
+. To retrieve logs from a previous (terminated) proxy pod, add the `--previous` flag to the command:
++
+[source,terminal,subs="+quotes"]
+----
+$ oc logs --previous __<proxy_pod_name>__ -n __<mta_namespace>__
+----
+
