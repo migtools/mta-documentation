@@ -1,0 +1,153 @@
+name: PR Preview Deploy
+
+on:
+  workflow_run:
+    workflows: ["PR Preview"]
+    types: [completed]
+
+# Write permissions are safe here — this workflow always runs from the base
+# repository context (main branch), never from fork code.
+permissions:
+  contents: write
+  pull-requests: write
+
+# Serialize all gh-pages pushes to prevent non-fast-forward failures
+# when two PRs deploy at the same time.
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy Preview
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success'
+
+    steps:
+      - name: Download preview artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pr-preview-site
+          path: /tmp/pr-preview-site
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Read PR number from artifact
+        id: pr
+        run: |
+          PR_NUMBER=$(cat /tmp/pr-preview-site/.pr-number)
+          echo "number=${PR_NUMBER}" >> "$GITHUB_OUTPUT"
+          rm /tmp/pr-preview-site/.pr-number
+
+      - name: Get PR head SHA
+        id: sha
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              pull_number: ${{ steps.pr.outputs.number }},
+            });
+            core.setOutput('sha', pr.data.head.sha.substring(0, 7));
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Checkout or initialise gh-pages branch
+        run: |
+          git fetch origin gh-pages 2>/dev/null || true
+          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            git checkout -B gh-pages origin/gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf . --quiet
+            echo "GitHub Pages for mta-documentation" > README.md
+            git add README.md
+            git -c user.name="github-actions[bot]" -c user.email="github-actions[bot]@users.noreply.github.com" commit -m "chore: initialise gh-pages branch"
+            git push origin gh-pages
+          fi
+
+      - name: Configure git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy preview to gh-pages
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+          COMMIT_SHA: ${{ steps.sha.outputs.sha }}
+        run: |
+          PREVIEW_DIR="pr-previews/${PR_NUMBER}"
+          rm -rf "${PREVIEW_DIR}"
+          mkdir -p "${PREVIEW_DIR}"
+          cp -r /tmp/pr-preview-site/. "${PREVIEW_DIR}/"
+
+          git add "${PREVIEW_DIR}"
+          if git diff --staged --quiet; then
+            echo "No changes to deploy."
+          else
+            git commit -m "preview: PR #${PR_NUMBER} @ ${COMMIT_SHA}"
+            for attempt in 1 2 3; do
+              git fetch origin gh-pages
+              if git rebase origin/gh-pages; then
+                git push origin gh-pages && break
+              else
+                git rebase --abort
+              fi
+              echo "Push attempt ${attempt} failed, retrying..."
+              sleep $((attempt * 5))
+            done
+          fi
+
+      - name: Post or update preview comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = ${{ steps.pr.outputs.number }};
+            const sha      = '${{ steps.sha.outputs.sha }}';
+            const owner    = context.repo.owner;
+            const repo     = context.repo.repo;
+
+            const previewUrl =
+              `https://${owner}.github.io/${repo}/pr-previews/${prNumber}/`;
+
+            const body = [
+              `## 📄 Documentation Preview`,
+              ``,
+              `| | |`,
+              `|---|---|`,
+              `| **Preview URL** | ${previewUrl} |`,
+              `| **Commit** | \`${sha}\` |`,
+              `| **Updated** | ${new Date().toUTCString()} |`,
+              ``,
+              `> Preview updates automatically on every push to this PR.`,
+              `> It will be removed when the PR is closed.`,
+            ].join('\n');
+
+            const marker = '<!-- pr-preview-bot -->';
+            const markedBody = marker + '\n' + body;
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner, repo, issue_number: prNumber,
+            });
+
+            const existing = comments.find(c => c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner, repo,
+                comment_id: existing.id,
+                body: markedBody,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner, repo,
+                issue_number: prNumber,
+                body: markedBody,
+              });
+            }

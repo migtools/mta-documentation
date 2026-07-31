@@ -1,9 +1,11 @@
 name: PR Preview Cleanup
 
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
 
+# Write permissions are safe here — this workflow runs from the base repository
+# context and never checks out fork code (it only deletes a directory by PR number).
 permissions:
   contents: write
   pull-requests: write
@@ -18,7 +20,6 @@ jobs:
   cleanup:
     name: Remove Preview
     runs-on: ubuntu-latest
-    if: github.event.pull_request.head.repo.full_name == github.repository
 
     steps:
       - name: Checkout gh-pages branch
@@ -39,11 +40,13 @@ jobs:
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git rm -rf "${PREVIEW_DIR}"
             git commit -m "chore: remove preview for PR #${PR_NUMBER}"
-
             for attempt in 1 2 3; do
               git fetch origin gh-pages
-              git rebase origin/gh-pages 2>/dev/null || { git rebase --abort; true; }
-              git push origin gh-pages && break
+              if git rebase origin/gh-pages; then
+                git push origin gh-pages && break
+              else
+                git rebase --abort
+              fi
               echo "Push attempt ${attempt} failed, retrying..."
               sleep $((attempt * 5))
             done
@@ -64,7 +67,6 @@ jobs:
 
             const marker = '<!-- pr-preview-bot -->';
 
-            // Paginate to handle PRs with more than 30 comments
             const comments = await github.paginate(github.rest.issues.listComments, {
               owner, repo, issue_number: prNumber,
             });
