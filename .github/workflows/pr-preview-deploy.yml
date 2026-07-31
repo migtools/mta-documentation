@@ -52,22 +52,36 @@ jobs:
             });
             core.setOutput('sha', pr.data.head.sha.substring(0, 7));
 
-      - name: Checkout gh-pages branch
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 1
           persist-credentials: true
+
+      - name: Checkout or initialise gh-pages branch
+        run: |
+          git fetch origin gh-pages 2>/dev/null || true
+          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            git checkout -B gh-pages origin/gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf . --quiet
+            echo "GitHub Pages for mta-documentation" > README.md
+            git add README.md
+            git -c user.name="github-actions[bot]" -c user.email="github-actions[bot]@users.noreply.github.com" commit -m "chore: initialise gh-pages branch"
+            git push origin gh-pages
+          fi
+
+      - name: Configure git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Deploy preview to gh-pages
         env:
           PR_NUMBER: ${{ steps.pr.outputs.number }}
           COMMIT_SHA: ${{ steps.sha.outputs.sha }}
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
           PREVIEW_DIR="pr-previews/${PR_NUMBER}"
           rm -rf "${PREVIEW_DIR}"
           mkdir -p "${PREVIEW_DIR}"
