@@ -10,10 +10,10 @@ You can create roles that the {ProductFullName} Hub OpenID Connect (OIDC) provid
 
 You can define the following roles in RHBK:
 
-* `role.admin`
-* `role.architect`
-* `role.migrator`
-* `role.project-manager`
+* `+role.admin`
+* `+role.architect`
+* `+role.migrator`
+* `+role.project-manager`
 
 == Manual scope management
 
