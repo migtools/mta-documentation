@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/402/docs/vs-code-extension-guide/assemblies/rules-development-guide/topics/mta-cli/proc_analyze-selected-provider/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/402/docs/vs-code-extension-guide/assemblies/rules-development-guide/topics/mta-cli/proc_analyze-selected-provider/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/402/docs/vs-code-extension-guide/assemblies/rules-development-guide/topics/mta-cli/proc_analyze-selected-provider/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=81ebc098d78200af6a49e57ec96ed1eedc8c1bb2">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="analyze-selected-provider_{context}">Analyzing an application for the selected supported language provider</h1>
+<div class="paragraph _abstract">
+<p>To assess the effort required to migrate non-Java applications, analyze your source code by using the {ProductFullName} command-line interface (CLI).</p>
+</div>
+<div class="paragraph">
+<p>You can select a language provider to analyze from the list of supported providers. The analysis generates a report containing the details of the application migration effort, including potential migration issues. You can use the report to prioritize tasks and estimate the resources needed for the migration.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have the latest version of the {ProductShortName} CLI installed on your system.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>List language providers supported for the analysis:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli provider list</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the application analysis for the selected language provider:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli analyze --input <em>&lt;path_to_input&gt;</em> --output <em>&lt;path_to_output&gt;</em> --provider <em>&lt;language_provider&gt;</em> --rules <em>&lt;path_to_custom_rules&gt;</em></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Note that if you do not set the <code>--provider</code> option, the analysis might fail because it detects unsupported providers. The analysis will complete without <code>--provider</code> only if all discovered providers are supported.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

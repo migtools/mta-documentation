@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/402/docs/web-console-guide/assemblies/mta-install-title/topics/vscode/proc_configure-oidc-authentication-ide-extension/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/402/docs/web-console-guide/assemblies/mta-install-title/topics/vscode/proc_configure-oidc-authentication-ide-extension/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/402/docs/web-console-guide/assemblies/mta-install-title/topics/vscode/proc_configure-oidc-authentication-ide-extension/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=81ebc098d78200af6a49e57ec96ed1eedc8c1bb2">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="configure-oidc-authentication-ide-extension_{context}">Configure OIDC authentication to connect to the Hub</h1>
+<div class="paragraph _abstract">
+<p>To reuse a centrally managed user account for authentication, you can use identity provider (IdP) credentials to connect to the {ProductFullName} Hub. The Hub OpenID Connect (OIDC) provider acts as the OIDC broker that federates user authentication to the IdP.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed the {ProductShortName} 8.2.0 extension.</p>
+</li>
+<li>
+<p>You have the {ProductShortName} Hub URL.</p>
+</li>
+<li>
+<p>The {ProductShortName} administrator configured the IdP as an OIDC client.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Enter <code>Control +Shift +P</code> or <code>Cmd +Shift + P</code> to open the Command Palette.</p>
+</li>
+<li>
+<p>Enter the <code>MTA: Konveyor Analysis View</code> command to open the MTA Analysis View page.</p>
+</li>
+<li>
+<p>Click the settings icon and select <strong>Configure Hub Settings</strong>.</p>
+</li>
+<li>
+<p>Enter the following configuration:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Toggle on <strong>Enable connection to MTA Hub</strong>.</p>
+</li>
+<li>
+<p>Enter the web console application URL in the <strong>Hub URL</strong> field after removing the <code>/applications</code> path.</p>
+</li>
+<li>
+<p>Enable <strong>Skip SSL certificate verification</strong> if you want to connect to the Hub by using an insecure connection.</p>
+</li>
+<li>
+<p>Enable the authentication option.</p>
+</li>
+<li>
+<p>Select <strong>OIDC</strong> as the authentication method.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Sign In</strong> in the Authentication box to be redirected to your browser.</p>
+</li>
+<li>
+<p>Enter the IdP credentials to log in.</p>
+</li>
+<li>
+<p>After you log in successfully, the Authentication box shows the status as Connected, your user and the status for LLM proxy, Solution Server, and Profile Sync.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you sign out and reconnect before the token expiry period, the {ProductShortName} Hub reauthenticates you automatically.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/402/docs/release-notes/assemblies/cli-guide/topics/rules-development/yaml-dotnet-provider/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/402/docs/release-notes/assemblies/cli-guide/topics/rules-development/yaml-dotnet-provider/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/402/docs/release-notes/assemblies/cli-guide/topics/rules-development/yaml-dotnet-provider/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=81ebc098d78200af6a49e57ec96ed1eedc8c1bb2">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-dotnet-provider_{context}">C# provider</h1>
+<div class="paragraph _abstract">
+<p>The C# provider can analyze .NET applications written in C# by using the <code>referenced</code> capability. The C# provider uses a gRPC remote procedure call interface to perform a semantic analysis of application source code in source-only mode.</p>
+</div>
+<div class="paragraph">
+<p>The C# provider runs a containerized analysis of different .NET projects such as software development kit (SDK)-style projects and the older .NET Framework applications. To build your SDK-style project, the C# provider searches for the <code>.sln</code> file first and if <code>.sln</code> is unavailable, then the C# provider uses the <code>.csproj</code> file to load the project. For .NET Framework applications, the provider performs an ad hoc compilation for targets net20, net35, net40, net45, net472, and so on.</p>
+</div>
+<div class="paragraph">
+<p>To compile the project, the provider handles dependency resolution internally by using the bundled .NET SDK in {ProductFullName}. To resolve the dependencies, the C# provider needs internet access to run the <code>dotnet restore</code> command. The command downloads NuGet packages to resolve dependencies. In disconnected or airgapped environments, the provider can analyze .NET Framework projects that have the dependency dynamic linked libraries (DLLs) in the <code>packages/</code> or <code>lib/</code> directories on disk.</p>
+</div>
+<div class="paragraph">
+<p>The provider performs inheritance-aware symbol resolution to find the following references:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>using</code> directives</p>
+</li>
+<li>
+<p>Object creation</p>
+</li>
+<li>
+<p>Annotations or attributes</p>
+</li>
+<li>
+<p>Inheritance or base type</p>
+</li>
+<li>
+<p>Cast expressions</p>
+</li>
+<li>
+<p>Method invocations</p>
+</li>
+<li>
+<p>Type declarations</p>
+</li>
+<li>
+<p><code>is</code> expressions</p>
+</li>
+<li>
+<p>The <code>typeof</code> operator</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The C# provider handles dynamic member access by checking if an expression has a dynamic return type. The provider builds the fully qualified name of the property from the resolved part of the expression and the unresolved member names. The provider also tracks value flow through arguments, assignments, and return statements in the source code.
+The provider parses the source code for the analysis to find the following references:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Types</p>
+</li>
+<li>
+<p>Methods</p>
+</li>
+<li>
+<p>Classes</p>
+</li>
+<li>
+<p>Fields</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Based on the rule definition, the analyzer identifies violations in the source code that Migrators must resolve before the application migration.</p>
+</div>
+<div class="paragraph">
+<p>The C# provider supports the <code>referenced</code> capability that you can use in rules to search for patterns in specific source code locations.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>when:
+  csharp.referenced:
+    pattern: <em>&lt;pattern&gt;</em>
+    location: CLASS</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>pattern</code></dt>
+<dd>
+<p>specifies a regular expression as value to match the fully qualified name of symbols. Escape the dot character in the regular expression of patterns such as <code>WebMatrix\.WebData\.WebSecurity</code>.</p>
+</dd>
+<dt class="hdlist1"><code>location</code></dt>
+<dd>
+<p>specifies a source code location where the provider searches for the pattern. The value is case-insensitive and can be a <code>CLASS</code>, <code>METHOD</code>, or <code>FIELD</code>. If you omit this configuration, the default value is <code>ALL</code>.</p>
+</dd>
+</dl>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
