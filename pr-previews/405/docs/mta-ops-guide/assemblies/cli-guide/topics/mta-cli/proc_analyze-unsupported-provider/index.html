@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/cli-guide/topics/mta-cli/proc_analyze-unsupported-provider/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/cli-guide/topics/mta-cli/proc_analyze-unsupported-provider/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/cli-guide/topics/mta-cli/proc_analyze-unsupported-provider/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=803e7157ea371276b564ab70c0ec4a5f33b61c5f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="analyze-unsupported-provider_{context}">Analyzing an application for an unsupported language provider</h1>
+<div class="paragraph _abstract">
+<p>To estimate the migration effort for applications built with technologies not natively supported by the {ProductFullName} command-line interface, analyze the source code. The analysis generates a report containing the details of the application migration effort, including potential migration issues. You can use the report to prioritize tasks and estimate the resources needed for the migration.</p>
+</div>
+<div class="paragraph">
+<p>To run the analysis for an unsupported language provider, you must overwrite the existing supported language provider with your own unsupported language provider.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+You must create a configuration file for your unsupported language provider before overriding the supported provider.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You created a configuration file for your unsupported language provider, for example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">[
+{
+"name": "java",
+"address": "localhost:14651"
+"initConfig": [{
+"location": "&lt;java-app-path&gt;",
+"providerSpecificConfig": {
+"bundles": "&lt;bundle-path&gt;",
+"jvmMaxMem": "2G",
+},
+"analysisMode": "source-only"
+}]
+}
+]</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Override an existing supported language provider with your unsupported provider and run the analysis:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli analyze --provider-override <em>&lt;path_to_configuration_file&gt;</em> --output <em>&lt;path_to_output&gt;</em> --rules <em>&lt;path_to_custom_rules&gt;</em></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

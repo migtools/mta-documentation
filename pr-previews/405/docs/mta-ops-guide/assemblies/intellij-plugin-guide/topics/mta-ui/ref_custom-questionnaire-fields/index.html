@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/intellij-plugin-guide/topics/mta-ui/ref_custom-questionnaire-fields/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/intellij-plugin-guide/topics/mta-ui/ref_custom-questionnaire-fields/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/intellij-plugin-guide/topics/mta-ui/ref_custom-questionnaire-fields/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=803e7157ea371276b564ab70c0ec4a5f33b61c5f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="custom-questionnaire-fields_{context}">The custom questionnaire fields</h1>
+<div class="paragraph _abstract">
+<p>You can build a custom assessment questionnaire in the {ProductFullName} user interface (UI) by configuring specific fields. These field definitions help you configure questions, answers, and weighting.</p>
+</div>
+<div class="paragraph">
+<p>Every custom questionnaire field marked as <em>required</em> is mandatory. If you do not define such fields, YAML validation will fail on upload. Each subsection of the field defines a new structure or object in YAML, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">...
+name: Testing
+thresholds:
+    red: 30
+    yellow: 45
+    unknown: 5
+...</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. The custom questionnaire fields</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Questionnaire field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code> (required, string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the questionnaire. This field must be unique for the entire {ProductShortName} instance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code> (optional, string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A short description of the questionnaire.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>thresholds</code> (required)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The definition of a threshold for each application or archetype risk category that the risk level affects. Valid threshold values include the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>red</code> (required, unsigned integer): The numeric percentage of red answers allowed in the questionnaire before the {ProductShortName} marks the risk level as red, for example, <code>30</code> for <code>30%</code>.</p>
+</li>
+<li>
+<p><code>yellow</code> (required, unsigned integer): The numeric percentage of yellow answers allowed in the questionnaire before the {ProductShortName} marks the risk level as yellow, for example, <code>30</code> for <code>30%</code>.</p>
+</li>
+<li>
+<p><code>unknown</code> (required, unsigned integer): The numeric percentage of unknown answers allowed in the questionnaire before the {ProductShortName} marks the risk level as unknown.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The higher risk level always takes precedence. For example, if you set the <code>yellow</code> threshold to 30% and <code>red</code> to 5%, and set the answers for the application or archetype to have 35% <code>yellow</code> and 6% <code>red</code>, the risk level for the application or archetype is red.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>riskMessages</code> (required)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The messages that reports display for each risk category. The following fields define the risk messages map:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>red</code> (required, string): A message that reports display for the red risk level.</p>
+</li>
+<li>
+<p><code>yellow</code> (required, string): A message that reports display for the yellow risk level.</p>
+</li>
+<li>
+<p><code>green</code> (required, string): A message that reports display for the green risk level.</p>
+</li>
+<li>
+<p><code>unknown</code> (required, string): A message that reports display for the unknown risk level.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sections</code> (required)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A list of sections that the questionnaire must include.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> (required, string): A name of the section.</p>
+</li>
+<li>
+<p><code>order</code> (required, integer): An order of the question in the section.</p>
+</li>
+<li>
+<p><code>comment</code> (optional, string): A description of the section.</p>
+</li>
+<li>
+<p><code>questions</code> (required): A list of questions that belong to the section.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>order</code> (required, integer): An order of the question in the section.</p>
+</li>
+<li>
+<p><code>text</code> (required, string): A question to include in the questionnaire.</p>
+</li>
+<li>
+<p><code>explanation</code> (optional, string): An additional explanation for the question.</p>
+</li>
+<li>
+<p><code>includeFor</code> (optional): A list that defines whether the {ProductShortName} displays the question if the application or archetype contains any of the listed tags.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>category</code> (required, string): A category of the target tag.</p>
+</li>
+<li>
+<p><code>tag</code> (required, string): A target tag.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>excludeFor</code> (optional): A list that defines whether the {ProductShortName} skips the question if the application or archetype contains any of the listed tags.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>category</code> (required, string): A category of the target tag.</p>
+</li>
+<li>
+<p><code>tag</code> (required, string): A target tag.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>answers</code> (required): A list of answers for the given question.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>order</code> (required, integer): An order of the question in the section.</p>
+</li>
+<li>
+<p><code>text</code> (required, string): An answer for the question.</p>
+</li>
+<li>
+<p><code>risk</code> (required): An implied risk level (red, yellow, green, or unknown) of the current answer.</p>
+</li>
+<li>
+<p><code>rationale</code> (optional, string): A justification for the answer considered a risk.</p>
+</li>
+<li>
+<p><code>mitigation</code> (optional, string): An explanation of the potential mitigation strategy for the risk implied by the answer.</p>
+</li>
+<li>
+<p><code>applyTags</code> (optional): A list of tags that the {ProductShortName} automatically applies to the assessed application or archetype if this answer is selected.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>category</code> (required, string): A category of the target tag.</p>
+</li>
+<li>
+<p><code>tag</code> (required, string): A target tag.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>autoAnswerFor</code> (optional, list): A list of tags that prompt the {ProductShortName} to automatically select this answer when it assesses the application or archetype:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>category</code> (required, string): A category of the target tag.</p>
+</li>
+<li>
+<p><code>tag</code> (required, string): A target tag.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#yaml-template-for-custom-questionnaire_mta-custom-questionnaire">The YAML template for the custom questionnaire</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

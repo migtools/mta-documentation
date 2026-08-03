@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/developer-lightspeed-guide/topics/release-notes-topics/ref_known-issues-8-2-0/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/developer-lightspeed-guide/topics/release-notes-topics/ref_known-issues-8-2-0/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/developer-lightspeed-guide/topics/release-notes-topics/ref_known-issues-8-2-0/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=803e7157ea371276b564ab70c0ec4a5f33b61c5f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="known-issues-8-2-0_{context}">Known issues</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>{ProductFirstRef} version 8.2.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-ops-command-line-interface"><code>mta-ops</code> command-line interface</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>kubectl apply</code> overwrites existing target resources without warning</dt>
+<dd>
+<p>When you deploy exported manifests with the <code>kubectl apply</code> command, existing resources in the target namespace are silently overwritten. This is standard <code>kubectl apply</code> behavior and not specific to the <code>mta-ops</code> command-line interface (CLI). As a consequence, you might accidentally overwrite existing workloads on the target cluster.</p>
+<div class="paragraph">
+<p>To work around this problem, manually verify that the target namespace does not have conflicting resources before deployment.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/MTA-7103">MTA-7103</a></p>
+</div>
+</dd>
+<dt class="hdlist1"><code>mta-ops transform</code> does not accept the <code>--overwrite</code> flag</dt>
+<dd>
+<p>The <code>mta-ops transform</code> command does not currently support the <code>--overwrite</code> flag. If a custom stage directory already exists, the pipeline stops. As a consequence, you cannot automatically overwrite existing custom modifications during a pipeline re-run.</p>
+<div class="paragraph">
+<p>To work around this problem, manually delete the existing transform or custom stage directory before you re-run the <code>mta-ops transform</code> command.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/MTA-7234">MTA-7234</a></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="productshortname-authentication">{ProductShortName} authentication</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Keycloak administrators logging in to {ProductShortName} cannot create a user</dt>
+<dd>
+<p>After authenticating to the {ProductShortName} web console as a Keycloak administrator, you cannot perform user management tasks because these tasks require new scopes for the user, role, and tokens resources in {ProductShortName}. A local user with <code>admin</code> role can create and manage users.</p>
+<div class="paragraph">
+<p>To work around this problem, add the following scopes for administrator users in Keycloak:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>users:get</code></p>
+</li>
+<li>
+<p><code>users:post</code></p>
+</li>
+<li>
+<p><code>users:put</code></p>
+</li>
+<li>
+<p><code>users:delete</code></p>
+</li>
+<li>
+<p><code>roles:get</code></p>
+</li>
+<li>
+<p><code>roles:post</code></p>
+</li>
+<li>
+<p><code>roles:put</code></p>
+</li>
+<li>
+<p><code>roles:delete</code></p>
+</li>
+<li>
+<p><code>tokens:get</code></p>
+</li>
+<li>
+<p><code>tokens:post</code></p>
+</li>
+<li>
+<p><code>tokens:delete</code></p>
+</li>
+<li>
+<p><code>scopes:get</code></p>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/MTA-7235">MTA-7235</a></p>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">{ProductShortName} does not automatically redirect to the external identity provider for authentication</dt>
+<dd>
+<p>After you configure an external identity provider (IdP) for authentication, {ProductShortName} does not automatically redirect to the IdP login page. As a consequence, you must click the <strong>Sign in with <em>&lt;identity_provider&gt;</em></strong> option on the {ProductShortName} login page to access the IdP login page.</p>
+<div class="paragraph">
+<p>To work around this problem, set the <code>idp_primary</code> field to <code>true</code> in the Tackle custom resource (CR). The {ProductShortName} Hub identifies the external IdP as the primary authentication method and automatically routes to its login page for authentication.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/MTA-7236">MTA-7236</a></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="productshortname-analysis">{ProductShortName} analysis</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">{ProductShortName} analysis does not match rule patterns when import statements have a wildcard</dt>
+<dd>
+<p>When you use a wildcard to import packages used by an annotation in your Java source code, an {ProductShortName} analysis does not trigger a violation for such annotations. As a consequence, you are unable to fix all occurrences of an annotation defined in a rule because {ProductShortName} triggered no incidents for some annotations.</p>
+<div class="paragraph">
+<p>No known workaround exists.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/MTA-6530">MTA-6530</a></p>
+</div>
+</dd>
+<dt class="hdlist1">{ProductShortName} web console completes tech discovery and analysis with errors</dt>
+<dd>
+<p>The {ProductShortName} web console completes tech discovery and analysis of certain projects with errors. As a consequence, the tech discovery does not generate all relevant tags and the analysis could miss triggering issues.</p>
+<div class="paragraph">
+<p>To work around this problem, ensure that you have a Gradle or a Maven build file at the root directory of your project.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/MTA-6140">MTA-6140</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Custom rules do not trigger a violation in compiled binary application analysis</dt>
+<dd>
+<p>When you run an analysis by using a custom YAML rule for a compiled Java binary in the {ProductShortName} web console, {ProductShortName} does not trigger a violation.</p>
+<div class="paragraph">
+<p>No known workaround exists.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://redhat.atlassian.net/browse/MTA-5199">MTA-5199</a></p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
