@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/web-console-guide/assemblies/cli-guide/topics/mta-install/con_scope_rhbk/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/web-console-guide/assemblies/cli-guide/topics/mta-install/con_scope_rhbk/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/web-console-guide/assemblies/cli-guide/topics/mta-install/con_scope_rhbk/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=9bc26f2c9895bcdc309f6cd655c2d11996ad67dd">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="scope-rhbk_{context}">Dynamic scope expansion in RHBK</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can create roles that the {ProductFullName} Hub OpenID Connect (OIDC) provider supports in your RHBK instance. The Hub dynamically expands the RHBK roles to apply necessary permissions for the role.</p>
+</div>
+<div class="paragraph">
+<p>You can define the following roles in RHBK:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>+role.admin</code></p>
+</li>
+<li>
+<p><code>+role.architect</code></p>
+</li>
+<li>
+<p><code>+role.migrator</code></p>
+</li>
+<li>
+<p><code>+role.project-manager</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="manual-scope-management">Manual scope management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Although dynamic scope expansion is the preferred method to assign scopes, you can manually manage individual {ProductFullName} scopes in Red Hat build of Keycloak (RHBK) and assign the them to roles. During authorization, {ProductShortName} grants the necessary permissions to the Keycloak user.</p>
+</div>
+<div class="paragraph">
+<p>For example, Keycloak administrators can perform create, read, update, and delete tasks for users, tokens, and roles in {ProductShortName} only if the administrator role has the following scopes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>users:get</p>
+</li>
+<li>
+<p>users:post</p>
+</li>
+<li>
+<p>users:put</p>
+</li>
+<li>
+<p>users:delete</p>
+</li>
+<li>
+<p>roles:get</p>
+</li>
+<li>
+<p>roles:post</p>
+</li>
+<li>
+<p>roles:put</p>
+</li>
+<li>
+<p>roles:delete</p>
+</li>
+<li>
+<p>tokens:get</p>
+</li>
+<li>
+<p>tokens:post</p>
+</li>
+<li>
+<p>tokens:delete</p>
+</li>
+<li>
+<p>scopes:get</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can assign the following scopes to non-administrator user roles in Keycloak:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>users:get</p>
+</li>
+<li>
+<p>users:put</p>
+</li>
+<li>
+<p>users:delete</p>
+</li>
+<li>
+<p>roles:get</p>
+</li>
+<li>
+<p>tokens:get</p>
+</li>
+<li>
+<p>tokens:post</p>
+</li>
+<li>
+<p>tokens:delete</p>
+</li>
+<li>
+<p>scopes:get</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the access token request specifies specific scopes, the {ProductShortName} Hub additionally assigns permissions based on the scope reference.</p>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
