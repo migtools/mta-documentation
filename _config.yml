@@ -39,7 +39,8 @@ exclude:
   - CONTRIBUTING.adoc
   - Gemfile.lock
   - topics/
-
+  - vendor/
+  
 tag_page_layout: tag
 tag_page_dir: /tag/
 
