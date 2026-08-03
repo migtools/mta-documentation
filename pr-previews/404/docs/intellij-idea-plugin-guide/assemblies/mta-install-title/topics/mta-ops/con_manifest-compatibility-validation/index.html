@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/404/docs/intellij-idea-plugin-guide/assemblies/mta-install-title/topics/mta-ops/con_manifest-compatibility-validation/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/404/docs/intellij-idea-plugin-guide/assemblies/mta-install-title/topics/mta-ops/con_manifest-compatibility-validation/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/404/docs/intellij-idea-plugin-guide/assemblies/mta-install-title/topics/mta-ops/con_manifest-compatibility-validation/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=475f030ff4c8a05af638f8d628599f8e0e9f0e39">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="manifest-compatibility-validation_{context}">Manifest compatibility validation</h1>
+<div class="paragraph _abstract">
+<p>Validation is a read-only optional check for your final workload manifests before their deployment on a target cluster. It prevents deployment failures by identifying API incompatibilities.</p>
+</div>
+<div class="paragraph">
+<p>You can use the <code>mta-ops validate</code> command to evaluate your generated manifests against the target Red&#160;Hat OpenShift cluster&#8217;s application programming interface (API) surface. The command performs strict group, version, and kind (GVK) matching. The tool reads the API discovery information without modifying the cluster.</p>
+</div>
+<div class="paragraph">
+<p>The validation command generates a report identifying incompatible resources. It saves the detailed results to a specified validation directory. If incompatibilities are found, the tool logs the failing artifacts in a <code>failures/</code> subdirectory.</p>
+</div>
+<div class="paragraph">
+<p>The validation process supports the following modes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Live mode</strong>: The <code>mta-ops</code> tool connects directly to the target cluster to read the current API surface.</p>
+</li>
+<li>
+<p><strong>Offline mode</strong>: The <code>mta-ops</code> tool reads a previously captured API surface file. This is useful for disconnected environments or automated pipelines.</p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

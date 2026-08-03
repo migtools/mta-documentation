@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/404/docs/web-console-guide/assemblies/mta-install-title/topics/mta-ops/con_introduction-to-the-mta-ops-cli/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/404/docs/web-console-guide/assemblies/mta-install-title/topics/mta-ops/con_introduction-to-the-mta-ops-cli/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/404/docs/web-console-guide/assemblies/mta-install-title/topics/mta-ops/con_introduction-to-the-mta-ops-cli/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=475f030ff4c8a05af638f8d628599f8e0e9f0e39">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="introduction-to-the-mta-ops-cli_{context}">Introduction to the mta-ops CLI</h1>
+<div class="paragraph _abstract">
+<p>As a platform engineer or a cluster administrator, you can use the <code>mta-ops</code> command-line interface (CLI) to safely extract, clean, and validate stateless applications before deployment.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mta-ops</code> tool provides a non-destructive, repeatable, and GitOps-ready migration workflow for Red&#160;Hat OpenShift workloads.</p>
+</div>
+<div class="paragraph">
+<p>The migration pipeline consists of the following stages in a strict order:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The export stage captures a read-only snapshot of the source namespace.</p>
+</li>
+<li>
+<p>The transformation stage cleans cluster-specific metadata and applies additional transformations, if needed.</p>
+</li>
+<li>
+<p>The application stage renders final deployable manifests locally.</p>
+</li>
+<li>
+<p>The validation stage is an optional but recommended step that checks target cluster application programming interface (API) compatibility.</p>
+</li>
+<li>
+<p>The deployment stage applies the workloads to the destination cluster.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The export, transformation, application, and validation stages output directly to your local disk. The deployment stage applies workloads to the target cluster.</p>
+</div>
+<div class="paragraph">
+<p>The tool migrates stateless workloads and their associated cluster-scoped dependencies. These dependencies include role-based access control (RBAC), custom resource definitions (CRDs), and security context constraints (SCCs).</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<code>mta-ops</code> does not support stateful migrations that involve the transfer of persistent volume claims (PVCs) and underlying data.
+</td>
+</tr>
+</table>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

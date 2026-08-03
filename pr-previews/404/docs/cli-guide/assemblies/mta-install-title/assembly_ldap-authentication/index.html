@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/404/docs/cli-guide/assemblies/mta-install-title/assembly_ldap-authentication/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/404/docs/cli-guide/assemblies/mta-install-title/assembly_ldap-authentication/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/404/docs/cli-guide/assemblies/mta-install-title/assembly_ldap-authentication/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=475f030ff4c8a05af638f8d628599f8e0e9f0e39">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="ldap-authentication">LDAP authentication</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can manage users by organization hierarchy, apply centralized identity management, and scale role assignment by integrating the Hub OpenID Connect (OIDC) provider with Lightweight Directory Access Protocol (LDAP)-based authentication.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ldap-token-lifecycle_ldap-authentication">LDAP token lifecycle</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The {ProductFirstRef} Hub manages token lifecycle for Lightweight Directory Access Protocol (LDAP)-based authentication to account for changes in membership, user permission, and user account status.</p>
+</div>
+<div class="paragraph">
+<p>A user authenticated by LDAP receives an access token that has a default lifespan of 5 minutes. When the access token expires, the authentication server checks for a cached LDAP identity. If the LDAP identity is cached and not expired, the Hub OpenID Connect (OIDC) provider issues a new token with the cached scopes for the user. If the LDAP identity expires or is not cached, the Hub OIDC provider reauthenticates the user by connecting to the Directory Server (DS).</p>
+</div>
+<div class="paragraph">
+<p>To issue or refresh an access token, the {ProductFullName} Hub connects to the DS by using the stored password, queries the LDAP groups again, maps the LDAP groups to {ProductShortName} roles, and updates the user identity with an expiration time. The user need not manually reauthenticate to start the token refresh process.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-custom-resource-ldap-federation_ldap-authentication">Create a custom resource for LDAP or AD federation</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To enable the Hub OpenID Connect (OIDC) provider to federate authentication to an LDAP or an Active Directory (AD) server, create an <code>LdapProvider</code> custom resource (CR) and a secret for the LDAP service account.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have installed the {ProductShortName} {ProductVersion} in a Red&#160;Hat OpenShift cluster.</p>
+</li>
+<li>
+<p>You have <code>admin</code> access to the cluster.</p>
+</li>
+<li>
+<p>You have configured an LDAP service account with read-only permissions.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create an <code>ldap-secret.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: ldap-service-account
+  namespace: openshift-mta
+type: Opaque
+stringData:
+  password: "&lt;service-account-password&gt;"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the <code>ldap-secret</code> file in the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f ldap-secret.yaml</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create an <code>ldap.yaml</code> file for the custom resource (CR):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: tackle.konveyor.io/v1alpha1
+kind: LdapProvider
+metadata:
+  name: corporate-ldap
+  namespace: openshift-mta
+spec:
+  name: "Corporate LDAP"
+  kind: "ActiveDirectory"
+  url: "ldaps://ldap.example.com:636"
+  baseDN: "dc=example,dc=com"
+  bindDN: "cn=service,dc=example,dc=com"
+  password:
+    name: ldap-service-account
+    namespace: openshift-mta
+  userFilter: "(sAMAccountName=${login})"
+  groupFilter: "(&amp;(objectClass=group)(member=${dn}))"
+  hasMemberOf: true
+  roleMappings:
+    - and:
+        - Developers
+      roles:
+        - architect
+    - any:
+        - "**Administrator**"
+      roles:
+        - admin</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>kind</code>:: Server type is "ACTIVEDIRECTORY", "AD", or blank for other LDAP implementations such as OpenLDAP.</p>
+</li>
+<li>
+<p><code>url</code>:: Specifies the LDAP server URL.</p>
+</li>
+<li>
+<p><code>baseDN</code>:: Specifies the  base distinguished name (DN) to narrow the scope for LDAP searches.</p>
+</li>
+<li>
+<p><code>bindDN</code>:: Specifies the unique identifier of the service account that is used to authenticate against the LDAP directory.</p>
+</li>
+<li>
+<p><code>password</code>:: Refers to the secret that contains the service account password.</p>
+</li>
+<li>
+<p><code>userFilter</code>:: Specifies the user search filter. The default value for the user filter in AD is <code>(sAMAccountName=%s)</code>, and <code>(uid=%s)</code> for other LDAP implementations, when you do not configure a value in the CR.</p>
+<div class="paragraph">
+<p>To override the default, configure <code>userFilter: "(sAMAccountName=${login})"</code> for AD or <code>userFilter: "(uid=${uid})"</code> for other LDAP implementations.</p>
+</div>
+</li>
+<li>
+<p><code>groupFilter</code>:: Specifies the group search filter. The default value for the group filter in AD is <code>groupFilter: "(&amp;(objectClass=group)(member=%s))"</code>, and <code>(&amp;(objectClass=*)(member=%s))</code> for other LDAP implementations, when you do not configure a group in the CR.</p>
+<div class="paragraph">
+<p>To override the default, configure <code>groupFilter: "(&amp;(objectClass=group)(member=${dn}))"</code> for distinguished name. You can replace <code>{dn}</code> with <code>{uid}</code> for a unique identifier or <code>{cn}</code> for a common name.</p>
+</div>
+</li>
+<li>
+<p><code>hasMemberOf</code>:: Specifies whether to use the <code>memberOf</code> attribute for group membership in AD.</p>
+</li>
+<li>
+<p><code>roleMappings</code>:: Specifies the mapping of LDAP groups to the Hub roles. The {ProductShortName} roles can be a list of default or custom roles. When you use global patterns to match the LDAP roles, you must use the <code>doublestar</code> pattern or a double asterisk (<code>**</code>) to match the complete role name.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Apply the LDAP CR in the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f ldap.yaml</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the Hub to load the new client and the secret:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc rollout restart deployment/tackle-hub -n openshift-mta</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="logic-operators-rule-semantics-ldap-mappings_ldap-authentication">Logic operators and rules in LDAP mappings</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To apply flexible policy changes without code changes for LDAP and Active Directory (AD) integrations, you can configure the LDAP group-to-{ProductFullName} role mapping as YAML rules.</p>
+</div>
+<div class="paragraph">
+<p>In the rule, you can use the <code>or</code> and <code>and</code> logic. You can write the <code>or</code> logic to apply the <code>any</code> condition while the <code>and</code> logic to apply the <code>and</code> condition. The rules for role mapping follow certain behaviors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rule matches for LDAP groups are case sensitive. For example, <strong>Admins</strong> match <code>Global-Admins</code> but not <code>global-admins</code>.</p>
+</li>
+<li>
+<p>When you use wildcards (<code>*</code>), the pattern must match the common name (CN) that the LDAP server returns.</p>
+<div class="paragraph">
+<p>You can use the wildcard (<code>*</code>) pattern at the start or at the end for partial matching. For example, the rule <code>CN=\*, OU=Security,*</code> matches any common name in the Security organizational unit (OU) but not in other OUs.</p>
+</div>
+</li>
+<li>
+<p>An LDAP user who matches multiple rules is assigned the roles that are mapped in all matching rules.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. <code>RoleMappings</code> field description</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Fields</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>and</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ALL patterns must match at least one group</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">roleMappings:
+  - and:
+      - "**migration**"
+      - "mta-**"
+    roles:
+       - migrator</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{ProductShortName} assigns the <code>Migrator</code> role to all users of the LDAP group <code>mta-migration-team</code> since the group matches both "migration" and "mta".</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">At least one pattern must match a group</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">roleMappings:
+  - any:
+      - "**-administrators"
+    roles:
+       - admin
+  - any:
+       - "**Architects**"
+    roles:
+       - architect</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{ProductShortName} assigns a role from either rule to the LDAP user. LDAP users who match both rules get two roles.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roles</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roles assigned when the LDAP member matches a rule</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Wildcard operators</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Wildcard</th>
+<th class="tableblock halign-left valign-top">Behavior</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches any characters within a segment. The match does not cross the comma (<code>,</code>) separator in common names.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>Administrator</strong></code> matches <code>Global-Administrator</code> or <code>AdministratorGroup</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches across multiple segments. The match crosses comma (<code>,</code>) separators.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=IT,**/Administrators</code> matches <code>CN=IT,OU=Security,CN=Administrators</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{a,b}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brace expansion matches either <code>a</code> or <code>b</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{<strong>-admins,</strong>-administrators}</code> matches either pattern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>?</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches exactly one character</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Administrator?</code> matches <code>Administrators</code> or <code>Administrator1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[abc]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches one character from the set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Administrator[123]</code> matches <code>Administrator1</code>, <code>Administrator2</code>, <code>Administrator3</code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Common wildcard patterns to match LDAP groups patterns</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Pattern</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Matched parameters</th>
+<th class="tableblock halign-left valign-top">Unmatched parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**Administrators**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains "Administrators" anywhere</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Global-Administrators,OU=Groups</code>, <code>Security-Administrators</code>, <code>CN=Administrators-IT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Administrator,OU=Users</code> as 's' is absent in the common name. <code>CN=ADMINISTRATORS</code> as the pattern does not match the uppercase in the common name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**-administrators</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ends with "-administrators"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>platform-administrators</code>, <code>security-administrators</code>, <code>CN=it-administrators,OU=Groups</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>administrator-users</code> as the common name does not end with "administrators". <code>Administrators-Group</code> as the role name starts with uppercase and does not occur at the end.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Developers,**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starts with "Developers"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Developers,OU=Groups,DC=example,DC=com</code>, <code>CN=Developers,DC=example</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Senior,OU=Developers</code>, <code>OU=Developers,CN=Team</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**Developer**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains "Developer"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Developers,OU=IT</code>, <code>Senior-Developer</code>, <code>Developer-Team</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Develop,OU=Groups</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{**-administrators,**-administrator}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ends with <code>-administrators</code> or <code>-administrator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>platform-administrators</code>, <code>global-administrator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>administrator-group</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="openldap-active-directory-configurations_ldap-authentication">OpenLDAP and Active Directory configurations</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>OpenLDAP and Active Directory (AD) implementations require different configurations for specific fields.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. OpenLDAP and Active Directory configurations</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Fields</th>
+<th class="tableblock halign-left valign-top">Active Directory</th>
+<th class="tableblock halign-left valign-top">OpenLDAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username attribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sAMAccountName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>uid</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Group objectClass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>group</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generic wildcard (<code>*</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>memberOf</code> support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usually present</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">May not be present</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userFilter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(sAMAccountName=${login})</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(uid=${uid})</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>groupFilter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(&amp;(objectClass=group)(member=${dn}))</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(&amp;(objectClass=*)(member=${uid}))</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

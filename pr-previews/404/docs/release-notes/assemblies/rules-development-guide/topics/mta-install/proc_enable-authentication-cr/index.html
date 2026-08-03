@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/404/docs/release-notes/assemblies/rules-development-guide/topics/mta-install/proc_enable-authentication-cr/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/404/docs/release-notes/assemblies/rules-development-guide/topics/mta-install/proc_enable-authentication-cr/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/404/docs/release-notes/assemblies/rules-development-guide/topics/mta-install/proc_enable-authentication-cr/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=475f030ff4c8a05af638f8d628599f8e0e9f0e39">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="enable-authentication-cr_{context}">Enable authentication in Tackle custom resource</h1>
+<div class="paragraph _abstract">
+<p>As an administrator, you can configure authentication fields and the token lifespan in the Tackle custom resource (CR). If you do not configure these fields, the {ProductFullName} Hub applies default values.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You deployed a Red Hat OpenShift cluster.</p>
+</li>
+<li>
+<p>You installed {ProductShortName} {ProductVersion} in the cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Edit the tackle CR:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc edit tackle</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Switch to the edit mode in the terminal text editor:</p>
+<div class="listingblock">
+<div class="content">
+<pre><strong>i</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optionally, configure the authentication fields:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">spec:
+  feature_auth_required:true
+  idp_primary:true
+  hub_oidc_token_lifespan:300
+  hub_oidc_refresh_token_lifespan:172800
+  hub_apikey_lifespan:87600
+  hub_auth_cache_lifespan:5
+  hub_ldap_auth_lifespan:5
+  hub_oidc_key_rotation:90</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>feature_auth_required</code>:: Specifies whether to enforce authentication to the Hub API and the web console. By default, the value is <code>true</code>.</p>
+</li>
+<li>
+<p><code>idp_primary</code>:: Specifies whether {ProductShortName} Hub automatically redirects authentication to the auto-discovered Keycloak identity provider in upgraded deployments. When this value is <code>true</code> in other deployments, the Hub redirects to the IdP automatically.</p>
+<div class="paragraph">
+<p>When <code>false</code>, users can authenticate on the {ProductShortName} login page. If you configured an identity provider (IdP), then users can authenticate by using the IdP button on the login page.</p>
+</div>
+</li>
+<li>
+<p><code>hub_oidc_token_lifespan</code>:: Specifies the OAuth access token lifespan. The default value is 300 seconds.</p>
+</li>
+<li>
+<p><code>hub_oidc_refresh_token_lifespan</code>:: Specifies the OAuth refresh token lifespan. The default value is 172800 seconds (2 days).</p>
+</li>
+<li>
+<p><code>hub_apikey_lifespan</code>:: Specifies the OAuth API key lifespan. The default value is 87600 hours.</p>
+</li>
+<li>
+<p><code>hub_auth_cache_lifespan</code>:: Specifies the OAuth authentication cache lifespan. The default lifespan is 5 minutes.</p>
+</li>
+<li>
+<p><code>hub_ldap_auth_lifespan</code>:: Specifies the LDAP authentication lifespan. The default lifespan is 5 minutes.</p>
+</li>
+<li>
+<p><code>hub_oidc_key_rotation</code>:: Specifies the OIDC key rotation interval. The default value is 90 days.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Save the changes and exit the text editor to apply the changes:</p>
+<div class="listingblock">
+<div class="content">
+<pre><strong>:wq!</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#authentication-fields-tackle-cr_installing-mta-title">Authentication fields in the Tackle CR</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
