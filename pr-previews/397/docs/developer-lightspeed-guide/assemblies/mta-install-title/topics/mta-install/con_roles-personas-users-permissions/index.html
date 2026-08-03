@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/developer-lightspeed-guide/assemblies/mta-install-title/topics/mta-install/con_roles-personas-users-permissions/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/developer-lightspeed-guide/assemblies/mta-install-title/topics/mta-install/con_roles-personas-users-permissions/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/developer-lightspeed-guide/assemblies/mta-install-title/topics/mta-install/con_roles-personas-users-permissions/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1a7d636a856ac81378e6b977cdbdca5327b0af36">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="roles-personas-users-permissions_{context}">Roles, personas, users, and permissions</h1>
+<div class="paragraph _abstract">
+<p>The {ProductFullName} uses three roles, each corresponding to a persona. The roles are predefined in your Red Hat build of Keycloak (RHBK) instance. If you are an {ProductShortName} Administrator, you can create users in your RHBK instance and assign each user one or more roles, one role per persona.</p>
+</div>
+<div class="paragraph">
+<p>A user can have more than one role. Each role must correspond to a specific persona:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>admin</code> role corresponds to the administrator persona. Administrators have all the permissions of architects and migrators. They can also create application-wide configuration parameters that other users can consume but cannot change or view, such as Git credentials or Maven <code>settings.xml</code> files.</p>
+</li>
+<li>
+<p>The <code>architect</code> role corresponds to the architect persona. An architect is a technical lead for the migration project. They can run assessments, create and modify applications and related information. They cannot modify or delete sensitive information, but can view it. For example, they can associate an existing set of credentials with a specific application repository.</p>
+</li>
+<li>
+<p>The <code>migrator</code> role corresponds to the migrator persona. A migrator can analyze applications but cannot create, modify, or delete them.</p>
+</li>
+<li>
+<p>The <code>project-manager</code> role corresponds to the project manager persona. Project managers can create, read, update, and delete migration waves. They can also create {mta-dl-full} resources and adoption plans, and update business stakeholders included in a project. They have read-only access to other {ProductShortName} resources.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{ProductShortName} has two views, <strong>Administration</strong>, and <strong>Migration</strong>. Only an Administrator can access the <strong>Administration</strong> view. Administrators can perform all actions in the <strong>Migration</strong> view. Architects and migrators can see all elements in the <strong>Migration</strong> view but their ability to perform actions in the view depends on their role permissions.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/master/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/master/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1a7d636a856ac81378e6b977cdbdca5327b0af36">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="intellij-idea-plugin-guide">IntelliJ IDEA plugin guide</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#about-ide-addons_idea-plugin-guide">1. About the MTA plugin for IntelliJ IDEA</a></li>
+<li><a href="#what-is-the-toolkit_idea-plugin-guide">2. About the migration toolkit for applications</a>
+<ul class="sectlevel2">
+<li><a href="#what-is-the-migration-toolkit-for-applications">2.1. What is the migration toolkit for applications</a></li>
+<li><a href="#how-does-the-migration-toolkit-for-applications-simplify-migration">2.2. How does the migration toolkit for applications simplify migration</a></li>
+</ul>
+</li>
+<li><a href="#intellij-idea-plugin-extension_idea-plugin-guide">3. Installing the MTA plugin for IntelliJ IDEA</a></li>
+<li><a href="#intellij-idea-plugin-run-configuration_idea-plugin-guide">4. Creating a run configuration</a></li>
+<li><a href="#intellij-idea-plugin-reviewing-issues_idea-plugin-guide">5. Reviewing issues</a></li>
+<li><a href="#intellij-resolving-issues_idea-plugin-guide">6. Resolving issues</a>
+<ul class="sectlevel2">
+<li><a href="#using-quick-fix_intellij-resolving-issues">6.1. Using a Quick Fix</a></li>
+<li><a href="#editing-code-file_intellij-resolving-issues">6.2. Editing the code of a file</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-ide-addons_idea-plugin-guide">1. About the MTA plugin for IntelliJ IDEA</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can migrate and modernize applications by using the migration toolkit for applications (MTA) plugin for IntelliJ IDEA.</p>
+</div>
+<div class="paragraph">
+<p>The MTA plugin analyzes your projects by using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.</p>
+</div>
+<div class="paragraph">
+<p>The plugin supports both the Community Edition and the Ultimate version of IntelliJ IDEA.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what-is-the-toolkit_idea-plugin-guide">2. About the migration toolkit for applications</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The migration toolkit for applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+</div>
+<div class="sect2">
+<h3 id="what-is-the-migration-toolkit-for-applications">2.1. What is the migration toolkit for applications</h3>
+<div class="paragraph">
+<p>The migration toolkit for applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+</div>
+<div class="paragraph">
+<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTA supports many migration paths, including the following examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrading to the latest release of Red Hat JBoss Enterprise Application Platform</p>
+</li>
+<li>
+<p>Migrating from Oracle WebLogic or IBM WebSphere Application Server to Red Hat JBoss Enterprise Application Platform</p>
+</li>
+<li>
+<p>Containerizing applications and making them cloud-ready</p>
+</li>
+<li>
+<p>Migrating from Java Spring Boot to Quarkus</p>
+</li>
+<li>
+<p>Updating from Oracle JDK to OpenJDK</p>
+</li>
+<li>
+<p>Upgrading from OpenJDK 8 to OpenJDK 11</p>
+</li>
+<li>
+<p>Upgrading from OpenJDK 11 to OpenJDK 17</p>
+</li>
+<li>
+<p>Upgrading from OpenJDK 17 to OpenJDK 21</p>
+</li>
+<li>
+<p>Migrating JBoss EAP Java applications to Azure</p>
+</li>
+<li>
+<p>Migrating Spring Boot Java applications to Azure</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-does-the-migration-toolkit-for-applications-simplify-migration">2.2. How does the migration toolkit for applications simplify migration</h3>
+<div class="paragraph">
+<p>The migration toolkit for applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
+</div>
+<div class="paragraph">
+<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://developers.redhat.com/products/mta/use-cases">MTA for developers</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intellij-idea-plugin-extension_idea-plugin-guide">3. Installing the MTA plugin for IntelliJ IDEA</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can install the MTA plugin in the Ultimate and the Community Edition releases of IntelliJ IDEA.</p>
+</div>
+<div class="paragraph">
+<div class="title">Prerequisites</div>
+<p>The following are the prerequisites for the migration toolkit for applications (MTA) installation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java Development Kit (JDK) is installed. MTA supports the following Java Development Kit versions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Oracle JDK 17 or later</p>
+</li>
+<li>
+<p>Eclipse Temurin™ JDK 17 or later</p>
+</li>
+<li>
+<p>OpenJDK 17 or later</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>8 GB of RAM is required for MTA.</p>
+</li>
+<li>
+<p>macOS installation: the value of <code>maxproc</code> must be <code>2048</code> or greater.</p>
+</li>
+<li>
+<p>The latest version of <code>mta-cli</code> from the <a href="https://developers.redhat.com/products/mta/download">MTA download page</a></p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In IntelliJ IDEA, click the <strong>Plugins</strong> tab on the Welcome screen.</p>
+</li>
+<li>
+<p>Enter <code>migration toolkit for applications</code> in the Search field on the <strong>Marketplace</strong> tab.</p>
+</li>
+<li>
+<p>Select the <strong>migration toolkit for applications (MTA) by Red Hat</strong> plugin and click <strong>Install</strong>.</p>
+<div class="paragraph">
+<p>The plugin is listed on the <strong>Installed</strong> tab.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intellij-idea-plugin-run-configuration_idea-plugin-guide">4. Creating a run configuration</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can analyze your projects with the MTA plugin by creating a run configuration and running an analysis. You can create multiple run configurations to run against each project you import to IntelliJ IDEA.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Projects</strong> view, click the project you want to analyze.</p>
+</li>
+<li>
+<p>On the left side of the screen, click the <strong>migration toolkit for applications</strong> tab.</p>
+<div class="paragraph">
+<p>If this is your first configuration, the run configuration panel is displayed on the right.</p>
+</div>
+</li>
+<li>
+<p>If this is not your first configuration, right-click configuration in the list and select <strong>New configuration</strong>.</p>
+<div class="paragraph">
+<p>The run configuration panel is displayed on the right.</p>
+</div>
+</li>
+<li>
+<p>Complete the following configuration fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>CLI</strong>: Enter the path to the command-line interface (CLI) executable. For example: <code>$HOME/mta-cli-8.2.0.GA-redhat/bin/mta-cli</code>.</p>
+</li>
+<li>
+<p><strong>Input</strong>: Click <strong>Add</strong> and enter the input file or directory.</p>
+</li>
+<li>
+<p><strong>Target</strong>: Select one or more target migration paths.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The location shown in the <strong>Output</strong> is set by the plugin.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the list of configurations, right-click the new configuration and select <strong>Run Analysis</strong>.</p>
+<div class="paragraph">
+<p>The <strong>Console (MTA)</strong> terminal emulator opens, displaying information about the progress of the analysis.</p>
+</div>
+<div class="paragraph">
+<p>When the analysis is completed, you can click either <strong>Report</strong> or <strong>Results</strong> below the name of the configuration file you ran.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Report</strong> opens the MTA report, which describes any issues you need to address before you migrate or modernize your application. For more information, see <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/8.2/html-single/using_the_mta_command-line_interface_to_analyze_applications/index#reviewing-analysis-reports_cli-guide">Reviewing the reports</a> in the <em>CLI Guide</em>.</p>
+</li>
+<li>
+<p><strong>Results</strong> opens a directory displaying hints (issues) per application.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intellij-idea-plugin-reviewing-issues_idea-plugin-guide">5. Reviewing issues</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can use the MTA plugin icons to prioritize issues based on their severity. You can see which issues have a <em>Quick Fix</em> automatic code replacement and which do not.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can review and resolve migration issues identified by the MTA plugin in the left pane.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The results of an analysis are displayed in a directory format, showing the <em>hints</em> and <em>classifications</em> for each application analyzed.</p>
+</div>
+<div class="paragraph">
+<p>A <em>hint</em> is a read-only snippet of code that contains a single issue that you should or must address before you can modernize or migrate an application. Often a Quick Fix is suggested, which you can accept or ignore.</p>
+</div>
+<div class="paragraph">
+<p>A <em>classification</em> is a file that has an issue but does not have any suggested Quick Fixes. You can edit a classification.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the migration toolkit for applications view, select a run configuration directory in the left pane.</p>
+</li>
+<li>
+<p>Click <strong>Results</strong>.</p>
+<div class="paragraph">
+<p>The modules and applications of the run configuration are displayed, with hints and classifications beneath each application.</p>
+</div>
+</li>
+<li>
+<p>Prioritize issues based on the following icons, which are displayed next to each hint:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="image"><img src="../topics/images/intellij-idea-mandatory.png" alt="Mandatory"></span> : You must fix this issue in order to migrate or modernize the application.</p>
+</li>
+<li>
+<p><span class="image"><img src="../topics/images/intellij-idea-potential.png" alt="Warning"></span> : You might need to fix this issue in order to migrate or modernize the application</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Optional: To learn more about a hint, right-click it and select <strong>Show More Details</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intellij-resolving-issues_idea-plugin-guide">6. Resolving issues</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can resolve issues by doing one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Using a <em>Quick Fix</em> to fix a code snippet that has a hint</p>
+</li>
+<li>
+<p>Editing the code of a file that is displayed in a classification</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="using-quick-fix_intellij-resolving-issues">6.1. Using a Quick Fix</h3>
+<div class="paragraph _abstract">
+<p>You can use a Quick Fix automatic code replacement to save time and ensure consistency in resolving repetitive issues. Quick Fixes are available for many issues displayed in the <strong>Hints</strong> section of the <strong>Results</strong> directory.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the left pane, click a hint that has an error indicator.</p>
+<div class="paragraph">
+<p>Any Quick Fixes are displayed as child folders with the Quick Fix icon (<span class="image"><img src="../topics/images/intellij-idea-info.png" alt="Quick Fix"></span>) on their left side.</p>
+</div>
+</li>
+<li>
+<p>Right-click a Quick Fix and select <strong>Preview Quick Fix</strong>.</p>
+<div class="paragraph">
+<p>The current code and the suggested change are displayed in the <strong>Preview Quick Fix</strong> window.</p>
+</div>
+</li>
+<li>
+<p>To accept the suggested fix, click <strong>Apply Quick Fix</strong>.</p>
+</li>
+<li>
+<p>Optional: Right-click the issue and select <strong>Mark As Complete</strong>.</p>
+<div class="paragraph">
+<p>The Complete indicator (<span class="image"><img src="../topics/images/intellij-idea-ok.png" alt="Complete"></span>, a green check mark) is displayed by the hint, replacing the error indicator.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-code-file_intellij-resolving-issues">6.2. Editing the code of a file</h3>
+<div class="paragraph _abstract">
+<p>You can directly edit a file displayed in the <strong>Classifications</strong> section of the <strong>Results</strong> directory. These files do not have any Quick Fixes.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the left pane, click the file you want to edit.</p>
+</li>
+<li>
+<p>Make any changes needed to the code and save the file.</p>
+</li>
+<li>
+<p>Optional: Right-click the issue and select <strong>Mark as Complete</strong> or <strong>Delete</strong>.</p>
+<div class="paragraph">
+<p>If you select <strong>Mark as Complete</strong>, the Complete indicator (<span class="image"><img src="../topics/images/intellij-idea-ok.png" alt="Complete"></span>, a green check mark) is displayed by the hint, replacing the error indicator.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
