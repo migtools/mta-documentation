@@ -24,6 +24,8 @@ include::con_dl-context.adoc[leveloffset=+1]
 
 include::con_solution_server.adoc[leveloffset=+1]
 
+include::con_solution-server-and-large-language-model-integration.adoc[leveloffset=+1]
+
 include::con_agent-ai.adoc[leveloffset=+1]
 
 include::con_agent-mode-guardrails.adoc[leveloffset=+1]
