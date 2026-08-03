@@ -1,0 +1,3000 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/397/docs/install-guide/master/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/397/docs/install-guide/master/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/397/docs/install-guide/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7c1dedde077038e49aab4389f4a3810f49931ded">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="installing-mta-title">Installing the migration toolkit for applications</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#intro-to-mta_installing-mta-title">1. Introduction to the migration toolkit for applications</a>
+<ul class="sectlevel2">
+<li><a href="#mta-features_intro-to-mta">1.1. MTA features</a></li>
+<li><a href="#mta-rules_intro-to-mta">1.2. MTA rules</a></li>
+<li><a href="#mta-tools_intro-to-mta">1.3. MTA tools</a></li>
+</ul>
+</li>
+<li><a href="#supported-migration-paths_installing-mta-title">2. Supported migration toolkit for applications migration paths</a></li>
+<li><a href="#installing-mta-ui_installing-mta-title">3. Installing the migration toolkit for applications user interface</a>
+<ul class="sectlevel2">
+<li><a href="#persistent-volume-requirements_installing-mta-ui">3.1. Persistent volume requirements</a></li>
+<li><a href="#installing-mta-operator_installing-mta-ui">3.2. Installing the MTA Operator</a></li>
+<li><a href="#creating-mta-instance_installing-mta-ui">3.3. Creating an MTA instance</a></li>
+<li><a href="#custom-resource-settings_installing-mta-ui">3.4. Custom resource settings</a></li>
+</ul>
+</li>
+<li><a href="#installing-mta-cli_installing-mta-title">4. Installing the migration toolkit for applications command-line interface</a>
+<ul class="sectlevel2">
+<li><a href="#installing-cli-zip_installing-mta-cli">4.1. Installing the CLI by using a .zip file</a></li>
+<li><a href="#installing-mta-disconnected-environment_installing-mta-cli">4.2. Installing the CLI on a disconnected environment</a></li>
+<li><a href="#installing-cli-for-docker_installing-mta-cli">4.3. Installing the CLI for use with Docker on Windows</a></li>
+</ul>
+</li>
+<li><a href="#hub-oidc-authentication_installing-mta-title">5. Authentication and Authorization</a>
+<ul class="sectlevel2">
+<li><a href="#why-use-hub-oidc_hub-oidc-authentication">5.1. Why use the Hub OIDC</a></li>
+<li><a href="#administrative-tasks_hub-oidc-authentication">5.2. Administrative tasks</a>
+<ul class="sectlevel3">
+<li><a href="#optional-configuration_hub-oidc-authentication">5.2.1. Optional configurations</a></li>
+</ul>
+</li>
+<li><a href="#enable-authentication-cr_hub-oidc-authentication">5.3. Enable authentication in Tackle custom resource</a></li>
+</ul>
+</li>
+<li><a href="#basic-authentication-local-users_installing-mta-title">6. Basic authentication for local users</a>
+<ul class="sectlevel2">
+<li><a href="#add-users-assign-roles-web-console_basic-authentication-local-users">6.1. Add users and assign roles in the web console</a></li>
+<li><a href="#change-password-web-console_basic-authentication-local-users">6.2. Change password in the web console</a></li>
+<li><a href="#create-custom-role-assign-permissions_basic-authentication-local-users">6.3. Create a custom role and assign permissions</a></li>
+</ul>
+</li>
+<li><a href="#ldap-authentication_installing-mta-title">7. LDAP authentication</a>
+<ul class="sectlevel2">
+<li><a href="#ldap-token-lifecycle_ldap-authentication">7.1. LDAP token lifecycle</a></li>
+<li><a href="#create-custom-resource-ldap-federation_ldap-authentication">7.2. Create a custom resource for LDAP or AD federation</a></li>
+<li><a href="#logic-operators-rule-semantics-ldap-mappings_ldap-authentication">7.3. Logic operators and rules in LDAP mappings</a></li>
+<li><a href="#openldap-active-directory-configurations_ldap-authentication">7.4. OpenLDAP and Active Directory configurations</a></li>
+</ul>
+</li>
+<li><a href="#red-hat-build-of-keycloak_installing-mta-title">8. Red Hat build of Keycloak</a>
+<ul class="sectlevel2">
+<li><a href="#keycloak-migration_red-hat-build-of-keycloak">8.1. Keycloak migration</a></li>
+<li><a href="#scope-rhbk_red-hat-build-of-keycloak">8.2. Dynamic scope expansion in RHBK</a>
+<ul class="sectlevel3">
+<li><a href="#manual-scope-management">8.2.1. Manual scope management</a></li>
+</ul>
+</li>
+<li><a href="#accessing-rhbk-admin-console_red-hat-build-of-keycloak">8.3. Accessing the RHBK Admin Console</a></li>
+<li><a href="#roles-personas-users-permissions_red-hat-build-of-keycloak">8.4. Roles, personas, users, and permissions</a></li>
+</ul>
+</li>
+<li><a href="#identity-provider-authentication_installing-mta-title">9. Identity provider authentication</a>
+<ul class="sectlevel2">
+<li><a href="#create-secret-idp-client_identity-provider-authentication">9.1. Create a secret for the IdP client</a></li>
+<li><a href="#configure-identity-provider-cr_identity-provider-authentication">9.2. Configure an identity provider custom resource</a></li>
+</ul>
+</li>
+<li><a href="#managing-access-tokens-api-keys_installing-mta-title">10. Token management</a>
+<ul class="sectlevel2">
+<li><a href="#generate-api-key-web-console_managing-access-tokens-api-keys">10.1. Generate API key from the web console</a></li>
+<li><a href="#revoke-api-key-admin_managing-access-tokens-api-keys">10.2. Revoke API keys as an administrator</a></li>
+<li><a href="#revoke-api-key-migrator_managing-access-tokens-api-keys">10.3. Revoke API keys as a migrator</a></li>
+</ul>
+</li>
+<li><a href="#authentication-fields-tackle-cr_installing-mta-title">11. Authentication fields in the Tackle CR</a></li>
+<li><a href="#uri-templating-wildcard-patterns_installing-mta-title">12. URI templating and wildcard patterns</a>
+<ul class="sectlevel2">
+<li><a href="#uri-template-variables_uri-templating-wildcard-patterns">12.1. URI template variables</a></li>
+<li><a href="#uri-wildcard-patterns_uri-templating-wildcard-patterns">12.2. URI wildcard patterns</a></li>
+</ul>
+</li>
+<li><a href="#contributing-to-mta-development">Appendix A: How to contribute to the MTA project</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intro-to-mta_installing-mta-title">1. Introduction to the migration toolkit for applications</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The migration toolkit for applications (MTA) is a set of tools that you can use to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. MTA looks for common resources and problematic spots when migrating applications. It gives a high-level view of the technologies used by the application. MTA also generates a detailed report that evaluates a migration or modernization path. By using this report, you can estimate the effort needed for large-scale projects and reduce the workload involved in the process.</p>
+</div>
+<div class="paragraph">
+<p>By using MTA, you can perform the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use the MTA extensive default questionnaire to assess your applications, or create your own custom questionnaire to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of an assessment to determine applications suitable for containerization.</p>
+</li>
+<li>
+<p>Analyze applications by applying sets of rules to each application. You can use these rules to determine which specific lines of the application you must modify before modernizing the application.</p>
+</li>
+<li>
+<p>Examine application artifacts, including project source directories and application archives, and produce an HTML report that highlights areas that require changes.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="mta-features_intro-to-mta">1.1. MTA features</h3>
+<div class="paragraph _abstract">
+<p>The migration toolkit for applications (MTA) includes many features that simplify upgrades with multiple migration paths.</p>
+</div>
+<div class="paragraph">
+<p>MTA brings the following benefits for application analysis and assessment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Application inventory and assessment modules</strong> to help organizations assess applications' suitability for deployment in containers, including flagging potential risks for migration strategies.</p>
+</li>
+<li>
+<p><strong>Integration with source code and binary repositories</strong> to automate the applications' retrieval for analysis, along with proxy integration, including HTTP and HTTPS proxy configuration managed in the user interface.</p>
+</li>
+<li>
+<p><strong>Improved analysis capabilities</strong> with different analysis modes, including source and dependency modes. These modes parse repositories to gather dependencies and add these dependencies to the scope of the analysis. You can also use a simplified user experience to configure the analysis scope, including open source libraries.</p>
+</li>
+<li>
+<p><strong>Enhanced role-based access control (RBAC)</strong> powered by Red Hat build of Keycloak to define the following personas:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Administrator</p>
+</li>
+<li>
+<p>Architect</p>
+</li>
+<li>
+<p>Migrator</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These personas have different permissions to suit the needs of each user, including credentials management for multiple credential types.</p>
+</div>
+</li>
+<li>
+<p><strong>Administration perspective</strong> for administrators to manage tool-wide configuration.</p>
+</li>
+<li>
+<p><strong>Support for Red Hat OpenShift on AWS (ROSA)</strong></p>
+</li>
+<li>
+<p><strong>Support for Azure Red Hat OpenShift (ARO)</strong></p>
+</li>
+<li>
+<p><strong>Support for analyzing applications written in different languages</strong></p>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://access.redhat.com/products/red-hat-build-keycloak/">Red Hat build of Keycloak</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-rules_intro-to-mta">1.2. MTA rules</h3>
+<div class="paragraph _abstract">
+<p>The migration toolkit for applications (MTA) contains rule-based migration tools called analyzers. You can use analyzers to examine the technologies, architectures, and application user interfaces (APIs) of the applications you want to move.</p>
+</div>
+<div class="paragraph">
+<p>MTA analyzer rules use the following rule pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>when(condition)
+ message(message)
+ tag(tags)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the MTA rules internally to perform the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Extract files from archives
+<!-- vale RedHat.Spelling = NO --></p>
+</li>
+<li>
+<p>Decompile files
+<!-- vale RedHat.Spelling = YES --></p>
+</li>
+<li>
+<p>Scan and classify file types</p>
+</li>
+<li>
+<p>Analyze XML and other file content</p>
+</li>
+<li>
+<p>Analyze the application code</p>
+</li>
+<li>
+<p>Build the reports</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MTA builds a data model based on the rule execution results and stores component data and relationships in a graph database. This database can then be queried and updated as needed by the migration rules and for reporting purposes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can create your own custom analyzer rules. You can use custom rules to identify the use of custom libraries or other components that the provided standard migration rules might not cover.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph _additional-resources">
+<div class="title">Additional resources</div>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single/configuring_and_using_rules_for_an_mta_analysis/index">Configuring and using rules for an MTA analysis</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-tools_intro-to-mta">1.3. MTA tools</h3>
+<div class="paragraph _abstract">
+<p>The migration toolkit for applications (MTA) tools help in the different stages of your migration and modernization efforts.</p>
+</div>
+<div class="paragraph">
+<p>You can use the following MTA tools for assessing and analyzing your applications:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>User interface (UI)</strong></p>
+<div class="paragraph">
+<p>By using the user interface for the migration toolkit for applications, you can perform the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift.</p>
+</li>
+<li>
+<p>Analyze the changes that you might need to apply to the code of an application to containerize this application.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Command-line interface (CLI)</strong></p>
+<div class="paragraph">
+<p>The CLI is a command-line tool in the migration toolkit for applications that you can use to assess migration and modernization efforts for applications. It provides reports that highlight the analysis without using the other tools. The CLI includes a wide array of customization options. By using the CLI, you can tune MTA analysis options or integrate with external automation tools.</p>
+</div>
+</li>
+<li>
+<p><strong>Migration toolkit for applications (MTA) Operator</strong></p>
+<div class="paragraph">
+<p>By using the MTA Operator, you can install the user interface on OpenShift Container Platform.</p>
+</div>
+</li>
+<li>
+<p><strong>IDE add-ons</strong></p>
+<div class="paragraph">
+<p>You can migrate and modernize applications by using the migration toolkit for applications add-ons for the following applications:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Visual Studio Code</p>
+</li>
+<li>
+<p>IntelliJ IDEA</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can use these add-ons to perform the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Analyze your projects by using customizable sets of rules</p>
+</li>
+<li>
+<p>Mark issues in the source code</p>
+</li>
+<li>
+<p>Fix the issues by using the provided guidance</p>
+</li>
+<li>
+<p>Use the automatic code replacement, if possible</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/index">Configuring and managing the migration toolkit for applications user interface</a>.</p>
+</li>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single/using_the_migration_toolkit_for_applications_command-line_interface/index">Using the migration toolkit for applications command-line interface</a></p>
+</li>
+<li>
+<p><a href="https://access.redhat.com/support/policy/updates/openshift_operators">OpenShift Operator Life Cycles</a></p>
+</li>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single/intellij_idea_plugin_guide/index">IntelliJ IDEA Plugin Guide</a></p>
+</li>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single/configuring_and_using_the_visual_studio_code_extension_for_mta/index">Configuring and using the Visual Studio Code Extension for MTA</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="supported-migration-paths_installing-mta-title">2. Supported migration toolkit for applications migration paths</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can use the migration toolkit for applications (MTA) to assess your applications' suitability for the migration to multiple target platforms. Review the supported migration paths to verify that your planned migration uses a valid combination of source and target technologies. Adhering to these paths helps ensure that MTA can successfully analyze and migrate your applications.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 99%;">
+<caption class="title">Table 1. Supported Java migration paths</caption>
+<colgroup>
+<col style="width: 19.1919%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.1011%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Source platform&#160;&#8658;</th>
+<th class="tableblock halign-left valign-top">Migration to JBoss EAP 7 &amp; 8</th>
+<th class="tableblock halign-left valign-top">OpenShift (cloud readiness)</th>
+<th class="tableblock halign-left valign-top">OpenJDK 11, 17, and 21</th>
+<th class="tableblock halign-left valign-top">Jakarta EE 9</th>
+<th class="tableblock halign-left valign-top">Camel 3 &amp; 4</th>
+<th class="tableblock halign-left valign-top">Spring Boot in Red Hat Runtimes</th>
+<th class="tableblock halign-left valign-top">Quarkus</th>
+<th class="tableblock halign-left valign-top">Open Liberty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle WebLogic Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBM WebSphere Application Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718; <sup class="footnote" id="_footnote_note2">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p>
+<p class="tableblock"><!-- vale RedHat.Spelling = NO --></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thorntail
+<!-- vale RedHat.Spelling = YES --></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714; <sup class="footnote" id="_footnote_note3">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle JDK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Camel 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Java application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Java EE application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. NET migration paths</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Source platform&#160;&#8658;</th>
+<th class="tableblock halign-left valign-top">OpenShift (cloud readiness)</th>
+<th class="tableblock halign-left valign-top">Migration to .NET 8.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.NET Framework 4.5+ (Windows only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Analyzing applications written in the .NET language is Developer Preview software only. Developer Preview software is not supported by Red&#160;Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview software for production or business-critical workloads. Developer Preview software provides early access to upcoming product software in advance of its possible inclusion in a Red&#160;Hat product offering. Customers can use this software to test functionality and provide feedback during the development process. This software might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red&#160;Hat might provide ways to submit feedback on Developer Preview software without an associated SLA.</p>
+</div>
+<div class="paragraph">
+<p>For more information about the support scope of Red&#160;Hat Developer Preview software, see <a href="https://access.redhat.com/support/offerings/devpreview/">Developer Preview Support Scope</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://developers.redhat.com/products/mta/use-cases">Use cases and migration paths for migration toolkit for applications</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-mta-ui_installing-mta-title">3. Installing the migration toolkit for applications user interface</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>By using the migration toolkit for applications (MTA) user interface (UI), you can assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift. You can also analyze the changes that you must apply to the application&#8217;s code to containerize the application. You can install the migration toolkit for applications UI on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions.</p>
+</div>
+<div class="paragraph">
+<p>To create MTA instances, you must install the MTA Operator first. The MTA Operator is a structural layer that manages resources deployed on Red Hat OpenShift, such as database, front end, and back end, to automatically create an MTA instance.</p>
+</div>
+<div class="sect2">
+<h3 id="persistent-volume-requirements_installing-mta-ui">3.1. Persistent volume requirements</h3>
+<div class="paragraph _abstract">
+<p>To successfully deploy the migration toolkit for applications (MTA) Operator, you must create a persistent volume (PV) used by different MTA components.</p>
+</div>
+<div class="paragraph">
+<p><!-- vale RedHat.Spelling = NO -->
+The MTA Operator requires one <code>ReadWriteOnce</code> (RWO) PV for the Hub database. If you set the <code>rwx_supported</code> configuration option to <code>true</code> in Tackle custom resource (CR), the MTA Operator needs two additional <code>ReadWriteMany</code> (RWX) PVs used by Maven and the Hub file storage.
+<!-- vale RedHat.Spelling = YES --></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Required persistent volumes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Default size</th>
+<th class="tableblock halign-left valign-top">Access mode</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub database</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>10Gi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hub database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub bucket</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Gi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hub file storage required if the <code>rwx_supported</code> configuration option is set to <code>true</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Gi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven m2 cache required if the <code>rwx_supported</code> configuration option is set to <code>true</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kai-db</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5Gi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Red Hat Developer Lightspeed for MTA database required to run an AI-assisted code resolution.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="installing-mta-operator_installing-mta-ui">3.2. Installing the MTA Operator</h3>
+<div class="paragraph _abstract">
+<p>To create the migration toolkit for applications (MTA) instances, you must install the MTA Operator first.</p>
+</div>
+<div class="paragraph">
+<p>The MTA Operator is a structural layer that manages resources deployed on Red Hat OpenShift, such as the database, front end, and back end, to automatically create an MTA instance.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Your environment has 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.</p>
+</li>
+<li>
+<p>Your environment uses Red Hat OpenShift (cloud service or self-hosted), version 4.21–4.22.
+<!-- vale RedHat.Spelling = NO --></p>
+</li>
+<li>
+<p>You created one <code>ReadWriteOnce</code> (RWO) persistent volume (PV), an optional RWO PV for the Solution Server database, and two conditional <code>ReadWriteMany</code> (RWX) PVs.
+<!-- vale RedHat.Spelling = YES --></p>
+</li>
+<li>
+<p>You logged in as a user with <code>cluster-admin</code> permissions.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the Red Hat OpenShift web console, click <strong>Operators</strong>.</p>
+</li>
+<li>
+<p>Click <strong>OperatorHub</strong>.</p>
+</li>
+<li>
+<p>Type <em>MTA</em> in the <strong>Filter by keyword</strong> field to search for the MTA Operator.</p>
+</li>
+<li>
+<p>Click <strong>Migration toolkit for applications (MTA) Operator</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Install Operator</strong> page, click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Optional: Review and edit the custom resource (CR) settings.</p>
+<div class="paragraph">
+<p>A window for creating CR settings opens automatically after the installation of the MTA Operator is complete. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, to work directly with the YAML file, click the <strong>YAML</strong> view and review the CR settings listed in the <code>spec</code> section of the YAML file.</p>
+</div>
+<div class="paragraph">
+<p>The <code>spec</code> section of the YAML file can have the following configuration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  hub_bucket_volume_size: "2.5Gi"
+  maven_data_volume_size: "2.5Gi"
+  rwx_supported: "true"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify that the MTA pods are running:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Administration</strong> view, click <strong>Workloads</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Pods</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify that you can see the MTA Operator in the <code>openshift-mta</code> project with the status of <strong>Succeeded</strong> by clicking <strong>Operators</strong> and then <strong>Installed Operators</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Next steps</div>
+<ul>
+<li>
+<p><a href="#creating-mta-instance_installing-mta-ui">Create an MTA instance</a>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://access.redhat.com/support/policy/updates/openshift_operators">OpenShift Operator Life Cycles</a></p>
+</li>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui">Persistent volume requirements</a></p>
+</li>
+<li>
+<p><a href="#custom-resource-settings_installing-mta-ui">Custom resource settings</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-mta-instance_installing-mta-ui">3.3. Creating an MTA instance</h3>
+<div class="paragraph _abstract">
+<p>You can use the migration toolkit for applications (MTA) user interface (UI) to get insights about the application adoption process at both the portfolio and application levels. You can use the MTA UI to inventory, assess, analyze, and manage applications for faster migration to Red Hat OpenShift.</p>
+</div>
+<div class="paragraph">
+<p>To use the MTA UI for assessing and analyzing your applications, you must create a MTA instance first.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed the MTA Operator on your system. For more information, see <a href="#installing-mta-operator_installing-mta-ui">Installing the MTA Operator</a>.</p>
+</li>
+<li>
+<p>Your environment has 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.</p>
+</li>
+<li>
+<p>Your environment uses Red Hat OpenShift (cloud service or self-hosted), version 4.21–4.22.</p>
+</li>
+<li>
+<p>You logged in as a user with <code>cluster-admin</code> permissions.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>MTA Operator</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Provided APIs</strong>, search for <strong>Tackle</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create Instance</strong>.</p>
+</li>
+<li>
+<p>Access the user interface from your browser by using the route provided by the <code>mta-ui</code> application within Red Hat OpenShift.</p>
+</li>
+<li>
+<p>Log in to the user interface instance by using the default credentials:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Username: <code>admin</code></p>
+</li>
+<li>
+<p>Password: <code>admin</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://access.redhat.com/support/policy/updates/openshift_operators">OpenShift Operator Life Cycles</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="custom-resource-settings_installing-mta-ui">3.4. Custom resource settings</h3>
+<div class="paragraph _abstract">
+<p>When installing the migration toolkit for applications (MTA) Operator, you might need to create custom resource (CR) settings. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.</p>
+</div>
+<div class="paragraph">
+<p>The following are the most commonly used CR settings that you can find in the <code>spec</code> section of the YAML file.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Common custom resource settings</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">CR name</th>
+<th class="tableblock halign-left valign-top">Default size</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A size requested for the cache volume. This CR is ignored when the <code>rwx_supported</code> option is set to <code>false</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default storage class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A storage class used for the cache volume. This CR is ignored when the <code>rwx_supported</code> option is set to <code>false</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>feature_auth_required</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A flag that indicates whether keycloak authorization is required. When set to <code>false</code>, the flag mounts to <code>“noauth“</code>, which means only a single user can use the web console. The single user is the default <code>admin</code> user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>feature_isolate_namespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A flag that indicates whether namespace isolation by using network policies is enabled.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_database_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A size requested for the Hub database volume.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_bucket_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A size requested for the Hub bucket volume.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_bucket_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default storage class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A storage class used for the bucket volume.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pathfinder_database_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A size requested for the Pathfinder database volume.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rwx_supported</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A flag that indicates whether the cluster storage supports RWX mode.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rwo_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A storage class requested for the Tackle RWO volumes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rhsso_external_access</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A flag that indicates whether a dedicated route is created to access the MTA managed RHSSO instance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_limits_cpu</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A maximum number of CPUs the pod is allowed to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_limits_memory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays <code>OOMKilled</code> errors.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_requests_cpu</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A minimum number of CPUs the pod needs to run.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_requests_memory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum amount of memory the pod needs to run.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#installing-mta-operator_installing-mta-ui">Installing the MTA Operator</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-mta-cli_installing-mta-title">4. Installing the migration toolkit for applications command-line interface</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can use the migration toolkit for applications (MTA) command-line interface (CLI) to assess and prioritize migration and modernization efforts for applications. You can use different command options to adapt the CLI behavior to your needs. You can tune the MTA analysis options or integrate with external automation tools.</p>
+</div>
+<div class="paragraph">
+<p>You can install the MTA command-line interface (CLI) on Linux, Windows, or macOS operating systems. You can also install the CLI for use with Docker on Windows. Note, however, that this is a Developer Preview feature only.</p>
+</div>
+<div class="sect2">
+<h3 id="installing-cli-zip_installing-mta-cli">4.1. Installing the CLI by using a .zip file</h3>
+<div class="paragraph _abstract">
+<p>You can use the migration toolkit for applications (MTA) command-line interface (CLI) to assess and analyze your applications to prepare these applications for the migration.</p>
+</div>
+<div class="paragraph">
+<p>You can install the MTA CLI by using the downloadable <code>.zip</code> file available on the official MTA download page.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You logged in to <code>registry.redhat.io</code>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><!-- vale RedHat.Spelling = NO -->
+This prerequisite is not applicable for the containerless mode.
+<!-- vale RedHat.Spelling = YES --></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>You installed Java Development Kit (JDK) version 17 or later.</p>
+</li>
+<li>
+<p>You set the <code>JAVA_HOME</code> environment variable.</p>
+</li>
+<li>
+<p>You installed Maven version 3.9.9 or later and added the Maven binary to the <code>$PATH</code> variable.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the <a href="https://developers.redhat.com/products/mta/download">MTA download page</a> and download one of the following operating system-specific CLI files or the <code>src</code> file:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mta-8.2.0-cli-linux-amd64.zip</p>
+</li>
+<li>
+<p>mta-8.2.0-cli-linux-arm64.zip</p>
+</li>
+<li>
+<p>mta-8.2.0-cli-darwin-amd64.zip</p>
+</li>
+<li>
+<p>mta-8.2.0-cli-darwin-arm64.zip</p>
+</li>
+<li>
+<p>mta-8.2.0-cli-windows-amd64.zip</p>
+</li>
+<li>
+<p>mta-8.2.0-cli-windows-arm64.zip</p>
+</li>
+<li>
+<p>mta-8.2.0-cli-src.zip</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Extract the <code>.zip</code> file to the <code>.kantra</code> directory inside your <code>$HOME</code> directory. The <code>.zip</code> file extracts the <code>mta-cli</code> binary, along with other required directories and files.</p>
+</li>
+<li>
+<p>Move the <code>mta-cli</code> binary to your <code>$PATH</code> variable.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can place the <code>mta-cli</code> binary in any folder that is included in the <code>$PATH</code> variable. You can also add a folder that contains <code>mta-cli</code> to <code>$PATH</code>. This way, you do not need to specify a full path when using the CLI.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://access.redhat.com/RegistryAuthentication">Red Hat Container Registry Authentication</a></p>
+</li>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single/using_the_migration_toolkit_for_applications_command-line_interface/analyzing-applications-mta-cli_cli-guide#running-the-containerless-mta-cli_analyzing-applications-mta-cli">Analyzing an application in containerless mode</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installing-mta-disconnected-environment_installing-mta-cli">4.2. Installing the CLI on a disconnected environment</h3>
+<div class="paragraph _abstract">
+<p>In certain cases, you might want to install the migration toolkit for applications (MTA) command-line interface (CLI) when an internet connection is not available.</p>
+</div>
+<div class="paragraph">
+<p>When your system is in a disconnected environment, you can install the MTA (CLI) by performing the following actions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download the required images by using an external computer.</p>
+</li>
+<li>
+<p>Copy the downloaded images to the system you want to install the MTA CLI on.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The following procedure applies only to container mode.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The analysis output in the disconnected environment results in fewer incidents because a dependency analysis does not run accurately without access to Maven.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You downloaded the required MTA CLI binary from the <a href="https://developers.redhat.com/products/mta/download">migration toolkit for applications Red Hat Developer page</a>.</p>
+</li>
+<li>
+<p>You installed the Podman tool on your system.</p>
+</li>
+<li>
+<p>For the analysis of Java applications, you enabled container runtime usage by setting the <code>--run-local</code> flag to <code>false</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre>--run-local=false</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The analysis of non-Java applications runs in container mode by default.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>On a connected device, perform the following steps:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Authenticate to <code>registry.redhat.io</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>podman login registry.redhat.io</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the <code>mta-cli</code> binary file:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>mta-cli analyze</strong></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+The binary file pulls only the required provider images. For example, if you run a command that requires Java images, the command will not pull .NET images.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Display the image list:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>podman images</strong></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>REPOSITORY                                                        TAG         IMAGE ID      CREATED       SIZE
+registry.redhat.io/mta/mta-generic-external-provider-rhel9        7.3.1       8b8d7fa14570  13 days ago   692 MB
+registry.redhat.io/mta/mta-cli-rhel9                              7.3.1       45422a12d936  13 days ago   1.6 GB
+registry.redhat.io/mta/mta-java-external-provider-rhel9           7.3.1       4d6d0912a38b  13 days ago   715 MB
+registry.redhat.io/mta/mta-dotnet-external-provider-rhel9         7.3.1       66ec9fc51408  13 days ago   1.27 GB</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Save the images:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>podman save <em>&lt;image_ID&gt;</em> -o <em>&lt;image_name&gt;</em>.image</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy the images onto a USB drive or directly to the file system of the disconnected device.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>On the disconnected device, enter:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>podman load --input <em>&lt;image_name&gt;</em>.image</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installing-cli-for-docker_installing-mta-cli">4.3. Installing the CLI for use with Docker on Windows</h3>
+<div class="paragraph _abstract">
+<p>To migrate applications built with .NET framework version 4.5 or later, on Microsoft Windows to cross-platform .NET 8.0, you must install the migration toolkit for applications (MTA) command-line interface (CLI) for use with Docker on Windows.</p>
+</div>
+<div class="paragraph">
+<p>To install the MTA CLI for use with Docker on Windows, you must configure Docker to use Windows containers first.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have a host with 64-bit Windows 11, version 21H2 or later.</p>
+</li>
+<li>
+<p>You downloaded the Docker Desktop for Windows installation program.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open a PowerShell with Administrator privileges.</p>
+</li>
+<li>
+<p>Ensure Hyper-V is installed and enabled:</p>
+<div class="listingblock">
+<div class="content">
+<pre>PS C:\Users\&lt;user_name&gt;&gt; <strong>Enable-WindowsOptionalFeature -Online `
+   -FeatureName Microsoft-Hyper-V-All</strong></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>PS C:\Users\&lt;user_name&gt;&gt; <strong>Enable-WindowsOptionalFeature -Online `
+   -FeatureName Containers</strong></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You might need to reboot Windows for the change to take effect.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Install Docker Desktop on Windows.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Run the installation program by double-clicking the <code>Docker_Desktop_Installer.exe</code> file.</p>
+<div class="paragraph">
+<p>By default, Docker Desktop is installed to the <code>C:\Program Files\Docker\Docker</code> path.</p>
+</div>
+</li>
+<li>
+<p>Ensure that Docker runs Windows containers as the backend instead of Linux containers:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>In the Windows task bar, right-click the Docker icon.</p>
+</li>
+<li>
+<p>Click <strong>Switch to Windows containers</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In PowerShell, create a folder for MTA:</p>
+<div class="listingblock">
+<div class="content">
+<pre>PS C:\Users\&lt;user_name&gt;&gt; <strong>mkdir C:\Users\&lt;user_name&gt;\MTA</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Extract the <code>mta-8.2.0-cli-windows.zip</code> file to the <code>MTA</code> folder:</p>
+<div class="listingblock">
+<div class="content">
+<pre>PS C:\Users\&lt;user_name&gt;&gt; <strong>cd C:\Users\&lt;user_name&gt;\Downloads</strong></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>PS C:\Users\&lt;user_name&gt;&gt; <strong>Expand-Archive `
+   -Path "{ProductShortNameLower}-{ProductVersion}-cli-windows.zip" `
+   -DestinationPath "C:\Users\&lt;user_name&gt;\MTA"</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Ensure that Docker is running Windows containers and that the <code>OS/Arch</code> is set to <code>windows/amd64</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>PS C:\Users\&lt;user_name&gt;&gt; <strong>docker version</strong></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Client:
+ Version:           27.0.3
+ API version:       1.46
+ Go version:        go1.21.11
+ Git commit:        7d4bcd8
+ Built:             Sat Jun 29 00:03:32 2024
+ OS/Arch:           <strong>windows/amd64</strong>
+ Context:           desktop-windows
+Server: Docker Desktop 4.32.0 (157355)
+ Engine:
+  Version:          27.0.3
+  API version:      1.46 (minimum version 1.24)
+  Go version:       go1.21.11
+  Git commit:       662f78c
+  Built:            Sat Jun 29 00:02:13 2024
+  OS/Arch:          <strong>windows/amd64</strong>
+  Experimental:     false</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set the <code>CONTAINER_TOOL</code> environment variable to use Docker:</p>
+<div class="listingblock">
+<div class="content">
+<pre>PS C:\Users\&lt;user_name&gt;&gt; <strong>$env:CONTAINER_TOOL="C:\Windows\system32\docker.exe"</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set the <code>DOTNET_PROVIDER_IMG</code> environment variable to use the upstream <code>dotnet-external-provider</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>PS C:\Users\&lt;user_name&gt;&gt; <strong>$env:DOTNET_PROVIDER_IMG="quay.io/konveyor/dotnet-external-provider:v0.5.0"</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set the <code>RUNNER_IMG</code> environment variable to use the upstream image:</p>
+<div class="listingblock">
+<div class="content">
+<pre>PS C:\Users\&lt;user_name&gt;&gt; <strong>$env:RUNNER_IMG="quay.io/konveyor/kantra:v0.5.0"</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://docs.docker.com/desktop/install/windows-install/">Install Docker Desktop on Windows</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hub-oidc-authentication_installing-mta-title">5. Authentication and Authorization</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To authenticate users in the migration toolkit for applications (MTA), you can use the Hub OpenID Connect (OIDC) provider to reduce infrastructure management or integrate MTA with any OIDC provider.</p>
+</div>
+<div class="sect2">
+<h3 id="why-use-hub-oidc_hub-oidc-authentication">5.1. Why use the Hub OIDC</h3>
+<div class="paragraph _abstract">
+<p>The migration toolkit for applications (MTA) Hub implements an OpenID Connect (OIDC) standards-compliant provider that offers local user authentication and federation to other providers.</p>
+</div>
+<div class="paragraph">
+<p>The MTA Hub OIDC provider offers the following advantages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An option to remove the Keycloak dependency for configuring users, roles, and permissions. Without Keycloak, you need not provision and manage extra infrastructure resources.</p>
+</li>
+<li>
+<p>Simplified role-based access control (RBAC) deployment that allows you to manage users, default and custom roles, and permissions in the MTA application.</p>
+</li>
+<li>
+<p>An option to integrate Lightweight Directory Access Protocol (LDAP) or federate to another identity provider (IdP).</p>
+</li>
+<li>
+<p>A permanent list of immutable permissions that map to specific application programming interface (API) resources and operations. This list ensures that authorization works consistently across deployments and simplifies security audits.</p>
+</li>
+<li>
+<p>Tasks and add-on access to the MTA APIs through personal access tokens (PATs) with fine-grained permissions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="administrative-tasks_hub-oidc-authentication">5.2. Administrative tasks</h3>
+<div class="paragraph _abstract">
+<p>As an administrator, you can configure user authentication and manage users, roles, and tokens to customize your environment.</p>
+</div>
+<div class="paragraph">
+<p>You can use one of the following authentication flows with the MTA Hub OpenID Connect (OIDC):</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Local authentication and authorization</dt>
+<dd>
+<p>You can add users and link roles to them in the MTA application without any extra configuration.</p>
+</dd>
+<dt class="hdlist1">Lightweight Directory Access Protocol (LDAP)-backed authentication</dt>
+<dd>
+<p>Configure an <code>LdapProvider</code> custom resource (CR) to integrate LDAP users. Optionally, configure and deploy secrets in your Red Hat OpenShift cluster for a secure connection with the LDAP client.</p>
+</dd>
+<dt class="hdlist1">Federated authentication to Identity Providers (IdPs)</dt>
+<dd>
+<p>Configure the <code>IdentityProvider</code> CR to federate authentication to an IdP such as Google, Okta, Keycloak, or Microsoft Entra ID (formerly, Azure Active Directory). Optionally, configure and deploy secrets in your Red Hat OpenShift cluster for a secure connection with the IdP client.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>To migrate Keycloak that you implemented in earlier versions after an MTA 8.2.0 upgrade, see Keycloak migration.</p>
+</div>
+<div class="sect3">
+<h4 id="optional-configuration_hub-oidc-authentication">5.2.1. Optional configurations</h4>
+<div class="paragraph">
+<p>You can complete the following optional configure tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure authentication and token variables in the Tackle custom resource (CR).</p>
+</li>
+<li>
+<p>Create custom roles.</p>
+</li>
+<li>
+<p>Create and revoke application programming interface (API) keys.</p>
+</li>
+</ul>
+</div>
+<div class="ulist role=_additional-resources">
+<div class="title">Additional resources</div>
+<ul class="role=_additional-resources">
+<li>
+<p><a href="#red-hat-build-of-keycloak_installing-mta-title">Keycloak migration</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enable-authentication-cr_hub-oidc-authentication">5.3. Enable authentication in Tackle custom resource</h3>
+<div class="paragraph _abstract">
+<p>As an administrator, you can configure authentication fields and the token lifespan in the Tackle custom resource (CR). If you do not configure these fields, the migration toolkit for applications (MTA) Hub applies default values.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You deployed a Red Hat OpenShift cluster.</p>
+</li>
+<li>
+<p>You installed MTA 8.2.0 in the cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Edit the tackle CR:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc edit tackle</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Switch to the edit mode in the terminal text editor:</p>
+<div class="listingblock">
+<div class="content">
+<pre><strong>i</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optionally, configure the authentication fields:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">spec:
+  feature_auth_required:true
+  idp_primary:true
+  hub_oidc_token_lifespan:300
+  hub_oidc_refresh_token_lifespan:172800
+  hub_apikey_lifespan:87600
+  hub_auth_cache_lifespan:5
+  hub_ldap_auth_lifespan:5
+  hub_oidc_key_rotation:90</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>feature_auth_required</code>:: Specifies whether to enforce authentication to the Hub API and the web console. By default, the value is <code>true</code>.</p>
+</li>
+<li>
+<p><code>idp_primary</code>:: Specifies whether MTA Hub automatically redirects authentication to the auto-discovered Keycloak identity provider in upgraded deployments. When this value is <code>true</code> in other deployments, the Hub redirects to the IdP automatically.</p>
+<div class="paragraph">
+<p>When <code>false</code>, users can authenticate on the MTA login page. If you configured an identity provider (IdP), then users can authenticate by using the IdP button on the login page.</p>
+</div>
+</li>
+<li>
+<p><code>hub_oidc_token_lifespan</code>:: Specifies the OAuth access token lifespan. The default value is 300 seconds.</p>
+</li>
+<li>
+<p><code>hub_oidc_refresh_token_lifespan</code>:: Specifies the OAuth refresh token lifespan. The default value is 172800 seconds (2 days).</p>
+</li>
+<li>
+<p><code>hub_apikey_lifespan</code>:: Specifies the OAuth API key lifespan. The default value is 87600 hours.</p>
+</li>
+<li>
+<p><code>hub_auth_cache_lifespan</code>:: Specifies the OAuth authentication cache lifespan. The default lifespan is 5 minutes.</p>
+</li>
+<li>
+<p><code>hub_ldap_auth_lifespan</code>:: Specifies the LDAP authentication lifespan. The default lifespan is 5 minutes.</p>
+</li>
+<li>
+<p><code>hub_oidc_key_rotation</code>:: Specifies the OIDC key rotation interval. The default value is 90 days.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Save the changes and exit the text editor to apply the changes:</p>
+<div class="listingblock">
+<div class="content">
+<pre><strong>:wq!</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#authentication-fields-tackle-cr_installing-mta-title">Authentication fields in the Tackle CR</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="basic-authentication-local-users_installing-mta-title">6. Basic authentication for local users</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>As an administrator, you can use a simple authentication workflow to manage users, roles, and role-based access control (RBAC) permissions in the MTA inventory with no added infrastructure requirements.</p>
+</div>
+<div class="sect2">
+<h3 id="add-users-assign-roles-web-console_basic-authentication-local-users">6.1. Add users and assign roles in the web console</h3>
+<div class="paragraph _abstract">
+<p>As an administrator, you can manage users and assign one or more roles to them for local authentication and authorization. When you assign roles to a user, they receive all the unique permissions that are associated with the roles.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are an MTA administrator.</p>
+</li>
+<li>
+<p>The cluster administrator has installed MTA 8.2.0.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the MTA web console.</p>
+</li>
+<li>
+<p>In the <strong>Administration</strong> mode, click <strong>User Management</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Users</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Create user</strong> page, enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter the username in the <strong>Login</strong> field.</p>
+</li>
+<li>
+<p>Enter the name of the user.</p>
+</li>
+<li>
+<p>Enter the email address of the user.</p>
+</li>
+<li>
+<p>Enter a new password in the <strong>Password</strong> field.</p>
+</li>
+<li>
+<p>Enter the same password in the <strong>Confirm Password</strong> field.</p>
+</li>
+<li>
+<p>Select one or more roles from the <strong>Roles</strong> list.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="change-password-web-console_basic-authentication-local-users">6.2. Change password in the web console</h3>
+<div class="paragraph _abstract">
+<p>To ensure that your account is not accessible with the default <code>admin</code> password, you must change your account password after you log in for the first time. When you change your password for the first time, also specify your account details.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the MTA application with <code>admin</code> as your password.</p>
+</li>
+<li>
+<p>In the upper-right corner, click your role drop-down list.</p>
+</li>
+<li>
+<p>Select <strong>User account</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Edit</strong> user page, enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter your name.</p>
+</li>
+<li>
+<p>Enter your email address</p>
+</li>
+<li>
+<p>Enter a new password in the <strong>Password</strong> field.</p>
+</li>
+<li>
+<p>Enter the same password in the <strong>Confirm Password</strong> field.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Verification</div>
+<p>Log out of your account and log in with your new password.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-custom-role-assign-permissions_basic-authentication-local-users">6.3. Create a custom role and assign permissions</h3>
+<div class="paragraph _abstract">
+<p>To enforce fine-grained role-based access control (RBAC) permissions for users to perform specific tasks, create custom roles and assign specific permissions in the migration toolkit for applications (MTA) web console. Users can access features based on the permissions that you assign to them.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot alter or delete the default roles and permissions scoped to them.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are an MTA Administrator user.</p>
+</li>
+<li>
+<p>You have installed MTA 8.2 or later.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the MTA web console.</p>
+</li>
+<li>
+<p>In the <strong>Administration</strong> mode, go to <strong>User Management</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Roles</strong>.</p>
+</li>
+<li>
+<p>Click the number of permissions scoped to the <code>admin</code> role to explore the resources and scoped permissions.</p>
+</li>
+<li>
+<p>On the <strong>Roles</strong> page, click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Name</strong> field, enter a unique name for the new role.</p>
+</li>
+<li>
+<p>Type the name of a resource to see the list of permissions.</p>
+</li>
+<li>
+<p>Add one or more permissions by using one of the following methods:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>From the <strong>Permissions</strong> list, select a permission and click the <strong>Add selected</strong> icon.</p>
+</li>
+<li>
+<p>Click the <strong>Add all</strong> icon to select all the permissions for that resource.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ldap-authentication_installing-mta-title">7. LDAP authentication</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can manage users by organization hierarchy, apply centralized identity management, and scale role assignment by integrating the Hub OpenID Connect (OIDC) provider with Lightweight Directory Access Protocol (LDAP)-based authentication.</p>
+</div>
+<div class="sect2">
+<h3 id="ldap-token-lifecycle_ldap-authentication">7.1. LDAP token lifecycle</h3>
+<div class="paragraph _abstract">
+<p>The Migration toolkit for applications (MTA) Hub manages token lifecycle for Lightweight Directory Access Protocol (LDAP)-based authentication to account for changes in membership, user permission, and user account status.</p>
+</div>
+<div class="paragraph">
+<p>A user authenticated by LDAP receives an access token that has a default lifespan of 5 minutes. When the access token expires, the authentication server checks for a cached LDAP identity. If the LDAP identity is cached and not expired, the Hub OpenID Connect (OIDC) provider issues a new token with the cached scopes for the user. If the LDAP identity expires or is not cached, the Hub OIDC provider reauthenticates the user by connecting to the Directory Server (DS).</p>
+</div>
+<div class="paragraph">
+<p>To issue or refresh an access token, the migration toolkit for applications (MTA) Hub connects to the DS by using the stored password, queries the LDAP groups again, maps the LDAP groups to MTA roles, and updates the user identity with an expiration time. The user need not manually reauthenticate to start the token refresh process.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-custom-resource-ldap-federation_ldap-authentication">7.2. Create a custom resource for LDAP or AD federation</h3>
+<div class="paragraph _abstract">
+<p>To enable the Hub OpenID Connect (OIDC) provider to federate authentication to an LDAP or an Active Directory (AD) server, create an <code>LdapProvider</code> custom resource (CR) and a secret for the LDAP service account.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have installed the MTA 8.2.0 in a Red&#160;Hat OpenShift cluster.</p>
+</li>
+<li>
+<p>You have <code>admin</code> access to the cluster.</p>
+</li>
+<li>
+<p>You have configured an LDAP service account with read-only permissions.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create an <code>ldap-secret.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: ldap-service-account
+  namespace: openshift-mta
+type: Opaque
+stringData:
+  password: "&lt;service-account-password&gt;"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the <code>ldap-secret</code> file in the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f ldap-secret.yaml</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create an <code>ldap.yaml</code> file for the custom resource (CR):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: tackle.konveyor.io/v1alpha1
+kind: LdapProvider
+metadata:
+  name: corporate-ldap
+  namespace: openshift-mta
+spec:
+  name: "Corporate LDAP"
+  kind: "ActiveDirectory"
+  url: "ldaps://ldap.example.com:636"
+  baseDN: "dc=example,dc=com"
+  bindDN: "cn=service,dc=example,dc=com"
+  password:
+    name: ldap-service-account
+    namespace: openshift-mta
+  userFilter: "(sAMAccountName=${login})"
+  groupFilter: "(&amp;(objectClass=group)(member=${dn}))"
+  hasMemberOf: true
+  roleMappings:
+    - and:
+        - Developers
+      roles:
+        - architect
+    - any:
+        - "**Administrator**"
+      roles:
+        - admin</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>kind</code>:: Server type is "ACTIVEDIRECTORY", "AD", or blank for other LDAP implementations such as OpenLDAP.</p>
+</li>
+<li>
+<p><code>url</code>:: Specifies the LDAP server URL.</p>
+</li>
+<li>
+<p><code>baseDN</code>:: Specifies the  base distinguished name (DN) to narrow the scope for LDAP searches.</p>
+</li>
+<li>
+<p><code>bindDN</code>:: Specifies the unique identifier of the service account that is used to authenticate against the LDAP directory.</p>
+</li>
+<li>
+<p><code>password</code>:: Refers to the secret that contains the service account password.</p>
+</li>
+<li>
+<p><code>userFilter</code>:: Specifies the user search filter. The default value for the user filter in AD is <code>(sAMAccountName=%s)</code>, and <code>(uid=%s)</code> for other LDAP implementations, when you do not configure a value in the CR.</p>
+<div class="paragraph">
+<p>To override the default, configure <code>userFilter: "(sAMAccountName=${login})"</code> for AD or <code>userFilter: "(uid=${uid})"</code> for other LDAP implementations.</p>
+</div>
+</li>
+<li>
+<p><code>groupFilter</code>:: Specifies the group search filter. The default value for the group filter in AD is <code>groupFilter: "(&amp;(objectClass=group)(member=%s))"</code>, and <code>(&amp;(objectClass=*)(member=%s))</code> for other LDAP implementations, when you do not configure a group in the CR.</p>
+<div class="paragraph">
+<p>To override the default, configure <code>groupFilter: "(&amp;(objectClass=group)(member=${dn}))"</code> for distinguished name. You can replace <code>{dn}</code> with <code>{uid}</code> for a unique identifier or <code>{cn}</code> for a common name.</p>
+</div>
+</li>
+<li>
+<p><code>hasMemberOf</code>:: Specifies whether to use the <code>memberOf</code> attribute for group membership in AD.</p>
+</li>
+<li>
+<p><code>roleMappings</code>:: Specifies the mapping of LDAP groups to the Hub roles. The MTA roles can be a list of default or custom roles. When you use global patterns to match the LDAP roles, you must use the <code>doublestar</code> pattern or a double asterisk (<code>**</code>) to match the complete role name.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Apply the LDAP CR in the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f ldap.yaml</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the Hub to load the new client and the secret:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc rollout restart deployment/tackle-hub -n openshift-mta</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logic-operators-rule-semantics-ldap-mappings_ldap-authentication">7.3. Logic operators and rules in LDAP mappings</h3>
+<div class="paragraph _abstract">
+<p>To apply flexible policy changes without code changes for LDAP and Active Directory (AD) integrations, you can configure the LDAP group-to-migration toolkit for applications (MTA) role mapping as YAML rules.</p>
+</div>
+<div class="paragraph">
+<p>In the rule, you can use the <code>or</code> and <code>and</code> logic. You can write the <code>or</code> logic to apply the <code>any</code> condition while the <code>and</code> logic to apply the <code>and</code> condition. The rules for role mapping follow certain behaviors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rule matches for LDAP groups are case sensitive. For example, <strong>Admins</strong> match <code>Global-Admins</code> but not <code>global-admins</code>.</p>
+</li>
+<li>
+<p>When you use wildcards (<code>*</code>), the pattern must match the common name (CN) that the LDAP server returns.</p>
+<div class="paragraph">
+<p>You can use the wildcard (<code>*</code>) pattern at the start or at the end for partial matching. For example, the rule <code>CN=\*, OU=Security,*</code> matches any common name in the Security organizational unit (OU) but not in other OUs.</p>
+</div>
+</li>
+<li>
+<p>An LDAP user who matches multiple rules is assigned the roles that are mapped in all matching rules.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. <code>RoleMappings</code> field description</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Fields</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>and</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ALL patterns must match at least one group</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">roleMappings:
+  - and:
+      - "**migration**"
+      - "mta-**"
+    roles:
+       - migrator</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>MTA assigns the <code>Migrator</code> role to all users of the LDAP group <code>mta-migration-team</code> since the group matches both "migration" and "mta".</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">At least one pattern must match a group</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">roleMappings:
+  - any:
+      - "**-administrators"
+    roles:
+       - admin
+  - any:
+       - "**Architects**"
+    roles:
+       - architect</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>MTA assigns a role from either rule to the LDAP user. LDAP users who match both rules get two roles.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roles</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roles assigned when the LDAP member matches a rule</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Wildcard operators</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Wildcard</th>
+<th class="tableblock halign-left valign-top">Behavior</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches any characters within a segment. The match does not cross the comma (<code>,</code>) separator in common names.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>Administrator</strong></code> matches <code>Global-Administrator</code> or <code>AdministratorGroup</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches across multiple segments. The match crosses comma (<code>,</code>) separators.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=IT,**/Administrators</code> matches <code>CN=IT,OU=Security,CN=Administrators</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{a,b}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brace expansion matches either <code>a</code> or <code>b</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{<strong>-admins,</strong>-administrators}</code> matches either pattern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>?</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches exactly one character</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Administrator?</code> matches <code>Administrators</code> or <code>Administrator1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[abc]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches one character from the set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Administrator[123]</code> matches <code>Administrator1</code>, <code>Administrator2</code>, <code>Administrator3</code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Common wildcard patterns to match LDAP groups patterns</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Pattern</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Matched parameters</th>
+<th class="tableblock halign-left valign-top">Unmatched parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**Administrators**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains "Administrators" anywhere</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Global-Administrators,OU=Groups</code>, <code>Security-Administrators</code>, <code>CN=Administrators-IT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Administrator,OU=Users</code> as 's' is absent in the common name. <code>CN=ADMINISTRATORS</code> as the pattern does not match the uppercase in the common name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**-administrators</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ends with "-administrators"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>platform-administrators</code>, <code>security-administrators</code>, <code>CN=it-administrators,OU=Groups</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>administrator-users</code> as the common name does not end with "administrators". <code>Administrators-Group</code> as the role name starts with uppercase and does not occur at the end.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Developers,**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starts with "Developers"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Developers,OU=Groups,DC=example,DC=com</code>, <code>CN=Developers,DC=example</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Senior,OU=Developers</code>, <code>OU=Developers,CN=Team</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**Developer**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains "Developer"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Developers,OU=IT</code>, <code>Senior-Developer</code>, <code>Developer-Team</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CN=Develop,OU=Groups</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{**-administrators,**-administrator}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ends with <code>-administrators</code> or <code>-administrator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>platform-administrators</code>, <code>global-administrator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>administrator-group</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="openldap-active-directory-configurations_ldap-authentication">7.4. OpenLDAP and Active Directory configurations</h3>
+<div class="paragraph _abstract">
+<p>OpenLDAP and Active Directory (AD) implementations require different configurations for specific fields.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. OpenLDAP and Active Directory configurations</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Fields</th>
+<th class="tableblock halign-left valign-top">Active Directory</th>
+<th class="tableblock halign-left valign-top">OpenLDAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username attribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sAMAccountName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>uid</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Group objectClass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>group</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generic wildcard (<code>*</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>memberOf</code> support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usually present</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">May not be present</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userFilter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(sAMAccountName=${login})</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(uid=${uid})</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>groupFilter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(&amp;(objectClass=group)(member=${dn}))</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(&amp;(objectClass=*)(member=${uid}))</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="red-hat-build-of-keycloak_installing-mta-title">8. Red Hat build of Keycloak</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>When you upgrade to MTA 8.2.0, you can integrate a Red Hat build of Keycloak (RHBK) instance with the migration toolkit for applications (MTA) Hub OpenID Connect to authenticate users.</p>
+</div>
+<div class="sect2">
+<h3 id="keycloak-migration_red-hat-build-of-keycloak">8.1. Keycloak migration</h3>
+<div class="paragraph _abstract">
+<p>As a Migration toolkit for applications (MTA) administrator, you can federate user authentication to your Keycloak instance and reduce configuration complexity when you upgrade to MTA 8.2.0.</p>
+</div>
+<div class="paragraph">
+<p>When you upgrade to MTA 8.2.0, the MTA Operator finds the Red Hat build of Keycloak (RHBK) in the MTA namespace if you deployed Keycloak in earlier versions.</p>
+</div>
+<div class="paragraph">
+<p>If RHBK is available, the MTA Operator installs a Keycloak Operator and deploys an <code>IdentityProvider</code> custom resource (CR) for your Keycloak instance.</p>
+</div>
+<div class="paragraph">
+<p>In this case, the Keycloak Operator manages the RHBK instance and configures a dedicated realm with necessary roles and permissions. You can configure Keycloak as the primary authentication method in the MTA Tackle CR for an automatic redirect to your instance for user authentication. If you do not configure Keycloak as the primary authentication method, you can click the <strong>Sign-in with Keycloak</strong> option on the Hub login page to redirect authentication.</p>
+</div>
+<div class="paragraph">
+<p>If you did not deploy an RHBK instance in the MTA namespace  before the upgrade, or if you install MTA for the first time, the MTA Operator does not deploy the Keycloak Operator, PostgreSQL database, and other RHBK resources. You no longer need to provision <code>1 GiB</code> for the Keycloak database volume in the MTA namespace.</p>
+</div>
+<div class="paragraph">
+<p>In such cases, you can configure a Keycloak instance separately and integrate it as an identity provider (IdP) for user authentication in MTA. The Hub OpenID Connect (OIDC) provider federates user authentication to the Keycloak provider.</p>
+</div>
+<div class="paragraph">
+<p>You can configure Keycloak as the OIDC provider by using the <code>IdentityProvider</code> CR and continue to manage users and roles in Keycloak.</p>
+</div>
+<div class="paragraph">
+<p>To configure the existing Keycloak instance as an IdP for user authentication, complete the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure the IdP by using the <code>IdentityProvider</code> CR.</p>
+</li>
+<li>
+<p>Configure the Keycloak instance uniform resource identifier (URI) as the OIDC issuer in the CR.</p>
+</li>
+<li>
+<p>Configure the Hub URL with the callback endpoint as the redirect URI.</p>
+</li>
+<li>
+<p>Deploy the CR in the same namespace where you installed the MTA application in your cluster.</p>
+<div class="paragraph">
+<p>The MTA Operator reconfigures the Hub to federate OIDC to your existing Keycloak instance.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scope-rhbk_red-hat-build-of-keycloak">8.2. Dynamic scope expansion in RHBK</h3>
+<div class="paragraph _abstract">
+<p>You can create roles that the migration toolkit for applications (MTA) Hub OpenID Connect (OIDC) provider supports in your RHBK instance. The Hub dynamically expands the RHBK roles to apply necessary permissions for the role.</p>
+</div>
+<div class="paragraph">
+<p>You can define the following roles in RHBK:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>+role.admin</code></p>
+</li>
+<li>
+<p><code>+role.architect</code></p>
+</li>
+<li>
+<p><code>+role.migrator</code></p>
+</li>
+<li>
+<p><code>+role.project-manager</code></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="manual-scope-management">8.2.1. Manual scope management</h4>
+<div class="paragraph">
+<p>Although dynamic scope expansion is the preferred method to assign scopes, you can manually manage individual migration toolkit for applications (MTA) scopes in Red Hat build of Keycloak (RHBK) and assign the them to roles. During authorization, MTA grants the necessary permissions to the Keycloak user.</p>
+</div>
+<div class="paragraph">
+<p>For example, Keycloak administrators can perform create, read, update, and delete tasks for users, tokens, and roles in MTA only if the administrator role has the following scopes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>users:get</p>
+</li>
+<li>
+<p>users:post</p>
+</li>
+<li>
+<p>users:put</p>
+</li>
+<li>
+<p>users:delete</p>
+</li>
+<li>
+<p>roles:get</p>
+</li>
+<li>
+<p>roles:post</p>
+</li>
+<li>
+<p>roles:put</p>
+</li>
+<li>
+<p>roles:delete</p>
+</li>
+<li>
+<p>tokens:get</p>
+</li>
+<li>
+<p>tokens:post</p>
+</li>
+<li>
+<p>tokens:delete</p>
+</li>
+<li>
+<p>scopes:get</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can assign the following scopes to non-administrator user roles in Keycloak:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>users:get</p>
+</li>
+<li>
+<p>users:put</p>
+</li>
+<li>
+<p>users:delete</p>
+</li>
+<li>
+<p>roles:get</p>
+</li>
+<li>
+<p>tokens:get</p>
+</li>
+<li>
+<p>tokens:post</p>
+</li>
+<li>
+<p>tokens:delete</p>
+</li>
+<li>
+<p>scopes:get</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the access token request specifies specific scopes, the MTA Hub additionally assigns permissions based on the scope reference.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accessing-rhbk-admin-console_red-hat-build-of-keycloak">8.3. Accessing the RHBK Admin Console</h3>
+<div class="paragraph _abstract">
+<p>To perform advanced configurations on an RHBK instance, you must log in to the RHBK Admin Console.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Retrieve your admin credentials:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc get secret mta-keycloak-rhbk -n openshift-mta -o json| jq -r '.data.password | @base64d'</strong></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The admin credentials for RHBK are stored in the <code>mta-keycloak-rhbk</code> secret file in the namespace where you installed MTA.</p>
+</div>
+</li>
+<li>
+<p>Enter the following URL in your browser:</p>
+<div class="listingblock">
+<div class="content">
+<pre>https://<em>&lt;web_console_address&gt;</em>/auth/admin</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Access the RHBK Admin Console by entering your credentials.</p>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0">Red Hat build of Keycloak</a></p>
+</li>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/user-storage-federation#ldap">Configuring LDAP and Active Directory in RHBK</a></p>
+</li>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/red_hat_build_of_keycloak/26.0/html/server_administration_guide/red_hat_build_of_keycloak_features_and_concepts">Red Hat build of Keycloak features and concepts</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="roles-personas-users-permissions_red-hat-build-of-keycloak">8.4. Roles, personas, users, and permissions</h3>
+<div class="paragraph _abstract">
+<p>The migration toolkit for applications (MTA) uses three roles, each corresponding to a persona. The roles are predefined in your Red Hat build of Keycloak (RHBK) instance. If you are an MTA Administrator, you can create users in your RHBK instance and assign each user one or more roles, one role per persona.</p>
+</div>
+<div class="paragraph">
+<p>A user can have more than one role. Each role must correspond to a specific persona:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>admin</code> role corresponds to the administrator persona. Administrators have all the permissions of architects and migrators. They can also create application-wide configuration parameters that other users can consume but cannot change or view, such as Git credentials or Maven <code>settings.xml</code> files.</p>
+</li>
+<li>
+<p>The <code>architect</code> role corresponds to the architect persona. An architect is a technical lead for the migration project. They can run assessments, create and modify applications and related information. They cannot modify or delete sensitive information, but can view it. For example, they can associate an existing set of credentials with a specific application repository.</p>
+</li>
+<li>
+<p>The <code>migrator</code> role corresponds to the migrator persona. A migrator can analyze applications but cannot create, modify, or delete them.</p>
+</li>
+<li>
+<p>The <code>project-manager</code> role corresponds to the project manager persona. Project managers can create, read, update, and delete migration waves. They can also create Red Hat Developer Lightspeed for migration toolkit for applications resources and adoption plans, and update business stakeholders included in a project. They have read-only access to other MTA resources.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MTA has two views, <strong>Administration</strong>, and <strong>Migration</strong>. Only an Administrator can access the <strong>Administration</strong> view. Administrators can perform all actions in the <strong>Migration</strong> view. Architects and migrators can see all elements in the <strong>Migration</strong> view but their ability to perform actions in the view depends on their role permissions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="identity-provider-authentication_installing-mta-title">9. Identity provider authentication</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>As an administrator, you can simplify security and regulatory compliance by implementing the migration toolkit for applications (MTA) Hub as an OpenID Connect (OIDC) broker to federate user authentication to an identity provider (IdP).</p>
+</div>
+<div class="paragraph">
+<p>You can integrate the following IdPs and managing roles:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Keycloak</p>
+</li>
+<li>
+<p>Microsoft Entra ID (formerly, Azure Active Directory)</p>
+</li>
+<li>
+<p>Google</p>
+</li>
+<li>
+<p>Okta</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="create-secret-idp-client_identity-provider-authentication">9.1. Create a secret for the IdP client</h3>
+<div class="paragraph _abstract">
+<p>If you configured a secret in the Identity Provider (IdP) client configuration, enable the migration toolkit for applications (MTA) Hub to use the secret to connect to the Identity Provider (IdP) client.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed MTA 8.2.0 in an OpenShift cluster.</p>
+</li>
+<li>
+<p>You have <code>admin</code> access to the cluster.</p>
+</li>
+<li>
+<p>You configured a secret in the IdP configuration for a secure connection.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create a secret such as <code><em>&lt;idp-client-secret&gt;.yaml</em></code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: idp-client-secret
+  namespace: &lt;mta-namespace&gt;
+type: Opaque
+stringData:
+  clientSecret: "&lt;secret&gt;"</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;mta-namespace&gt;</code>:: The namespace where you deployed MTA.</p>
+</li>
+<li>
+<p><code>&lt;secret&gt;</code>:: The secret that you configured in the identity provider configuration.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Apply the <code><em>&lt;idp-client-secret&gt;.yaml</em></code> file in the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f <code><em>&lt;idp-client-secret&gt;.yaml</em></code></strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the Hub to load the secret:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc rollout restart deployment/tackle-hub -n openshift-mta</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configure-identity-provider-cr_identity-provider-authentication">9.2. Configure an identity provider custom resource</h3>
+<div class="paragraph _abstract">
+<p>To enable the migration toolkit for applications (MTA) Hub OpenID Connect (OIDC) provider to integrate with an identity provider (IdP), create an <code>IdentityProvider</code> custom resource (CR).</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have installed the MTA 8.2.0 application in a Red&#160;Hat OpenShift cluster.</p>
+</li>
+<li>
+<p>You have <code>admin</code> access to the cluster.</p>
+</li>
+<li>
+<p>Optionally, you have created a secret for the IdP.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create an <code><em>&lt;my-idp&gt;.yaml</em></code> custom resource:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: tackle.konveyor.io/v1alpha1
+kind: IdentityProvider
+metadata:
+  name: corporate-sso
+  namespace: openshift-mta
+spec:
+  name: "Corporate SSO"
+  issuer: "https://idp.example.com/realms/tackle"
+  clientId: "my-client-id"
+  clientSecret:
+    name: idp-client-secret
+    namespace: openshift-mta
+  redirectURI: "https://hub.example.com/oidc/idp/callback"
+  primary: true
+  scopes:
+    - openid
+    - profile
+    - email</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code>:: Specifies the display name for the IdP button in the UI.</p>
+</li>
+<li>
+<p><code>issuer</code>:: Specifies the IdP issuer URL for OIDC discovery. You can use template variables in the issuer field. For example,
+<code>"${issuer.proto}://${issuer.host}/auth/realms/tackle"</code>.</p>
+</li>
+<li>
+<p><code>clientId</code>:: Specifies the OAuth client ID that is registered with the IdP.</p>
+</li>
+<li>
+<p><code>clientSecret</code>:: Specifies an optional Kubernetes secret for the MTA Hub to securely connect to the IdP. Omit this configuration if you did not create a secret for the IdP.</p>
+</li>
+<li>
+<p><code>redirectURI</code>:: Specifies the callback uniform resource identifier (URI) to the MTA Hub after the IdP authentication completes. You must add the <code>/oidc/idp/callback</code> path to the Hub URI. You can use template variables in the redirect URI field. For example, <code>"${issuer.proto}://${issuer.host}/oidc/idp/callback"</code>.</p>
+</li>
+<li>
+<p><code>primary</code>:: Specifies whether the IdP is the primary authentication method. When <code>true</code>, the Hub redirects users automatically to this IdP for authentication. If you configured the <code>idp_primary</code> field in the Tackle CR, the MTA Hub resolves the configuration for this field from the Tackle CR value.</p>
+</li>
+<li>
+<p><code>scopes</code>:: Specifies the OAuth scopes that are used by an OpenID Connect client to request the access privileges for the access token.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Apply the <code>`<em>&lt;my-idp&gt;.yaml</em></code> file in the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f <code><em>&lt;my-idp&gt;.yaml</em></code></strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the Hub to load the configuration:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc rollout restart deployment/tackle-hub -n openshift-mta</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#enable-authentication-cr_hub-oidc-authentication">Enable authentication in Tackle custom resource</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="managing-access-tokens-api-keys_installing-mta-title">10. Token management</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>As an administrator, you can manage access tokens and application programming interface (API) keys in the Migration toolkit for applications (MTA) web console. To enhance security for task-authentication, the MTA Hub generates task personal access tokens with task-scoped permissions.</p>
+</div>
+<div class="sect2">
+<h3 id="generate-api-key-web-console_managing-access-tokens-api-keys">10.1. Generate API key from the web console</h3>
+<div class="paragraph _abstract">
+<p>As an administrator, you can generate application programming interface (API) keys in the Migration toolkit for applications (MTA) web console. An API key inherits permissions from the authenticated user&#8217;s roles.</p>
+</div>
+<div class="paragraph">
+<p>The API key has a maximum lifespan limit of 10 years. You can optionally configure the lifespan period when you create a token.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed MTA 8.2.0 in a Red&#160;Hat OpenShift cluster.</p>
+</li>
+<li>
+<p>You are an MTA Administrator.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the MTA application.</p>
+</li>
+<li>
+<p>In the <strong>Administration</strong> mode, go to <strong>User Management</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Tokens</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create API Key</strong>.</p>
+</li>
+<li>
+<p>Optional: Enter the lifespan of the token.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>Copy the displayed token.</p>
+<div class="paragraph">
+<p>You can use the API key for the Red Hat Developer Lightspeed for migration toolkit for applications agent.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="revoke-api-key-admin_managing-access-tokens-api-keys">10.2. Revoke API keys as an administrator</h3>
+<div class="paragraph _abstract">
+<p>As an administrator, you can revoke an application programming interface (API) key before its lifespan period in the migration toolkit for application (MTA) web console.</p>
+</div>
+<div class="paragraph">
+<div class="title">Prerequisites</div>
+<p>You installed MTA 8.2.0 in a Red&#160;Hat OpenShift cluster.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the MTA web console.</p>
+</li>
+<li>
+<p>In the <strong>Administration</strong> mode, click <strong>User Management</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Tokens</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Tokens</strong> page, click the options icon.</p>
+</li>
+<li>
+<p>Click <strong>Revoke</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="revoke-api-key-migrator_managing-access-tokens-api-keys">10.3. Revoke API keys as a migrator</h3>
+<div class="paragraph _abstract">
+<p>As a migrator, you can revoke an application programming interface (API) key before its lifespan period in Migration toolkit for applications (MTA) web console.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have installed MTA 8.2.0 in a Red&#160;Hat OpenShift cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the MTA web console.</p>
+</li>
+<li>
+<p>In the <strong>Migration</strong> mode, in the upper-right corner, click your username.</p>
+</li>
+<li>
+<p>Click <strong>Tokens</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Tokens</strong> page, click the options icon.</p>
+</li>
+<li>
+<p>Click <strong>Revoke</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="authentication-fields-tackle-cr_installing-mta-title">11. Authentication fields in the Tackle CR</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>As an administrator, you can configure the authentication fields in the Tackle custom resource (CR) to include permission and role changes in new tokens, apply stateless validation, and control staleness for sessions and tokens.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>JSON Web Token</code>:: The MTA Hub generates JWTs as short-lived access tokens for API authentication. When the Hub issues a JWT token, it signs the token by using the Rivest-Shamir-Adleman (RSA) algorithm. The Hub also supports signing JWTs with the Hash-based Message Authentication Code (HMAC) algorithm for backward compatibility.</p>
+<div class="paragraph">
+<p>The JWT payload does not expose personally identifiable information (PII), such as a username or a password. The default lifespan is 5 minutes but you can configure a custom lifespan by using the <code>hub_oidc_token_lifespan</code> field. If you update a user&#8217;s roles or permissions, the changes do not apply to their current active token. The new permissions take effect only after the current token expires and the Hub issues a new one, such as during a token refresh.</p>
+</div>
+</li>
+<li>
+<p><code>Refresh tokens</code>:: After the current token expires, clients use the long-lived refresh tokens to request a new access token to refresh the session. The refresh token workflow does not require the user to reauthenticate manually.</p>
+<div class="paragraph">
+<p>When a session for the Lightweight Directory Access Protocol (LDAP) or an identity provider (IdP) client expires, the refresh token workflow checks for changes in user permission scopes to include them when the MTA Hub issues a new token.</p>
+</div>
+<div class="paragraph">
+<p>The default token lifespan is 172800 seconds (2 days). You can configure a custom lifespan by using the <code>hub_oidc_refresh_token_lifespan</code> field.</p>
+</div>
+</li>
+<li>
+<p><code>API keys</code>:: The default maximum token lifespan is 10 years. You can configure the maximum permissible lifespan by using the <code>hub_apikey_lifespan</code> field.</p>
+<div class="paragraph">
+<p>To provide security against a cache miss or a direct database modification, a safety-net cache refresh ensures that the worst-case staleness for an API key is 5 minutes. You can configure the <code>hub_auth_cache_lifespan</code> field for the safety-net cache refresh period.</p>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Authentication fields</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 50.0002%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>feature_auth_required</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enable the flag to enforce authentication for the web console and the Hub API. To allow insecure access, set this flag to false.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_auth_cache_lifespan</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer (minutes)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the cache refresh interval in minutes. The Hub periodically refreshes every cache lifespan interval as a secondary mechanism to control staleness for Basic authentication and personal access tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_ldap_auth_lifespan</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer (minutes)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies LDAP identity cache duration to control LDAP query frequency.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_oidc_token_lifespan</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer (seconds)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the OAuth access token lifespan in seconds. By default, the lifespan is 5 minutes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_oidc_refresh_token_lifespan</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer (seconds)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">172800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the OAuth refresh token lifespan in seconds. By default, the refresh token lifespan is 2 days.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_oidc_key_rotation</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer (days)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify key rotation interval in days.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_apikey_lifespan</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer (hours)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">87600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API key lifespan in hours. By default, the lifespan period is 10 years.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>idp_primary</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, the field has the value <code>true</code> to mark an auto-discovered Identity Provider as the primary authentication method. MTA automatically redirects users to the IdP for authentication.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="uri-templating-wildcard-patterns_installing-mta-title">12. URI templating and wildcard patterns</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To enable portable configuration, the Hub OpenID Connect (OIDC) provider resolves template variables and wildcard patterns with the expected OIDC issuer in the client configuration at runtime.</p>
+</div>
+<div class="sect2">
+<h3 id="uri-template-variables_uri-templating-wildcard-patterns">12.1. URI template variables</h3>
+<div class="paragraph _abstract">
+<p>The migration toolkit for applications (MTA) Hub OpenID Connect (OIDC) provider dynamically resolves the uniform resource identifier (URI) in deployment environments such as local development (<code>localhost</code>), Red&#160;Hat OpenShift custom routes, and custom domains.</p>
+</div>
+<div class="paragraph">
+<p>To prevent entering hard-coded redirect URIs for an MTA client deployed in different environments, you can use template variables. In the authorization workflow, the Hub OIDC provider substitutes the template variables at runtime with values from the incoming HTTP request sent by the OIDC Issuer.</p>
+</div>
+<div class="paragraph">
+<p>You can use the following template variables in the URIs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>${issuer}</code>: Replaced with the complete issuer URL.</p>
+</li>
+<li>
+<p><code>${issuer.host}</code>: Replaced with host and the port.</p>
+</li>
+<li>
+<p><code>${issuer.port}</code>: Replaces only the port.</p>
+</li>
+<li>
+<p><code>${issuer.path}</code>: Replaces only the path.</p>
+</li>
+<li>
+<p><code>${issuer.proto}</code>: Replaces with the issuer scheme.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"${issuer}/callback"</code> becomes <code><a href="https://hub.example.com:8080/oidc/callback" class="bare">https://hub.example.com:8080/oidc/callback</a></code></p>
+</li>
+<li>
+<p><code>"http://${issuer.host}/auth"</code> becomes <code><a href="http://hub.example.com:8080/auth" class="bare">http://hub.example.com:8080/auth</a></code></p>
+</li>
+<li>
+<p><code>"http://localhost:${issuer.port}/done"</code> becomes <code><a href="http://localhost:8080/done" class="bare">http://localhost:8080/done</a></code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uri-wildcard-patterns_uri-templating-wildcard-patterns">12.2. URI wildcard patterns</h3>
+<div class="paragraph _abstract">
+<p>After template variable substitution, the Hub OpenID Connect (OIDC) provider matches the wildcard patterns in the uniform resource identifier (URI) configuration against the requested URI. The provider uses the <code>/</code> character as a path separator to match the URI segment by segment.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 10. Wildcard pattern behavior</caption>
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Wildcard</th>
+<th class="tableblock halign-left valign-top">Behavior</th>
+<th class="tableblock halign-left valign-top">Example Pattern</th>
+<th class="tableblock halign-left valign-top">Matched URI</th>
+<th class="tableblock halign-left valign-top">Unmatched URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches any characters except <code>/</code> within one path segment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://*/callback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://app.example.com/callback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://app.example.com/auth/callback</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches zero or more complete path segments. For example, matches across segments separated by <code>/</code> in URI.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://**/callback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://app.example.com/auth/v1/callback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://different.com/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{a,b}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brace expansion - matches either <code>a</code> or <code>b</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://host{,<strong>}/</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches URIs with or without port and with or without path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="https://*.example.com/**" class="bare">https://*.example.com/**</a></code> to match a specific domain, any subdomain, and any path.</p>
+</li>
+<li>
+<p><code>http://localhost:*/**</code> to match localhost, any port, and any path.</p>
+</li>
+<li>
+<p><code>${issuer.proto}://${issuer.host}{,<strong>}/</strong>*</code> to match the same scheme and host as the OIDC issuer, any port, and any path. You can use this pattern for the MTA web console.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributing-to-mta-development">Appendix A: How to contribute to the MTA project</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can help the migration toolkit for applications (MTA) to cover most application builds and server configurations, including yours.</p>
+</div>
+<div class="paragraph">
+<p>You can help with any of the following items:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Send an email to <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a> and let us know what MTA migration rules must cover.</p>
+</li>
+<li>
+<p>Provide example applications to test migration rules.</p>
+</li>
+<li>
+<p>Identify application components and problem areas that might be difficult to migrate:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Write a short description of the problem migration areas.</p>
+</li>
+<li>
+<p>Write a brief overview describing how to solve the problem in migration areas.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Try migration toolkit for applications on your application. Report any issues you encounter. MTA uses Jira as its issue tracking system. If you encounter an issue when using MTA, submit a <a href="https://issues.redhat.com/projects/MTA">Jira issue</a>.</p>
+</li>
+<li>
+<p>Contribute to the migration toolkit for applications rules repository:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Write a migration toolkit for applications rule to identify or automate a migration process.</p>
+</li>
+<li>
+<p>Create a test for the new rule.</p>
+<div class="paragraph">
+<p>For more information, see <a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single/configuring_and_using_rules_for_an_mta_analysis/index">Configuring and using rules for an MTA analysis</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Contribute to the project source code:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a core rule.</p>
+</li>
+<li>
+<p>Improve MTA performance or efficiency.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Any level of involvement is greatly appreciated!</p>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://developer.jboss.org/en/windup">MTA forums</a></p>
+</li>
+<li>
+<p><a href="https://issues.redhat.com/projects/MTA/issues/MTA-4961?filter=allopenissues">Jira issues tracker</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Although MTA does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Requires JBoss EAP expansion pack 2 (JBoss EAP XP 2).
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

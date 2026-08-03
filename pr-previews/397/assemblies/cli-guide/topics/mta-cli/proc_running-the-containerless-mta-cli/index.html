@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/397/assemblies/cli-guide/topics/mta-cli/proc_running-the-containerless-mta-cli/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/397/assemblies/cli-guide/topics/mta-cli/proc_running-the-containerless-mta-cli/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/397/assemblies/cli-guide/topics/mta-cli/proc_running-the-containerless-mta-cli/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7c1dedde077038e49aab4389f4a3810f49931ded">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="running-the-containerless-mta-cli_{context}">Analyzing an application in containerless mode</h1>
+<div class="paragraph _abstract">
+<p>To analyze applications in environments where a container engine is not available or needed, you can run the {ProductFullName} command-line interface (CLI) in containerless mode. This way, you can run assessments directly on your local machine by using the provided shell script, bypassing the need for Podman or Docker.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Containerless CLI is the default mode. To enable container runtime usage for the analysis of Java applications, you must set the <code>--run-local</code> flag to <code>false</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>--run-local=false</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The analysis for other applications runs in the container mode automatically.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed the {ProductShortName} CLI.</p>
+</li>
+<li>
+<p>You installed Java Development Kit (JDK) version 17 or later.</p>
+</li>
+<li>
+<p>If you use OpenJDK on Red Hat Enterprise Linux (RHEL) or Fedora, you installed the Java <code>devel</code> package.</p>
+</li>
+<li>
+<p>You installed Maven version 3.9.9 or later.</p>
+</li>
+<li>
+<p>The CLI assumes that a path to the <code>mvn</code> binary is correctly registered in the system variable. Therefore, ensure that you added <code>mvn</code> to the following variable:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Path</code> for Windows.</p>
+</li>
+<li>
+<p><code>PATH</code> for Linux and macOS.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You set the <code>JAVA_HOME</code> environment variable.</p>
+</li>
+<li>
+<p>You set the <code>JVM_MAX_MEM</code> system variable.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you do not set <code>JVM_MAX_MEM</code>, the analysis might hang because Java might require more memory than the default <code>JVM_MAX_MEM</code> value.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>For Gradle analysis, you completed the following steps:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You installed OpenJDK version 8.</p>
+</li>
+<li>
+<p>You set <code>$JAVA8_HOME</code> and it is pointing to the OpenJDK 8 home directory.</p>
+</li>
+<li>
+<p>Your project has a Gradle Wrapper.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Optional: Display all <code>mta-cli analyze</code> command options:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli analyze --help</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the application analysis:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli analyze --overwrite --input <em>&lt;path_to_input&gt;</em>  --output <em>&lt;path_to_output&gt;</em> --target <em>&lt;target_source&gt;</em></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The <code>--overwrite</code> option overwrites the output folder if it exists.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli">Installing the CLI by using a .zip file</a></p>
+</li>
+<li>
+<p><a href="#mta-cli-analyze-flags_analyzing-applications-mta-cli">The mta-cli analyze command options</a></p>
+</li>
+<li>
+<p><a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Gradle Wrapper</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<title>Developer Lightspeed Guide</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>Using Red Hat Developer Lightspeed for migration toolkit for applications to modernize your applications</subtitle>
+<abstract>
+    <para>To modernize applications in your organization, apply Large Language Model (LLM) driven code changes by using Red{nbsp}Hat Developer Lightspeed for migration toolkit for applications (MTA). Automate code fixes, and review and apply the suggested code changes with minimum manual effort.</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />

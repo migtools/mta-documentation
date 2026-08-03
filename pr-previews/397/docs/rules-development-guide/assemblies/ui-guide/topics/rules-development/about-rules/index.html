@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/397/docs/rules-development-guide/assemblies/ui-guide/topics/rules-development/about-rules/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/397/docs/rules-development-guide/assemblies/ui-guide/topics/rules-development/about-rules/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/397/docs/rules-development-guide/assemblies/ui-guide/topics/rules-development/about-rules/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7c1dedde077038e49aab4389f4a3810f49931ded">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="about-rules_{context}">The {ProductShortName} rules</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>{ProductFirstRef} analyzes the application source code to find issues based on user-generated and default rule definitions. You can fix issues in an analysis report before migrating the code to a target platform. You can view the rule syntax information to create a new rule or a ruleset.</p>
+</div>
+<div class="paragraph">
+<p>A ruleset is a collection of one or more rules. An Architect can create rulesets to organize one or more rules that analyze the source code for a specific target platform.</p>
+</div>
+<div class="paragraph">
+<p>You can use rules or rulesets as input arguments in an analysis. You can perform a rule-based analysis in the {ProductShortName} CLI, user interface, or by using one of the IDE plugins for {ProductShortName} (Visual Studio Code or IntelliJ).</p>
+</div>
+<div class="paragraph">
+<p>{mta-dl-plugin} uses rules to generate AI-assisted code resolutions. {mta-dl-plugin} uses the issue description and metadata in rules to form well-defined contexts. These contexts generate AI-assisted suggestions to resolve issues in the code that {ProductShortName} identified through an analysis.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-productshortname-performs-an-analysis">How {ProductShortName} performs an analysis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductFirstRef} contains the analyzer that uses pluggable providers and rules to analyze static code, dependencies, and other files in your application.</p>
+</div>
+<div class="paragraph">
+<p>The analyzer works with providers to detect issues that cause problems when you migrate the application to target technologies. The rule definition contains metadata description and condition patterns that describe a violation.</p>
+</div>
+<div class="paragraph">
+<p>The analyzer runs a search query on the source code to match the violation described in the rule definition. The rule definition also contains a message that {ProductShortName} displays when triggering an issue because of the violation. The analyzer uses default and user-provided (custom) rules during an analysis to identify issues.</p>
+</div>
+<div class="paragraph">
+<p>For instructions on how to write custom rules, see [<em>Rules Development Guide</em>].</p>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/configuring_and_using_red_hat_developer_lightspeed_for_mta/index">Configuring and using Red Hat Developer Lightspeed for MTA</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
