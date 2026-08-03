@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/397/assemblies/cli-guide/assembly_generating-assets/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/397/assemblies/cli-guide/assembly_generating-assets/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/397/assemblies/cli-guide/assembly_generating-assets/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=9e8157805548236847bf330da629496aa10455ec">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="generating-assets">Generating platform assets for application deployment</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To enable offline review and simplify the distribution of assessment results, you can generate static assets by using the {ProductFullName} command-line interface. This process produces standalone reports and data files, allowing you to share migration insights with stakeholders without requiring access to the analysis environment.</p>
+</div>
+<div class="paragraph">
+<p>You can use the <code>discover</code> and <code>generate</code> commands in containerless mode to automatically generate the manifests needed to deploy a Cloud Foundry (CF) application in the {ocp-short}:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use the <code>discover</code> command to generate the discovery manifest in the YAML format directly from a CF instance or from either of the following manifest files:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A single application manifest</p>
+</li>
+<li>
+<p>A CF manifest</p>
+</li>
+<li>
+<p>A path to the directory with multiple manifest files, for example, with application manifests, CF manifests, or both of these manifest types.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The discovery manifest preserves the specifications found in the CF manifest. The specifications define the metadata, runtime, and platform configurations.</p>
+</div>
+</li>
+<li>
+<p>Use the <code>generate</code> command to generate the deployment manifest for {ocp} deployments. You can use this command to generate the Kubernetes and non-Kubernetes manifests.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Generating platform assets for application deployment is Developer Preview software only. Developer Preview software is not supported by Red&#160;Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview software for production or business-critical workloads. Developer Preview software provides early access to upcoming product software in advance of its possible inclusion in a Red&#160;Hat product offering. Customers can use this software to test functionality and provide feedback during the development process. This software might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red&#160;Hat might provide ways to submit feedback on Developer Preview software without an associated SLA.</p>
+</div>
+<div class="paragraph">
+<p>For more information about the support scope of Red&#160;Hat Developer Preview software, see <a href="https://access.redhat.com/support/offerings/devpreview/">Developer Preview Support Scope</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Generating deployment assets has the following benefits:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Generating the Kubernetes and non-Kubernetes deployment manifests.</p>
+</li>
+<li>
+<p>Generating deployment manifests by using familiar template engines, for example, Helm, that are widely used for Kubernetes deployments.</p>
+</li>
+<li>
+<p>Adhering to Kubernetes best practices when preparing the deployment manifest by using Helm templates.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-discovery-manifest_generating-assets">Generating a discovery manifest</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To validate your application inventory before performing a full analysis, you can generate a discovery manifest by using the {ProductFullName} command-line interface (CLI). The discovery process creates a list of applications found within a specified path, allowing you to verify the scope of your assessment.</p>
+</div>
+<div class="paragraph">
+<p>You can generate the discovery manifest for the Cloud Foundry (CF) application by using the <code>discover</code> command. The discovery manifest preserves configurations, such as application properties, resource allocations, environment variables, and service bindings found in the CF manifest.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have Cloud Foundry (v3) as a source platform.</p>
+</li>
+<li>
+<p>You installed the {ProductShortName} {CLIName} version 7.3.0 or later.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open the terminal application and navigate to the <code>&lt;{ProductShortName}_HOME&gt;/</code> directory.</p>
+</li>
+<li>
+<p>List the supported platforms for the discovery process:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli discover --list-platforms</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate the discovery manifest:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli discover cloud-foundry --input <em>&lt;path_to_input&gt;</em> --output-dir <em>&lt;path_to_output-directory&gt;</em></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#discover-generate-command-options_generating-assets">The discover and generate command options</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="discovery-manifest-sample_generating-assets">Example discovery manifest</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can use the following discovery manifest template as a reference to make sure that the discovery manifest generated by {ProductShortName} has all the necessary fields.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must configure the <code>buildPacks</code> in the Cloud Foundry application manifest to include the <code>buildPacks</code> in the discovery and deployment assets.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">manifest:
+    appName: my-app
+    database:
+        enabled: true
+        host: postgres.example.com
+    labels:
+        sensitive: "true"
+    annotations:
+        contact: bob@example.com jane@example.com
+    env:
+        RACK_ENV: production
+        RAILS_ENV: production
+    routes:
+        - route: example.com
+          protocol: http2
+    processes:
+        - type: web
+          disk: 1024M
+          memory: 512M
+          healthCheck:
+            invocationTimeout: 1
+            interval: 30
+            type: port
+            timeout: 80
+          readinessCheck:
+            type: process
+          instances: 1
+          lifecycle: cnb
+    stack: cflinuxfs4
+    buildPacks:
+        - docker://my-registry-a.corp/nodejs
+        - docker://my-registry-b.corp/dynatrace</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="performing-a-live-discovery_generating-assets">Performing a live discovery in a remote CF instance</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can perform a live discovery to determine what is deployed in a certain Cloud Foundry (CF) cluster by using the {ProductFullName} command-line interface (CLI). For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.</p>
+</div>
+<div class="paragraph">
+<p>While discovering the applications in CF, you can filter and list the applications in CF clusters before you import them in {ProductShortName}. Enter a list of comma-separated values by using the <code>--orgs</code> and <code>--spaces</code> flags. Use these flags with <code>--list-apps</code> to list the applications.</p>
+</div>
+<div class="paragraph">
+<p>When you use the <code>--orgs</code> and <code>--spaces</code> flags with the <code>discover</code> command but without the <code>--list-apps</code> flag, {ProductShortName} discovers the applications but does not list them.</p>
+</div>
+<div class="paragraph">
+<p>{ProductShortName} discovers the applications in the following scenarios:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Organization without spaces: if you use only the <code>--orgs</code> flag, {ProductShortName} discovers all applications deployed in all spaces in the organizations that you entered. You can specify one or more organizations as comma-separated values.</p>
+</li>
+<li>
+<p>Spaces common across organizations: you can specify one or more space names available in multiple organizations to filter applications deployed in the spaces.</p>
+</li>
+<li>
+<p>A specific application: You can discover a specific application deployed in a specific space in a particular organization.</p>
+</li>
+<li>
+<p>Applications across spaces in an organization: You can explore applications that have the same name but deployed in different spaces by specifying the organization and the application name while leaving out the <code>--spaces</code> option.</p>
+</li>
+<li>
+<p>Save manifests: Use the <code>--out-dir</code> flag to specify the location to which {ProductShortName} saves manifests of the discovered application.</p>
+</li>
+<li>
+<p>Invalid entries: If you enter an invalid space name or an organization that does not exist, {ProductShortName} stores a log about skipping the space or the organization and continues to discover applications in other valid spaces and organizations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can run the live discovery for a remote CF instance by using the `mta-cli discover cloud-foundry --use-live-connection --orgs=<em>&lt;org_name&gt;</em> --spaces=<em>&lt;space_name&gt;</em> --app-name=<em>&lt;application_name&gt;</em> ` command.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+You must enter at least one Cloud Foundry organization by using the <code>--orgs</code> option to perform live discovery.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have permission to remotely connect to the CF instance.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Optional: Investigate the contents of the remote CF instance</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ cf spaces</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ cf apps</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy the CF configuration file to the directory of your choice:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mkdir <em>&lt;path_to_the_directory&gt;</em>/.cf</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the live discovery in a remote CF instance:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli discover cloud-foundry --use-live-connection --orgs=<em>&lt;org_name&gt;</em> --spaces=<em>&lt;space_name&gt;</em>  --output-dir <em>&lt;path_to_output_directory&gt;</em> --cf-config=<em>&lt;path_to_CF_config_file&gt;</em></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command runs the discovery for all applications from each space in the specified organization.</p>
+</div>
+<div class="paragraph">
+<p>If you want to run the discovery for a specific application, enter, for example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli discover cloud-foundry --use-live-connection --orgs=<em>&lt;org_name&gt;</em>  --spaces=<em>&lt;space_name&gt;</em> --app-name=<em>&lt;application_name&gt;</em> --output-dir <em>&lt;path_to_output_directory&gt;</em> --cf-config=<em>&lt;path_to_CF_config_file&gt;</em></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="concealing-sensitive-information_generating-assets">Concealing sensitive information in a discovery manifest</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To prevent the exposure of confidential data, such as services and docker credentials, configure the {ProductFullName} command-line interface (CLI) to conceal sensitive details in a Cloud Foundry (CF) discovery manifest. This way, you can safely share the results with stakeholders while maintaining security compliance.</p>
+</div>
+<div class="paragraph">
+<p>You can conceal sensitive information by using the <code>mta-cli discover cloud-foundry --conceal-sensitive-data</code> command. This command generates the following files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A discovery manifest</p>
+</li>
+<li>
+<p>A file with concealed data</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you do not specify the <code>--conceal-sensitive-data</code> option, the option is automatically set to <code>false</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Display the contents of the CF manifest and locate sensitive data:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>cat <em>&lt;manifest_name&gt;</em>.yaml</strong></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>name: <em>&lt;manifest_name&gt;</em>
+disk_quota: 512M
+memory: 500M
+timeout: 10
+docker:
+ image:myregistry/myapp:latest
+ username: <strong>docker-registry-user</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate the discovery manifest for the CF application as an output file and conceal sensitive data:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>mta-cli discover cloud-foundry --conceal-sensitive-data=true --input <em>&lt;path_to_application_manifest&gt;</em> --output-dir <em>&lt;path_to_output_directory&gt;</em></strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Verification</div>
+<ol class="arabic">
+<li>
+<p>Display the repository structure:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>tree <em>&lt;path_to_discovery_manifest&gt;</em></strong></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><em>&lt;path_to_discovery_manifest&gt;</em>
+├── discover_manifestpass:[<em>]</em>&lt;app-name&gt;_.yaml
+├── secretspass:[<em>]</em>&lt;discovery_manifest_name&gt;_.yaml
+
+1 directory, 2 files</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Display the contents of the discovery manifest:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>cat <em>&lt;discovery_manifest_name&gt;</em>.yaml</strong></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>name: <em>&lt;discovery_manifest_name&gt;</em>
+timeout: 10
+docker:
+ image:myregistry/myapp:latest
+ username: <strong>$(f0e9ea9e-1913-446f-8483-da9301373eef)</strong>
+disk: 512M
+memory: 500M
+instances: 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The sensitive data was replaced with a UUID (Universally Unique Identifier).</p>
+</div>
+</li>
+<li>
+<p>Display the contents of the <code>secrets_<em>&lt;discovery_manifest_name&gt;</em>.yaml</code> file:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ <strong>cat secrets_<em>&lt;discovery_manifest_name&gt;</em>.yaml</strong></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>f0e9ea9e-1913-446f-8483-da9301373eef: docker-registry-user</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The file contains the mapping of the UUID to the concealed sensitive data.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-deployment-manifest_generating-assets">Generating a deployment manifest by using a discovery manifest</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To prepare your application for deployment to a container platform, generate a deployment manifest by using a discovery manifest with the {ProductFullName} command-line interface (CLI). Generating the deployment manifest creates the necessary configuration files to define your application&#8217;s resources, streamlining the transition to your target environment.</p>
+</div>
+<div class="paragraph">
+<p>You can auto-generate the {ocp-full} deployment manifest for the Cloud Foundry (CF) application by using the <code>generate</code> command. Based on the Helm template that you provide, the command generates manifests, such as a ConfigMap, and non-Kubernetes manifests, such as a Dockerfile, for application deployment.</p>
+</div>
+<div class="paragraph">
+<p>As an Architect, you can generate application assets by using only source code, without generating a discovery manifest first. If the discovery manifest is unavailable, the generator uses the following implicit data from the application profile for opinionated asset generation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Application metadata:</strong> Information such as the application name, version, and unique identifiers.</p>
+</li>
+<li>
+<p><strong>Application archetypes:</strong> Standardized templates or structures identified during the initial analysis.</p>
+</li>
+<li>
+<p><strong>Identified application tags:</strong> Logic must be applied based on the tags found during analysis. For example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Quarkus, configure specific environment variables for native-mode deployments.</p>
+</li>
+<li>
+<p>For Spring Boot, apply standard Spring framework configurations and dependencies to the generated manifests.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have Cloud Foundry (v3) as a source platform.</p>
+</li>
+<li>
+<p>You have {ocp-short} as a target platform.</p>
+</li>
+<li>
+<p>You installed the {ProductShortName} {CLIName} version 7.3.0.</p>
+</li>
+<li>
+<p>You generated a discovery manifest.</p>
+</li>
+<li>
+<p>You created a Helm template with the required configuration for the {ocp} deployment.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open the terminal application and navigate to the <code>&lt;{ProductShortName}_HOME&gt;/</code> directory.</p>
+</li>
+<li>
+<p>Generate the deployment manifest as an output file from the discovery manifest:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-cli generate helm --chart-dir helm_sample \
+--input <em>&lt;path_to_discovery-manifest&gt;</em> \
+--output-dir <em>&lt;location_of_deployment_manifest&gt;</em> \</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify the ConfigMap:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-cli cd <em>&lt;location_of_deployment_manifest&gt;</em></strong></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>cat configmap.yaml</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify the Dockerfile:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-cli cd <em>&lt;location_of_deployment_manifest&gt;</em></strong></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>cat Dockerfile</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#discover-generate-command-options_generating-assets">The discover and generate command options</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="values-deployment_generating-assets">Generating deployment manifests from a discovery manifest and values.yaml</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Use a Helm chart and a <code>values.yaml</code> file to generate deployment manifests that include configuration keys in addition to the discovery manifest. You can capture additional metadata or use the <code>--set</code> flag to override values and customize your generated assets.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed the <code>Helm</code> command-line interface (CLI).</p>
+</li>
+<li>
+<p>You saved your files in the Helm chart root directory as follows:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You saved Kubernetes YAML templates, for example, <code>ConfigMap</code> or <code>Deployment</code>, in the <code>templates</code> directory.</p>
+</li>
+<li>
+<p>You saved non-Kubernetes templates, for example, <code>Dockerfile</code>, in the <code>files/konveyor</code> path.</p>
+</li>
+<li>
+<p>You saved the <code>values.yaml</code> file in the root directory.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Define the application name, a database host, and a Redis database URL in a <code>values.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">manifest:
+  name: my-app
+  database:
+    enabled: true
+    host: prod-postgres.company.com
+  redis:
+    url: redis://prod-redis:6379</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In this example, the discovery manifest does not contain the fields in the <code>values.yaml</code> file.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Create a <code>Dockerfile</code> template that uses environment variables defined in the <code>values.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-dockerfile" data-lang="dockerfile">FROM node:18
+
+ENV APP_NAME={{ .Values.manifest.name }}
+{{- if .Values.manifest.database.enabled }}
+ENV DATABASE_HOST={{ .Values.manifest.database.host }}
+{{- end }}
+{{- if .Values.manifest.redis }}
+ENV REDIS_URL={{ .Values.manifest.redis.url }}
+{{- end }}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate deployment assets, such as a <code>Dockerfile</code>, that use the variables defined in the <code>values.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli generate helm --chart-dir <em>&lt;path_to_helm_chart&gt;</em> \
+  --input <em>&lt;path_to_discovery_manifest&gt;</em> \
+  --set manifest.name=my-new-app \
+  --output-dir <em>&lt;location_of_deployment_manifests&gt;</em></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code><em>&lt;location_of_deployment_manifests&gt;</em></code></dt>
+<dd>
+<p>Specifies the output directory for the generated manifests.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The variable priority for generating deployment manifests is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Priority 1 - The <code>--set</code> command flag</strong>: Any value specified with this flag has the highest priority and overrides variables defined in either the <code>values.yaml</code> file or the discovery manifest.</p>
+</li>
+<li>
+<p><strong>Priority 2 - The discovery manifest</strong>: If you do not use the <code>--set</code> flag, the discovery manifest configuration is used as the primary input for asset generation.</p>
+</li>
+<li>
+<p><strong>Priority 3 - The <code>values.yaml</code> file</strong>: If this file is not empty, the generated assets include the input values from this file. However, if a key exists in both the discovery manifest and the <code>values.yaml</code> file, the value from the discovery manifest takes precedence.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify that the rendered <code>Dockerfile</code> includes the fields from the <code>values.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat <em>&lt;path_to_dockerfile&gt;</em></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">FROM node:18
+
+ENV APP_NAME=my-new-app
+ENV DATABASE_HOST=prod-postgres.company.com
+ENV REDIS_URL=redis://prod-redis:6379</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="assets-generation-example_generating-assets">Assets generation example</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can use the {ProductFullName} command-line interface to generate static assets for offline review. Use the following example to validate the command syntax and understand the expected output structure.</p>
+</div>
+<div class="paragraph">
+<p>The following example includes generating discovery and deployment manifests of a Cloud Foundry (CF) Node.js application. For this example, the following files and directories are used:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CF Node.js application manifest name: <code>cf-nodejs-app.yaml</code></p>
+</li>
+<li>
+<p>Discovery manifest name: <code>discover.yaml</code></p>
+</li>
+<li>
+<p>Location of the application Helm chart: <code>helm_sample</code></p>
+</li>
+<li>
+<p>Deployment manifests: a ConfigMap and a Dockerfile</p>
+</li>
+<li>
+<p>Output location of the deployment manifests: <code>newDir</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Assume that the <code>cf-nodejs-app.yaml</code> is located in the same directory as the {ProductShortName} {CLIName} binary. If the CF application manifest location is different, you can also enter the location path to the manifest as the <code>input</code>.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed the {ProductShortName} {CLIName} 7.3.0.</p>
+</li>
+<li>
+<p>You have a CF application manifest as a YAML file.</p>
+</li>
+<li>
+<p>You created a Helm template with the required configurations for the {ocp} deployment.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open the terminal application and navigate to the <code>&lt;{ProductShortName}_HOME&gt;/</code> directory.</p>
+</li>
+<li>
+<p>Verify the content of the CF Node.js application manifest:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat cf-nodejs-app.yaml</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>name: cf-nodejs
+lifecycle: cnb
+buildpacks:
+  - docker://my-registry-a.corp/nodejs
+  - docker://my-registry-b.corp/dynatrace
+memory: 512M
+instances: 1
+random-route: true</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate the discovery manifest:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli discover cloud-foundry \
+--input cf-nodejs-app.yaml \
+--output discover.yaml \</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify the content of the discover manifest:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat discover.yaml</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>name: cf-nodejs
+randomRoute: true
+timeout: 60
+buildPacks:
+- docker://my-registry-a.corp/nodejs
+- docker://my-registry-b.corp/dynatrace
+instances: 1</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate the deployment manifest in the <code>newDir</code> directory by using the <code>discover.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli generate helm \
+--chart-dir helm_sample \
+--input discover.yaml --output-dir newDir</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the contents of the Dockerfile in the <code>newDir</code> directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat ./newDir/Dockerfile</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>FROM busybox:latest
+
+RUN echo "Hello cf-nodejs!"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the contents of the ConfigMap in the <code>newDir</code> directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat ./newDir/configmap.yaml</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cf-nodejs-config
+data:
+  RANDOM_ROUTE: true
+  TIMEOUT: "60"
+  BUILD_PACKS: |
+    - docker://my-registry-a.corp/nodejs
+    - docker://my-registry-b.corp/dynatrace
+  INSTANCES: "1"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>In the ConfigMap, override the <code>name</code> to <code>nodejs-app</code> and <code>INSTANCES</code> to <code>2</code> :</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli generate helm \
+--chart-dir helm_sample \
+--input discover.yaml --set name="nodejs-app" \
+--set instances=2 \
+--output-dir newDir \</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the contents of the ConfigMap again:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>cat ./newDir/configmap.yaml</strong></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodejs-app
+data:
+  RANDOM_ROUTE: true
+  TIMEOUT: "60"
+  BUILD_PACKS: |
+    - docker://my-registry-a.corp/nodejs
+    - docker://my-registry-b.corp/dynatrace
+  INSTANCES: "2"</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#discover-generate-command-options_generating-assets">The discover and generate command options</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="discover-generate-command-options_generating-assets">The discover and generate command options</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The {ProductFullName} command-line interface (CLI) provides options that you can use together with the <code>discover</code> or <code>generate</code> commands to customize the discovery of applications and the generation of static assets. Check the following table to identify the available arguments for defining input paths, output locations, and the scope of your assessment.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Options for <code>discover</code> and <code>generate</code> commands</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="paragraph">
+<p><code>discover</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--app-name</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An application to run the discovery for.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>-h</code>, <code>--help</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Display details for different command arguments.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--list-apps</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>List the available applications on the source platform, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-cli discover cloud-foundry --use-live-connection --spaces=space,space-2 --cf-config=/home/gloria/ --list-apps</strong>
+INFO[0000] Cloud Foundry client created successfully
+INFO[0000] Analyzing space space_name=space
+INFO[0006] Apps discovered count=2
+INFO[0006] Analyzing space space_name=space-2
+INFO[0007] Apps discovered count=1
+Space: space
+- nginx
+- test-app
+Space: space-2
+- test-app</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--list-platforms</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>List the supported platforms for the discovery process.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--log-level</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Set the log level, for example, <code>discover --log-level 1</code>. The default log level is <code>4</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><div class="content"><div class="paragraph">
+<p><code>discover cloud-foundry</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Discover Cloud Foundry applications.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--conceal-sensitive-data</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Extract sensitive information from a discovery manifest and put it into a separate file.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--input</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify the location of the YAML manifest file to discover the CF applications, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A path to the single application manifest.</p>
+</li>
+<li>
+<p>A path to the Cloud Foundry manifest.</p>
+</li>
+<li>
+<p>A path to the directory with multiple manifest files.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--output</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify the location to save the <code><em>&lt;discovery-manifest-name&gt;</em>.yaml</code> file.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--spaces</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A comma-separated list of Cloud Foundry spaces to analyze during a live discovery, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>--spaces=space1,space2,…</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--use-live-connection</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enable real-time discovery by using live platform connections.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--orgs</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A comma-separated list of Cloud Foundry organizations that you specify to discover application manifests during a live discovery. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">--orgs=org1,org2</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>generate</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>-h</code>, <code>--help</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Display details for different command arguments.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="6"><div class="content"><div class="paragraph">
+<p><code>generate helm</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Generate a deployment manifest by using the Helm template.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--chart-dir</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify a directory that contains the Helm chart.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--input</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify a location of the <code><em>&lt;discovery-manifest-name&gt;</em>.yaml</code> file to generate the deployment manifest.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--non-k8s-only</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Generate only non-Kubernetes templates, such as a Dockerfile.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--output-dir</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify a location to which the deployment manifests are saved.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>--set</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Override values of attributes in the discovery manifest with the key-value pair entered from the CLI.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

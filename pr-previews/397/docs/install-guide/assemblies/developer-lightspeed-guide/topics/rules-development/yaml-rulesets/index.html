@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/397/docs/install-guide/assemblies/developer-lightspeed-guide/topics/rules-development/yaml-rulesets/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/397/docs/install-guide/assemblies/developer-lightspeed-guide/topics/rules-development/yaml-rulesets/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/397/docs/install-guide/assemblies/developer-lightspeed-guide/topics/rules-development/yaml-rulesets/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=9e8157805548236847bf330da629496aa10455ec">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-rulesets_{context}">Creating and using a custom ruleset</h1>
+<div class="paragraph _abstract">
+<p>You can create a ruleset by placing one or more custom rules in a directory and creating a <code>ruleset.yaml</code> file at the directory root. All rules in this directory become a part of the ruleset.</p>
+</div>
+<div class="paragraph">
+<p>You can include multiple rules in a ruleset as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Place the rule files in a directory and add a ruleset.yaml file. {ProductShortName} treats the directory as a ruleset, and you can pass the directory path as input to the <code>--rules</code> option.</p>
+</li>
+<li>
+<p>Specify multiple rules files by using the <code>--rules</code> option when you run an analysis.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To use a custom ruleset in an analysis:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a <em>&lt;custom_rule_directory&gt;</em> where you save the ruleset and rules files.</p>
+</li>
+<li>
+<p>Create a <code>ruleset.yaml</code> file in the <em>&lt;custom_rule_directory&gt;</em>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">name: "Name of the ruleset"
+description: "Description of the ruleset"
+labels:
+  - key=val</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>name</code></dt>
+<dd>
+<p>The name must be unique among the provided rulesets.</p>
+</dd>
+<dt class="hdlist1"><code>labels</code></dt>
+<dd>
+<p>A key-value pair that identifies the source or target technology. Rules that belong to the ruleset inherit the ruleset labels.</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Pass the ruleset directory as the input in the <code>--rules</code> option:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ mta-cli analyze --input=<em>&lt;application_to_analyze&gt;</em> --output=<em>&lt;output_dir&gt;</em> --rules=<em>&lt;custom_rule_directory&gt;</em> --enable-default-rulesets=false</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Replace <em>&lt;application_to_analyze&gt;</em> with the name of your application.</p>
+</li>
+<li>
+<p>Replace <em>&lt;output_dir&gt;</em> with the directory of your choice.</p>
+</li>
+<li>
+<p>Replace <em>&lt;custom_rule_directory&gt;</em> with the path to the custom rule directory.</p>
+<div class="paragraph">
+<p>Note that if you want to use the <code>--target</code> or <code>--source</code> option in the CLI, the analyzer will only select rules that match the label for that target. Therefore, you must add reserved labels in your rules.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#reserved-label_rule-yaml-metadata">Reserved labels</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
