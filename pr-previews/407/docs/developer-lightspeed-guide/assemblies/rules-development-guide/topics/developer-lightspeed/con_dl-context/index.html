@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/407/docs/developer-lightspeed-guide/assemblies/rules-development-guide/topics/developer-lightspeed/con_dl-context/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/407/docs/developer-lightspeed-guide/assemblies/rules-development-guide/topics/developer-lightspeed/con_dl-context/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/407/docs/developer-lightspeed-guide/assemblies/rules-development-guide/topics/developer-lightspeed/con_dl-context/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1e46559a1bd6a2030cbd94ec02955022a8495142">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="dl-context_{context}">Describing the context</h1>
+<div class="paragraph">
+<p>The context is a combination of the source code, the issue description, and solved examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Description of issues detected by {ProductShortName} when you run a static code analysis for a given set of target technologies.</p>
+</li>
+<li>
+<p>(Optional) The default and custom rules may contain additional information that you include which can help {mta-dl-plugin} to define the context.</p>
+</li>
+<li>
+<p>Solved examples constitute code changes from other migrations and a pattern of resolution for an issue that can be used in future. A solved example is created when a Migrator accepts a resolution in a previous analysis that results in updated code or an unfamiliar issue in a legacy application that the Migrator manually fixed. Solved examples are stored in the Solution Server.</p>
+<div class="paragraph">
+<p>More instances of solved examples for an issue enhance the context and improve the success metrics of rules that trigger the issue. The higher the success metrics of an issue, the greater the confidence level associated with the accepted resolutions for that issue in previous analyses.</p>
+</div>
+</li>
+<li>
+<p>(Optional) If you enable the Solution Server, it extracts a pattern of resolution, called the migration hint, that can be used by the LLM to generate a more accurate fix suggestion in a future analysis.</p>
+<div class="paragraph">
+<p>The improvement in the quality of migration hints results in more accurate code resolutions. Accurate code resolutions from the LLM result in the user accepting an update to the code. The updated code is stored in the Solution Server to generate a better migration hint in future.</p>
+</div>
+<div class="paragraph">
+<p>This cyclical improvement of resolution pattern from the Solution Server and improved migration hints lead to more reliable code changes as you migrate applications in different migration waves.</p>
+</div>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

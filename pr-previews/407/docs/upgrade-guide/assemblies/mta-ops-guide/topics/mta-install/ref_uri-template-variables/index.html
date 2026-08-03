@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/407/docs/upgrade-guide/assemblies/mta-ops-guide/topics/mta-install/ref_uri-template-variables/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/407/docs/upgrade-guide/assemblies/mta-ops-guide/topics/mta-install/ref_uri-template-variables/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/407/docs/upgrade-guide/assemblies/mta-ops-guide/topics/mta-install/ref_uri-template-variables/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1e46559a1bd6a2030cbd94ec02955022a8495142">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="uri-template-variables_{context}">URI template variables</h1>
+<div class="paragraph _abstract">
+<p>The {ProductFullName} Hub OpenID Connect (OIDC) provider dynamically resolves the uniform resource identifier (URI) in deployment environments such as local development (<code>localhost</code>), Red&#160;Hat OpenShift custom routes, and custom domains.</p>
+</div>
+<div class="paragraph">
+<p>To prevent entering hard-coded redirect URIs for an {ProductShortName} client deployed in different environments, you can use template variables. In the authorization workflow, the Hub OIDC provider substitutes the template variables at runtime with values from the incoming HTTP request sent by the OIDC Issuer.</p>
+</div>
+<div class="paragraph">
+<p>You can use the following template variables in the URIs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>${issuer}</code>: Replaced with the complete issuer URL.</p>
+</li>
+<li>
+<p><code>${issuer.host}</code>: Replaced with host and the port.</p>
+</li>
+<li>
+<p><code>${issuer.port}</code>: Replaces only the port.</p>
+</li>
+<li>
+<p><code>${issuer.path}</code>: Replaces only the path.</p>
+</li>
+<li>
+<p><code>${issuer.proto}</code>: Replaces with the issuer scheme.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"${issuer}/callback"</code> becomes <code><a href="https://hub.example.com:8080/oidc/callback" class="bare">https://hub.example.com:8080/oidc/callback</a></code></p>
+</li>
+<li>
+<p><code>"http://${issuer.host}/auth"</code> becomes <code><a href="http://hub.example.com:8080/auth" class="bare">http://hub.example.com:8080/auth</a></code></p>
+</li>
+<li>
+<p><code>"http://localhost:${issuer.port}/done"</code> becomes <code><a href="http://localhost:8080/done" class="bare">http://localhost:8080/done</a></code></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

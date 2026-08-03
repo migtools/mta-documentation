@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/407/docs/developer-lightspeed-guide/assemblies/rules-development-guide/topics/mta-cli/ref_provider-and-rules-command-options/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/407/docs/developer-lightspeed-guide/assemblies/rules-development-guide/topics/mta-cli/ref_provider-and-rules-command-options/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/407/docs/developer-lightspeed-guide/assemblies/rules-development-guide/topics/mta-cli/ref_provider-and-rules-command-options/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1e46559a1bd6a2030cbd94ec02955022a8495142">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="provider-and-rules-command-options_{context}">The provider and rules command options</h1>
+<div class="paragraph _abstract">
+<p>You can list providers by using the <code>mta-cli provider</code> command and specify a provider during runtime when you analyze a non-Java application. Run the <code>mta-cli rules</code> command to list the available source and target technologies for migration and to test rules.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. The provider and rules commands and options</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3335%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Subcommands and options</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Command syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mta-cli provider</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List available and supported providers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mta-cli provider list</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><code>mta-cli rules</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-sources</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List rules for available migration sources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mta-cli rules list-sources</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-targets</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List rules for available migration targets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mta-cli rules list-targets</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate a default or a custom rule or a ruleset against a sample application code. The CLI shows test result status, pass or fail, for all rules in a ruleset.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>mta-cli rules test <em>&lt;path_to_test_rules&gt;</em></strong></p>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;path_to_test_rules&gt;</em>:: Specifies the system path to the rules you want to test.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

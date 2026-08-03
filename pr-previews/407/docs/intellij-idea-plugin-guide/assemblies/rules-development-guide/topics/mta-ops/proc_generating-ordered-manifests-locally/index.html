@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/407/docs/intellij-idea-plugin-guide/assemblies/rules-development-guide/topics/mta-ops/proc_generating-ordered-manifests-locally/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/407/docs/intellij-idea-plugin-guide/assemblies/rules-development-guide/topics/mta-ops/proc_generating-ordered-manifests-locally/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/407/docs/intellij-idea-plugin-guide/assemblies/rules-development-guide/topics/mta-ops/proc_generating-ordered-manifests-locally/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1e46559a1bd6a2030cbd94ec02955022a8495142">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="generating-ordered-manifests-locally_{context}">Generating ordered manifests locally</h1>
+<div class="paragraph _abstract">
+<p>When you render your final YAML, you can generate ordered individual resource files. This ensures you apply resources in the correct dependency order.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have successfully exported and transformed your workload manifests.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Generate the final manifests by appending the <code>--ordered</code> flag:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-ops apply -t transform -o output --ordered</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Review the generated files in the <code>output/resources/<em>&lt;namespace&gt;</em>/</code> directory. The <code>--ordered</code> flag prefixes the filenames with 3-digit order numbers.</p>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify that the resource filenames begin with a 3-digit number.</p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/407/docs/developer-lightspeed-guide/assemblies/ui-guide/topics/rules-development/yaml-rule-labels/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/407/docs/developer-lightspeed-guide/assemblies/ui-guide/topics/rules-development/yaml-rule-labels/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/407/docs/developer-lightspeed-guide/assemblies/ui-guide/topics/rules-development/yaml-rule-labels/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1e46559a1bd6a2030cbd94ec02955022a8495142">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-rule-labels_{context}">Rule labels</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Labels are <code>key=val</code> pairs specified in rules to filter the rule by the label. During an analysis, you can use the <code>--label-selector</code> option to apply the filter for rules or rulesets and the
+<code>--dep-label-selector</code> option to apply the filter for dependencies.</p>
+</div>
+<div class="paragraph">
+<p>For dependencies, a provider adds the labels to the dependencies when retrieving them. Labels on a ruleset are automatically inherited by all the rules that belong to it.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Label format</dt>
+<dd>
+<p>You can enter Labels under the <code>labels</code> field as a list of strings in <code>key=val</code> format as follows:</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">labels:
+- "key1=<em>&lt;val1&gt;</em>"
+- "key2=<em>&lt;val2&gt;</em>"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The key of a label can be subdomain-prefixed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">labels:
+- "konveyor.io/key1=<em>&lt;val1&gt;</em>"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The value of a label can be empty:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">labels:
+- "konveyor.io/key="</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can omit the value of a label. In that case, {ProductShortName} treats it as an empty value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">labels:
+- "konveyor.io/key"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reserved-label_{context}">Reserved labels</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The analyzer defines some labels that have special meaning as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>konveyor.io/source</code>: Identifies the source technology to which a rule or a ruleset applies.</p>
+</li>
+<li>
+<p><code>konveyor.io/target</code>: Identifies the target technology to which a rule or a ruleset applies.</p>
+</li>
+<li>
+<p><code>konveyor.io/include</code>: Overrides filter behavior for a rule irrespective of the label selector used. The value can either be <code>always</code> or <code>never</code>. If you specify <code>always</code>, the analyzer always filters-in this rule, while for <code>never</code>, the analyzer excludes this rule.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Label selector</dt>
+<dd>
+<p>The analyzer CLI takes the <code>--label-selector</code> field as an option. It is a string expression that supports logical <code>AND</code>, <code>OR</code>, and <code>NOT</code> operations. You can use it to filter-in or filter-out rules by their labels.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Examples:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To filter-in all rules that have a label with the key <code>konveyor.io/source</code> and value <code>eap6</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>--label-selector="konveyor.io/source=eap6"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>To filter-in all rules that have a label with the key <code>konveyor.io/source</code> and any value:</p>
+<div class="listingblock">
+<div class="content">
+<pre>--label-selector="konveyor.io/source"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>To perform logical AND operations on matches of multiple rules by using the <code>&amp;&amp;</code> operator:</p>
+<div class="listingblock">
+<div class="content">
+<pre>--label-selector="key1=<em>&lt;val1&gt;</em> &amp;&amp; key2"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>To perform logical OR operations on matches of multiple rules by using the <code>||</code> operator:</p>
+<div class="listingblock">
+<div class="content">
+<pre>--label-selector="key1=<em>&lt;val1&gt;</em> || key2"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>To perform a NOT operation to filter-out rules that have <code>key1=val1</code> label set by using the <code>!</code> operator:</p>
+<div class="listingblock">
+<div class="content">
+<pre>--label-selector="!key1=<em>&lt;val1&gt;</em>"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>To group sub-expressions and control precedence by using AND:</p>
+<div class="listingblock">
+<div class="content">
+<pre>--label-selector="(key1=<em>&lt;val1&gt;</em> || key2=<em>&lt;val2&gt;</em>) &amp;&amp; !<em>&lt;val3&gt;</em>"</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dependency-labels">Dependency labels</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as its programming language and whether the dependency is open source or internal.</p>
+</div>
+<div class="paragraph">
+<p>Currently, the analyzer adds the following labels to dependencies:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">labels:
+- konveyor.io/dep-source=internal
+- konveyor.io/language=java</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Dependency label selector</dt>
+<dd>
+<p>The analyzer CLI accepts the <code>--dep-label-selector</code> option, which allows filtering-in or filtering-out incidents generated from a dependency by their labels.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>For example, the analyzer adds a <code>konveyor.io/dep-source</code> label to dependencies with a value that indicates whether the dependency is a known open source dependency.</p>
+</div>
+<div class="paragraph">
+<p>To exclude incidents for all such open source dependencies, you can use <code>--dep-label-selector</code> as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><code>$ mta-cli ... --dep-label-selector !konveyor.io/dep-source=open-source</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Java provider in the analyzer can also add an exclude label to a list of packages. To exclude all such packages, you can use <code>--dep-label-selector</code> and the <code>!</code> operator as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ <code>mta-cli ... --dep-label-selector !konveyor.io/exclude</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ <code>mta-cli ... --dep-label-selector !konveyor.io/exclude</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
