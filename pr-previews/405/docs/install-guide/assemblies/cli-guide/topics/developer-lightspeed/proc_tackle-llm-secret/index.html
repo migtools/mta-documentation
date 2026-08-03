@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/install-guide/assemblies/cli-guide/topics/developer-lightspeed/proc_tackle-llm-secret/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/install-guide/assemblies/cli-guide/topics/developer-lightspeed/proc_tackle-llm-secret/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/install-guide/assemblies/cli-guide/topics/developer-lightspeed/proc_tackle-llm-secret/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f976ebf6a4367445f325c4b9516feca56c79f94b">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="tackle-llm-secret_{context}">Configuring the model secret key</h1>
+<div class="paragraph _abstract">
+<p>You must configure the Kubernetes secret for the large language model (LLM) provider in the Red Hat {ocp-name} project where you installed the {ProductShortName} Operator.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can replace <code>oc</code> in the following commands with <code>kubectl</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must create a LLM API key secret in your {ocp-name} cluster to produce the resources necessary for the Solution Server. If you do not configure the LLM API key secret, {mta-dl-plugin} does not create the resources necessary to run the Solution Server.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create a credentials secret named <code>kai-api-keys</code> in the <code>openshift-mta</code> project.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>For Amazon Bedrock as the provider, type:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">oc create secret generic aws-credentials \
+ --from-literal=AWS_ACCESS_KEY_ID=&lt;YOUR_AWS_ACCESS_KEY_ID&gt; \
+ --from-literal=AWS_SECRET_ACCESS_KEY=&lt;YOUR_AWS_SECRET_ACCESS_KEY&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Azure OpenAI as the provider, type:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">oc create secret generic kai-api-keys -n openshift-mta \
+ --from-literal=AZURE_OPENAI_API_KEY='&lt;YOUR_AZURE_OPENAI_API_KEY&gt;'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Google as the provider, type:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">oc create secret generic kai-api-keys -n openshift-mta \
+ --from-literal=GEMINI_API_KEY='&lt;YOUR_GOOGLE_API_KEY&gt;'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>For the OpenAI-compatible providers, type:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">oc create secret generic kai-api-keys -n openshift-mta \
+ --from-literal=OPENAI_API_BASE='https://example.openai.com/v1' \
+ --from-literal=OPENAI_API_KEY='&lt;YOUR_OPENAI_KEY&gt;'</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also set the base URL as the <code>kai_llm_baseurl</code> variable in the Tackle custom resource.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>(Optional) Force a reconcile so that the {ProductShortName} operator picks up the secret immediately</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">kubectl patch tackle tackle -n openshift-mta --type=merge -p \
+'{"metadata":{"annotations":{"konveyor.io/force-reconcile":"'"$(date +%s)"'"}}}'</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
