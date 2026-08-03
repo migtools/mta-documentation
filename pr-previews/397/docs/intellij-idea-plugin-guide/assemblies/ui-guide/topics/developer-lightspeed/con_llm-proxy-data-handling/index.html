@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/ui-guide/topics/developer-lightspeed/con_llm-proxy-data-handling/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/ui-guide/topics/developer-lightspeed/con_llm-proxy-data-handling/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/ui-guide/topics/developer-lightspeed/con_llm-proxy-data-handling/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b518cc7460d8352a4a3b9b1d25a636f0bdc9bc78">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="llm-proxy-data-handling_{context}">LLM proxy request and data handling</h1>
+<div class="paragraph _abstract">
+<p>The large language model (LLM) proxy is built on llama-stack and runs as a dedicated pod within the {ProductShortName} namespace.</p>
+</div>
+<div class="paragraph">
+<p>The proxy provides the following controls:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Credential isolation</dt>
+<dd>
+<p>LLM provider application programming interface (API) keys are stored in a Kubernetes secret and never distributed to client applications. Only the proxy pod reads these credentials.</p>
+</dd>
+<dt class="hdlist1">JWT-based authentication</dt>
+<dd>
+<p>When authentication is enabled, the proxy validates every incoming JSON web token (JWT) request against the Hub OpenID Connect (OIDC) provider by using its JWKS endpoint:</p>
+<div class="listingblock">
+<div class="content">
+<pre>https://<em>&lt;oidc_provider&gt;</em>/realms/<em>&lt;realm&gt;</em>/protocol/openid-connect/certs</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+</dd>
+<dt class="hdlist1"><code>&lt;oidc_provider&gt;</code></dt>
+<dd>
+<p>Specifies the name of the OIDC provider.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;realm&gt;</code></dt>
+<dd>
+<p>Specifies the name of the realm.</p>
+<div class="paragraph">
+<p>Requests that fail validation are rejected with a <code>401</code> or <code>403</code> response before they reach the LLM provider.</p>
+</div>
+</dd>
+<dt class="hdlist1">Header redaction</dt>
+<dd>
+<p>Authorization headers and other sensitive fields are redacted from proxy logs.</p>
+</dd>
+<dt class="hdlist1">Data persistence</dt>
+<dd>
+<p>LLM interactions are stored in the llama-stack PostgreSQL database in the following tables:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>llm_proxy_inference_store</code>: Individual inference records.</p>
+</li>
+<li>
+<p><code>llm_proxy_conversations</code>: Conversation context records.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As of {ProductShortName} 8.2, OIDC user identity is terminated at the Hub and is not passed to or stored by the proxy.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

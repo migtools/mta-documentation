@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/vs-code-extension-guide/assemblies/intellij-plugin-guide/topics/rules-development/yaml-java-locations/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/vs-code-extension-guide/assemblies/intellij-plugin-guide/topics/rules-development/yaml-java-locations/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/vs-code-extension-guide/assemblies/intellij-plugin-guide/topics/rules-development/yaml-java-locations/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b518cc7460d8352a4a3b9b1d25a636f0bdc9bc78">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-java-locations_{context}">Java locations</h1>
+<div class="paragraph _abstract">
+<p>By using the fields in the <code>referenced</code> capability that Java provider supports, you can enable the provider to scope the search down to certain source code locations.</p>
+</div>
+<div class="paragraph">
+<p>You can use the <code>java.referenced</code> capability in the <code>when</code> condition of the <code>Java</code> rules to search for the following fields:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Locations such as the classes, methods, packages and so on</p>
+</li>
+<li>
+<p>Annotations</p>
+</li>
+<li>
+<p>Patterns</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="title">Example</div>
+<div class="content">
+<pre>*IMPORT*: IMPORT allows for searches on class imports. You can use it either with Fully Qualified Names (FQNs) or an asterisk to allow for wider matches:
+
+[source,yaml]
+----
+java.referenced:
+  pattern: org.apache.lucene.search.*
+  location: IMPORT
+----
+
+would match on each of these imports:
+
+[source,java]
+----
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.Sort;
+import org.apache.lucene.search.SortField;
+----
+
+* *PACKAGE*: the `PACKAGE` location matches on any usage of a package, be
+it in an import or used as part of an FQN in the code:
+
+[source,yaml]
+----
+java.referenced:
+  pattern: org.apache.lucene.search.*
+  location: PACKAGE
+----
+
+would match on each of the following imports and the FQN usage:
+
+[source,java]
+----
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.Sort;
+import org.apache.lucene.search.SortField;
+----
+
+[source,java]
+----
+public class Test {
+  private org.apache.lucene.search.Query query;
+}
+----</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Supported Java locations</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Location</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Rule condition example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TYPE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against all types, including classes, interfaces, <code>enums</code>, and annotation types that appear anywhere.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example looks for occurrences of <code>java.util.List</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml"> when:
+  java.referenced:
+   location: TYPE
+   pattern: java.util.List</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ANNOTATION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against annotations.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example matches the <code>@org.framework.Bean(url = "http://www.example.com")</code> annotation in the source code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    location: ANNOTATION
+    pattern: org.framework.Bean
+    annotated:
+      elements:
+        - name: url
+          value: "http://www.example.com"</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IMPLEMENTS_TYPE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against any type implementing the given type.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example looks for a class that implements <code>java.util.ArrayList</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml"> when:
+  java.referenced:
+   location: IMPLEMENTS_TYPE
+   pattern: java.util.ArrayList</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RETURN_TYPE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against a type that a method returns.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example searches for <code>@PersistenceContext</code> annotation for injecting data sources and <code>@Produces</code> annotation on the <code>EntityManager</code>. These annotations are not required when you target migrating the source code to <code>Quarkus</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    location: RETURN_TYPE
+      pattern: javax.persistence.EntityManager
+      annotated:
+        pattern: javax.enterprise.inject.Produces</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VARIABLE_DECLARATION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against a type declared as a variable</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example searches for <code>QueueConnectionFactory</code> appearing as a variable declaration. Replace the string <code>QueueConnectionFactory</code> with <code>ConnectionFactory</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  - java.referenced:
+      location: VARIABLE_DECLARATION
+      pattern: javax.jms.QueueConnectionFactory</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FIELD</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against a type appearing in a field
+declaration. It can be coupled with an annotation match happening on the field. See Annotation inspection.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example searches if <code>QueueConnectionFactory</code> appears in a field declaration. Replace the string <code>QueueConnectionFactory</code> with <code>ConnectionFactory</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  - java.referenced:
+      location: FIELD_DECLARATION
+      pattern: javax.jms.QueueConnectionFactory</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>METHOD</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against a given method declaration. You can couple it with an annotation match. See Annotation inspection.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example finds declarations of methods named <code>method</code> that accept <code>java.lang.String</code> and return <code>org.konveyor.ExtendedString</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+ java.referenced:
+   location: METHOD
+   pattern: 'method(java.lang.String) org.konveyor.ExtendedString'</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>METHOD_CALL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against the method call in the source code.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example matches the <code>getConnection</code> method call of the <code>java.sql.DriverManager</code> class with three parameters of type <code>String</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    location: METHOD_CALL
+    pattern: java.sql.DriverManager.getConnection(java.lang.String, java.lang.String, java.lang.String)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CLASS</code> (declaration)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against a given class declaration. You can couple it with an annotation match. See Annotation inspection.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example locates all classes under the <code>javax.xml</code> package occurring in all locations of the source code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+ java.referenced:
+  pattern: javax.xml.*</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CONSTRUCTOR_CALL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against constructor calls in the source code.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example matches the <code>FileOutputStream</code> constructor call that takes a String and a boolean value as input parameters.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    location: CONSTRUCTOR_CALL
+    pattern: java.io.FileOutputStream(java.lang.String, boolean)</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IMPORT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against class imports. You can use it with FQNs or an asterisk (*) to allow for wider matches.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example matches with the imports of <code>org.apache.lucene.search</code> package and subpackages in the source code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+ java.referenced:
+   pattern: org.apache.lucene.search.*
+   location: IMPORT</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PACKAGE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches on any usage of a package, be it in an import or used as part of a fully qualified name in the code.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example matches all occurrences of <code>org.jboss</code> package and its subpackages in the source code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    location: PACKAGE
+    pattern: org.jboss.*</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INHERITANCE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches against a class inheriting from a given type.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following example searches for interfaces that extend the <code>org.jboss.system.ServiceMBeanSupport</code> class.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml"> when:
+  java.referenced:
+    pattern: 'org.jboss.system.ServiceMBeanSupport'
+    location: INHERITANCE</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#yaml-annotation-inspection_java-conditions-capabilities">Annotation inspection</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

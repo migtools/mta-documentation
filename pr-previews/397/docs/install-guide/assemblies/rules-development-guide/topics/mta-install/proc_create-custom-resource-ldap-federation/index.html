@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/install-guide/assemblies/rules-development-guide/topics/mta-install/proc_create-custom-resource-ldap-federation/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/install-guide/assemblies/rules-development-guide/topics/mta-install/proc_create-custom-resource-ldap-federation/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/install-guide/assemblies/rules-development-guide/topics/mta-install/proc_create-custom-resource-ldap-federation/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b518cc7460d8352a4a3b9b1d25a636f0bdc9bc78">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="create-custom-resource-ldap-federation_{context}">Create a custom resource for LDAP or AD federation</h1>
+<div class="paragraph _abstract">
+<p>To enable the Hub OpenID Connect (OIDC) provider to federate authentication to an LDAP or an Active Directory (AD) server, create an <code>LdapProvider</code> custom resource (CR) and a secret for the LDAP service account.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have installed the {ProductShortName} {ProductVersion} in a Red&#160;Hat OpenShift cluster.</p>
+</li>
+<li>
+<p>You have <code>admin</code> access to the cluster.</p>
+</li>
+<li>
+<p>You have configured an LDAP service account with read-only permissions.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create an <code>ldap-secret.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: ldap-service-account
+  namespace: openshift-mta
+type: Opaque
+stringData:
+  password: "&lt;service-account-password&gt;"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the <code>ldap-secret</code> file in the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f ldap-secret.yaml</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create an <code>ldap.yaml</code> file for the custom resource (CR):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: tackle.konveyor.io/v1alpha1
+kind: LdapProvider
+metadata:
+  name: corporate-ldap
+  namespace: openshift-mta
+spec:
+  name: "Corporate LDAP"
+  kind: "ActiveDirectory"
+  url: "ldaps://ldap.example.com:636"
+  baseDN: "dc=example,dc=com"
+  bindDN: "cn=service,dc=example,dc=com"
+  password:
+    name: ldap-service-account
+    namespace: openshift-mta
+  userFilter: "(sAMAccountName=${login})"
+  groupFilter: "(&amp;(objectClass=group)(member=${dn}))"
+  hasMemberOf: true
+  roleMappings:
+    - and:
+        - Developers
+      roles:
+        - architect
+    - any:
+        - "**Administrator**"
+      roles:
+        - admin</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>kind</code>:: Server type is "ACTIVEDIRECTORY", "AD", or blank for other LDAP implementations such as OpenLDAP.</p>
+</li>
+<li>
+<p><code>url</code>:: Specifies the LDAP server URL.</p>
+</li>
+<li>
+<p><code>baseDN</code>:: Specifies the  base distinguished name (DN) to narrow the scope for LDAP searches.</p>
+</li>
+<li>
+<p><code>bindDN</code>:: Specifies the unique identifier of the service account that is used to authenticate against the LDAP directory.</p>
+</li>
+<li>
+<p><code>password</code>:: Refers to the secret that contains the service account password.</p>
+</li>
+<li>
+<p><code>userFilter</code>:: Specifies the user search filter. The default value for the user filter in AD is <code>(sAMAccountName=%s)</code>, and <code>(uid=%s)</code> for other LDAP implementations, when you do not configure a value in the CR.</p>
+<div class="paragraph">
+<p>To override the default, configure <code>userFilter: "(sAMAccountName=${login})"</code> for AD or <code>userFilter: "(uid=${uid})"</code> for other LDAP implementations.</p>
+</div>
+</li>
+<li>
+<p><code>groupFilter</code>:: Specifies the group search filter. The default value for the group filter in AD is <code>groupFilter: "(&amp;(objectClass=group)(member=%s))"</code>, and <code>(&amp;(objectClass=*)(member=%s))</code> for other LDAP implementations, when you do not configure a group in the CR.</p>
+<div class="paragraph">
+<p>To override the default, configure <code>groupFilter: "(&amp;(objectClass=group)(member=${dn}))"</code> for distinguished name. You can replace <code>{dn}</code> with <code>{uid}</code> for a unique identifier or <code>{cn}</code> for a common name.</p>
+</div>
+</li>
+<li>
+<p><code>hasMemberOf</code>:: Specifies whether to use the <code>memberOf</code> attribute for group membership in AD.</p>
+</li>
+<li>
+<p><code>roleMappings</code>:: Specifies the mapping of LDAP groups to the Hub roles. The {ProductShortName} roles can be a list of default or custom roles. When you use global patterns to match the LDAP roles, you must use the <code>doublestar</code> pattern or a double asterisk (<code>**</code>) to match the complete role name.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Apply the LDAP CR in the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f ldap.yaml</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the Hub to load the new client and the secret:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc rollout restart deployment/tackle-hub -n openshift-mta</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

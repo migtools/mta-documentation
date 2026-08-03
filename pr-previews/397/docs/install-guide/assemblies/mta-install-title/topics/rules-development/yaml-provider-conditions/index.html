@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/install-guide/assemblies/mta-install-title/topics/rules-development/yaml-provider-conditions/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/install-guide/assemblies/mta-install-title/topics/rules-development/yaml-provider-conditions/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/install-guide/assemblies/mta-install-title/topics/rules-development/yaml-provider-conditions/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b518cc7460d8352a4a3b9b1d25a636f0bdc9bc78">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-provider-conditions_{context}">Rule condition</h1>
+<div class="paragraph _abstract">
+<p>In the rule condition, the Architect defines the patterns that {ProductShortName} searches for in the source code to trigger an issue. The condition you can define to search an application written in a programming language depends on the capabilities that providers offer.</p>
+</div>
+<div class="paragraph">
+<p>A rule condition instructs the analyzer to use a specific provider and one of its capabilities. A condition follows the <code>&lt;provider_name&gt;.&lt;capability&gt;</code> pattern.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  <em>&lt;provider_name&gt;</em>.<em>&lt;capability&gt;</em>
+    <em>&lt;input_fields&gt;</em></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The analyzer currently supports the following providers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>builtin</code></p>
+</li>
+<li>
+<p><code>java</code></p>
+</li>
+<li>
+<p><code>go</code></p>
+</li>
+<li>
+<p><code>nodejs</code></p>
+</li>
+<li>
+<p><code>python</code></p>
+</li>
+<li>
+<p><code>csharp</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>csharp</code>, <code>python</code>, and <code>nodejs</code> providers are Developer Preview features only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated Service Level Agreement (SLA).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table id="table-Supported-providers-and-rule-conditions" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Provider rule conditions</th>
+<th class="tableblock halign-left valign-top">Provider name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Providers that are fully supported and included in the product</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>java</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Providers that have rules already defined in the product</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><code>java</code></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Providers that require custom rulesets for analysis</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><code>go</code></p>
+</li>
+<li>
+<p><code>python</code></p>
+</li>
+<li>
+<p><code>nodejs</code></p>
+</li>
+<li>
+<p><code>csharp</code></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following table summarizes all the providers and their
+capabilities:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Summary of providers and their capabilities</caption>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Provider Name</th>
+<th class="tableblock halign-left valign-top">Capabilities</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>java</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Find references of a pattern with an optional code location for detailed searches.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dependency</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Check whether the application has a given dependency.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.dependency:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><code>builtin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search XML files using XPath queries.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>json</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Search JSON files using JSONPath queries.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  builtin.json:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filecontent</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Search content in regular files using regular expression patterns.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  builtin.filecontent:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>file</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Find files with names matching a given pattern.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  builtin.file:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hasTags</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Check whether you created a tag for the application using a tagging rule.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  builtin.hasTags:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>go</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Find references to a pattern.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  go.referenced:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dependency</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Check whether the application has a given dependency.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  go.dependency:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>csharp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Find references to a pattern.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  csharp.referenced:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Following the example in the previous table, you can create the first part of the condition that does not contain any of the condition fields.</p>
+</div>
+<div class="paragraph">
+<p>To create a <code>java</code> provider condition that uses the <code>referenced</code> capability:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    <em>&lt;fields&gt;</em></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Depending on the <em>provider</em> and the <em>capability</em>, there will be different <code>&lt;fields&gt;</code> in the condition.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following table summarizes available providers, their capabilities and their fields:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Summary of providers, their capabilities, and their fields</caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Provider</th>
+<th class="tableblock halign-left valign-top">Capability</th>
+<th class="tableblock halign-left valign-top">Fields</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><code>java</code></p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Regular expression pattern.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    location: PACKAGE
+    pattern: org.jboss.*</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>location</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Source code location. See Java locations.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    pattern: org.kubernetes*
+    location: IMPORT</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>annotated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Additional query to inspect annotations. See Annotation inspection.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.referenced:
+    location: ANNOTATION
+    pattern: javax.ejb.Singleton</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><code>dependency</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Name of the dependency.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.dependency:
+    name: junit.junit</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nameregex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regular expression pattern to match the name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>upperbound</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match versions lower than or equal to.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.dependency:
+    name: junit.junit
+    upperbound: 4.12.2</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lowerbound</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match versions greater than or equal to.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  java.dependency:
+    name: junit.junit
+    upperbound: 4.12.2
+    lowerbound: 4.4.0</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><code>builtin</code></p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><code>xml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xpath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>an XPath query</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  builtin.xml:
+    xpath: "//dependencies/dependency"</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>namespaces</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A map to scope down query to namespaces.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  builtin.xml:
+    filepaths:
+     - beans.xml
+    namespaces:
+        b: http://xmlns.jcp.org/xml/ns/javaee
+    xpath: /b:beans</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filepaths</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional list of files to scope down search.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+    or:
+    - builtin.xml:
+        xpath: "//dependencies/dependency"
+        filepaths: "{{poms.filepaths}}"
+      from: poms
+    - builtin.file:
+        pattern: pom.xml
+      as: poms
+      ignore: true</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>json</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xpath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>an XPath query
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+    and:
+    - builtin.json:
+        xpath: //inclusionTestNode</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filepaths</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Optional list of files to scope down search.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+    and:
+    - builtin.json:
+        xpath: //inclusionTestNode
+        filepaths: "{{incTest.filepaths}}"</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>filecontent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Regular expression pattern to match in content.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  builtin.filecontent:
+    pattern: "import.*React"</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filePattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Only search in files with names matching this pattern.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  builtin.filecontent:
+    pattern: "import.*React"
+    filePattern: "\\.tsx$"</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>file</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Find files with names matching this pattern.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+    builtin.file:
+      pattern: "*.go"</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hasTags</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This is an inline list of string tags. See Tag action.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  or:
+   - builtin.hasTags:
+     - Golang
+     - Kubernetes</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><code>go</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Regular expression pattern.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  go.referenced:
+    pattern: "v1beta1.CustomResourceDefinition"</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><code>dependency</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Name of the dependency.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  - go.dependency:
+      name: sigs.k8s.io/structured-merge-diff/v4</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nameregex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regular expression pattern to match the name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>upperbound</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match versions lower than or equal to.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  - go.dependency:
+      name: sigs.k8s.io/structured-merge-diff/v4
+      upperbound: v4.2.2</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lowerbound</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match versions greater than or equal to.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  - go.dependency:
+      name: sigs.k8s.io/structured-merge-diff/v4
+      lowerbound: v4.2.0</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>csharp</code></p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regular expression to match a reference in the source code. For example, <code>System.Web.Mvc.*</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>location</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify one of the following for which {ProductShortName} runs a search query:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Type reference including classes, interfaces and structure types (struct). For example:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">  ----
+  when:
+    csharp.referenced:
+      location: CLASS
+      pattern: System.Web.Http.ApiController.*
+  ----</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">  ----
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "System.Console.Print*"
+  ----</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Method calls and definitions. For example:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">  ----
+  when:
+    csharp.referenced:
+      location: METHOD
+      pattern: "*.AppDomain.Unload"
+  ----</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Field usages and declaration. For example:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">  ----
+  when:
+    csharp.referenced:
+      location: FIELD
+      pattern: "DotNetOpenAuth.AspNet.AuthenticationResult.Provider"
+  ----</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Namespace imports and usages. For example:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">  ----
+  when:
+    csharp.referenced:
+      location: ALL
+      pattern: "System.Windows.Forms"
+  ----</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ALL</code> - You can also specify <code>ALL</code> as <code>location</code> to run a search query on any location in the code, including namespaces, structure types, and interfaces.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist _additional-resources">
+<ul>
+<li>
+<p><a href="#yaml-java-provider_rules-prov-cond">Java</a></p>
+</li>
+<li>
+<p><a href="#yaml-java-locations_java-conditions-capabilities">Java locations</a></p>
+</li>
+<li>
+<p><a href="#yaml-annotation-inspection_java-conditions-capabilities">Annotation inspection</a></p>
+</li>
+<li>
+<p><a href="#yaml-tag-actions_rule-yaml-actions">Tag action</a></p>
+</li>
+<li>
+<p><a href="#yaml-go-provider_rules-prov-cond">Go</a></p>
+</li>
+<li>
+<p><a href="#yaml-dotnet-provider_rules-prov-cond">Csharp</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

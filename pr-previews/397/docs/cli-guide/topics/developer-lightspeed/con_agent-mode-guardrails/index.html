@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/cli-guide/topics/developer-lightspeed/con_agent-mode-guardrails/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/cli-guide/topics/developer-lightspeed/con_agent-mode-guardrails/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/cli-guide/topics/developer-lightspeed/con_agent-mode-guardrails/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b518cc7460d8352a4a3b9b1d25a636f0bdc9bc78">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="agent-mode-guardrails_{context}">Output verification and agent mode guardrails</h1>
+<div class="paragraph _abstract">
+<p>To understand how the system ensures syntactically valid code, review the output verification mechanism. In agent mode, the {mta-dl-plugin} acts as a native compiler validation loop.</p>
+</div>
+<div class="paragraph">
+<p>The verification mechanism ensures that AI-generated code suggestions are syntactically valid and compatible with your classpath before they are written to disk.</p>
+</div>
+<div class="paragraph">
+<p>The verification mechanism provides a programmatic guardrail against common large language model (LLM) risks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hallucinated application programming interface (API) signatures</p>
+</li>
+<li>
+<p>References to removed or deprecated methods</p>
+</li>
+<li>
+<p>Syntactically broken output</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you run an analysis in agent mode, the {mta-dl-plugin} passes each code suggestion through a local build dry run before applying it to your workspace. This process runs entirely on your developer workstation. No source code or build artifacts leave your local environment during verification.</p>
+</div>
+<div class="paragraph">
+<p>The extension invokes the standard build toolchain that is already configured for your project directly in your local workspace, such as the following toolchains:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Java projects</code>: Apache Maven (<code>mvn compile</code>) or Gradle (<code>gradle compileJava</code>).</p>
+</li>
+<li>
+<p><code>JavaScript and TypeScript projects</code>: npm (<code>npm run build</code>) or Yarn (<code>yarn build</code>).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The dry run runs directly on the underlying file system of your local workspace without containerization or process isolation. If the dry run completes successfully, the {mta-dl-plugin} displays the verified suggestion for your approval before applying it to the workspace. If the dry run returns errors, the {mta-dl-plugin} attempts automatic correction.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
