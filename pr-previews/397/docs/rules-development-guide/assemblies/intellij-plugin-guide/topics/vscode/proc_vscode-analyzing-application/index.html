@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Running an application analysis | Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Running an application analysis" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/397/docs/rules-development-guide/assemblies/intellij-plugin-guide/topics/vscode/proc_vscode-analyzing-application/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/397/docs/rules-development-guide/assemblies/intellij-plugin-guide/topics/vscode/proc_vscode-analyzing-application/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Running an application analysis" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Running an application analysis","url":"https://migtools.github.io/mta-documentation/pr-previews/397/docs/rules-development-guide/assemblies/intellij-plugin-guide/topics/vscode/proc_vscode-analyzing-application/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=318c2c45d03991f83b344d3fa17a6704d083a3c7">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="vscode-analyzing-application_{context}">Running an application analysis</h1>
+<div class="paragraph _abstract">
+<p>You can run a static code analysis of an application with or without enabling the Generative AI (GenAI) features. The Remote Procedure Call (RPC) server runs the analysis to detect all issues in the code for one or more target technologies to which you want to migrate the application to.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You opened a project in your Visual Studio Code workspace.</p>
+</li>
+<li>
+<p>You installed the following for <code>.NET Core</code> or <code>C#</code> application analysis:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The {ProductShortName} Core and <code>C#</code> extensions</p>
+</li>
+<li>
+<p><code>dotnet tools</code> and added it to the <code>$PATH</code> environment variable</p>
+</li>
+<li>
+<p><code>ilspycmd</code> command line tool for the <code>ILSpy.NET</code> decompiler</p>
+</li>
+<li>
+<p><code>paket</code> package manager</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>You configured an analysis profile on the <strong>{ProductShortName} Analysis View</strong> page. For more information, see <a href="#configuring-profile-settings_vsc-extension-guide">Configuring the {ProductShortName} profile settings</a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click the {mta-dl-plugin} extension and click <strong>Open {ProductShortName} Analysis View</strong>.</p>
+</li>
+<li>
+<p>Select a profile for the analysis.</p>
+</li>
+<li>
+<p>Click <strong>Start</strong> to start the {ProductShortName} RPC server.</p>
+</li>
+<li>
+<p>Click <strong>Run Analysis</strong> on the <strong>{ProductShortName} Analysis View</strong> page.</p>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/configuring_and_using_red_hat_developer_lightspeed_for_mta/index">Configuring and using Developer Lightspeed for {ProductShortName}</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

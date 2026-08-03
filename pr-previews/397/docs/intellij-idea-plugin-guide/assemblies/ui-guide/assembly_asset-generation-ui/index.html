@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/ui-guide/assembly_asset-generation-ui/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/ui-guide/assembly_asset-generation-ui/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/ui-guide/assembly_asset-generation-ui/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=318c2c45d03991f83b344d3fa17a6704d083a3c7">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="asset-generation-ui">Generating assets for application deployment in {WebName}</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To create different assets (manifests) required to deploy applications from Cloud Foundry (CF) instances to {ocp-full} or Kubernetes, use asset generation in {ProductShortName} {WebName}.</p>
+</div>
+<div class="paragraph">
+<p>To generate assets, familiarize yourself with the following entities:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Archetypes</dt>
+<dd>
+<p>An archetype contains criteria tags that identify technologies, such as JBoss EAP 6.</p>
+<div class="paragraph">
+<p>You can use archetypes to classify applications by their common technologies. For asset generation, you plan migration paths by archetype because you configure the other asset generation entities, such as target profiles that contain the generators, directly within the archetype.</p>
+</div>
+</dd>
+<dt class="hdlist1">Generators</dt>
+<dd>
+<p>A generator uses a templating engine, such as Helm, and a set of templates as its input configuration.</p>
+<div class="paragraph">
+<p>When you run an asset generation process, the generator parses the application discovery manifest and uses templates defined for your target platform and migration path to create deployment assets. For example, if you migrate a JBoss EAP 6 application to JBoss EAP 8 on Kubernetes, the generator parses the application&#8217;s discovery manifest to create the required deployment assets.</p>
+</div>
+</dd>
+<dt class="hdlist1">Target profiles</dt>
+<dd>
+<p>A target profile represents your target migration platform and contains a sequence of generators.</p>
+<div class="paragraph">
+<p>You can use the target profile to run multiple generators simultaneously, where each generator creates assets for a specific migration path. For example, to migrate a JBoss EAP 6 application to both OpenJDK 21 and JBoss EAP 8 on {ocp-short}, you can use a target profile with two generators, one for each migration path.</p>
+</div>
+</dd>
+<dt class="hdlist1">Applications</dt>
+<dd>
+<p>An application includes tags, the asset repository, and, optionally, the discovery manifest. If the discovery manifest is unavailable, the generator uses implicit data from the application profile.</p>
+<div class="paragraph">
+<p>If you want to use the discovery manifest, the configuration retrieval process generates this manifest. The manifest contains the platform and runtime configurations of an application deployed in the source platform (CF) instances. During asset generation, generator templates parse the discovery manifest to create the final deployment assets.</p>
+</div>
+<div class="paragraph">
+<p>The application also contains tags that you must configure as criteria tags in an archetype.</p>
+</div>
+<div class="paragraph">
+<p>You can find the assets generated for deployment in the target platform in the asset repository.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-generators_asset-generation-ui">Configuring a generator</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To get templates required to generate different asset manifests, configure generators that contain a repository with these templates.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed {ProductShortName} 8.0.0 operator to access the web console.</p>
+</li>
+<li>
+<p>You are an administrator with access to the <strong>Administration</strong> mode in the {ProductShortName} {WebName}.</p>
+</li>
+<li>
+<p>As an administrator, you configured a source control credential for the template repository (if applicable).</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Administration</strong> view, click <strong>Generators</strong>.</p>
+<div class="paragraph">
+<p>On the <strong>Generators</strong> page, you can create, edit, and delete generators.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Create new generator</strong>.</p>
+</li>
+<li>
+<p>Configure the following fields:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Name</strong> field in the opened dialog, enter a unique name for the generator.</p>
+</li>
+<li>
+<p>Select <strong>Helm</strong> as the generator.</p>
+</li>
+<li>
+<p>Click <strong>Template repository</strong> to expand the section.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Select a <strong>Repository type</strong> from <strong>Git</strong> or <strong>Subversion</strong>.</p>
+</li>
+<li>
+<p>Optional: Enter the URL of your repository that contains the Helm templates.</p>
+</li>
+<li>
+<p>Optional: Enter the <strong>Branch</strong> of your repository.</p>
+</li>
+<li>
+<p>Optional: Enter the <strong>Root path</strong> of your repository.</p>
+</li>
+<li>
+<p>Select the credentials to access your repository if it is private.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Optional: Click <strong>Values</strong> and enter the new value for an attribute in the discovery manifest as a key-value pair.</p>
+<div class="paragraph">
+<p>During asset generation, the generator overrides the value of the matching attribute in the discovery manifest with the value you enter.</p>
+</div>
+</li>
+<li>
+<p>Optional: Click <strong>Parameters</strong> to enter parameters and their default values as a key-value pair.</p>
+<div class="paragraph">
+<p>Parameter fields require user input before the template can generate assets.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+During template instantiation, parameters take precedence over values, and values take precedence over the configurations present in the discovery manifest.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.
+You can click anywhere on the generator row to open the details view that shows the generator configuration details, parameters, and values.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-target-profiles_asset-generation-ui">Configuring a target profile</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Create and track the target profiles for a specific archetype in the {ProductFullName} user interface (UI).</p>
+</div>
+<div class="paragraph">
+<p>The target profile contains one or more generators. Each generator generates assets for different migration paths.</p>
+</div>
+<div class="paragraph">
+<p>You can configure more than one target profile for the archetype based on the target platforms to which you want to migrate applications of the specific archetype.</p>
+</div>
+<div class="paragraph">
+<p>The generators are run in a priority order, in which manifests generated by lower priority generators do not override manifests generated by other generators.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Archetypes</strong>.</p>
+</li>
+<li>
+<p>Click the Options menu ({kebab}) of an archetype, and select <strong>Manage target profiles</strong>.</p>
+<div class="paragraph">
+<p>The <strong>Target profiles for <em>&lt;archetype_name&gt;</em></strong> is displayed.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Create new target profile</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Name</strong> field in the opened dialogue, enter a unique name for the target profile.</p>
+</li>
+<li>
+<p>Click the <strong>Tag category</strong> field and select the category tag to associate with the tag.</p>
+</li>
+<li>
+<p>Select specific generators and click the right arrow to move the generator from the <strong>Available generators</strong> list to the <strong>Chosen generators</strong> list.</p>
+</li>
+<li>
+<p>Optional: Select an analysis profile for the application from the list. You can download the profile configuration from the {ProductShortName} {CLIName} and the Visual Studio Code extension only if you select the profile from this list.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>You can click the archetype row to open the archetype detail view where the target profiles for the archetype are listed.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-asset-repository_asset-generation-ui">Configuring an asset repository</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Configure an asset repository in the {ProductFullName} user interface (UI) to publish generated assets. If you do not configure the asset repository, the application repository is considered the default location for publishing the generated assets.</p>
+</div>
+<div class="paragraph">
+<p>When you configure the asset repository for an application, you can also associate the Source Control credentials of the asset repository before generating assets. If you do not configure a Source Control credential for the asset repository, {ProductShortName} considers the source code repository credential as the default Source Control credential for the asset repository.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Applications</strong>.</p>
+</li>
+<li>
+<p>Click the edit icon (<span class="image"><img src="../topics/images/icon_edit.png" alt="edit icon"></span>) to update an imported application.</p>
+</li>
+<li>
+<p>In the <strong>Update application</strong> dialog, click <strong>Asset repository</strong> and configure the following details:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select the <strong>Asset repository type</strong> from <strong>Git</strong> or <strong>Subversion</strong>.</p>
+</li>
+<li>
+<p>Enter the asset repository URL in the <strong>Asset repository</strong> field.</p>
+</li>
+<li>
+<p>Enter the <strong>Branch</strong> of your repository.</p>
+</li>
+<li>
+<p>Enter the <strong>Root path</strong> of your repository.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong> and close the <strong>Update application</strong> dialog.</p>
+</li>
+<li>
+<p>Click <strong>Manage Credentials</strong> from the Options menu ({kebab}) of the application.</p>
+</li>
+<li>
+<p>Select the asset repository credential on the <strong>Manage Credentials</strong> dialog and close the dialog.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-deployment-assets_asset-generation-ui">Generating deployment assets by using a discovery manifest</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To prepare your application for deployment to a container platform, generate deployment assets by using a discovery manifest in the {ProductFullName} user interface (UI).</p>
+</div>
+<div class="paragraph">
+<p>When you generate assets for an application, the generators render manifests for all the migration paths associated with the archetype of the application.</p>
+</div>
+<div class="paragraph">
+<p>You can generate application assets by using only source code, without generating a discovery manifest first. If a discovery manifest is unavailable, the generator uses the following implicit data from the application profile for opinionated asset generation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Application metadata:</strong> Information such as the application name, version, and unique identifiers.</p>
+</li>
+<li>
+<p><strong>Application archetypes:</strong> Standardized templates or structures identified during the initial analysis.</p>
+</li>
+<li>
+<p><strong>Identified application tags:</strong> The generator applies logic based on the tags found during analysis. For example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Quarkus, it configures specific environment variables for native-mode deployments.</p>
+</li>
+<li>
+<p>For Spring Boot, it applies standard Spring framework configurations and dependencies to the generated manifests.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You generated the discovery manifest.</p>
+</li>
+<li>
+<p>You configured the application tags in an archetype.</p>
+</li>
+<li>
+<p>You configured generators and target profile in the archetype.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Applications</strong>.</p>
+</li>
+<li>
+<p>Click the Options menu ({kebab}) of an application.</p>
+</li>
+<li>
+<p>Click <strong>Generate assets</strong> to open the <strong>Generate assets</strong> dialog.</p>
+</li>
+<li>
+<p>Select a target profile and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Click the toggle button to open the JSON view where you can enter the parameter values.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong> to review the configurations to generate assets.</p>
+</li>
+<li>
+<p>Click <strong>Generate assets</strong>.</p>
+<div class="paragraph">
+<p>You can view the generated assets in the asset repository that you configured.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

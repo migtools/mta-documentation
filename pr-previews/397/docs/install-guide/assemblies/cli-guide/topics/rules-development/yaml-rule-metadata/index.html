@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/397/docs/install-guide/assemblies/cli-guide/topics/rules-development/yaml-rule-metadata/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/397/docs/install-guide/assemblies/cli-guide/topics/rules-development/yaml-rule-metadata/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/397/docs/install-guide/assemblies/cli-guide/topics/rules-development/yaml-rule-metadata/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=318c2c45d03991f83b344d3fa17a6704d083a3c7">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-rule-metadata-structure_{context}">Rule metadata structure</h1>
+<div class="paragraph _abstract">
+<p>Rule metadata contains a unique rule ID, labels, effort, and category so that the analyzer can select the rules for an analysis and compute the total effort to resolve the issues detected in the source code.</p>
+</div>
+<div class="paragraph">
+<p>You can use rule metadata to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Estimate the total migration effort.</p>
+</li>
+<li>
+<p>Prioritize issues for resolution based on the effort.</p>
+</li>
+<li>
+<p>Evaluate if a resolution is mandatory through rule category before migrating the applications to the target technologies or platforms.</p>
+</li>
+<li>
+<p>Define labels that {ProductShortName} uses to filter rules for an analysis.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">ruleID: "<em>&lt;unique_id&gt;</em>"
+labels:
+  # key=value pair
+  - "label1=<em>&lt;val1&gt;</em>"
+  # valid label with value omitted
+  - "label2"
+  # valid label with empty value
+  - "label3="
+  # subdomain prefixed key
+  - "konveyor.io/label1=<em>&lt;val1&gt;</em>"
+effort: 1
+category: mandatory</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ruleID</code> is a unique ID for the rule. It must be unique within the ruleset.</p>
+</li>
+<li>
+<p><code>labels</code> is a list of string labels associated with the rule.</p>
+</li>
+<li>
+<p><code>effort</code> is an integer value that indicates the level of effort needed to resolve this issue.</p>
+</li>
+<li>
+<p><code>category</code> is the severity of the issue for migration. Values can be one of <code>mandatory</code>, <code>potential</code> or <code>optional</code>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#yaml-rule-labels_rule-yaml-metadata">Rule labels</a></p>
+</li>
+<li>
+<p><a href="#yaml-rule-categories_rule-yaml-metadata">Rule categories</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

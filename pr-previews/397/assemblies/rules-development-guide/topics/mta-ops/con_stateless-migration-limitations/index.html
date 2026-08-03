@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/397/assemblies/rules-development-guide/topics/mta-ops/con_stateless-migration-limitations/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/397/assemblies/rules-development-guide/topics/mta-ops/con_stateless-migration-limitations/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/397/assemblies/rules-development-guide/topics/mta-ops/con_stateless-migration-limitations/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=318c2c45d03991f83b344d3fa17a6704d083a3c7">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="stateless-migration-limitations_{context}">Stateless migration limitations</h1>
+<div class="paragraph _abstract">
+<p>When you plan application migrations, understand the supported paths to create a successful modernization strategy.</p>
+</div>
+<div class="paragraph">
+<p>The current <code>mta-ops</code> version supports migration paths strictly from Red&#160;Hat OpenShift 4.x to 4.x.</p>
+</div>
+<div class="paragraph">
+<p>The current version of the <code>mta-ops</code> CLI supports only stateless application migrations.</p>
+</div>
+<div class="paragraph">
+<p>You cannot transfer persistent volume claims (PVCs) or underlying volume data.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mta-ops</code> pipeline supports cross-cluster migrations. It requires distinct source and target cluster contexts to validate and deploy resources successfully.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
