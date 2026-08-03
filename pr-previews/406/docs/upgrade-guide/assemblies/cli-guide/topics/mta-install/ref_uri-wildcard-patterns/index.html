@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/406/docs/upgrade-guide/assemblies/cli-guide/topics/mta-install/ref_uri-wildcard-patterns/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/406/docs/upgrade-guide/assemblies/cli-guide/topics/mta-install/ref_uri-wildcard-patterns/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/406/docs/upgrade-guide/assemblies/cli-guide/topics/mta-install/ref_uri-wildcard-patterns/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=9a614a8b2b860da1fc027417da99ffea882ad727">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="uri-wildcard-patterns_{context}">URI wildcard patterns</h1>
+<div class="paragraph _abstract">
+<p>After template variable substitution, the Hub OpenID Connect (OIDC) provider matches the wildcard patterns in the uniform resource identifier (URI) configuration against the requested URI. The provider uses the <code>/</code> character as a path separator to match the URI segment by segment.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Wildcard pattern behavior</caption>
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Wildcard</th>
+<th class="tableblock halign-left valign-top">Behavior</th>
+<th class="tableblock halign-left valign-top">Example Pattern</th>
+<th class="tableblock halign-left valign-top">Matched URI</th>
+<th class="tableblock halign-left valign-top">Unmatched URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches any characters except <code>/</code> within one path segment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://*/callback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://app.example.com/callback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://app.example.com/auth/callback</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>**</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches zero or more complete path segments. For example, matches across segments separated by <code>/</code> in URI.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://**/callback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://app.example.com/auth/v1/callback</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://different.com/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{a,b}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brace expansion - matches either <code>a</code> or <code>b</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://host{,<strong>}/</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches URIs with or without port and with or without path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="https://*.example.com/**" class="bare">https://*.example.com/**</a></code> to match a specific domain, any subdomain, and any path.</p>
+</li>
+<li>
+<p><code>http://localhost:*/**</code> to match localhost, any port, and any path.</p>
+</li>
+<li>
+<p><code>${issuer.proto}://${issuer.host}{,<strong>}/</strong>*</code> to match the same scheme and host as the OIDC issuer, any port, and any path. You can use this pattern for the {ProductShortName} web console.</p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
