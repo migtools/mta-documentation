@@ -1,11 +1,11 @@
 # Site settings
 show_downloads: false
-title: Windup Documentation
+title: Migration Toolkit for Applications Documentation
 permalink: pretty
-repository: windup/windup-documentation
-baseurl: /
-url: https://windup.github.io/windup-documentation
-repository_url: https://github.com/windup/windup-documentation
+repository: migtools/mta-documentation
+baseurl: /mta-documentation
+url: https://migtools.github.io
+repository_url: https://github.com/migtools/mta-documentation
 
 type: website
 future: false
@@ -40,7 +40,7 @@ exclude:
   - Gemfile.lock
   - topics/
   - vendor/
-  
+
 tag_page_layout: tag
 tag_page_dir: /tag/
 
