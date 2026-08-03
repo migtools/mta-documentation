@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/install-guide/assemblies/cli-guide/topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/install-guide/assemblies/cli-guide/topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/install-guide/assemblies/cli-guide/topics/developer-lightspeed/proc_configuring-developer-lightspeed-ide-settings/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5b50ba4efd0f89fc251054aaafea88762bb07a45">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="configuring-developer-lightspeed-ide-settings_{context}">Configuring the {mta-dl-plugin} IDE settings</h1>
+<div class="paragraph _abstract">
+<p>After you install the {ProductShortName} extension in Visual Studio (VS) Code, you must provide your large language model (LLM) credentials to activate {mta-dl-plugin} settings in Visual Studio (VS) Code.</p>
+</div>
+<div class="paragraph">
+<p>{mta-dl-plugin} settings are applied to all AI-assisted analyses that you perform by using the {ProductShortName} extension. The extension settings can be broadly categorized into debugging and logging, {mta-dl-plugin} settings, analysis settings, and Solution Server settings.</p>
+</div>
+<div class="paragraph">
+<div class="title">Prerequisites</div>
+<p>In addition to the overall prerequisites, you have configured the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You completed the Solution Server configurations in Tackle custom resource if you opt to use the Solution Server.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Go to the {mta-dl-plugin} settings in one of the following ways:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click <code>Extensions &gt; {ProductShortName} Extension for VSCode &gt; Settings</code></p>
+</li>
+<li>
+<p>Type <code>Ctrl + Shift + P</code> or <code>Cmd + Shift + P</code> on the search bar to open the Command Palette and enter <code>Preferences: Open Settings (UI)</code>. Go to <code>Extensions &gt; MTA</code> to open the settings page.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Configure the settings described in the following table:</p>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. {mta-dl-plugin}  extension settings</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Settings</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log level</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Set the log level for the {ProductShortName} binary. The default log level is <code>debug</code>. The log level increases or decreases the verbosity of logs.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Analyzer path</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify an {ProductShortName} custom binary path. If you do not provide a path, {mta-dl-plugin} uses the default path to the binary.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auto Accept on Save</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This option is enabled by default. When you accept the changes suggested by the LLM, the updated code is saved automatically in a new file. Disable this option if you want to manually save the new file after accepting the suggested code changes.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gen AI:Enabled</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This option is enabled by default. It enables you to get code fixes by using {mta-dl-plugin} with a large language model.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gen AI: Agent mode</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enable the experimental Agentic AI flow for analysis. {mta-dl-plugin} runs an automated analysis of a file to identify issues and suggest resolutions. After you accept the solutions, {mta-dl-plugin} makes the changes in the code and re-analyzes the file.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gen AI: Excluded diagnostic sources</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Add diagnostic sources in the <code>settings.json</code> file. The issues generated by such diagnostic sources are excluded from the automated Agentic AI analysis.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cache directory</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify the path to a directory in your filesystem to store cached responses from the LLM.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trace directory</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Configure the absolute path to the directory that contains the saved LLM interaction.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trace enabled</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enable to trace {ProductShortName} communication with the LLM model. Traces are stored in the trace directory that you configured.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demo mode</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enable to run {mta-dl-plugin} in demo mode that uses the LLM responses saved in the <code>cache</code> directory for analysis.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Debug:Webview</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enable debug level logging for Webview message handling in VS Code.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

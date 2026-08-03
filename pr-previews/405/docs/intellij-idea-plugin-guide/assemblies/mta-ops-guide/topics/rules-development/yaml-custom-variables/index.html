@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/intellij-idea-plugin-guide/assemblies/mta-ops-guide/topics/rules-development/yaml-custom-variables/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/intellij-idea-plugin-guide/assemblies/mta-ops-guide/topics/rules-development/yaml-custom-variables/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/intellij-idea-plugin-guide/assemblies/mta-ops-guide/topics/rules-development/yaml-custom-variables/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5b50ba4efd0f89fc251054aaafea88762bb07a45">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-custom-variables_{context}">Custom variables</h1>
+<div class="paragraph _abstract">
+<p>You can create custom variables in provider conditions. You can use custom variables to capture relevant information from a line in the source code that violates the rule. {ProductShortName} interpolates the values of these variables with the piece of data in the source code. You can add variables to a rule in the <code>customVariables</code> field.</p>
+</div>
+<div class="paragraph">
+<p>You can use the custom variable values to generate detailed template messages in a rule&#8217;s action (see Message actions).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">- ruleID: lang-ref-004
+   customVariables:
+   - pattern: '([A-z]+)\.get\(\)'
+      name: VariableName
+    message: "Found generic call - {{ VariableName }}"
+  when:
+      java.referenced:
+          location: METHOD_CALL
+          pattern: com.example.apps.GenericClass.get</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>pattern</code> </dt>
+<dd>
+<p>A regular expression pattern that {ProductShortName} uses to find a match on the source code line.</p>
+</dd>
+<dt class="hdlist1"><code>name</code> </dt>
+<dd>
+<p>The name of the variable that can be used in templates.</p>
+</dd>
+<dt class="hdlist1"><code>message</code> </dt>
+<dd>
+<p>A template for a message by using a custom variable.</p>
+</dd>
+</dl>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#yaml-message-actions_rule-yaml-actions">Message actions</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

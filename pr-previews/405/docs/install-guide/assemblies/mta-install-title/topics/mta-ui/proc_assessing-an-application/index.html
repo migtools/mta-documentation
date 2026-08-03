@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/install-guide/assemblies/mta-install-title/topics/mta-ui/proc_assessing-an-application/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/install-guide/assemblies/mta-install-title/topics/mta-ui/proc_assessing-an-application/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/install-guide/assemblies/mta-install-title/topics/mta-ui/proc_assessing-an-application/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5b50ba4efd0f89fc251054aaafea88762bb07a45">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="assessing-an-application_{context}">Assessing an application</h1>
+<div class="paragraph _abstract">
+<p>Estimate the risks and costs involved in preparing applications for modernization by performing an application assessment in the {ProductFullName} user interface (UI).</p>
+</div>
+<div class="paragraph">
+<p>The {ProductFullName} assesses applications according to a set of questions relevant to the application, such as dependencies. To assess the application, you can use the default <a href="#mta-default-questionnaire_assessment-questionnaires">Legacy Pathfinder</a> {ProductShortName} questionnaire or import a <a href="#mta-custom-questionnaire_assessment-questionnaires">custom</a> questionnaire.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+You can assess only one application at a time.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>During the assessment, you might encounter false positives in an application that cannot be fully resolved. This can happen because {ProductShortName} cannot discover the class that is being called. Therefore, {ProductShortName} cannot determine whether it is a valid match or not. You can use the following solution to resolve the issue:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure that the maven settings can get all the dependencies.</p>
+</li>
+<li>
+<p>Ensure the application can be fully compiled.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are logged in to an {ProductShortName} server.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the {ProductShortName} user interface, select the <strong>Migration</strong> view.</p>
+</li>
+<li>
+<p>Click <strong>Application inventory</strong> in the left menu bar.</p>
+</li>
+<li>
+<p>Select the application you want to assess.</p>
+</li>
+<li>
+<p>Click the <strong>Options</strong> menu ({kebab}) at the right end of the row and select <strong>Assess</strong> from the drop-down menu.</p>
+</li>
+<li>
+<p>From the list of available questionnaires, click <strong>Take</strong> for the desired questionnaire.</p>
+</li>
+<li>
+<p>Select <strong>Stakeholders</strong> and <strong>Stakeholder groups</strong> from the lists to track who contributed to the assessment for future reference.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can also add <strong>Stakeholder Groups</strong> or <strong>Stakeholders</strong> in the <strong>Controls</strong> pane of the <strong>Migration</strong> view. For more information, see <a href="#configuring-mta-instance_user-interface-guide">Configuring a {ProductName} instance</a>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Answer each <strong>Application assessment</strong> question and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> to review the assessment and proceed with the steps in <a href="#reviewing-an-application_assessing-applications">Reviewing an application</a>.</p>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#assessment-questionnaires_assessing-applications">{ProductShortName} assessment questionnaires</a></p>
+</li>
+<li>
+<p><a href="#managing-mta-questionnaires_assessing-applications">Managing assessment questionnaires</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
