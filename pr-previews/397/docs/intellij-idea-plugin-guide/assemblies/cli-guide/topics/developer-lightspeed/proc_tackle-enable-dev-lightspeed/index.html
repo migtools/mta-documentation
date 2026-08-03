@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/cli-guide/topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/cli-guide/topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/cli-guide/topics/developer-lightspeed/proc_tackle-enable-dev-lightspeed/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=85bd23950523ea06dfa54d101cec2ab40dc411e2">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="tackle-enable-dev-lightspeed_{context}">Enabling {mta-dl-plugin} in Tackle custom resource</h1>
+<div class="paragraph _abstract">
+<p>Solution Server integrates with the {ProductShortName} Hub backend component to use the database and volumes necessary to store and retrieve the solved examples.</p>
+</div>
+<div class="paragraph">
+<p>To enable Solution Server and other AI configurations in the {mta-dl-full} VS Code extension, you must modify the Tackle custom resource (CR) with additional parameters.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To use the Solution Server, the Administrator must deploy it in the {ocp-name} cluster with the proxy service. You cannot use the Solution Server without the proxy service. See <a href="#tackle-enable-llm-proxy_getting-started">Enabling LLM proxy in the Tackle custom resource</a> for more information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Prerequisites</div>
+<ol class="arabic">
+<li>
+<p>You deployed an additional RWO volume for  the <code>{mta-dl-plugin}-database</code> if you want to use {mta-dl-plugin}. See <a href="{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui">Persistent volume requirements</a> for more information.</p>
+</li>
+<li>
+<p>You installed the {ProductShortName} operator v8.0.0.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the Red Hat {ocp-name} cluster and switch to the <code>openshift-mta</code> project.</p>
+</li>
+<li>
+<p>Edit the Tackle CR settings in the <code>tackle_hub.yml</code> file with the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">oc edit tackle</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Enter applicable values for <code>kai_llm_provider</code> and <code>kai_llm_model</code> variables.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  kai_llm_proxy_enabled: true
+  kai_solution_server_enabled: true
+  kai_llm_provider: &lt;provider-name&gt; #For example, OpenAI.
+  # optional, pick a suitable model for your provider
+  kai_llm_model: &lt;model-name&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For OpenAI models and LLMs deployed in the {ocp-name} AI cluster, enter <code>OpenAI</code> as the <code>kai_llm_provider</code> value.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>To apply the Tackle CR in the <code>openshift-mta</code> project, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal"> $ oc apply -f tackle_hub.yaml</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Verification</div>
+<ol class="arabic">
+<li>
+<p>Enter the following command to verify the {mta-dl-plugin} resources deployed for Solution Server.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you enable Solution Server, the Solution Server API endpoint is served through the {ProductShortName} Hub. You need not complete any further task, such as creating a route for the Solution Server API.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

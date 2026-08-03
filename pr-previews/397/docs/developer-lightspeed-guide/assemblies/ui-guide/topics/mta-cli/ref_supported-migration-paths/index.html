@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/developer-lightspeed-guide/assemblies/ui-guide/topics/mta-cli/ref_supported-migration-paths/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/developer-lightspeed-guide/assemblies/ui-guide/topics/mta-cli/ref_supported-migration-paths/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/developer-lightspeed-guide/assemblies/ui-guide/topics/mta-cli/ref_supported-migration-paths/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=85bd23950523ea06dfa54d101cec2ab40dc411e2">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="supported-migration-paths_{context}">Supported {ProductName} migration paths</h1>
+<div class="paragraph _abstract">
+<p>You can use the {ProductFullName} to assess your applications' suitability for the migration to multiple target platforms. Review the supported migration paths to verify that your planned migration uses a valid combination of source and target technologies. Adhering to these paths helps ensure that {ProductShortName} can successfully analyze and migrate your applications.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 99%;">
+<caption class="title">Table 1. Supported Java migration paths</caption>
+<colgroup>
+<col style="width: 19.1919%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.1011%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Source platform&#160;&#8658;</th>
+<th class="tableblock halign-left valign-top">Migration to JBoss EAP 7 &amp; 8</th>
+<th class="tableblock halign-left valign-top">OpenShift (cloud readiness)</th>
+<th class="tableblock halign-left valign-top">OpenJDK 11, 17, and 21</th>
+<th class="tableblock halign-left valign-top">Jakarta EE 9</th>
+<th class="tableblock halign-left valign-top">Camel 3 &amp; 4</th>
+<th class="tableblock halign-left valign-top">Spring Boot in Red Hat Runtimes</th>
+<th class="tableblock halign-left valign-top">Quarkus</th>
+<th class="tableblock halign-left valign-top">Open Liberty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle WebLogic Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBM WebSphere Application Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-x} <sup class="footnote" id="_footnote_note2">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p>
+<p class="tableblock"><!-- vale RedHat.Spelling = NO --></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thorntail
+<!-- vale RedHat.Spelling = YES --></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check} <sup class="footnote" id="_footnote_note3">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle JDK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Camel 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Java application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Java EE application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. NET migration paths</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Source platform&#160;&#8658;</th>
+<th class="tableblock halign-left valign-top">OpenShift (cloud readiness)</th>
+<th class="tableblock halign-left valign-top">Migration to .NET 8.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.NET Framework 4.5+ (Windows only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{icon-check}</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Analyzing applications written in the .NET language is Developer Preview software only. Developer Preview software is not supported by Red&#160;Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview software for production or business-critical workloads. Developer Preview software provides early access to upcoming product software in advance of its possible inclusion in a Red&#160;Hat product offering. Customers can use this software to test functionality and provide feedback during the development process. This software might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red&#160;Hat might provide ways to submit feedback on Developer Preview software without an associated SLA.</p>
+</div>
+<div class="paragraph">
+<p>For more information about the support scope of Red&#160;Hat Developer Preview software, see <a href="https://access.redhat.com/support/offerings/devpreview/">Developer Preview Support Scope</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://developers.redhat.com/products/mta/use-cases">Use cases and migration paths for {ProductName}</a></p>
+</li>
+</ul>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Although {ProductShortName} does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Requires JBoss EAP expansion pack 2 (JBoss EAP XP 2).
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

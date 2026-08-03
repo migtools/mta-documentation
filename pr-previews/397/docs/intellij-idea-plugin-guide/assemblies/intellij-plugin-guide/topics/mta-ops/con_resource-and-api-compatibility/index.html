@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/intellij-plugin-guide/topics/mta-ops/con_resource-and-api-compatibility/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/intellij-plugin-guide/topics/mta-ops/con_resource-and-api-compatibility/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/intellij-plugin-guide/topics/mta-ops/con_resource-and-api-compatibility/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=85bd23950523ea06dfa54d101cec2ab40dc411e2">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="resource-and-api-compatibility_{context}">Resource and API compatibility</h1>
+<div class="paragraph _abstract">
+<p>When you prepare for deployment, understand how the pipeline handles application programming interface (API) versions to prevent deployment failures.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mta-ops</code> tool operates in Red&#160;Hat OpenShift 4.x environments but does not enforce a strict minor version matrix. Instead, it relies on the validate stage to ensure API compatibility.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mta-ops</code> command performs strict group, version, and kind (GVK) matching against the target cluster.</p>
+</div>
+<div class="paragraph">
+<p>Namespace-scoped resources are fully supported and extracted by default.</p>
+</div>
+<div class="paragraph">
+<p>Cluster-scoped resources are conditionally supported. The tool extracts custom resource definitions (CRDs), security context constraints (SCCs), and role-based access control (RBAC) objects if you have cluster-admin permissions. If you lack cluster-admin permissions, the tool safely skips them and logs a warning. <code>mta-ops</code> automatically skips operator-managed CRDs. This prevents creating orphaned resources on the target cluster.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

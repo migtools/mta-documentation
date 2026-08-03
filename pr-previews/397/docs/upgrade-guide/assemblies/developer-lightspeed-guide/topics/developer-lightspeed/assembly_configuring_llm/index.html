@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/upgrade-guide/assemblies/developer-lightspeed-guide/topics/developer-lightspeed/assembly_configuring_llm/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/upgrade-guide/assemblies/developer-lightspeed-guide/topics/developer-lightspeed/assembly_configuring_llm/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/upgrade-guide/assemblies/developer-lightspeed-guide/topics/developer-lightspeed/assembly_configuring_llm/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=85bd23950523ea06dfa54d101cec2ab40dc411e2">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="configuring-llm">Configuring large language models for analysis</h1>
+<div class="paragraph _abstract">
+<p>{mta-dl-plugin} provides the large language model (LLM) with the contextual prompt, migration hints, and solved examples to generate suggestions for resolving issues identified in the current code.</p>
+</div>
+<div class="paragraph">
+<p>{mta-dl-plugin} is designed to be model agnostic. It works with LLMs that are run in different environments (in local containers, as local AI, or as a shared service) to support analyzing Java applications in a wide range of scenarios. You can choose an LLM from well-known providers, local models that you run from Ollama or Podman desktop, and OpenAI API compatible models.</p>
+</div>
+<div class="paragraph">
+<p>The code fix suggestions produced to resolve issues detected through an analysis depend on the LLM&#8217;s capabilities.</p>
+</div>
+<div class="paragraph">
+<p>You can run an LLM from the following generative AI providers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenAI</p>
+</li>
+<li>
+<p>Azure OpenAI</p>
+</li>
+<li>
+<p>Google Gemini</p>
+</li>
+<li>
+<p>Amazon Bedrock</p>
+</li>
+<li>
+<p>Ollama</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can also run OpenAI API-compatible LLMs deployed as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A service in your {ocp-name} AI cluster</p>
+</li>
+<li>
+<p>Locally in the Podman AI Lab in your system.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in assembly_configuring_llm.adoc - include::ref_supported-large-language-models-and-providers.adoc[leveloffset=+1]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in assembly_configuring_llm.adoc - include::con_ip-protection-model-hosting.adoc[leveloffset=+1]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in assembly_configuring_llm.adoc - include::con_llm-service-openshift-ai.adoc[leveloffset=+1]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in assembly_configuring_llm.adoc - include::ref_llm-provider-configurations.adoc[leveloffset=+1]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in assembly_configuring_llm.adoc - include::proc_configuring-llm-podman-desktop.adoc[leveloffset=+1]</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

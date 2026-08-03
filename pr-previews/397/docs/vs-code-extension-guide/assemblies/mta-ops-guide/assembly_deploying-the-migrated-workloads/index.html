@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/vs-code-extension-guide/assemblies/mta-ops-guide/assembly_deploying-the-migrated-workloads/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/vs-code-extension-guide/assemblies/mta-ops-guide/assembly_deploying-the-migrated-workloads/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/vs-code-extension-guide/assemblies/mta-ops-guide/assembly_deploying-the-migrated-workloads/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=85bd23950523ea06dfa54d101cec2ab40dc411e2">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="deploying-the-migrated-workloads">Deploying the migrated workloads</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>After you generate and validate the final manifests, deploy them. Because the tool does not modify clusters, use standard deployment tools.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="workload-deployment_deploying-the-migrated-workloads">Workload deployment</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Understand the final step of the stateless workload migration pipeline and deploy the validated manifests to the target cluster.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mta-ops</code> pipeline produces ready-to-use YAML artifacts on your local disk. It deliberately does not connect to the target cluster. This non-destructive architecture ensures that the target cluster remains untouched until manual deployment.</p>
+</div>
+<div class="paragraph">
+<p>Because the pipeline outputs standard Kubernetes manifests, it is fully GitOps-ready. You can commit the final YAML to a repository.</p>
+</div>
+<div class="paragraph">
+<p>Applying the consolidated <code>output.yaml</code> file resolves dependency ordering issues during deployment. Applying the entire directory can cause deployment failures if roles execute before role bindings.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploying-workloads-to-the-target-cluster-as-an-administrator_deploying-the-migrated-workloads">Deploying workloads to the target cluster as an administrator</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To finalize your migration, deploy the validated workloads by applying the generated manifests to the target Red&#160;Hat OpenShift cluster.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Optional: You have validated your workload manifests.</p>
+</li>
+<li>
+<p>You have <code>cluster-admin</code> privileges on the target Red&#160;Hat OpenShift cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Deploy the workloads by using the Red&#160;Hat OpenShift CLI and applying the consolidated file:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f output/output.yaml</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optional: Commit the <code>output/</code> directory to your repository to use a GitOps deployment workflow.</p>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the rollout, service endpoints, and application health on the target cluster.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploying-workloads-to-the-target-cluster-as-a-non-administrator_deploying-the-migrated-workloads">Deploying workloads to the target cluster as a non-administrator</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>When you lack <code>cluster-admin</code> privileges, deploy your workloads as a non-administrator. This allows you to apply namespace-scoped resources safely.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have a <code>PASSED</code> validation report for your output directory.</p>
+</li>
+<li>
+<p>You generated your manifests using the <code>--skip-cluster-scoped</code> flag during the <code>apply</code> stage.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Deploy the workloads by using the Red&#160;Hat OpenShift CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f output/output.yaml</strong></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the rollout and application health on the target namespace.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
