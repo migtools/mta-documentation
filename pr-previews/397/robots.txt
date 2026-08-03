@@ -1,1 +1,0 @@
-Sitemap: https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/sitemap.xml
