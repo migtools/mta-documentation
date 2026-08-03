@@ -67,7 +67,8 @@ jobs:
             git checkout --orphan gh-pages
             git rm -rf . --quiet
             echo "GitHub Pages for mta-documentation" > README.md
-            git add README.md
+            touch .nojekyll
+            git add README.md .nojekyll
             git -c user.name="github-actions[bot]" -c user.email="github-actions[bot]@users.noreply.github.com" commit -m "chore: initialise gh-pages branch"
             git push origin gh-pages
           fi
@@ -82,12 +83,13 @@ jobs:
           PR_NUMBER: ${{ steps.pr.outputs.number }}
           COMMIT_SHA: ${{ steps.sha.outputs.sha }}
         run: |
+          touch .nojekyll
           PREVIEW_DIR="pr-previews/${PR_NUMBER}"
           rm -rf "${PREVIEW_DIR}"
           mkdir -p "${PREVIEW_DIR}"
           cp -r /tmp/pr-preview-site/. "${PREVIEW_DIR}/"
 
-          git add "${PREVIEW_DIR}"
+          git add .nojekyll "${PREVIEW_DIR}"
           if git diff --staged --quiet; then
             echo "No changes to deploy."
           else
