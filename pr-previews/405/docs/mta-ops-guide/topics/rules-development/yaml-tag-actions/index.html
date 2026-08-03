@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/topics/rules-development/yaml-tag-actions/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/topics/rules-development/yaml-tag-actions/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/topics/rules-development/yaml-tag-actions/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=8941f35ad18fcf1ec34a2e87175feaa035043a85">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-tag-actions_{context}">Tag actions</h1>
+<div class="paragraph _abstract">
+<p>A tag action instructs the analyzer to generate one or more tags for the application when it finds a match. Each string in the <code>tag</code> field can be a comma-separated list of tags. Optionally, you can assign categories to tags.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">tag:
+  - "<em>&lt;tag1&gt;</em>,<em>&lt;tag2&gt;</em>,<em>&lt;tag3&gt;</em>"
+  - "Category=<em>&lt;tag4&gt;</em>,<em>&lt;tag5&gt;</em>"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Example</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">- ruleID: test-rule
+  when:
+    <em>&lt;CONDITION&gt;</em>
+  tag:
+  - Language=Golang
+  - Env=production
+  - Source Code</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A tag can be a string or a <code>key=val</code> pair, where {ProductShortName} treats the key as a tag category. You can consider any rule that has a tag action as a “tagging rule” in this document.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Issues are not created for rules that contain only tag actions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

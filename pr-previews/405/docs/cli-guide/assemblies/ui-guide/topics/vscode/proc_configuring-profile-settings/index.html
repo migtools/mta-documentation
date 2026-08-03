@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/cli-guide/assemblies/ui-guide/topics/vscode/proc_configuring-profile-settings/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/cli-guide/assemblies/ui-guide/topics/vscode/proc_configuring-profile-settings/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/cli-guide/assemblies/ui-guide/topics/vscode/proc_configuring-profile-settings/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=8941f35ad18fcf1ec34a2e87175feaa035043a85">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="configuring-profile-settings_{context}">Configuring the {ProductShortName} profile settings</h1>
+<div class="paragraph _abstract">
+<p>You can use the Visual Studio Code plugin to run an analysis to discover issues in the code.</p>
+</div>
+<div class="paragraph">
+<p>To generate code changes by using the {ProductShortName} extension, you must configure a profile that contains all the necessary configurations, such as rules and source and target technologies.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You configured the Visual Studio Code IDE settings. For more information, see <a href="#configuring-lighstspeed-ide-settings_vsc-extension-guide">Configuring the {mta-dl-plugin} IDE settings</a>.</p>
+</li>
+<li>
+<p>You opened a Java project in your Visual Studio Code workspace.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open the <code>{ProductShortName} View Analysis</code> page by clicking the book icon on the <code>{ProductShortName}: Issues</code> pane of the {ProductShortName} extension.</p>
+<div class="paragraph">
+<p>Alternatively, type <code>Ctrl + Shift + P</code> or <code>Cmd + Shift + P</code> in the search bar to open the Command Palette and enter <code>{ProductShortName}:Open Analysis View</code>.</p>
+</div>
+</li>
+<li>
+<p>Click the settings button on the <code>{ProductShortName} View Analysis</code> page to configure a profile for your project. The <code>Get Ready to Analyze</code> pane has the following basic configurations required for an application analysis:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Select profile: Create a profile that you can reuse for one or more analyses.</p>
+</li>
+<li>
+<p>Configure label selector: A label selector filters rules for analysis based on the source or target technology.</p>
+<div class="paragraph">
+<p>Specify one or more target or source technologies. {mta-dl-plugin} uses this configuration to determine the rules to apply to a project during the analysis. If you mentioned a new target or a source technology in your custom rule, you can type that name to create and add the new item to the list.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+You must configure target or source technologies before running an analysis.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Set rules: Enable default rules and select your custom rule that you want {ProductShortName} to use for the analysis. You can use the custom rules in addition to the default rules.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>After completing the profile configuration, close the <code>Get Ready to Analyze</code> pane and run an application analysis.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Next steps</div>
+<ul>
+<li>
+<p><a href="#vscode-analyzing-application_vsc-extension-guide">Run an application analysis</a>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.0/html/configuring_and_using_red_hat_developer_lightspeed_for_mta/index">Configuring and using Developer Lightspeed for {ProductShortName}</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
