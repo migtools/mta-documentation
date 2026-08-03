@@ -84,12 +84,23 @@ jobs:
           COMMIT_SHA: ${{ steps.sha.outputs.sha }}
         run: |
           touch .nojekyll
+          # Write a minimal _config.yml to the gh-pages root so Jekyll only
+          # passes through the pr-previews/ directory without reprocessing it.
+          cat > _config.yml << 'EOF'
+include:
+  - pr-previews/
+exclude:
+  - "*"
+EOF
           PREVIEW_DIR="pr-previews/${PR_NUMBER}"
           rm -rf "${PREVIEW_DIR}"
           mkdir -p "${PREVIEW_DIR}"
           cp -r /tmp/pr-preview-site/. "${PREVIEW_DIR}/"
+          # Remove _config.yml from the preview dir so GitHub Pages does not
+          # treat gh-pages as a Jekyll source and re-run Jekyll on it.
+          rm -f "${PREVIEW_DIR}/_config.yml"
 
-          git add .nojekyll "${PREVIEW_DIR}"
+          git add .nojekyll _config.yml "${PREVIEW_DIR}"
           if git diff --staged --quiet; then
             echo "No changes to deploy."
           else
