@@ -35,9 +35,9 @@ jobs:
       - name: Read PR number from artifact
         id: pr
         run: |
-          PR_NUMBER=$(cat /tmp/pr-preview-site/.pr-number)
+          PR_NUMBER=$(cat /tmp/pr-preview-site/pr-number.txt)
           echo "number=${PR_NUMBER}" >> "$GITHUB_OUTPUT"
-          rm /tmp/pr-preview-site/.pr-number
+          rm /tmp/pr-preview-site/pr-number.txt
 
       - name: Get PR head SHA
         id: sha
