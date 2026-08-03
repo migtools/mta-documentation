@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/developer-lightspeed-guide/assemblies/developer-lightspeed-guide/topics/mta-install/con_keycloak-migration/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/developer-lightspeed-guide/assemblies/developer-lightspeed-guide/topics/mta-install/con_keycloak-migration/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/developer-lightspeed-guide/assemblies/developer-lightspeed-guide/topics/mta-install/con_keycloak-migration/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=89e264fee046e45cc7e7ae64c6958e670516ae84">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="keycloak-migration_{context}">Keycloak migration</h1>
+<div class="paragraph _abstract">
+<p>As a {ProductFirstRef} administrator, you can federate user authentication to your Keycloak instance and reduce configuration complexity when you upgrade to {ProductShortName} {ProductVersion}.</p>
+</div>
+<div class="paragraph">
+<p>When you upgrade to {ProductShortName} {ProductVersion}, the {ProductShortName} Operator finds the Red Hat build of Keycloak (RHBK) in the {ProductShortName} namespace if you deployed Keycloak in earlier versions.</p>
+</div>
+<div class="paragraph">
+<p>If RHBK is available, the {ProductShortName} Operator installs a Keycloak Operator and deploys an <code>IdentityProvider</code> custom resource (CR) for your Keycloak instance.</p>
+</div>
+<div class="paragraph">
+<p>In this case, the Keycloak Operator manages the RHBK instance and configures a dedicated realm with necessary roles and permissions. You can configure Keycloak as the primary authentication method in the {ProductShortName} Tackle CR for an automatic redirect to your instance for user authentication. If you do not configure Keycloak as the primary authentication method, you can click the <strong>Sign-in with Keycloak</strong> option on the Hub login page to redirect authentication.</p>
+</div>
+<div class="paragraph">
+<p>If you did not deploy an RHBK instance in the {ProductShortName} namespace  before the upgrade, or if you install {ProductShortName} for the first time, the {ProductShortName} Operator does not deploy the Keycloak Operator, PostgreSQL database, and other RHBK resources. You no longer need to provision <code>1 GiB</code> for the Keycloak database volume in the {ProductShortName} namespace.</p>
+</div>
+<div class="paragraph">
+<p>In such cases, you can configure a Keycloak instance separately and integrate it as an identity provider (IdP) for user authentication in {ProductShortName}. The Hub OpenID Connect (OIDC) provider federates user authentication to the Keycloak provider.</p>
+</div>
+<div class="paragraph">
+<p>You can configure Keycloak as the OIDC provider by using the <code>IdentityProvider</code> CR and continue to manage users and roles in Keycloak.</p>
+</div>
+<div class="paragraph">
+<p>To configure the existing Keycloak instance as an IdP for user authentication, complete the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure the IdP by using the <code>IdentityProvider</code> CR.</p>
+</li>
+<li>
+<p>Configure the Keycloak instance uniform resource identifier (URI) as the OIDC issuer in the CR.</p>
+</li>
+<li>
+<p>Configure the Hub URL with the callback endpoint as the redirect URI.</p>
+</li>
+<li>
+<p>Deploy the CR in the same namespace where you installed the {ProductShortName} application in your cluster.</p>
+<div class="paragraph">
+<p>The {ProductShortName} Operator reconfigures the Hub to federate OIDC to your existing Keycloak instance.</p>
+</div>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

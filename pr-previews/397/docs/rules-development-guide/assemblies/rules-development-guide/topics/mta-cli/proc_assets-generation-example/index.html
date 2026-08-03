@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/rules-development-guide/assemblies/rules-development-guide/topics/mta-cli/proc_assets-generation-example/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/rules-development-guide/assemblies/rules-development-guide/topics/mta-cli/proc_assets-generation-example/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/rules-development-guide/assemblies/rules-development-guide/topics/mta-cli/proc_assets-generation-example/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=89e264fee046e45cc7e7ae64c6958e670516ae84">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="assets-generation-example_{context}">Assets generation example</h1>
+<div class="paragraph _abstract">
+<p>You can use the {ProductFullName} command-line interface to generate static assets for offline review. Use the following example to validate the command syntax and understand the expected output structure.</p>
+</div>
+<div class="paragraph">
+<p>The following example includes generating discovery and deployment manifests of a Cloud Foundry (CF) Node.js application. For this example, the following files and directories are used:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CF Node.js application manifest name: <code>cf-nodejs-app.yaml</code></p>
+</li>
+<li>
+<p>Discovery manifest name: <code>discover.yaml</code></p>
+</li>
+<li>
+<p>Location of the application Helm chart: <code>helm_sample</code></p>
+</li>
+<li>
+<p>Deployment manifests: a ConfigMap and a Dockerfile</p>
+</li>
+<li>
+<p>Output location of the deployment manifests: <code>newDir</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Assume that the <code>cf-nodejs-app.yaml</code> is located in the same directory as the {ProductShortName} {CLIName} binary. If the CF application manifest location is different, you can also enter the location path to the manifest as the <code>input</code>.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed the {ProductShortName} {CLIName} 7.3.0.</p>
+</li>
+<li>
+<p>You have a CF application manifest as a YAML file.</p>
+</li>
+<li>
+<p>You created a Helm template with the required configurations for the {ocp} deployment.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open the terminal application and navigate to the <code>&lt;{ProductShortName}_HOME&gt;/</code> directory.</p>
+</li>
+<li>
+<p>Verify the content of the CF Node.js application manifest:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat cf-nodejs-app.yaml</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>name: cf-nodejs
+lifecycle: cnb
+buildpacks:
+  - docker://my-registry-a.corp/nodejs
+  - docker://my-registry-b.corp/dynatrace
+memory: 512M
+instances: 1
+random-route: true</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate the discovery manifest:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli discover cloud-foundry \
+--input cf-nodejs-app.yaml \
+--output discover.yaml \</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify the content of the discover manifest:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat discover.yaml</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>name: cf-nodejs
+randomRoute: true
+timeout: 60
+buildPacks:
+- docker://my-registry-a.corp/nodejs
+- docker://my-registry-b.corp/dynatrace
+instances: 1</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Generate the deployment manifest in the <code>newDir</code> directory by using the <code>discover.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli generate helm \
+--chart-dir helm_sample \
+--input discover.yaml --output-dir newDir</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the contents of the Dockerfile in the <code>newDir</code> directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat ./newDir/Dockerfile</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>FROM busybox:latest
+
+RUN echo "Hello cf-nodejs!"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the contents of the ConfigMap in the <code>newDir</code> directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat ./newDir/configmap.yaml</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cf-nodejs-config
+data:
+  RANDOM_ROUTE: true
+  TIMEOUT: "60"
+  BUILD_PACKS: |
+    - docker://my-registry-a.corp/nodejs
+    - docker://my-registry-b.corp/dynatrace
+  INSTANCES: "1"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>In the ConfigMap, override the <code>name</code> to <code>nodejs-app</code> and <code>INSTANCES</code> to <code>2</code> :</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli generate helm \
+--chart-dir helm_sample \
+--input discover.yaml --set name="nodejs-app" \
+--set instances=2 \
+--output-dir newDir \</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the contents of the ConfigMap again:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>cat ./newDir/configmap.yaml</strong></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodejs-app
+data:
+  RANDOM_ROUTE: true
+  TIMEOUT: "60"
+  BUILD_PACKS: |
+    - docker://my-registry-a.corp/nodejs
+    - docker://my-registry-b.corp/dynatrace
+  INSTANCES: "2"</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#discover-generate-command-options_generating-assets">The discover and generate command options</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

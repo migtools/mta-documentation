@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/ui-guide/topics/developer-lightspeed/ref_llm-provider-configurations/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/ui-guide/topics/developer-lightspeed/ref_llm-provider-configurations/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/mta-documentation/pr-previews/397/docs/intellij-idea-plugin-guide/assemblies/ui-guide/topics/developer-lightspeed/ref_llm-provider-configurations/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=89e264fee046e45cc7e7ae64c6958e670516ae84">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="llm-provider-settings_{context}">Configuring LLM provider settings</h1>
+<div class="paragraph _abstract">
+<p>{mta-dl-full} is large language model (LLM) agnostic and integrates with an LLM of your choice. To enable {mta-dl-plugin} to access your large language model (LLM), you must enter the LLM provider configurations in the <code>provider-settings.yaml</code> file.</p>
+</div>
+<div class="paragraph">
+<p>The <code>provider-settings.yaml</code> file contains a list of LLM providers that are supported by default. The mandatory environment variables are different for each LLM provider. Depending on the provider that you choose, you can configure additional environment variables for a model in the <code>provider-settings.yaml</code> file. You can also enter a new provider with the required environment variables, the base URL, and the model name.</p>
+</div>
+<div class="paragraph">
+<p>The provider settings file is available in the {mta-dl-plugin} Visual Studio (VS) Code extension.</p>
+</div>
+<div class="paragraph">
+<p>Access the <code>provider-settings.yaml</code> from the VS Code Command Palette by typing <code>Open the GenAI model provider configuration file</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can select one provider from the list by using the <code>&amp;active</code> anchor in the name of the provider. To use a model from another provider, move the <code>&amp;active</code> anchor to <em><strong>one</strong></em> of the desired provider blocks.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For a model named "my-model" deployed in {ocp-name} AI with "example-model" as the serving name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">models:
+  openshift-example-model: &amp;active
+    environment:
+      CA_BUNDLE: "&lt;Servers CA Bundle path&gt;"
+    provider: "ChatOpenAI"
+    args:
+      model: "my-model"
+      configuration:
+        baseURL: "https://&lt;serving-name&gt;-&lt;data-science-project-name&gt;.apps.konveyor-ai.example.com/v1"</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you change the <code>model</code> deployed in {ocp-name} AI, you must also change the <code>model</code> argument and the <code>baseURL</code> endpoint.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you want to select a public LLM provider, you must move the <code>&amp;active</code> anchor to the desired block and change the provider arguments.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For an OpenAI model:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">OpenAI: &amp;active
+    environment:
+      OPENAI_API_KEY: "&lt;your-API-key&gt;" # Required
+    provider: ChatOpenAI
+    args:
+      model: gpt-4o # Required</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For Azure OpenAI:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">AzureChatOpenAI: &amp;active
+    environment:
+      AZURE_OPENAI_API_KEY: "" # Required
+    provider: AzureChatOpenAI
+    args:
+      azureOpenAIApiDeploymentName: "" # Required
+      azureOpenAIApiVersion: "" # Required</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For Amazon Bedrock:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">AmazonBedrock: &amp;active
+    environment:
+      ## May have to use if no global `~/.aws/credentials`
+      AWS_ACCESS_KEY_ID: "" # Required if a global ~/.aws/credentials file is not present
+      AWS_SECRET_ACCESS_KEY: "" # Required if a global ~/.aws/credentials file is not present
+      AWS_DEFAULT_REGION: "" # Required
+    provider: ChatBedrock
+    args:
+      model: meta.llama3-70b-instruct-v1:0 # Required</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is recommended to use the <a href="https://aws.amazon.com/cli/">AWS CLI</a> and verify that you have command line access to AWS services before you proceed with the <code>provider-settings</code> configurations.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For Google Gemini:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">GoogleGenAI: &amp;active
+    environment:
+      GOOGLE_API_KEY: "" # Required
+    provider: ChatGoogleGenerativeAI
+    args:
+      model: gemini-2.5-pro # Required</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For Ollama:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">models:
+  ChatOllama: &amp;active
+    provider: "ChatOllama"
+    args:
+      model: "granite-code:8b-instruct"
+      baseUrl: "127.0.0.1:11434" # example URL</code></pre>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
