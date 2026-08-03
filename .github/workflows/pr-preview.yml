@@ -50,7 +50,7 @@ jobs:
             --destination _site
 
       - name: Save PR number for deploy workflow
-        run: echo "${{ github.event.number }}" > _site/.pr-number
+        run: echo "${{ github.event.number }}" > _site/pr-number.txt
 
       - name: Upload preview artifact
         uses: actions/upload-artifact@v4
