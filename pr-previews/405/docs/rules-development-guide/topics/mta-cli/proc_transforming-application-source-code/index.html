@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/rules-development-guide/topics/mta-cli/proc_transforming-application-source-code/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/rules-development-guide/topics/mta-cli/proc_transforming-application-source-code/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/rules-development-guide/topics/mta-cli/proc_transforming-application-source-code/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5063fcea69c88fd774212d4776de8f7bdc7d186d">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="transforming-application-source-code_{context}">Transforming applications source code</h1>
+<div class="paragraph _abstract">
+<p>To update Java libraries or frameworks, for example, <code>javax</code> or Spring Boot, you can transform Java application source code by using the <code>mta-cli openrewrite</code> command. The <code>openrewrite</code> subcommand allows running <code>OpenRewrite</code> recipes on source code. Transformation applies predefined migration rules to your codebase, reducing the manual effort required to update Java libraries or frameworks.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can only use a single target to run the <code>transform overwrite</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You configured the container runtime.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Display the available <code>OpenRewrite</code> recipes:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli openrewrite --list-targets</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Transform the application source code:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli openrewrite --input=<em>&lt;path_to_source_code&gt;</em>  \
+--target=<em>&lt;target_from_the_list&gt;</em></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>&lt;path_to_source_code&gt;</em>: Specifies the system path to the source code</p>
+</li>
+<li>
+<p><em>&lt;target_from_the_list&gt;</em>: Specifies the OpenRewrite recipe for the target</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Inspect the target application source code <code>diff</code> to see the transformation.</p>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#available-openrewrite-recipes_performing-transformation">Available OpenRewrite recipes</a></p>
+</li>
+<li>
+<p><a href="#openrewrite-command-options_performing-transformation">The openrewrite command options</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

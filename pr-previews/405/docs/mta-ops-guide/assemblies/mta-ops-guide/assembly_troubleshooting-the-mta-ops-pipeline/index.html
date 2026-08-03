@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/mta-ops-guide/assembly_troubleshooting-the-mta-ops-pipeline/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/mta-ops-guide/assembly_troubleshooting-the-mta-ops-pipeline/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/mta-ops-guide/assemblies/mta-ops-guide/assembly_troubleshooting-the-mta-ops-pipeline/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5063fcea69c88fd774212d4776de8f7bdc7d186d">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="troubleshooting-the-mta-ops-pipeline">Troubleshooting the mta-ops pipeline</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>If a migration step fails, you can debug the pipeline to resolve errors. You can extract logs, review failures, and isolate transformations.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-ops-pipeline-troubleshooting_troubleshooting-the-mta-ops-pipeline">mta-ops pipeline troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Understand how the <code>mta-ops</code> CLI isolates failures to help you quickly identify migration blockers.</p>
+</div>
+<div class="paragraph">
+<p>Because the pipeline operates locally, troubleshooting does not require active target cluster intervention. The tool provides three primary diagnostic mechanisms:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Global debug logging</strong>: You can append a global debug flag to any command to print detailed diagnostic output to your terminal.</p>
+</li>
+<li>
+<p><strong>Failure artifacts</strong>: The <code>export</code> and <code>validate</code> commands isolate problematic resources into dedicated <code>failures/</code> subdirectories. This prevents a single incompatible resource from stopping the entire pipeline.</p>
+</li>
+<li>
+<p><strong>Stage isolation</strong>: The <code>transform</code> pipeline produces distinct <code>input/</code> and <code>output/</code> directories for each plugin stage. This allows you to pinpoint exactly where a resource modification failed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enabling-verbose-logging-for-mta-ops_troubleshooting-the-mta-ops-pipeline">Enabling verbose logging for mta-ops</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>When you investigate pipeline failures, extract detailed diagnostic output by appending the verbose logging flag to your command.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Append the <code>--debug</code> flag to any <code>mta-ops</code> command. For example, to debug a validation failure, enter:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-ops validate --context <em>&lt;target_cluster_context&gt;</em> -i output --debug</strong></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify that your terminal output includes expanded diagnostic information and debug-level messages.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="common-migration-pipeline-errors_troubleshooting-the-mta-ops-pipeline">Common migration pipeline errors</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>When you encounter pipeline failures, review the common errors tables. This helps you diagnose issues and resume your migration work.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Export and transform errors</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Error message</th>
+<th class="tableblock halign-left valign-top">Cause</th>
+<th class="tableblock halign-left valign-top">Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Forbidden</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You lack role-based access control (RBAC) permissions to export a resource.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inspect the <code>failures/</code> directory for skipped dependencies. Use role impersonation flags such as <code>--as</code> and <code>--as-group</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Patch evaluation error</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A custom stage contains malformed YAML or missing parent objects.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Isolate the stage by passing the directory name as a positional argument. Rerun the command with the <code>--force</code> flag.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Apply and validate errors</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Error message</th>
+<th class="tableblock halign-left valign-top">Cause</th>
+<th class="tableblock halign-left valign-top">Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dependency order failure</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The deployment command executed manifest files out of their required dependency order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rerun the <code>mta-ops apply</code> command with the <code>--ordered</code> flag.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Unknown resource type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A required custom resource definition (CRD) is missing.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Install the required Operator on the target cluster.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="resolving-validation-failures_troubleshooting-the-mta-ops-pipeline">Resolving validation failures</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To fix incompatibilities with your target cluster, review your validation artifacts. You must resolve missing custom resource definitions (CRDs) manually.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You ran the <code>mta-ops validate</code> command and received a <code>FAILED</code> result.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to your specified validation output directory.</p>
+</li>
+<li>
+<p>Open the <code>failures/</code> subdirectory.</p>
+</li>
+<li>
+<p>Inspect the generated YAML files. The file names indicate the specific group, version, and kind (GVK) that failed compatibility checks.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If a resource failed because a CRD is missing on the target cluster, install the required Operator on the target cluster.</p>
+</li>
+<li>
+<p>If a resource failed because an API version is deprecated, create a custom transformation stage to rewrite the <code>apiVersion</code> field.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Rerun the <code>mta-ops validate</code> command.</p>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify that the <code>mta-ops validate</code> command returns a <code>PASSED</code> summary result.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="resolving-transformation-conflicts_troubleshooting-the-mta-ops-pipeline">Resolving transformation conflicts</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To fix malformed Kustomize patches, isolate your transformation stages. You can inspect the exact input and output of a specific plugin.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You ran the <code>mta-ops transform</code> command and encountered a patch evaluation error.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to your generated <code>transform/</code> directory.</p>
+</li>
+<li>
+<p>Identify the specific numbered stage directory where the failure occurred.</p>
+</li>
+<li>
+<p>Compare the contents of the <code>input/</code> directory against the <code>output/</code> directory for that stage.</p>
+</li>
+<li>
+<p>If the failure occurred in a custom stage, modify your <code>kustomization.yaml</code> file to correct the syntax error.</p>
+</li>
+<li>
+<p>Rerun the isolated custom stage:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-ops transform <em>&lt;custom_stage_directory&gt;</em> -e export -t transform --force</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify that the isolated stage executes successfully and produces the expected YAML in the <code>output/</code> directory.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/405/docs/web-console-guide/assemblies/developer-lightspeed-guide/topics/mta-ops/con_workload-manifest-export/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/405/docs/web-console-guide/assemblies/developer-lightspeed-guide/topics/mta-ops/con_workload-manifest-export/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/405/docs/web-console-guide/assemblies/developer-lightspeed-guide/topics/mta-ops/con_workload-manifest-export/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=5063fcea69c88fd774212d4776de8f7bdc7d186d">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="workload-manifest-export_{context}">Workload manifest export</h1>
+<div class="paragraph _abstract">
+<p>When you extract workloads, understanding the read-only export process helps you to capture the required resource manifests.</p>
+</div>
+<div class="paragraph">
+<p>The export process is read-only and does not affect running applications. The <code>mta-ops</code> CLI operates completely independently of the migration toolkit for applications Hub.</p>
+</div>
+<div class="paragraph">
+<p>The tool does not require a Personal Access Token (PAT). It authenticates directly to the clusters by using your local <code>kubeconfig</code> file.</p>
+</div>
+<div class="paragraph">
+<p>If you do not have cluster-level permissions, the command logs a warning. It records inaccessible resources in a dedicated <code>failures/</code> directory.</p>
+</div>
+<div class="paragraph">
+<p>To identify skipped cluster-scoped resources during a partial export, you must inspect the <code>failures/</code> directory. The tool generates a YAML artifact for each inaccessible resource. These files contain the raw application programming interface (API) error.</p>
+</div>
+<div class="paragraph">
+<p>The <code>export</code> command exits with a non-zero status code under one of the following conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All requested resource types return a <code>Forbidden</code> error.</p>
+</li>
+<li>
+<p>A resource type returns a timeout error.</p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
