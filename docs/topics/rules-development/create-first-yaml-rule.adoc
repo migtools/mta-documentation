@@ -165,9 +165,6 @@ INFO[0066] Static report created. Access it at this URL:  URL="file:/home/<USER>
 . Verify that the issue with the title `Find class loading element in JBoss XML file` is present in the table.
 . Click the *jboss-web.xml* link to open the affected file.
 
-[role="_additional-resources"]
-.Additional resources
-* link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI]
 
 
 
