@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/410/docs/release-notes/assemblies/cli-guide/topics/mta-ops/proc_executing-a-stateless-migration-quickstart/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/410/docs/release-notes/assemblies/cli-guide/topics/mta-ops/proc_executing-a-stateless-migration-quickstart/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/410/docs/release-notes/assemblies/cli-guide/topics/mta-ops/proc_executing-a-stateless-migration-quickstart/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=456f001269d08a798f3d072eb147135a959f1714">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="executing-a-stateless-migration-quickstart_{context}">Executing a stateless migration quick start</h1>
+<div class="paragraph _abstract">
+<p>To quickly test the tool, run a basic stateless migration scenario for a single application. This end-to-end pipeline demonstrates the default workflow.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have active contexts for your source and target clusters.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Export the source application:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-ops export --context <em>&lt;source_context&gt;</em> -n <em>&lt;namespace&gt;</em> -e export --overwrite</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Clean the exported manifests by using the default transformation pipeline:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-ops transform -e export -t transform</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Render the deployable manifests locally:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-ops apply -t transform -o output --overwrite</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optional: Validate the generated manifests against the target cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>mta-ops validate --context <em>&lt;target_context&gt;</em> -i output --overwrite</strong></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Deploy the application to the target cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>oc apply -f output/output.yaml</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the application rollout on the target cluster.</p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/410/docs/mta-ops-guide/assemblies/intellij-plugin-guide/topics/mta-ops/con_cluster-context-management/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/410/docs/mta-ops-guide/assemblies/intellij-plugin-guide/topics/mta-ops/con_cluster-context-management/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/410/docs/mta-ops-guide/assemblies/intellij-plugin-guide/topics/mta-ops/con_cluster-context-management/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=456f001269d08a798f3d072eb147135a959f1714">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="cluster-context-management_{context}">Cluster context management</h1>
+<div class="paragraph _abstract">
+<p>Understand how the <code>mta-ops</code> CLI connects to your environments to ensure your migration commands route to the correct destinations.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mta-ops</code> CLI operates entirely locally. It does not require a centralized web console or an intermediate authentication hub. The tool uses your local <code>kubeconfig</code> file to authenticate and communicate directly with clusters.</p>
+</div>
+<div class="paragraph">
+<p>Because the pipeline extracts data from one environment and validates against another environment, your <code>kubeconfig</code> file must contain active contexts for both clusters simultaneously. <code>mta-ops</code> uses the <code>--context</code> flag to route operations. This design securely uses your existing role-based access control (RBAC) permissions without requiring secondary credentials.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

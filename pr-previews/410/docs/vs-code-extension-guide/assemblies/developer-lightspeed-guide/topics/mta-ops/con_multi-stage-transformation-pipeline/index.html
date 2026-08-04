@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/410/docs/vs-code-extension-guide/assemblies/developer-lightspeed-guide/topics/mta-ops/con_multi-stage-transformation-pipeline/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/410/docs/vs-code-extension-guide/assemblies/developer-lightspeed-guide/topics/mta-ops/con_multi-stage-transformation-pipeline/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/410/docs/vs-code-extension-guide/assemblies/developer-lightspeed-guide/topics/mta-ops/con_multi-stage-transformation-pipeline/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=456f001269d08a798f3d072eb147135a959f1714">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="multi-stage-transformation-pipeline_{context}">Multi-stage transformation pipeline</h1>
+<div class="paragraph _abstract">
+<p>Understand how the multi-stage transformation pipeline produces Kustomize-native output. This allows you to accurately trace modifications.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mta-ops transform</code> command processes exported manifests through sequential plugin stages. The pipeline produces a standard Kustomize layout.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Example output directory structure</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre>transform/
+├── 10_KubernetesPlugin/
+│   ├── input/
+│   ├── output/
+│   ├── patches/
+│   └── kustomization.yaml
+├── 15_OpenShiftPlugin/
+│   ├── input/
+│   ├── output/
+│   ├── patches/
+│   └── kustomization.yaml
+└── 50_CustomModifications/
+    ├── input/
+    ├── output/
+    ├── patches/
+    └── kustomization.yaml</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The directory structure uses the following components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Isolated stage directories</strong>: Each plugin processes within a dedicated, numbered directory. This isolation ensures you can trace which tool caused a specific modification.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can append manual transformation stages to the pipeline to apply declarative patches directly to your application.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Input and output folders</strong>: The pipeline merges the working state into the main directories. These folders show the exact manifest state before and after execution.</p>
+</li>
+<li>
+<p><strong>Patches directory</strong>: This directory contains the generated overlays. The files use predictable, deterministic naming conventions and sorting.</p>
+</li>
+<li>
+<p><strong>Kustomization file</strong>: The <code>kustomization.yaml</code> file acts as the standard entry point. You can manually edit this file in custom stages to apply declarative overrides.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Plugin stages safely regenerate upon execution. However, custom stages require manual forced overwrites to protect your edits.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

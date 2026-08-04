@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/410/assemblies/mta-install-title/topics/mta-cli/proc_performing-a-live-discovery/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/410/assemblies/mta-install-title/topics/mta-cli/proc_performing-a-live-discovery/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/410/assemblies/mta-install-title/topics/mta-cli/proc_performing-a-live-discovery/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=456f001269d08a798f3d072eb147135a959f1714">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="performing-a-live-discovery_{context}">Performing a live discovery in a remote CF instance</h1>
+<div class="paragraph _abstract">
+<p>You can perform a live discovery to determine what is deployed in a certain Cloud Foundry (CF) cluster by using the {ProductFullName} command-line interface (CLI). For example, you can determine how many applications are in the cluster. You can also use the live discovery if you do not have access to manifest YAML files.</p>
+</div>
+<div class="paragraph">
+<p>While discovering the applications in CF, you can filter and list the applications in CF clusters before you import them in {ProductShortName}. Enter a list of comma-separated values by using the <code>--orgs</code> and <code>--spaces</code> flags. Use these flags with <code>--list-apps</code> to list the applications.</p>
+</div>
+<div class="paragraph">
+<p>When you use the <code>--orgs</code> and <code>--spaces</code> flags with the <code>discover</code> command but without the <code>--list-apps</code> flag, {ProductShortName} discovers the applications but does not list them.</p>
+</div>
+<div class="paragraph">
+<p>{ProductShortName} discovers the applications in the following scenarios:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Organization without spaces: if you use only the <code>--orgs</code> flag, {ProductShortName} discovers all applications deployed in all spaces in the organizations that you entered. You can specify one or more organizations as comma-separated values.</p>
+</li>
+<li>
+<p>Spaces common across organizations: you can specify one or more space names available in multiple organizations to filter applications deployed in the spaces.</p>
+</li>
+<li>
+<p>A specific application: You can discover a specific application deployed in a specific space in a particular organization.</p>
+</li>
+<li>
+<p>Applications across spaces in an organization: You can explore applications that have the same name but deployed in different spaces by specifying the organization and the application name while leaving out the <code>--spaces</code> option.</p>
+</li>
+<li>
+<p>Save manifests: Use the <code>--out-dir</code> flag to specify the location to which {ProductShortName} saves manifests of the discovered application.</p>
+</li>
+<li>
+<p>Invalid entries: If you enter an invalid space name or an organization that does not exist, {ProductShortName} stores a log about skipping the space or the organization and continues to discover applications in other valid spaces and organizations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can run the live discovery for a remote CF instance by using the `mta-cli discover cloud-foundry --use-live-connection --orgs=<em>&lt;org_name&gt;</em> --spaces=<em>&lt;space_name&gt;</em> --app-name=<em>&lt;application_name&gt;</em> ` command.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+You must enter at least one Cloud Foundry organization by using the <code>--orgs</code> option to perform live discovery.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have permission to remotely connect to the CF instance.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Optional: Investigate the contents of the remote CF instance</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ cf spaces</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ cf apps</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy the CF configuration file to the directory of your choice:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mkdir <em>&lt;path_to_the_directory&gt;</em>/.cf</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the live discovery in a remote CF instance:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli discover cloud-foundry --use-live-connection --orgs=<em>&lt;org_name&gt;</em> --spaces=<em>&lt;space_name&gt;</em>  --output-dir <em>&lt;path_to_output_directory&gt;</em> --cf-config=<em>&lt;path_to_CF_config_file&gt;</em></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command runs the discovery for all applications from each space in the specified organization.</p>
+</div>
+<div class="paragraph">
+<p>If you want to run the discovery for a specific application, enter, for example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli discover cloud-foundry --use-live-connection --orgs=<em>&lt;org_name&gt;</em>  --spaces=<em>&lt;space_name&gt;</em> --app-name=<em>&lt;application_name&gt;</em> --output-dir <em>&lt;path_to_output_directory&gt;</em> --cf-config=<em>&lt;path_to_CF_config_file&gt;</em></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
