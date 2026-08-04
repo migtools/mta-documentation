@@ -7,3 +7,5 @@
 
 [role="_abstract"]
 After template variable substitution, the Hub OpenID Connect (OIDC) provider matches the wildcard patterns in the uniform resource identifier (URI) configuration against the requested URI. The provider uses the `/` character as a path separator to match the URI segment by segment.
+
+//some comment
