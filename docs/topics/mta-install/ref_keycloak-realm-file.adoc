@@ -1,0 +1,9 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-07-31
+:_mod-docs-content-type: REFERENCE
+
+[id="keycloak-realm-file_{context}"]
+= Keycloak realm sample file
+
+[role="_abstract"]
+After template variable substitution, the Hub OpenID Connect (OIDC) provider matches the wildcard patterns in the uniform resource identifier (URI) configuration against the requested URI. The provider uses the `/` character as a path separator to match the URI segment by segment.
