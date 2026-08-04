@@ -1,0 +1,26 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-05-06
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-mta-8-1-3: {context}]
+
+ifndef::context[]
+[id="mta-8-1-3"]
+endif::[]
+ifdef::context[]
+[id="mta-8-1-3_{context}"]
+endif::[]
+= {ProductShortName} 8.1.3
+
+:context: mta-8-1-3
+
+[role="_abstract"]
+The {ProductShortName} 8.1.3 section lists the known problems and issues fixed in this release.
+
+include::topics/release-notes-topics/ref_known-issues-8-1-3.adoc[leveloffset=+1]
+
+include::topics/release-notes-topics/ref_fixed-issues-8-1-3.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-mta-8-1-3[:context: {parent-context-of-mta-8-1-3}]
+ifndef::parent-context-of-mta-8-1-3[:!context:]
+
