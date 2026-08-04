@@ -15,7 +15,7 @@
 ifdef::mta[]
 :ProductName: migration toolkit for applications
 :DocInfoProductName: migration toolkit for applications
-:DocInfoProductNumber: 8.2
+:DocInfoProductNumber: 8.1
 :ProductShortName: MTA
 :ProductShortNameLower: mta
 :ProductFullName: migration toolkit for applications (MTA)
@@ -27,23 +27,13 @@ ifdef::mta[]
 :WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-<<<<<<< HEAD
-:ProductVersion: 8.2.0
-=======
 :ProductVersion: 8.1.3
->>>>>>> d76a51852118fedd38d4879431a0f599740dd831
 :PluginName: MTA plugin
 :mta-dl-full: Red Hat Developer Lightspeed for migration toolkit for applications
 :mta-dl-plugin: Red Hat Developer Lightspeed for MTA
 :mta-URL: https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/{DocInfoProductNumber}/html-single
-
-<<<<<<< HEAD
-:ProductDistributionVersion: 8.2.0.GA-redhat
-:ProductDistribution: mta-8.2.0.GA-cli-offline.zip
-=======
 :ProductDistributionVersion: 8.1.3.GA-redhat
 :ProductDistribution: mta-8.1.3.GA-cli-offline.zip
->>>>>>> d76a51852118fedd38d4879431a0f599740dd831
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
 :JiraWindupURL: https://issues.redhat.com/projects/MTA/issues
 // OpenShift
