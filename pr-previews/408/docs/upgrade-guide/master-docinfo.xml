@@ -1,0 +1,12 @@
+<title>Upgrading to the migration toolkit for applications {DocInfoProductNumber}</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>Upgrade MTA to include new features and deprecations.</subtitle>
+<abstract>
+    <para>The {ProductFullName} upgrade guide provides information for administrators to migrate Keycloak users, upgrade {ProductShortName}, and update commands that impact your deployment.
+</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />

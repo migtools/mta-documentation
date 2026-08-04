@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/408/assemblies/mta-ops-guide/topics/mta-ui/proc_running-an-analysis-using-profile/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/408/assemblies/mta-ops-guide/topics/mta-ui/proc_running-an-analysis-using-profile/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/408/assemblies/mta-ops-guide/topics/mta-ui/proc_running-an-analysis-using-profile/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2e316b1fa8c3e4ab331503404da217ee4400b09d">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="profile-application-analysis_{context}">Using a profile to run an application analysis</h1>
+<div class="paragraph _abstract">
+<p>As a Migrator, you can use a pre-configured analysis profile to analyze an application for a target platform.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>Select an application that you want to analyze.</p>
+</li>
+<li>
+<p>Review the credentials assigned to the application.</p>
+</li>
+<li>
+<p>Click <strong>Analyze</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Mode</strong> section, select <strong>Use analysis profile</strong>.</p>
+</li>
+<li>
+<p>Select a pre-configured profile from the list to run an analysis.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p><strong>Enable automated tagging</strong>. Select the check box to automatically attach tags to the application.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The {ProductShortName} displays automatically attached tags only after you run the analysis. You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Enable enhanced analysis details</strong>. If you enable this option, {ProductShortName} uploads the logs and output of commands that you run to the Hub as the output streams. The information includes the analyzer raw report.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>In <strong>Review</strong>, verify the analysis parameters.</p>
+</li>
+<li>
+<p>Click <strong>Run</strong>.</p>
+<div class="paragraph">
+<p>The analysis status is <code>Scheduled</code> while {ProductShortName} downloads the container image. After the download completes, the status changes to <code>In-progress</code>.</p>
+</div>
+<div class="paragraph">
+<p>The analysis takes minutes to hours depending on the size of the application and the capacity and resources of the cluster.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The {ProductShortName} uses Kubernetes scheduling capabilities to determine how many analyzer instances to create based on cluster capacity. By default, if you select multiple applications for analysis, the {ProductShortName} provisions only one analyzer at a time. With additional cluster capacity, the {ProductShortName} can execute more analysis processes in parallel.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Optional: To track the status of your active analysis task, open the <strong>Task Manager</strong> view by clicking the notifications button.</p>
+<div class="paragraph">
+<p>Alternatively, hover over the application name to display the pop-over window.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Check the report after the analysis is complete:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the application view by clicking on the application name.</p>
+</li>
+<li>
+<p>Click the <strong>Reports</strong> tab to download the results in the HTML or YAML format.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can download the report after running an analysis if the {ProductShortName} Administrator enables the download option on the <strong>General configuration</strong> page in the <strong>Administration</strong> view.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/408/assemblies/release-notes/topics/mta-cli/proc_analyzing-app-with-profile/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/408/assemblies/release-notes/topics/mta-cli/proc_analyzing-app-with-profile/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/408/assemblies/release-notes/topics/mta-cli/proc_analyzing-app-with-profile/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2e316b1fa8c3e4ab331503404da217ee4400b09d">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="analyzing-app-with-profile_{context}">Analyzing an application by using a profile</h1>
+<div class="paragraph _abstract">
+<p>Migrators can use analysis profiles and custom rules downloaded from the {ProductShortName} Hub to run one or more analyses. You can override the value of a field in the analysis profile by entering an alternative value for the field in the analysis command. If you want to run an analysis without using the downloaded profile, delete the <code>.konveyor</code> directory within your application where {ProductShortName} downloaded the profiles and rules.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Your Administrator installed {ProductShortName} and the <code>tackle</code> operator in your cluster.</p>
+</li>
+<li>
+<p>The Architect configured an analysis profile with required custom rules in the {ProductShortName} {WebName}.</p>
+</li>
+<li>
+<p>The Architect added the analysis profile in the application&#8217;s target profile in the {ProductShortName} {WebName}.</p>
+</li>
+<li>
+<p>In the {ProductShortName} {WebName}, the application has a tag that matches an archetype tag.</p>
+</li>
+<li>
+<p>The application you want to sync is available in your local system.</p>
+</li>
+<li>
+<p>You authenticated the {CLIName} to the Hub.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Sync the application with its remote repository and download the profile and custom rules files from the Hub:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ mta-cli config sync --url https://example.com/<em>&lt;my_app_repository&gt;</em> --application-path <em>&lt;path_to_my_app&gt;</em> --insecure</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>{ProductShortName} downloads the profile and custom rule files in the <code>.konveyor/profiles/</code> path in your local application.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Check the path where {ProductShortName} downloaded the configuration:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli config list --profile-dir <em>&lt;path_to_my_app&gt;</em></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run an analysis by using the downloaded profile configuration.</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli analyze -i <em>&lt;path_to_my_app&gt;</em> -o <em>&lt;path_to_my_app_report&gt;</em> --overwrite --mode source-only</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For Java applications, use the <code>full</code> mode while running an analysis. For non-Java applications, the analysis mode must be <code>source-only</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The following command overrides the values of <code>target</code> in the analysis profile with <code>quarkus</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ mta-cli analyze -i <em>&lt;path_to_my_app&gt;</em> -o <em>&lt;path_to_my_app_report&gt;</em> --overwrite --target quarkus --mode source-only</pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional_resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#mta-cli-config-flags_analyzing-apps-profiles">The config command options</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
