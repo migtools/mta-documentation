@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1003c04912a6ece5f22659d4f9eb372bd6152793">
+    <link rel="stylesheet" href="/assets/css/style.css?v=168f00c04be1c7aa84a779109a32a5b6a8e72f9c">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
@@ -36,10 +36,9 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <div id="toc" class="toc">
+      <h1 id="cli-guide">Using the migration toolkit for applications command-line interface</h1>
+<div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel0">
-<li><a href="#cli-guide">Using the migration toolkit for applications command-line interface</a>
 <ul class="sectlevel1">
 <li><a href="#intro-to-the-cli_cli-guide">1. Introduction to the MTA command-line interface</a></li>
 <li><a href="#about-the-command-line-tool_cli-guide">2. About the MTA commands</a>
@@ -115,38 +114,7 @@
 </li>
 <li><a href="#contributing-to-mta-development">Appendix B: How to contribute to the MTA project</a></li>
 </ul>
-</li>
-</ul>
 </div>
-<div class="paragraph">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-:ProductVersion: 8.2.0</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; d76a51852118fedd38d4879431a0f599740dd831
-:PluginName: MTA plugin
-:mta-dl-full: Red Hat Developer Lightspeed for migration toolkit for applications
-:mta-dl-plugin: Red Hat Developer Lightspeed for MTA
-:mta-URL: <a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single" class="bare">https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single</a></p>
-</div>
-<div class="paragraph">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-:ProductDistributionVersion: 8.2.0.GA-redhat
-:ProductDistribution: mta-8.2.0.GA-cli-offline.zip</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; d76a51852118fedd38d4879431a0f599740dd831
-:DevDownloadPageURL: <a href="https://developers.redhat.com/products/mta/download" class="bare">https://developers.redhat.com/products/mta/download</a>
-:JiraWindupURL: <a href="https://issues.redhat.com/projects/MTA/issues" class="bare">https://issues.redhat.com/projects/MTA/issues</a>
-:ocp-full: OpenShift Container Platform
-:ocp-short: OpenShift
-:ocp: OCP</p>
-</div>
-<h1 id="cli-guide" class="sect0">Using the migration toolkit for applications command-line interface</h1>
 <div class="sect1">
 <h2 id="intro-to-the-cli_cli-guide">1. Introduction to the MTA command-line interface</h2>
 <div class="sectionbody">
@@ -736,7 +704,7 @@ Extracting the list of dependencies from compiled Java binaries is not always po
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli">Installing the CLI by using a .zip file</a></p>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.1/html-single/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli">Installing the CLI by using a .zip file</a></p>
 </li>
 <li>
 <p><a href="#mta-cli-analyze-flags_analyzing-applications-mta-cli">The mta-cli analyze command options</a></p>
@@ -824,7 +792,7 @@ You must enter one input per analyze command, but make sure to enter the same ou
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli">Installing the CLI by using a .zip file</a></p>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.1/html-single/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli">Installing the CLI by using a .zip file</a></p>
 </li>
 <li>
 <p><a href="#mta-cli-analyze-flags_analyzing-applications-mta-cli">The mta-cli analyze command options</a></p>
@@ -960,7 +928,7 @@ The <code>--overwrite</code> option overwrites the output folder if it exists.
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli">Installing the CLI by using a .zip file</a></p>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.1/html-single/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli">Installing the CLI by using a .zip file</a></p>
 </li>
 <li>
 <p><a href="#mta-cli-analyze-flags_analyzing-applications-mta-cli">The mta-cli analyze command options</a></p>
@@ -2135,7 +2103,7 @@ You can only use a single target to run the <code>transform overwrite</code> com
 </div>
 </li>
 <li>
-<p>Use the <code>generate</code> command to generate the deployment manifest for {ocp} deployments. You can use this command to generate the Kubernetes and non-Kubernetes manifests.</p>
+<p>Use the <code>generate</code> command to generate the deployment manifest for OCP deployments. You can use this command to generate the Kubernetes and non-Kubernetes manifests.</p>
 </li>
 </ul>
 </div>
@@ -2559,7 +2527,7 @@ instances: 1</pre>
 <p>You generated a discovery manifest.</p>
 </li>
 <li>
-<p>You created a Helm template with the required configuration for the {ocp} deployment.</p>
+<p>You created a Helm template with the required configuration for the OCP deployment.</p>
 </li>
 </ul>
 </div>
@@ -2795,7 +2763,7 @@ ENV REDIS_URL=redis://prod-redis:6379</code></pre>
 <p>You have a CF application manifest as a YAML file.</p>
 </li>
 <li>
-<p>You created a Helm template with the required configurations for the {ocp} deployment.</p>
+<p>You created a Helm template with the required configurations for the OCP deployment.</p>
 </li>
 </ul>
 </div>
@@ -4464,7 +4432,7 @@ Space: space-2
 <div class="ulist">
 <ul>
 <li>
-<p><a href="{mta-URL}/configuring_and_using_rules_for_an_mta_analysis/index">Configuring and using rules for an MTA analysis</a></p>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.1/html-single/configuring_and_using_rules_for_an_mta_analysis/index">Configuring and using rules for an MTA analysis</a></p>
 </li>
 </ul>
 </div>
@@ -4514,7 +4482,7 @@ Space: space-2
 <li>
 <p>Create a test for the new rule.</p>
 <div class="paragraph">
-<p>For more information, see <a href="{mta-URL}/configuring_and_using_rules_for_an_mta_analysis/index">Configuring and using rules for an MTA analysis</a>.</p>
+<p>For more information, see <a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.1/html-single/configuring_and_using_rules_for_an_mta_analysis/index">Configuring and using rules for an MTA analysis</a>.</p>
 </div>
 </li>
 </ul>

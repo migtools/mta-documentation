@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1003c04912a6ece5f22659d4f9eb372bd6152793">
+    <link rel="stylesheet" href="/assets/css/style.css?v=168f00c04be1c7aa84a779109a32a5b6a8e72f9c">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
@@ -36,10 +36,9 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <div id="toc" class="toc">
+      <h1 id="configuring-using-vs-code-plugin">Configuring and using the Visual Studio Code Extension for MTA</h1>
+<div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel0">
-<li><a href="#configuring-using-vs-code-plugin">Configuring and using the Visual Studio Code Extension for MTA</a>
 <ul class="sectlevel1">
 <li><a href="#intro-to-vscode-for-mta_vsc-extension-guide">1. Introduction to the MTA extension for Microsoft Visual Code</a></li>
 <li><a href="#installing-vscode-extension_vsc-extension-guide">2. Installing the MTA extension for Visual Studio Code</a></li>
@@ -51,38 +50,7 @@
 <li><a href="#analyzing-application-profiles_vsc-extension-guide">8. Running an application analysis by using a Hub profile</a></li>
 <li><a href="#vscode-reviewing-and-resolving-issues_vsc-extension-guide">9. Reviewing and resolving migration issues</a></li>
 </ul>
-</li>
-</ul>
 </div>
-<div class="paragraph">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-:ProductVersion: 8.2.0</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; d76a51852118fedd38d4879431a0f599740dd831
-:PluginName: MTA plugin
-:mta-dl-full: Red Hat Developer Lightspeed for migration toolkit for applications
-:mta-dl-plugin: Red Hat Developer Lightspeed for MTA
-:mta-URL: <a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single" class="bare">https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.2/html-single</a></p>
-</div>
-<div class="paragraph">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-:ProductDistributionVersion: 8.2.0.GA-redhat
-:ProductDistribution: mta-8.2.0.GA-cli-offline.zip</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; d76a51852118fedd38d4879431a0f599740dd831
-:DevDownloadPageURL: <a href="https://developers.redhat.com/products/mta/download" class="bare">https://developers.redhat.com/products/mta/download</a>
-:JiraWindupURL: <a href="https://issues.redhat.com/projects/MTA/issues" class="bare">https://issues.redhat.com/projects/MTA/issues</a>
-:ocp-full: OpenShift Container Platform
-:ocp-short: OpenShift
-:ocp: OCP</p>
-</div>
-<h1 id="configuring-using-vs-code-plugin" class="sect0">Configuring and using the Visual Studio Code Extension for MTA</h1>
 <div class="sect1">
 <h2 id="intro-to-vscode-for-mta_vsc-extension-guide">1. Introduction to the MTA extension for Microsoft Visual Code</h2>
 <div class="sectionbody">
@@ -194,7 +162,7 @@
 <p><a href="https://marketplace.visualstudio.com/search?term=migration%20toolkit&amp;target=VSCode&amp;category=All%20categories&amp;sortBy=Relevance">Visual Studio Code Marketplace</a></p>
 </li>
 <li>
-<p><a href="{mta-URL}/configuring_and_using_red_hat_developer_lightspeed_for_mta/index">Configuring and using Developer Lightspeed for MTA</a></p>
+<p><a href="https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.1/html-single/configuring_and_using_red_hat_developer_lightspeed_for_mta/index">Configuring and using Developer Lightspeed for MTA</a></p>
 </li>
 <li>
 <p><a href="https://access.redhat.com/support/offerings/devpreview">Developer Preview Support Scope</a></p>
@@ -342,7 +310,7 @@
 <p>Log level: Set the log level for the MTA binary. The default log level is <code>debug</code>. The log level increases or decreases the verbosity of logs.</p>
 </li>
 <li>
-<p>Analyzer path: Specify an MTA custom binary path. If you do not provide a path, {mta-dl-plugin} uses the default path to the binary.</p>
+<p>Analyzer path: Specify an MTA custom binary path. If you do not provide a path, Red Hat Developer Lightspeed for MTA uses the default path to the binary.</p>
 </li>
 <li>
 <p>Debug:Webview: Enable debug level logging for Webview message handling in Visual Studio Code.</p>
@@ -383,7 +351,7 @@
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You configured the Visual Studio Code IDE settings. For more information, see <a href="#configuring-lighstspeed-ide-settings_vsc-extension-guide">Configuring the {mta-dl-plugin} IDE settings</a>.</p>
+<p>You configured the Visual Studio Code IDE settings. For more information, see <a href="#configuring-lighstspeed-ide-settings_vsc-extension-guide">Configuring the Red Hat Developer Lightspeed for MTA IDE settings</a>.</p>
 </li>
 <li>
 <p>You opened a Java project in your Visual Studio Code workspace.</p>
@@ -409,7 +377,7 @@
 <li>
 <p>Configure label selector: A label selector filters rules for analysis based on the source or target technology.</p>
 <div class="paragraph">
-<p>Specify one or more target or source technologies. {mta-dl-plugin} uses this configuration to determine the rules to apply to a project during the analysis. If you mentioned a new target or a source technology in your custom rule, you can type that name to create and add the new item to the list.</p>
+<p>Specify one or more target or source technologies. Red Hat Developer Lightspeed for MTA uses this configuration to determine the rules to apply to a project during the analysis. If you mentioned a new target or a source technology in your custom rule, you can type that name to create and add the new item to the list.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -498,7 +466,7 @@ You must configure target or source technologies before running an analysis.
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Click the {mta-dl-plugin} extension and click <strong>Open MTA Analysis View</strong>.</p>
+<p>Click the Red Hat Developer Lightspeed for MTA extension and click <strong>Open MTA Analysis View</strong>.</p>
 </li>
 <li>
 <p>Select a profile for the analysis.</p>
@@ -650,7 +618,7 @@ You must configure target or source technologies before running an analysis.
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Click the {mta-dl-plugin} extension and click <strong>Open Analysis Panel</strong>.</p>
+<p>Click the Red Hat Developer Lightspeed for MTA extension and click <strong>Open Analysis Panel</strong>.</p>
 </li>
 <li>
 <p>In settings (<span class="image"><img src="../topics/images/settings-icon.png" alt="settings-icon"></span>), click <strong>Configure Hub Settings</strong>.</p>
