@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/409/assemblies/ui-guide/topics/developer-lightspeed/ref_example-code-suggestion/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/409/assemblies/ui-guide/topics/developer-lightspeed/ref_example-code-suggestion/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/409/assemblies/ui-guide/topics/developer-lightspeed/ref_example-code-suggestion/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=6c1d224623495c3410e30100529aa1ff66255b65">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="example-code-generation_{context}">Generating code fix suggestions</h1>
+<div class="paragraph _abstract">
+<p>This example will walk you through generating code fixes for a Java application that must be migrated to the target technology <code>quarkus</code>. To generate resolutions for issues in the code, we use the Agentic AI mode and the <code>my-model</code> as the large language model (LLM) that you deployed in {ocp-name} AI.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open the <code>my-Java</code> project in Visual Studio (VS) Code.</p>
+</li>
+<li>
+<p>Download the {mta-dl-full} extension from the <a href="https://marketplace.visualstudio.com/search?term=migration%20toolkit&amp;target=VSCode&amp;category=All%20categories&amp;sortBy=Relevance">VS Code marketplace</a>.</p>
+</li>
+<li>
+<p>Type <code>Ctrl+Shift+P</code> (Windows and Linux systems) or <code>Cmd+Shift+P</code> (Mac systems).</p>
+</li>
+<li>
+<p>Type <code>Preferences: Open Settings (UI)</code> in the Command Palette to open the VS Code settings and select <code>Extensions &gt; {ProductShortName}</code>.</p>
+</li>
+<li>
+<p>Select <code>Gen AI:Agent Mode</code>.</p>
+</li>
+<li>
+<p>In the {mta-dl-plugin} extension, click <code>Open Analysis View</code>.</p>
+</li>
+<li>
+<p>Type <code>MTA: Manage Analysis Profile</code> in the Command Palette and configure the following fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Profile Name</strong>: Type a profile name</p>
+</li>
+<li>
+<p><strong>Target Technologies</strong>: <code>quarkus</code></p>
+</li>
+<li>
+<p><strong>Custom Rules</strong>: Select custom rules if you want to include them while running the analysis. By default, {mta-dl-plugin} enables <strong>Use Default Rules</strong> for <code>quarkus</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Type <code>MTA: Open the Gen AI model provider configuration file</code> in the Command Palette to configure the following in the <code>provider-settings</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">models:
+  openshift-example-model: &amp;active
+    environment:
+      OPENAI_API_KEY: "&lt;Server's OPENAI_API_KEY&gt;"
+      CA_BUNDLE: "&lt;Servers CA Bundle path&gt;"
+    provider: "ChatOpenAI"
+    args:
+      model: "my-model"
+      configuration:
+        baseURL: "https://&lt;serving-name&gt;-&lt;data-science-project-name&gt;.apps.konveyor-ai.example.com/v1"</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must change the <code>provider-setting</code> configuration if you plan to use a different LLM provider.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>On the <code>{ProductShortName}: Open Analysis View</code> page, click <strong>Start</strong> to start the {ProductShortName} RPC server.</p>
+</li>
+<li>
+<p>Select the profile you configured and click <strong>Run Analysis</strong> to scan the Java application.</p>
+<div class="paragraph">
+<p>{ProductShortName} identifies the issues in the code.</p>
+</div>
+</li>
+<li>
+<p>Click the solutions icon (<span class="image"><img src="../topics/images/solutions-icon-new.png" alt="solutions icon new"></span>) in an issue to request suggestions to resolve the issue.</p>
+<div class="paragraph">
+<p>{mta-dl-plugin} streams the issue description, a preview of the code changes that resolve the issue, and the file(s) in which the changes are to be made.</p>
+</div>
+<div class="paragraph">
+<p>You can review the code changes in the editor and accept or reject the changes. If you accept the changes, {mta-dl-plugin} creates a new file with the accepted code changes.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Continue</strong> to allow {mta-dl-plugin} to run a follow-up analysis.</p>
+<div class="paragraph">
+<p>This round of analysis detects lint issues, compilation issues, or diagnostic issues that may have occurred when you accepted the suggested code change.</p>
+</div>
+<div class="paragraph">
+<p>Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated iterations of scan if you allow until all issues are resolved.</p>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/409/assemblies/rules-development-guide/assembly_logical-chaining-custom-variables/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/409/assemblies/rules-development-guide/assembly_logical-chaining-custom-variables/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/409/assemblies/rules-development-guide/assembly_logical-chaining-custom-variables/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=6c1d224623495c3410e30100529aa1ff66255b65">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="logical-chaining-custom-variables">Logical conditions, condition chaining, and custom variables</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>When you create a rule, you can limit the search query in the source code by using logical conditions, condition chaining, nested conditions, and custom variables. You can narrow the search to specific files, a pattern, or a combination of conditions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rule-condition-complexity_logical-chaining-custom-variables">Rule condition complexity</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can create complex rules to combine conditions, use the output of one rule as an input to another, and chain conditions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Logical conditions inform the provider how to handle more than one condition in a when block. The analyzer provides the logical conditions, <code>and</code> and <code>or</code>, that you can use to combine results of many conditions.</p>
+</li>
+<li>
+<p>Condition chaining uses the output of one condition as the input in another condition of the when block. Assign the output to a variable in one condition and reuse it in other conditions in the when block.</p>
+</li>
+<li>
+<p>Nested conditions create conditions that depend on the evaluation of other conditions.</p>
+</li>
+<li>
+<p>Custom variables capture specific information from the code. You can use the custom variable in the message displayed for the code if it contains a violation defined by the rule.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="yaml-and-condition_logical-chaining-custom-variables">AND condition</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The <code>and</code> condition performs a logical AND operation on the results of an array of conditions. The condition matches when <em>all</em> of its child conditions match, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  and:
+    - <em>&lt;condition1&gt;</em>
+    - <em>&lt;condition2&gt;</em></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For an example rule condition, see:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  and:
+    - java.dependency:
+        name: junit.junit
+        upperbound: 4.12.2
+        lowerbound: 4.4.0
+    - java.referenced:
+        location: IMPORT
+        pattern: junit.junit</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="yaml-or-condition_logical-chaining-custom-variables">OR condition</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The <code>or</code> condition performs a logical OR operation on the results of an array of conditions. The condition matches when <em>any</em> of its child conditions match.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  or:
+    - <em>&lt;condition1&gt;</em>
+    - <em>&lt;condition2&gt;</em></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  or:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="yaml-chaining-condition-variables_logical-chaining-custom-variables">Chaining condition variables</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can use condition chaining, where the pattern of one condition becomes the template variable for filtering in another condition. Use condition chaining to scope down the search query to look for a pattern in a subset of files.</p>
+</div>
+<div class="paragraph">
+<p>For example, you can search for one or more <code>pom.xml</code> files and find dependencies in those subset of <code>pom</code> files and not any other file in your project. You can use logical <code>and</code> and <code>or</code> for chaining conditions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+ or:
+  - builtin.xml:
+      xpath: "//dependencies/dependency"
+      filepaths: "{{poms.filepaths}}"
+    from: poms
+  - builtin.file:
+      pattern: pom.xml
+    as: poms
+    ignore: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the earlier example, {ProductShortName} saves the output of the <code>builtin.file</code> condition in <code>poms</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">[...]
+      as: poms
+[...]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the variables of <code>builtin.file</code> in the <code>builtin.xml</code> condition, by writing <code>from</code> and then using Mustache templates in the <code>provider_ condition</code> block.</p>
+</div>
+<div class="paragraph">
+<p>This is how the condition knows how to use the variable set to the name <code>poms</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">[...]
+    from: poms
+[...]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then you can use the variables by setting them as Mustache templates in
+any of the inputs to the <em>provider</em> condition.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">[...]
+      filepaths: "{{poms.filepaths}}"
+[...]</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you only want to use the values of a condition as a chain, you can set <code>ignore: true</code>.</p>
+</div>
+<div class="paragraph">
+<p>This will tell the engine not to use this condition to find a rule violation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">[...]
+    ignore: true
+[...]</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://mustache.github.io/mustache.5.html">Mustache templates</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="yaml-chaining-java-provider_logical-chaining-custom-variables">Chaining in the Java provider</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>When you use the <code>filepaths</code> variable in a Java rule chained condition, the rule writer must capitalize the variable.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">  when:
+    and:
+      - java.referenced:
+          pattern: org.springframework.web.bind.annotation.RequestMapping
+          location: ANNOTATION
+        as: annotation
+      - java.referenced:
+          pattern: org.springframework.stereotype.Controller
+          location: ANNOTATION
+          filepaths: "{{annotation.Filepaths}}"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="yaml-nested-condition_logical-chaining-custom-variables">Nested conditions</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>As an Architect, you can create nested conditions in a rule to make the analyzer evaluate different levels of conditions. You can combine the logical <code>and</code> and <code>or</code> conditions in a nested condition.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+  and:
+  - and:
+    - go.referenced: "*CustomResourceDefinition*"
+    - java.referenced:
+        pattern: "*CustomResourceDefinition*"
+  - go.referenced: "*CustomResourceDefinition*"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="yaml-custom-variables_logical-chaining-custom-variables">Custom variables</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can create custom variables in provider conditions. You can use custom variables to capture relevant information from a line in the source code that violates the rule. {ProductShortName} interpolates the values of these variables with the piece of data in the source code. You can add variables to a rule in the <code>customVariables</code> field.</p>
+</div>
+<div class="paragraph">
+<p>You can use the custom variable values to generate detailed template messages in a rule&#8217;s action (see Message actions).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">- ruleID: lang-ref-004
+   customVariables:
+   - pattern: '([A-z]+)\.get\(\)'
+      name: VariableName
+    message: "Found generic call - {{ VariableName }}"
+  when:
+      java.referenced:
+          location: METHOD_CALL
+          pattern: com.example.apps.GenericClass.get</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>pattern</code> </dt>
+<dd>
+<p>A regular expression pattern that {ProductShortName} uses to find a match on the source code line.</p>
+</dd>
+<dt class="hdlist1"><code>name</code> </dt>
+<dd>
+<p>The name of the variable that can be used in templates.</p>
+</dd>
+<dt class="hdlist1"><code>message</code> </dt>
+<dd>
+<p>A template for a message by using a custom variable.</p>
+</dd>
+</dl>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#yaml-message-actions_rule-yaml-actions">Message actions</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

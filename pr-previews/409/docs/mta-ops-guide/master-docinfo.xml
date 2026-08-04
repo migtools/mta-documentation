@@ -1,0 +1,11 @@
+<title>Migrating stateless workloads by using the mta-ops CLI</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>Exporting, transforming, rendering, and validating stateless application manifests for deployment on a target Red{nbsp}Hat OpenShift cluster</subtitle>
+<abstract>
+    <para>You can safely move applications across environments by migrating your stateless workloads with the mta-ops command-line interface. The multi-stage pipeline helps you extract, clean, render, and validate your Red{nbsp}Hat OpenShift manifests locally. This workflow ensures target cluster API compatibility before you manually deploy your applications.</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
