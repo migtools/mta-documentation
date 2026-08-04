@@ -1,1 +1,0 @@
-Sitemap: https://migtools.github.io/mta-documentation/pr-previews/409/sitemap.xml
