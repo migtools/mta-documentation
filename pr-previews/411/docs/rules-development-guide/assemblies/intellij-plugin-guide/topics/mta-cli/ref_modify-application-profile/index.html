@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/411/docs/rules-development-guide/assemblies/intellij-plugin-guide/topics/mta-cli/ref_modify-application-profile/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/411/docs/rules-development-guide/assemblies/intellij-plugin-guide/topics/mta-cli/ref_modify-application-profile/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/411/docs/rules-development-guide/assemblies/intellij-plugin-guide/topics/mta-cli/ref_modify-application-profile/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1003c04912a6ece5f22659d4f9eb372bd6152793">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="modifying-app-profile_{context}">A sample profile configuration</h1>
+<div class="paragraph _abstract">
+<p>After Migrators download the analysis profile from the Hub, they can modify the configuration before running an analysis.</p>
+</div>
+<div class="paragraph">
+<p>When you sync the profile, the {ProductShortName} {CLIName} overrides the modified configuration by downloading the latest configuration from the Hub to your local application.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">id: 1
+createUser: admin
+createTime: 2025-11-12T23:57:35
+name: Profile-1
+mode:
+  withDeps: true
+scope:
+  withKnownLibs: true
+  packages:
+    included:
+    - one
+    - two
+    excluded:
+    - three
+    - four
+rules:
+  targets:
+  - id: 1
+    name: Application server migration
+  - id: 2
+    name: Containerization
+  labels:
+    included:
+    - konveyor.io/target=spring6
+    - konveyor.io/source=springboot
+    - konveyor.io/target=quarkus
+    excluded:
+    - C
+    - D
+  files:
+  - id: 400
+    name: ""
+  repository:
+    kind: git
+    url: URL
+    branch: ""
+    tag: ""
+    path: default/generated</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>id</code></dt>
+<dd>
+<p>Specifies the unique identifier of the analysis profile.</p>
+</dd>
+<dt class="hdlist1"><code>createUser</code></dt>
+<dd>
+<p>Specifies the user who created the analysis profile in the Hub.</p>
+</dd>
+<dt class="hdlist1"><code>createTime</code></dt>
+<dd>
+<p>Specifies the date and time when the user created the profile.</p>
+</dd>
+<dt class="hdlist1"><code>name</code></dt>
+<dd>
+<p>Specifies the name of the analysis profile.</p>
+</dd>
+<dt class="hdlist1"><code>withDeps</code></dt>
+<dd>
+<p>Specifies if {ProductShortName} includes dependencies in the analysis as a boolean value.</p>
+</dd>
+<dt class="hdlist1"><code>withKnownLibs</code></dt>
+<dd>
+<p>Specifies if {ProductShortName} includes known open-source libraries in the analysis.</p>
+</dd>
+<dt class="hdlist1"><code>packages</code></dt>
+<dd>
+<p>Specifies the packages that are included and excluded in the analysis.</p>
+</dd>
+<dt class="hdlist1"><code>targets</code></dt>
+<dd>
+<p>Specifies a unique id and name of each migration target in the analysis profile.</p>
+</dd>
+<dt class="hdlist1"><code>labels</code></dt>
+<dd>
+<p>Specifies the labels that filters rules that are applied and excluded in the analysis.</p>
+</dd>
+<dt class="hdlist1"><code>files</code></dt>
+<dd>
+<p>Specifies the unique identifier and name of a custom rule in a file. The {ProductShortName} {CLIName} uses the file directly in an analysis.</p>
+</dd>
+<dt class="hdlist1"><code>repository</code></dt>
+<dd>
+<p>Specifies details of external ruleset repository. For example, <code>kind</code> (<code>Git</code> or <code>Subversion</code>), <code>URL</code>, <code>branch</code>, <code>tag</code>, and <code>path</code> within the repository to the rulesets.</p>
+</dd>
+</dl>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

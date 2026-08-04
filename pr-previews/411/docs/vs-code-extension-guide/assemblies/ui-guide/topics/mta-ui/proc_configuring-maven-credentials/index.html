@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/411/docs/vs-code-extension-guide/assemblies/ui-guide/topics/mta-ui/proc_configuring-maven-credentials/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/411/docs/vs-code-extension-guide/assemblies/ui-guide/topics/mta-ui/proc_configuring-maven-credentials/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/411/docs/vs-code-extension-guide/assemblies/ui-guide/topics/mta-ui/proc_configuring-maven-credentials/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1003c04912a6ece5f22659d4f9eb372bd6152793">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="configuring-maven-credentials_{context}">Configuring Maven credentials</h1>
+<div class="paragraph _abstract">
+<p>To provide the {ProductFullName} with secure access to your private Maven repositories, configure authentication credentials in the user interface. Adding these credentials ensures analysis tasks can automatically retrieve the required data.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Credentials</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Description (Optional)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the <strong>Type</strong> list, select <strong>Maven Settings File.</strong></p>
+</li>
+<li>
+<p>Upload the <code>settings.xml</code> file or paste its contents.</p>
+</li>
+<li>
+<p>Optional: If you want to set Maven credentials as default, enable the <strong>Use as the Maven credential if an application does not have any assigned?</strong> switch. These credentials will be used by default for all applications that do not have any assigned credentials.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+If you do not set Maven credentials as default, you must assign these credentials to the application manually before running an analysis. Otherwise, credentials will not be picked up by the application, which might result in the analysis running longer.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+{ProductShortName} validates the input and creates a new credential. The Maven <code>settings.xml</code> file must be parsed and checked for validity. If the validation fails, the following error message is displayed: <code>not a valid key/XML file</code>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

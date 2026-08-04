@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/411/assemblies/rules-development-guide/topics/release-notes-topics/ref_known-issues-8-0-1/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/411/assemblies/rules-development-guide/topics/release-notes-topics/ref_known-issues-8-0-1/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/411/assemblies/rules-development-guide/topics/release-notes-topics/ref_known-issues-8-0-1/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1003c04912a6ece5f22659d4f9eb372bd6152793">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="known-issues-8-0-1_{context}">Known issues</h1>
+<div class="paragraph _abstract">
+<p>Understand how newly identified and previously known issues might affect your use of {ProductFullName} version 8.0.1, and how to work around them.</p>
+</div>
+<div class="paragraph">
+<p>A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">{ProductShortName} assessment form malfunctions when you use it with a custom questionnaire</dt>
+<dd>
+<p>In the {ProductShortName} {WebName}, selecting an answer to a question in the assessment form generated from a custom questionnaire causes the form to select an option available for another question.</p>
+<div class="paragraph">
+<p>To work around this problem, ensure that one or more <code>order</code> keys listed in a section, for example <code>answers</code>, have a unique order number.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://issues.redhat.com/browse/MTA-6262">MTA-6262</a></p>
+</div>
+</dd>
+<dt class="hdlist1">{ProductShortName} UI does not trigger a violation for open source dependencies in Gradle applications</dt>
+<dd>
+<p>{ProductShortName} UI does not trigger a violation for open source libraries when you run a <code>source+dependency</code> analysis of a Gradle application. As a result, the analysis report does not list incidents for open source dependencies.</p>
+<div class="paragraph">
+<p>To work around this problem, analyze Gradle applications by using the {ProductShortName} command-line interface (CLI).</p>
+</div>
+<div class="paragraph">
+<p><a href="https://issues.redhat.com/browse/MTA-6211">MTA-6211</a></p>
+</div>
+</dd>
+<dt class="hdlist1">{ProductShortName} UI fails to process applications with service bindings</dt>
+<dd>
+<p>When you use the {ProductFullName} user interface (UI) to run an application discovery for a deployed Cloud Foundry (CF) application with a service binding, {ProductShortName} UI does not parse the <code>VCAP_SERVICES</code> environment variables correctly to handle service binding information. As a consequence, the discovery fails.</p>
+<div class="paragraph">
+<p>To work around this problem, run the application discovery by using the {ProductShortName} command-line interface (CLI).</p>
+</div>
+<div class="paragraph">
+<p><a href="https://issues.redhat.com/browse/MTA-6424">MTA-6424</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Rules with <code>METHOD_CALL</code> or <code>CONSTRUCTOR_CALL</code> do not match expected locations when specifying parameters</dt>
+<dd>
+<p>Search patterns in Java rules that have the <code>METHOD_CALL</code> and <code>CONSTRUCTOR_CALL</code> locations do not match the expected methods and constructors in the application source code.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">    java.referenced:
+      location: CONSTRUCTOR_CALL
+      pattern: javax.servlet.UnavailableException(javax.servlet.Servlet,java.lang.String)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>does not match</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"> String str = "something";
+ Servlet s = exception1.getServlet();
+ UnavailableException exception2 = new UnavailableException(s, str);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition, search patterns that do not contain Fully Qualified Names (FQNs) do not match. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">    java.referenced:
+      location: CONSTRUCTOR_CALL
+      pattern: UnavailableException(Servlet s,String str)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>No known workaround exists.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://issues.redhat.com/browse/MTA-6402">MTA-6402</a></p>
+</div>
+</dd>
+</dl>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
