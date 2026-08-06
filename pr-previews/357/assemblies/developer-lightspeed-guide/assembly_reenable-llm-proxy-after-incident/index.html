@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/357/assemblies/developer-lightspeed-guide/assembly_reenable-llm-proxy-after-incident/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/357/assemblies/developer-lightspeed-guide/assembly_reenable-llm-proxy-after-incident/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/357/assemblies/developer-lightspeed-guide/assembly_reenable-llm-proxy-after-incident/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d04eb5c530c05cbe73023700f3d91264eeb66b49">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="reenable-llm-proxy">Re-enable the LLM proxy after an incident</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Re-enable the proxy only after your security team confirms that the incident is resolved and the environment is safe.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reenable-proxy-using-web-console_reenable-llm-proxy">Re-enable the proxy by using the {ocp-short} web console</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can re-enable the LLM proxy by using the {ocp-short} web console to restore functionality.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>Operators</strong> &gt; <strong>Installed Operators</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Tackle</strong> instance.</p>
+</li>
+<li>
+<p>Click <strong>Actions</strong> &gt; <strong>Edit Tackle</strong>.</p>
+</li>
+<li>
+<p>Set the <code>kai_llm_proxy_enabled</code> field to <code>true</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">spec:
+  kai_llm_proxy_enabled: true</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>Wait for the proxy pod to reach the <code>Running</code> status.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reenable-proxy-using-cli_reenable-llm-proxy">Re-enable the proxy by using the CLI</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can re-enable the LLM proxy by using the command-line interface (CLI) to restore functionality.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Patch the Tackle custom resource (CR) to enable the LLM proxy:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc patch tackle <em>&lt;tackle_instance_name&gt;</em> -n <em>&lt;mta_namespace&gt;</em> \
+  --type=merge -p '{"spec":{"kai_llm_proxy_enabled":true}}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;tackle_instance_name&gt;</code></dt>
+<dd>
+<p>Specifies the name of your Tackle instance.</p>
+</dd>
+<dt class="hdlist1"><code>&lt;mta_namespace&gt;</code></dt>
+<dd>
+<p>Specifies the name of the {ProductShortName} namespace.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify that a proxy pod is running:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pods -n <em>&lt;mta_namespace&gt;</em> | grep proxy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;mta_namespace&gt;</code></dt>
+<dd>
+<p>Specifies the name of the {ProductShortName} namespace.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ask a developer to submit a test query from their integrated development environment (IDE) and confirm that a valid response is returned.</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

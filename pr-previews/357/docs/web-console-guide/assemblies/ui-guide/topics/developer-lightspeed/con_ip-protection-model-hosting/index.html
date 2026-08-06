@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d04eb5c530c05cbe73023700f3d91264eeb66b49">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
@@ -51,7 +51,7 @@
 <p>To generate accurate migration suggestions, {mta-dl-plugin} constructs a contextual prompt. This prompt includes relevant code snippets from the application that you are analyzing. Code snippets are transmitted intact to the configured LLM provider.</p>
 </div>
 <div class="paragraph">
-<p>{mta-dl-plugin} does not perform automatic sanitization or redaction of source code before inclusion in a prompt. Altering the code syntax reduces the accuracy of the migration recommendations.</p>
+<p>{mta-dl-plugin} does not automatically sanitize or redact source code before inclusion in a prompt. Altering the code syntax reduces the accuracy of the migration recommendations.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -84,15 +84,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>{ocp-name} AI</strong>: Deploy and serve LLMs as an inference service within your {ocp-name} cluster. This keeps all model traffic on your internal network. For more information, see <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed">Red&#160;Hat OpenShift AI documentation</a>.</p>
+<p><strong>{ocp-name} AI</strong>: Deploy and serve LLMs as an inference service within your {ocp-name} cluster. This keeps all model traffic on your internal network.</p>
 </li>
 <li>
-<p><strong>Red&#160;Hat Enterprise Linux AI (RHEL AI)</strong>: Run a self-contained, production-ready AI infrastructure on RHEL to serve models locally or within your private data center. For more information, see <a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai">Red&#160;Hat Enterprise Linux AI documentation</a>.</p>
+<p><strong>Red&#160;Hat Enterprise Linux AI (RHEL AI)</strong>: Run a self-contained, production-ready AI infrastructure on RHEL to serve models locally or within your private data center.
+You can configure {mta-dl-plugin} to use the OpenAI-compatible application programming interface (API) endpoint that both platforms expose without any additional plugin changes.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>You can configure {mta-dl-plugin} to use the OpenAI-compatible API endpoint that both platforms expose without any additional plugin changes.</p>
 </div>
 </div>
 </div>
@@ -100,12 +98,12 @@
 <h2 id="ip-protection-config-pointers_{context}">Private endpoint configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A self-managed model requires the {mta-dl-plugin} default large language model (LLM) provider URL to point to a private inference endpoint. The URL location depends on your deployment:</p>
+<p>A self-managed model requires the {mta-dl-plugin} default large language model (LLM) provider uniform resource locator (URL) to point to a private inference endpoint. The URL location depends on your deployment:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Standalone mode</strong>: The custom endpoint URL is configured in the VS Code extension settings for {mta-dl-plugin}.</p>
+<p>Local integrated development environment: Configure the custom LLM endpoint URL in the <code>provider-settings</code> configuration in {mta-dl-plugin}.</p>
 </li>
 <li>
 <p><strong>Centralized configuration management mode</strong>: The provider endpoint URL is set in the central configuration administered through the {ProductShortName} hub.</p>
@@ -114,6 +112,17 @@
 </div>
 <div class="paragraph">
 <p>Self-managed endpoints require authentication credentials, such as API keys or bearer tokens. These credentials require secure storage and must not be committed to source control.</p>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed">Red&#160;Hat OpenShift AI documentation</a></p>
+</li>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai">Red&#160;Hat Enterprise Linux AI documentation</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

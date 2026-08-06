@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d04eb5c530c05cbe73023700f3d91264eeb66b49">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
@@ -158,7 +158,7 @@
 <p>To generate accurate migration suggestions, {mta-dl-plugin} constructs a contextual prompt. This prompt includes relevant code snippets from the application that you are analyzing. Code snippets are transmitted intact to the configured LLM provider.</p>
 </div>
 <div class="paragraph">
-<p>{mta-dl-plugin} does not perform automatic sanitization or redaction of source code before inclusion in a prompt. Altering the code syntax reduces the accuracy of the migration recommendations.</p>
+<p>{mta-dl-plugin} does not automatically sanitize or redact source code before inclusion in a prompt. Altering the code syntax reduces the accuracy of the migration recommendations.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -189,26 +189,24 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>{ocp-name} AI</strong>: Deploy and serve LLMs as an inference service within your {ocp-name} cluster. This keeps all model traffic on your internal network. For more information, see <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed">Red&#160;Hat OpenShift AI documentation</a>.</p>
+<p><strong>{ocp-name} AI</strong>: Deploy and serve LLMs as an inference service within your {ocp-name} cluster. This keeps all model traffic on your internal network.</p>
 </li>
 <li>
-<p><strong>Red&#160;Hat Enterprise Linux AI (RHEL AI)</strong>: Run a self-contained, production-ready AI infrastructure on RHEL to serve models locally or within your private data center. For more information, see <a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai">Red&#160;Hat Enterprise Linux AI documentation</a>.</p>
+<p><strong>Red&#160;Hat Enterprise Linux AI (RHEL AI)</strong>: Run a self-contained, production-ready AI infrastructure on RHEL to serve models locally or within your private data center.
+You can configure {mta-dl-plugin} to use the OpenAI-compatible application programming interface (API) endpoint that both platforms expose without any additional plugin changes.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>You can configure {mta-dl-plugin} to use the OpenAI-compatible API endpoint that both platforms expose without any additional plugin changes.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="ip-protection-config-pointers_configuring-llm">Private endpoint configuration</h3>
 <div class="paragraph">
-<p>A self-managed model requires the {mta-dl-plugin} default large language model (LLM) provider URL to point to a private inference endpoint. The URL location depends on your deployment:</p>
+<p>A self-managed model requires the {mta-dl-plugin} default large language model (LLM) provider uniform resource locator (URL) to point to a private inference endpoint. The URL location depends on your deployment:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Standalone mode</strong>: The custom endpoint URL is configured in the VS Code extension settings for {mta-dl-plugin}.</p>
+<p>Local integrated development environment: Configure the custom LLM endpoint URL in the <code>provider-settings</code> configuration in {mta-dl-plugin}.</p>
 </li>
 <li>
 <p><strong>Centralized configuration management mode</strong>: The provider endpoint URL is set in the central configuration administered through the {ProductShortName} hub.</p>
@@ -218,14 +216,25 @@
 <div class="paragraph">
 <p>Self-managed endpoints require authentication credentials, such as API keys or bearer tokens. These credentials require secure storage and must not be committed to source control.</p>
 </div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed">Red&#160;Hat OpenShift AI documentation</a></p>
+</li>
+<li>
+<p><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai">Red&#160;Hat Enterprise Linux AI documentation</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="llm-service-openshift-ai_configuring-llm">Deploying an LLM as a service in an {ocp-name} AI cluster</h2>
+<h2 id="llm-service-openshift-ai_configuring-llm">LLM as a service deployment in an {ocp-name} AI cluster</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
-<p>The code suggestions from {mta-dl-full} differ based on the large language model (LLM) that you use. Therefore, you may want to use an LLM that caters to your specific requirements.</p>
+<p>The code suggestions from {mta-dl-full} differ based on the large language model (LLM) that you use. Therefore, use an LLM that caters to your specific requirements.</p>
 </div>
 <div class="paragraph">
 <p>The {mta-dl-plugin} integrates with LLMs deployed as a scalable service on {ocp-name} AI clusters. This integration provides you with granular control over resources such as compute resources, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) to resolve code issues at a large scale.</p>
@@ -301,13 +310,18 @@
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>See <a href="#llm-provider-settings_configuring-llm">Configuring LLM provider settings</a> to configure the base URL and the LLM API key in the {mta-dl-plugin} VS Code extension.</p>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#llm-provider-settings_configuring-llm">Configuring LLM provider settings</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="llm-provider-settings_configuring-llm">Configuring LLM provider settings</h2>
+<h2 id="llm-provider-settings_configuring-llm">LLM provider setting configurations</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
 <p>{mta-dl-full} is large language model (LLM) agnostic and integrates with an LLM of your choice. To enable {mta-dl-plugin} to access your large language model (LLM), you must enter the LLM provider configurations in the <code>provider-settings.yaml</code> file.</p>
@@ -462,7 +476,7 @@
       baseUrl: "127.0.0.1:11434" # example URL</code></pre>
 </div>
 </div>
-<div class="ulist">
+<div class="ulist _additional-resources">
 <div class="title">Additional resources</div>
 <ul>
 <li>
@@ -473,7 +487,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="configuring-llm-podman_configuring-llm">Configuring the LLM in Podman Desktop</h2>
+<h2 id="configuring-llm-podman_configuring-llm">Configure the LLM in Podman Desktop</h2>
 <div class="sectionbody">
 <div class="paragraph _abstract">
 <p>To select an open source model from a curated list of models and run it locally in your system, use the Podman AI lab extension.</p>
