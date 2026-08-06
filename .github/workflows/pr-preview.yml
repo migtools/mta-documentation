@@ -56,5 +56,15 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pr-preview-site
-          path: _site/
+          path: |
+            _site/pr-number.txt
+            _site/**/*.html
+            _site/**/*.css
+            _site/**/*.js
+            _site/assets/
           retention-days: 1
+      
+      - name: Analyze artifact size
+        run: |
+          du -sh _site/
+          find _site/ -type f -size +10M -exec ls -lh {} \;
