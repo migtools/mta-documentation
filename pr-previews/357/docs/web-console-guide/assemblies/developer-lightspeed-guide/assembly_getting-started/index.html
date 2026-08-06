@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/357/docs/web-console-guide/assemblies/developer-lightspeed-guide/assembly_getting-started/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/357/docs/web-console-guide/assemblies/developer-lightspeed-guide/assembly_getting-started/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/357/docs/web-console-guide/assemblies/developer-lightspeed-guide/assembly_getting-started/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="getting-started">Getting started with {mta-dl-plugin}</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Before configuring {mta-dl-full}, review the system requirements and workflows.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To get support for features in {mta-dl-plugin}, you require a Red Hat Advanced Developer Suite (RHADS) subscription.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prerequisites_getting-started">Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To ensure a successful deployment and prevent installation failures, verify that your environment meets the system, storage, and software requirements for {mta-dl-full} ({ProductShortName}).</p>
+</div>
+<div class="paragraph">
+<p>Your local workstation must meet the following criteria:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have 8 GB of available RAM on your local workstation.</p>
+</li>
+<li>
+<p>You have installed the Java Development Kit (JDK) 17 or later.</p>
+</li>
+<li>
+<p>You have installed Maven 3.9.9 or later.</p>
+</li>
+<li>
+<p>You have installed Git and added it to your <code>$PATH</code> variable.</p>
+</li>
+<li>
+<p>You have installed the Language Support for Java&#8482; by Red&#160;Hat extension.</p>
+</li>
+<li>
+<p>You have installed the {ProductShortName} Visual Studio Code extension. This extension is the primary user interface for triggering contextual code fixes. You must install this extension from the Marketplace or through VSIX.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Your Red&#160;Hat OpenShift cluster must meet the following criteria:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have installed the {ProductShortName} Operator.</p>
+<div class="paragraph">
+<p>The Operator is the primary requirement for the following configurations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Solution Server: The Operator manages the deployment, configuration, and lifecycle of the Solution Server. You can enable the Solution Server in the <code>spec</code> section of the Tackle custom resource (CR).</p>
+</li>
+<li>
+<p>Large language model (LLM) application programming interface (API) key: You must configure the API key as a cluster secret to securely authenticate the Solution Server with the LLM provider.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You have provisioned a persistent volume (PV). A dedicated PV is mandatory if the Solution Server backend database is enabled:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The PV must have a minimum size of 10 GiB.</p>
+</li>
+<li>
+<p>The storage infrastructure must support <code>readwriteonce</code> (RWO) or <code>readwritemany</code> (RWX) access modes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#supported-large-language-models-and-providers_configuring-llm">Supported large language models and providers</a></p>
+</li>
+<li>
+<p><a href="{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-mta-operator_installing-mta-ui">Installing the {ProductShortName} Operator</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation_getting-started">Installation</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Install the {ProductFullName} Visual Studio Code extension 8.0.0 or later from the Visual Studio Code marketplace.</p>
+</div>
+<div class="paragraph">
+<p>You can use the {ProductShortName} Visual Studio Code extension to perform analysis and optionally enable {mta-dl-full} to use generative AI capabilities. You can fix code issues before migrating the application to target technologies by using the generative AI capabilities.</p>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://marketplace.visualstudio.com/search?term=migration%20toolkit&amp;target=VSCode&amp;category=All%20categories&amp;sortBy=Relevance">Visual Studio Code marketplace</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-use-developer-lightspeed_getting-started">{mta-dl-plugin} workflows</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can configure the {mta-dl-plugin} extension to use the large language model (LLM) through an LLM proxy. Alternatively, you can configure the extension to use the LLM provider settings in your Visual Studio Code environment for code resolution suggestions.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you make any change in configuration after enabling the generative AI settings in the extension, you must restart the extension for the change to take effect.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The configuration workflow that you complete to use {mta-dl-plugin} depends on the following factors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Whether you prefer to connect the {ProductShortName} extension to the LLM by using the LLM proxy.</p>
+</li>
+<li>
+<p>Whether you want to use Agent AI for request resolutions without using LLM proxy.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can complete one of the following workflows:</p>
+</div>
+<div class="sect2">
+<h3 id="agent-mode-workflow_getting-started">Workflow to use the Agent AI mode without the LLM proxy</h3>
+<div class="paragraph">
+<p>As an Administrator, you must you must complete the following steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a tackle secret for your LLM key in the Red Hat {ocp-name} cluster.</p>
+</li>
+<li>
+<p>Configure the Tackle custom resource (CR) to enable the LLM provider and the LLM model in the Tackle custom resource (CR).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As a Migrator, you can complete the following steps to use the Agent AI mode for code resolutions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enable the generative AI in the {ProductShortName} extension settings.</p>
+</li>
+<li>
+<p>Configure a profile for the analysis.</p>
+</li>
+<li>
+<p>Activate the LLM provider in the <code>provider-settings.yaml</code> file.</p>
+</li>
+<li>
+<p>Enable the Agent AI and run an analysis to request code fix suggestions by using the Agent AI mode.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="llm-proxy-workflow_getting-started">Workflow to use the LLM through the proxy service</h3>
+<div class="paragraph">
+<p>You can allow client endpoints, for example, the {ProductShortName} Visual Studio Code extension, to use the proxy service to access the large language models (LLMs). The client uses Keycloak credentials to authenticate to the {ProductShortName} Hub. To authenticate to the LLM, the client sends a JSON Web Token (JWT) that Keycloak issues to the proxy service. The proxy service validates the client&#8217;s JWT against the Hub&#8217;s Keycloak instance.</p>
+</div>
+<div class="paragraph">
+<p>The proxy service completes a separate authentication process to access the LLM through an Administrator-controlled endpoint. The proxy service uses an administrator-configured API key to authenticates to the LLM. By deploying proxy service to handle user requests, administrators can create, manage, and rotate LLM API keys without the need to share the LLM key with multiple client endpoints.</p>
+</div>
+<div class="paragraph">
+<p>After you enable the LLM proxy, you can use either the Solution Server or Agent AI to generate code resolution requests in the Integrated Development Environment (IDE) extension. To use the Solution Server, the Administrator must deploy it in the {ocp-name} cluster with the proxy service. You cannot use the Solution Server without the proxy service.</p>
+</div>
+<div class="paragraph">
+<p>As an Administrator, you must complete the following steps to enable the LLM proxy in the {ocp-name} cluster:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a tackle secret cluster.</p>
+</li>
+<li>
+<p>Configure the Tackle custom resource (CR) to enable the LLM proxy service, enable the Solution Server if you want Migrators to use the Solution Server mode, and configure the LLM provider and the LLM model.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As a Migrator, you cam perform the following steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enable the generative AI in the {ProductShortName} extension settings.</p>
+</li>
+<li>
+<p>If you want to use the Agent AI mode for code resolutions, enable the Agent AI and run an analysis.</p>
+</li>
+<li>
+<p>To use the Solution Server mode:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Connect to the {ProductShortName} Hub and run an analysis by using a profile downloaded from the Hub.</p>
+</li>
+<li>
+<p>Apply code resolutions that the Solution Server suggests.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#tackle-llm-secret_getting-started">Create a tackle secret in the cluster</a></p>
+</li>
+<li>
+<p><a href="#tackle-enable-llm-proxy_getting-started">Configure the Tackle custom resource (CR)</a></p>
+</li>
+<li>
+<p><a href="#configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide">Enable generative AI in the {ProductShortName} extension settings</a></p>
+</li>
+<li>
+<p><a href="#configuring-developer-lightspeed-profile-settings_configuring-dev-lightspeed-ide">Configure a profile</a></p>
+</li>
+<li>
+<p><a href="#llm-provider-settings_configuring-llm">Activate the LLM provider</a></p>
+</li>
+<li>
+<p><a href="#running-agent-analysis_run-dev-lightspeed-analysis">Enable Agent AI and run an analysis</a></p>
+</li>
+<li>
+<p><a href="#configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide">{ProductShortName} extension settings</a></p>
+</li>
+<li>
+<p><a href="{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index#analyzing-application-profiles_vsc-extension-guide">Running an application analysis by using a profile</a></p>
+</li>
+<li>
+<p><a href="#apply-rag-resolution_run-dev-lightspeed-analysis">Code resolutions that the Solution Server suggests</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tackle-llm-secret_getting-started">Configuring the model secret key</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You must configure the Kubernetes secret for the large language model (LLM) provider in the Red Hat {ocp-name} project where you installed the {ProductShortName} Operator.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can replace <code>oc</code> in the following commands with <code>kubectl</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You configured an LLM API key secret in your {ocp-name} cluster to produce the resources necessary for the Solution Server. If you do not configure the LLM API key secret, {mta-dl-plugin} does not create the resources necessary to run the Solution Server.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create a credentials secret named <code>kai-api-keys</code> in the <code>openshift-mta</code> project.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>For Amazon Bedrock as the provider, type:</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc create secret generic aws-credentials \
+ --from-literal=AWS_ACCESS_KEY_ID=&lt;YOUR_AWS_ACCESS_KEY_ID&gt; \
+ --from-literal=AWS_SECRET_ACCESS_KEY=&lt;YOUR_AWS_SECRET_ACCESS_KEY&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Azure OpenAI as the provider, type:</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc create secret generic kai-api-keys -n openshift-mta \
+ --from-literal=AZURE_OPENAI_API_KEY='&lt;YOUR_AZURE_OPENAI_API_KEY&gt;'</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Google as the provider, type:</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc create secret generic kai-api-keys -n openshift-mta \
+ --from-literal=GEMINI_API_KEY='&lt;YOUR_GOOGLE_API_KEY&gt;'</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For the OpenAI-compatible providers, type:</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc create secret generic kai-api-keys -n openshift-mta \
+ --from-literal=OPENAI_API_BASE='https://example.openai.com/v1' \
+ --from-literal=OPENAI_API_KEY='&lt;YOUR_OPENAI_KEY&gt;'</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also set the base URL as the <code>kai_llm_baseurl</code> variable in the Tackle custom resource.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>(Optional) Force a reconcile so that the {ProductShortName} operator picks up the secret immediately</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl patch tackle tackle -n openshift-mta --type=merge -p \
+'{"metadata":{"annotations":{"konveyor.io/force-reconcile":"'"$(date +%s)"'"}}}'</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tackle-enable-llm-proxy_getting-started">Enabling LLM proxy in the Tackle custom resource</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To use the LLM proxy service, you must enable the proxy in the Tackle custom resource (CR) and deploy it in the Red Hat {ocp-name} project where you installed the {ProductShortName} Operator.</p>
+</div>
+<div class="paragraph">
+<p>The proxy authenticates to the LLM in the backend by using the LLM secret that you configured in the cluster. This helps the Administrator to create, manage, and rotate the LLM key without sharing the key with many client endpoints, for example, {ProductShortName} Integrated Development Environment (IDE) extension, in the organization.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You deployed an additional <code>5Gi</code> ReadWriteOnce (<code>RWO</code>) volume for the <code>{mta-dl-plugin}-database</code> if you want to use {mta-dl-plugin}.</p>
+</li>
+<li>
+<p>You installed the {ProductShortName} Operator v8.1.0 or later.</p>
+</li>
+<li>
+<p>You optionally enabled the Solution Server in the Tackle CR. You cannot deploy the Solution Server without the proxy service.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Log in to the Red Hat {ocp-name} cluster and switch to the <code>openshift-mta</code> project.</p>
+</li>
+<li>
+<p>Create the Tackle CR in the <code>tackle_hub.yaml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre>vi tackle</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Enable <code>kai_llm_proxy_enabled</code> in the Tackle CR:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
+kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  kai_llm_proxy_enabled: true
+  kai_solution_server_enabled: true
+  kai_llm_provider: &lt;provider-name&gt; #For example, OpenAI.
+  # optional, pick a suitable model for your provider
+  kai_llm_model: &lt;model-name&gt;
+---</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Save the Tackle CR configuration.</p>
+</li>
+<li>
+<p>Apply the Tackle CR in the <code>openshift-mta</code> project:</p>
+<div class="listingblock">
+<div class="content">
+<pre> $ oc apply -f tackle_hub.yaml</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the {mta-dl-plugin} resources deployed for Solution Server:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc get deploy,svc -n openshift-mta | grep -E 'kai-(api|db|importer)'</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you enable Solution Server, the {ProductShortName} Hub serves the Solution Server API endpoint. You need not complete any further task, such as creating a route for the Solution Server API.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="{mta-URL}/installing_the_migration_toolkit_for_applications/index#persistent-volume-requirements_installing-mta-ui">Persistent volume requirements</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="example-code-generation_getting-started">Generating code fix suggestions</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Generate code fixes for a Java application you want to migrate to the <code>quarkus</code> target technology. To stream code changes that resolve issues in the code, use the Agent mode and <code>my-model</code> as the large language model (LLM) that you deployed in {ocp-name} AI.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open the <code>my-Java</code> project in Visual Studio Code.</p>
+</li>
+<li>
+<p>Download the {mta-dl-full} extension from the Visual Studio Code marketplace.</p>
+</li>
+<li>
+<p>Type <code>Ctrl+Shift+P</code> (Windows and Linux systems) or <code>Cmd+Shift+P</code> (Mac systems).</p>
+</li>
+<li>
+<p>Type <code>Preferences: Open Settings (UI)</code> in the Command Palette to open the Visual Studio Code settings and select <code>Extensions &gt; {ProductShortName}</code>.</p>
+</li>
+<li>
+<p>Select <code>Gen AI:Agent Mode</code>.</p>
+</li>
+<li>
+<p>In the {mta-dl-plugin} extension, click <code>Open Analysis View</code>.</p>
+</li>
+<li>
+<p>Type <code>{ProductShortName}: Manage Analysis Profile</code> in the Command Palette and configure the following fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Profile Name</strong>: Type a profile name</p>
+</li>
+<li>
+<p><strong>Target Technologies</strong>: <code>quarkus</code></p>
+</li>
+<li>
+<p><strong>Custom Rules</strong>: Select custom rules if you want to include them while running the analysis. By default, {mta-dl-plugin} enables <strong>Use Default Rules</strong> for <code>quarkus</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Type <code>{ProductShortName}: Open the Gen AI model provider configuration file</code> in the Command Palette to configure the following in the <code>provider-settings</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">models:
+  openshift-example-model: &amp;active
+    environment:
+      OPENAI_API_KEY: "&lt;Server's OPENAI_API_KEY&gt;"
+      CA_BUNDLE: "&lt;Servers CA Bundle path&gt;"
+    provider: "ChatOpenAI"
+    args:
+      model: "my-model"
+      configuration:
+        baseURL: "https://&lt;serving-name&gt;-&lt;data-science-project-name&gt;.apps.konveyor-ai.example.com/v1"</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must change the <code>provider-setting</code> configuration if you plan to use a different LLM provider.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>On the <code>{ProductShortName}: Open Analysis View</code> page, click <strong>Start</strong> to start the {ProductShortName} Remote Procedure Call (RPC) server.</p>
+</li>
+<li>
+<p>Select the profile you configured and click <strong>Run Analysis</strong> to scan the Java application.</p>
+<div class="paragraph">
+<p>{ProductShortName} identifies the issues in the code.</p>
+</div>
+</li>
+<li>
+<p>Click the solutions icon (<span class="image"><img src="../topics/images/solutions-icon-new.png" alt="Click solutions icon"></span>) in an issue to request suggestions to resolve the issue.</p>
+<div class="paragraph">
+<p>{mta-dl-plugin} streams the issue description and a preview of the code changes in files that resolve the issue.</p>
+</div>
+<div class="paragraph">
+<p>You can review the code changes in the editor and accept or reject the changes. If you accept the changes, {mta-dl-plugin} creates a new file with the accepted code changes.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Continue</strong> to allow {mta-dl-plugin} to run a follow-up analysis.</p>
+<div class="paragraph">
+<p>This round of analysis detects lint issues, compilation issues, or diagnostic issues that can occur when you accepted the suggested code change.</p>
+</div>
+<div class="paragraph">
+<p>Repeat the review and accept or reject the resolutions. {mta-dl-plugin} continues to run repeated iterations of scan if you allow until it resolves all issues.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://marketplace.visualstudio.com/search?term=migration%20toolkit&amp;target=VSCode&amp;category=All%20categories&amp;sortBy=Relevance">Visual Studio Code marketplace</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

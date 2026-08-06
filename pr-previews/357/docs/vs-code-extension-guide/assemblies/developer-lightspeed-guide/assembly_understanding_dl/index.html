@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/357/docs/vs-code-extension-guide/assemblies/developer-lightspeed-guide/assembly_understanding_dl/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/357/docs/vs-code-extension-guide/assemblies/developer-lightspeed-guide/assembly_understanding_dl/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/357/docs/vs-code-extension-guide/assemblies/developer-lightspeed-guide/assembly_understanding_dl/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="understanding-dl">Understanding {mta-dl-full}</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Understand the {mta-dl-full} extension features, use cases, configurations, and the benefits of using the extension with a large language model (LLM) to generate AI-assisted code resolutions when you want to refactor large codebases.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intro-to-the-developer-lightspeed_understanding-dl">Introduction to the {mta-dl-plugin}</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can use the {mta-dl-full} feature in the Visual Studio Code extension to apply code resolutions from a large language model (LLM) to resolve static code analysis issues in Java applications.</p>
+</div>
+<div class="sect2">
+<h3 id="use-case-ai-code-fix_intro-to-the-developer-lightspeed">Use case for AI-driven code fixes</h3>
+<div class="paragraph">
+<p>{ProductFirstRef} performs the static code analysis for a specified target technology to which you want to migrate your applications. Red Hat provides 2400+ analysis rules in {ProductShortName} for various Java technologies and you can extend the ruleset for custom frameworks or new technologies by creating custom rules.</p>
+</div>
+<div class="paragraph">
+<p>The static code analysis describes the issues in your code that you must resolve. As you perform analysis for a large portfolio of applications, the issue description and the rule definition that may contain additional information form a large corpus of data that has repetitive patterns of problem definitions and solutions.</p>
+</div>
+<div class="paragraph">
+<p>Migrators duplicate work by resolving issues that repeat across applications in different migration waves.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-developerlightspped-works_intro-to-the-developer-lightspeed">Red&#160;Hat Developer Lightspeed for {ProductShortName} overview</h3>
+<div class="paragraph">
+<p>{mta-dl-plugin} works by collecting and storing the changes in the code for a large collection of applications, finding context to generate prompts for the LLM of your choice, and by generating code resolutions that the LLM produces to address specific issues.</p>
+</div>
+<div class="paragraph">
+<p>{mta-dl-plugin} uses manual code changes made in different migration waves to build context for an LLM. The LLM then suggests code resolutions based on the issue description, context, and solved examples.</p>
+</div>
+<div class="paragraph">
+<p>{mta-dl-plugin} uses Retrieval Augmented Generation (RAG) for context-based resolutions of issues in code. By using RAG, {mta-dl-plugin} improves the context that it shares with the LLM to generate more accurate suggestions to fix the issue in the code. The context allows the LLM to "reason" and generate suggestions for issues that it detects in the code. This mechanism helps to overcome the limited context size in LLMs that prevents them from analyzing the entire source code of an application.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Developer Lightspeed for {ProductShortName} is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://access.redhat.com/support/offerings/techpreview/">Technology Preview Features Support Scope</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 _abstract">
+<h2 id="dl-context_intro-to-the-developer-lightspeed">Describing the context</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The context is a combination of the source code, the issue description, and solved examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Description of issues that {ProductShortName} detects when you run a static code analysis for a given set of target technologies.</p>
+</li>
+<li>
+<p>(Optional) The default and custom rules may contain additional information that you include which can help {mta-dl-plugin} to define the context.</p>
+</li>
+<li>
+<p>Solved examples constitute code changes from other migrations and a pattern of resolution for an issue to use in future. {mta-dl-plugin} creates a solved example when a Migrator accepts an automated code resolution in an earlier analysis or manually fixes an unfamiliar issue in a legacy application. The Solution Server stores solved examples.</p>
+<div class="paragraph">
+<p>More instances of solved examples for an issue enhance the context and improve the success metrics of rules that trigger the issue. The higher the success metrics of an issue, the greater the confidence level associated with the accepted resolutions for that issue in previous analyses.</p>
+</div>
+</li>
+<li>
+<p>(Optional) If you enable the Solution Server, it extracts a pattern of resolution, called the migration hint, that the LLM can use to generate a more accurate fix suggestion in a future analysis.</p>
+<div class="paragraph">
+<p>The improvement in the quality of migration hints results in more accurate code resolutions. Accurate code resolutions from the LLM result in the user accepting an update to the code. The Solution Server stores the updated code to generate a better migration hint in future.</p>
+</div>
+<div class="paragraph">
+<p>This cyclical improvement of resolution pattern from the Solution Server and improved migration hints lead to more reliable code changes as you migrate applications in different migration waves.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="solution-server_dl-context">About the Solution Server</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Solution Server is a component that allows {mta-dl-plugin} to build a collective memory of source code changes from all analyses that an organization performs. This helps you to use the recurring patterns of solutions for issues that repeat in many applications. You can opt to use the Solution Server to request AI-assisted code resolutions.</p>
+</div>
+<div class="paragraph">
+<p>The Solution Server uses solved examples to suggest high-confidence resolutions for similar issues. When you accept a suggested code fix, the Solution Server updates the context. By using this improved context, the LLM generates more reliable resolutions in future.</p>
+</div>
+<div class="paragraph">
+<p>The Solution Server delivers two primary benefits to users:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Contextual Hints</strong>: It surfaces examples of past migration solutions, including successful user modifications and accepted fixes, offering actionable hints for difficult or previously unsolved migration problems.</p>
+</li>
+<li>
+<p><strong>Migration Success Metrics</strong>: It exposes detailed success metrics for each migration rule, derived from real-world usage data. Integrated Development Environments (IDEs) or automation tools can use these metrics to present users with a “confidence level” or likelihood of {mta-dl-plugin} successfully migrating a given code segment.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you use the Solution Server, you can view a diff of the updated portions of the code and the original source code to do a manual review. In a manual review of the suggested AI resolutions, you can accept, reject, or edit the suggested code changes.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Solution Server is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Configurable large language models and providers in the Tackle custom resource</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">LLM Provider (Tackle CR value)</th>
+<th class="tableblock halign-left valign-top">Large language model examples for Tackle CR configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{ocp-name} AI platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Models that you deploy in an OpenShift AI cluster and access by using Open AI-compatible API</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open AI (<code>openai</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gpt-4</code>, <code>gpt-4o</code>, <code>gpt-4o-mini</code>, <code>gpt-3.5-turbo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure OpenAI (<code>azure_openai</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gpt-4</code>, <code>gpt-35-turbo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Bedrock (<code>bedrock</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>anthropic.claude-3-5-sonnet-20241022-v2:0</code>, <code>meta.llama3-1-70b-instruct-v1:0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Gemini (<code>google</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gemini-2.0-flash-exp</code>, <code>gemini-1.5-pro</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ollama (<code>ollama</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>llama3.1</code>, <code>codellama</code>, <code>mistral</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://access.redhat.com/support/offerings/techpreview/">Technology Preview Features Support Scope</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="agent-ai_solution-server">About the Agent AI</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>You can enable the Agent AI or the Solution Server mode to request AI-assisted code resolutions. In the agentic AI mode, {mta-dl-plugin} streams an automated analysis of the code in a loop and makes changes in the code. In the initial run, the AI agent:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Plans the context to define the issues.</p>
+</li>
+<li>
+<p>Chooses a suitable sub agent for the analysis task. {mta-dl-plugin} works with the LLM to generate fix suggestions. The LLM displays the reasoning transcript and files to change.</p>
+</li>
+<li>
+<p>Applies the changes to the code once you approve the updates.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you accept that the agentic AI must continue to make changes, it compiles the code and runs a partial analysis. In this iteration, the agentic AI attempts to fix diagnostic issues (if any) generated by tools that you installed in the Visual Studio Code Integrated Development Environment (IDE). You can review the changes and accept the agentic AI&#8217;s suggestion to address these diagnostic issues.</p>
+</div>
+<div class="paragraph">
+<p>After each iteration of applying changes to the code, the agentic AI asks if you want the agent to continue fixing more issues. When you accept, it runs another iteration of automated analysis until it has resolved all issues or it has made a maximum of two attempts to fix an issue.</p>
+</div>
+<div class="paragraph">
+<p>Agentic AI generates a new preview in each iteration when it updates the code with the suggested resolutions. The time that the agentic AI takes to complete all iterations depends on the number of new diagnostic issues that it detects in the code.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="agent-mode-guardrails_agent-ai">Output verification and agent mode guardrails</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To understand how the system ensures syntactically valid code, review the output verification mechanism. In the agent mode, the {mta-dl-plugin} acts as a native compiler validation loop.</p>
+</div>
+<div class="paragraph">
+<p>The verification mechanism ensures that AI-generated code suggestions are syntactically valid and compatible with your classpath before they are written to disk. It also provides a programmatic guardrail against common large language model (LLM) risks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hallucinated application programming interface (API) signatures</p>
+</li>
+<li>
+<p>References to removed or deprecated methods</p>
+</li>
+<li>
+<p>Syntactically broken output</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you run an analysis in the agent mode, the {mta-dl-plugin} passes each code suggestion through a local build dry run before applying it to your workspace. This process runs entirely on your developer workstation. No source code or build artifacts leave your local environment during verification.</p>
+</div>
+<div class="paragraph">
+<p>The extension invokes the standard build toolchain that is already configured for your project directly in your local workspace, such as the following toolchains:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Java projects</code>: Apache Maven (<code>mvn compile</code>) or Gradle (<code>gradle compileJava</code>).</p>
+</li>
+<li>
+<p><code>JavaScript and TypeScript projects</code>: npm (<code>npm run build</code>) or Yarn (<code>yarn build</code>).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Perform the dry run directly on the underlying file system of your local workspace without containerization or process isolation. If the dry run completes successfully, the {mta-dl-plugin} displays the verified suggestion for your approval before applying it to the workspace. If the dry run returns errors, the {mta-dl-plugin} attempts automatic correction.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="agent-mode-validation-checks_agent-ai">Agent mode validation checks</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To understand how the system ensures code validity, review the verification checks that {mta-dl-plugin} performs in the agent mode.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Syntax verification</dt>
+<dd>
+<p>The {mta-dl-plugin} parses the generated code against the grammar rules of the target language. The {mta-dl-plugin} detects malformed tokens, unclosed blocks, or other parse-level errors at this stage before any file is written.</p>
+</dd>
+<dt class="hdlist1">Method signature and reference checks</dt>
+<dd>
+<p>The compiler resolves all newly introduced classes, method calls, field accesses, and variable references against your project&#8217;s full dependency classpath. This classpath includes libraries that are declared in <code>pom.xml</code>, <code>build.gradle</code>, or <code>package.json</code> files. This verification prevents hallucinated or deprecated application programming interface (API) calls from entering the codebase.</p>
+</dd>
+<dt class="hdlist1">Import and dependency consistency</dt>
+<dd>
+<p>The {mta-dl-plugin} confirms that every <code>import</code> statement that the suggestion adds corresponds to a type that is available on the classpath. The {mta-dl-plugin} flags missing or incorrect imports for correction.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="agent-mode-autocorrection_agent-ai">Autocorrection on compilation failure</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To understand how the system handles compilation errors during an analysis, review the autocorrection mechanism. The {mta-dl-full} extension uses compiler diagnostic output to generate corrected suggestions instead of immediately displaying errors.</p>
+</div>
+<div class="paragraph">
+<p>When a compilation step fails, the <code>{mta-dl-plugin}</code> uses the diagnostic output as additional context. It generates a corrected suggestion from the <code>{mta-dl-full}</code> model. This retry loop runs up to two times for minor errors. Examples include a single unresolved import or a mismatched method argument type.</p>
+</div>
+<div class="paragraph">
+<p>If the retry limit is reached, agent mode marks the code as unverified. It also displays the original compiler output alongside the suggestion. The code requires manual resolution before the change is applied.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enabling-agent-mode_agent-ai">Enable agent mode</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To verify code suggestions automatically with a local build dry run, enable agent mode in the {mta-dl-plugin} through the Visual Studio Code command palette or the extension settings panel.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have installed the {mta-dl-plugin} extension in Visual Studio Code.</p>
+</li>
+<li>
+<p>Your project has a supported build file (<code>pom.xml</code>, <code>build.gradle</code>, or <code>package.json</code>) at the repository root.</p>
+</li>
+<li>
+<p>You have installed the corresponding build tool (Maven, Gradle, or npm) and added it to your system <code>PATH</code>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Enable agent mode in one of the following ways:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>By using the command palette:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Press Ctrl+Shift+P on Linux or Windows, or Cmd+Shift+P on macOS, to open the command palette.</p>
+</li>
+<li>
+<p>Type <code>Preferences: Open User Settings (JSON)</code> to open the <code>settings.json</code> file.</p>
+</li>
+<li>
+<p>Set the <code>mta-vscode-extension.genai.agentMode</code> parameter to <code>true</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>By using the extension settings panel:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click <strong>Extensions</strong> &gt; <strong>{mta-dl-plugin}</strong> &gt; <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Agent Mode</strong> checkbox to enable agent mode.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Restart the integrated development environment (IDE) language server when you are prompted to apply the change.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Verification</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>View</strong> &gt; <strong>Output</strong> &gt; <strong>Red&#160;Hat Developer Lightspeed</strong> to open the Lightspeed output panel.</p>
+</li>
+<li>
+<p>Request a code suggestion.</p>
+</li>
+<li>
+<p>Verify that the output panel displays entries similar to the following output:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">[Agent Mode] Running build dry-run: mvn compile -q
+[Agent Mode] Dry-run completed: SUCCESS (exit 0)
+[Agent Mode] Applying verified suggestion to workspace</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="benefits-using-developer-lightspeed_agent-ai">Benefits of using {mta-dl-plugin}</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>{mta-dl-full} offers options to use large language models of your choice, LLM configuration control, and a platform engineering approach to standardize AI-assisted refactoring efforts for large codebases in your organization.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Model agnostic</strong> - {mta-dl-plugin} follows a "Bring Your Own Model" approach, allowing your organization to use a preferred LLM.</p>
+</li>
+<li>
+<p><strong>Iterative refinement</strong> - {mta-dl-plugin} can include an agent that iterates through the source code to run a series of automated analyses that resolve both the code base and diagnostic issues.</p>
+</li>
+<li>
+<p><strong>Contextual code generation</strong> - By leveraging AI for static code analysis, {mta-dl-plugin} breaks down complex problems into more manageable ones, providing the LLM with focused context to generate meaningful results. This helps overcome the limited context size of LLMs when dealing with large codebases.</p>
+</li>
+<li>
+<p><strong>No fine tuning</strong> - You also do not need to fine tune your model with a suitable data set for analysis which leaves you free to use and switch LLM models to respond to your requirements.</p>
+</li>
+<li>
+<p><strong>Learning and Improvement</strong> - When migrating more parts of a codebase, {mta-dl-plugin} can use RAG to learn from the available data and give better recommendations in subsequent application analysis.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

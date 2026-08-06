@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/357/docs/release-notes/assemblies/ui-guide/topics/developer-lightspeed/ref_prerequisites/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/357/docs/release-notes/assemblies/ui-guide/topics/developer-lightspeed/ref_prerequisites/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/357/docs/release-notes/assemblies/ui-guide/topics/developer-lightspeed/ref_prerequisites/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="prerequisites_{context}">Prerequisites</h1>
+<div class="paragraph _abstract">
+<p>To ensure a successful deployment and prevent installation failures, verify that your environment meets the system, storage, and software requirements for {mta-dl-full} ({ProductShortName}).</p>
+</div>
+<div class="paragraph">
+<p>Your local workstation must meet the following criteria:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have 8 GB of available RAM on your local workstation.</p>
+</li>
+<li>
+<p>You have installed the Java Development Kit (JDK) 17 or later.</p>
+</li>
+<li>
+<p>You have installed Maven 3.9.9 or later.</p>
+</li>
+<li>
+<p>You have installed Git and added it to your <code>$PATH</code> variable.</p>
+</li>
+<li>
+<p>You have installed the Language Support for Java&#8482; by Red&#160;Hat extension.</p>
+</li>
+<li>
+<p>You have installed the {ProductShortName} Visual Studio Code extension. This extension is the primary user interface for triggering contextual code fixes. You must install this extension from the Marketplace or through VSIX.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Your Red&#160;Hat OpenShift cluster must meet the following criteria:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have installed the {ProductShortName} Operator.</p>
+<div class="paragraph">
+<p>The Operator is the primary requirement for the following configurations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Solution Server: The Operator manages the deployment, configuration, and lifecycle of the Solution Server. You can enable the Solution Server in the <code>spec</code> section of the Tackle custom resource (CR).</p>
+</li>
+<li>
+<p>Large language model (LLM) application programming interface (API) key: You must configure the API key as a cluster secret to securely authenticate the Solution Server with the LLM provider.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You have provisioned a persistent volume (PV). A dedicated PV is mandatory if the Solution Server backend database is enabled:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The PV must have a minimum size of 10 GiB.</p>
+</li>
+<li>
+<p>The storage infrastructure must support <code>readwriteonce</code> (RWO) or <code>readwritemany</code> (RWX) access modes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#supported-large-language-models-and-providers_configuring-llm">Supported large language models and providers</a></p>
+</li>
+<li>
+<p><a href="{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-mta-operator_installing-mta-ui">Installing the {ProductShortName} Operator</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

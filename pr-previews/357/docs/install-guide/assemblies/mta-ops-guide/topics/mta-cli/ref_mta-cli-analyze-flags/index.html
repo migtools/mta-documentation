@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/357/docs/install-guide/assemblies/mta-ops-guide/topics/mta-cli/ref_mta-cli-analyze-flags/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/357/docs/install-guide/assemblies/mta-ops-guide/topics/mta-cli/ref_mta-cli-analyze-flags/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/357/docs/install-guide/assemblies/mta-ops-guide/topics/mta-cli/ref_mta-cli-analyze-flags/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-cli-analyze-flags_{context}">The analyze command options</h1>
+<div class="paragraph _abstract">
+<p>You can customize the application analysis process with {ProductFullName} command-line interface (CLI) by using the <code>mta-cli analyze</code> command options. You can use these options to specify input sources, define target migration paths, configure output directories, and perform other adjustments.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. <code>mta-cli analyze</code> command options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--analyze-known-libraries</code> (bool)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Analyze open-source libraries.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--disable-maven-search</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set <code>--disable-maven-search=true</code> to disable {ProductShortName} from relying on the Maven search index to determine if a dependency is publicly available, such as an open-source dependency, or internal to the Java binary application during analysis.</p>
+<p class="tableblock">When you disable Maven search, {ProductShortName} at first tries to determine dependencies from the JAR file&#8217;s POM file, if any. If this method does not succeed, {ProductShortName} goes through the directory structure to determine dependencies. This method may not produce a reliable dependency classification since the package structure can differ from what is expected by {ProductShortName}. You might see more incidents because some dependencies may be wrongly classified as internal.</p>
+<p class="tableblock">By default, <code>--disable-maven-search=false</code>. Therefore, {ProductShortName} uses the SHA digest of the JAR file to search the Maven search index. This setting generates more accurate dependencies but the drawback is that the Maven search index is frequently unavailable.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--context-lines</code> (int)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of lines of source code to include in the output for each incident. The default is 100.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--dependency-folders</code> (stringArray)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A directory for dependencies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--enable-default-rulesets</code> (bool)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Run default rulesets with analysis. The default is <code>true</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display the available flags for the <code>analyze</code> command.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--http-proxy</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An HTTP proxy string URL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--https-proxy</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An HTTPS proxy string URL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--incident-selector</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An expression to select incidents based on custom variables, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>!package=io.demo.config-utils</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--input</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A path to the application source code or a binary.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--jaeger-endpoint</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Jaeger endpoint to collect traces.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--json-output</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create analysis and dependence output as a JSON file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--label-selector</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Run rules based on specified label selector expression.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--list-languages</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List all languages in the source application. This flag is not supported for binary applications.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--maven-settings</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A path to the custom Maven settings file to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--mode</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An analysis mode. Must be set to either of the following values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>full</code> (default)</p>
+</li>
+<li>
+<p><code>source-only</code></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--no-proxy</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Proxy-excluded URLs (relevant only with proxy).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--output</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A path to the directory for analysis output.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--overwrite</code> (bool)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Overwrite the output directory.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--rules</code> (stringArray)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A filename or directory that contains rule files.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--run-local</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enable or disable container runtime usage for Java applications. For example, to enable container runtime, set <code>--run-local</code> to <code>false</code>. Note that the analysis of non-Java applications runs in container mode only.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--skip-static-report</code> (bool)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not generate the static report.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--source</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A source technology to consider for the analysis.
+To specify multiple sources, repeat the parameter, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>--source &lt;source_1&gt; --source &lt;source_2&gt; ...</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--target</code> (string)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A target technology to consider for the analysis.
+To specify multiple targets, repeat the parameter, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>--target &lt;target_1&gt; --target &lt;target_2&gt; ...</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--log-level uint32</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A log level. The default is 4.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--no-cleanup</code> (bool)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not clean up temporary resources.</p></td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/357/docs/mta-ops-guide/assemblies/release-notes/topics/release-notes-topics/ref_known-issues-8-0/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/357/docs/mta-ops-guide/assemblies/release-notes/topics/release-notes-topics/ref_known-issues-8-0/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/357/docs/mta-ops-guide/assemblies/release-notes/topics/release-notes-topics/ref_known-issues-8-0/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="known-issues-8-0_{context}">Known issues</h1>
+<div class="paragraph _abstract">
+<p>Understand how newly identified and previously known issues might affect your use of {ProductFullName} version 8.0.0, and how to work around them.</p>
+</div>
+<div class="paragraph">
+<p>A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Application analysis with {ProductShortName} CLI might fail with the "invalid header line" error</dt>
+<dd>
+<p>An application analysis by using the {ProductFullName} command-line interface (CLI) might fail with the following error message:</p>
+<div class="listingblock">
+<div class="content">
+<pre>level=error msg="initialize failed" error="context canceled" provider=java
+error="invalid header line "An error has occurred. See the log file"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To work around this problem, clean up metadata and cache:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clear the <code>.metadata</code> subdirectory under the directory from which you ran the <code>mta-cli analyze</code> command.</p>
+</li>
+<li>
+<p>Clear the Maven cache.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="https://issues.redhat.com/browse/MTA-6125">MTA-6125</a></p>
+</div>
+</dd>
+<dt class="hdlist1">{ProductShortName} analysis result does not change if you add or remove a custom rule</dt>
+<dd>
+<p>When you use Developer Lightspeed for {ProductShortName}, the analysis results do not change if you include or remove a custom rule but do not restart the analyzer process.</p>
+<div class="paragraph">
+<p>To work around this problem, restart the analyzer process by clicking the <strong>Start/Stop</strong> button after making a configuration change.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://issues.redhat.com/browse/MTA-6129">MTA-6129</a></p>
+</div>
+</dd>
+<dt class="hdlist1"><code>ANNOTATION</code> location rules do not match on FQNs</dt>
+<dd>
+<p>The <code>ANNOTATION</code> search location does not properly use Fully Qualified Names (FQNs) to match annotations. This leads to incorrect matches and false positives in analysis issues. For example, a rule that searches for annotations using the <code>javax.enterprise.inject.Produces</code> pattern might incorrectly match the occurrences of the <code>javax.ws.rs.Produces</code> annotation in the source code.</p>
+<div class="paragraph">
+<p>No known workaround exists.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://issues.redhat.com/browse/MTA-6195">MTA-6195</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Developer Lightspeed for {ProductShortName} database throws a connection error</dt>
+<dd>
+<p>The Solution Server throws a connection error when concurrent connections increase in a short span of time. To work around this problem, enter the following command to allow the Developer Lightspeed for {ProductShortName} database to expire idle connections:</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc -n openshift-mta exec deploy/kai-db – psql -U postgres -d postgres -c "ALTER ROLE kai SET idle_session_timeout = '1min'; ALTER ROLE kai SET idle_in_transaction_session_timeout = '1min';"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://issues.redhat.com/browse/MTA-6204">MTA-6204</a></p>
+</div>
+</dd>
+</dl>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

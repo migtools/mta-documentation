@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/357/docs/developer-lightspeed-guide/assemblies/mta-ops-guide/topics/mta-ops/con_workload-deployment/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/357/docs/developer-lightspeed-guide/assemblies/mta-ops-guide/topics/mta-ops/con_workload-deployment/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/357/docs/developer-lightspeed-guide/assemblies/mta-ops-guide/topics/mta-ops/con_workload-deployment/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="workload-deployment_{context}">Workload deployment</h1>
+<div class="paragraph _abstract">
+<p>Understand the final step of the stateless workload migration pipeline and deploy the validated manifests to the target cluster.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mta-ops</code> pipeline produces ready-to-use YAML artifacts on your local disk. It deliberately does not connect to the target cluster. This non-destructive architecture ensures that the target cluster remains untouched until manual deployment.</p>
+</div>
+<div class="paragraph">
+<p>Because the pipeline outputs standard Kubernetes manifests, it is fully GitOps-ready. You can commit the final YAML to a repository.</p>
+</div>
+<div class="paragraph">
+<p>Applying the consolidated <code>output.yaml</code> file resolves dependency ordering issues during deployment. Applying the entire directory can cause deployment failures if roles execute before role bindings.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

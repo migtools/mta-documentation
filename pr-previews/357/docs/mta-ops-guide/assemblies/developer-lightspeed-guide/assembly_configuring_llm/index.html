@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/357/docs/mta-ops-guide/assemblies/developer-lightspeed-guide/assembly_configuring_llm/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/357/docs/mta-ops-guide/assemblies/developer-lightspeed-guide/assembly_configuring_llm/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/357/docs/mta-ops-guide/assemblies/developer-lightspeed-guide/assembly_configuring_llm/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="configuring-llm">Configuring large language models for analysis</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>{mta-dl-plugin} provides the large language model (LLM) with the contextual prompt, migration hints, and solved examples to generate suggestions for resolving issues identified in the current code.</p>
+</div>
+<div class="paragraph">
+<p>{mta-dl-plugin} is model agnostic. It works with LLMs that are run in different environments (in local containers, as local AI, or as a shared service) to support analyzing Java applications in a wide range of scenarios. You can choose an LLM from well-known providers, local models that you run from Ollama or Podman desktop, and OpenAI API compatible models.</p>
+</div>
+<div class="paragraph">
+<p>The code fix suggestions that the LLM produces to resolve issues from an analysis depend on the LLM&#8217;s capabilities.</p>
+</div>
+<div class="paragraph">
+<p>You can run an LLM from the following generative AI providers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenAI</p>
+</li>
+<li>
+<p>Azure OpenAI</p>
+</li>
+<li>
+<p>Google Gemini</p>
+</li>
+<li>
+<p>Amazon Bedrock</p>
+</li>
+<li>
+<p>Ollama</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can also run OpenAI API-compatible LLMs deployed as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A service in your {ocp-name} AI cluster</p>
+</li>
+<li>
+<p>Locally in the Podman AI Lab in your system.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="supported-large-language-models-and-providers_configuring-llm">Supported large language models and providers</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To ensure an accurate system configuration, review the supported large language models (LLMs) and providers that you can configure in the Tackle custom resource (CR).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The availability of public LLM models is maintained by the respective LLM provider.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Configurable large language models and providers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">LLM Provider (Tackle CR value)</th>
+<th class="tableblock halign-left valign-top">Large language model examples for Tackle CR configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenShift AI platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Models deployed in an OpenShift AI cluster that can be accessed by using an OpenAI-compatible API.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenAI (<code>openai</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gpt-4, gpt-4o, gpt-4o-mini, gpt-3.5-turbo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure OpenAI (<code>azure_openai</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gpt-4, gpt-35-turbo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Bedrock (<code>bedrock</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">anthropic.claude-3-5-sonnet-20241022-v2:0, meta.llama3-1-70b-instruct-v1:0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Gemini (<code>google</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gemini-2.0-flash-exp, gemini-1.5-pro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ollama (<code>ollama</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">llama3.1, codellama, mistral</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ip-protection-model-hosting_configuring-llm">Data privacy, intellectual property protection, and model hosting considerations</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>When you configure a large language model (LLM) provider for {mta-dl-full}, understanding code transmission helps you to comply with your organization&#8217;s intellectual property (IP) and data privacy policies.</p>
+</div>
+<div class="sect2">
+<h3 id="ip-protection-risk-disclosure_configuring-llm">{mta-dl-plugin} code transmission to the LLM</h3>
+<div class="paragraph">
+<p>To generate accurate migration suggestions, {mta-dl-plugin} constructs a contextual prompt. This prompt includes relevant code snippets from the application that you are analyzing. Code snippets are transmitted intact to the configured LLM provider.</p>
+</div>
+<div class="paragraph">
+<p>{mta-dl-plugin} does not perform automatic sanitization or redaction of source code before inclusion in a prompt. Altering the code syntax reduces the accuracy of the migration recommendations.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can configure {mta-dl-plugin} to use a public, SaaS-based LLM endpoint, such as a public OpenAI service or a shared Azure OpenAI deployment. If you do this, {mta-dl-plugin} transmits your source code snippets to that third-party provider for processing.</p>
+</div>
+<div class="paragraph">
+<p>Your codebase might contain proprietary algorithms, trade secrets, regulated data, or other sensitive intellectual property. This transmission might expose that information outside your organization&#8217;s security boundary. This exposure might conflict with your intellectual property protection policies, contractual obligations, or regulatory requirements.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ip-protection-mitigation_configuring-llm">Self-managed model hosting as a mitigation strategy</h3>
+<div class="paragraph">
+<p>Organizations with strict intellectual property (IP) protection requirements, regulatory constraints, or air-gapped network environments should deploy a self-managed LLM instance and configure {mta-dl-plugin} to route all queries to that private endpoint. This approach ensures that source code snippets never leave your controlled infrastructure.</p>
+</div>
+<div class="paragraph">
+<p>Red&#160;Hat supports the following on-site and self-managed AI platforms for this purpose:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>{ocp-name} AI</strong>: Deploy and serve LLMs as an inference service within your {ocp-name} cluster. This keeps all model traffic on your internal network. For more information, see <a href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed">Red&#160;Hat OpenShift AI documentation</a>.</p>
+</li>
+<li>
+<p><strong>Red&#160;Hat Enterprise Linux AI (RHEL AI)</strong>: Run a self-contained, production-ready AI infrastructure on RHEL to serve models locally or within your private data center. For more information, see <a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai">Red&#160;Hat Enterprise Linux AI documentation</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can configure {mta-dl-plugin} to use the OpenAI-compatible API endpoint that both platforms expose without any additional plugin changes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ip-protection-config-pointers_configuring-llm">Private endpoint configuration</h3>
+<div class="paragraph">
+<p>A self-managed model requires the {mta-dl-plugin} default large language model (LLM) provider URL to point to a private inference endpoint. The URL location depends on your deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Standalone mode</strong>: The custom endpoint URL is configured in the VS Code extension settings for {mta-dl-plugin}.</p>
+</li>
+<li>
+<p><strong>Centralized configuration management mode</strong>: The provider endpoint URL is set in the central configuration administered through the {ProductShortName} hub.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Self-managed endpoints require authentication credentials, such as API keys or bearer tokens. These credentials require secure storage and must not be committed to source control.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="llm-service-openshift-ai_configuring-llm">Deploying an LLM as a service in an {ocp-name} AI cluster</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>The code suggestions from {mta-dl-full} differ based on the large language model (LLM) that you use. Therefore, you may want to use an LLM that caters to your specific requirements.</p>
+</div>
+<div class="paragraph">
+<p>The {mta-dl-plugin} integrates with LLMs deployed as a scalable service on {ocp-name} AI clusters. This integration provides you with granular control over resources such as compute resources, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) to resolve code issues at a large scale.</p>
+</div>
+<div class="paragraph">
+<p>An example workflow for configuring an LLM service on {ocp-name} AI broadly requires the following configurations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Installing and configuring the following infrastructure resources:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat {ocp-name} cluster and installing the {ocp-name} AI Operator</p>
+</li>
+<li>
+<p>Configure a GPU machineset</p>
+</li>
+<li>
+<p>(Optional) Configure an auto scaler custom resource (CR) and a machine scaler CR</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Configuring {ocp-name} AI platform</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure a data science project</p>
+</li>
+<li>
+<p>Configure a serving runtime</p>
+</li>
+<li>
+<p>Configure an accelerator profile</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Deploying the LLM through {ocp-name} AI</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Uploading your model to an AWS compatible bucket</p>
+</li>
+<li>
+<p>Add a data connection</p>
+</li>
+<li>
+<p>Deploy the LLM in your {ocp-name} AI data science project</p>
+</li>
+<li>
+<p>Export the SSL certificate, <code>OPENAI_API_BASE</code> URL and other environment variables to access the LLM</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Preparing the LLM for analysis</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure an OpenAI API key</p>
+</li>
+<li>
+<p>Update the OpenAI API key and the base URL in <code>provider-settings.yaml</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="#llm-provider-settings_configuring-llm">Configuring LLM provider settings</a> to configure the base URL and the LLM API key in the {mta-dl-plugin} VS Code extension.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="llm-provider-settings_configuring-llm">Configuring LLM provider settings</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>{mta-dl-full} is large language model (LLM) agnostic and integrates with an LLM of your choice. To enable {mta-dl-plugin} to access your large language model (LLM), you must enter the LLM provider configurations in the <code>provider-settings.yaml</code> file.</p>
+</div>
+<div class="paragraph">
+<p>The <code>provider-settings.yaml</code> file contains a list of LLM providers that {mta-dl-plugin} supports by default. The mandatory environment variables are different for each LLM provider. Depending on the provider that you choose, you can configure additional environment variables for a model in the <code>provider-settings.yaml</code> file. You can also enter a new provider with the required environment variables, the base URL, and the model name.</p>
+</div>
+<div class="paragraph">
+<p>You can find the provider settings file in the {mta-dl-plugin} Visual Studio Code extension.</p>
+</div>
+<div class="paragraph">
+<p>Access the <code>provider-settings.yaml</code> from the Visual Studio Code Command Palette by typing <code>Open the GenAI model provider configuration file</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can select one provider from the list by using the <code>&amp;active</code> anchor in the name of the provider. To use a model from another provider, move the <code>&amp;active</code> anchor to <em><strong>one</strong></em> of the desired provider blocks.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For a model named "my-model" deployed in {ocp-name} AI with "example-model" as the serving name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">models:
+  openshift-example-model: &amp;active
+    environment:
+      CA_BUNDLE: "&lt;Servers CA Bundle path&gt;"
+    provider: "ChatOpenAI"
+    args:
+      model: "my-model"
+      configuration:
+        baseURL: "https://&lt;serving-name&gt;-&lt;data-science-project-name&gt;.apps.konveyor-ai.example.com/v1"</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you change the <code>model</code> deployed in {ocp-name} AI, you must also change the <code>model</code> argument and the <code>baseURL</code> endpoint.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you want to select a public LLM provider, you must move the <code>&amp;active</code> anchor to the desired block and change the provider arguments.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For an OpenAI model:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">OpenAI: &amp;active
+    environment:
+      OPENAI_API_KEY: "&lt;your-API-key&gt;" # Required
+    provider: ChatOpenAI
+    args:
+      model: gpt-4o # Required</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For Azure OpenAI:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">AzureChatOpenAI: &amp;active
+    environment:
+      AZURE_OPENAI_API_KEY: "" # Required
+    provider: AzureChatOpenAI
+    args:
+      azureOpenAIApiDeploymentName: "" # Required
+      azureOpenAIApiVersion: "" # Required</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For Amazon Bedrock:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">AmazonBedrock: &amp;active
+    environment:
+      ## May have to use if no global `~/.aws/credentials`
+      AWS_ACCESS_KEY_ID: "" # Required if a global ~/.aws/credentials file is not present
+      AWS_SECRET_ACCESS_KEY: "" # Required if a global ~/.aws/credentials file is not present
+      AWS_DEFAULT_REGION: "" # Required
+    provider: ChatBedrock
+    args:
+      model: meta.llama3-70b-instruct-v1:0 # Required</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To verify that you have command line access to the Amazon Web Services (AWS) services before you proceed with the <code>provider-settings</code> configurations, use the AWS CLI.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For Google Gemini:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">GoogleGenAI: &amp;active
+    environment:
+      GOOGLE_API_KEY: "" # Required
+    provider: ChatGoogleGenerativeAI
+    args:
+      model: gemini-2.5-pro # Required</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For Ollama:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">models:
+  ChatOllama: &amp;active
+    provider: "ChatOllama"
+    args:
+      model: "granite-code:8b-instruct"
+      baseUrl: "127.0.0.1:11434" # example URL</code></pre>
+</div>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://aws.amazon.com/cli/">AWS CLI</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-llm-podman_configuring-llm">Configuring the LLM in Podman Desktop</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>To select an open source model from a curated list of models and run it locally in your system, use the Podman AI lab extension.</p>
+</div>
+<div class="paragraph">
+<p>The code fix suggestions generated by a model depend on the model&#8217;s capabilities. Models deployed through the Podman AI Lab were found to be insufficient for the complexity of code changes required to fix issues discovered by {ProductShortName}. Do not use such models in a production environment.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You installed Podman Desktop in your system.</p>
+</li>
+<li>
+<p>You completed initial configurations in {mta-dl-plugin} required for the analysis.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Go to the Podman AI Lab extension and click <strong>Catalog</strong> under <strong>Models</strong>.</p>
+</li>
+<li>
+<p>Download one or more models.</p>
+</li>
+<li>
+<p>Go to <strong>Services</strong> and click <strong>New Model Service</strong>.</p>
+</li>
+<li>
+<p>Select a model that you downloaded in the <strong>Model</strong> drop down menu and click <strong>Create Service</strong>.</p>
+</li>
+<li>
+<p>Click the deployed model service to open the <strong>Service Details</strong> page.</p>
+</li>
+<li>
+<p>Note the server URL and the model name.
+You must configure these specifications in the {mta-dl-plugin} extension.</p>
+</li>
+<li>
+<p>Export the inference server URL as follows:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">export OPENAI_API_BASE=&lt;server-url&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>In the {mta-dl-plugin} extension, type <code>Open the GenAI model provider configuration file</code> in the Command Palette to open the <code>provider-settings.yaml</code> file.</p>
+</li>
+<li>
+<p>Enter the model details from Podman Desktop. For example, use the following configuration for a Mistral model.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">podman_mistral: &amp;active
+    provider: "ChatOpenAI"
+    environment:
+      OPENAI_API_KEY: "unused value"
+    args:
+     model: "ibm-granite/granite-3.3-8b-instruct-GGUF"
+     configuration:
+       baseURL: "http://localhost:56885/v1"</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The Podman Desktop service endpoint does not need a password but the OpenAI library expects the <code>OPENAI_API_KEY</code> to be set. In this case, the value of the <code>OPENAI_API_KEY</code> variable does not matter.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://podman-desktop.io/docs/installation">Podman Desktop</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

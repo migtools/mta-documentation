@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/357/docs/rules-development-guide/assemblies/intellij-plugin-guide/topics/developer-lightspeed/con_llm-service-openshift-ai/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/357/docs/rules-development-guide/assemblies/intellij-plugin-guide/topics/developer-lightspeed/con_llm-service-openshift-ai/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/357/docs/rules-development-guide/assemblies/intellij-plugin-guide/topics/developer-lightspeed/con_llm-service-openshift-ai/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a1c05fdcf13ce7418b73b14af41160bd8d9bf541">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="llm-service-openshift-ai_{context}">Deploying an LLM as a service in an {ocp-name} AI cluster</h1>
+<div class="paragraph _abstract">
+<p>The code suggestions from {mta-dl-full} differ based on the large language model (LLM) that you use. Therefore, you may want to use an LLM that caters to your specific requirements.</p>
+</div>
+<div class="paragraph">
+<p>The {mta-dl-plugin} integrates with LLMs deployed as a scalable service on {ocp-name} AI clusters. This integration provides you with granular control over resources such as compute resources, cluster nodes, and auto-scaling Graphical Processing Units (GPUs) to resolve code issues at a large scale.</p>
+</div>
+<div class="paragraph">
+<p>An example workflow for configuring an LLM service on {ocp-name} AI broadly requires the following configurations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Installing and configuring the following infrastructure resources:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat {ocp-name} cluster and installing the {ocp-name} AI Operator</p>
+</li>
+<li>
+<p>Configure a GPU machineset</p>
+</li>
+<li>
+<p>(Optional) Configure an auto scaler custom resource (CR) and a machine scaler CR</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Configuring {ocp-name} AI platform</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure a data science project</p>
+</li>
+<li>
+<p>Configure a serving runtime</p>
+</li>
+<li>
+<p>Configure an accelerator profile</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Deploying the LLM through {ocp-name} AI</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Uploading your model to an AWS compatible bucket</p>
+</li>
+<li>
+<p>Add a data connection</p>
+</li>
+<li>
+<p>Deploy the LLM in your {ocp-name} AI data science project</p>
+</li>
+<li>
+<p>Export the SSL certificate, <code>OPENAI_API_BASE</code> URL and other environment variables to access the LLM</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Preparing the LLM for analysis</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure an OpenAI API key</p>
+</li>
+<li>
+<p>Update the OpenAI API key and the base URL in <code>provider-settings.yaml</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="#llm-provider-settings_{context}">Configuring LLM provider settings</a> to configure the base URL and the LLM API key in the {mta-dl-plugin} VS Code extension.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
