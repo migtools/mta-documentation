@@ -37,8 +37,6 @@ jobs:
           ARTIFACT_TAR="/tmp/pr-preview-site/pr-preview-site.tar.gz"
           if [ -f "$ARTIFACT_TAR" ]; then
             tar -xzf "$ARTIFACT_TAR" -C /tmp/pr-preview-site
-            # optionally remove the tarball to save space
-            rm -f "$ARTIFACT_TAR"
           else
             echo "Artifact tarball not found; listing /tmp/pr-preview-site:"
             ls -la /tmp/pr-preview-site || true
@@ -48,9 +46,21 @@ jobs:
       - name: Read PR number from artifact
         id: pr
         run: |
-          PR_NUMBER=$(cat /tmp/pr-preview-site/pr-number.txt)
-          echo "number=${PR_NUMBER}" >> "$GITHUB_OUTPUT"
-          rm /tmp/pr-preview-site/pr-number.txt
+          # prefer the pr-number file inside _site, fall back to root
+          PR_FILE="/tmp/pr-preview-site/_site/pr-number.txt"
+          if [ ! -f "$PR_FILE" ]; then
+            PR_FILE="/tmp/pr-preview-site/pr-number.txt"
+          fi
+
+          if [ -f "$PR_FILE" ]; then
+            PR_NUMBER=$(cat "$PR_FILE")
+            echo "number=${PR_NUMBER}" >> "$GITHUB_OUTPUT"
+            rm -f "$PR_FILE"
+          else
+            echo "PR number file not found; checked /tmp/pr-preview-site/_site/pr-number.txt and /tmp/pr-preview-site/pr-number.txt"
+            echo "::error::PR number file is required for preview deployment"" 
+            exit 1
+          fi
 
       - name: Get PR head SHA
         id: sha
