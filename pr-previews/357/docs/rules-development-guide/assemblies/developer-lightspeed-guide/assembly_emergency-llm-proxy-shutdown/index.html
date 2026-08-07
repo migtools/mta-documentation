@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=03cf2e2da7e74c50146c8dc9f594965fa2c27c13">
+    <link rel="stylesheet" href="/assets/css/style.css?v=cf59e9322bf97129127dc5cf49d5a8f7e9d5b72f">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
@@ -301,14 +301,21 @@ curl: (7) Failed to connect to api.openai.com port 443 after <em>&lt;time_in_ms&
 <dt class="hdlist1"><code>&lt;time_in_ms&gt;</code></dt>
 <dd>
 <p>Specifies the time elapsed in milliseconds.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Verify the expected output when isolation is active (centralized mode, DNS resolves but service is down)</p>
 <div class="listingblock">
-<div class="title">Expected output when isolation is active (centralized mode, DNS resolves but service is down)</div>
 <div class="content">
 <pre class="highlight"><code class="language-terminal" data-lang="terminal">curl: (22) The requested URL returned error: 503</code></pre>
 </div>
-</div>
-</dd>
-</dl>
 </div>
 </li>
 </ul>
