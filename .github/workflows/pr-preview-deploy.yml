@@ -31,11 +31,22 @@ jobs:
           path: /tmp/pr-preview-site
           github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
+      
+      - name: Extract preview artifact
+        run: |
+          ARTIFACT_TAR="/tmp/pr-preview-site/pr-preview-site.tar.gz"
+          if [ -f "$ARTIFACT_TAR" ]; then
+            tar -xzf "$ARTIFACT_TAR" -C /tmp/pr-preview-site
+          else
+            echo "Artifact tarball not found; listing /tmp/pr-preview-site:"
+            ls -la /tmp/pr-preview-site || true
+            exit 1
+          fi
 
       - name: Read PR number from artifact
         id: pr
         run: |
-          PR_NUMBER=$(cat /tmp/pr-preview-site/pr-number.txt)
+          PR_NUMBER=$(cat /tmp/pr-preview-site/_site/pr-number.txt)
           echo "number=${PR_NUMBER}" >> "$GITHUB_OUTPUT"
           rm /tmp/pr-preview-site/pr-number.txt
 
