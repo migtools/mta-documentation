@@ -52,16 +52,16 @@ jobs:
       - name: Save PR number for deploy workflow
         run: echo "${{ github.event.number }}" > _site/pr-number.txt
 
+      - name: Create compressed preview artifact
+        run: |
+          # create a single tar.gz containing the entire _site directory (including pr-number.txt)
+          tar -C _site -czf pr-preview-site.tar.gz .
+
       - name: Upload preview artifact
         uses: actions/upload-artifact@v4
         with:
           name: pr-preview-site
-          path: |
-            _site/pr-number.txt
-            _site/**/*.html
-            _site/**/*.css
-            _site/**/*.js
-            _site/assets/
+          path: pr-preview-site.tar.gz
           retention-days: 1
       
       - name: Analyze artifact size
