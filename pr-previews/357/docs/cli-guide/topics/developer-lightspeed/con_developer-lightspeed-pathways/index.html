@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=e1290be75f4750c58a6109340e67ce2a7449e072">
+    <link rel="stylesheet" href="/assets/css/style.css?v=03cf2e2da7e74c50146c8dc9f594965fa2c27c13">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
@@ -65,7 +65,7 @@
 <p>Whether you prefer to connect the {ProductShortName} extension to the LLM by using the LLM proxy.</p>
 </li>
 <li>
-<p>Whether you want to use Agent AI for request resolutions without using LLM proxy.</p>
+<p>Whether you want to use agent AI for request resolutions without using LLM proxy.</p>
 </li>
 </ul>
 </div>
@@ -91,7 +91,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>As a Migrator, you can complete the following steps to use the Agent AI mode for code resolutions:</p>
+<p>As a Migrator, you can complete the following steps to use the agent AI mode for code resolutions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -105,7 +105,7 @@
 <p>Activate the LLM provider in the <code>provider-settings.yaml</code> file.</p>
 </li>
 <li>
-<p>Enable the Agent AI and run an analysis to request code fix suggestions by using the Agent AI mode.</p>
+<p>Enable the agent AI and run an analysis to request code fix suggestions by using the agent AI mode.</p>
 </li>
 </ul>
 </div>
@@ -121,7 +121,7 @@
 <p>The proxy service completes a separate authentication process to access the LLM through an Administrator-controlled endpoint. The proxy service uses an administrator-configured API key to authenticate to the LLM. By deploying proxy service to handle user requests, administrators can create, manage, and rotate LLM API keys without the need to share the LLM key with multiple client endpoints.</p>
 </div>
 <div class="paragraph">
-<p>After you enable the LLM proxy, you can use either the Solution Server or Agent AI to generate code resolution requests in the Integrated Development Environment (IDE) extension. To use the Solution Server, the Administrator must deploy it in the {ocp-name} cluster with the proxy service. You cannot use the Solution Server without the proxy service.</p>
+<p>After you enable the LLM proxy, you can use either the Solution Server or agent AI to generate code resolution requests in the Integrated Development Environment (IDE) extension. To use the Solution Server, the Administrator must deploy it in the {ocp-name} cluster with the proxy service. You cannot use the Solution Server without the proxy service.</p>
 </div>
 <div class="paragraph">
 <p>As an Administrator, you must complete the following steps to enable the LLM proxy in the {ocp-name} cluster:</p>
@@ -145,7 +145,7 @@
 <p>Enable the generative AI in the {ProductShortName} extension settings.</p>
 </li>
 <li>
-<p>If you want to use the Agent AI mode for code resolutions, enable the Agent AI and run an analysis.</p>
+<p>If you want to use the agent AI mode for code resolutions, enable the agent AI and run an analysis.</p>
 </li>
 <li>
 <p>To use the Solution Server mode:</p>
@@ -166,31 +166,32 @@
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p><a href="#tackle-llm-secret_getting-started">Create a tackle secret in the cluster</a></p>
+<p><a href="#tackle-llm-secret_getting-started">Configure the model secret key</a></p>
 </li>
 <li>
-<p><a href="#tackle-enable-llm-proxy_getting-started">Configure the Tackle custom resource (CR)</a></p>
+<p><a href="#tackle-enable-llm-proxy_getting-started">Enable LLM proxy in the Tackle custom resource</a></p>
 </li>
 <li>
-<p><a href="#configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide">Enable generative AI in the {ProductShortName} extension settings</a></p>
+<p><a href="#configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide">Configure the {mta-dl-full} IDE settings</a></p>
 </li>
 <li>
-<p><a href="#configuring-developer-lightspeed-profile-settings_configuring-dev-lightspeed-ide">Configure a profile</a></p>
+<p><a href="#configuring-developer-lightspeed-profile-settings_configuring-dev-lightspeed-ide">Configure the {mta-dl-full} profile settings</a></p>
 </li>
 <li>
-<p><a href="#llm-provider-settings_configuring-llm">Activate the LLM provider</a></p>
+<p><a href="#llm-provider-settings_configuring-llm">LLM provider setting configurations</a></p>
 </li>
 <li>
-<p><a href="#running-agent-analysis_run-dev-lightspeed-analysis">Enable Agent AI and run an analysis</a></p>
+<p><a href="#running-agent-analysis_run-dev-lightspeed-analysis">Generate code resolutions in the agent mode
+</a></p>
 </li>
 <li>
-<p><a href="#configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide">{ProductShortName} extension settings</a></p>
+<p><a href="#configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide">Configure the {mta-dl-full} IDE settings</a></p>
 </li>
 <li>
 <p><a href="{mta-URL}/configuring_and_using_the_visual_studio_code_extension_for_mta/index#analyzing-application-profiles_vsc-extension-guide">Running an application analysis by using a profile</a></p>
 </li>
 <li>
-<p><a href="#apply-rag-resolution_run-dev-lightspeed-analysis">Code resolutions that the Solution Server suggests</a></p>
+<p><a href="#apply-rag-resolution_run-dev-lightspeed-analysis">Apply resolutions generated by the solution server</a></p>
 </li>
 </ul>
 </div>
