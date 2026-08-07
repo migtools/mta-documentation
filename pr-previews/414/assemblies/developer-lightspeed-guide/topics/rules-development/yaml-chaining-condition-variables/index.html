@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/414/assemblies/developer-lightspeed-guide/topics/rules-development/yaml-chaining-condition-variables/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/414/assemblies/developer-lightspeed-guide/topics/rules-development/yaml-chaining-condition-variables/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/414/assemblies/developer-lightspeed-guide/topics/rules-development/yaml-chaining-condition-variables/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a26eb142dce2f27f0b67a7117d05a1b60eb7cd76">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-chaining-condition-variables_{context}">Chaining condition variables</h1>
+<div class="paragraph _abstract">
+<p>You can use condition chaining, where the pattern of one condition becomes the template variable for filtering in another condition. Use condition chaining to scope down the search query to look for a pattern in a subset of files.</p>
+</div>
+<div class="paragraph">
+<p>For example, you can search for one or more <code>pom.xml</code> files and find dependencies in those subset of <code>pom</code> files and not any other file in your project. You can use logical <code>and</code> and <code>or</code> for chaining conditions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">when:
+ or:
+  - builtin.xml:
+      xpath: "//dependencies/dependency"
+      filepaths: "{{poms.filepaths}}"
+    from: poms
+  - builtin.file:
+      pattern: pom.xml
+    as: poms
+    ignore: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the earlier example, {ProductShortName} saves the output of the <code>builtin.file</code> condition in <code>poms</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">[...]
+      as: poms
+[...]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the variables of <code>builtin.file</code> in the <code>builtin.xml</code> condition, by writing <code>from</code> and then using Mustache templates in the <code>provider_ condition</code> block.</p>
+</div>
+<div class="paragraph">
+<p>This is how the condition knows how to use the variable set to the name <code>poms</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">[...]
+    from: poms
+[...]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then you can use the variables by setting them as Mustache templates in
+any of the inputs to the <em>provider</em> condition.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">[...]
+      filepaths: "{{poms.filepaths}}"
+[...]</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you only want to use the values of a condition as a chain, you can set <code>ignore: true</code>.</p>
+</div>
+<div class="paragraph">
+<p>This will tell the engine not to use this condition to find a rule violation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">[...]
+    ignore: true
+[...]</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://mustache.github.io/mustache.5.html">Mustache templates</a></p>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

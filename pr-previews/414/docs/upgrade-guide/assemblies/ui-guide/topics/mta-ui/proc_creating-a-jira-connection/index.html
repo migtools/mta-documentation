@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/414/docs/upgrade-guide/assemblies/ui-guide/topics/mta-ui/proc_creating-a-jira-connection/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/414/docs/upgrade-guide/assemblies/ui-guide/topics/mta-ui/proc_creating-a-jira-connection/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/414/docs/upgrade-guide/assemblies/ui-guide/topics/mta-ui/proc_creating-a-jira-connection/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a26eb142dce2f27f0b67a7117d05a1b60eb7cd76">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="creating-a-jira-connection_{context}">Creating a Jira connection</h1>
+<div class="paragraph _abstract">
+<p>To track your application migrations, define a Jira instance in the {ProductFullName} user interface and establish a connection to that instance.</p>
+</div>
+<div class="paragraph">
+<p>You cannot remove a Jira connection used to create issues for a migration wave if those issues still exist in Jira, even after you delete the migration wave.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You created {ProductShortName} credentials. For more information, see <a href="#configuring-jira-credentials_creating-and-configuring-a-jira-connection">Configuring Jira credentials</a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Administration</strong> view, under <strong>Issue Management</strong>, click <strong>Jira</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>In the <strong>New instance</strong> window, enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the instance</p>
+</li>
+<li>
+<p>URL of the web interface of your Jira account</p>
+</li>
+<li>
+<p>Select either the <strong>Jira Cloud</strong> or <strong>Jira Server/Data center</strong> instance type.</p>
+</li>
+<li>
+<p>Select credentials from the list:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you selected <strong>Jira Cloud</strong> as the instance type, the list displays only <strong>Basic Auth</strong> credentials.</p>
+</li>
+<li>
+<p>If you selected <strong>Jira Server/Data center</strong> as an instance type, the list displays both <strong>Basic Auth</strong> and <strong>Token Bearer</strong> credentials.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>By default, you cannot establish a connection with a server that has an invalid certificate. To override this restriction, enable the <strong>Enable insecure communication</strong> switch.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>On the <strong>Jira configuration</strong> page, ensure that you established and authorized the connection:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the <strong>Connection</strong> column displays <strong>Connected</strong>, you have successfully established and authorized the Jira connection.</p>
+</li>
+<li>
+<p>If the <strong>Connection</strong> column displays <strong>Not connected</strong>, click the status to check the reason for the error.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
