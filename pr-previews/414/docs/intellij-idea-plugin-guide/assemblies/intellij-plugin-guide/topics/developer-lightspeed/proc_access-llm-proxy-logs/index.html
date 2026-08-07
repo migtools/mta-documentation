@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/414/docs/intellij-idea-plugin-guide/assemblies/intellij-plugin-guide/topics/developer-lightspeed/proc_access-llm-proxy-logs/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/414/docs/intellij-idea-plugin-guide/assemblies/intellij-plugin-guide/topics/developer-lightspeed/proc_access-llm-proxy-logs/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/414/docs/intellij-idea-plugin-guide/assemblies/intellij-plugin-guide/topics/developer-lightspeed/proc_access-llm-proxy-logs/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ef375ecd79825c657f08c67ebae2e7758aca6bcf">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="llm-proxy-log-access_{context}">Access LLM proxy pod logs</h1>
+<div class="paragraph _abstract">
+<p>To diagnose connectivity errors between the proxy and the large language model (LLM) provider, use the <code>oc logs</code> command. The proxy writes standard server output to stdout.</p>
+</div>
+<div class="paragraph">
+<p>Current proxy logs are unstructured uvicorn server output. Each entry contains the HTTP method, request path, and status code, or a Python exception traceback for error conditions. They do not contain structured per-transaction records or user identity information.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have installed the {ocp-short} {CLIName} (<code>oc</code>).</p>
+</li>
+<li>
+<p>You are logged in to the cluster with the <code>cluster-admin</code> role or an equivalent role that grants read access to pods in the {ProductShortName} namespace.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Identify the proxy pod name:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc get pods -n <em>&lt;mta_namespace&gt;</em> | grep proxy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;mta_namespace&gt;</code></dt>
+<dd>
+<p>Specifies the name of the {ProductShortName} namespace.</p>
+<div class="paragraph">
+<p>The command returns output similar to the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">mta-ui-mta-proxy-7d6f9b8c4-xk2pq   1/1   Running   0   2d</code></pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Stream the current log output from the proxy pod:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc logs -f <em>&lt;proxy_pod_name&gt;</em> -n <em>&lt;mta_namespace&gt;</em></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;proxy_pod_name&gt;</code></dt>
+<dd>
+<p>Specifies the name of the proxy pod.</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>To retrieve logs from a previous (terminated) proxy pod, add the <code>--previous</code> flag to the command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ oc logs --previous <em>&lt;proxy_pod_name&gt;</em> -n <em>&lt;mta_namespace&gt;</em></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

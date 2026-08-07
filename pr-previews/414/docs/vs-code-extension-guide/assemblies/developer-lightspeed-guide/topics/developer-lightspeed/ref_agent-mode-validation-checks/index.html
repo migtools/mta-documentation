@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/414/docs/vs-code-extension-guide/assemblies/developer-lightspeed-guide/topics/developer-lightspeed/ref_agent-mode-validation-checks/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/414/docs/vs-code-extension-guide/assemblies/developer-lightspeed-guide/topics/developer-lightspeed/ref_agent-mode-validation-checks/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/414/docs/vs-code-extension-guide/assemblies/developer-lightspeed-guide/topics/developer-lightspeed/ref_agent-mode-validation-checks/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ef375ecd79825c657f08c67ebae2e7758aca6bcf">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="agent-mode-validation-checks_{context}">Agent mode validation checks</h1>
+<div class="paragraph _abstract">
+<p>To understand how the system ensures code validity, review the specific verification checks the {mta-dl-plugin} performs in agent mode.</p>
+</div>
+<div class="paragraph">
+<p>The {mta-dl-plugin} performs the following verification checks:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Syntax verification</dt>
+<dd>
+<p>The {mta-dl-plugin} parses the generated code against the grammar rules of the target language. The {mta-dl-plugin} detects malformed tokens, unclosed blocks, or other parse-level errors at this stage before any file is written.</p>
+</dd>
+<dt class="hdlist1">Method signature and reference checks</dt>
+<dd>
+<p>The compiler resolves all newly introduced classes, method calls, field accesses, and variable references against your project&#8217;s full dependency classpath. This classpath includes libraries that are declared in the <code>pom.xml</code>, <code>build.gradle</code>, or <code>package.json</code> files. This verification prevents hallucinated or deprecated application programming interface (API) calls from entering the codebase.</p>
+</dd>
+<dt class="hdlist1">Import and dependency consistency</dt>
+<dd>
+<p>The {mta-dl-plugin} confirms that every <code>import</code> statement that the suggestion adds corresponds to a type that is available on the classpath. The {mta-dl-plugin} flags missing or incorrect imports for correction.</p>
+</dd>
+</dl>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

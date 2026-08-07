@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/414/docs/cli-guide/assemblies/release-notes/topics/mta-cli/ref_deprecated-commands-and-options/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/414/docs/cli-guide/assemblies/release-notes/topics/mta-cli/ref_deprecated-commands-and-options/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/414/docs/cli-guide/assemblies/release-notes/topics/mta-cli/ref_deprecated-commands-and-options/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ef375ecd79825c657f08c67ebae2e7758aca6bcf">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="deprecated-commands-and-options_{context}">Deprecated commands and options</h1>
+<div class="paragraph _abstract">
+<p>You can use the <code>mta-cli provider</code> and <code>mta-cli rules</code> commands that have a set of subcommands that you previously used with the <code>analyze</code> commands. The <code>mta-cli test</code> and <code>mta-cli transform</code> commands are deprecated.</p>
+</div>
+<div class="paragraph">
+<p>To view the options and flags for any {ProductShortName} command, use the <code>--help</code> or the <code>-h</code> option.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Deprecated commands and their replacements</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Deprecated command</th>
+<th class="tableblock halign-left valign-top">New command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$ mta-cli analyze --list-targets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$ mta-cli rules list-targets</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$ mta-cli analyze --list-sources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$ mta-cli rules list-sources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$ mta-cli analyze --list-providers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$ mta-cli provider list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>$ mta-cli test &lt;path_to_test_ruleset&gt;</p>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;path_to_test_ruleset&gt;</code></dt>
+<dd>
+<p>Specifies the system path to the test ruleset.</p>
+</dd>
+</dl>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>$ mta-cli rules test &lt;path_to_test_ruleset&gt;</p>
+</div>
+<div class="paragraph">
+<p>where:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>&lt;path_to_test_ruleset&gt;</code></dt>
+<dd>
+<p>Specifies the system path to the test ruleset.</p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$ mta-cli transform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$ mta-cli openrewrite</p></td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

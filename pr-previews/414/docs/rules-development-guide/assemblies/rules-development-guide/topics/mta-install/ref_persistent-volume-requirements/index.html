@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/414/docs/rules-development-guide/assemblies/rules-development-guide/topics/mta-install/ref_persistent-volume-requirements/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/414/docs/rules-development-guide/assemblies/rules-development-guide/topics/mta-install/ref_persistent-volume-requirements/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/414/docs/rules-development-guide/assemblies/rules-development-guide/topics/mta-install/ref_persistent-volume-requirements/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ef375ecd79825c657f08c67ebae2e7758aca6bcf">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="persistent-volume-requirements_{context}">Persistent volume requirements</h1>
+<div class="paragraph _abstract">
+<p>To successfully deploy the {ProductFullName} Operator, you must create a persistent volume (PV) used by different {ProductShortName} components.</p>
+</div>
+<div class="paragraph">
+<p><!-- vale RedHat.Spelling = NO -->
+The {ProductShortName} Operator requires one <code>ReadWriteOnce</code> (RWO) PV for the Hub database. If you set the <code>rwx_supported</code> configuration option to <code>true</code> in Tackle custom resource (CR), the {ProductShortName} Operator needs two additional <code>ReadWriteMany</code> (RWX) PVs used by Maven and the Hub file storage.
+<!-- vale RedHat.Spelling = YES --></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Required persistent volumes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Default size</th>
+<th class="tableblock halign-left valign-top">Access mode</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub database</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>10Gi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hub database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub bucket</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Gi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hub file storage required if the <code>rwx_supported</code> configuration option is set to <code>true</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Gi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven m2 cache required if the <code>rwx_supported</code> configuration option is set to <code>true</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kai-db</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5Gi</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{mta-dl-plugin} database required to run an AI-assisted code resolution.</p></td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

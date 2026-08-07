@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migration Toolkit for Applications Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://migtools.github.io/mta-documentation/pr-previews/414/docs/upgrade-guide/assemblies/intellij-plugin-guide/topics/developer-lightspeed/con_developer-lightspeed-logs/" />
+<meta property="og:url" content="https://migtools.github.io/mta-documentation/pr-previews/414/docs/upgrade-guide/assemblies/intellij-plugin-guide/topics/developer-lightspeed/con_developer-lightspeed-logs/" />
+<meta property="og:site_name" content="Migration Toolkit for Applications Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Migration Toolkit for Applications Documentation","url":"https://migtools.github.io/mta-documentation/pr-previews/414/docs/upgrade-guide/assemblies/intellij-plugin-guide/topics/developer-lightspeed/con_developer-lightspeed-logs/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ef375ecd79825c657f08c67ebae2e7758aca6bcf">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Migration Toolkit for Applications Documentation</h1>
+      
+        <p><a href="https://github.com/migtools/mta-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="developer-lightspeed-logs_{context}">Debugging {mta-dl-plugin}</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>{mta-dl-full} generates logs to debug issues specific to the extension host and the {ProductShortName} analysis and RPC server. You can also configure the log level for the {mta-dl-plugin} in the extension settings. The default log level is <strong>debug</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Extension logs are stored as <code>extension.log</code> with automatic rotation. The maximum size of the log file is 10 MB and three files are retained. Analyzer RPC logs are stored as <code>analyzer.log</code> without rotation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dev-lightspeed-archive-logs_{context}">Archiving the logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To archive the logs as a zip file, type <code>{ProductShortName}: Generate Debug Archive</code> in the VS Code Command Palette and select the information type that must be archived as a log file.</p>
+</div>
+<div class="paragraph">
+<p>The archive command allows capturing all relevant log files in a zip archive at the specified location in your project. By default, you can access the archived logs in the .vscode directory of your project.</p>
+</div>
+<div class="paragraph">
+<p>The archival feature helps you to save the following information:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Large language model (LLM) provider configuration: Fields from the provider settings that can be included in the archive. All fields are redacted for security reasons by default. Ensure that you do not expose any secrets.</p>
+</li>
+<li>
+<p>LLM model arguments</p>
+</li>
+<li>
+<p>LLM traces: If you enabled tracing LLM interactions, you can choose to include LLM traces in the logs.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dev-lightspeed-access-logs_{context}">Accessing the logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can access the logs in the following ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Log file</strong>: Type <code>Developer: Open Extension Logs Folder</code> and open the <code>redhat.mta-vscode-extension</code> directory that contains the extension log and the analyzer log.</p>
+</li>
+<li>
+<p><strong>Output panel</strong>: Select <code>{mta-dl-plugin}</code> from the drop-down menu.</p>
+</li>
+<li>
+<p><strong>Webview logs</strong>: You can also inspect webview content by using the webview logs. To access the webview logs, type <code>Open Webview Developer Tools</code> in the VS Code Command Palette.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/migtools/mta-documentation">mta-documentation</a> is maintained by <a href="https://github.com/migtools">migtools</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
