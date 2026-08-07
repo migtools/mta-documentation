@@ -7,12 +7,10 @@
 = Agent mode validation checks
 
 [role="_abstract"]
-To understand how the system ensures code validity, review the specific verification checks the {mta-dl-plugin} performs in agent mode. 
-
-The {mta-dl-plugin} performs the following verification checks:
+To understand how the system ensures code validity, review the verification checks that {mta-dl-plugin} performs in the agent mode. 
 
 Syntax verification:: The {mta-dl-plugin} parses the generated code against the grammar rules of the target language. The {mta-dl-plugin} detects malformed tokens, unclosed blocks, or other parse-level errors at this stage before any file is written.
 
-Method signature and reference checks:: The compiler resolves all newly introduced classes, method calls, field accesses, and variable references against your project's full dependency classpath. This classpath includes libraries that are declared in the `pom.xml`, `build.gradle`, or `package.json` files. This verification prevents hallucinated or deprecated application programming interface (API) calls from entering the codebase.
+Method signature and reference checks:: The compiler resolves all newly introduced classes, method calls, field accesses, and variable references against your project's full dependency classpath. This classpath includes libraries that are declared in `pom.xml`, `build.gradle`, or `package.json` files. This verification prevents hallucinated or deprecated application programming interface (API) calls from entering the codebase.
 
 Import and dependency consistency:: The {mta-dl-plugin} confirms that every `import` statement that the suggestion adds corresponds to a type that is available on the classpath. The {mta-dl-plugin} flags missing or incorrect imports for correction.

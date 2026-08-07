@@ -26,7 +26,7 @@ where:
 
 .Verification
 
-. Verify that a proxy pod is running:
+* Verify that a proxy pod is running:
 +
 [source,terminal,subs="+quotes"]
 ----

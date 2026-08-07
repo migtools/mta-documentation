@@ -21,7 +21,7 @@ $ curl -v --max-time 10 https://api.openai.com/v1/models
 +
 . Verify that the command returns one of the following outputs, depending on your deployment mode:
 +
-* For standalone mode or DNS-blocked isolation, the connection is refused:
+* In local or standalone deployment and in DNS-blocked environment, the connection is refused:
 +
 [source,terminal,subs="+quotes"]
 ----
@@ -33,8 +33,11 @@ where:
 +
 `<ip_address>`:: Specifies the IP address of the endpoint.
 `<time_in_ms>`:: Specifies the time elapsed in milliseconds.
+
+.Verification
+
+* Verify the expected output when isolation is active (centralized mode, DNS resolves but service is down)
 +
-.Expected output when isolation is active (centralized mode, DNS resolves but service is down)
 [source,terminal]
 ----
 curl: (22) The requested URL returned error: 503
