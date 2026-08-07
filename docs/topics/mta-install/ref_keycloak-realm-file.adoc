@@ -6,6 +6,5 @@
 = Keycloak realm sample file
 
 [role="_abstract"]
-After template variable substitution, the Hub OpenID Connect (OIDC) provider matches the wildcard patterns in the uniform resource identifier (URI) configuration against the requested URI. The provider uses the `/` character as a path separator to match the URI segment by segment.
+You can use the following realm file after changing the password fields to import realm configuration for self-managed Keycloak instances.
 
-//a small edit
