@@ -17,7 +17,7 @@ When you configure a large language model (LLM) provider for {mta-dl-full}, unde
 
 To generate accurate migration suggestions, {mta-dl-plugin} constructs a contextual prompt. This prompt includes relevant code snippets from the application that you are analyzing. Code snippets are transmitted intact to the configured LLM provider. 
 
-{mta-dl-plugin} does not perform automatic sanitization or redaction of source code before inclusion in a prompt. Altering the code syntax reduces the accuracy of the migration recommendations.
+{mta-dl-plugin} does not automatically sanitize or redact source code before inclusion in a prompt. Altering the code syntax reduces the accuracy of the migration recommendations.
 
 [WARNING]
 ====
@@ -33,19 +33,24 @@ Organizations with strict intellectual property (IP) protection requirements, re
 
 Red{nbsp}Hat supports the following on-site and self-managed AI platforms for this purpose:
 
-* *{ocp-name} AI*: Deploy and serve LLMs as an inference service within your {ocp-name} cluster. This keeps all model traffic on your internal network. For more information, see link:https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed[Red{nbsp}Hat OpenShift AI documentation].
+* *{ocp-name} AI*: Deploy and serve LLMs as an inference service within your {ocp-name} cluster. This keeps all model traffic on your internal network. 
 
-* *Red{nbsp}Hat Enterprise Linux AI (RHEL AI)*: Run a self-contained, production-ready AI infrastructure on RHEL to serve models locally or within your private data center. For more information, see link:https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai[Red{nbsp}Hat Enterprise Linux AI documentation].
-
-You can configure {mta-dl-plugin} to use the OpenAI-compatible API endpoint that both platforms expose without any additional plugin changes.
+* *Red{nbsp}Hat Enterprise Linux AI (RHEL AI)*: Run a self-contained, production-ready AI infrastructure on RHEL to serve models locally or within your private data center. 
+You can configure {mta-dl-plugin} to use the OpenAI-compatible application programming interface (API) endpoint that both platforms expose without any additional plugin changes.
 
 [id="ip-protection-config-pointers_{context}"]
 == Private endpoint configuration
 
-A self-managed model requires the {mta-dl-plugin} default large language model (LLM) provider URL to point to a private inference endpoint. The URL location depends on your deployment:
+A self-managed model requires the {mta-dl-plugin} default large language model (LLM) provider uniform resource locator (URL) to point to a private inference endpoint. The URL location depends on your deployment:
 
-* *Standalone mode*: The custom endpoint URL is configured in the VS Code extension settings for {mta-dl-plugin}.
+* Local integrated development environment: Configure the custom LLM endpoint URL in the `provider-settings` configuration in {mta-dl-plugin}.
 
 * *Centralized configuration management mode*: The provider endpoint URL is set in the central configuration administered through the {ProductShortName} hub.
 
 Self-managed endpoints require authentication credentials, such as API keys or bearer tokens. These credentials require secure storage and must not be committed to source control.
+
+[role="_additional-resources"]
+.Additional resources
+
+* link:https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed[Red{nbsp}Hat OpenShift AI documentation]
+* link:https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai[Red{nbsp}Hat Enterprise Linux AI documentation]

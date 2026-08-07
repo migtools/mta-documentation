@@ -45,7 +45,7 @@ tackle.tackle.konveyor.io/mta patched
 
 .Verification
 
-. Verify that no proxy pods are running:
+* Verify that no proxy pods are running:
 +
 [source,terminal,subs="+quotes"]
 ----

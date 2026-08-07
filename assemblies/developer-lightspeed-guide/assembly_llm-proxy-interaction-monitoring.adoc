@@ -10,6 +10,6 @@
 [role="_abstract"]
 The {mta-dl-plugin} large language model (LLM) proxy acts as a single, administrator-controlled access point to external LLM providers. You can monitor its data handling and logging behaviors to meet artificial intelligence (AI) governance requirements.
 
-include::con_llm-proxy-data-handling.adoc[leveloffset=+1]
+include::topics/developer-lightspeed/con_llm-proxy-data-handling.adoc[leveloffset=+1]
 
-include::proc_access-llm-proxy-logs.adoc[leveloffset=+1]
+include::topics/developer-lightspeed/proc_access-llm-proxy-logs.adoc[leveloffset=+1]

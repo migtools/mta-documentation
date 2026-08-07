@@ -1,0 +1,39 @@
+// Module included in the following assemblies:
+//
+// * docs/developer-lightspeed-guide/master.adoc
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-emergency-llm-proxy-shutdown: {context}]
+
+ifndef::context[]
+[id="assembly-emergency-llm-proxy-shutdown"]
+endif::[]
+ifdef::context[]
+[id="assembly-emergency-llm-proxy-shutdown_{context}"]
+endif::[]
+= Shutting down the LLM proxy for emergency system isolation
+
+:context: assembly-emergency-llm-proxy-shutdown
+
+[role="_abstract"]
+During a security incident, stop all outbound large language model (LLM) traffic from developer integrated development environments (IDEs).
+
+include::topics/developer-lightspeed/con_llm-proxy-shutdown-overview.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_disable-llm-proxy-web-console.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_disable-llm-proxy-cli.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/proc_validate-llm-proxy-shutdown.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/ref_llm-proxy-developer-impact.adoc[leveloffset=+1]
+
+include::assembly_reenable-llm-proxy-after-incident.adoc[leveloffset=+!]
+
+
+ifdef::parent-context-of-assembly-emergency-llm-proxy-shutdown[:context: {parent-context-of-assembly-emergency-llm-proxy-shutdown}]
+ifndef::parent-context-of-assembly-emergency-llm-proxy-shutdown[:!context:]
+
+:!assembly-emergency-llm-proxy-shutdown:
+

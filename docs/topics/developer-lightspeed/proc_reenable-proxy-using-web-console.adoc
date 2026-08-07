@@ -22,5 +22,7 @@ spec:
   kai_llm_proxy_enabled: true
 ----
 . Click *Save*.
-+
-Wait for the proxy pod to reach the `Running` status.
+
+.Verification
+
+* Verify that the proxy pod status is `Running` on the *Workloads > Pods* page.
