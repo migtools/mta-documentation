@@ -8,7 +8,7 @@
 = LLM proxy shutdown overview
 
 [role="_abstract"]
-The method that you use to shut down the large language model (LLM) proxy depends on how {ProductShortName} is deployed.
+The method that you use to shut down the large language model (LLM) proxy depends on how you deployed {ProductShortName}.
 
 [WARNING]
 ====
@@ -22,4 +22,4 @@ Centralized configuration mode:: In Operator-managed or {ocp-short} deployments,
 Do not directly scale the proxy `Deployment` object to zero replicas. The {ProductShortName} Operator reconciles managed resources and re-creates any manually scaled-down pods. To disable the proxy permanently, edit the Tackle CR.
 ====
 
-Standalone mode:: Standalone deployments do not have a central proxy component to disable. Each developer integrated development environment (IDE) connects directly to the configured public LLM endpoint. You must block this traffic at the corporate firewall or network policy layer.
+Standalone deployment:: Standalone deployments do not have a central proxy component to disable. Each integrated development environment (IDE) connects directly to the configured public LLM endpoint. You must block this traffic at the corporate firewall or the network policy layer.
