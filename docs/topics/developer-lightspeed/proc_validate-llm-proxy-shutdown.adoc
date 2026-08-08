@@ -21,7 +21,7 @@ $ curl -v --max-time 10 https://api.openai.com/v1/models
 +
 . Verify that the command returns one of the following outputs, depending on your deployment mode:
 +
-* In local or standalone deployment and in DNS-blocked environment, the connection is refused:
+* In a local or standalone deployment and in a DNS-blocked environment, the connection is refused:
 +
 [source,terminal,subs="+quotes"]
 ----
