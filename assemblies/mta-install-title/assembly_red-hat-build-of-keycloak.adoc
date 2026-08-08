@@ -23,6 +23,8 @@ include::topics/mta-install/con_scope_rhbk.adoc[leveloffset=+1]
 
 include::topics/mta-install/proc_accessing-rhbk-admin-console.adoc[leveloffset=+1]
 
+include::topics/mta-install/ref_keycloak-realm-file.adoc[leveloffset=+1]
+
 include::topics/mta-install/con_roles-personas-users-permissions.adoc[leveloffset=+1]
 
 
