@@ -59,7 +59,7 @@ spec:
 
 .Verification
 
-* Verify the {mta-dl-plugin} resources deployed for Solution Server:
+* Verify that the {mta-dl-plugin} resources are deployed for Solution Server:
 +
 [subs="+quotes"]
 ----
