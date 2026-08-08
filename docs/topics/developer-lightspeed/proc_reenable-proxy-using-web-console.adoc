@@ -25,4 +25,4 @@ spec:
 
 .Verification
 
-* Verify that the poxy pod status is `Running` on the *Workloads > Pods* page.
+* Verify that the proxy pod status is `Running` on the *Workloads > Pods* page.
