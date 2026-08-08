@@ -22,7 +22,7 @@ The configuration workflow that you complete to use {mta-dl-plugin} depends on t
 You can complete one of the following workflows:
 
 [id="agent-mode-workflow_{context}"]
-== Workflow to use the Agent AI mode without the LLM proxy
+== Workflow to use the agent AI mode without the LLM proxy
 
 As an Administrator, you must complete the following steps:
 
