@@ -57,8 +57,8 @@ jobs:
             echo "number=${PR_NUMBER}" >> "$GITHUB_OUTPUT"
             rm -f "$PR_FILE"
           else
-            echo "PR number file not found; checked /tmp/pr-preview-site/_site/pr-number.txt and /tmp/pr-preview-site/pr-number.txt"
-            echo "::error::PR number file is required for preview deployment"" 
+            echo "PR number file not found, checked /tmp/pr-preview-site/_site/pr-number.txt and /tmp/pr-preview-site/pr-number.txt"
+            echo "::error::PR number file is required for preview deployment"
             exit 1
           fi
 
