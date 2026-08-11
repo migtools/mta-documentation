@@ -5,10 +5,10 @@ on:
     workflows: ["PR Preview"]
     types: [completed]
 
-# Write permissions are safe here — this workflow always runs from the base
-# repository context (main branch), never from fork code.
+# This workflow runs from the base repository context (main branch).
 permissions:
   contents: write
+  pages: write
   pull-requests: write
 
 # Serialize all gh-pages pushes to prevent non-fast-forward failures
@@ -81,53 +81,55 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
 
-      - name: Checkout or initialise gh-pages branch
-        run: |
-          git fetch origin gh-pages 2>/dev/null || true
-          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
-            git checkout -B gh-pages origin/gh-pages
-          else
-            git checkout --orphan gh-pages
-            git rm -rf . --quiet
-            echo "GitHub Pages for mta-documentation" > README.md
-            touch .nojekyll
-            git add README.md .nojekyll
-            git -c user.name="github-actions[bot]" -c user.email="github-actions[bot]@users.noreply.github.com" commit -m "chore: initialise gh-pages branch"
-            git push origin gh-pages
-          fi
-
-      - name: Configure git
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Deploy preview to gh-pages
+      - name: Prepare Pages publish directory (merge with existing gh-pages)
         env:
-          PR_NUMBER: ${{ steps.pr.outputs.number }}
-          COMMIT_SHA: ${{ steps.sha.outputs.sha }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          touch .nojekyll
-          PREVIEW_DIR="pr-previews/${PR_NUMBER}"
-          rm -rf "${PREVIEW_DIR}"
-          mkdir -p "${PREVIEW_DIR}"
-          cp -r /tmp/pr-preview-site/. "${PREVIEW_DIR}/"
+          set -euo pipefail
+          PR_NUMBER="${{ steps.pr.outputs.number }}"
+          PUBLISH_DIR="/tmp/publish"
 
-          git add .nojekyll "${PREVIEW_DIR}"
-          if git diff --staged --quiet; then
-            echo "No changes to deploy."
+          rm -rf "$PUBLISH_DIR"
+          mkdir -p "$PUBLISH_DIR"
+
+          # If gh-pages exists on the remote, clone it into a temp dir and copy its contents
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            echo "Cloning existing gh-pages branch into /tmp/gh-pages"
+            git clone --depth 1 --branch gh-pages "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" /tmp/gh-pages || true
+            # Copy existing pages content into publish dir (preserve existing previews)
+            cp -a /tmp/gh-pages/. "$PUBLISH_DIR/" || true
           else
-            git commit -m "preview: PR #${PR_NUMBER} @ ${COMMIT_SHA}"
-            for attempt in 1 2 3; do
-              git fetch origin gh-pages
-              if git rebase origin/gh-pages; then
-                git push origin gh-pages && break
-              else
-                git rebase --abort
-              fi
-              echo "Push attempt ${attempt} failed, retrying..."
-              sleep $((attempt * 5))
-            done
+            echo "No gh-pages branch found; creating new site skeleton"
+            echo "GitHub Pages for ${GITHUB_REPOSITORY}" > "$PUBLISH_DIR/README.md"
+            touch "$PUBLISH_DIR/.nojekyll"
           fi
+
+          # Place the new preview under pr-previews/<PR_NUMBER>
+          PREVIEW_DIR="$PUBLISH_DIR/pr-previews/${PR_NUMBER}"
+          rm -rf "$PREVIEW_DIR"
+          mkdir -p "$PREVIEW_DIR"
+
+          # Copy the extracted _site contents into the preview directory
+          if [ -d "/tmp/pr-preview-site/_site" ]; then
+            cp -a /tmp/pr-preview-site/_site/. "$PREVIEW_DIR/"
+          else
+            # fallback: copy whole artifact dir if _site is not present
+            cp -a /tmp/pr-preview-site/. "$PREVIEW_DIR/"
+          fi
+
+          # Ensure .nojekyll exists so Pages doesn't ignore files
+          touch "$PUBLISH_DIR/.nojekyll"
+
+          echo "Prepared publish directory contents:"
+          ls -la "$PUBLISH_DIR" || true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: /tmp/publish
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
 
       - name: Post or update preview comment
         uses: actions/github-script@v7
