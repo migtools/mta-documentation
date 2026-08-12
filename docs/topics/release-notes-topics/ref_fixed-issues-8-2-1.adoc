@@ -12,3 +12,9 @@ Review issues that have been fixed in {ProductFullName} version 8.2.1.
 Before this update, the `mta-ops transform` command did not support the `--overwrite` flag. If a custom stage directory already existed, the pipeline stopped. As a consequence, you could not automatically overwrite existing custom modifications during a pipeline re-run. With this release, the command was updated to accept the `--overwrite` flag. As a result, the command automatically overwrites existing custom modifications during a re-run when you specify the flag. You no longer need to manually delete the existing transform or custom stage directory before a re-run.
 +
 link:https://redhat.atlassian.net/browse/MTA-7234[MTA-7234]
+
+
+The {ProductShortName} Operator delegates authentication to the external Keycloak instance after an upgrade::
+Before this update, you could set the `idp_primary` parameter to `true` in the {ProductFullName} Operator custom resource (CR). However, during an upgrade, the Operator did not delegate authentication to the external Keycloak instance. As a consequence, the system continued to use the internal Keycloak instance. This caused incorrect authentication when you attempted to log in. With this release, the Operator recognizes the `idp_primary` parameter during an upgrade. As a result, the system delegates authentication to the external Keycloak instance when the parameter is `true`.
++
+link:https://redhat.atlassian.net/browse/MTA-7496[MTA-7496]
