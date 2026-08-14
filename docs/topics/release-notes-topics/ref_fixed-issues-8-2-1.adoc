@@ -8,8 +8,8 @@
 [role="_abstract"]
 Review issues that have been fixed in {ProductFullName} version 8.2.1.
 
-`mta-ops transform` supports the `--overwrite` flag::
-Before this update, the `mta-ops transform` command did not support the `--overwrite` flag. If a custom stage directory already existed, the pipeline stopped. As a consequence, you could not automatically overwrite existing custom modifications during a pipeline re-run. With this release, the command was updated to accept the `--overwrite` flag. As a result, the command automatically overwrites existing custom modifications during a re-run when you specify the flag. You no longer need to manually delete the existing transform or custom stage directory before a re-run.
+`mta-ops transform` uses the `--overwrite` flag for consistent behavior::
+Before this update, the `mta-ops transform` command used a `--force` flag. This flag functioned only with the `--instructions-file` option. Without an instructions file, plugin stage directories were silently overwritten. Additionally, custom stage directories blocked the pipeline with no way to proceed. With this release, the `--force` flag was replaced with `--overwrite`. This change aligns the `transform` command with other `mta-ops` subcommands. As a result, all stage directories require the `--overwrite` flag to replace existing content. This gives you explicit control over data replacement during a pipeline re-run.
 +
 link:https://redhat.atlassian.net/browse/MTA-7234[MTA-7234]
 
