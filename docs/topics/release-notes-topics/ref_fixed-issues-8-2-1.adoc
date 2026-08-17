@@ -15,6 +15,6 @@ link:https://redhat.atlassian.net/browse/MTA-7234[MTA-7234]
 
 
 The {ProductShortName} Operator delegates authentication to the external Keycloak instance after an upgrade::
-Before this update, you could set the `idp_primary` parameter to `true` in the {ProductFullName} Operator custom resource (CR). However, during an upgrade, the Operator did not delegate authentication to the external Keycloak instance. As a consequence, the system continued to use the internal Keycloak instance. This caused incorrect authentication when you attempted to log in. With this release, the Operator recognizes the `idp_primary` parameter during an upgrade. As a result, the system delegates authentication to the external Keycloak instance when the parameter is `true`.
+Before this update, you could set the `idp_primary` parameter to `true` in the {ProductShortName} Operator custom resource (CR). However, during an upgrade, the Operator did not delegate authentication to the external Keycloak instance. As a consequence, the system continued to use the internal Keycloak instance. This caused incorrect authentication when you attempted to log in. With this release, the Operator processes the `idp_primary` parameter during an upgrade. As a result, the system delegates authentication to the external Keycloak instance when the parameter is `true`.
 +
 link:https://redhat.atlassian.net/browse/MTA-7496[MTA-7496]
