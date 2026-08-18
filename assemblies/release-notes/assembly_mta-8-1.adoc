@@ -10,7 +10,7 @@ endif::[]
 ifdef::context[]
 [id="mta-8-1-0_{context}"]
 endif::[]
-= {ProductFirstRef} 8.1
+= Migration toolkit for applications 8.1
 
 :context: mta-8-1
  

@@ -1,0 +1,26 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-08-11
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-mta-8-2: {context}]
+
+ifndef::context[]
+[id="mta-8-2"]
+endif::[]
+ifdef::context[]
+[id="mta-8-2_{context}"]
+endif::[]
+= Migration toolkit for applications 8.2
+
+:context: mta-8-2
+
+[role="_abstract"]
+This Release Notes section provides high-level coverage of the improvements and additions that have been implemented in {ProductFullName} 8.2.
+
+include::assembly_mta-8-2-1.adoc[leveloffset=+1]
+
+include::assembly_mta-8-2-0.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-mta-8-2[:context: {parent-context-of-mta-8-2}]
+ifndef::parent-context-of-mta-8-2[:!context:]
+

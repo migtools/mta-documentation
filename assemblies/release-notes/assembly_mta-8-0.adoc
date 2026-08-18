@@ -10,12 +10,12 @@ endif::[]
 ifdef::context[]
 [id="mta-8-0_{context}"]
 endif::[]
-= {ProductFirstRef} 8.0
+= Migration toolkit for applications 8.0
 
 :context: mta-8-0
 
 [role="_abstract"]
-Review new features, enhancements, and fixed issues in {ProductFullName} 8.0.
+This Release Notes section provides high-level coverage of the improvements and additions that have been implemented in {ProductFullName} 8.0.
 
 include::assembly_mta-8-0-1.adoc[leveloffset=+1]
 
