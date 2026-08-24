@@ -3,7 +3,7 @@ show_downloads: false
 title: Migration Toolkit for Applications Documentation
 permalink: pretty
 repository: migtools/mta-documentation
-baseurl: /mta-documentation
+baseurl: /
 url: https://migtools.github.io
 repository_url: https://github.com/migtools/mta-documentation
 
