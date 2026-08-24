@@ -22,7 +22,7 @@ include::topics/mta-cli/ref_supported-migration-paths.adoc[leveloffset=+1]
 //Installing MTA
 include::assemblies/mta-install-title/assembly_installing-mta-ui.adoc[leveloffset=+1]
 
-include::assemblies/mta-install-title/assembly_installing-mta-cli.adoc[leveloffset=+1]
+include::topics/mta-install/con_installing-mta-cli-overview.adoc[leveloffset=+1]
 
 include::assemblies/mta-install-title/assembly_hub-oidc-authentication.adoc[leveloffset=+1]
 

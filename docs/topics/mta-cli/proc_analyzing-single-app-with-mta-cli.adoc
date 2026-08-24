@@ -60,5 +60,5 @@ Alternatively, press *Ctrl* and click the path of the `index.html` file.
 
 [role="_additional-resources"]
 .Additional resources
-* link:{mta-URL}/installing_the_migration_toolkit_for_applications/index#installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
+* xref:installing-cli-zip_installing-mta-cli[Installing the CLI by using a .zip file]
 * xref:mta-cli-analyze-flags_analyzing-applications-mta-cli[The mta-cli analyze command options]
