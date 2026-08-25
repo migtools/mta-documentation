@@ -36,7 +36,7 @@ You can also run OpenAI API-compatible LLMs deployed as:
 
 include::topics/developer-lightspeed/ref_supported-large-language-models-and-providers.adoc[leveloffset=+1]
 
-include::topics/developer-lightspeed/con_ip-protection-model-hosting.adoc[leveloffset=+1]
+include::assembly_data-ip-dl.adoc[leveloffset=+1]
 
 include::topics/developer-lightspeed/con_llm-service-openshift-ai.adoc[leveloffset=+1]
 

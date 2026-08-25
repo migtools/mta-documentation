@@ -11,11 +11,10 @@
 [role="_abstract"]
 You can use the {mta-dl-full} feature in the Visual Studio Code extension to apply code resolutions from a large language model (LLM) to resolve static code analysis issues in Java applications.
 
-
 [id="use-case-ai-code-fix_{context}"]
 == Use case for AI-driven code fixes
 
-{ProductFirstRef} performs the static code analysis for a specified target technology to which you want to migrate your applications. Red Hat provides 2400+ analysis rules in {ProductShortName} for various Java technologies and you can extend the ruleset for custom frameworks or new technologies by creating custom rules.
+{ProductFirstRef} performs the static code analysis for a specified target technology to which you want to migrate your applications. Red Hat provides 2400+ analysis rules in {ProductShortName} for Java technologies.
 
 The static code analysis describes the issues in your code that you must resolve. As you perform analysis for a large portfolio of applications, the issue description and the rule definition that may contain additional information form a large corpus of data that has repetitive patterns of problem definitions and solutions.
 
