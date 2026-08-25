@@ -1,0 +1,32 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-agent-ai: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="agent-ai"]
+endif::[]
+ifdef::context[]
+[id="agent-ai_{context}"]
+endif::[]
+= About the agent AI
+
+:context: agent-ai
+
+[role="_abstract"]
+Intro about agent AI.
+
+include::topics/developer-lightspeed/con_agent-ai.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/con_agent-mode-guardrails.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/ref_agent-mode-validation-checks.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/con_agent-mode-autocorrection.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-agent-ai[:context: {parent-context-of-agent-ai}]
+ifndef::parent-context-of-agent-ai[:!context:]
+
+:!agent-ai:

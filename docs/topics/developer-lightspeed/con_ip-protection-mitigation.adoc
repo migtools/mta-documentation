@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="ip-protection-mitigation_{context}"]
+
+= Self-managed model hosting as a mitigation strategy
+:context: ip-protection-mitigation
+
+[role="_abstract"]
+Deploying a self-hosted large language model (LLM) instance that handles queries with source code snippets shared by {mta-dl-plugin} helps meet intellectual property (IP) protection and regulatory requirements disconnected network environments. 
+
+Red{nbsp}Hat supports the following on-site and self-hosted AI platforms for this purpose:
+
+* *{ocp-name} AI*: Deploy and serve LLMs as an inference service within your {ocp-name} cluster. This keeps all model traffic on your internal network. 
+
+* *Red{nbsp}Hat Enterprise Linux AI (RHEL AI)*: Run a self-contained, production-ready AI infrastructure on RHEL to serve models locally or within your private data center. 
+
+You can configure {mta-dl-plugin} to use the OpenAI-compatible application programming interface (API) endpoint that both platforms expose without any additional plugin changes.

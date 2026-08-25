@@ -20,22 +20,11 @@ Understand the {mta-dl-full} extension features, use cases, configurations, and 
 
 include::topics/developer-lightspeed/con_intro-to-developer-lightspeed.adoc[leveloffset=+1]
 
-include::topics/developer-lightspeed/con_dl-context.adoc[leveloffset=+1]
-
 include::topics/developer-lightspeed/con_solution_server.adoc[leveloffset=+1]
 
-include::topics/developer-lightspeed/con_agent-ai.adoc[leveloffset=+1]
-
-include::topics/developer-lightspeed/con_agent-mode-guardrails.adoc[leveloffset=+1]
-
-include::topics/developer-lightspeed/ref_agent-mode-validation-checks.adoc[leveloffset=+1]
-
-include::topics/developer-lightspeed/con_agent-mode-autocorrection.adoc[leveloffset=+1]
-
-include::topics/developer-lightspeed/proc_enabling-agent-mode.adoc[leveloffset=+1]
+include::assembly_agent_mode_dl.adoc[leveloffset=+1]
 
 include::topics/developer-lightspeed/ref_dl-benefits.adoc[leveloffset=+1]
-
 
 ifdef::parent-context-of-understanding-dl[:context: {parent-context-of-understanding-dl}]
 ifndef::parent-context-of-understanding-dl[:!context:]

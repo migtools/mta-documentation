@@ -15,9 +15,9 @@ include::assemblies/developer-lightspeed-guide/assembly_understanding_dl.adoc[le
 
 include::assemblies/developer-lightspeed-guide/assembly_getting-started.adoc[leveloffset=+1]
 
-include::assemblies/developer-lightspeed-guide/assembly_configuring_llm.adoc[leveloffset=+1]
-
 include::assemblies/developer-lightspeed-guide/assembly_configuring-dev-lightspeed-ide.adoc[leveloffset=+1]
+
+include::assemblies/developer-lightspeed-guide/assembly_configuring_llm.adoc[leveloffset=+1]
 
 include::assemblies/developer-lightspeed-guide/assembly_run-dev-lightspeed-analysis.adoc[leveloffset=+1]
 
