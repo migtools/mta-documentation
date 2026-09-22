@@ -15,6 +15,7 @@ on:
       - 'Gemfile'
       - 'index.md'
       - '.github/workflows/pr-preview.yml'
+      - '.github/workflows/pr-preview-deploy.yml'
 
 # Read-only is sufficient — this job only builds and uploads an artifact.
 # The deploy job (pr-preview-deploy.yml) runs separately with write permissions
