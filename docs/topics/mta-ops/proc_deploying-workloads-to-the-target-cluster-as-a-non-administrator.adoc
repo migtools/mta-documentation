@@ -17,7 +17,7 @@ When you lack `cluster-admin` privileges, deploy your workloads as a non-adminis
 +
 [subs="+quotes"]
 ----
-$ *c apply -f _<output_dir>_/output.yaml -n _<namespace>_ --context _<target_cluster_context>_*
+$ *oc apply -f _<output_dir>_/output.yaml -n _<namespace>_ --context _<target_cluster_context>_*
 ----
 
 .Verification

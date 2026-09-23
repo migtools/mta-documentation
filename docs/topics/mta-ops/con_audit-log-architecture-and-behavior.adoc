@@ -8,7 +8,7 @@
 [role="_abstract"]
 The `mta-ops` command-line interface (CLI) automatically records a persistent, structured audit log in JSON Lines format to satisfy security compliance standards and support troubleshooting.
 
-Every `mta-ops` command invocation (`export`, `transform`, `apply`, `validate`, and `transfer-pvc`) writes log entries to a local file named `.crane-audit.log` in your active working directory.
+Every `mta-ops` command invocation (`export`, `transform`, `apply`, `validate`, and `transfer-pvc`) writes log entries to a local file named `audit/.crane-audit.log` in your active working directory.
 
 The audit logging mechanism operates according to the following principles:
 

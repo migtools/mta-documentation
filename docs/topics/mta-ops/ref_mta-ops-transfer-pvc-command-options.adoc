@@ -58,7 +58,7 @@ Use the `mta-ops transfer-pvc` command options to configure direct cluster-to-cl
 | Name of the PVC to transfer. Optionally specify name remapping as `<source_pvc_name>:<destination_pvc_name>`.
 
 | `--pvc-namespace`
-| `-n`
+|
 | Namespace containing the source PVC. Optionally specify namespace remapping as `<source_namespace>:<destination_namespace>`.
 
 | `--rclone-config-file`
