@@ -1,0 +1,32 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: CONCEPT
+
+[id="mta-rsync-transfer-image-mirroring-in-disconnected-environments_{context}"]
+= mta-rsync-transfer image mirroring in disconnected environments
+
+[role="_abstract"]
+During direct persistent volume claim (PVC) data migrations, the `mta-ops transfer-pvc` engine provides temporary worker pods running the `mta-rsync-transfer` container image on both source and target clusters.
+
+In disconnected or air-gapped environments, you must manually mirror a standalone container image to an internal registry accessible by both clusters.
+
+== Standalone image repository and tagging scheme
+The `mta-rsync-transfer` image is distributed alongside the `mta-ops` command-line interface (CLI) as a standalone container image. Unlike operator-managed workloads, this image is not included in the MTA Operator bundle's `spec.relatedImages` manifest.
+
+Consequently, automated operator mirroring workflows (such as `oc-mirror`) do not automatically pull or mirror the `mta-rsync-transfer` image during disconnected cluster setup. The downstream image registry path and tagging scheme are defined as follows:
+
+* Registry repository path: `registry.redhat.io/mta/mta-rsync-transfer-rhel9` 
+* Tagging scheme: Matches the MTA minor or patch release version, for example:
+** `registry.redhat.io/mta/mta-rsync-transfer-rhel9:8.3.0`
+** `registry.redhat.io/mta/mta-rsync-transfer-rhel9:latest`
+
+== Source and target cluster image accessibility requirements
+Direct persistent volume migrations rely on the `mta-rsync-transfer` image across both cluster endpoints simultaneously: 
+
+Source cluster (rsync client)::
+Runs a temporary worker pod that mounts the source PersistentVolumeClaim in `ReadOnly` mode and initiates the encrypted `stunnel` TLS 1.3 tunnel.
+
+Target cluster (rsync server)::
+Runs a temporary worker pod that mounts the destination PersistentVolumeClaim in `ReadWrite` mode and listens for incoming data streams from the source client pod.
+
+Because both worker pods pull the `mta-rsync-transfer` container image dynamically at runtime, your internal mirror registry must be reachable by nodes on both the source and target Red{nbsp}Hat OpenShift clusters. In decoupled CLI scenarios where clusters share no direct network path, both clusters must still have access to either a common internal registry or identical mirrored local registries.

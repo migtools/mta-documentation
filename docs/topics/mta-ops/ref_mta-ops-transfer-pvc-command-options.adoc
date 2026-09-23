@@ -1,0 +1,87 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-23
+:_mod-docs-content-type: REFERENCE
+
+[id="mta-ops-transfer-pvc-command-options_{context}"]
+= mta-ops transfer-pvc command options
+
+[role="_abstract"]
+Use the `mta-ops transfer-pvc` command options to configure direct cluster-to-cluster volume replication, indirect S3 cloud storage replication, or same-cluster StorageClass conversions.
+
+.mta-ops transfer-pvc flags
+[cols="25%,15%,60%",options="header"]
+|===
+| Option | Shorthand | Description
+
+| `--cloud-storage`
+| 
+| Enables indirect data transfer through an S3-compatible cloud storage target (for example, `s3:<bucket_name>/<folder_path>`).
+
+| `--dest-storage-class`
+| 
+| Target StorageClass for destination volumes during same-cluster or cross-cluster conversions.
+
+| `--dest-storage-requests`
+| 
+| Requested storage capacity for the destination PVC (for example, `10Gi`).
+
+| `--destination-context`
+| 
+| Name of the target cluster context in the local kubeconfig file.
+
+| `--destination-image`
+| 
+| Container image used for the worker pod on the destination cluster (default: `registry.redhat.io/mta/mta-rsync-transfer-rhel9:8.3.0`).
+
+| `--encrypt`
+| 
+| Enables client-side 256-bit NaCl SecretBox encryption for indirect cloud storage transfers.
+
+| `--endpoint`
+| 
+| Networking endpoint type for direct tunneling (`route` for OpenShift, `nginx-ingress` for Kubernetes).
+
+| `--ingress-class`
+| 
+| IngressClass name to use when `--endpoint` is set to `nginx-ingress`.
+
+| `--keep-cloud-data`
+| 
+| Skips automatic deletion of cloud storage backup objects after indirect transfer completes.
+
+| `--output`
+| 
+| Writes data transfer statistics and operational summary to the specified file.
+
+| `--pvc-name`
+| 
+| Name of the PVC to transfer. Optionally specify name remapping as `<source_pvc_name>:<destination_pvc_name>`.
+
+| `--pvc-namespace`
+| `-n`
+| Namespace containing the source PVC. Optionally specify namespace remapping as `<source_namespace>:<destination_namespace>`.
+
+| `--rclone-config-file`
+| 
+| Path to a local `rclone.conf` credential file for indirect cloud transfers.
+
+| `--rclone-config-secret`
+| 
+| Name of a pre-existing Kubernetes Secret containing `rclone` credentials on both clusters.
+
+| `--source-context`
+| 
+| Name of the source cluster context in the local kubeconfig file.
+
+| `--source-image`
+| 
+| Container image used for the worker pod on the source cluster (default: `registry.redhat.io/mta/mta-rsync-transfer-rhel9:8.3.0`).
+
+| `--subdomain`
+| 
+| Custom subdomain string for ingress endpoint routing.
+
+| `--verify`
+| 
+| Enables post-transfer data checksum verification between source and target volumes.
+|===

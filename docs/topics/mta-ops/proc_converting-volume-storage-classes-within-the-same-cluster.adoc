@@ -1,0 +1,63 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="converting-volume-storage-classes-within-the-same-cluster_{context}"]
+= Converting volume storage classes within the same cluster
+
+[role="_abstract"]
+Convert an existing immutable PersistentVolumeClaim to a new StorageClass within the same cluster context.
+
+.Prerequisites
+
+* You have installed the `mta-ops` command-line utility.
+* You have active cluster contexts for your cluster in your `kubeconfig` file.
+* You have scaled down active workloads on the source volume to 0 replicas to prevent write operations.
+
+
+.Procedure
+
+. Execute the same-cluster PVC transfer, specifying the target storage class:
++
+[subs="+quotes"]
+----
+$ *mta-ops transfer-pvc --source-context=_<cluster_context>_ --destination-context=_<cluster_context>_ --pvc-name=_<source_pvc_name>_ --pvc-namespace=_<pvc_namespace>_ --dest-storage-class=_<target_storage_class>_*
+----
+
+. Export the application workload manifests:
++
+[subs="+quotes"]
+----
+$ *mta-ops export --context=_<cluster_context>_ -n _<pvc_namespace>_ -e _<export_dir>_*
+----
+
+. Transform exported manifests and update all workload references to point to the new PVC:
++
+[subs="+quotes"]
+----
+$ *mta-ops transform -e _<export_dir>_ -t _<transform_dir>_ --pvc-rename-map=_<source_pvc_name>_:__<destination_pvc_name>__*
+----
+
+. Render the final deployable manifests:
++
+[subs="+quotes"]
+----
+$ *mta-ops apply -t _<transform_dir>_ -o output _<output_dir>_*
+----
+
+. Apply the rendered manifests to your cluster:
++
+[subs="+quotes"]
+----
+$ *oc apply -f _<output_dir>_/output.yaml --context=_<cluster_context>_*
+----
+
+
+.Verification
+
+* Verify application pods mount the new volume bound to the new storage class:
++
+[subs="+quotes"]
+----
+$ *oc get pvc _<destination_pvc_name>_ -n _<namespace>_  --context=_<cluster_context>_*
+----

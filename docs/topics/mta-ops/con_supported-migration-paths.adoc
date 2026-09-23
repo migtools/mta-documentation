@@ -1,0 +1,19 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="supported-migration-paths_{context}"]
+= Supported migration paths
+
+[role="_abstract"]
+When you plan application migrations, understand the supported paths to create a successful modernization strategy.
+
+The {ProductFullName} `mta-ops` CLI supports the following migration paths:
+
+Cross-cluster stateless workload migrations::
+Supported strictly from Red Hat OpenShift Container Platform 4.x to 4.x environments.
+
+Cross-cluster stateful persistent volume migrations::
+Supported between active source and target clusters over a direct network connection, or indirectly through S3-compatible cloud storage targets.
+
+Same-cluster StorageClass conversions:: Supported within a single cluster context to upgrade existing persistent volumes to modern storage classes.

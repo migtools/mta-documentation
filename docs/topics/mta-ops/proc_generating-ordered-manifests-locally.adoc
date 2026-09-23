@@ -16,10 +16,10 @@ When you render your final YAML, you can generate ordered individual resource fi
 +
 [subs="+quotes"]
 ----
-$ *mta-ops apply -t transform -o output --ordered*
+$ *mta-ops apply -t _<transform_dir>_ -o _<output_dir>_ --ordered*
 ----
 
-. Review the generated files in the `output/resources/_<namespace>_/` directory. The `--ordered` flag prefixes the filenames with 3-digit order numbers.
 
 .Verification
-* Verify that the resource filenames begin with a 3-digit number.
+
+* Review the generated files in the `output/resources/_<namespace>_/` directory. The `--ordered` flag prefixes the filenames with 3-digit order numbers.

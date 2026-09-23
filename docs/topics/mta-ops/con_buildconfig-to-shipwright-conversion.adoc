@@ -1,0 +1,50 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: CONCEPT
+
+[id="buildconfig-to-shipwright-conversion_{context}"]
+= BuildConfig to Shipwright conversion
+
+[role="_abstract"]
+The `BuildConfigToBuildsPlugin` converts legacy Red Hat OpenShift `BuildConfig` resources (`build.openshift.io/v1`) into Kubernetes-native Shipwright `Build` custom resources (`shipwright.io/v1beta1`) as part of the `mta-ops transform` pipeline. This offline transformation generates reviewable, GitOps-ready manifests without communicating with a live cluster.
+
+== Transformation pipeline ordering rules
+To ensure all workload resources are cleaned correctly, `BuildConfigToBuildsPlugin` must run as part of a multi-stage transformation sequence alongside the default cleanup plugins:
+
+* **Default stage sequence**: The default transformation pipeline executes `KubernetesPlugin` (stage `10_`), `OpenShiftPlugin` (stage `15_`), and `BuildConfigToBuildsPlugin` (stage `25_`) in sequential order.
+* **Instructions file sequencing**: When defining a declarative instructions file (`--instructions-file`), you must specify `BuildConfigToBuildsPlugin` _after_ `OpenShiftPlugin`. If `BuildConfigToBuildsPlugin` executes before `OpenShiftPlugin`, subsequent OpenShift cleanup logic strips the generated `Build` resources from the pipeline output.
+
+== Key conversion features and strategy mappings
+The `BuildConfigToBuildsPlugin` evaluates each `BuildConfig` in the exported source manifests and maps its properties to the corresponding Shipwright specification:
+
+Docker strategy conversion::
+Converts `dockerStrategy` BuildConfigs to Shipwright `Build` objects backed by the `buildah` `ClusterBuildStrategy`. The plugin maps Dockerfile paths, build arguments, and base images. If an inline Dockerfile is present in the `BuildConfig`, the plugin extracts the Dockerfile into a backup `ConfigMap` referenced by the `buildconfig-to-shipwright/inline-dockerfile-configmap` annotation.
++
+[IMPORTANT]
+====
+Shipwright cannot pull inline Dockerfiles directly from a `ConfigMap` at build time. The generated `ConfigMap` serves as an offline reference copy; you must commit the Dockerfile to your application's Git repository before executing a build.
+====
+
+Source-to-Image (S2I) strategy conversion::
+Converts `sourceStrategy` BuildConfigs to Shipwright `Build` objects backed by the `source-to-image` `ClusterBuildStrategy`. The plugin maps builder image references, environment variables, and source secrets.
+
+ImageStreamTag fallthrough resolution::
+If a `BuildConfig` references an `ImageStreamTag` for its output or base image, the plugin resolves the reference using a layered fallthrough approach:
+1. Evaluates explicit parameter overrides passed in `--optional-flags` (`--imagestream-mapping` or `--registry-mapping`).
+2. Checks for co-exported `ImageStream` YAML definitions within the export directory.
+3. Falls back to the internal registry URL and records a conversion warning annotation if the image cannot be resolved externally.
+
+Multiple image sources and Git proxies::
+* **Single source boundary**: Shipwright `Build` specifications support a single input source. If a `BuildConfig` defines multiple image sources, the plugin converts the primary source and records a warning annotation for additional sources.
+* **Git proxy configuration**: If a `BuildConfig` uses a Git proxy, proxy configuration on Shipwright must be defined at the target cluster level by using `GIT_CONTAINER_TEMPLATE`.
+
+Unconverted BuildConfigs and failure annotations::
+`BuildConfig` resources configured with `customStrategy` or `jenkinsPipelineStrategy`, or those lacking an output image target, cannot be converted automatically. The plugin passes these resources through untouched in the stage output directory, appending two tracking annotations:
+* `buildconfig-to-shipwright/conversion-outcome`: Indicates the result (for example, `skipped` or `failed`).
+* `buildconfig-to-shipwright/conversion-reason`: Details the exact technical reason why conversion was skipped.
+
+ServiceAccount and Secret generation::
+If a `BuildConfig` references a pull secret but does not specify a `ServiceAccount`, the plugin automatically generates a scaffolded `ServiceAccount` carrying the pull secret. To enable container image pushes to external registries (such as Quay.io or Docker Hub), ensure `spec.output.pushSecret` is defined on the `Build` or attached to the `ServiceAccount`.
+
+Build triggers and execution model::
+Shipwright does not support native OpenShift build triggers (such as `ImageChange` or `Webhook` triggers). The plugin notes omitted triggers in `crane.konveyor.io/conversion-warnings` annotations on the generated `Build` objects. On the target cluster, builds do not fire automatically upon manifest application; developers or CI/CD pipelines must create an explicit `BuildRun` resource (`buildruns.shipwright.io`) pointing to the appropriate `ServiceAccount` to initiate a build execution.

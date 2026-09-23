@@ -1,0 +1,45 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-23
+:_mod-docs-content-type: PROCEDURE
+
+[id="inspecting-the-audit-log_{context}"]
+= Inspecting the audit log
+
+[role="_abstract"]
+Query and analyze the structured audit log to diagnose migration pipeline failures, verify resource transformation steps, or provide diagnostic data to Red Hat Support.
+
+.Prerequisites
+
+* You have executed one or more `mta-ops` CLI commands in your local directory.
+* You have installed a JSON parsing utility such as `jq` on your local machine.
+
+
+.Procedure
+
+. Locate the persistent audit log file `audit/.crane-audit.log` in your working directory:
++
+[subs="+quotes"]
+----
+$ *ls -l audit/.crane-audit.log*
+----
+
+. Filter and display only error events across all executed pipeline steps:
++
+[subs="+quotes"]
+----
+$ *jq -r 'select(.level=="error") | "[\(.time)] \(.msg)"' audit/.crane-audit.log*
+----
+
+. Inspect all debug-level entries generated during a specific operation (such as the `export` stage):
++
+[subs="+quotes"]
+----
+$ *jq -r 'select(.msg | contains("export"))' audit/.crane-audit.log*
+----
+
+. Optional: To direct audit log output to a dedicated file path during command execution, pass the `--audit-log` flag:
++
+[subs="+quotes"]
+----
+$ *mta-ops export --context*
+----

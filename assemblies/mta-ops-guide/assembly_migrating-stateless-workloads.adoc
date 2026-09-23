@@ -15,19 +15,9 @@ endif::[]
 :context: migrating-stateless-workloads
 
 [role="_abstract"]
-Migrate your Red{nbsp}Hat OpenShift workloads from a source cluster to a new cluster by using the `mta-ops` pipeline. Extract, clean up, and validate stateless applications before deployment.
-
-A complete migration pipeline includes the following stages in a strict order:
-
-* Export: Capture the source cluster manifests.
-* Transform: Clean up and adapt the manifests.
-* Apply: Render the final deployable YAML manifests.
-* Validate (optional): Check target cluster application programming interface (API) compatibility.
-* Deploy: Apply the workloads to the destination.
+Migrate your Red{nbsp}Hat OpenShift workloads from a source cluster to a target cluster by using the `mta-ops` multi-stage pipeline. The pipeline allows you to extract, transform, render, and validate your workload manifests locally before executing deployment commands.
 
 include::topics/mta-ops/proc_executing-a-stateless-migration-quickstart.adoc[leveloffset=+1]
-
-include::assembly_configuring-cluster-access-for-migration.adoc[leveloffset=+1]
 
 include::assembly_exporting-workload-manifests.adoc[leveloffset=+1]
 

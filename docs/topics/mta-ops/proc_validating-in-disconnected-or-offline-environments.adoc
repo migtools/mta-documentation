@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="validating-in-disconnected-or-offline-environments_{context}"]
+= Validating workload manifests in disconnected or offline environments
+
+[role="_abstract"]
+In air-gapped environments without direct network connectivity to the target cluster, validate using a pre-captured API surface JSON file.
+
+.Procedure
+
+. On a workstation with access to the target cluster, capture the API surface:
++
+[subs="+quotes"]
+----
+$ *bash scripts/capture-api-surface.sh --context _<target_cluster_context>_ -o _<api_surface_file>_*
+----
+
+. On your offline migration workstation, run the validation check against the captured file:
++
+[subs="+quotes"]
+----
+$ *mta-ops validate -i _<output_dir>_ --api-resources _<api_surface_file>_*
+----
+
+.Verification
+
+* Inspect the terminal summary or generated validation report file to confirm GVK compatibility.

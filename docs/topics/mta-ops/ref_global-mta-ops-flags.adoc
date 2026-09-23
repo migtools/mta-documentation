@@ -1,0 +1,19 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-23
+:_mod-docs-content-type: REFERENCE
+
+[id="global-mta-ops-flags_{context}"]
+= Global mta-ops flags
+
+[role="_abstract"]
+Review the available global flags that apply to all `mta-ops` subcommands.
+
+.`mta-ops export` flags
+[cols="30%,20%,50%",options="header"]
+|===
+| Option | Shorthand | Description
+| `--audit-log` | | Specifies the destination path for the persistent JSON Lines audit log file (default: `audit/.crane-audit.log`).
+| `--debug` | | Enables verbose debug-level log output to the terminal during command execution.
+| `--flags-file` | `-f` | Specifies an input file containing a YAML representation of CLI flags. Explicit command-line arguments take precedence over values defined in the file.
+| `--help` | `-h` | Displays help information and available options for the specified command.
+|===

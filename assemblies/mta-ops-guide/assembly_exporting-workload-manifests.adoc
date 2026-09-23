@@ -15,7 +15,7 @@ endif::[]
 :context: exporting-workload-manifests
 
 [role="_abstract"]
-When you plan a migration, capture a snapshot of your source cluster resources. This ensures you have the required manifests for local transformation.
+Capture a snapshot of your source cluster resources to generate raw manifests for local transformation.
 
 include::topics/mta-ops/con_workload-manifest-export.adoc[leveloffset=+1]
 

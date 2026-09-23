@@ -6,15 +6,46 @@
 = mta-ops transform command options
 
 [role="_abstract"]
-When you process exported manifests, review the available command flags. This helps you control the Kustomize plugin stages.
+Use the `mta-ops transform` command options to control the execution sequence of built-in and custom transformation plug-ins, pass plug-in parameters, and manage stage overlays.
 
-.`mta-ops transform` flags
-[cols="30%,20%,50%",options="header"]
+.mta-ops transform flags
+[cols="25%,15%,60%",options="header"]
 |===
 | Option | Shorthand | Description
-| `--export-dir` | `-e` | The directory path containing the exported resources to be processed.
-| `--transform-dir` | `-t` | The directory path to create the isolated transform stages.
-| `--force` | | A flag to overwrite modified custom stage directories. This is mandatory for re-running custom stages.
-| `--skip-plugins` | | A comma-separated list of built-in plugins to skip, such as OpenShiftPlugin.
-| `--instructions-file` | | A path to a declarative YAML file to steer the transformation execution rules.
+
+| `--export-dir`
+| `-e`
+| Directory path containing raw exported manifests to process (default: `export`).
+
+| `--instructions-file`
+| 
+| Path to a declarative YAML instructions file defining stage ordering and plug-in parameters.
+
+| `--kustomize-args`
+| 
+| Additional argument string passed to the embedded Kustomize engine (for example, `'--enable-helm'`).
+
+| `--optional-flags`
+| 
+| Global JSON string containing key-value pairs passed to all active plug-ins (for example, `'{"registry-replacement":"docker.io=quay.io"}'`).
+
+| `--overwrite`
+| 
+| Overwrites existing stage directories, including user-modified custom stages.
+
+| `--plugin-dir`
+| `-p`
+| Directory path where binary plug-in executables are located (default: `~/.local/share/crane/plugins`).
+
+| `--skip-plugins`
+| `-s`
+| Comma-separated list of built-in plug-ins to skip during transformation (for example, `OpenShiftPlugin`).
+
+| `--stage-optionals`
+| 
+| Per-stage optional flags specified as `StageName=JSON` string pairs (repeatable).
+
+| `--transform-dir`
+| `-t`
+| Directory path where transformation stage outputs and overlays are created (default: `transform`).
 |===

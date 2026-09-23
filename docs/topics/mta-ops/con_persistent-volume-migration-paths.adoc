@@ -1,0 +1,31 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: CONCEPT
+
+[id="persistent-volume-migration-paths_{context}"]
+= Persistent volume migration paths
+
+[role="_abstract"]
+When preparing for the migration of persistent volume claim (PVC) data, you can select the appropriate path depending on your network topology, security policies, and target cluster configuration.
+
+The following migration paths are available for PVC migration:
+
+Direct persistent volume claim migration::
+Direct migration copies file data directly from the source cluster to the destination cluster. This path uses a secure tunnel. The tunnel is established by using `stunnel` with Transport Layer Security (TLS) version 1.3.
++
+A file synchronization utility (`rsync`) copies the files across the tunnel. This direct transfer requires a network path between the clusters. You must expose a route or an ingress endpoint on the target cluster. This method preserves file mode bits and ownership.
+
+Indirect persistent volume claim migration::
+Indirect migration copies data by using an intermediate cloud storage bucket. This path is ideal when clusters do not have direct network connectivity. It is also suitable for air-gapped or classified environments.
++
+The migration occurs in two sequential phases. First, a source pod uploads files to an S3-compatible bucket. Second, a destination pod downloads those files. This path uses the `rclone` utility compiled as a library.
++
+You can enable client-side encryption by using the NaCl SecretBox standard. This encryption protects your data in transit and at rest.
+
+Intra-cluster StorageClass conversion::
++
+Intra-cluster conversion changes the storage class of an existing volume. Kubernetes storage class settings are immutable after creation. To change a storage class, you must create a new volume and copy the data.
++
+The same-cluster pipeline automates this process within a single namespace. The pipeline creates a temporary target volume. It then copies files from the source volume to the new volume.
++
+You use a name mapping file to update all workload references. This updates references in your deployments and stateful sets automatically.

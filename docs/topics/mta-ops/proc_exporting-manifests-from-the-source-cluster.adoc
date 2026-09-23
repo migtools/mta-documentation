@@ -21,19 +21,24 @@ WARNING: If you lack `cluster-admin` privileges, the export process generates wa
 +
 [subs="+quotes"]
 ----
-$ *mta-ops export --context _<source_context>_ -n _<namespace>_ -e export*
+$ *mta-ops export --context _<source_cluster_context>_ -n _<namespace>_ -e _<export_dir>_*
+----
+
+. Optional: To perform a partial namespace export based on resource labels, append the `-l` selector flag:
++
+[subs="+quotes"]
+----
+$ *mta-ops export --context _<source_cluster_context>_ -n <namespace> -e _<export_dir>_ -l <label_key>=_<label_value>_*
 ----
 
 . Optional: To perform service account-based migrations by using role impersonation, append the `--as` and `--as-group` flags:
 +
 [subs="+quotes"]
 ----
-$ *mta-ops export --context _<source_context>_ -n _<namespace>_ -e export --as _<service_account_name>_ --as-group _<group_name>_*
+$ *mta-ops export --context _<source_cluster_context>_ -n _<namespace>_ -e _<export_dir>_ --as _<service_account_name>_ --as-group _<group_name>_*
 ----
-
-. Review the generated YAML files in the `export/resources/_<namespace>_/` directory.
 
 
 .Verification
-. Verify that the output directory contains the exported manifests and the `_cluster/` subdirectory.
+. Inspect the `export/resources/my-app/` directory to confirm raw resource files were created.
 . If you lack `cluster-admin` privileges, inspect the `failures/` directory to identify any skipped resources.

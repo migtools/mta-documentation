@@ -20,7 +20,7 @@ To fix malformed Kustomize patches, isolate your transformation stages. You can 
 +
 [subs="+quotes"]
 ----
-$ *mta-ops transform _<custom_stage_directory>_ -e export -t transform --force*
+$ *mta-ops transform _<custom_stage_directory>_ -e export -t transform --overwrite*
 ----
 
 .Verification
