@@ -35,7 +35,7 @@ Use the `mta-ops transfer-pvc` command options to configure direct cluster-to-cl
 
 | `--encrypt`
 | 
-| Enables client-side 256-bit NaCl SecretBox encryption for indirect cloud storage transfers.
+| Enables client-side encryption for indirect transfer.
 
 | `--endpoint`
 | 
