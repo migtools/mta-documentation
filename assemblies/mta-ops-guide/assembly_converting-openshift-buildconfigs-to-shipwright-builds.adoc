@@ -10,12 +10,12 @@ endif::[]
 ifdef::context[]
 [id="converting-openshift-buildconfigs-to-shipwright-builds_{context}"]
 endif::[]
-= Converting OpenShift BuildConfigs to Shipwright builds
+= Converting OpenShift BuildConfigs to builds
 
 :context: converting-openshift-buildconfigs-to-shipwright-builds
 
 [role="_abstract"]
-Convert legacy Red{nbsp}Hat OpenShift `BuildConfig` resources into Kubernetes-native Shipwright `Build` resources by using the built-in `BuildConfigToBuildsPlugin` during the `mta-ops transform` pipeline. Converting build definitions allows you to modernize application container builds to run on Kubernetes-native build engines such as Shipwright and Tekton.
+Convert legacy Red{nbsp}Hat OpenShift `BuildConfig` resources into Kubernetes-native build custom resources by using the built-in `BuildConfigToBuildsPlugin` during the `mta-ops transform` pipeline. Converting build definitions allows you to modernize application container builds to run on Kubernetes-native build engines such as Builds for Red Hat OpenShift.
 
 include::topics/mta-ops/con_buildconfig-to-shipwright-conversion.adoc[leveloffset=+1]
 

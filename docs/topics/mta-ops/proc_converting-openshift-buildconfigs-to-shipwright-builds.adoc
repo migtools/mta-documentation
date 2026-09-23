@@ -3,12 +3,12 @@
 :_mod-docs-content-type: PROCEDURE
 
 [id="converting-openshift-buildconfigs-to-shipwright-builds_{context}"]
-= Converting OpenShift BuildConfigs to Shipwright Builds by using the BuildConfigToBuildsPlugin
+= Converting OpenShift BuildConfigs to builds by using the BuildConfigToBuildsPlugin
 
 [role="_abstract"]
 Transition application build definitions to a Kubernetes-native framework during workload migration by using the `BuildConfigToBuildsPlugin` during the `mta-ops transform` stage.
 
-The `BuildConfigToBuildsPlugin` plugin converts OpenShift `BuildConfig` resources (`build.openshift.io/v1`) into Shipwright `Build` custom resources (`shipwright.io/v1beta1`) offline.
+The `BuildConfigToBuildsPlugin` plugin converts OpenShift `BuildConfig` resources (`build.openshift.io/v1`) into Kubernetes-native build custom resources (`shipwright.io/v1beta1`) offline.
 
 .Prerequisites
 
