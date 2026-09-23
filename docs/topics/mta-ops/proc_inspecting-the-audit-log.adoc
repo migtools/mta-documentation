@@ -41,5 +41,5 @@ $ *jq -r 'select(.msg | contains("export"))' audit/.crane-audit.log*
 +
 [subs="+quotes"]
 ----
-$ *mta-ops export --context*
+$ *mta-ops export --context _<source_cluster_context>_ -n _<namespace>_ e _<export_dir>_ --audit-log _<custom_path>_*
 ----
