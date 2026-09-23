@@ -38,14 +38,14 @@ $ *podman login _<internal_registry_host>_ -u _<internal_username>_ -p _<interna
 +
 [subs="+quotes"]
 ----
-$ *oc image mirror registry.redhat.io/mta/mta-rsync-transfer-rhel9:_<tag>_ _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:_<tag>_*
+$ *oc image mirror registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__ _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__*
 ----
 
 .. By using `skopeo copy`:
 +
 [subs="+quotes"]
 ----
-$ *skopeo copy docker://registry.redhat.io/mta/mta-rsync-transfer-rhel9:_<tag>_ docker://_<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:_<tag>_*
+$ *skopeo copy docker://registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__ docker://_<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__*
 ----
 
 .. By using `podman` and removable media (sneaker-net/air-gapped environments).
@@ -54,14 +54,14 @@ $ *skopeo copy docker://registry.redhat.io/mta/mta-rsync-transfer-rhel9:_<tag>_ 
 +
 [subs="+quotes"]
 ----
-$ *podman pull registry.redhat.io/mta/mta-rsync-transfer-rhel9:_<tag>_*
+$ *podman pull registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__*
 ----
 
 . Save the image to an archive file:
 +
 [subs="+quotes"]
 ----
-$ *podman save -o mta-rsync-transfer.tar registry.redhat.io/mta/mta-rsync-transfer-rhel9:_<tag>_*
+$ *podman save -o mta-rsync-transfer.tar registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__*
 ----
 
 . Transfer `mta-rsync-transfer.tar` to your disconnected workstation using approved removable media.
@@ -75,7 +75,7 @@ $ *podman load -i mta-rsync-transfer.tar*
 +
 [subs="+quotes"]
 ----
-$ *podman tag registry.redhat.io/mta/mta-rsync-transfer-rhel9:_<tag>_ _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:_<tag>_*
+$ *podman tag registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__ _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__*
 ----
 +
 [subs="+quotes"]
@@ -87,7 +87,7 @@ $ *podman push _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel
 +
 [subs="+quotes"]
 ----
-$ *oc apply -f idms.yaml --context *<source_cluster_context>**
+$ *oc apply -f idms.yaml --context _<source_cluster_context>_*
 ----
 +
 [subs="+quotes"]
@@ -103,10 +103,10 @@ $ *oc apply -f idms.yaml --context _<target_cluster_context>_*
 +
 [subs="+quotes"]
 ----
-$ *oc image info _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:_<tag>_ --context _<source_cluster_context>_*
+$ *oc image info _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__ --context _<source_cluster_context>_*
 ----
 +
 [subs="+quotes"]
 ----
-$ *oc image info _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:_<tag>_ --context _<target_cluster_context>_*
+$ *oc image info _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__ --context _<target_cluster_context>_*
 ----
