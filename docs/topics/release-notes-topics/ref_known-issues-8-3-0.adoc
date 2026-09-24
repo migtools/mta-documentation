@@ -38,3 +38,13 @@ link:https://redhat.atlassian.net/browse/MTA-6142[MTA-6142]
 The MTA Visual Studio Code extension 8.1 renders inconsistently in the Red Hat OpenShift Dev Spaces dashboard when you use the Mozilla Firefox browser version 149.0. To work around this problem, use the MTA Visual Studio Code extension in Red Hat OpenShift Dev Spaces through the Google Chrome browser.
 +
 link:https://redhat.atlassian.net/browse/MTA-6735[MTA-6735]
+
+== mta-ops command-line interface
+
+mta-ops CLI continues execution without logging if audit log file cannot be created::
+If the audit log file (`audit/.crane-audit.log` or a custom path specified using `--audit-log`) cannot be created or opened for writing due to restricted directory permissions or an invalid destination path, the `mta-ops` CLI silently continues executing commands without writing audit logs. Operations performed during this run are not recorded in the audit trail.
++
+To work around this problem, ensure that your active working directory or custom audit log destination path is writable and that the parent directory exists before running `mta-ops` commands.
++
+link:https://issues.redhat.com/browse/MTA-7870[MTA-7870]
+
