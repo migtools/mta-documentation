@@ -1,0 +1,10 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-01
+:_mod-docs-content-type: REFERENCE
+
+[id="known-issues-8-3-0_{context}"]
+= Known issues
+
+[role="_abstract"]
+{ProductFirstRef} version 8.3.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
+
