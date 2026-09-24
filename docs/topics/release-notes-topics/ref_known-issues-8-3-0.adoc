@@ -8,3 +8,33 @@
 [role="_abstract"]
 {ProductFirstRef} version 8.3.0 is affected by the following newly identified and previously known issues. A known issue is listed in all future release notes until resolved, at which point it is published as a fixed issue.
 
+{ProductShortName} analysis does not match rule patterns when import statements have a wildcard::
+
+When you use a wildcard to import packages used by an annotation in your Java source code, an {ProductShortName} analysis does not trigger a violation for such annotations. As a consequence, you are unable to fix all occurrences of an annotation defined in a rule because {ProductShortName} triggered no incidents for some annotations.
++
+No known workaround exists.
++
+link:https://redhat.atlassian.net/browse/MTA-6530[MTA-6530]
+
+{ProductShortName} web console does not display JIRA ticket for applications and migration waves::
+
+After connecting the {ProductShortName} to a JIRA instance, the web console does not display JIRA tickets in the application inventory or for migration waves. As a consequence, you are unable to track application migrations in the {ProductShortName} web console.
++
+No known workaround exits.
++
+link:https://redhat.atlassian.net/browse/MTA-5930[MTA-5930]
+
+
+{ProductShortName} analysis report has duplicate labels for technologies::
+
+The analysis report downloaded from the {ProductShortName} web console has duplicate labels in the Technology tab, leading to confusion when viewing technology categories. 
++
+No known workaround exists.
++
+link:https://redhat.atlassian.net/browse/MTA-6142[MTA-6142]
+
+{ProductShortName} extension renders inconsistently with Mozilla Firefox browser 149.0::
+
+The MTA Visual Studio Code extension 8.1 renders inconsistently in the Red Hat OpenShift Dev Spaces dashboard when you use the Mozilla Firefox browser version 149.0. To work around this problem, use the MTA Visual Studio Code extension in Red Hat OpenShift Dev Spaces through the Google Chrome browser.
++
+link:https://redhat.atlassian.net/browse/MTA-6735[MTA-6735]

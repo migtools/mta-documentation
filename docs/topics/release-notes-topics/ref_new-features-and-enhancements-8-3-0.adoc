@@ -8,3 +8,22 @@
 [role="_abstract"]
 Review new features and enhancements in {ProductFullName} 8.3.0.
 
+
+
+
+Single agent run to resolve application issues  (Developer Preview)::
+
+You can use agents with migration-specific skills or directly with large language models (LLMs) to run application analysis and code resolutions in sandboxed containers. You can enforce role-based control to maintain cluster configurations, resources for agent runs, and to run agent-based migrations with real-time streaming output. The LLM provider configuration provides you with control over maximum context window to prevent context override when running an agent.
++
+For more information, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/configuring-and-using-mta-agents_user-interface-guide[Configuring and using MTA Agents].
++
+link:https://redhat.atlassian.net/browse/MTA-7422[MTA-7422]
+
+
+Multi-stage agent workflows for iterative code resolutions (Developer preview)::
+
+Use a multi-stage agent workflow run for complex projects that require context continuity. Multi-stage agents run a pre-determined sequence of stages or a pipeline. Each stage has an agent that completes a task. To maintain context continuity between two tasks, the agents read the handoff file from a shared Git branch.
++
+For more information, see link:{mta-URL}/configuring_and_managing_the_migration_toolkit_for_applications_user_interface/configuring-and-using-mta-agents_user-interface-guide[Configuring and using MTA Agents].
++
+link:https://redhat.atlassian.net/browse/MTA-7423[MTA-7423]
