@@ -15,7 +15,7 @@ Use the `mta-ops export` command options to customize the extraction of raw appl
 
 | `--as`
 | 
-| Username to impersonate for the export operation (regular user or ServiceAccount).
+| Username to impersonate for the export operation (regular user or `ServiceAccount`).
 
 | `--as-extras`
 | 
@@ -35,7 +35,7 @@ Use the `mta-ops export` command options to customize the extraction of raw appl
 
 | `--crd-include-group`
 | 
-| Force-includes specific CRD API groups for export, even if built-in defaults skip them (repeatable).
+| Force-includes specific custom resource definition (CRD) API groups for export, even if built-in defaults skip them (repeatable).
 
 | `--crd-skip-group`
 | 

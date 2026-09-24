@@ -6,7 +6,7 @@
 = Converting volume storage classes within the same cluster
 
 [role="_abstract"]
-Convert an existing immutable PersistentVolumeClaim to a new StorageClass within the same cluster context.
+Convert an existing immutable `PersistentVolumeClaim` to a new `StorageClass` within the same cluster context.
 
 .Prerequisites
 

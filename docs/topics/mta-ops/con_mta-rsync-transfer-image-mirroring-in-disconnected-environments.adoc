@@ -24,9 +24,9 @@ Consequently, automated operator mirroring workflows (such as `oc-mirror`) do no
 Direct persistent volume migrations rely on the `mta-rsync-transfer` image across both cluster endpoints simultaneously: 
 
 Source cluster (rsync client)::
-Runs a temporary worker pod that mounts the source PersistentVolumeClaim in `ReadOnly` mode and initiates the encrypted `stunnel` TLS 1.3 tunnel.
+Runs a temporary worker pod that mounts the source `PersistentVolumeClaim` in `ReadOnly` mode and initiates the encrypted `stunnel` TLS 1.3 tunnel.
 
 Target cluster (rsync server)::
-Runs a temporary worker pod that mounts the destination PersistentVolumeClaim in `ReadWrite` mode and listens for incoming data streams from the source client pod.
+Runs a temporary worker pod that mounts the destination `PersistentVolumeClaim` in `ReadWrite` mode and listens for incoming data streams from the source client pod.
 
 Because both worker pods pull the `mta-rsync-transfer` container image dynamically at runtime, your internal mirror registry must be reachable by nodes on both the source and target Red{nbsp}Hat OpenShift clusters. In decoupled CLI scenarios where clusters share no direct network path, both clusters must still have access to either a common internal registry or identical mirrored local registries.

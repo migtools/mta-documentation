@@ -60,7 +60,7 @@ $ *grep -rl 'kind: BuildConfig' _<output_dir>_/resources | xargs -r grep -H 'bui
 $ *oc apply -f _<output_dir>_/output.yaml --context _<target_cluster_context>_*
 ----
 
-. Grant the required Security Context Constraint (SCC) permissions to the `ServiceAccount` executing the build on the target cluster:
+. Grant the required security context constraint (SCC) permissions to the `ServiceAccount` executing the build on the target cluster:
 +
 [subs="+quotes"]
 ----

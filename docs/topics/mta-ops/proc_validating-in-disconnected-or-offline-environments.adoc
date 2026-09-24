@@ -6,7 +6,7 @@
 = Validating workload manifests in disconnected or offline environments
 
 [role="_abstract"]
-In air-gapped environments without direct network connectivity to the target cluster, validate using a pre-captured API surface JSON file.
+In air-gapped environments without direct network connectivity to the target cluster, validate workload manifests using a pre-captured API surface JSON file.
 
 .Procedure
 

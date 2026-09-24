@@ -8,7 +8,7 @@
 [role="_abstract"]
 Review the available global flags that apply to all `mta-ops` subcommands.
 
-`.Global mta-ops flags`
+.Global mta-ops flags
 [cols="30%,20%,50%",options="header"]
 |===
 | Option | Shorthand | Description

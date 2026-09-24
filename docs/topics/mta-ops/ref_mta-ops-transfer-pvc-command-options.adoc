@@ -23,7 +23,7 @@ Use the `mta-ops transfer-pvc` command options to configure direct cluster-to-cl
 
 | `--dest-storage-requests`
 | 
-| Requested storage capacity for the destination PVC (for example, `10Gi`).
+| Requested storage capacity for the destination persistent volume claim (PVC), for example, `10Gi`.
 
 | `--destination-context`
 | 

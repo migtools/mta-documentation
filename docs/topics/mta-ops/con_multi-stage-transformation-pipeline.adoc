@@ -8,7 +8,7 @@
 [role="_abstract"]
 Understand how the multi-stage transformation pipeline produces Kustomize-native output. This allows you to accurately trace modifications.
 
-The `mta-ops transform` command processes exported manifests through sequential plugin stages. The pipeline produces a standard Kustomize layout. The pipeline isolates each execution step into a dedicated, numbered subdirectory under the central `transform/` directory. This open structure allows you to inspect the inputs, generated patches, and outputs of each plugin individually.
+The `mta-ops transform` command processes exported manifests through sequential plugin stages. The pipeline produces a standard Kustomize layout. The pipeline isolates each execution step into a dedicated, numbered subdirectory under the central `transform/` directory. This open structure allows you to inspect inputs, generated patches, and outputs of each plugin individually.
 
 .Example output directory structure
 ====

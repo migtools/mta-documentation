@@ -6,7 +6,7 @@
 = Inspecting the audit log
 
 [role="_abstract"]
-Query and analyze the structured audit log to diagnose migration pipeline failures, verify resource transformation steps, or provide diagnostic data to Red Hat Support.
+Query and analyze the structured audit log to diagnose migration pipeline failures, verify resource transformation steps, or provide diagnostic data to Red{nbsp}Hat Support.
 
 .Prerequisites
 

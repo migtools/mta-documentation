@@ -6,7 +6,7 @@
 = mta-ops transform command options
 
 [role="_abstract"]
-Use the `mta-ops transform` command options to control the execution sequence of built-in and custom transformation plug-ins, pass plug-in parameters, and manage stage overlays.
+Use the `mta-ops transform` command options to control the execution sequence of built-in and custom transformation plugins, pass plugin parameters, and manage stage overlays.
 
 .mta-ops transform flags
 [cols="25%,15%,60%",options="header"]
@@ -19,7 +19,7 @@ Use the `mta-ops transform` command options to control the execution sequence of
 
 | `--instructions-file`
 | 
-| Path to a declarative YAML instructions file defining stage ordering and plug-in parameters.
+| Path to a declarative YAML instructions file defining stage ordering and plugin parameters.
 
 | `--kustomize-args`
 | 
@@ -27,7 +27,7 @@ Use the `mta-ops transform` command options to control the execution sequence of
 
 | `--optional-flags`
 | 
-| Global JSON string containing key-value pairs passed to all active plug-ins (for example, `'{"registry-replacement":"docker.io=quay.io"}'`).
+| Global JSON string containing key-value pairs passed to all active plugins (for example, `'{"registry-replacement":"docker.io=quay.io"}'`).
 
 | `--overwrite`
 | 
@@ -35,11 +35,11 @@ Use the `mta-ops transform` command options to control the execution sequence of
 
 | `--plugin-dir`
 | `-p`
-| Directory path where binary plug-in executables are located (default: `~/.local/share/crane/plugins`).
+| Directory path where binary plugin executables are located (default: `~/.local/share/crane/plugins`).
 
 | `--skip-plugins`
 | `-s`
-| Comma-separated list of built-in plug-ins to skip during transformation (for example, `OpenShiftPlugin`).
+| Comma-separated list of built-in plugins to skip during transformation (for example, `OpenShiftPlugin`).
 
 | `--stage-optionals`
 | 

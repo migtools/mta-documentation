@@ -3,26 +3,26 @@
 :_mod-docs-content-type: CONCEPT
 
 [id="migration-pipeline_{context}"]
-= The workload migration pipeline
+= Workload migration pipeline
 
 [role="_abstract"]
 The `mta-ops` workload migration pipeline decouples manifest transformation from cluster deployment. By processing export, transformation, and preflight validation locally, you can inspect and verify application configurations before executing active cluster changes or GitOps deployments.
 
 The default workload migration pipeline consists of the following sequential stages:
 
-Export stage::
-Captures a read-only snapshot of the source namespace and saves the raw YAML manifests to a local directory. The export process is non-disruptive and extracts both namespace-scoped workloads and their cluster-scoped dependencies, such as custom Security Context Constraints (SCCs), Custom Resource Definitions (CRDs), and Role-Based Access Control (RBAC) objects.
+Export::
+Captures a read-only snapshot of the source namespace and saves the raw YAML manifests to a local directory. The export process is non-disruptive and extracts both namespace-scoped workloads and their cluster-scoped dependencies, such as custom security context constraints (SCCs), custom resource definitions (CRDs), and Role-Based Access Control (RBAC) objects.
 
-Transformation stage::
+Transformation::
 Applies built-in and custom plug-ins to clean cluster-specific metadata, such as unique identifiers (UIDs), creation timestamps, and active status blocks. During this stage, you can modernize legacy configurations, including converting OpenShift `BuildConfigs` to Kubernetes-native Shipwright `Builds`. To make the pipeline repeatable, you can define the transformation sequence by using the `--instructions-file` option.
 
-Application stage::
+Application::
 Renders the transformed Kustomize overlays into deployable YAML manifests on your local disk. The application stage runs an embedded Kustomize engine to generate a consolidated, dependency-ordered deployment manifest without requiring active cluster communication.
 
 Validation stage::
-An optional but recommended preflight check that queries the target cluster discovery API to verify Group, Version, and Kind (GVK) compatibility. If the destination cluster lacks a required API version or Custom Resource Definition, the validator logs the incompatible resource in a failure directory and suggests available version updates.
+An optional but recommended preflight check that queries the target cluster discovery API to verify Group, Version, and Kind (GVK) compatibility. If the destination cluster lacks a required API version or CRD, the validator logs the incompatible resource in a failure directory and suggests available version updates.
 
-Deployment stage::
+Deployment::
 Applies the validated, final manifests to your destination cluster by using standard command-line tools, such as the `oc` or `kubectl` CLI, or integrates with your existing GitOps continuous delivery pipelines.
 
 Audit logging::
