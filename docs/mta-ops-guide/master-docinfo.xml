@@ -1,9 +1,9 @@
-<title>Migrating stateless workloads by using the mta-ops CLI</title>
+<title>Migrating workloads by using the mta-ops CLI</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Exporting, transforming, rendering, and validating stateless application manifests for deployment on a target Red{nbsp}Hat OpenShift cluster</subtitle>
+<subtitle>Exporting, transforming, rendering, and validating workload manifests, and migrating persistent volumes across Red{nbsp}Hat OpenShift clusters</subtitle>
 <abstract>
-    <para>You can safely move applications across environments by migrating your stateless workloads with the mta-ops command-line interface. The multi-stage pipeline helps you extract, clean, render, and validate your Red{nbsp}Hat OpenShift manifests locally. This workflow ensures target cluster API compatibility before you manually deploy your applications.</para>
+    <para>You can safely migrate applications across environments by moving your stateless workloads, converting build configurations, and replicating persistent volume data with the migration toolkit for applications (MTA) mta-ops command-line interface (CLI). The multi-stage pipeline helps you extract, transform, render, and validate your Red{nbsp}Hat OpenShift manifests locally to ensure target cluster API compatibility. Additionally, you can use the built-in data transfer engine to copy volume files directly between clusters, indirectly through S3-compatible cloud storage, or convert storage classes within the same cluster. You can also orchestrate multi-stage AI-driven modernization plans using agent workflows.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>

@@ -16,10 +16,12 @@ endif::[]
 
 [role="_abstract"]
 To ensure your generated manifests are compatible with a target cluster, run the validation check. Validating target cluster compatibility is an optional step. Validate runs after the apply stage on the final output.
-
+ 
 include::topics/mta-ops/con_manifest-compatibility-validation.adoc[leveloffset=+1]
 
 include::topics/mta-ops/proc_validating-workload-manifests-against-a-live-cluster.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_validating-in-disconnected-or-offline-environments.adoc[leveloffset=+1]
 
 [role="_additional-resources"]
 == Additional resources

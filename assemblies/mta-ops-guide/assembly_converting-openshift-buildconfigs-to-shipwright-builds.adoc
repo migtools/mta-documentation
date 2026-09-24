@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-converting-openshift-buildconfigs-to-shipwright-builds: {context}]
+
+ifndef::context[]
+[id="converting-openshift-buildconfigs-to-shipwright-builds"]
+endif::[]
+ifdef::context[]
+[id="converting-openshift-buildconfigs-to-shipwright-builds_{context}"]
+endif::[]
+= Converting OpenShift BuildConfigs to builds
+
+:context: converting-openshift-buildconfigs-to-shipwright-builds
+
+[role="_abstract"]
+Convert legacy Red{nbsp}Hat OpenShift `BuildConfig` resources into Kubernetes-native build custom resources by using the built-in `BuildConfigToBuildsPlugin` during the `mta-ops transform` pipeline. Converting build definitions allows you to modernize application container builds to run on Kubernetes-native build engines such as Builds for Red Hat OpenShift.
+
+[IMPORTANT]
+====
+Converting OpenShift BuildConfigs to builds by using `BuildConfigToBuildsPlugin` is a Technology Preview feature only. Technology Preview features are not supported with Red{nbsp}Hat production service level agreements (SLAs) and might not be functionally complete. Red{nbsp}Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+For more information about the support scope of Red{nbsp}Hat Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
+====
+
+include::topics/mta-ops/con_buildconfig-to-shipwright-conversion.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_converting-openshift-buildconfigs-to-shipwright-builds.adoc[leveloffset=+1]
+
+
+ifdef::parent-context-of-converting-openshift-buildconfigs-to-shipwright-builds[:context: {parent-context-of-converting-openshift-buildconfigs-to-shipwright-builds}]
+ifndef::parent-context-of-converting-openshift-buildconfigs-to-shipwright-builds[:!context:]

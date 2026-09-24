@@ -6,7 +6,7 @@
 = Generating final manifests locally
 
 [role="_abstract"]
-To produce clean YAML files, generate your final manifests. You use the `mta-ops apply` command to render the Kustomize output locally.
+Render the transformed Kustomize overlays into deployable YAML files on your local disk.
 
 .Prerequisites
 * You have successfully exported and transformed your workload manifests.
@@ -16,11 +16,16 @@ To produce clean YAML files, generate your final manifests. You use the `mta-ops
 +
 [subs="+quotes"]
 ----
-$ *mta-ops apply -t transform -o output*
+$ *mta-ops apply -t _<transform_dir>_ -o _<output_dir>_*
 ----
 
-. Review the generated `output/output.yaml` file on your local disk.
-Check the replicas, namespaces, images, labels, and role-based access control (RBAC) configurations.
+. Optional (non-admin workflow): Exclude cluster-scoped resources if you lack privileges to apply them:
++
+[subs="+quotes"]
+----
+$ *mta-ops apply -t _<transform_dir>_ -o _<output_dir>_ --skip-cluster-scoped --overwrite*
+----
 
 .Verification
-* Verify that the output directory contains the final YAML files and the namespace subdirectories.
+
+* Inspect the `_<output_dir>_/output.yaml` file and verify resource configurations, namespaces, images, and replica counts.

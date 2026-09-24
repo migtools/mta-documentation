@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: CONCEPT
+
+[id="persistent-volume-migration-concepts-and-observability_{context}"]
+= Persistent volume migration concepts and observability
+
+[role="_abstract"]
+The `mta-ops transfer-pvc` command manages volume replication across three distinct pathways: direct cross-cluster transfer, indirect cloud storage transfer, and intra-cluster StorageClass conversion.
+
+During transfer, `mta-ops transfer-pvc` displays a structured phase progress tracker `[i/N]`, an opening context banner, and a completion summary:
+
+[subs="+quotes"]
+----
+================================================================================ 
+   MTA-OPS PVC TRANSFER
+   Source Context : _<source_cluster_context>_
+   Destination Context : _<target_cluster_context>_
+   PVC : _<pvc_name>_ (namespace: _<namespace>_)
+   Endpoint Type : Route ================================================================================
+[1/7] Reading source PVC ... ok
+[2/7] Creating destination PVC ... ok
+[3/7] Creating endpoint ... ok
+[4/7] Waiting for endpoint healthy ... ok
+[5/7] Setting up secure tunnel and server ... ok
+[6/7] Copying data (rsync) ... 100% 250MB/250MB
+[7/7] Cleaning up temporary resources ... ok ================================================================================
+    TRANSFER SUMMARY: Succeeded (duration: 42s) ================================================================================
+----

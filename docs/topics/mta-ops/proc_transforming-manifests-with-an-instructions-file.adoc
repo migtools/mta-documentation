@@ -6,7 +6,7 @@
 = Transforming manifests with an instructions file
 
 [role="_abstract"]
-When you need specific rules during the cleanup process, use an instructions file. This declarative file controls the pipeline execution.
+To enforce repeatable cleanup rules, steer the transformation sequence by using a declarative instructions file.
 
 .Prerequisites
 * You successfully exported your workload manifests.
@@ -17,7 +17,7 @@ When you need specific rules during the cleanup process, use an instructions fil
 +
 [subs="+quotes"]
 ----
-$ *mta-ops transform -e export -t transform --instructions-file _<path_to_file.yaml>_*
+$ *mta-ops transform -e _<export_dir>_ -t _<transform_dir>_ --instructions-file _<path_to_file.yaml>_*
 ----
 
 .Verification

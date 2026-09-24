@@ -6,10 +6,11 @@
 = Transformation plugin management
 
 [role="_abstract"]
-When you adapt complex applications, you can manage transformation plugins to control the pipeline. This ensures the tool cleans specific metadata and applies additional transformations, if needed.
+The `mta-ops` command-line interface (CLI) automatically discovers plugins from the default path at `~/.local/share/crane/plugins/`. You can view all available plugins by using the `list-plugins` subcommand.
 
-The `mta-ops` CLI automatically discovers plugins from the `~/.local/share/crane/plugins/` default path. You can view available plugins by using the `list-plugins` subcommand. Custom plugins discovered on your file system can be arbitrary applications. In this version, `mta-ops` does not apply additional restrictions or sandboxing during plugin execution. Therefore, ensure that you trust these plugins.
+During the `transform` stage, you can customize execution by using the following flags:
 
-During the transform stage, you can use the `--skip-plugins` flag to omit specific plugins.
-
-To drive the transformation behavior by using specific user-defined rules, you can append the `--instructions-file` flag. This supplies a declarative YAML file to the pipeline.
+* `--skip-plugins`: Omits specific plugins from the execution sequence (for example, `--skip-plugins OpenShiftPlugin`).
+* `--optional-flags`: Passes key-value configuration arguments directly to active plugins.
+* `--instructions-file`: Passes a declarative YAML file to steer the execution sequence and parameter overrides.
+* `--overwrite`: Replaces pre-existing target directories and overwrites manual custom modifications when running the command.

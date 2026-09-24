@@ -18,7 +18,7 @@ To verify application programming interface (API) compatibility before deploymen
 +
 [subs="+quotes"]
 ----
-$ *mta-ops validate --context _<target_cluster_context>_ -i output*
+$ *mta-ops validate --context _<target_cluster_context>_ -i _<output_dir>_*
 ----
 +
 [source,json]

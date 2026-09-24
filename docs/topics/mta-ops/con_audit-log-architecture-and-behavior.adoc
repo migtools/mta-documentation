@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-23
+:_mod-docs-content-type: CONCEPT
+
+[id="audit-log-architecture-and-behavior_{context}"]
+= Audit log architecture and behavior
+
+[role="_abstract"]
+The `mta-ops` command-line interface (CLI) automatically records a persistent, structured audit log in JSON Lines format to satisfy security compliance standards and support troubleshooting.
+
+Every `mta-ops` command invocation (`export`, `transform`, `apply`, `validate`, and `transfer-pvc`) writes log entries to a local file named `audit/.crane-audit.log` in your active working directory.
+
+The audit logging mechanism operates according to the following principles:
+
+Always-on persistence::
+Audit logging is enabled by default and does not require additional CLI flags. Every operation is recorded immediately to disk.
+
+Full debug capture::
+The audit log captures all log events down to the `Debug` level, even when terminal output is set to standard `Info` verbosity. This ensures complete diagnostic details are preserved without requiring you to reproduce issues with the `--debug` flag.
+
+JSON Lines format::
+Log entries are formatted as JSON Lines (`.jsonl`), where each line is an independent, valid JSON object containing a command type, timestamps, log levels, component scopes, error tracebacks, and operational metadata.
+
+Append mode history::
+Sequential command executions within the same working directory append new log lines to the existing `.crane-audit.log` file. This maintains a continuous execution history across multi-pass migration pipelines.
+
+Custom log paths::
+You can override the default log destination by appending the `--audit-log <path>` flag to any `mta-ops` command.

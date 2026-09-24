@@ -1,0 +1,37 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="migrating-persistent-volume-data-indirectly-through-cloud-storage_{context}"]
+= Migrating persistent volume data indirectly through cloud storage
+
+[role="_abstract"]
+Migrate persistent volume claim (PVC) data between disconnected or air-gapped clusters by using an S3-compatible cloud storage bucket.
+
+.Prerequisites
+
+* You have installed the `mta-ops` command-line utility.
+* You have active cluster contexts for both clusters in your `kubeconfig` file.
+* You have scaled down active workloads on the source volume to 0 replicas to prevent write operations.
+* You have configured an S3-compatible storage bucket and local credentials file (`rclone.conf`).
+
+.Procedure
+
+. Execute the indirect data transfer by specifying the cloud storage bucket path:
++
+[subs="+quotes"]
+----
+$ *mta-ops transfer-pvc --source-context=_<source_cluster_context>_ --destination-context=_<target_cluster_context>_ --pvc-name=_<pvc_name>_ --pvc-namespace=_<pvc_namespace>_ --cloud-storage=_<s3_bucket_url>_ --rclone-config-file=_<rclone_config_file>_ --encrypt*
+----
+
+. Optional: To retain cloud bucket backup data after transfer completion, append the `--keep-cloud-data` flag.
+
+
+.Verification
+
+* Confirm the destination PVC exists and contains transferred files on the target cluster:
++
+[subs="+quotes"]
+----
+$ *oc get pvc -n _<pvc_namespace>_ --context _<target_cluster_context>_*
+----

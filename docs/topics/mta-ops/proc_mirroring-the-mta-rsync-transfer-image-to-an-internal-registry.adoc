@@ -1,0 +1,112 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="mirroring-the-mta-rsync-transfer-image-to-an-internal-registry_{context}"]
+= Mirroring the mta-rsync-transfer image to an internal registry
+
+[role="_abstract"]
+Enable direct persistent volume migrations in disconnected or air-gapped environments by manually mirroring the `mta-rsync-transfer` container image from Red{nbsp}Hat Registry to an internal container registry accessible by your source and target clusters.
+
+
+.Prerequisites
+
+* You have installed a container management utility such as `oc`, `skopeo`, or `podman` on a workstation with internet access.
+* You have authentication credentials for `registry.redhat.io` and your internal mirror registry.
+* Both source and target Red{nbsp}Hat OpenShift clusters are configured to trust the internal mirror registry certificate and global pull secret.
+
+
+.Procedure
+
+. Log in to `registry.redhat.io` on your connected workstation:
++
+[subs="+quotes"]
+----
+$ *podman login registry.redhat.io -u _<redhat_username>_ -p _<redhat_password>_*
+----
+
+. Log in to your internal mirror registry:
++
+[subs="+quotes"]
+----
+$ *podman login _<internal_registry_host>_ -u _<internal_username>_ -p _<internal_password>_*
+----
+
+. Mirror the `mta-rsync-transfer` container image to your internal registry:
+
+.. By using `oc image mirror`:
++
+[subs="+quotes"]
+----
+$ *oc image mirror registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__ _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__*
+----
+
+.. By using `skopeo copy`:
++
+[subs="+quotes"]
+----
+$ *skopeo copy docker://registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__ docker://_<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__*
+----
+
+.. By using `podman` and removable media (sneaker-net/air-gapped environments).
+
+. Pull the container image on an internet-connected workstation:
++
+[subs="+quotes"]
+----
+$ *podman pull registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__*
+----
+
+. Save the image to an archive file:
++
+[subs="+quotes"]
+----
+$ *podman save -o mta-rsync-transfer.tar registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__*
+----
+
+. Transfer `mta-rsync-transfer.tar` to your disconnected workstation using approved removable media.
+
+. Load the archive and push to your internal air-gapped registry:
++
+[subs="+quotes"]
+----
+$ *podman load -i mta-rsync-transfer.tar*
+----
++
+[subs="+quotes"]
+----
+$ *podman tag registry.redhat.io/mta/mta-rsync-transfer-rhel9:__<tag>__ _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__*
+----
++
+[subs="+quotes"]
+----
+$ *podman push _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:_<tag>_*
+----
+
+. Configure an `ImageDigestMirrorSet` resource on both source and target Red{nbsp}Hat OpenShift clusters to redirect image requests from `registry.redhat.io` to your internal mirror registry (`idms.yaml`):
++
+[subs="+quotes"]
+----
+$ *oc apply -f idms.yaml --context _<source_cluster_context>_*
+----
++
+[subs="+quotes"]
+----
+$ *oc apply -f idms.yaml --context _<target_cluster_context>_*
+----
+
+
+
+.Verification
+
+* Verify image accessibility by querying image metadata from both cluster contexts:
++
+[subs="+quotes"]
+----
+$ *oc image info _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__ --context _<source_cluster_context>_*
+----
++
+[subs="+quotes"]
+----
+$ *oc image info _<internal_registry_host>_/_<repository>_/mta-rsync-transfer-rhel9:__<tag>__ --context _<target_cluster_context>_*
+----
