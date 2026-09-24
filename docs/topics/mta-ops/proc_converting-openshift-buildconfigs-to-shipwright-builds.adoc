@@ -71,18 +71,18 @@ $ *oc adm policy add-scc-to-user pipelines-scc -z _<service_account_name>_ -n _<
 
 .. Create a `BuildRun` manifest (`buildrun.yaml`) that references the configured `ServiceAccount`:
 +
-[source,yaml]
+[source,yaml,subs="verbatim,quotes"]
 ----
 apiVersion: shipwright.io/v1beta1
 kind: BuildRun
 metadata:
-  name: <build_run_name>
-  namespace: <namespace>
+  name: _<build_run_name>_
+  namespace: _<namespace>_
 spec:
   build:
-    name: <build_name>
+    name: _<build_name>_
   serviceAccount:
-    name: <service_account_name>
+    name: _<service_account_name>_
 ----
 
 .. Deploy the `BuildRun` manifest:
