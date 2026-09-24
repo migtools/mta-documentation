@@ -1,0 +1,34 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-cluster-configuration: {context}]
+
+ifndef::context[]
+[id="cluster-configuration"]
+endif::[]
+ifdef::context[]
+[id="cluster-configuration_{context}"]
+endif::[]
+= Cluster configuration
+
+:context: cluster-configuration
+
+[role="_abstract"]
+As a cluster administrator, you must complete administrative tasks in the {ocp-full} cluster to enable access to agent configurations in {ProductFirstRef}.
+
+You must complete the following administrative tasks:
+
+* The large language model (LLM) deployment
+* A secret for the LLM API key in the {ProductShortName} namespace
+* An LLM gateway
+* The Tackle custom resource configuration for agents
+
+include::topics/mta-ui/proc_enable-agent-in-tackle.adoc[leveloffset=+1]
+
+include::topics/mta-ui/ref_llm-gateway-configuration.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_configure-large-language-model-gateways.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-cluster-configuration[:context: {parent-context-of-cluster-configuration}]
+ifndef::parent-context-of-cluster-configuration[:!context:]

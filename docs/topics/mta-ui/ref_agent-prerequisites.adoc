@@ -1,0 +1,20 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: REFERENCE
+
+[id="agent-prerequisites_{context}"]
+= Prerequisites
+
+[role="_abstract"]
+An agent run or an agent workflow needs a sandbox environment and a Git repository shared between agents in a workflow to maintain context continuity.
+
+* You installed the Red{nbsp}Hat build of Agent Sandbox Operator in the namespaces where you installed {ProductShortName} instances.
+* You configured the source control credentials of the shared Git repository with push access for each application. Agents use the Git repository to push commits.
+* Optional: You created skills in the SkillCard format packaged as an Open Container Initiative (OCI) image or stored in a Git repository.
+* You installed {ProductShortName} in a Red{nbsp}Hat OpenShift 4.19+ cluster.
+* You configured an application in the {ProductShortName} application inventory.
+
+[role="_additional-resources"]
+.Additional resources
+* link:https://docs.redhat.com/en/documentation/openshift_sandboxed_containers/1.13/html/deploying_red_hat_build_of_agent_sandbox/index[Install the Red{nbsp}Hat build of Agent Sandbox Operator]
+* link:https://pkg.go.dev/github.com/redhat-et/skillimage[Skill image]

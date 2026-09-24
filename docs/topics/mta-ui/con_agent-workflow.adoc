@@ -1,0 +1,28 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: CONCEPT
+
+[id="agent-workflow_{context}"]
+= Agent workflow
+
+[role="_abstract"]
+You can run a single agent or a multi-stage workflow to complete tasks in an automated loop with manual review after the workflow completion.
+
+You can complete minor code fixes with a single agent that you configure in an agent run. Alternatively, use a multi-stage agent workflow run for complex projects that require context continuity.
+
+Multi-stage agents run a pre-determined sequence of stages or a pipeline that includes an assess (issues), remediate (issues), verify (resolved issues), and report loop.
+
+Each stage has an agent that completes a task and generates a handoff file for the agent in the next stage. To maintain context continuity between two tasks, the agents read the handoff file from a shared Git branch.
+
+You can add a specific capability or limit an agent's behavior by configuring skill cards. Skill cards are an optional configuration.
+
+:FeatureName: The {ProductShortName} agent
+
+[IMPORTANT]
+====
+[subs="attributes+"]
+{FeatureName} is Developer Preview software only. Developer Preview software is not supported by Red{nbsp}Hat in any way and is not functionally complete or production-ready. Do not use Developer Preview software for production or business-critical workloads. Developer Preview software provides early access to upcoming product software in advance of its possible inclusion in a Red{nbsp}Hat product offering. Customers can use this software to test functionality and provide feedback during the development process. This software might not have any documentation, is subject to change or removal at any time, and has received limited testing. Red{nbsp}Hat might provide ways to submit feedback on Developer Preview software without an associated SLA.
+
+For more information about the support scope of Red{nbsp}Hat Developer Preview software, see link:https://access.redhat.com/support/offerings/devpreview/[Developer Preview Support Scope].
+====
+:!FeatureName:

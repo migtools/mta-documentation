@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-configuring-and-using-agent-and-workflow-runs: {context}]
+
+ifndef::context[]
+[id="configuring-and-using-agent-and-workflow-runs"]
+endif::[]
+ifdef::context[]
+[id="configuring-and-using-agent-and-workflow-runs_{context}"]
+endif::[]
+= Configuring and using the agent runs and workflow runs
+
+:context: configuring-and-using-agent-and-workflow-runs
+
+[role="_abstract"]
+As a migrator, you can start a single-agent run or a multi-stage workflow depending on the complexity and the need for context continuity for migration tasks.
+
+include::topics/mta-ui/proc_configure-agent-runs.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_configure-workflow-runs.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-configuring-and-using-agent-and-workflow-runs[:context: {parent-context-of-configuring-and-using-agent-and-workflow-runs}]
+ifndef::parent-context-of-configuring-and-using-agent-and-workflow-runs[:!context:]

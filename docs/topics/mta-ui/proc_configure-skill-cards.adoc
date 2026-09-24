@@ -1,0 +1,34 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-skill-cards_{context}"]
+= Configure skill cards
+
+[role="_abstract"]
+You can optionally configure skill cards that agents can use in a single or a multi-stage workflow.
+
+.Prerequisites
+
+* Skills are available as an Open Container Initiative (OCI) image, in a GitHub repository, or as Markdown files.
+
+.Procedure
+
+. Go to the *Skills* page in the *Agentic* section.
+. Click *Create skill card*.
+. Configure the skill card:
+.. Enter a name for the skill card.
+.. Optional: Enter a display name for the skill card.
+.. Select the type. The default option is `skill`.
+.. Select one of *Inline*, *Image*, or *Git* as the skill source.
+.. If you selected the inline source, paste the skill content inline.
+.. If you selected image as the skill source, configure the following:
+* The image URL
+* The sub path that points to a specific skill
+.. If you selected Git as the skill source, configure the following:
+* The Git repository URL
+* *Ref*: A branch, a tag, or a commit to check out. If you leave this field empty, {ProductShortName} clones the default branch, which prevents the run from being reproducible.
+* *Sub path*: The directory in the Git repository that contains the skill file
+.. Optional: Configure the semantic version of the skill.
+.. Optional: Configure tags for the skill card.
+. Click *Create*.
