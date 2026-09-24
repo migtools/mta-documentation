@@ -8,7 +8,7 @@
 [role="_abstract"]
 Review issues that have been fixed in {ProductFullName} version 8.3.0.
 
-Code review editor discards code changes not saved in the source code::
+Code review editor discards changes not saved in the source code::
 
 Before this update, when you closed the review editor without saving a code resolution suggestion, {mta-dl-full} modified the source code with the suggested changes. As a consequence, the source code state changed, yet the Git status did not show any state change for the file. With this update, {mta-dl-plugin} does not apply unsaved changes to source code when you close the review editor.
 +
