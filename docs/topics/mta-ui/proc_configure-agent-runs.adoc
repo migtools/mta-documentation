@@ -29,6 +29,7 @@ As a migrator, configure and monitor an agent run that tracks an agent included 
 ====
 If the architect enabled `agent_steer_enabled` in the Tackle custom resource, then you can interact with the agent during agent runs to ask queries and provide instructions.
 ====
+
 .Verification
 
 * Verify the agent run on the *Agent runs* page.

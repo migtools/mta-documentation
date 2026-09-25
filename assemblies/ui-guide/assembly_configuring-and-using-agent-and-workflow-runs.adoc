@@ -15,7 +15,7 @@ endif::[]
 :context: configuring-and-using-agent-and-workflow-runs
 
 [role="_abstract"]
-As a migrator, you can start a single-agent run or a multi-stage workflow depending on the complexity and the need for context continuity for migration tasks.
+As a migrator, you can start a single-agent run or a multi-stage workflow depending on the complexity and the need for context continuity in migration tasks.
 
 include::topics/mta-ui/proc_configure-agent-runs.adoc[leveloffset=+1]
 

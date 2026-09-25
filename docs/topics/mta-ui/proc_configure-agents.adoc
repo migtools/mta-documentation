@@ -6,7 +6,7 @@
 = Configure agents
 
 [role="_abstract"]
-As an architect, use agents in a single agent run or a multi-stage workflow. Configure agents to use optional skills or run the agents directly with a large language model (LLM).
+As an architect, you can configure agents to use skills optionally or run the agents directly with a large language model (LLM) to complete analysis and code fixes.
 
 .Prerequisites
 

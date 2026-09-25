@@ -6,7 +6,7 @@
 = Configure skill cards
 
 [role="_abstract"]
-You can optionally configure skill cards that agents can use in a single or a multi-stage workflow.
+To provide specific capability or tools to the agent, you can optionally configure skill cards. Agents can use in a single or a multi-stage workflow.
 
 .Prerequisites
 
@@ -27,7 +27,7 @@ You can optionally configure skill cards that agents can use in a single or a mu
 * The sub path that points to a specific skill
 .. If you selected Git as the skill source, configure the following:
 * The Git repository URL
-* *Ref*: A branch, a tag, or a commit to check out. If you leave this field empty, {ProductShortName} clones the default branch, which prevents the run from being reproducible.
+* *Ref*: A branch, a tag, or a commit to check out from the Git source. If you leave this field empty, {ProductShortName} clones the default branch, which prevents the run from being reproducible.
 * *Sub path*: The directory in the Git repository that contains the skill file
 .. Optional: Configure the semantic version of the skill.
 .. Optional: Configure tags for the skill card.

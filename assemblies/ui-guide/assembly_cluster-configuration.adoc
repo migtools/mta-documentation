@@ -15,7 +15,7 @@ endif::[]
 :context: cluster-configuration
 
 [role="_abstract"]
-As a cluster administrator, you must complete administrative tasks in the {ocp-full} cluster to enable access to agent configurations in {ProductFirstRef}.
+As a cluster administrator, you must complete administrative tasks in the Red{nbsp}Hat {ocp-name} cluster to enable access to agent configurations in {ProductFullName}.
 
 You must complete the following administrative tasks:
 
@@ -24,11 +24,11 @@ You must complete the following administrative tasks:
 * An LLM gateway
 * The Tackle custom resource configuration for agents
 
-include::topics/mta-ui/proc_enable-agent-in-tackle.adoc[leveloffset=+1]
-
 include::topics/mta-ui/ref_llm-gateway-configuration.adoc[leveloffset=+1]
 
 include::topics/mta-ui/proc_configure-large-language-model-gateways.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_enable-agent-in-tackle.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-cluster-configuration[:context: {parent-context-of-cluster-configuration}]
 ifndef::parent-context-of-cluster-configuration[:!context:]

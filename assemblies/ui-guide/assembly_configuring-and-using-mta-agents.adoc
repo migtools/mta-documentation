@@ -15,7 +15,7 @@ endif::[]
 :context: configuring-and-using-mta-agents
 
 [role="_abstract"]
-You can run an agent or a fully automated agent workflow in a sandboxed container to complete tasks needed to prepare an application for the target migration.
+You can run an agent or a fully automated agent workflow in a sandboxed container to complete tasks needed to prepare an application for the target migration. Agents can optionally use skills or directly use the large language model (LLM) for analysis and code fixes.
 
 include::topics/mta-ui/con_agent-workflow.adoc[leveloffset=+1]
 

@@ -15,7 +15,7 @@ endif::[]
 :context: agents-skills-and-workflow-configuration
 
 [role="_abstract"]
-As an architect, you can prepare the source of skill cards, agents, and the target repository structure to which agents push the changes. The source of a skill card can be a pre-built Open Container Initiative (OCI) image, a single markdown file, or a Git repository URL.
+As an architect, you can configure the skill resources, agent and workflows resources, and the target repository structure to which agents push the changes. The source of a skill card can be a pre-built Open Container Initiative (OCI) image, a single markdown file, or a Git repository URL.
 
 include::topics/mta-ui/proc_configure-skill-cards.adoc[leveloffset=+1]
 

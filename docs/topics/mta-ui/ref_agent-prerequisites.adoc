@@ -6,11 +6,10 @@
 = Prerequisites
 
 [role="_abstract"]
-An agent run or an agent workflow needs a sandbox environment and a Git repository shared between agents in a workflow to maintain context continuity.
+An agent run or an agent workflow needs a sandbox environment and a Git repository shared between workflow agents to maintain context continuity.
 
-* You installed the Red{nbsp}Hat build of Agent Sandbox Operator in the namespaces where you installed {ProductShortName} instances.
-* You configured the source control credentials of the shared Git repository with push access for each application. Agents use the Git repository to push commits.
-* Optional: You created skills in the SkillCard format packaged as an Open Container Initiative (OCI) image or stored in a Git repository.
+* You installed the Red{nbsp}Hat build of Agent Sandbox Operator in the namespace where you installed {ProductFullName} instance.
+* You configured the source control credentials with push access to the shared Git repository for each application. Agents use the Git repository to push commits.
 * You installed {ProductShortName} in a Red{nbsp}Hat OpenShift 4.19+ cluster.
 * You configured an application in the {ProductShortName} application inventory.
 

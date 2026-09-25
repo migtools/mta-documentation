@@ -10,7 +10,7 @@ You can run a single agent or a multi-stage workflow to complete tasks in an aut
 
 You can complete minor code fixes with a single agent that you configure in an agent run. Alternatively, use a multi-stage agent workflow run for complex projects that require context continuity.
 
-Multi-stage agents run a pre-determined sequence of stages or a pipeline that includes an assess (issues), remediate (issues), verify (resolved issues), and report loop.
+Multi-stage agents run a pre-configured sequence of stages or a pipeline that includes an assess (issues), remediate (issues), verify (resolved issues), and report loop.
 
 Each stage has an agent that completes a task and generates a handoff file for the agent in the next stage. To maintain context continuity between two tasks, the agents read the handoff file from a shared Git branch.
 

@@ -8,7 +8,7 @@
 [role="_abstract"]
 The large language model (LLM) gateways for agents are LLM provider-model pairs that you deploy as custom resources (CRs) in your cluster.
 
-You can edit and deploy the following sample LLM gateway configurations:
+You can edit the following sample LLM gateway configurations:
 
 * `gateway_vertex_ai.yaml` - GCP Vertex AI with Claude
 * `gateway_openai.yaml` - OpenAI GPT-4o
