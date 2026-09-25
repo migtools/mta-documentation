@@ -8,8 +8,7 @@
 [role="_abstract"]
 Review new features and enhancements in {ProductFullName} 8.3.0.
 
-
-
+== {ProductShortName} agents
 
 Single agent run to resolve application issues  (Developer Preview)::
 
