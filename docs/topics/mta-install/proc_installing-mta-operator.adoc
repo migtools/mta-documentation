@@ -6,7 +6,7 @@
 = Installing the {ProductShortName} Operator
 
 [role="_abstract"]
-To create the {ProductFullName} instances, you must install the {ProductShortName} Operator first.
+To create the {ProductFullName} instance, you must install the {ProductShortName} Operator first.
 
 The {ProductShortName} Operator is a structural layer that manages resources deployed on Red Hat OpenShift, such as the database, front end, and back end, to automatically create an {ProductShortName} instance.
 
@@ -32,7 +32,7 @@ pass:[<!-- vale RedHat.Spelling = YES -->]
 +
 A window for creating CR settings opens automatically after the installation of the {ProductShortName} Operator is complete. The default settings are acceptable. However, make sure to check the system requirements for storage, memory, and cores.
 +
-Alternatively, to work directly with the YAML file, click the *YAML* view and review the CR settings listed in the `spec` section of the YAML file.
+Alternatively, to work directly with the YAML file, click the *YAML* view and review the CR settings listed in the `spec` section of the YAML file. You can create one Tackle CR in a namespace.
 +
 The `spec` section of the YAML file can have the following configuration:
 +
