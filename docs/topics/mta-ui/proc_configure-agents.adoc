@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-25
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-agents_{context}"]
+= Configure agents
+
+[role="_abstract"]
+As an architect, you can configure agents to use skills optionally or run the agents directly with a large language model (LLM) to complete analysis and code fixes.
+
+.Prerequisites
+
+* The cluster administrator configured an LLM gateway secret and the LLM gateway in the same namespace as the {ProductShortName} Operator.
+* You configured an application in the {ProductShortName} application inventory.
+
+.Procedure
+
+. Navigate to the *Agents* page in the *Agentic* section.
+. Click *Create agent*.
+. Configure the agent:
+.. Enter a name for the agent.
+.. Configure the image reference to a pre-built Open Container Initiative (OCI) image.
+.. Configure the prompt for the agent.
+.. Select the LLM gateways for the agent.
+.. Optional: Select skill cards that the agent can use.
+.. Optional: Configure the skill collection that the agent can use.
+. Configure the parameter fields:
+.. Enter the name of the parameter.
+.. Select the type, such as a boolean, a string, or a number.
+.. Enter a description to define the parameter's purpose.
+.. Enter the default value of the parameter if the agent does not supply a value during the run.
+.. Optional: Select if the agent must use the parameter.
+. Click *Create*.

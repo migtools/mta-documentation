@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-25
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-workflows_{context}"]
+= Configure workflows
+
+[role="_abstract"]
+To complete major tasks sequentially in a multi-stage automated loop, configure a workflow.
+
+.Prerequisites
+
+* You configured more than one agent.
+
+.Procedure
+
+. Navigate to the *Workflows* page in the *Agentic* section.
+. Configure the workflow:
+.. Enter an alphanumeric name for the workflow. You can use dots and hyphens.
+.. Optional: Configure a high-level guidance that {ProductShortName} shares with the agent in every step of the workflow.
+.. Complete the following configuration for each stage:
+... Enter the name of the stage.
+... Select an agent.
+... Optional: Configure stage-specific instructions.
+. Click *Create*.

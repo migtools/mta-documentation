@@ -1,0 +1,139 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-25
+:_mod-docs-content-type: REFERENCE
+
+[id="troubleshooting-agents_{context}"]
+= Troubleshooting agents
+
+[role="_abstract"]
+You can troubleshoot common issues with agents, agent runs, and gateways.
+
+UI agentic pages show errors or do not load::
++
+Hub returns 500 errors and the agent runs and agents pages display errors or fail to load.
++
+*Cause*
++
+The {ProductShortName} Hub reads `konveyor.io` resources from its own namespace. This issue occurs when Role-Based Access Control (RBAC) permissions are missing or you created the resources in the wrong namespace.
++
+*Resolution*
++
+.. Export {ProductShortName} namespace as the `MTA_NS` variable:
++
+[source, terminal, subs="attibutes"]
+----
+$ export MTA_NS=openshift-mta
+----
++
+.. Apply the RBAC configuration to the Hub namespace:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc kustomize config/hub-rbac/ | sed "s/openshift-mta/$MTA_NS/g" | oc apply -f -
+----
+
+.. Verify that the permissions are configured correctly:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc auth can-i list agents.konveyor.io \
+  --as=system:serviceaccount:openshift-mta:tackle-hub -n openshift-mta
+----
++
+.. Verify that the agent resource is availabe in the correct namespace:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc get agents.konveyor.io -n openshift-mta
+----
+
+.. If resources were applied to different namespaces, recreate them in the Hub namespace by using the `-n "$MTA_NS"` flag.
+
+Gateway shows "Verified: false"::
++
+The gateway resource displays connection verification failures.
++
+*Cause*
++
+The agentic controller cannot reach the large language model (LLM) endpoint because of incorrect URLs, missing credential secrets, or network policy restrictions.
++
+*Resolution*
++
+.. Verify that the endpoint URL is correct.
+.. Verify that the credential secret exists with the correct keys.
+.. Check that network policies allow egress from the agentic controller namespace.
+.. If you are using an older controller image, manually mark the gateway as ready:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc patch gateway.konveyor.io _<gateway_name>_ -n "$MTA_NS" \
+  --subresource=status --type=merge \
+  -p '{"status":{"connectionVerified":true,"conditions":[{"type":"Ready","status":"True"}]}}'
+----
++
+[NOTE]
+====
+Older controller images fail to verify AWS Bedrock and Google Cloud Platform Vertex AI because they expect `/v1/models` endpoints.
+====
+
+Hub returns 401 after enabling authentication::
++
+Authentication errors occur after setting `feature_auth_required: true`.
++
+*Cause*
++
+All callers now require credentials.
++
+*Resolution*
++
+* Add `-u user:password` to Hub API calls.
+* Create agent that run through the Hub API or UI instead of using `oc apply`.
++
+[NOTE]
+====
+Runs created by using `oc` lack authentication tokens needed for Hub communication.
+====
+
+Agent shows "Ready: False"::
++
+The agent resource remains in an unready state.
++
+*Cause*
++
+Referenced gateways or skill cards do not exist or are not in a healthy state.
++
+*Resolution*
++
+.. Verify that all referenced gateways exist and are ready:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc get gateways.konveyor.io -n "$MTA_NS"
+----
+
+.. Verify that all referenced skill cards exist and are ready:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc get skillcards -n "$MTA_NS"
+----
+
+Agent run remains in "Pending" state::
++
+The agent run phase remains in the Pending state indefinitely.
++
+*Cause*
++
+The referenced agent is not ready, the selected gateway does not appear in the agent's gateway list, or the Agent Sandbox is not installed and operational.
++
+*Resolution*
++
+.. Verify that the referenced agent is in a `Ready` state.
+.. Verify that the selected gateway appears in the agent's gateway list.
+.. Verify that the Agent Sandbox is installed and operational.
+.. Review the controller logs for additional details:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc logs -n agentic-controller-system deploy/agentic-controller-controller-manager
+----

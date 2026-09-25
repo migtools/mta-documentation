@@ -1,0 +1,113 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-25
+:_mod-docs-content-type: REFERENCE
+
+[id="llm-gateway-configuration_{context}"]
+= LLM gateway configuration
+
+[role="_abstract"]
+The large language model (LLM) gateways for agents are LLM provider-model pairs that you deploy as custom resources (CRs) in your cluster.
+
+You can edit the following sample LLM gateway configurations:
+
+* `gateway_vertex_ai.yaml` - GCP Vertex AI with Claude
+* `gateway_openai.yaml` - OpenAI GPT-4o
+* `gateway_anthropic.yaml` - Anthropic direct API
+* `gateway_aws_bedrock.yaml` - AWS Bedrock
+* `gateway_xai.yaml` - xAI (Grok)
+
+.Example `gateway_vertex_ai.yaml`
+[source,yaml]
+----
+apiVersion: konveyor.io/v1alpha1
+kind: Gateway
+metadata:
+  name: gcp-vertex-ai
+spec:
+  provider: gcp-vertex-ai
+  endpoint: "https://global-aiplatform.googleapis.com"
+  credentialRef:
+    secretName: vertex-credentials
+  model:
+    name: claude-sonnet-4-5@20250929
+    contextWindow: 200000
+    tier: premium
+----
+
+.Example `gateway_openai.yaml`
+[source,yaml]
+----
+apiVersion: konveyor.io/v1alpha1
+kind: Gateway
+metadata:
+  name: openai
+spec:
+  provider: openai
+  endpoint: "https://api.openai.com"
+  credentialRef:
+    secretName: openai-credentials
+    key: api-key
+  model:
+    name: gpt-4o
+    contextWindow: 128000
+    tier: premium
+----
+
+.Example `gateway_anthropic.yaml`
+[source,yaml]
+----
+apiVersion: konveyor.io/v1alpha1
+kind: Gateway
+metadata:
+  name: anthropic
+spec:
+  provider: anthropic
+  endpoint: "https://api.anthropic.com"
+  credentialRef:
+    secretName: anthropic-credentials
+    key: api-key
+  model:
+    name: claude-sonnet-4-5-20250929
+    contextWindow: 200000
+    tier: premium
+----
+
+.Example `gateway_aws_bedrock.yaml`
+[source,yaml]
+----
+apiVersion: konveyor.io/v1alpha1
+kind: Gateway
+metadata:
+  name: aws-bedrock
+spec:
+  provider: aws-bedrock
+  endpoint: "https://bedrock-runtime.us-east-1.amazonaws.com"
+  credentialRef:
+    secretName: bedrock-credentials
+  model:
+    name: us.anthropic.claude-sonnet-4-5-20250929-v1:0
+    contextWindow: 200000
+    tier: premium
+----
+
+.Example `gateway_xai.yaml`
+[source,yaml]
+----
+apiVersion: konveyor.io/v1alpha1
+kind: Gateway
+metadata:
+  name: grok
+spec:
+  # Provider must be "xai" forwards XAI_API_KEY.
+  provider: xai
+  # xAI API host. The controller's verification probe appends /v1/models;
+  # goose defaults XAI_HOST to https://api.x.ai/v1.
+  endpoint: "https://api.x.ai"
+  credentialRef:
+    secretName: grok-credentials
+    key: api-key
+  model:
+    name: grok-4
+    contextWindow: 256000
+    tier: premium
+----

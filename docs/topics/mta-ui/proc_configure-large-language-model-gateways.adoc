@@ -1,0 +1,34 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: PROCEDURE
+
+[id="deploy-large-language-model-gateways_{context}"]
+= Deploy large language model gateways
+
+[role="_abstract"]
+As a cluster administrator, deploy the large language model (LLM) endpoints or provider-model pairs as gateways for agents in your cluster.
+
+.Procedure
+
+. Log in to your cluster through the Red{nbsp}Hat {ocp-short} command-line interface.
+. Switch to the `openshift-mta` project:
++
+[subs="+quotes"]
+----
+$ oc project openshift-mta
+----
+. Deploy the LLM gateway in the cluster:
++
+[subs="+quotes"]
+----
+$ oc apply -f `_<gateway_configuration.yaml>_` -n openshift-mta
+----
+
+.Verification
+
+* Verify that the LLM gateway is ready:
++
+[subs="+quotes"]
+----
+$ oc get gateways.konveyor.io -n openshift-mta
+----

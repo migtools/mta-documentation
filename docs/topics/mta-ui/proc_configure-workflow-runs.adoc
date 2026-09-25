@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-25
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-workflow-runs_{context}"]
+= Configure workflow runs
+
+[role="_abstract"]
+As a migrator, configure and monitor a workflow run that tracks all agents in a multi-stage workflow.
+
+.Prerequisites
+
+* You configured a workflow.
+* You added an application in the {ProductShortName} inventory.
+
+.Procedure
+
+. Navigate to the *Workflow runs* page in the *Agentic* section.
+. Create a workflow run:
+.. Enter a name.
+.. Select a gateway from the list. If you leave this configuration empty, the agent controller chooses the default LLM gateway.
+.. Select the application from the list.
+.. Enter the shared GitHub repository branch to which an agent pushes the commit after completing a stage.
+.. Enter the maximum number of tool calls an agent can make in each stage.
+. Click *Create*.
+
+.Verification
+
+* Verify the workflow run on the *Workflow runs* page.

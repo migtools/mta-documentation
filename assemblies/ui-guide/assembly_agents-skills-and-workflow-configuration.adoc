@@ -1,0 +1,29 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-agents-skills-and-workflow-configuration: {context}]
+
+ifndef::context[]
+[id="agents-skills-and-workflow-configuration"]
+endif::[]
+ifdef::context[]
+[id="agents-skills-and-workflow-configuration_{context}"]
+endif::[]
+= Agents, skills, and workflow configuration
+
+:context: agents-skills-and-workflow-configuration
+
+[role="_abstract"]
+As an architect, you can configure the skill resources, agent and workflows resources, and the target repository structure to which agents push the changes. The source of a skill card can be a pre-built Open Container Initiative (OCI) image, a single markdown file, or a Git repository URL.
+
+include::topics/mta-ui/proc_configure-skill-cards.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_configure-skill-collections.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_configure-agents.adoc[leveloffset=+1]
+
+include::topics/mta-ui/proc_configure-workflows.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-agents-skills-and-workflow-configuration[:context: {parent-context-of-agents-skills-and-workflow-configuration}]
+ifndef::parent-context-of-agents-skills-and-workflow-configuration[:!context:]
