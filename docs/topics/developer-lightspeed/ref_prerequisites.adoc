@@ -29,7 +29,7 @@ The Operator is the primary requirement for the following configurations:
 
 * You have provisioned a persistent volume (PV). A dedicated PV is mandatory if the Solution Server backend database is enabled:
 
-** The PV must have a minimum size of 10 GiB.
+** The PV must have a minimum size of 5 GiB.
 ** The storage infrastructure must support `readwriteonce` (RWO) or `readwritemany` (RWX) access modes.
 
 [role="_additional-resources"]

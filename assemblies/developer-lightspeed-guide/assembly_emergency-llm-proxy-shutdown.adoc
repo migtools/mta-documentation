@@ -29,7 +29,7 @@ include::topics/developer-lightspeed/proc_validate-llm-proxy-shutdown.adoc[level
 
 include::topics/developer-lightspeed/ref_llm-proxy-developer-impact.adoc[leveloffset=+1]
 
-include::assembly_reenable-llm-proxy-after-incident.adoc[leveloffset=+!]
+include::assembly_reenable-llm-proxy-after-incident.adoc[leveloffset=+1]
 
 
 ifdef::parent-context-of-assembly-emergency-llm-proxy-shutdown[:context: {parent-context-of-assembly-emergency-llm-proxy-shutdown}]
