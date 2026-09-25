@@ -1,0 +1,15 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-06-12
+:_mod-docs-content-type: REFERENCE
+
+[id="fixed-issues-8-3-0_{context}"]
+= Fixed issues
+
+[role="_abstract"]
+Review issues that have been fixed in {ProductFullName} version 8.3.0.
+
+Code review editor discards changes not saved in the source code::
+
+Before this update, when you closed the review editor without saving a code resolution suggestion, {mta-dl-full} modified the source code with the suggested changes. As a consequence, the source code state changed, yet the Git status did not show any state change for the file. With this update, {mta-dl-plugin} does not apply unsaved changes to source code when you close the review editor.
++
+link:https://redhat.atlassian.net/browse/MTA-6863[MTA-6863]

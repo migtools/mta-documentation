@@ -1,0 +1,18 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2025-09-29
+:_mod-docs-content-type: REFERENCE
+
+[id="tech-previews-8-3-0_{context}"]
+= Technology Preview features
+
+[role="_abstract"]
+Review all Technology Preview features available in {ProductFullName} 8.3.0.
+
+For information on Red Hat's scope of support for Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope]. 	
+
+Converting OpenShift BuildConfigs to builds (Technology Preview)::
+You can convert legacy Red Hat OpenShift BuildConfig resources (build.openshift.io/v1) into Kubernetes-native Shipwright Build custom resources (shipwright.io/v1beta1) during the mta-ops transform pipeline.This capability is a Technology Preview feature. By executing mta-ops transform with the BuildConfigToBuildsPlugin stage, the tool converts Docker and Source-to-Image (S2I) build strategies, resolves image stream references by using --imagestream-mapping and --registry-mapping, generates ServiceAccount resources, and emits whiteout files for original BuildConfig objects.
++
+For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.3/html/migrating_stateless_workloads_by_using_the_mta-ops_cli/migrating-stateless-workloads_mta-ops-title#converting-openshift-buildconfigs-to-shipwright-builds_transforming-workload-manifests-by-using-a-multi-stage-pipeline[Converting OpenShift BuildConfigs to Shipwright builds].
++
+link:https://issues.redhat.com/browse/[MTA-7448]

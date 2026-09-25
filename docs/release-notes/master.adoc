@@ -10,6 +10,8 @@ include::topics/templates/document-attributes.adoc[]
 :_mod-docs-content-type: ASSEMBLY
 = Release Notes
 
+include::assemblies/release-notes/assembly_mta-8-3.adoc[leveloffset=+1]
+
 include::assemblies/release-notes/assembly_mta-8-2.adoc[leveloffset=+1]
 
 include::assemblies/release-notes/assembly_mta-8-1.adoc[leveloffset=+1]
