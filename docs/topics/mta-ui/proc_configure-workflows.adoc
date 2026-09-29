@@ -1,0 +1,35 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-25
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-workflows_{context}"]
+= Configure workflows
+
+[role="_abstract"]
+To complete major tasks sequentially in a multi-stage automated loop, configure a workflow.
+
+.Prerequisites
+
+* You configured more than one agent. {ProductShortName} provides default migration agents.
+
+.Procedure
+
+. Go to the *Workflows* page in the *Agentic* section.
+. Click *Create workflow*.
+. Configure the workflow:
+.. Enter a lowercase alphanumeric name with 63 characters in maximum. You can use dots and hyphens. 
+.. Optional: Configure a high-level guidance that {ProductShortName} shares with the agent in every step of the workflow.
+.. Complete the stage configuration:
+... Enter a lowercase alphanumeric name with 63 characters in maximum. You can use dots and hyphens.
+... Select an agent. You can select the same agent in different stages but the stage names must be unique.
++
+[NOTE]
+====
+All agents in different stages must either list at least one common large language model (LLM) gateway or skip reference to any LLM gateway. You can select the shared LLM gateway for a workflow run.
+====
+... Optional: Configure stage-specific instructions.
+. Click *Create*.
+
+[role="_additional-resources"]
+.Additional resources
+* xref:configure-workflow-runs_configuring-and-using-agent-and-workflow-runs[Configure workflow runs]

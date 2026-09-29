@@ -1,0 +1,27 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-skill-collections_{context}"]
+= Configure skill collections
+
+[role="_abstract"]
+To simplify configuration and skill management, optionally group skills into skill collections.
+
+.Prerequisites
+
+* You configured at least one skill.
+
+.Procedure
+
+. Navigate to the *Skills* page in the *Agentic* section.
+. Click *Create skill collection*.
+. Click *Group existing skills* to group specific skills or *Enumerate an image* to enable the agent controller to create one skill card per skill found in the Open Container Initiative (OCI) image.
+. If you selected *Group existing skills*, configure the members:
+.. Enter the name of the skill.
+.. Select *Skill card*, *Image*, or *Git* as the skill source.
+.. Depending on the skill source, configure the repository reference (*Ref*), sub path, image URL, or a skill card.
+. If you selected *Enumerate an image*, configure the following:
+.. Enter the image URL
+.. Optional: select the skill or rule type.
+. Click *Create*.
