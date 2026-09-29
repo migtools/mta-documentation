@@ -19,11 +19,11 @@ Use the `mta-ops transfer-pvc` command options to configure direct cluster-to-cl
 
 | `--dest-storage-class`
 | 
-| Target StorageClass for destination volumes during same-cluster or cross-cluster conversions.
+| Target `StorageClass` for the destination persistent volume claim (PVC). If omitted, defaults to the source PVC's `StorageClass` name. Required for intra-cluster conversions and cross-provider transfers where the source `StorageClass` is not available on the destination cluster.
 
 | `--dest-storage-requests`
 | 
-| Requested storage capacity for the destination persistent volume claim (PVC), for example, `10Gi`.
+| Requested storage capacity for the destination PVC, for example, `10Gi`.
 
 | `--destination-context`
 | 

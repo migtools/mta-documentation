@@ -25,6 +25,13 @@ Migrate persistent volume claim (PVC) data directly between active source and ta
 $ *mta-ops transfer-pvc --source-context=_<source_cluster_context>_ --destination-context=_<target_cluster_context>_ --pvc-name=_<pvc_name>_ --pvc-namespace=_<pvc_namespace>_ --endpoint=route*
 ----
 
+. For cross-provider transfers (for example, migrating from Amazon Web Services (AWS) `gp3-csi` to Google Cloud Platform (GCP) `standard-csi`), pass the destination `StorageClass` by using `--dest-storage-class`:
++
+[subs="+quotes"]
+----
+$ *mta-ops transfer-pvc --source-context=_<source_cluster_context>_ --destination-context=_<target_cluster_context>_ --pvc-name=_<pvc_name>_ --pvc-namespace=_<pvc_namespace>_ --dest-storage-class=standard-csi --endpoint=route*
+----
+
 
 .Verification
 
