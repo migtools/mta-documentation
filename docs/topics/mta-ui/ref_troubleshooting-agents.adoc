@@ -1,0 +1,122 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-25
+:_mod-docs-content-type: REFERENCE
+
+[id="troubleshooting-agents_{context}"]
+= Troubleshooting agents
+
+[role="_abstract"]
+You can troubleshoot common issues with agents, agent runs, and large language model (LLM) gateways.
+
+Agent performs the work but fails to push the commits::
++
+*Cause*
++
+The agent completes the task but does not have the necessary permission to write to the Git repository target branch.
++
+*Resolution*
++
+.. Create a source control credential with push access to the Git repository under `Administration > Credentials`. 
+.. On the *Application inventory* page, add the credential to the application by clicking *Options menu > Manage credentials*
+
+Agentic controller condition on the Tackle CR reports `AgentSandboxMissing` status::
++
+*Cause*
++
+When you verify the agentic controller condition reported by the {ProductShortName} Operator on the Tackle custom resource (CR), the status reports that agent sandbox is missing.
++
+*Resolution*
++
+.. Install the Red{nbsp}Hat build of Agent Sandbox from the software catalog in the Red{nbsp}Hat {ocp-name} cluster.
+
+UI agentic pages show 500 errors or Agentic section pages do not load::
++
+*Cause*
++
+The {ProductShortName} Hub reads `konveyor.io` resources from its own namespace. This issue occurs when Role-Based Access Control (RBAC) permissions are missing or when you create the resources in the wrong namespace.
++
+*Resolution*
++
+.. Verify that the permissions are configured correctly:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc auth can-i list agents.konveyor.io \
+  --as=system:serviceaccount:openshift-mta:tackle-hub -n openshift-mta
+----
++
+.. Verify that the agent resource is available in the correct namespace:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc get agents.konveyor.io -n openshift-mta
+----
+
+.. If resources were applied to different namespaces, recreate them in the Hub namespace by using the `-n openshift-mta` flag.
+
+LLM Gateway shows "Verified: false" status for connection verification failures::
++
+*Cause*
++
+The agentic controller cannot reach the LLM endpoint because of incorrect URLs, missing credential secrets, or network policy restrictions.
++
+*Resolution*
++
+.. Verify that the endpoint URL is correct.
+.. Verify that the credential secret exists with the correct keys.
++
+[source,terminal,subs="attributes+"]
+----
+oc get secrets -n openshift-mta
+----
+.. Check that network policies allow egress from the agentic controller namespace.
+
+Agent runs created with `oc apply` lack authentication tokens needed for Hub communication::
++
+*Cause*
++
+Agent runs created by using `oc apply` lack the {ProductShortName} Hub token and application coordinates (`HUB_TOKEN`, `APP_ID`, and `TARGET_BRANCH`) that the Hub injects. As a result, the agent harness cannot clone the application or push commits. 
++
+*Resolution*
++
+* Create agent runs through the {ProductShortName} web console or the Hub API instead of using `oc apply`.
+
+Agent remains in an unready state with "Ready: False" status::
++
+*Cause*
++
+Referenced gateways or skill cards do not exist or are not in a healthy state.
++
+*Resolution*
++
+.. Verify that all referenced LLM gateways exist and are ready:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc get gateways.konveyor.io -n openshift-mta
+----
+
+.. Verify that all referenced skill cards exist and are ready:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc get skillcards -n openshift-mta
+----
+
+Agent run remains in "Pending" state::
++
+*Cause*
++
+The referenced agent is not ready, the selected gateway does not appear in the agent's gateway list, or the Agent Sandbox is not installed and operational.
++
+*Resolution*
++
+.. Verify that the referenced agent is in `Ready` state.
+.. Verify that the selected gateway appears in the agent's gateway list.
+.. Verify that the Agent Sandbox is installed and operational.
+.. Review the controller logs for additional details:
++
+[source,terminal,subs="attributes+"]
+----
+$ oc logs -n openshift-mta deploy/agentic-controller
+----

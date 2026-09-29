@@ -1,0 +1,44 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-25
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-agent-runs_{context}"]
+= Configure agent runs
+
+[role="_abstract"]
+As a migrator, configure and monitor an agent run that tracks an agent included in the agent run.
+
+.Prerequisites
+
+* You configured at least one agent.
+
+.Procedure
+
+. Navigate to the *Agent runs* page in the *Agentic* section.
+. Create an agent run:
+.. Select an agent.
+.. Select a gateway that is an LLM provider and a model from the list. You can leave this option as *Default* when the agent declares only one LLM gateway.
+.. Select the supervision mode to ask for user approval or auto-approve tool calls.
++
+[NOTE]
+====
+If you choose the approval supervision mode, you must approve the tool call on the *Agent runs* page. If you do not respond to the tool call approval request, {ProductShortName} denies agents permission to run a tool call, resulting in a failed agent run.
+====
+.. Select an application from the list.
+.. Enter the target Git repository branch to which the agent pushes changes to source code.
++
+[NOTE]
+====
+The target branch must be different from the application source branch. You must also configure a source credential with write access to the Git repository and link the credential to the application.
+====
+.. Optional: Enter task-specific instructions for the agent.
+. Click *Create*.
++
+[NOTE]
+====
+If the cluster administrator enabled `agentic_steer_enabled` in the Tackle custom resource, then you can interact with the agent during agent runs to ask queries and provide instructions.
+====
+
+.Verification
+
+* Verify the agent run on the *Agent runs* page.

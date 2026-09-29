@@ -1,0 +1,82 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: PROCEDURE
+
+[id="enable-agent-in-tackle_{context}"]
+= Enable agent in Tackle
+
+[role="_abstract"]
+To deploy the `agentic-controller` deployment and install operator-managed agents, skill cards, skill collection, and a workflow, configure the `agentic_enabled` field in the Tackle custom resource (CR).
+
+.Procedure
+
+. Log in to your Red{nbsp}Hat OpenShift cluster.
+. Enter the following command in the `oc` CLI:
++
+[subs="+quotes"]
+----
+$ *oc project openshift-mta*
+----
+. Edit the Tackle CR:
++
+[subs="+quotes"]
+----
+$ *oc edit tackle*
+----
+. Switch to the insert mode in the terminal text editor:
++
+[subs="+quotes"]
+----
+*i*
+----
+. Configure the `agentic_enabled` and `agentic_steer_enabled` fields:
++
+[source,yaml]
+----
+kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  agentic_enabled: "true"
+  agentic_steer_enabled: "true"
+----
++
+where:
+
+agentic_enabled:: Optional configuration that works if you deployed the Agent Sandbox operator in the cluster. When set to `true`, the field enables agentic controller in the backend and agent features in the {ProductShortName} web console. The field is set to `false` by default.
++
+The following {ProductShortName} Operator-managed resources are installed for use:
+
+* Five skill cards
+* A skill collection
+* The *migration-plan-agent*, *migration-execute-agent*, and *migration-verify-agent* agents 
+* The *java-ee-to-quarkus* workflow
++
+If you edit any of the operator-managed resources, the {ProductShortName} operator reverts it in its next reconcile. 
+
+agentic_steer_enabled:: Optional configuration that allows interactive user input to agents when running agents. The field is set to `false` by default.
+
+. Save the Tackle CR and exit the text editor to apply the changes:
++
+[subs="+quotes"]
+----
+*:wq!*
+----
+
+.Verification
+
+* Verify the `agentic-controller` deployment by noting the `READY` status:
++
+[subs="+quotes"]
+----
+$ *oc get deployments -n openshift-mta*
+----
++
+* Alternatively, verify the agentic controller condition that the {ProductShortName} Operator posts on the Tackle CR:
++
+[subs="+quotes"]
+----
+$ oc get tackle mta -n openshift-mta -o jsonpath='{.status.conditions[?(@.type=="AgenticControllerReady")]}'
+----

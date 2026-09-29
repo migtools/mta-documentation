@@ -1,0 +1,35 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-25
+:_mod-docs-content-type: PROCEDURE
+
+[id="configure-workflow-runs_{context}"]
+= Configure workflow runs
+
+[role="_abstract"]
+As a migrator, configure and monitor a workflow run that tracks all agents in a multi-stage workflow.
+
+.Prerequisites
+
+* You configured a workflow.
+* You added an application in the {ProductShortName} inventory.
+
+.Procedure
+
+. Navigate to the *Workflow runs* page in the *Agentic* section.
+. Create a workflow run:
+.. Select a workflow.
+.. Select a large language model (LLM) gateway for the workflow run. The workflow run LLM gateway must be listed by agents in different stages of the workflow. 
++
+You can omit this configuration only when agents at each stage in a workflow refers to the same large language model (LLM) gateway. The agent controller then uses the shared LLM gateway.
++
+[NOTE]
+====
+The default agents in {ProductShortName} do not refer to an LLM gateway. When you use such agents in a workflow, you must select an LLM gateway for the workflow run.
+====
+.. Select the application from the list.
+.. Enter the shared Git repository branch to which an agent at every stage pushes the commits. The target branch must be different from the application source branch. 
+. Click *Create*.
+
+.Verification
+
+* Verify the workflow run on the *Workflow runs* page.

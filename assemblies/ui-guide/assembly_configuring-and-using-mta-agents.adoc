@@ -1,0 +1,33 @@
+:_newdoc-version: 2.18.5
+:_template-generated: 2026-09-24
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-configuring-and-using-mta-agents: {context}]
+
+ifndef::context[]
+[id="configuring-and-using-mta-agents"]
+endif::[]
+ifdef::context[]
+[id="configuring-and-using-mta-agents_{context}"]
+endif::[]
+= Configuring and using {ProductShortName} Agents
+
+:context: configuring-and-using-mta-agents
+
+[role="_abstract"]
+You can run an agent or a fully automated agent workflow in a sandboxed container to complete tasks needed to prepare an application for the target migration. Agents can optionally use skills or directly use the large language model (LLM) for analysis and code fixes.
+
+include::topics/mta-ui/con_agent-workflow.adoc[leveloffset=+1]
+
+include::topics/mta-ui/ref_agent-prerequisites.adoc[leveloffset=+1]
+
+include::assembly_cluster-configuration.adoc[leveloffset=+1]
+
+include::assembly_agents-skills-and-workflow-configuration.adoc[leveloffset=+1]
+
+include::assembly_configuring-and-using-agent-and-workflow-runs.adoc[leveloffset=+1]
+
+include::topics/mta-ui/ref_troubleshooting-agents.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-configuring-and-using-mta-agents[:context: {parent-context-of-configuring-and-using-mta-agents}]
+ifndef::parent-context-of-configuring-and-using-mta-agents[:!context:]
