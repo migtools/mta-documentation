@@ -15,11 +15,13 @@ endif::[]
 :context: supported-migration-paths-and-api-compatibility
 
 [role="_abstract"]
-Before you migrate workloads, review the supported migration paths and application programming interface (API) compatibility. The `mta-ops` command-line interface (CLI) handles resources based on their scope and compatibility.
+To ensure a successful workload migration, you must verify that your source and target clusters meet the required environment, security, and API compatibility specifications.
 
-include::topics/mta-ops/con_stateless-migration-limitations.adoc[leveloffset=+1]
+include::topics/mta-ops/con_supported-migration-paths.adoc[leveloffset=+1]
 
-include::topics/mta-ops/con_resource-and-api-compatibility.adoc[leveloffset=+1]
+include::topics/mta-ops/con_scopes-and-boundaries.adoc[leveloffset=+1]
+
+include::topics/mta-ops/con_split-responsibility-administration.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-supported-migration-paths-and-api-compatibility[:context: {parent-context-of-supported-migration-paths-and-api-compatibility}]
 ifndef::parent-context-of-supported-migration-paths-and-api-compatibility[:!context:]

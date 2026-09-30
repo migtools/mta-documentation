@@ -12,12 +12,12 @@ To adapt migrated resources to new environment standards, add a custom transform
 * You have exported and successfully transformed the workload manifests.
 
 .Procedure
-. Navigate to your generated `transform/` directory.
+. Navigate to your generated `_<transform_dir>_/` directory.
 . Create a new directory for your custom stage. Do not use the `Plugin` suffix in the name.
 +
 [subs="+quotes"]
 ----
-$ *mkdir 50_CustomModifications*
+$ *mkdir _<custom_stage_directory>_*
 ----
 
 . Create a `kustomization.yaml` file inside your new custom stage directory.
@@ -34,11 +34,10 @@ commonLabels:
 +
 [subs="+quotes"]
 ----
-$ *mta-ops transform _<custom_stage_directory>_ -e export -t transform --force*
+$ *mta-ops transform _<custom_stage_directory>_ -e _<export_dir>_ -t _<transform_dir>_ --overwrite*
 ----
 +
-The `--force` flag is mandatory to safely overwrite your modified custom stage directory.
-
+The `--overwrite` flag is mandatory to safely overwrite your modified custom stage directory.
 
 
 .Verification

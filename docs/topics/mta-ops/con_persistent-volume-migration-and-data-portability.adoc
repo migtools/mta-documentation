@@ -1,0 +1,20 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: CONCEPT
+
+[id="persistent-volume-migration-and-data-portability_{context}"]
+= Persistent volume migration and data portability
+
+[role="_abstract"]
+To support stateful application migrations, the `mta-ops` CLI integrates a dedicated data replication engine through the `transfer-pvc` command.
+
+Because Kubernetes storage class properties and persistent volume mappings are immutable, the `mta-ops` utility automates volume data transfers across the following distinct pathways:
+
+Direct cross-cluster migration::
+Transfers data securely over an encrypted TLS 1.3 tunnel between active source and target cluster nodes. The CLI manages the automatic creation and garbage collection of temporary `rsync` and `stunnel` worker pods.
+
+Indirect cross-cluster migration::
+Enables data transport between disconnected or air-gapped clusters that lack a direct network path. The CLI compiles an embedded `rclone` synchronization engine to upload encrypted files to an S3-compatible cloud storage bucket and subsequently download them to the destination persistent volume. You can opt to encrypt files at the client side using 256-bit NaCl SecretBox cryptography before uploading them to the cloud.
+
+Intra-cluster storage class conversion::
+Clones volume files within the same cluster to upgrade workloads to modern storage backends, such as migrating from legacy `gp2` to CSI-backed `gp3` storage classes. After the data transfer is complete, you can apply a rename mapping to update all workload references to bind to the newly provisioned volume.

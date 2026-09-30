@@ -17,10 +17,17 @@ To finalize your migration, deploy the validated workloads by applying the gener
 +
 [subs="+quotes"]
 ----
-$ *oc apply -f output/output.yaml*
+$ *oc apply -f _<output_dir>_/output.yaml --context _<target_cluster_context>_*
+----
++
+Alternatively, apply the ordered individual resource directory:
++
+[subs="+quotes"]
+----
+$ *oc apply -f _<output_dir>_/resources/_<namespace>_/ --context _<target_cluster_context>_*
 ----
 
-. Optional: Commit the `output/` directory to your repository to use a GitOps deployment workflow.
+. Optional: Commit the `<output_dir>` directory to your repository to use a GitOps deployment workflow.
 
 .Verification
 * Verify the rollout, service endpoints, and application health on the target cluster.

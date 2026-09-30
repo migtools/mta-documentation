@@ -10,12 +10,12 @@ endif::[]
 ifdef::context[]
 [id="deploying-the-migrated-workloads_{context}"]
 endif::[]
-= Deploying the migrated workloads
+= Deploying workloads to the target cluster
 
 :context: deploying-the-migrated-workloads
 
 [role="_abstract"]
-After you generate and validate the final manifests, deploy them. Because the tool does not modify clusters, use standard deployment tools.
+Deploy validated manifests to the target cluster by using standard CLI tools or GitOps pipelines.
 
 include::topics/mta-ops/con_workload-deployment.adoc[leveloffset=+1]
 

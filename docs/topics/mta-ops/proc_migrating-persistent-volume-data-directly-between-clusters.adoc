@@ -1,0 +1,44 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="migrating-persistent-volume-data-directly-between-clusters_{context}"]
+= Migrating persistent volume data directly between clusters
+
+[role="_abstract"]
+Migrate persistent volume claim (PVC) data directly between active source and target clusters by running the data transfer pipeline. This direct path copies files through an encrypted TLS tunnel.
+
+.Prerequisites
+
+* You have installed the `mta-ops` command-line utility.
+* You have active cluster contexts for both clusters in your `kubeconfig` file.
+* Recommended: You have scaled down active workloads by using the source volume to zero replicas to prevent data inconsistency during the transfer.
+* Recommended: You have verified that the source PVC's `StorageClass` exists on the destination cluster by running `oc get storageclass --context _<target_cluster_context>_`.
+
+
+.Procedure
+
+. Log in to your source and destination clusters.
+. Perform the direct data transfer:
++
+[subs="+quotes"]
+----
+$ *mta-ops transfer-pvc --source-context=_<source_cluster_context>_ --destination-context=_<target_cluster_context>_ --pvc-name=_<pvc_name>_ --pvc-namespace=_<pvc_namespace>_ --endpoint=route*
+----
++
+For cross-provider transfers (for example, migrating from Amazon Web Services (AWS) `gp3-csi` to Google Cloud Platform (GCP) `standard-csi`), pass the destination `StorageClass` by using `--dest-storage-class`:
++
+[subs="+quotes"]
+----
+$ *mta-ops transfer-pvc --source-context=_<source_cluster_context>_ --destination-context=_<target_cluster_context>_ --pvc-name=_<pvc_name>_ --pvc-namespace=_<pvc_namespace>_ --dest-storage-class=_<target_storage_class>_ --endpoint=route*
+----
+
+
+.Verification
+
+* Confirm the destination PVC exists and contains transferred files on the target cluster:
++
+[subs="+quotes"]
+----
+$ *oc get pvc -n _<pvc_namespace>_ --context _<target_cluster_context>_*
+----

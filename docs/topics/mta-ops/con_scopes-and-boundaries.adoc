@@ -1,0 +1,20 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-07-07
+:_mod-docs-content-type: CONCEPT
+
+[id="scopes-and-boundaries_{context}"]
+= Workload scopes and RBAC boundaries
+
+[role="_abstract"]
+The `mta-ops` pipeline processes namespaced and cluster-scoped resources based on your authentication privileges. Understanding role-based access control boundaries allows you to isolate cluster-level dependencies and implement split-responsibility administration.
+
+The `mta-ops` pipeline processes application workloads based on their scope and your active authentication privileges:
+
+Namespace-scoped resources::
+Fully supported. The CLI extracts all resources in the target namespace (such as `Deployments`, `Services`, `ConfigMaps`, and `Secrets`) by default. You only require namespace-admin privileges to export, transform, and apply these resources.
+
+Cluster-scoped resources::
+Conditionally supported. Real-world applications often depend on cluster-level objects, including Custom Resource Definitions (CRDs), custom SecurityContextConstraints (SCCs), ClusterRoles, and ClusterRoleBindings. 
+
+* If you have cluster-admin privileges, the `mta-ops` CLI automatically discovers, exports, and transforms these dependencies alongside your namespaced workloads.
+* If you lack cluster-admin privileges, the CLI safely skips cluster-scoped resources, logs a warning message to the console, and records the skipped resources under a `failures/` subdirectory.

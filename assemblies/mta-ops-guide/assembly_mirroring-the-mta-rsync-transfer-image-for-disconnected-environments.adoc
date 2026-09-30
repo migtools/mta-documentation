@@ -1,0 +1,26 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-mirroring-the-mta-rsync-transfer-image-for-disconnected-environments: {context}]
+
+ifndef::context[]
+[id="mirroring-the-mta-rsync-transfer-image-for-disconnected-environments"]
+endif::[]
+ifdef::context[]
+[id="mirroring-the-mta-rsync-transfer-image-for-disconnected-environments_{context}"]
+endif::[]
+= Mirroring the mta-rsync-transfer image for disconnected environments
+
+:context: mirroring-the-mta-rsync-transfer-image-for-disconnected-environments
+
+[role="_abstract"]
+To execute direct persistent volume claim (PVC) migrations in disconnected or air-gapped environments, manually mirror the standalone `mta-rsync-transfer` container image to an internal registry accessible by both source and target clusters.
+
+include::topics/mta-ops/con_mta-rsync-transfer-image-mirroring-in-disconnected-environments.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_mirroring-the-mta-rsync-transfer-image-to-an-internal-registry.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-mirroring-the-mta-rsync-transfer-image-for-disconnected-environments[:context: {parent-context-of-mirroring-the-mta-rsync-transfer-image-for-disconnected-environments}]
+ifndef::parent-context-of-mirroring-the-mta-rsync-transfer-image-for-disconnected-environments[:!context:]
+

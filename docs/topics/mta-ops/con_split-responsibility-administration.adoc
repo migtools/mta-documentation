@@ -1,0 +1,14 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: CONCEPT
+
+[id="split-responsibility-administration_{context}"]
+= Split-responsibility administration
+
+[role="_abstract"]
+If your security policies prevent application developers from holding cluster-admin privileges on production environments, you can implement a split-responsibility workflow.
+
+A split-responsibility workflow includes the following stages:
+
+* The application developer (`namespace-admin`) runs the export and transform pipeline on namespaced workloads. During the `apply` phase, the developer appends the `+--skip-cluster-scoped+` flag to render only namespaced resources.
+* The cluster administrator reviews and applies the cluster-scoped resources separately. The administrator executes a targeted export and apply using elevated cluster-admin credentials to deploy cluster-level security, CRDs, and permission boundaries before or alongside the workload migration.

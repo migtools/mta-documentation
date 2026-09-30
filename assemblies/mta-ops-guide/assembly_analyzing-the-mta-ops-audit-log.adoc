@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-23
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-analyzing-the-mta-ops-audit-log: {context}]
+
+ifndef::context[]
+[id="analyzing-the-mta-ops-audit-log"]
+endif::[]
+ifdef::context[]
+[id="analyzing-the-mta-ops-audit-log_{context}"]
+endif::[]
+= Analyzing the mta-ops audit log
+
+:context: analyzing-the-mta-ops-audit-log
+
+[role="_abstract"]
+Diagnose migration pipeline failures, verify resource transformation steps, and satisfy security compliance requirements by analyzing the persistent, structured JSON audit log generated during `mta-ops` execution.
+
+include::topics/mta-ops/con_audit-log-architecture-and-behavior.adoc[leveloffset=+1]
+
+include::topics/mta-ops/proc_inspecting-the-audit-log.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-analyzing-the-mta-ops-audit-log[:context: {parent-context-of-analyzing-the-mta-ops-audit-log}]
+ifndef::parent-context-of-analyzing-the-mta-ops-audit-log[:!context:]

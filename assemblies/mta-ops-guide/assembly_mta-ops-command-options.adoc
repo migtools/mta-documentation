@@ -16,7 +16,9 @@ endif::[]
 :context: mta-ops-command-options
 
 [role="_abstract"]
-Review the commands and flags available in the `mta-ops` command-line interface (CLI). You use these commands to extract, clean, render, and validate workloads. 
+Review the command-line options and parameters available in the {ProductFullName} `mta-ops` command-line interface (CLI). Use these flags to customize the export, transformation, manifest rendering, target cluster validation, and persistent volume replication stages.
+
+include::topics/mta-ops/ref_global-mta-ops-flags.adoc[leveloffset=+1]
 
 include::topics/mta-ops/ref_mta-ops-export-command-options.adoc[leveloffset=+1]
 
@@ -25,6 +27,8 @@ include::topics/mta-ops/ref_mta-ops-transform-command-options.adoc[leveloffset=+
 include::topics/mta-ops/ref_mta-ops-apply-command-options.adoc[leveloffset=+1]
 
 include::topics/mta-ops/ref_mta-ops-validate-command-options.adoc[leveloffset=+1]
+
+include::topics/mta-ops/ref_mta-ops-transfer-pvc-command-options.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-mta-ops-command-options[:context: {parent-context-of-mta-ops-command-options}]
 ifndef::parent-context-of-mta-ops-command-options[:!context:]

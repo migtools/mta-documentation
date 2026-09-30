@@ -6,22 +6,74 @@
 = mta-ops export command options
 
 [role="_abstract"]
-When you capture a source cluster snapshot, review the available command flags. This helps you customize the extraction process.
+Use the `mta-ops export` command options to customize the extraction of raw application manifests and cluster-scoped dependencies from the source cluster.
 
-.`mta-ops export` flags
-[cols="30%,20%,50%",options="header"]
+.mta-ops export flags
+[cols="25%,15%,60%",options="header"]
 |===
 | Option | Shorthand | Description
-| `--context` | | The local kubeconfig context of the source cluster.
-| `--namespace` | `-n` | The target namespace to export workloads from.
-| `--export-dir` | `-e` | The directory path to save the exported resources.
-| `--label-selector` | `-l` | Selection of resources to export based on matching labels.
-| `--as` | | Username to impersonate for the export operation.
-| `--as-group` | | Group to impersonate for the export operation.
-| `--as-extras` | | Impersonation extras to use for the export request.
-| `--crd-skip-group` | | Omission of CRDs that match the specified API group.
-| `--crd-include-group` | | Inclusion of CRDs that match the specified API group.
-| `--qps` | | Queries per second allowed for the Kubernetes API connection.
-| `--burst` | | Allowed extra queries to accumulate for the API connection.
-|`--overwrite` | | Overwrite of the export directory if it already exists.
+
+| `--as`
+| 
+| Username to impersonate for the export operation (regular user or `ServiceAccount`).
+
+| `--as-extras`
+| 
+| Extra impersonation parameters (for example, `--as-extras key1=val1,val2;key2=val3`). Requires `--as` or `--as-group`.
+
+| `--as-group`
+| 
+| Group name to impersonate for the export operation. Repeatable for multiple groups.
+
+| `--as-uid`
+| 
+| User ID to impersonate for the operation.
+
+| `--burst`
+| `-b`
+| Maximum allowed API burst rate limit (default: `1000`).
+
+| `--crd-include-group`
+| 
+| Force-includes specific custom resource definition (CRD) API groups for export, even if built-in defaults skip them (repeatable).
+
+| `--crd-skip-group`
+| 
+| Additional API groups to skip during CRD export (repeatable).
+
+| `--export-dir`
+| `-e`
+| Local directory path where raw exported YAML manifests are saved (default: `export`).
+
+| `--exclude-gk`
+| 
+| Skips namespace resources matching the specified Kind or Group/Kind (repeatable).
+
+| `--include-gk`
+| 
+| Restricts export exclusively to namespace resources matching the specified Kind or Group/Kind (repeatable).
+
+| `--label-selector`
+| `-l`
+| Restricts export to namespace resources matching a label selector (for example, `tier=frontend`).
+
+| `--namespace`
+| `-n`
+| Target source namespace scope for the export operation.
+
+| `--overwrite`
+| 
+| Overwrites the export directory if it already exists on local disk.
+
+| `--qps`
+| `-q`
+| Queries-per-second (QPS) rate limit for the Kubernetes API connection (default: `100`).
+
+| `--context`
+| 
+| Specifies the kubeconfig context name of the source cluster.
+
+| `--kubeconfig`
+| 
+| Path to the kubeconfig file used for source cluster authentication.
 |===

@@ -19,7 +19,7 @@ When you encounter pipeline failures, review the common errors tables. This help
 
 | `Patch evaluation error`
 | A custom stage contains malformed YAML or missing parent objects.
-| Isolate the stage by passing the directory name as a positional argument. Rerun the command with the `--force` flag.
+| Isolate the stage by passing the directory name as a positional argument. Rerun the command with the `--overwrite` flag.
 |===
 
 .Apply and validate errors

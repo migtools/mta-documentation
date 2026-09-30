@@ -1,0 +1,107 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="converting-openshift-buildconfigs-to-shipwright-builds_{context}"]
+= Converting OpenShift BuildConfigs to builds by using the BuildConfigToBuildsPlugin
+
+[role="_abstract"]
+Transition application build definitions to a Kubernetes-native framework during workload migration by using the `BuildConfigToBuildsPlugin` during the `mta-ops transform` stage.
+
+The `BuildConfigToBuildsPlugin` plugin converts OpenShift `BuildConfig` resources (`build.openshift.io/v1`) into Kubernetes-native build custom resources (`shipwright.io/v1beta1`) offline.
+
+.Prerequisites
+
+* You have exported application manifests from the source cluster containing `BuildConfig` definitions by using `mta-ops export`.
+* You have completed the default `mta-ops transform` stage to strip runtime metadata and cluster-specific IDs from all exported workload resources.
+* The target cluster has the Builds for Red{nbsp}Hat OpenShift operator and Red{nbsp}Hat OpenShift Pipelines installed to serve the `shipwright.io/v1beta1` API and provide the `buildah` and `source-to-image` `ClusterBuildStrategies`.
+
+.Procedure
+
+. Execute the transformation pipeline with the `BuildConfigToBuildsPlugin` stage. Pass image and registry remapping parameters inside the `--optional-flags` JSON object string:
++
+[subs="+quotes"]
+----
+$ *mta-ops transform -e _<export_dir>_ -t _<transform_dir>_ BuildConfigToBuildsPlugin --optional-flags '{"registry-mapping":"image-registry.openshift-image-registry.svc:5000=_<target_registry_url>_/_<target_org>_","imagestream-mapping":"_<namespace>_/_<stream_name>_:_<tag>_=_<external_registry_image>_"}' --overwrite*
+----
++
+[NOTE]
+====
+Do not pass `registry-mapping` or `imagestream-mapping` as standalone command flags. They are plugin parameters that must be formatted as key-value pairs inside the `--optional-flags` JSON string.
+====
+
+. Inspect the generated stage directory under `_<transform_dir>_/` (for example, `_<transform_dir>_/*_BuildConfigToBuildsPlugin/output/`):
++
+[subs="+quotes"]
+----
+$ *ls -l _<transform_dir>_/*_BuildConfigToBuildsPlugin/output/*
+----
+
+. Render the final deployable manifests locally:
++
+[subs="+quotes"]
+----
+$ *mta-ops apply -t _<transform_dir>_ -o _<output_dir>_ --ordered --overwrite*
+----
+
+. Identify any `BuildConfig` resources that could not be converted automatically by checking for conversion outcome annotations in the final output directory:
++
+[subs="+quotes"]
+----
+$ *grep -rl 'kind: BuildConfig' _<output_dir>_/resources | xargs -r grep -H 'buildconfig-to-shipwright/conversion-'*
+----
+
+. If an exported `BuildConfig` contains an inline Dockerfile, locate the generated reference `ConfigMap` under `_<output_dir>_/resources/` and commit the Dockerfile content directly to your application's Git repository.
+
+. Deploy the converted application manifests and generated `Build` resources to the target cluster:
++
+[subs="+quotes"]
+----
+$ *oc apply -f _<output_dir>_/output.yaml --context _<target_cluster_context>_*
+----
+
+. Grant the required security context constraint (SCC) permissions to the `ServiceAccount` executing the build on the target cluster:
++
+[subs="+quotes"]
+----
+$ *oc adm policy add-scc-to-user pipelines-scc -z _<service_account_name>_ -n _<namespace>_ --context _<target_cluster_context>_*
+----
+
+. Trigger a container image build on the target cluster by completing the following steps:
+
+.. Create a `BuildRun` manifest (`buildrun.yaml`) that references the configured `ServiceAccount`:
++
+[source,yaml,subs="verbatim,quotes"]
+----
+apiVersion: shipwright.io/v1beta1
+kind: BuildRun
+metadata:
+  name: _<build_run_name>_
+  namespace: _<namespace>_
+spec:
+  build:
+    name: _<build_name>_
+  serviceAccount:
+    name: _<service_account_name>_
+----
+
+.. Deploy the `BuildRun` manifest:
++
+[subs="+quotes"]
+----
+$ *oc apply -f buildrun.yaml --context _<target_cluster_context>_*
+----
++
+[IMPORTANT]
+====
+Always specify the fully qualified API resource name `builds.shipwright.io` or `buildruns.shipwright.io` when using `oc` commands on OpenShift to prevent naming collisions with legacy OpenShift build objects.
+====
+
+
+.Verification
+* Confirm that the `BuildRun` resource executes successfully on the target cluster:
++
+[subs="+quotes"]
+----
+$ *oc get buildruns.shipwright.io _<build_run_name>_ -n _<namespace>_ --context _<target_cluster_context>_*
+----

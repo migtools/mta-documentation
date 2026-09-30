@@ -6,13 +6,13 @@
 = Executing a stateless migration quick start
 
 [role="_abstract"]
-To quickly test the tool, run a basic stateless migration scenario for a single application. This end-to-end pipeline demonstrates the default workflow.
+To test the tool, run a basic stateless migration scenario for a single application. This end-to-end pipeline demonstrates the default workflow.
 
 .Prerequisites
 * You have active contexts for your source and target clusters.
 
 .Procedure
-. Export the source application:
+. Export the source application manifests:
 +
 [subs="+quotes"]
 ----
@@ -25,7 +25,7 @@ $ *mta-ops export --context _<source_context>_ -n _<namespace>_ -e export --over
 ----
 $ *mta-ops transform -e export -t transform*
 ----
-. Render the deployable manifests locally:
+. Render the deployable manifests locally, prefixing files with 3-digit order numbers for correct dependency resolution:
 +
 [subs="+quotes"]
 ----

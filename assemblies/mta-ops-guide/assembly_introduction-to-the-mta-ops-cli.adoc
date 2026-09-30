@@ -1,0 +1,36 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: ASSEMBLY
+
+ifdef::context[:parent-context-of-introduction-to-the-mta-ops-cli: {context}]
+
+ifndef::context[]
+[id="introduction-to-the-mta-ops-cli"]
+endif::[]
+ifdef::context[]
+[id="introduction-to-the-mta-ops-cli_{context}"]
+endif::[]
+= Introduction to the mta-ops CLI
+
+:context: introduction-to-the-mta-ops-cli
+
+[role="_abstract"]
+As a platform engineer or a cluster administrator, you can use the {ProductFullName} `mta-ops` command-line interface (CLI) to migrate and modernize your workloads across Red{nbsp}Hat OpenShift Container Platform clusters.
+
+The `mta-ops` utility provides a non-destructive, repeatable, and GitOps-ready migration workflow. By decoupling workload manifest transformation from data transport, the utility allows you to customize and validate your configurations before executing active cluster modifications.
+
+The `mta-ops` CLI supports two primary operational modes:
+
+Workload manifest migration::
+A multi-stage pipeline that extracts, cleans, renders, and validates Kubernetes and OpenShift resources. You can customize the pipeline stages programmatically or steer them by using a declarative instructions file.
+
+Persistent volume data portability::
+A highly observable data transfer engine that replicates persistent storage volumes across namespaces or clusters. This engine supports direct cluster-to-cluster synchronization, indirect migration through intermediate cloud storage, and local storage class conversions.
+
+include::topics/mta-ops/con_migration-pipeline.adoc[leveloffset=+1]
+
+include::topics/mta-ops/con_persistent-volume-migration-and-data-portability.adoc[leveloffset=+1]
+
+ifdef::parent-context-of-introduction-to-the-mta-ops-cli[:context: {parent-context-of-introduction-to-the-mta-ops-cli}]
+ifndef::parent-context-of-introduction-to-the-mta-ops-cli[:!context:]
+

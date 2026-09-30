@@ -1,0 +1,27 @@
+:_newdoc-version: 2.18.7
+:_template-generated: 2026-09-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="managing-the-cli-plug-in_{context}"]
+= Managing the CLI plug-in
+
+[role="_abstract"]
+List installed plugins and customize the transformation pipeline by omitting unneeded stages.
+
+The `mta-ops` CLI automatically discovers plug-ins stored in the default plugin directory at `~/.local/share/crane/plugins/`.
+
+.Procedure
+
+* List all installed plugins available to the transformation engine:
++
+[subs="+quotes"]
+----
+$ *mta-ops transform list-plugins*
+----
+
+* To omit specific plugins during transformation, use the `--skip-plugins` flag:
++
+[subs="+quotes"]
+----
+$ *mta-ops transform -e export -t transform --skip-plugins OpenShiftPlugin*
+----
