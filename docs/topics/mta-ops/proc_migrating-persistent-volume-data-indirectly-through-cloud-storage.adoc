@@ -13,7 +13,7 @@ Migrate persistent volume claim (PVC) data between disconnected or air-gapped cl
 * You have installed the `mta-ops` command-line utility.
 * You have active cluster contexts for both clusters in your `kubeconfig` file.
 * Recommended: You have scaled down active workloads by using the source volume to zero replicas to prevent data inconsistency during the transfer.
-* Recommended: You have verified that the source PVC's `StorageClass` exists on the destination cluster by running `$ oc get storageclass --context _<target_cluster_context>_`.
+* Recommended: You have verified that the source PVC's `StorageClass` exists on the destination cluster by running `oc get storageclass --context _<target_cluster_context>_`.
 * You have configured an S3-compatible cloud storage bucket. Amazon Web Services (AWS) S3 is the validated storage provider. Other services exposing an S3-compatible API are expected to work when configured through `rclone` `s3` backend.
 
 .Procedure
