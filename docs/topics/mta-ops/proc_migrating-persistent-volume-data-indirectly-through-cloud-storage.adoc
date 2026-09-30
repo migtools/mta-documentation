@@ -90,7 +90,7 @@ $ *mta-ops transfer-pvc --source-context=_<source_cluster_context>_ --destinatio
 +
 [NOTE]
 ====
-* The `--dest-storage-class` option is optional if the destination cluster has a `StorageClass` with the exact same name as the source PVC's storage class. If the destination cluster uses a different `StorageClass` (such as in cross-provider or heterogeneous cluster migrations), you must pass `--dest-storage-class=_<target_storage_class>_` to specify a supported destination storage class and prevent transfer failure.
+The `--dest-storage-class` option is optional if the destination cluster has a `StorageClass` with the exact same name as the source PVC's storage class. If the destination cluster uses a different `StorageClass` (such as in cross-provider or heterogeneous cluster migrations), you must pass `--dest-storage-class=_<target_storage_class>_` to specify a supported destination storage class and prevent transfer failure.
 ====
 
 . Optional: To retain cloud bucket backup data after transfer completion, append the `--keep-cloud-data` flag.
