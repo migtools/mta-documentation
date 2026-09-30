@@ -18,7 +18,7 @@ Migrate persistent volume claim (PVC) data between disconnected or air-gapped cl
 
 .Procedure
 
-. Create an `rclone.conf` configuration file defining the storage remote. The section name in brackets (for example, `[remote]`) must match the remote name prefix passed to `--cloud-storage` (such as `remote:_<my_bucket>_`).
+. Create an `rclone.conf` configuration file defining the storage remote. The section name in brackets (for example, `[remote]`) must match the remote name prefix passed to `--cloud-storage` (such as `remote:__<my_bucket>__`).
 +
 The following are sample `rclone.conf` configurations for common storage providers:
 +
