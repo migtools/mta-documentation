@@ -13,14 +13,21 @@ The following migration paths are available for PVC migration:
 Direct persistent volume claim migration::
 Direct migration copies file data directly from the source cluster to the destination cluster. This path uses a secure tunnel. The tunnel is established by using `stunnel` with Transport Layer Security (TLS) version 1.3.
 +
-A file synchronization utility (`rsync`) copies the files across the tunnel. This direct transfer requires a network path between the clusters. You must expose a route or an ingress endpoint on the target cluster. This method preserves file mode bits and ownership.
+A file synchronization utility (`rsync`) copies the files across the tunnel. This direct transfer requires a network path between the clusters. You must expose a route or an ingress endpoint on the target cluster.
++
+Both direct and indirect migration modes preserve file mode bits (read, write, and execute permissions). File ownership (UID and GID) is preserved on a best-effort basis. If the target mover pod runs as a non-root user under OpenShift security context constraints (SCCs), file ownership is normalized to the UID and GID assigned to the target execution context.
 
 Indirect persistent volume claim migration::
 Indirect migration copies data by using an intermediate cloud storage bucket. This path is ideal when clusters do not have direct network connectivity. It is also suitable for air-gapped or classified environments.
 +
 The migration occurs in two sequential phases. First, a source pod uploads files to an S3-compatible bucket. Second, a destination pod downloads those files. This path uses the `rclone` utility compiled as a library.
 +
-You can enable client-side encryption by using the NaCl SecretBox standard. This encryption protects your data in transit and at rest.
+Indirect PVC transfer uses `rclone` `s3` backend. Amazon Web Services (AWS) S3 is the currently validated storage provider. Other storage services exposing an S3-compatible API are expected to work when configured through `rclone` `s3` backend, but are not currently tested.
++
+Because indirect migration uses intermediate storage, you can optionally enable `rclone` client-side encryption. This protects your data while it resides in the intermediate cloud storage.
+
+Cross-provider `StorageClass` remapping::
+When migrating PVC data across different cloud or infrastructure providers, destination clusters might not support the source `StorageClass`. Both direct and indirect transfer paths support remapping storage classes during transfer by using the `--dest-storage-class` option.
 
 Intra-cluster StorageClass conversion::
 +
