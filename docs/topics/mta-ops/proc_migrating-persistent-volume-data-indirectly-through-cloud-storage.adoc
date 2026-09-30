@@ -6,32 +6,101 @@
 = Migrating persistent volume data indirectly through cloud storage
 
 [role="_abstract"]
-Migrate persistent volume claim (PVC) data between disconnected or air-gapped clusters by using an S3-compatible cloud storage bucket.
+Migrate persistent volume claim (PVC) data between disconnected or air-gapped clusters by using an S3-compatible cloud storage bucket. Indirect migration uses `rclone` to copy files through an intermediate S3-compatible bucket.
 
 .Prerequisites
 
 * You have installed the `mta-ops` command-line utility.
 * You have active cluster contexts for both clusters in your `kubeconfig` file.
-* You have scaled down active workloads on the source volume to 0 replicas to prevent write operations.
-* You have configured an S3-compatible storage bucket and local credentials file (`rclone.conf`).
+* Recommended: You have scaled down active workloads by using the source volume to zero replicas to prevent data inconsistency during the transfer.
+* Recommended: You have verified that the source PVC's `StorageClass` exists on the destination cluster by running `$ oc get storageclass --context _<target_cluster_context>_.
+* You have configured an S3-compatible cloud storage bucket. Amazon Web Services (AWS) S3 is the validated storage provider. Other services exposing an S3-compatible API are expected to work when configured through `rclone` `s3` backend.
 
 .Procedure
 
-. Execute the indirect data transfer by specifying the cloud storage bucket path:
+. Create an `rclone.conf` configuration file defining the storage remote. The section name in brackets (for example, `[remote]`) must match the remote name prefix passed to `--cloud-storage` (such as `remote:_<my_bucket>_`).
++
+The following are sample `rclone.conf` configurations for common storage providers:
++
+.AWS S3
+[source,ini]
+----
+[remote]
+type = s3
+provider = AWS
+access_key_id = _<access_key>_
+secret_access_key = _<secret_key>_
+region = _<region>_
+----
++
+.S3-compatible storage (for example, MinIO)
+[source,ini]
+----
+[remote]
+type = s3
+provider = Minio
+access_key_id = _<access_key>_
+secret_access_key = _<secret_key>_
+endpoint = _<https://minio.example.com>_
+----
++
+.Google Cloud Storage (S3-compatible / interoperability mode)
+[source,ini]
+----
+[remote]
+type = s3
+provider = GCS
+access_key_id = _<hmac_access_key>_
+secret_access_key = _<hmac_secret>_
+endpoint = _<https://storage.googleapis.com>_
+----
+
+. Provide the `rclone.conf` configuration to `mta-ops transfer-pvc` by using one of the following mutually exclusive options:
+
+* Option 1: By using a local file (`--rclone-config-file`)
++
+Pass the path to a local `rclone.conf` file. The command reads the file locally, creates temporary Secrets containing the configuration in the source and destination PVC namespaces, validates both, and automatically deletes the temporary Secrets when the transfer finishes:
 +
 [subs="+quotes"]
 ----
-$ *mta-ops transfer-pvc --source-context=_<source_cluster_context>_ --destination-context=_<target_cluster_context>_ --pvc-name=_<pvc_name>_ --pvc-namespace=_<pvc_namespace>_ --cloud-storage=_<s3_bucket_url>_ --rclone-config-file=_<rclone_config_file>_ --encrypt*
+$ *mta-ops transfer-pvc --source-context=_<source_cluster_context>_ --destination-context=_<target_cluster_context>_ --pvc-name=_<pvc_name>_ --pvc-namespace=_<pvc_namespace>_ --cloud-storage=remote:_<my_bucket>_ --rclone-config-file=./rclone.conf*
 ----
+
+* Option 2: By using a pre-created Secret (`--rclone-config-secret`)
++
+.. Create a Secret named `_<my_rclone_config>_` containing a data key named `rclone.conf` in both the source and destination PVC namespaces before running the transfer. The command reads the existing Secrets and does not create, copy, or delete them.
++
+[subs="+quotes"]
+----
+$ *oc create secret generic _<my_rclone_config>_ --from-file=rclone.conf=./rclone.conf -n _<pvc_namespace>_ --context _<source_cluster_context>_*
+----
++
+[subs="+quotes"]
+----
+$ *oc create secret generic _<my_rclone_config>_ --from-file=rclone.conf=./rclone.conf -n _<pvc_namespace>_ --context _<target_cluster_context>_*
+----
+
+.. Reference the Secret by name during the transfer:
++
+[subs="+quotes"]
+----
+$ *mta-ops transfer-pvc --source-context=_<source_cluster_context>_ --destination-context=_<target_cluster_context>_ --pvc-name=_<pvc_name>_ --pvc-namespace=_<pvc_namespace>_ --cloud-storage=remote:_<my_bucket>_ --rclone-config-secret=_<my_rclone_config>_*
+----
+
++
+[NOTE]
+====
+* The `--dest-storage-class` option is optional if the destination cluster has a `StorageClass` with the exact same name as the source PVC's storage class. If the destination cluster uses a different `StorageClass` (such as in cross-provider or heterogeneous cluster migrations), you must pass `--dest-storage-class=_<target_storage_class>_` to specify a supported destination storage class and prevent transfer failure.
+====
 
 . Optional: To retain cloud bucket backup data after transfer completion, append the `--keep-cloud-data` flag.
 
-
 .Verification
 
-* Confirm the destination PVC exists and contains transferred files on the target cluster:
+* On the destination cluster, confirm that the new volume contains the copied files:
 +
 [subs="+quotes"]
 ----
 $ *oc get pvc -n _<pvc_namespace>_ --context _<target_cluster_context>_*
+----
 ----
