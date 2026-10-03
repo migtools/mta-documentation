@@ -1,0 +1,9 @@
+:_mod-docs-content-type: CONCEPT
+
+[id="installing-mta-cli-overview_{context}"]
+= {ProductName} command-line interface installation
+
+[role="_abstract"]
+To install the {ProductFullName} command-line interface (CLI), use the instructions in the _{ProductName} CLI guide_.
+
+For more information, see link:{mta-URL}/using_the_migration_toolkit_for_applications_command-line_interface/index#installing-mta-cli_cli-guide[Installing the {ProductName} command-line interface].

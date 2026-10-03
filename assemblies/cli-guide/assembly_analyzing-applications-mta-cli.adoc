@@ -27,9 +27,7 @@ Depending on your scenario, you can use the {ProductShortName} CLI to perform th
 ** Enter a series of `--analyze` commands, each against an application and each generating a separate report.
 ** Use the `--bulk` option to analyze multiple applications at once and generate a single report. Note that this feature is a Developer Preview feature only.
 
-* Run the analysis for Java applications in the containerless mode. Note that this option is set by default and is used automatically only if all requirements are met.
-+
-However, if you want to analyze applications in languages other than Java or, for example, use transformation commands, you still need to use containers.
+* Run the analysis for Java applications in containerless mode, which is the default. The CLI uses containerless mode automatically when all requirements are met. For applications that are written in languages other than Java, or when you use transformation commands, the analysis runs in container mode.
 
 ////
 [NOTE]
