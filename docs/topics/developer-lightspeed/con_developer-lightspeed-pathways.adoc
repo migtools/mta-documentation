@@ -77,8 +77,7 @@ As a Migrator, you can perform the following steps:
 
 * xref:llm-provider-settings_configuring-llm[LLM provider setting configurations] 
 
-* xref:running-agent-analysis_run-dev-lightspeed-analysis[Generate code resolutions in the agent mode
-]
+* xref:running-agent-analysis_run-dev-lightspeed-analysis[Generate code resolutions in the agent mode]
 
 * xref:configuring-developer-lightspeed-ide-settings_configuring-dev-lightspeed-ide[Configure the {mta-dl-full} IDE settings]
 

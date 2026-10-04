@@ -1,0 +1,37 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-05-28
+
+ifdef::context[:parent-context-of-data-ip-dl: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="data-ip-dl"]
+endif::[]
+ifdef::context[]
+[id="data-ip-dl_{context}"]
+endif::[]
+= Data privacy, intellectual property protection, and model hosting considerations
+
+:context: data-ip-dl
+
+[role="_abstract"]
+When you configure a large language model (LLM) provider for {mta-dl-full}, understanding code transmission helps you to comply with your organization's intellectual property (IP) and data privacy policies.
+
+include::topics/developer-lightspeed/con_ip-protection-risk-disclosure.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/con_ip-protection-mitigation.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/con_ip-protection-config-pointers.adoc[leveloffset=+1]
+
+
+[role="_additional-resources"]
+.Additional resources
+
+* link:https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed[Red{nbsp}Hat OpenShift AI documentation]
+* link:https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai[Red{nbsp}Hat Enterprise Linux AI documentation]
+
+ifdef::parent-context-of-data-ip-dl[:context: {parent-context-of-data-ip-dl}]
+ifndef::parent-context-of-data-ip-dl[:!context:]
+
+:!data-ip-dl:

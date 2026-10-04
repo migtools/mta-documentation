@@ -27,7 +27,11 @@ If you apply all the resolutions, {mta-dl-plugin} applies the changes and trigge
 
 include::topics/developer-lightspeed/proc_apply-rag-resolution.adoc[leveloffset=+1]
 
+include::topics/developer-lightspeed/proc_enabling-agent-mode.adoc[leveloffset=+1]
+
 include::topics/developer-lightspeed/proc_running-agent-analysis.adoc[leveloffset=+1]
+
+include::topics/developer-lightspeed/ref_example-code-suggestion.adoc[leveloffset=+1]
 
 ifdef::parent-context-of-run-dev-lightspeed-analysis[:context: {parent-context-of-run-dev-lightspeed-analysis}]
 ifndef::parent-context-of-run-dev-lightspeed-analysis[:!context:]

@@ -1,0 +1,21 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="ip-protection-risk-disclosure_{context}"]
+
+= {mta-dl-plugin} code transmission to the LLM
+:context: ip-protection-risk-disclosure
+
+[role="_abstract"]
+To generate accurate migration suggestions, {mta-dl-plugin} constructs a contextual prompt. This prompt includes relevant code snippets from the application that you are analyzing. Code snippets are transmitted intact to the configured LLM provider. 
+
+{mta-dl-plugin} does not automatically sanitize or redact source code before inclusion in a prompt. Altering the code syntax reduces the accuracy of the migration recommendations.
+
+[WARNING]
+====
+You can configure {mta-dl-plugin} to use a public, SaaS-based LLM endpoint, such as a public OpenAI service or a shared Azure OpenAI deployment. If you do this, {mta-dl-plugin} transmits your source code snippets to that third-party provider for processing.
+
+Your codebase might contain proprietary algorithms, trade secrets, regulated data, or other sensitive intellectual property. This transmission might expose that information outside your organization's security boundary. This exposure might conflict with your intellectual property protection policies, contractual obligations, or regulatory requirements.
+====
