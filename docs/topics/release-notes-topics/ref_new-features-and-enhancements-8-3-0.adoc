@@ -15,7 +15,7 @@ You can convert immutable `PersistentVolumeClaim` (PVC) storage classes within a
 +
 For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.3/html/migrating_workloads_by_using_the_mta-ops_cli/migrating-stateful-persistent-volumes_mta-ops-title#converting-volume-storage-classes-within-the-same-cluster_migrating-stateful-persistent-volumes[Converting volume storage classes within the same cluster].
 +
-link:https://issues.redhat.com/browse/[MTA-7421]
+link:https://redhat.atlassian.net/browse/MTA-7421[MTA-7421]
 
 
 Indirect PVC data migration through S3-compatible cloud storage::
@@ -27,26 +27,20 @@ The feature supports rclone client-side encryption (`--encrypt`), credential man
 +
 For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.3/html/migrating_workloads_by_using_the_mta-ops_cli/migrating-stateful-persistent-volumes_mta-ops-title#migrating-persistent-volume-data-indirectly-through-cloud-storage_migrating-stateful-persistent-volumes[Migrating persistent volume data indirectly through cloud storage].
 +
-link:https://issues.redhat.com/browse/[MTA-7449]
+link:https://redhat.atlassian.net/browse/MTA-7449[MTA-7449]
 
 Persistent structured audit log::
 Every `mta-ops` command-line interface (CLI) command execution (`export`, `transform`, `apply`, `validate`, `transfer-pvc`) automatically records a persistent JSON Lines audit log to `audit/.crane-audit.log` in your active working directory. The audit log captures full debug-level diagnostic output, operational metadata, and timestamps regardless of terminal verbosity settings. Sequential command executions append to the existing log file, preserving a complete execution history. You can override the default log file location by using the `--audit-log _<path>_` option.
 +
 For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.3/html/migrating_workloads_by_using_the_mta-ops_cli/troubleshooting-the-mta-ops-pipeline_mta-ops-title#analyzing-the-mta-ops-audit-log_troubleshooting-the-mta-ops-pipeline[Analyzing the mta-ops audit log].
 +
-link:https://redhat.atlassian.net/browse/[MTA-7454]
+link:https://redhat.atlassian.net/browse/MTA-7454[MTA-7454]
 
 Structured transfer progress tracking and operational summary::
 The `mta-ops transfer-pvc` command displays a structured `[i/N]` phase progress tracker, an opening context banner detailing cluster endpoints, and an end-of-run summary showing transfer duration and completion status. If a transfer fails, the error message is reported inline within the failing phase, while automatic cleanup of temporary transfer resources is still performed.
 +
-link:https://issues.redhat.com/browse/[MTA-7453]
+link:https://redhat.atlassian.net/browse/MTA-7453[MTA-7453]
 
-Standalone `rsync` transfer container image for disconnected image mirroring::
-The `mta-rsync-transfer` worker image is distributed alongside the `mta-ops` command-line interface (CLI) as a standalone container image (`registry.redhat.io/mta/mta-rsync-transfer-rhel9:8.3.0`). This allows platform engineers in air-gapped or restricted network environments to manually mirror the transfer image to internal container registries by using `oc image mirror`, `skopeo copy`, or `podman`.
-+
-For more information, see link:https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/8.3/html/migrating_workloads_by_using_the_mta-ops_cli/migrating-stateful-persistent-volumes_mta-ops-title#mirroring-the-mta-rsync-transfer-image-for-disconnected-environments_migrating-stateful-persistent-volumes[Mirroring the mta-rsync-transfer image for disconnected environments].
-+
-link:https://issues.redhat.com/browse/[MTA-7596]
 
 == {ProductShortName} agents
 
